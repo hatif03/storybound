@@ -1,0 +1,73 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K0Y8TTF7H0GH2FQN5XHRAQ",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    ".gitignore",
+    "evidence/hardening/HR-006.md",
+    "evidence/ledger.jsonl",
+    "evidence/stories/bunny-sharing-1/drawing.jpg",
+    "evidence/stories/bunny-sharing-1/pages/1/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/1/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/2/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/2/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/3/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/3/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/4/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/4/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/5/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/5/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/6/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/6/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/7/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/7/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/8/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/8/image.jpg",
+    "evidence/stories/bunny-sharing-1/story.json",
+    "evidence/stories/bunny-sharing-1/video/spec.json",
+    "evidence/stories/bunny-sharing-2/drawing.jpg",
+    "evidence/stories/bunny-sharing-2/pages/1/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/1/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/2/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/2/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/3/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/3/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/4/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/4/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/5/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/5/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/6/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/6/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/7/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/7/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/8/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/8/image.jpg",
+    "evidence/stories/bunny-sharing-2/story.json",
+    "evidence/stories/bunny-sharing-2/video/spec.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 606,
+    "cache_creation_tokens": 760593,
+    "cache_read_tokens": 98307902,
+    "output_tokens": 268485,
+    "api_call_count": 286,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

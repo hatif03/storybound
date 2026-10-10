@@ -1,0 +1,120 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K0Y8TTF7H0GH2FQN5XHRAQ",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T13:44:50.8990116Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 3,
+  "files_touched": [
+    ".gitignore",
+    "evidence/hardening/HR-006.md",
+    "evidence/ledger.jsonl",
+    "evidence/stories/bunny-sharing-1/drawing.jpg",
+    "evidence/stories/bunny-sharing-1/pages/1/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/1/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/2/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/2/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/3/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/3/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/4/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/4/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/5/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/5/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/6/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/6/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/7/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/7/image.jpg",
+    "evidence/stories/bunny-sharing-1/pages/8/audio.mp3",
+    "evidence/stories/bunny-sharing-1/pages/8/image.jpg",
+    "evidence/stories/bunny-sharing-1/story.json",
+    "evidence/stories/bunny-sharing-1/video/spec.json",
+    "evidence/stories/bunny-sharing-2/drawing.jpg",
+    "evidence/stories/bunny-sharing-2/pages/1/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/1/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/2/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/2/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/3/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/3/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/4/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/4/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/5/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/5/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/6/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/6/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/7/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/7/image.jpg",
+    "evidence/stories/bunny-sharing-2/pages/8/audio.mp3",
+    "evidence/stories/bunny-sharing-2/pages/8/image.jpg",
+    "evidence/stories/bunny-sharing-2/story.json",
+    "evidence/stories/bunny-sharing-2/video/spec.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "b89d667682c5",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 606,
+    "cache_creation_tokens": 760593,
+    "cache_read_tokens": 98307902,
+    "output_tokens": 268485,
+    "api_call_count": 286,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 28
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T13:44:50.5106443Z",
+    "agent_lines": 13,
+    "agent_removed": 0,
+    "human_added": 614,
+    "human_modified": 2697,
+    "human_removed": 0,
+    "total_committed": 3306,
+    "total_lines_changed": 3328,
+    "agent_percentage": 0.390625,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 292,
+      "user_lines_removed": 0,
+      "agent_lines_added": 2711,
+      "agent_lines_removed": 3,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 142,
+        "evidence/stories/bunny-sharing-2/video/receipt.json": 149
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 303,
+      "user_lines_removed": 0,
+      "agent_lines_added": 3019,
+      "agent_lines_removed": 308,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 142,
+        "evidence/stories/bunny-sharing-2/video/receipt.json": 142,
+        "evidence/stories/bunny-sharing-2/video/spec.json": 18
+      }
+    }
+  ]
+}

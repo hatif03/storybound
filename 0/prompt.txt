@@ -386,3 +386,43 @@ No do the next steps, and I dont want a video of the app demo, I want a video th
 <status>completed</status>
 <summary>Background command "Wait for sweep 5 to finish" completed (exit code 0)</summary>
 </task-notification>
+
+---
+
+I have also been give an api key by the hackathon organisers: ***REMOVED-LITELLM_API_KEY***
+
+<pasted_content id="f327">
+Make your first call
+Save your key privately
+Set LITELLM_API_KEY in your backend’s process environment. If you use a .env file, load it in your app and exclude it from Git.
+
+Point your client here
+API base URL
+CopyAPI base URL
+https://litellm.vision.aivar.app/v1
+Use your key as the Bearer token. With Python, install openai and use the example below.
+
+Choose a model
+nova-micro
+nova-lite
+nova-pro
+nova-2-lite
+claude-haiku
+claude-sonnet-4.6
+claude-opus-4.6
+Python
+CopyPython
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://litellm.vision.aivar.app/v1",
+    api_key=os.environ["LITELLM_API_KEY"],
+)
+
+response = client.chat.completions.create(
+    model="claude-haiku",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+print(response.choices[0].message.content)
+</pasted_content id="f327">

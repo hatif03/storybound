@@ -93,6 +93,8 @@ def record(span_obj: Any, verdict: dict) -> None:
         passed = verdict.get("status") in ("pass", "warning", "skipped")
         span_obj.set_attribute("neatlogs.guardrail.passed", passed)
         span_obj.set_attribute("neatlogs.guardrail.output", json.dumps(verdict, default=str)[:8000])
+        if verdict.get("score") is not None:
+            span_obj.set_attribute("neatlogs.guardrail.score", float(verdict["score"]))
         for k in ("status", "attempt", "verdict_by", "judge_model", "sampled"):
             if k in verdict and verdict[k] is not None:
                 span_obj.set_attribute(f"neatlogs.eval.{k}", verdict[k])

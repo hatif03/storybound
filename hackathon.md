@@ -27,6 +27,12 @@ Solo builder. AI coding help: Claude Code (checkpointed by Entire).
 - MCP configs prepared for Claude Code (`.mcp.json`) and Cursor (`.cursor/mcp.json`): neatlogs (key from the environment), cfo.ai (OAuth), Crustdata (OAuth). No secret is stored in either file.
 - Setup files prepared before kickoff: `CLAUDE.md`, `AGENTS.md`, `.gitignore`, `.env.example`, MCP configs, `scripts/dev-shell.ps1` (a 20-line helper that loads `.env`). They contain no application logic.
 
+### 2026-10-10, kickoff 12:30 IST
+- 12:30 **First commit** `03f9586` at 12:30:17 IST (setup files only, no application code). 12:30 GitHub repository `hatif03/storybound` created **private** (publish later with one command, see `docs/setup/SETUP.md`); history pushed. Note: commit `0b526c2` message says "storybond", a typo corrected one minute later in `591e717`; history is not rewritten.
+- 12:37 **Entire Brain** installed by hand from the v0.1.0 Windows release (checksum verified), set up with `--no-backfill --no-daemon`, agent guide written, six durable project rules stored with explicit paths (no model calls). Commit `1f687f4`. No `Entire-Checkpoint` trailer yet: this planning session is not rooted in the repo, so Entire has no session to link; checkpoints start with the first Claude Code session started from `D:\storybound`.
+- Launch video (a motion graphic from the demo drawings and brand assets, scratch voice-over by Gemini TTS) built outside the repo in `D:
+eatlogs\launch-video`.
+
 (Next entries are appended after each work session.)
 
 ## Demo

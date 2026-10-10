@@ -36,6 +36,7 @@ from .textutil import norm_ws
 
 CALM_REFUSAL = "This drawing isn't one I can turn into a story. Could we try a different picture together?"
 CALM_REDRAW = "I couldn't quite see a hero in that picture. Could you draw one a little bigger and darker?"
+MAX_AHEAD = 3  # pages written ahead of the oldest page still under review
 CALM_STOP = "I couldn't make this story gentle enough, so I stopped. Could we try another picture?"
 
 
@@ -51,6 +52,7 @@ class RunConfig:
     fixture: str | None = None
     ledger_name: str | None = None
     judge_enabled: bool = True
+    judge_fn: Any = None  # tests inject a fake judge; None means the K2 judge
 
 
 class S(TypedDict, total=False):
@@ -67,6 +69,7 @@ class S(TypedDict, total=False):
     route: str
     vs: list[Verdict]
     notes: list[dict]
+    inflight: list[dict]
 
 
 def _public_page(p: Page) -> dict:
@@ -113,6 +116,7 @@ class Run:
             on_verdict=self.on_verdict,
             judge_enabled=self.cfg.judge_enabled,
             defer_judge_on_det_fail=self.cfg.arm == "B1",
+            **({"judge": self.cfg.judge_fn} if self.cfg.judge_fn else {}),
         )
         return self.engine
 
@@ -200,6 +204,11 @@ def build_graph(run: Run):
 
     @tracing.span(kind="AGENT", name="node.oath")
     def n_oath(s: S) -> S:
+        """Write the oath. In the gated arm the story plan is made at the same time: it needs only the card."""
+        pool, fut = None, None
+        if cfg.arm != "B0":
+            pool = cf.ThreadPoolExecutor(max_workers=1)
+            fut = pool.submit(contextvars.copy_context().run, planner.plan, lesson, s["card"], cfg.age, n_pages)
         oath, info = oath_author.author(lesson, s["card"])
         run.engine.oath = oath
         plain = {c.id: c.plain for c in oath.commitments}
@@ -209,18 +218,24 @@ def build_graph(run: Run):
              "commitments": [{"id": c.id, "scope": c.scope, "title": c.title, "plain": plain[c.id], "core": c.core,
                               "verifier": c.verifier} for c in oath.commitments]},
         )  # fmt: skip
-        return {"oath": oath}
-
-    @tracing.span(kind="AGENT", name="node.plan")
-    def n_plan(s: S) -> S:
-        beats, _u = planner.plan(lesson, s["card"], cfg.age, n_pages)
-        # seeded, balanced placement of the correct answer: half in each slot, shuffled
-        slots = [0, 1] * (n_pages // 2)
-        rng(cfg.seed, "slots").shuffle(slots)
-        run.emit("plan.ready", {"beats": [planner.beat_text(b) for b in beats]})
-        return {"beats": beats, "slots": slots}
+        out: S = {"oath": oath}
+        if fut is not None and pool is not None:
+            beats, _u = fut.result()
+            pool.shutdown()
+            # seeded, balanced placement of the correct answer: half in each slot, shuffled
+            slots = [0, 1] * (n_pages // 2)
+            rng(cfg.seed, "slots").shuffle(slots)
+            run.emit("plan.ready", {"beats": [planner.beat_text(b) for b in beats]})
+            out.update({"beats": beats, "slots": slots})
+        return out
 
     # ---- B1 scene loop ------------------------------------------------------------------------------------------------
+    # Pages are written ahead while the slow judge reviews earlier ones (at most MAX_AHEAD in flight). A page is shown
+    # (scene.accepted) only after its review is back and clean, in order. If a review fails, everything written after
+    # that page is thrown away and the page is repaired, so verification still gates what the child can see.
+
+    def chain(s: S) -> list[Page]:
+        return [*s["pages"], *[e["page"] for e in s.get("inflight", [])]]
 
     @tracing.span(kind="AGENT", name="node.write")
     def n_write(s: S) -> S:
@@ -228,27 +243,72 @@ def build_graph(run: Run):
         run.emit("scene.started", {"index": i, "attempt": 0})
         page, _u = writer.write_scene(
             index=i, beat=planner.beat_text(s["beats"][i - 1]), lesson=lesson, card=s["card"], oath=s["oath"],
-            pages=s["pages"], age=cfg.age, correct_slot=s["slots"][i - 1],
+            pages=chain(s), age=cfg.age, correct_slot=s["slots"][i - 1],
         )  # fmt: skip
         return {"pending": page, "attempt": 0, "regens": 0}
 
+    def decide(vs: list[Verdict], attempt: int, regens: int) -> str:
+        eng = run.engine
+        gates = [(v, eng.gate(v)) for v in vs]
+        if any(g == "critical" for _, g in gates):
+            return "regen" if regens < 1 else "stop"
+        if any(g == "repair" for _, g in gates):
+            return "repair" if attempt < max_rep else "accept_noted"
+        return "accept"
+
+    def bad_first(vs: list[Verdict]) -> list[Verdict]:
+        eng = run.engine
+        crit = [v for v in vs if eng.gate(v) == "critical"]
+        rep = [v for v in vs if eng.gate(v) == "repair"]
+        return crit or rep or vs
+
     @tracing.span(kind="CHAIN", name="node.verify")
     def n_verify(s: S) -> S:
-        eng = run.engine
+        eng, page, attempt = run.engine, s["pending"], s["attempt"]
         if run.over_budget() and not eng.rates:
             eng.rates = {"quality": 0.0, "image": 0.0}
             run.degrade("judge", "per-story budget reached", "quality judging off; safety checks unchanged")
-        vs = eng.verify_scene(s["pending"], s["attempt"])
-        gates = [(v, eng.gate(v)) for v in vs]
-        crit = [v for v, g in gates if g == "critical"]
-        rep = [v for v, g in gates if g == "repair"]
-        if crit:
-            route = "regen" if s["regens"] < 1 else "stop"
-        elif rep:
-            route = "repair" if s["attempt"] < max_rep else "accept_noted"
-        else:
-            route = "accept"
-        return {"vs": crit or rep or vs, "route": route}
+        pend = eng.verify_scene_async(page, attempt)
+        if pend.det_failed and attempt < max_rep:  # a cheap check failed: repair now, judge after the repair
+            vs = pend.result()
+            route = decide(vs, attempt, s["regens"])
+            if route in ("repair", "regen", "stop"):
+                return {"vs": bad_first(vs), "route": route}
+            # nothing blocking (for example a quality check that could not run): carry on like a clean page
+        entry = {"page": page, "attempt": attempt, "regens": s["regens"], "pend": pend}
+        return {"inflight": [*s.get("inflight", []), entry], "i": s["i"] + 1, "route": "submit"}
+
+    def n_submit(s: S) -> S:
+        return {}
+
+    def after_submit(s: S) -> str:
+        return "settle" if len(s["inflight"]) >= MAX_AHEAD or s["i"] > n_pages else "write"
+
+    @tracing.span(kind="CHAIN", name="node.settle")
+    def n_settle(s: S) -> S:
+        """Wait for the oldest review. Clean: show the page. Not clean: roll back to it and repair."""
+        head, rest = s["inflight"][0], s["inflight"][1:]
+        page, attempt, regens = head["page"], head["attempt"], head["regens"]
+        vs = head["pend"].result()
+        route = decide(vs, attempt, regens)
+        if route in ("accept", "accept_noted"):
+            if route == "accept_noted":
+                for v in vs:
+                    if not v.ok:
+                        run.shipped.append({"commitment": v.commitment, "scope": v.scope, "actual": v.actual})
+            pages = [*s["pages"], page]
+            run.ctx.pages = pages
+            run.emit("scene.accepted", {"index": page.index, "attempts_used": attempt, "page": _public_page(page)})
+            if not rest and s["i"] > n_pages:
+                nxt = "story_gate"
+            elif rest and (len(rest) >= MAX_AHEAD or s["i"] > n_pages):
+                nxt = "settle"
+            else:
+                nxt = "write"
+            return {"pages": pages, "inflight": rest, "route": nxt}
+        # roll back: pages written after this one are discarded; this page goes round the repair loop
+        return {"inflight": [], "i": page.index, "pending": page, "attempt": attempt, "regens": regens,
+                "vs": bad_first(vs), "route": route}  # fmt: skip
 
     def failing_info(vs: list[Verdict]) -> dict:
         bad = [v for v in vs if not v.ok or v.status == "verification_error"]
@@ -263,7 +323,7 @@ def build_graph(run: Run):
 
     @tracing.span(kind="AGENT", name="node.repair")
     def n_repair(s: S) -> S:
-        i, attempt = s["i"], s["attempt"] + 1
+        i, attempt = s["pending"].index, s["attempt"] + 1
         info = failing_info(s["vs"])
         run.repairs.append({"stage": "scene", "index": i, "attempt": attempt, "failed": info["commitment"]})
         run.emit(
@@ -280,13 +340,13 @@ def build_graph(run: Run):
     @tracing.span(kind="AGENT", name="node.regen")
     def n_regen(s: S) -> S:
         """Tier C: our own output tripped a safety check. Quarantine the page and write it again once."""
-        i, attempt = s["i"], s["attempt"] + 1
+        i, attempt = s["pending"].index, s["attempt"] + 1
         run.repairs.append({"stage": "scene", "index": i, "attempt": attempt, "failed": "safety", "regen": True})
         run.emit("scene.repair", {"index": i, "attempt": attempt, "failed": [v.commitment for v in s["vs"]],
                                   "because": "page quarantined; writing it again"})  # fmt: skip
         page, _u = writer.write_scene(
             index=i, beat=planner.beat_text(s["beats"][i - 1]), lesson=lesson, card=s["card"], oath=s["oath"],
-            pages=s["pages"], age=cfg.age, correct_slot=s["slots"][i - 1], temperature=0.95,
+            pages=chain(s), age=cfg.age, correct_slot=s["slots"][i - 1], temperature=0.95,
         )  # fmt: skip
         run.emit("scene.started", {"index": i, "attempt": attempt})
         return {"pending": page, "attempt": attempt, "regens": s["regens"] + 1}
@@ -297,26 +357,6 @@ def build_graph(run: Run):
             "run.refused", {"reason_code": "unsafe_story", "message": CALM_STOP, "trace_id": tracing.current_trace_id()}
         )
         return {"halt": "stopped"}
-
-    def accept(s: S, noted: bool) -> S:
-        page = s["pending"]
-        if noted:
-            for v in s["vs"]:
-                if not v.ok:
-                    run.shipped.append({"commitment": v.commitment, "scope": v.scope, "actual": v.actual})
-        pages = [*s["pages"], page]
-        run.ctx.pages = pages
-        run.emit("scene.accepted", {"index": page.index, "attempts_used": s["attempt"], "page": _public_page(page)})
-        return {"pages": pages, "i": s["i"] + 1}
-
-    def n_accept(s: S) -> S:
-        return accept(s, False)
-
-    def n_accept_noted(s: S) -> S:
-        return accept(s, True)
-
-    def after_accept(s: S) -> str:
-        return "story_gate" if s["i"] > n_pages else "write"
 
     # ---- B0: one call, evaluate afterwards ----------------------------------------------------------------------------
 
@@ -495,8 +535,8 @@ def build_graph(run: Run):
 
     g = StateGraph(S)
     for name, fn in [("intake", n_intake), ("safety", n_safety), ("character", n_character), ("oath", n_oath),
-                     ("plan", n_plan), ("write", n_write), ("verify", n_verify), ("repair", n_repair),
-                     ("regen", n_regen), ("stop", n_stop), ("accept", n_accept), ("accept_noted", n_accept_noted),
+                     ("write", n_write), ("verify", n_verify), ("submit", n_submit), ("settle", n_settle),
+                     ("repair", n_repair), ("regen", n_regen), ("stop", n_stop),
                      ("baseline", n_baseline), ("story_gate", n_story_gate), ("media", n_media),
                      ("receipt", n_receipt)]:  # fmt: skip
         g.add_node(name, fn)
@@ -504,18 +544,20 @@ def build_graph(run: Run):
     g.add_edge("intake", "safety")
     g.add_conditional_edges("safety", halted, {"end": END, "go": "character"})
     g.add_edge("character", "oath")
-    g.add_edge("oath", "plan")
     g.add_conditional_edges(
-        "plan", lambda s: "baseline" if cfg.arm == "B0" else "write", {"baseline": "baseline", "write": "write"}
+        "oath", lambda s: "baseline" if cfg.arm == "B0" else "write", {"baseline": "baseline", "write": "write"}
     )
     g.add_edge("write", "verify")
     g.add_conditional_edges("verify", lambda s: s["route"],
-                            {"accept": "accept", "accept_noted": "accept_noted", "repair": "repair", "regen": "regen", "stop": "stop"})  # fmt: skip
+                            {"submit": "submit", "repair": "repair", "regen": "regen", "stop": "stop",
+                             "accept_noted": "submit"})  # fmt: skip
+    g.add_conditional_edges("submit", after_submit, {"settle": "settle", "write": "write"})
+    g.add_conditional_edges("settle", lambda s: s["route"],
+                            {"write": "write", "settle": "settle", "story_gate": "story_gate", "repair": "repair",
+                             "regen": "regen", "stop": "stop"})  # fmt: skip
     g.add_edge("repair", "verify")
     g.add_edge("regen", "verify")
     g.add_edge("stop", END)
-    for a in ("accept", "accept_noted"):
-        g.add_conditional_edges(a, after_accept, {"story_gate": "story_gate", "write": "write"})
     g.add_edge("baseline", "story_gate")
     g.add_edge("story_gate", "media")
     g.add_edge("media", "receipt")
@@ -580,6 +622,7 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
             "usd_estimate": run.meter.cost_usd(st.prices), "estimate": True, "seconds": round(_now() - run.t0, 1),
             "tokens_in": totals["tokens_in"], "tokens_out": totals["tokens_out"], "images": totals["images"],
             "calls": totals["calls"], "by_model": totals["by_model"],
+            "first_page_s": next((e["t"] for e in run.bus.all() if e["type"] == "scene.accepted"), None),
         },
         "prompt_version": prompts.VERSION,
         "models": {"writer": st.models.writer, "judge": st.models.judge, "vision": st.models.vision},

@@ -9,10 +9,12 @@ Policy (docs/DESIGN.md section 3.3):
 
 from __future__ import annotations
 
+import concurrent.futures as cf
+import contextvars
 import hashlib
 import json
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from .. import tracing
@@ -52,6 +54,20 @@ def gate(v: Verdict, c: Commitment) -> Gate:
 
 
 @dataclass
+class Pending:
+    """A verification whose judge call may still be running. `result()` waits, emits the verdicts, returns them."""
+
+    det_failed: bool
+    _finish: Callable[[], list[Verdict]]
+    _done: list[Verdict] | None = None
+
+    def result(self) -> list[Verdict]:
+        if self._done is None:
+            self._done = self._finish()
+        return self._done
+
+
+@dataclass
 class Engine:
     oath: Oath
     ctx: d.Ctx
@@ -61,6 +77,7 @@ class Engine:
     on_verdict: Callable[[Verdict], None] | None = None
     judge_enabled: bool = True  # False for the offline test mode; the receipt says so
     defer_judge_on_det_fail: bool = False  # the gated arm sets this; the observe-only arm judges every page
+    _pool: cf.ThreadPoolExecutor = field(default_factory=lambda: cf.ThreadPoolExecutor(max_workers=4), repr=False)
 
     # ---- plumbing -----------------------------------------------------------------------------------------------------
 
@@ -128,7 +145,12 @@ class Engine:
 
     def _run(self, commitments: list[Commitment], label: str, subject, text: str, attempt: int, *,
              det_subject=None) -> list[Verdict]:  # fmt: skip
-        """Verify every commitment of one scope over one subject."""
+        """Verify every commitment of one scope over one subject, waiting for the judge."""
+        return self._run_async(commitments, label, subject, text, attempt, det_subject=det_subject).result()
+
+    def _run_async(self, commitments: list[Commitment], label: str, subject, text: str, attempt: int, *,
+                   det_subject=None) -> Pending:  # fmt: skip
+        """Deterministic checks run now; the judge call (if any) runs in the background until `.result()`."""
         dets: dict[str, d.Det | None] = {}
         for c in commitments:
             fn = catalog.DET.get(c.id)
@@ -161,18 +183,29 @@ class Engine:
             draws[c.id] = (hit, f"seed={self.ctx.seed} rate={rate:.2f} draw={u:.3f}")
             if hit:
                 to_judge.append(c)
-        outs = self.judge(to_judge, text, self._judge_context()) if to_judge else {}
-        verdicts = []
-        for c in commitments:
-            hit, tag = draws.get(c.id, (False, None))
-            v = self._combine(c, label, attempt, dets[c.id], outs.get(c.id), hit, tag)
-            verdicts.append(self._emit(v, text))
-        return verdicts
+        fut = None
+        if to_judge:
+            jctx = self._judge_context()
+            fut = self._pool.submit(contextvars.copy_context().run, self.judge, to_judge, text, jctx)
+
+        def finish() -> list[Verdict]:
+            outs = fut.result() if fut else {}
+            verdicts = []
+            for c in commitments:
+                hit, tag = draws.get(c.id, (False, None))
+                v = self._combine(c, label, attempt, dets[c.id], outs.get(c.id), hit, tag)
+                verdicts.append(self._emit(v, text))
+            return verdicts
+
+        return Pending(det_failed=any(x is not None and x.status != "pass" for x in dets.values()), _finish=finish)
 
     # ---- public verification entry points -----------------------------------------------------------------------------
 
     def verify_scene(self, page: Page, attempt: int = 0) -> list[Verdict]:
         return self._run(self.commitments("scene"), f"scene {page.index}", page, page_block(page), attempt)
+
+    def verify_scene_async(self, page: Page, attempt: int = 0) -> Pending:
+        return self._run_async(self.commitments("scene"), f"scene {page.index}", page, page_block(page), attempt)
 
     def verify_story(self, pages: list[Page], attempt: int = 0) -> list[Verdict]:
         text = "\n\n".join(page_block(p) for p in pages)

@@ -189,3 +189,49 @@ def test_writer_tolerates_a_missing_image_prompt_and_retries_bad_json():
     assert calls == [0, 1] and page.index == 2 and page.choices[1].is_correct
     with pytest.raises(ClientError):
         writer._page_from(lambda k: Result(value={}), 1, 0)
+
+
+def test_failed_review_rolls_back_pages_written_ahead(monkeypatch, drawing):
+    """Pages are written while earlier ones are under review; a failed review discards everything after it."""
+    from storybound.oath.judge import JudgeOut
+
+    wire(monkeypatch)
+    writes = []
+    orig_write = writer.write_scene
+
+    def spy_write(**kw):
+        writes.append(kw["index"])
+        return orig_write(**kw)
+
+    monkeypatch.setattr(writer, "write_scene", spy_write)
+    seen = {}
+
+    def judge(items, text, context):
+        page = int(text.split()[1]) if text.startswith("PAGE") else 0  # "PAGE n"
+        seen[page] = seen.get(page, 0) + 1
+        out = {}
+        for c in items:
+            if page == 3 and seen[page] == 1 and c.id == "correct_choice_teaches_lesson":
+                out[c.id] = JudgeOut("violation", None, "x", "the right answer does not teach the lesson", model="fake")
+            else:
+                out[c.id] = JudgeOut("pass", 0.9, None, "ok", model="fake")
+        return out
+
+    bus = EventLog()
+    run = pipeline.Run(
+        cfg=pipeline.RunConfig(lesson_id="sharing", media=False, judge_fn=judge),
+        drawing=drawing, bus=bus, story_id="t2",
+    )  # fmt: skip
+    pipeline.execute(run)
+    evs = bus.all()
+    accepted = [e["data"]["index"] for e in evs if e["type"] == "scene.accepted"]
+    assert accepted == list(range(1, 9)), f"pages are shown in order, each exactly once: {run.error} {[e['type'] for e in evs][-6:]}"
+    assert run.outcome == "shipped" and run.error == ""
+    assert seen[3] == 2, "page 3 was reviewed, failed, repaired and reviewed again"
+    assert writes.count(4) >= 2, "page 4 was written ahead, discarded after the rollback, and written again"
+    rep = [e for e in evs if e["type"] == "scene.repair"]
+    assert rep and rep[0]["data"]["index"] == 3
+    # nothing is shown before its review has come back: page 3 is accepted only after the repair
+    first3 = next(i for i, e in enumerate(evs) if e["type"] == "scene.accepted" and e["data"]["index"] == 3)
+    repair = next(i for i, e in enumerate(evs) if e["type"] == "scene.repair")
+    assert repair < first3

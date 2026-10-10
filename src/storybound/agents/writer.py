@@ -55,11 +55,11 @@ def assemble(index: int, j: dict, correct_slot: int) -> Page:
 def _page_from(call, index: int, correct_slot: int) -> tuple[Page, dict]:
     """Run a model call and assemble the page; one fresh attempt if the JSON was not a usable page."""
     for attempt in range(2):
-        r = call(attempt)
         try:
+            r = call(attempt)
             page = assemble(index, r.value if isinstance(r.value, dict) else {}, correct_slot)
             return page, {"tokens_in": r.usage.input_tokens, "tokens_out": r.usage.output_tokens}
-        except ClientError:
+        except ClientError:  # includes unparseable or truncated model output
             if attempt == 1:
                 raise
     raise ClientError("unreachable")  # pragma: no cover

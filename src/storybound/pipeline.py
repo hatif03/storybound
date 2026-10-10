@@ -530,26 +530,13 @@ def build_graph(run: Run):
         pages = s["pages"]
         run.ctx.pages = pages
         try:
-            made = quizmaker.make_quiz(pages, s["card"], lesson, cfg.age, cfg.seed)
+            quiz = quizmaker.verified_quiz(run.engine, pages, s["card"], lesson, cfg.age, cfg.seed, max_rep, run.repairs)
         except Exception as e:  # no quiz is better than a broken one: the story itself is already complete
             run.degrade("check", f"quiz maker failed: {type(e).__name__}", "no quiz")
             return {}
-        kept = []
-        for q in made.items:
-            for attempt in range(max_rep + 1):
-                bad = [v for v in run.engine.verify_quiz(q, attempt) if not v.ok]
-                if not bad:
-                    kept.append(q)
-                    break
-                if attempt < max_rep:
-                    run.repairs.append({"stage": "quiz", "index": q.index, "attempt": attempt + 1, "failed": ", ".join(v.commitment for v in bad)})
-                    try:
-                        q = quizmaker.repair_item(q, "; ".join(f"{v.commitment}: {v.actual}" for v in bad)[:400], pages, cfg.age, cfg.seed)
-                    except Exception:
-                        break
-        if len(kept) >= 2:
-            run.quiz = Quiz(items=kept, talk_about=made.talk_about)
-            run.emit("quiz.ready", run.quiz.model_dump())
+        if quiz:
+            run.quiz = quiz
+            run.emit("quiz.ready", quiz.model_dump())
         else:
             run.degrade("check", "fewer than two questions passed their promises", "no quiz")
         return {}

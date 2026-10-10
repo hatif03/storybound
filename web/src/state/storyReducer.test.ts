@@ -149,3 +149,16 @@ describe('honesty', () => {
     expect(unchecked?.state).toBe('unchecked');
   });
 });
+
+describe('quiz', () => {
+  it('keeps the verified quiz that arrives after the story', () => {
+    const quiz = {
+      talk_about: 'What do you like to share?',
+      items: [{ index: 1, kind: 'recall' as const, question: 'What did Poppy find?', evidence_page: 1, evidence_quote: 'Poppy finds a carrot', explain: 'Look:',
+        options: [{ id: 'a', text: 'A carrot', is_correct: true }, { id: 'b', text: 'A shoe', is_correct: false }, { id: 'c', text: 'A cloud', is_correct: false }] }],
+    };
+    const s = fold([{ id: 0, t: 1, type: 'quiz.ready', data: quiz } as StoryEvent]);
+    expect(s.quiz?.items[0].options.filter((o) => o.is_correct)).toHaveLength(1);
+    expect(s.quiz?.talk_about).toMatch(/share/);
+  });
+});

@@ -42,6 +42,13 @@ export interface Receipt {
   trace_id: string; generated_at: string;
 }
 
+export interface QuizOption { id: string; text: string; is_correct: boolean }
+export interface QuizItem {
+  index: number; kind: 'recall' | 'detail' | 'feeling' | 'lesson'; question: string; options: QuizOption[];
+  evidence_page: number; evidence_quote: string; explain: string;
+}
+export interface Quiz { items: QuizItem[]; talk_about: string }
+
 export type SafetyAction = 'proceed' | 'sanitise' | 'refuse' | 'ask_redraw';
 
 // Every event on the wire: { id, type, t, data }  (backend: `id` is the Last-Event-ID; API.md does not list it)
@@ -58,6 +65,7 @@ export type StoryEvent =
   | { id?: number; t: number; type: 'scene.accepted'; data: { index: number; attempts_used: number; page: Page } }
   | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } }
   | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } }
+  | { id?: number; t: number; type: 'quiz.ready'; data: Quiz }
   | { id?: number; t: number; type: 'degraded'; data: Degradation }
   | { id?: number; t: number; type: 'receipt'; data: Receipt }
   | { id?: number; t: number; type: 'run.finished'; data: { outcome: 'shipped' | 'shipped_with_notes'; story_id: string } }
@@ -67,7 +75,7 @@ export type StoryEvent =
 export type EventType = StoryEvent['type'];
 export const EVENT_TYPES: EventType[] = [
   'run.started', 'safety.result', 'character.ready', 'oath.ready', 'plan.ready', 'scene.started', 'verdict', 'scene.repair',
-  'scene.accepted', 'image.ready', 'audio.ready', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
+  'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
 ];
 
 export interface StartRequest {

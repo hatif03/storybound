@@ -258,6 +258,7 @@ DET: dict[str, Callable] = {
     "quiz_quote_in_story": d.quiz_quote_in_story,
     "quiz_one_correct": d.quiz_one_correct,
     "quiz_reading_level": d.quiz_reading_level,
+    "quiz_no_tell": d.quiz_no_tell,
     "quiz_safe_text": d.quiz_safe_text,
     "schema_valid": d.schema_valid,
     "one_correct_choice": d.one_correct_choice,
@@ -387,6 +388,9 @@ QUIZ = [
     C(id="quiz_one_correct", scope="quiz", title="One right answer",
       plain="Every quiz question has three answers and exactly one is right.", klass="quality",
       verifier="deterministic", cover="quiz", repair_hint="Give exactly three different answers, one of them right."),
+    C(id="quiz_no_tell", scope="quiz", title="The right answer does not give itself away",
+      plain="The right answer is not simply the longest one, so a guess has to come from the story.", klass="quality",
+      verifier="deterministic", cover="quiz", repair_hint="Make the wrong answers as long and detailed as the right one."),
     C(id="quiz_reading_level", scope="quiz", title="Quiz words are easy",
       plain="Quiz questions and answers use short, easy words for the child's age.", klass="quality",
       verifier="deterministic", cover="quiz", repair_hint="Use shorter sentences and easy words."),
@@ -394,7 +398,7 @@ QUIZ = [
       plain="Quiz questions and answers are gentle, with no scary or unkind words.", klass="safety",
       verifier="deterministic", cover="quiz", repair_hint="Use gentle words only."),
     C(id="quiz_answerable", scope="quiz", title="Quiz can be answered from the story",
-      plain="A quiz question can be answered from the story alone, and only one answer is right.", klass="quality",
+      plain="A quiz question can be answered from the story alone, and only one answer is right.", klass="safety",  # unverified = not shown
       verifier="judge", rubric=QUIZ_RUBRIC, pass_score=0.8, cover="quiz",
       repair_hint="Make the right answer follow from the quoted line and the others clearly not."),
 ]

@@ -1,6 +1,6 @@
 // One small pure reducer: folds the backend's event stream (docs/API.md "Events") into UI state.
 // No I/O, no timers. Replayed events (reconnect with Last-Event-ID, or a late join) are ignored by `id`.
-import type { CharacterCard, Commitment, Degradation, Page, Receipt, SafetyAction, StoryEvent, VerdictStatus } from '../api/types';
+import type { CharacterCard, Commitment, Degradation, Page, Quiz, Receipt, SafetyAction, StoryEvent, VerdictStatus } from '../api/types';
 
 export type Step =
   | 'start' | 'looking' | 'meeting' | 'promise' | 'planning' | 'writing' | 'checking' | 'fixing' | 'painting' | 'voice' | 'wrapping' | 'done';
@@ -39,6 +39,7 @@ export interface StoryState {
   verdicts: Record<string, Record<string, { status: VerdictStatus; attempt: number }>>; // commitment -> scope -> latest
   everBad: Record<string, boolean>; // commitment -> a check failed at some point (run-level checks come before the oath)
   receipt?: Receipt;
+  quiz?: Quiz; // only questions that passed every quiz promise
   outcome?: 'shipped' | 'shipped_with_notes';
   refusal?: { reasonCode: string; message: string; traceId: string };
   error?: { code: string; message: string };
@@ -171,6 +172,9 @@ export function storyReducer(state: StoryState, action: StoryAction): StoryState
       const next = { ...base, media };
       return { ...next, step: state.pages.length >= state.totalPages ? { kind: mediaStep(next) } : state.step };
     }
+
+    case 'quiz.ready':
+      return { ...base, quiz: ev.data };
 
     case 'degraded': {
       const d = ev.data;

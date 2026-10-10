@@ -54,7 +54,7 @@ def fake_quiz(pages, card, lesson, age, seed, bad_quote_on=None):
     items = []
     for i, p in enumerate(pages[:4], 1):
         quote = "this line is not on the page at all" if i == bad_quote_on else " ".join(p.scenario.split()[:5])
-        items.append(QuizItem(index=i, kind=("recall", "order", "feeling", "lesson")[i - 1], question=f"What did {card.name} do?",
+        items.append(QuizItem(index=i, kind=("recall", "detail", "feeling", "lesson")[i - 1], question=f"What did {card.name} do?",
                               options=[QuizOption(id="a", text="Shared", is_correct=True), QuizOption(id="b", text="Hid", is_correct=False),
                                        QuizOption(id="c", text="Ran", is_correct=False)],
                               evidence_page=p.index, evidence_quote=quote, explain="Look: the line."))  # fmt: skip

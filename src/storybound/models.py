@@ -115,7 +115,7 @@ class QuizItem(BaseModel):
     """One question about the finished story. It is shown only if every quiz promise held for it."""
 
     index: int
-    kind: Literal["recall", "order", "feeling", "lesson"]
+    kind: Literal["recall", "detail", "feeling", "lesson"]
     question: str
     options: list[QuizOption]
     evidence_page: int

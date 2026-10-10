@@ -88,6 +88,16 @@ still picture. Poses 03 (crying) and 08 (angry) are deliberately not shipped. Po
 supplied still composites. A still WebP shows first and stays if Rive fails or motion is reduced. The Rive runtime (~230 KB JS, 2 MB wasm) is
 lazy-loaded and self-hosted; the runtime's CDN fallback is disabled.
 
+## Quizzes and games: what they are and the rules they keep
+
+After the last page a child gets (1) a short quiz about the story and (2) a "which picture came first?" game, then the end screen. Both are skippable and neither can be failed.
+
+**Quiz.** Four questions made after the story is verified: two recall (a detail from a page, a different detail from another page), one feeling (why someone did something) and one lesson (why the kind choice was good). Every question must keep five promises before a child sees it (scope `quiz` in the oath): it quotes a line that is on the cited page word for word; it has three different answers and exactly one is right; its words fit the child's age; it is gentle; and a judge on every question confirms the story alone supports the right answer and no other. A fixed rule also stops the right answer being simply the longest. A question that cannot pass after two repairs is dropped, and a question the judge could not check is never shown. A wrong answer is not a penalty: it shows the line of the story that answers the question and lets the child try again.
+
+**Picture-order game.** Three pictures from the story, shuffled; tap them in the order of the story. The answer is the order of the pages, so it is right by construction. A wrong tap wiggles back with a hint.
+
+**Healthy-play rules (checked in review, not just promised).** No timers, lives, streaks, countdowns or scores shown to the child; no rewards for coming back, no loss when a child leaves; nothing starts by itself (no autoplay of the next story); no ads, accounts or purchases; every game can be skipped; after two stories in one sitting Pip suggests resting the eyes (a suggestion, never a lock); practice results stay in the browser tab and appear only in the grown-ups area ("Today's practice"), never on a server. These follow the NTIA recommended practices for industry (no streak rewards or other features that pressure minors to keep returning) and Common Sense Media's account of streak and loss mechanics as manipulative. A grown-up conversation card ("A grown-up can ask: ...") follows the dialogic-reading approach of prompting, evaluating and expanding with the child.
+
 ## Privacy and accessibility choices
 
 No analytics, no third-party requests (checked by `npm run shots`, which fails the report on any request leaving the origin), fonts and art

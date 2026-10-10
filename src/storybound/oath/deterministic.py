@@ -314,3 +314,15 @@ def quiz_safe_text(q, ctx: Ctx) -> Det:
     if mild:
         return _bad(f"unkind or harsh terms: {', '.join(sorted(set(mild)))}", matched=mild[0])
     return Det("pass", "no blocked terms")
+
+
+def quiz_no_tell(q, ctx: Ctx) -> Det:
+    """A child must not be able to guess by length: the right answer may not be clearly the longest."""
+    n = {o.id: len(words(o.text)) for o in q.options}
+    right = next((o for o in q.options if o.is_correct), None)
+    if right is None:
+        return _bad("no right answer to compare")
+    longest_wrong = max(v for k, v in n.items() if k != right.id)
+    if n[right.id] > longest_wrong + 1:
+        return _bad(f"the right answer has {n[right.id]} words and the longest wrong one {longest_wrong}: it gives itself away")
+    return Det("pass", f"right answer {n[right.id]} words, longest wrong {longest_wrong}")

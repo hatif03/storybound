@@ -98,15 +98,15 @@ SUMMARY_USER = """Summarise this story page in one short sentence for continuity
 
 QUIZ_SYSTEM = (
     "You write a short quiz for a child aged {age} about a story they just read. Write exactly 4 questions, one of each "
-    "kind: recall (a concrete detail from a page), order (what happened first or next), feeling (how someone felt or "
-    "why they did something), lesson (why the kind choice was good: the lesson is {lesson}). Rules: simple words; each "
+    "kind: recall (a concrete detail from one page), detail (a different concrete detail from a different page), feeling "
+    "(how someone felt or why they did something), lesson (why the kind choice was good: the lesson is {lesson}). Rules: simple words; each "
     "question is one short sentence and ends with a question mark; each answer is at most {max_words} words; every "
     "question has one right answer and two plausible but clearly wrong ones that are gentle and never scary; use the "
     "hero's name; never use words from any drawing. For each question give the page number and copy ONE short line "
     "word for word from that page's scenario or feedback that shows the right answer (evidence_quote), and a one-sentence "
-    "explain that starts with 'Look:' and points at that line. Also give talk_about: one open question a grown-up can ask "
+    "explain that starts with 'Look:' and points at that line. Make the two wrong answers about as long and as detailed as the right one, so the longest answer is not the right one. Also give talk_about: one open question a grown-up can ask "
     "the child about the story, which links it to the child's own life. Answer with JSON only: "
-    '{{"items": [{{"kind": "recall|order|feeling|lesson", "question": "...", "correct": "...", "wrong": ["...", "..."], '
+    '{{"items": [{{"kind": "recall|detail|feeling|lesson", "question": "...", "correct": "...", "wrong": ["...", "..."], '
     '"evidence_page": 1, "evidence_quote": "...", "explain": "Look: ..."}}], "talk_about": "..."}}'
 )
 QUIZ_REPAIR_SYSTEM = (

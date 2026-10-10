@@ -8,7 +8,7 @@ from ..models import CharacterCard, Page, Quiz, QuizItem, QuizOption
 from ..oath.deterministic import target_sentence_words
 from .common import ask_json, rng
 
-KINDS = ("recall", "order", "feeling", "lesson")
+KINDS = ("recall", "detail", "feeling", "lesson")
 
 
 def _story_text(pages: list[Page]) -> str:
@@ -51,3 +51,26 @@ def repair_item(q: QuizItem, failures: str, pages: list[Page], age: int, seed: s
     raw = raw.get("items", [raw])[0] if isinstance(raw.get("items"), list) and raw["items"] else raw
     raw.setdefault("kind", q.kind)
     return _item(raw, q.index, seed + "r")
+
+
+def verified_quiz(engine, pages: list[Page], card: CharacterCard, lesson: Lesson, age: int, seed: str, max_rep: int,
+                  repairs: list | None = None) -> Quiz | None:
+    """Make the quiz and keep only the questions that keep every quiz promise (repaired at most `max_rep` times).
+    Returns None when fewer than two questions survive: no quiz is better than a broken one."""
+    engine.ctx.pages = pages
+    made = make_quiz(pages, card, lesson, age, seed)
+    kept = []
+    for q in made.items:
+        for attempt in range(max_rep + 1):
+            bad = [v for v in engine.verify_quiz(q, attempt) if not v.ok]
+            if not bad:
+                kept.append(q)
+                break
+            if attempt < max_rep:
+                if repairs is not None:
+                    repairs.append({"stage": "quiz", "index": q.index, "attempt": attempt + 1, "failed": ", ".join(v.commitment for v in bad)})
+                try:
+                    q = repair_item(q, "; ".join(f"{v.commitment}: {v.actual}" for v in bad)[:400], pages, age, seed)
+                except Exception:
+                    break
+    return Quiz(items=kept, talk_about=made.talk_about) if len(kept) >= 2 else None

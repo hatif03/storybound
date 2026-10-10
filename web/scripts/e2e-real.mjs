@@ -94,8 +94,45 @@ for (let n = 1; n <= TOTAL; n++) {
   log(`page ${n} read${hasPic ? '' : ' (no picture element)'}`);
   await clickText(n < TOTAL ? 'Next' : 'The end', '.next-inline');
 }
+// the quiz after the story: answer like a child (try answers until the story's line says so), check a wrong answer shows the line
+let quizQs = 0, wrongShowedLine = false, orderPlayed = false;
+if (await page.waitForSelector('.quiz-body', { timeout: 120000 }).catch(() => null)) {
+  while (await page.$('.quiz-body')) {
+    quizQs++;
+    const opts = await page.$$('.quiz-body .choice');
+    for (let k = 0; k < opts.length; k++) {
+      const btns = await page.$$('.quiz-body .choice');
+      await btns[k].click();
+      await sleep(300);
+      if (!(await page.$('.quiz-body .look-card'))) continue;
+      const head = await page.$eval('.look-head', (e) => e.textContent);
+      if (head.includes('Good try')) wrongShowedLine = true;
+      if (head.includes('Yes!')) break;
+    }
+    if (quizQs === 1) await shot('08a-quiz');
+    await clickText('Next', '.quiz-body button', 5000).catch(() => clickText('Done!', '.quiz-body button', 5000));
+    await sleep(500);
+  }
+  log(`quiz played: ${quizQs} questions, a wrong answer showed the story line: ${wrongShowedLine}`);
+}
+if (await page.waitForSelector('.order-tray', { timeout: 20000 }).catch(() => null)) {
+  await shot('08b-order-game');
+  for (let slot = 0; slot < 3; slot++) {
+    const cards = await page.$$('.order-card:not([disabled])');
+    for (const c of cards) {
+      await c.click();
+      await sleep(250);
+      if ((await page.$$('.slot[data-filled="true"]')).length > slot) break;
+    }
+  }
+  orderPlayed = (await page.$$('.slot[data-filled="true"]')).length === 3;
+  await shot('08c-order-done');
+  log(`picture-order game finished: ${orderPlayed}`);
+  await clickText('Next', 'button');
+}
 await page.waitForFunction(() => document.body.innerText.includes('The end!'), { timeout: 60000 });
 await shot('08-end');
+log(`talk-about card shown: ${await page.evaluate(() => !!document.querySelector('.talk'))}`);
 log('reached the end screen');
 
 let storyId = null;

@@ -1,7 +1,7 @@
 // Which screen the child is on, and what they have chosen so far. All of it lives in memory only: a drawing is never stored.
 import { useEffect, useRef } from 'react';
 
-export type Screen = 'welcome' | 'draw' | 'name' | 'lesson' | 'making' | 'reader' | 'end' | 'refusal' | 'grownups';
+export type Screen = 'welcome' | 'draw' | 'name' | 'lesson' | 'making' | 'reader' | 'quiz' | 'order' | 'end' | 'refusal' | 'grownups';
 
 export type Source =
   | { kind: 'canvas'; blob: Blob; url: string }

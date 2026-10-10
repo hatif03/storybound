@@ -186,8 +186,9 @@ function About() {
   );
 }
 
-export function Grownups({ story, onBack, onUseSample, onForget }: {
-  story: StoryState; onBack(): void; onUseSample(f: Fixture): void; onForget(): void;
+export function Grownups({ story, practice, onBack, onUseSample, onForget }: {
+  story: StoryState; practice?: { quiz: { index: number; kind: string; firstTry: boolean }[]; ordered: boolean };
+  onBack(): void; onUseSample(f: Fixture): void; onForget(): void;
 }) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<Tab>('receipt');
@@ -207,7 +208,21 @@ export function Grownups({ story, onBack, onUseSample, onForget }: {
         ))}
       </div>
       <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`} className="panel">
-        {tab === 'receipt' && <Receipt story={story} />}
+        {tab === 'receipt' && (
+          <>
+            {practice && (practice.quiz.length > 0 || practice.ordered) && (
+              <section className="practice" aria-label="Today's practice">
+                <h2>Today&apos;s practice</h2>
+                <p>
+                  {practice.quiz.length > 0 && <>Quiz: {practice.quiz.filter((r) => r.firstTry).length} of {practice.quiz.length} right on the first try. </>}
+                  {practice.ordered && <>Put three pictures of the story in order. </>}
+                  <span className="muted">This stays in this browser tab and is never sent anywhere.</span>
+                </p>
+              </section>
+            )}
+            <Receipt story={story} />
+          </>
+        )}
         {tab === 'settings' && <Settings onForget={onForget} />}
         {tab === 'demo' && <DemoDrawer onUse={onUseSample} />}
         {tab === 'about' && <About />}

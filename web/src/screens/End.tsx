@@ -13,8 +13,8 @@ const PRAISE = ['you-did-it', 'amazing', 'great-job', 'awesome'];
 const pick = (id: string | undefined) => PRAISE[(id ?? 'x').split('').reduce((a, c) => a + c.charCodeAt(0), 0) % PRAISE.length];
 
 // 6.8 The end. Stickers are shown only for promises that were kept; the receipt (behind the grown-ups gate) shows everything.
-export function End({ story, lessonTitle, onAgain, onNew, onGrownups }: {
-  story: StoryState; lessonTitle?: string; onAgain(): void; onNew(): void; onGrownups(): void;
+export function End({ story, lessonTitle, restSuggested, onAgain, onNew, onGrownups }: {
+  story: StoryState; lessonTitle?: string; restSuggested?: boolean; onAgain(): void; onNew(): void; onGrownups(): void;
 }) {
   const h = useFocusHeading<HTMLHeadingElement>();
   const fams = familyViews(story.promises, lessonTitle);
@@ -81,6 +81,14 @@ export function End({ story, lessonTitle, onAgain, onNew, onGrownups }: {
               <video controls preload="metadata" src={videoUrl(story.storyId)} width={640} />
               <a className="g-btn" href={videoUrl(story.storyId)} download="my-story.mp4"><Icon name="play" /> Save the movie</a>
             </section>
+          )}
+          {restSuggested && (
+            <p className="rest" role="status">Pip is getting sleepy. After two stories, it is a good time to rest your eyes and play outside!</p>
+          )}
+          {story.quiz?.talk_about && (
+            <aside className="talk" aria-label="A question for a grown-up">
+              <strong>A grown-up can ask:</strong> {story.quiz.talk_about}
+            </aside>
           )}
           <div className="end-actions">
             <Btn big icon="book-open-text" onClick={onAgain}>Read again</Btn>

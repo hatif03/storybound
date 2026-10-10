@@ -6,6 +6,8 @@ import { DemoBadge } from './components/DemoBadge';
 import { stop } from './lib/sound';
 import { End } from './screens/End';
 import { Grownups } from './screens/Grownups';
+import { OrderGame, orderPages } from './screens/OrderGame';
+import { Quiz, type QuizResult } from './screens/Quiz';
 import { Draw } from './screens/Draw';
 import { Making } from './screens/Making';
 import { NameHero } from './screens/NameHero';
@@ -28,6 +30,8 @@ export default function App() {
   const [lessonId, setLessonId] = useState<string | null>(null);
   const [lessonTitle, setLessonTitle] = useState<string | undefined>();
   const [promises, setPromises] = useState<string[]>([]);
+  const [practice, setPractice] = useState<{ quiz: QuizResult[]; ordered: boolean }>({ quiz: [], ordered: false });
+  const [storiesMade, setStoriesMade] = useState(0);
   const [starting, setStarting] = useState(false);
   const [startError, setStartError] = useState('');
   const [readFrom, setReadFrom] = useState(1);
@@ -57,6 +61,7 @@ export default function App() {
     setHeroName('');
     setLessonId(null);
     setPromises([]);
+    setPractice({ quiz: [], ordered: false });
     setStartError('');
     go('draw');
   };
@@ -95,6 +100,11 @@ export default function App() {
     go('name');
   };
 
+  // After the last page: a quiz about the story (if it passed its promises), then a picture-order game, then the end.
+  const finishPlay = () => { setStoriesMade((n) => n + 1); go('end'); };
+  const afterQuiz = () => (orderPages(story).length ? go('order') : finishPlay());
+  const afterReading = () => (story.quiz?.items.length ? go('quiz') : orderPages(story).length ? go('order') : finishPlay());
+
   const forget = async () => {
     if (story.storyId) await forgetStory(story.storyId).catch(() => { /* the server may already have lost it */ });
     newStory();
@@ -119,16 +129,22 @@ export default function App() {
       view = <Making story={story} source={source} lessonTitle={lessonTitle} onCancel={newStory} onRetry={() => conn.current?.retry()} onRead={() => { setReadFrom(1); go('reader'); }} />;
       break;
     case 'reader':
-      view = <Reader story={story} source={source} startAt={readFrom} onEnd={() => go('end')} onLeave={() => go('welcome')} />;
+      view = <Reader story={story} source={source} startAt={readFrom} onEnd={afterReading} onLeave={() => go('welcome')} />;
+      break;
+    case 'quiz':
+      view = <Quiz story={story} onBack={afterQuiz} onDone={(r) => { setPractice((p) => ({ ...p, quiz: r })); afterQuiz(); }} />;
+      break;
+    case 'order':
+      view = <OrderGame story={story} onBack={finishPlay} onDone={() => { setPractice((p) => ({ ...p, ordered: true })); finishPlay(); }} />;
       break;
     case 'end':
-      view = <End story={story} lessonTitle={lessonTitle} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={newStory} onGrownups={() => openGrownups('end')} />;
+      view = <End story={story} lessonTitle={lessonTitle} restSuggested={storiesMade >= 2} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={newStory} onGrownups={() => openGrownups('end')} />;
       break;
     case 'refusal':
       view = <Refusal story={story} onAgain={newStory} onGrownups={() => openGrownups('refusal')} />;
       break;
     case 'grownups':
-      view = <Grownups story={story} onBack={() => go(back)} onUseSample={useSample} onForget={forget} />;
+      view = <Grownups story={story} practice={practice} onBack={() => go(back)} onUseSample={useSample} onForget={forget} />;
       break;
   }
 

@@ -55,7 +55,7 @@ def build_spec(story_dir: Path) -> Spec:
                     Block(type="text", text=right["feedback"], at_frac=0.35)],
         ))
     scenes.append(Scene(
-        id="end", mood="party-cupcake", pause=1.2,
+        id="end", mood="party-cupcake", pause=1.2, foot=False,
         narration="The end. Before this story reached you, a checker ran {checks} checks, and rewrote {repairs} pages to keep every promise.",
         blocks=[Block(type="title", text="The end"), Block(type="claim", claim="checks"), Block(type="claim", claim="repairs")],
     ))

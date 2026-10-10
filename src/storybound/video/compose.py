@@ -76,7 +76,8 @@ def _sources(cids: list[str], resolved: dict[str, dict]) -> str:
             tag = s["ref"].split(":", 1)[1].split("#", 1)[0] if s["ref"].startswith("report:") else Path(s["file"]).name
             if tag not in seen:
                 seen.append(tag)
-    return html.escape("source: evidence/reports · " + " · ".join(seen))
+    where = "evidence/reports" if any(r.startswith("report:") for c in cids for r in (x["ref"] for x in resolved[c]["sources"])) else "this story's receipt"
+    return html.escape(f"source: {where} · " + " · ".join(seen))
 
 
 def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, float]], out: Path) -> dict:
@@ -162,7 +163,7 @@ def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, fl
                         js.append(f'tl.fromTo("#{bid}c{k}",{{scale:1}},{{scale:1.04,duration:.4,yoyo:true,repeat:1}},{t + LEAD_S + 0.3:.3f});')
                 body.append(f'<div class="choices" id="{bid}">{"".join(cards)}</div>')
             js.append(f'tl.from("#{bid}",{{opacity:0,y:44,duration:.6,ease:"power2.out"}},{at:.3f});')
-        foot = f'<div class="foot" id="s{i}-foot">#neatHack · every number on screen is read from an evidence file</div>' if sc.kind == "claim" else ""
+        foot = f'<div class="foot" id="s{i}-foot">#neatHack · every number on screen is read from an evidence file</div>' if sc.foot and sc.kind == "claim" else ""
         parts.append(
             f'<section id="scene-{i}" class="clip scene" data-start="{t:.3f}" data-duration="{dur:.3f}" data-track-index="1">'
             f'{"".join(head)}<div class="left">{"".join(left)}</div><div class="body{" split" if split else ""}" id="s{i}-body">{"".join(body)}</div>{foot}</section>'

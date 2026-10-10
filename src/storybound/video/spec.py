@@ -38,6 +38,7 @@ class Scene(BaseModel):
     min_seconds: float = 4.0
     pause: float = 0.8  # silence after the narration, for a child to think
     layout: Literal["stack", "split"] = "stack"  # split: the first image on the left, the rest on the right
+    foot: bool = True  # the "#neatHack" footer; off for videos a child will watch
     kind: Literal["claim", "story"] = "claim"  # story: text comes from an already verified story, not from us
 
 

@@ -19,7 +19,7 @@ def _rel(p: Path) -> str:
     return p.resolve().relative_to(ROOT).as_posix()
 
 
-def build_spec(story_dir: Path) -> Spec:
+def build_spec(story_dir: Path, *, own_media: bool = False) -> Spec:
     st = json.loads((story_dir / "story.json").read_text(encoding="utf-8"))
     base = _rel(story_dir)
     hero = st["card"]["name"]
@@ -59,4 +59,4 @@ def build_spec(story_dir: Path) -> Spec:
         narration="The end. Before this story reached you, a checker ran {checks} checks, and rewrote {repairs} pages to keep every promise.",
         blocks=[Block(type="title", text="The end"), Block(type="claim", claim="checks"), Block(type="claim", claim="repairs")],
     ))
-    return Spec(title=f"{hero} read-along", claims=claims, scenes=scenes, narration_style=STYLE, max_seconds=300)
+    return Spec(title=f"{hero} read-along", claims=claims, scenes=scenes, narration_style=STYLE, max_seconds=300, own_media=own_media)

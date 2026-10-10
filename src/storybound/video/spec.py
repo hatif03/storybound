@@ -48,6 +48,7 @@ class Spec(BaseModel):
     scenes: list[Scene]
     max_seconds: float = 180.0
     narration_style: str | None = None
+    own_media: bool = False  # product export of a user's own story: its run folder is allowed; evidence videos use fixtures only
     requires_coverage: bool = False  # the 3 minute demo must cover each tool on the five points
 
     def claim(self, cid: str) -> Claim:

@@ -4,19 +4,21 @@ from __future__ import annotations
 
 import json
 import secrets
+import shutil
 import threading
 from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
+from fastapi.responses import FileResponse, JSONResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
 from . import lessons, media, tracing
 from .agents.character import clean_hero_name
 from .config import ROOT, env, get_settings
 from .events import EventLog
+from .oath.catalog import clean_promises
 from .pipeline import Run, RunConfig, execute
 
 FIXTURES = ROOT / "assets" / "test-drawings"
@@ -25,7 +27,9 @@ WEB_DIST = ROOT / "web" / "dist"
 MAX_CONCURRENT = int(env("STORYBOUND_MAX_RUNS", "3"))
 
 RUNS: dict[str, Run] = {}
+VIDEOS: dict[str, dict] = {}
 _slots = threading.BoundedSemaphore(MAX_CONCURRENT)
+_video_slot = threading.BoundedSemaphore(1)  # a render uses the whole machine
 
 
 @asynccontextmanager
@@ -131,6 +135,7 @@ async def create_story(
     arm: str = Form("B1"),
     seed: str | None = Form(None),
     fixture_id: str | None = Form(None),
+    promise: list[str] = Form(default=[]),
     drawing: UploadFile | None = File(None),
 ):
     if lesson_id not in lessons.LESSONS:
@@ -152,13 +157,14 @@ async def create_story(
         d = media.prepare(raw)
     except media.BadDrawing as e:
         return err(413 if e.code == "too_large" else 422, e.code, str(e))
+    kept, left_out = clean_promises(promise)
     if not _slots.acquire(blocking=False):
         return err(429, "busy", "I am busy making other stories. Please try again in a minute.")
     sid = secrets.token_hex(6)
     cfg = RunConfig(
         lesson_id=lesson_id, age=age, hero_name=clean_hero_name(hero_name), arm=arm,
         seed=seed or secrets.token_hex(3), media=env("STORYBOUND_MEDIA", "1") != "0",
-        run_dir=RUNS_DIR / sid, fixture=fixture_id, ledger_name=None,
+        run_dir=RUNS_DIR / sid, fixture=fixture_id, ledger_name=None, grownup_promises=tuple(kept),
     )  # fmt: skip
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=sid)
     RUNS[sid] = run
@@ -168,9 +174,11 @@ async def create_story(
             execute(run)
         finally:
             _slots.release()
+            if run.forgotten:  # forgotten while it was still being made
+                shutil.rmtree(run.cfg.run_dir, ignore_errors=True)
 
     threading.Thread(target=work, daemon=True, name=f"story-{sid}").start()
-    return {"story_id": sid, "events_url": f"/api/stories/{sid}/events"}
+    return {"story_id": sid, "events_url": f"/api/stories/{sid}/events", "promises_used": kept, "promises_left_out": left_out}
 
 
 def _get(sid: str) -> Run:
@@ -251,6 +259,64 @@ def page_media(sid: str, n: int, kind: str):
     if any(d.get("what") == kind and d.get("index") == n for d in run.degradations):
         return err(410, "degraded", "This page does not have a " + kind + ".")
     raise HTTPException(404, "Not ready yet.")
+
+
+@app.delete("/api/stories/{sid}", status_code=204)
+def forget_story(sid: str):
+    """Forget this story: its pictures, narration, drawing and video are deleted and it can no longer be opened."""
+    run = _get(sid)
+    run.forgotten = True
+    RUNS.pop(sid, None)
+    VIDEOS.pop(sid, None)
+    if run.cfg.run_dir:
+        shutil.rmtree(run.cfg.run_dir, ignore_errors=True)
+    return Response(status_code=204)
+
+
+@app.post("/api/stories/{sid}/video", status_code=202)
+def make_video(sid: str):
+    """Start the read-along video of a finished story. Poll `/video/status`, then fetch `/video`."""
+    run = _get(sid)
+    if run.outcome not in ("shipped", "shipped_with_notes") or not run.cfg.run_dir:
+        return err(409, "not_ready", "The story needs to be finished first.")
+    if VIDEOS.get(sid, {}).get("status") in ("making", "done"):
+        return VIDEOS[sid]
+    if not _video_slot.acquire(blocking=False):
+        return err(429, "busy", "I am making another video. Please try again in a few minutes.")
+    VIDEOS[sid] = {"status": "making"}
+
+    def work():
+        from .video import export
+
+        try:
+            r = export.make_for_run(run.cfg.run_dir)
+            ok = bool(r.get("video")) and not run.forgotten
+            VIDEOS[sid] = {"status": "done" if ok else "failed", "outcome": r.get("outcome"), "broken": r.get("broken"),
+                           "seconds": (r.get("video") or {}).get("seconds")}  # fmt: skip
+        except Exception as e:
+            VIDEOS[sid] = {"status": "failed", "error": type(e).__name__}
+        finally:
+            _video_slot.release()
+            if run.forgotten:
+                shutil.rmtree(run.cfg.run_dir, ignore_errors=True)
+
+    threading.Thread(target=work, daemon=True, name=f"video-{sid}").start()
+    return VIDEOS[sid]
+
+
+@app.get("/api/stories/{sid}/video/status")
+def video_status(sid: str):
+    _get(sid)
+    return VIDEOS.get(sid, {"status": "none"})
+
+
+@app.get("/api/stories/{sid}/video")
+def get_video(sid: str):
+    run = _get(sid)
+    mp4 = run.cfg.run_dir / "video" / "video.mp4" if run.cfg.run_dir else None
+    if VIDEOS.get(sid, {}).get("status") == "done" and mp4 and mp4.is_file():
+        return FileResponse(mp4, media_type="video/mp4", filename="my-story.mp4")
+    raise HTTPException(404, "The video is not ready yet.")
 
 
 # ---- web build (optional) -----------------------------------------------------------------------------------------------

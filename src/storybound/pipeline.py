@@ -57,6 +57,7 @@ class RunConfig:
     ledger_name: str | None = None
     judge_enabled: bool = True
     judge_fn: Any = None  # tests inject a fake judge; None means the K2 judge
+    grownup_promises: tuple[str, ...] = ()  # a parent's or teacher's own promises, already cleaned
 
 
 class S(TypedDict, total=False):
@@ -101,6 +102,7 @@ class Run:
     receipt: dict | None = None
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
+    forgotten: bool = False  # the parent asked to forget this story: nothing more is written to disk
     lock: threading.Lock = field(default_factory=threading.Lock)
 
     # ---- helpers ------------------------------------------------------------------------------------------------------
@@ -214,6 +216,8 @@ def build_graph(run: Run):
             pool = cf.ThreadPoolExecutor(max_workers=1)
             fut = pool.submit(contextvars.copy_context().run, planner.plan, lesson, s["card"], cfg.age, n_pages)
         oath, info = oath_author.author(lesson, s["card"])
+        if cfg.grownup_promises:
+            oath = catalog.merge_grownup(oath, list(cfg.grownup_promises))
         run.engine.oath = oath
         plain = {c.id: c.plain for c in oath.commitments}
         run.emit(
@@ -446,7 +450,7 @@ def build_graph(run: Run):
     # ---- media --------------------------------------------------------------------------------------------------------
 
     def save(kind: str, index: int, data: bytes, ext: str) -> str:
-        if not cfg.run_dir:
+        if not cfg.run_dir or run.forgotten:
             return ""
         path = cfg.run_dir / "pages" / str(index) / f"{kind}.{ext}"
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -703,7 +707,7 @@ def execute(run: Run) -> Run:
 def export_story(run: Run, s: S) -> None:
     """Leave a story package next to the media (run_dir/story.json and drawing) so a video can be made from it."""
     d = run.cfg.run_dir
-    if not d:
+    if not d or run.forgotten:
         return
     d.mkdir(parents=True, exist_ok=True)
     ext = "png" if "png" in (run.drawing.mime or "") else "jpg"

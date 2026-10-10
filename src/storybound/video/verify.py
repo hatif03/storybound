@@ -111,10 +111,12 @@ def no_secrets(spec: Spec, resolved: dict[str, dict]) -> dict:
     return _v("no_secrets", not hit and not leaked, "no key-like strings, no .env values", "found one" if (hit or leaked) else "none found")
 
 
-def _image_allowed(src: str) -> bool:
+def _image_allowed(src: str, own_media: bool = False) -> bool:
     if "_private" in src or ".." in src:
         return False
     if src.startswith("assets/"):
+        return True
+    if own_media and src.startswith("runs/"):  # the user's own story, made and kept on their machine
         return True
     if src.startswith("evidence/stories/"):  # a story package is allowed only if it came from a fixture drawing
         pkg = ROOT / "/".join(src.split("/")[:3]) / "story.json"
@@ -126,7 +128,7 @@ def _image_allowed(src: str) -> bool:
 
 
 def no_child_data(spec: Spec) -> dict:
-    bad = [b.src for s in spec.scenes for b in s.blocks if b.type == "image" and not _image_allowed(b.src)]
+    bad = [b.src for s in spec.scenes for b in s.blocks if b.type == "image" and not _image_allowed(b.src, spec.own_media)]
     return _v("no_child_data", not bad, "images only from assets/ or a fixture-drawing story package", f"outside the allow-list: {bad}" if bad else "all images allowed")
 
 

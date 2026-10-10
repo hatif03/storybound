@@ -56,7 +56,8 @@ def _usage(resp, model: str, t0: float) -> Usage:
     u = getattr(resp, "usage_metadata", None)
     return Usage(
         input_tokens=getattr(u, "prompt_token_count", 0) or 0,
-        output_tokens=getattr(u, "candidates_token_count", 0) or 0,
+        # thinking tokens are billed as output tokens but reported separately
+        output_tokens=(getattr(u, "candidates_token_count", 0) or 0) + (getattr(u, "thoughts_token_count", 0) or 0),
         latency_s=round(time.time() - t0, 3),
         model=model,
     )

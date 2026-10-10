@@ -1,0 +1,850 @@
+{
+ "title": "Bella read-along",
+ "claims": [
+  {
+   "id": "checks",
+   "label": "checks were run on this story before it reached the child",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-2/story.json#receipt.counts.checks"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  },
+  {
+   "id": "repairs",
+   "label": "pages were rewritten because they broke a promise",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-2/story.json#receipt.counts.repairs"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  },
+  {
+   "id": "promises",
+   "label": "promises were written for this story before the first page",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-2/story.json#receipt.counts.commitments"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "intro",
+   "narration": "This is Bella, the hero of a story that began with a drawing. Let's read it together.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/drawing.jpg"
+    },
+    {
+     "type": "title",
+     "text": "Meet Bella",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Large red and pink bow between the ears, holding an orange carrot with a green top",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 1.5,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p1-read",
+   "narration": "Bella wears a large pink bow. She finds sweet carrots. What should Bella do with her yummy basket?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/1/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella wears a large pink bow. She finds sweet carrots.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Hide the basket behind a big bush.",
+       "state": "neutral"
+      },
+      {
+       "text": "Bring carrots to friends in the meadow.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p1-answer",
+   "narration": "Yes! Bella feels so happy to share her sweet treats.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/1/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Hide the basket behind a big bush.",
+       "state": "wrong"
+      },
+      {
+       "text": "Bring carrots to friends in the meadow.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella feels so happy to share her sweet treats.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p2-read",
+   "narration": "Bella has bright magenta outlines on her soft fur. She sees a hungry little hedgehog. What should Bella do to help her new friend?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/2/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella has bright magenta outlines on her soft fur. She sees a hungry little hedgehog.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Eat the carrot quickly all by herself.",
+       "state": "neutral"
+      },
+      {
+       "text": "Give the hedgehog a crunchy carrot with a smile.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "wink",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p2-answer",
+   "narration": "Yes! Sharing makes Bella and the little hedgehog both feel so happy!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/2/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Eat the carrot quickly all by herself.",
+       "state": "wrong"
+      },
+      {
+       "text": "Give the hedgehog a crunchy carrot with a smile.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing makes Bella and the little hedgehog both feel so happy!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p3-read",
+   "narration": "Bella sees two little bluebirds under the big oak tree. Bella holds a crunchy orange carrot with a green top. What should Bella do to make the birds happy?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/3/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella sees two little bluebirds under the big oak tree. Bella holds a crunchy orange carrot with a green top.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Snap the carrot in two to share with them.",
+       "state": "neutral"
+      },
+      {
+       "text": "Rest all alone and ignore the hungry birds.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "shy-giggle",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p3-answer",
+   "narration": "Yes! Bella shares her snack and everyone feels so happy!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/3/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Snap the carrot in two to share with them.",
+       "state": "correct"
+      },
+      {
+       "text": "Rest all alone and ignore the hungry birds.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella shares her snack and everyone feels so happy!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p4-read",
+   "narration": "Bella wiggles her small round tail by the brook. A tired frog sits sadly on the bank. How can Bella help the little frog feel better?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/4/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella wiggles her small round tail by the brook. A tired frog sits sadly on the bank.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share her soft carrot greens with him.",
+       "state": "neutral"
+      },
+      {
+       "text": "Keep all the soft greens just for herself.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "cool-sunglasses",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p4-answer",
+   "narration": "Yes! Bella and the happy frog smile together on the soft leafy bed.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/4/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share her soft carrot greens with him.",
+       "state": "correct"
+      },
+      {
+       "text": "Keep all the soft greens just for herself.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella and the happy frog smile together on the soft leafy bed.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p5-read",
+   "narration": "Bella wears a large red and pink bow on Sunflower Hilltop. A tiny field mouse has an empty picnic table. What should Bella do with her prize carrot to help?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/5/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella wears a large red and pink bow on Sunflower Hilltop. A tiny field mouse has an empty picnic table.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Place the orange carrot on the little table to share.",
+       "state": "neutral"
+      },
+      {
+       "text": "Keep the carrot tucked away for her own dinner later.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p5-answer",
+   "narration": "Yes! Bella and the mouse both smile brightly as they share lunch.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/5/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Place the orange carrot on the little table to share.",
+       "state": "correct"
+      },
+      {
+       "text": "Keep the carrot tucked away for her own dinner later.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella and the mouse both smile brightly as they share lunch.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p6-read",
+   "narration": "Bella wiggles her brown whiskers in the soft clover glade. She has one last crunchy carrot left in her basket. What should Bella do when a hungry squirrel visits her?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/6/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella wiggles her brown whiskers in the soft clover glade. She has one last crunchy carrot left in her basket.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Split the carrot to share with the squirrel",
+       "state": "neutral"
+      },
+      {
+       "text": "Eat the whole carrot quickly by herself",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "wink",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p6-answer",
+   "narration": "Yes! Bella and the squirrel smile happily as they munch together.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/6/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Split the carrot to share with the squirrel",
+       "state": "correct"
+      },
+      {
+       "text": "Eat the whole carrot quickly by herself",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella and the squirrel smile happily as they munch together.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p7-read",
+   "narration": "Bella rests inside the Cozy Hollow Log with her empty basket. Her happy curved black eyes look at the quiet room. How can Bella feel happy inside her cozy home?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/7/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Bella rests inside the Cozy Hollow Log with her empty basket. Her happy curved black eyes look at the quiet room.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Wish she kept all the treats for herself.",
+       "state": "neutral"
+      },
+      {
+       "text": "Think of her friends smiling because she shared.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "shy-giggle",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p7-answer",
+   "narration": "Yes! Bella feels so warm and happy remembering their joyful smiles.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/7/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Wish she kept all the treats for herself.",
+       "state": "wrong"
+      },
+      {
+       "text": "Think of her friends smiling because she shared.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella feels so warm and happy remembering their joyful smiles.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p8-read",
+   "narration": "Friends bring sweet berries to Bella. Bella wiggles her small round tail with joy. What should Bella do with all the yummy treats?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/8/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Friends bring sweet berries to Bella. Bella wiggles her small round tail with joy.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Take the biggest pile of berries just for herself.",
+       "state": "neutral"
+      },
+      {
+       "text": "Invite everyone to sit in a circle and eat together.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "cool-sunglasses",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "p8-answer",
+   "narration": "Yes! Bella and her friends smile big as they share the feast.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-2/pages/8/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Take the biggest pile of berries just for herself.",
+       "state": "wrong"
+      },
+      {
+       "text": "Invite everyone to sit in a circle and eat together.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bella and her friends smile big as they share the feast.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "foot": true,
+   "kind": "story"
+  },
+  {
+   "id": "end",
+   "narration": "The end. Before this story reached you, a checker ran {checks} checks, and rewrote {repairs} pages to keep every promise.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "The end",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "checks",
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "repairs",
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "party-cupcake",
+   "min_seconds": 4.0,
+   "pause": 1.2,
+   "layout": "stack",
+   "foot": false,
+   "kind": "claim"
+  }
+ ],
+ "max_seconds": 300.0,
+ "narration_style": "Read warmly like a friendly storyteller to a young child, at a natural lively pace with gentle expression.",
+ "requires_coverage": false
+}

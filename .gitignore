@@ -51,3 +51,8 @@ evidence/video/*/audio-cache/
 evidence/video/*/frames/
 evidence/video/*/video.mp4
 evidence/video/*.log
+evidence/stories/*/video/project/
+evidence/stories/*/video/audio-cache/
+evidence/stories/*/video/frames/
+evidence/stories/*/video/video.mp4
+evidence/stories/*.log

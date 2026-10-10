@@ -1,0 +1,142 @@
+{
+ "name": "video-story-3",
+ "attempts": [
+  {
+   "attempt": 0,
+   "verdicts": [
+    {
+     "commitment": "length_ok",
+     "status": "pass",
+     "expected": "at most 300 s",
+     "actual": "219.0 s",
+     "scene": null
+    },
+    {
+     "commitment": "claims_sourced",
+     "status": "pass",
+     "expected": "no typed numbers",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "report-backed claims",
+     "actual": "none to check",
+     "scene": null
+    },
+    {
+     "commitment": "no_overclaims",
+     "status": "pass",
+     "expected": "no words promising more than we can show",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "tools_covered",
+     "status": "pass",
+     "expected": "not required for this video",
+     "actual": "skipped",
+     "scene": null
+    },
+    {
+     "commitment": "no_secrets",
+     "status": "pass",
+     "expected": "no key-like strings, no .env values",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "no_child_data",
+     "status": "pass",
+     "expected": "images only from assets/ or a fixture-drawing story package",
+     "actual": "all images allowed",
+     "scene": null
+    },
+    {
+     "commitment": "renders_clean",
+     "status": "pass",
+     "expected": "HyperFrames check passes (lint, runtime, layout, motion, contrast)",
+     "actual": "passed",
+     "scene": null
+    },
+    {
+     "commitment": "audio_ok",
+     "status": "pass",
+     "expected": "-19.0 to -13.0 LUFS",
+     "actual": "-13.6 LUFS",
+     "scene": null
+    }
+   ],
+   "total_s": 219.044
+  }
+ ],
+ "repairs": [],
+ "trace_id": "15228ba3d75288a3bea6390d8f4cb9bf",
+ "render": {
+  "ok": true,
+  "seconds": 207.4
+ },
+ "video": {
+  "file": "video.mp4",
+  "sha256": "498f6f3fd6ddafabb35b47c16103749e55c998453e59b99c30cf7e10d261649f",
+  "seconds": 219.044,
+  "bytes": 36067170
+ },
+ "outcome": "shipped",
+ "broken": [],
+ "spec_digest": "5bea722e7f0beb5f",
+ "claims": [
+  {
+   "id": "checks",
+   "label": "checks were run on this story before it reached the child",
+   "display": "108",
+   "sources": [
+    {
+     "ref": "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.checks",
+     "file": "evidence/stories/bunny-sharing-1/story.json",
+     "value": 108,
+     "sha256": "2de9a11f5de85c2a"
+    }
+   ]
+  },
+  {
+   "id": "repairs",
+   "label": "pages were rewritten because they broke a promise",
+   "display": "1",
+   "sources": [
+    {
+     "ref": "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.repairs",
+     "file": "evidence/stories/bunny-sharing-1/story.json",
+     "value": 1,
+     "sha256": "2de9a11f5de85c2a"
+    }
+   ]
+  },
+  {
+   "id": "promises",
+   "label": "promises were written for this story before the first page",
+   "display": "21",
+   "sources": [
+    {
+     "ref": "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.commitments",
+     "file": "evidence/stories/bunny-sharing-1/story.json",
+     "value": 21,
+     "sha256": "2de9a11f5de85c2a"
+    }
+   ]
+  }
+ ],
+ "budget": {
+  "tokens_in": 0,
+  "tokens_out": 0,
+  "images": 0,
+  "tts": 0,
+  "calls": 0,
+  "by_model": {},
+  "usd_estimate": 0.0,
+  "estimate": true
+ },
+ "seconds": 241.3,
+ "hyperframes": "0.8.145"
+}

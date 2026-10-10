@@ -1,0 +1,832 @@
+{
+ "title": "Zuzu read-along",
+ "claims": [
+  {
+   "id": "checks",
+   "label": "checks were run on this story before it reached the child",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.checks"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  },
+  {
+   "id": "repairs",
+   "label": "pages were rewritten because they broke a promise",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.repairs"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  },
+  {
+   "id": "promises",
+   "label": "promises were written for this story before the first page",
+   "refs": [
+    "file:evidence/stories/bunny-sharing-1/story.json#receipt.counts.commitments"
+   ],
+   "fmt": "{0}",
+   "spoken": null,
+   "ratio": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "intro",
+   "narration": "This is Zuzu, the hero of a story that began with a drawing. Let's read it together.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/drawing.jpg"
+    },
+    {
+     "type": "title",
+     "text": "Meet Zuzu",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Bright pink bow between its ears, holds an orange carrot with green leafy top",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 1.5,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p1-read",
+   "narration": "Zuzu with her bright pink bow finds a basket of sweet carrots. She hops happily in the meadow. What should sweet Zuzu do with her full basket?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/1/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Zuzu with her bright pink bow finds a basket of sweet carrots. She hops happily in the meadow.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Hide all the carrots in a secret hole.",
+       "state": "neutral"
+      },
+      {
+       "text": "Share the carrots with her meadow friends.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p1-answer",
+   "narration": "Yes! Sharing treats makes Zuzu and all her friends smile brightly.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/1/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Hide all the carrots in a secret hole.",
+       "state": "wrong"
+      },
+      {
+       "text": "Share the carrots with her meadow friends.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing treats makes Zuzu and all her friends smile brightly.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p2-read",
+   "narration": "Little bunny Zuzu with her bright pink bow sees Pip the mouse. What should kind Zuzu do for her hungry friend?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/2/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Little bunny Zuzu with her bright pink bow sees Pip the mouse.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Munch on the carrot all by herself.",
+       "state": "neutral"
+      },
+      {
+       "text": "Snap a carrot in half and share it with Pip.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "wink",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p2-answer",
+   "narration": "Yes! Sharing lunch makes Pip smile and fills Zuzu with sweet joy.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/2/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Munch on the carrot all by herself.",
+       "state": "wrong"
+      },
+      {
+       "text": "Snap a carrot in half and share it with Pip.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing lunch makes Pip smile and fills Zuzu with sweet joy.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p3-read",
+   "narration": "Zuzu with her bright pink bow meets Toby the tired turtle. Toby sits on a warm rock and feels very hungry. What should sweet Zuzu choose to do?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/3/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Zuzu with her bright pink bow meets Toby the tired turtle. Toby sits on a warm rock and feels very hungry.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share some crunchy carrot slices with Toby.",
+       "state": "neutral"
+      },
+      {
+       "text": "Hop away quickly across the brook.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "shy-giggle",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p3-answer",
+   "narration": "Yes! Sharing treats makes Toby smile and makes Zuzu feel so happy!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/3/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share some crunchy carrot slices with Toby.",
+       "state": "correct"
+      },
+      {
+       "text": "Hop away quickly across the brook.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing treats makes Toby smile and makes Zuzu feel so happy!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p4-read",
+   "narration": "Little Zuzu with her bright pink bow meets Barnaby the bear. How can Zuzu make Barnaby happy at the swing?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/4/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Little Zuzu with her bright pink bow meets Barnaby the bear.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share her leafy greens with Barnaby.",
+       "state": "neutral"
+      },
+      {
+       "text": "Keep all the leafy greens for herself.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "cool-sunglasses",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p4-answer",
+   "narration": "Yes! Zuzu and Barnaby smile as they make fun crowns together!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/4/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share her leafy greens with Barnaby.",
+       "state": "correct"
+      },
+      {
+       "text": "Keep all the leafy greens for herself.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Zuzu and Barnaby smile as they make fun crowns together!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p5-read",
+   "narration": "A cold wind blows on Zuzu with her bright pink bow. Her forest friends feel very chilly. What should Zuzu do with her warm pink scarf?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/5/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "A cold wind blows on Zuzu with her bright pink bow. Her forest friends feel very chilly.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Wrap the scarf only around herself",
+       "state": "neutral"
+      },
+      {
+       "text": "Spread the scarf over all her friends together",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p5-answer",
+   "narration": "Yes! Sharing the scarf keeps everyone warm and brings big happy smiles!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/5/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Wrap the scarf only around herself",
+       "state": "wrong"
+      },
+      {
+       "text": "Spread the scarf over all her friends together",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing the scarf keeps everyone warm and brings big happy smiles!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p6-read",
+   "narration": "Inside the cozy cave, Zuzu with her bright pink bow has one giant carrot. What should Zuzu do with her big sweet carrot?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/6/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "Inside the cozy cave, Zuzu with her bright pink bow has one giant carrot.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Slice it into pieces to share with all her friends.",
+       "state": "neutral"
+      },
+      {
+       "text": "Gobble the carrot all by herself very quickly.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "wink",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p6-answer",
+   "narration": "Yes! Sharing the sweet carrot makes Zuzu and her friends smile happily.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/6/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Slice it into pieces to share with all her friends.",
+       "state": "correct"
+      },
+      {
+       "text": "Gobble the carrot all by herself very quickly.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing the sweet carrot makes Zuzu and her friends smile happily.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p7-read",
+   "narration": "The sun shines on Zuzu and her bright pink bow. Her forest friends bring sweet berries and nuts for Zuzu. What should happy Zuzu do with all the yummy treats?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/7/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "The sun shines on Zuzu and her bright pink bow. Her forest friends bring sweet berries and nuts for Zuzu.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share everything together in one big, happy feast.",
+       "state": "neutral"
+      },
+      {
+       "text": "Keep all the sweet treats just for herself.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "shy-giggle",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p7-answer",
+   "narration": "Yes! Sharing the feast makes Zuzu and all her friends smile.",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/7/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Share everything together in one big, happy feast.",
+       "state": "correct"
+      },
+      {
+       "text": "Keep all the sweet treats just for herself.",
+       "state": "wrong"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing the feast makes Zuzu and all her friends smile.",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p8-read",
+   "narration": "The sun sets over the hill. Zuzu wiggles her round puffy white tail with joy. What should cheerful Zuzu do now?",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/8/image.jpg"
+    },
+    {
+     "type": "text",
+     "text": "The sun sets over the hill. Zuzu wiggles her round puffy white tail with joy.",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Walk away alone to count her leftover snacks.",
+       "state": "neutral"
+      },
+      {
+       "text": "Hold hands and play with her happy friends.",
+       "state": "neutral"
+      }
+     ],
+     "at_frac": 0.72,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "cool-sunglasses",
+   "min_seconds": 4.0,
+   "pause": 2.0,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "p8-answer",
+   "narration": "Yes! Sharing made Zuzu and all her friends so happy!",
+   "blocks": [
+    {
+     "type": "image",
+     "text": "",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": "evidence/stories/bunny-sharing-1/pages/8/image.jpg"
+    },
+    {
+     "type": "choices",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "text": "Walk away alone to count her leftover snacks.",
+       "state": "wrong"
+      },
+      {
+       "text": "Hold hands and play with her happy friends.",
+       "state": "correct"
+      }
+     ],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Sharing made Zuzu and all her friends so happy!",
+     "claim": null,
+     "items": [],
+     "at_frac": 0.35,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0,
+   "pause": 0.9,
+   "layout": "split",
+   "kind": "story"
+  },
+  {
+   "id": "end",
+   "narration": "The end. Before this story reached you, a checker ran {checks} checks, and rewrote {repairs} pages to keep every promise.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "The end",
+     "claim": null,
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "checks",
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "repairs",
+     "items": [],
+     "at_frac": null,
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "party-cupcake",
+   "min_seconds": 4.0,
+   "pause": 1.2,
+   "layout": "stack",
+   "kind": "claim"
+  }
+ ],
+ "max_seconds": 300.0,
+ "narration_style": "Read warmly like a friendly storyteller to a young child, at a natural lively pace with gentle expression.",
+ "requires_coverage": false
+}

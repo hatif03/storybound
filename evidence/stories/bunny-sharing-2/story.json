@@ -1,0 +1,507 @@
+{
+ "story_id": "d22378bed4fa",
+ "fixture": "benign/bunny-bow-carrot",
+ "lesson": "sharing",
+ "age": 6,
+ "drawing": "drawing.jpg",
+ "card": {
+  "name": "Bella",
+  "species": "rabbit",
+  "traits": [
+   "large red and pink bow between the ears",
+   "holding an orange carrot with a green top",
+   "bright magenta outline around a white body",
+   "happy curved black eyes and brown whiskers",
+   "small round tail"
+  ],
+  "palette": [
+   "magenta",
+   "white",
+   "pink",
+   "orange"
+  ],
+  "one_line": "Bella is a cheerful white bunny with a bright pink bow who loves to nibble on fresh carrots."
+ },
+ "pages": [
+  {
+   "index": 1,
+   "scenario": "Bella wears a large pink bow. She finds sweet carrots.",
+   "question": "What should Bella do with her yummy basket?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Hide the basket behind a big bush.",
+     "feedback": "Sharing will bring Bella and her friends more joy.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Bring carrots to friends in the meadow.",
+     "feedback": "Bella feels so happy to share her sweet treats.",
+     "is_correct": true
+    }
+   ],
+   "image_prompt": "Bella the white rabbit wearing a large red and pink bow between her ears, standing in a sunny carrot patch with a basket of orange carrots, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella wears a large pink bow. She finds sweet carrots. What should Bella do with her yummy basket?"
+  },
+  {
+   "index": 2,
+   "scenario": "Bella has bright magenta outlines on her soft fur. She sees a hungry little hedgehog.",
+   "question": "What should Bella do to help her new friend?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Eat the carrot quickly all by herself.",
+     "feedback": "Bella wants to share her treats to make everyone smile.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Give the hedgehog a crunchy carrot with a smile.",
+     "feedback": "Sharing makes Bella and the little hedgehog both feel so happy!",
+     "is_correct": true
+    }
+   ],
+   "image_prompt": "Bella the white rabbit with bright magenta outline and a large pink bow happily hands a bright orange carrot to a cute little hedgehog on a dewy meadow path, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella has bright magenta outlines on her soft fur. She sees a hungry little hedgehog. What should Bella do to help her new friend?"
+  },
+  {
+   "index": 3,
+   "scenario": "Bella sees two little bluebirds under the big oak tree. Bella holds a crunchy orange carrot with a green top.",
+   "question": "What should Bella do to make the birds happy?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Snap the carrot in two to share with them.",
+     "feedback": "Bella shares her snack and everyone feels so happy!",
+     "is_correct": true
+    },
+    {
+     "id": "b",
+     "text": "Rest all alone and ignore the hungry birds.",
+     "feedback": "Bella wants to help her new bird friends smile instead.",
+     "is_correct": false
+    }
+   ],
+   "image_prompt": "Bella the white bunny holding an orange carrot with a green top, sitting in the soft shade of a grand oak tree next to two happy bluebirds, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella sees two little bluebirds under the big oak tree. Bella holds a crunchy orange carrot with a green top. What should Bella do to make the birds happy?"
+  },
+  {
+   "index": 4,
+   "scenario": "Bella wiggles her small round tail by the brook. A tired frog sits sadly on the bank.",
+   "question": "How can Bella help the little frog feel better?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Share her soft carrot greens with him.",
+     "feedback": "Bella and the happy frog smile together on the soft leafy bed.",
+     "is_correct": true
+    },
+    {
+     "id": "b",
+     "text": "Keep all the soft greens just for herself.",
+     "feedback": "Sharing what Bella has will make both of them feel glad.",
+     "is_correct": false
+    }
+   ],
+   "image_prompt": "Bella the white rabbit with a small round tail offers soft green carrot tops to a tired green frog by a babbling brook, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella wiggles her small round tail by the brook. A tired frog sits sadly on the bank. How can Bella help the little frog feel better?"
+  },
+  {
+   "index": 5,
+   "scenario": "Bella wears a large red and pink bow on Sunflower Hilltop. A tiny field mouse has an empty picnic table.",
+   "question": "What should Bella do with her prize carrot to help?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Place the orange carrot on the little table to share.",
+     "feedback": "Bella and the mouse both smile brightly as they share lunch.",
+     "is_correct": true
+    },
+    {
+     "id": "b",
+     "text": "Keep the carrot tucked away for her own dinner later.",
+     "feedback": "Bella can share with the hungry mouse to make them both happy.",
+     "is_correct": false
+    }
+   ],
+   "image_prompt": "Bella the white rabbit wearing a large red and pink bow between her ears places an orange carrot on a tiny wooden picnic table for a happy little field mouse on Sunflower Hilltop, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella wears a large red and pink bow on Sunflower Hilltop. A tiny field mouse has an empty picnic table. What should Bella do with her prize carrot to help?"
+  },
+  {
+   "index": 6,
+   "scenario": "Bella wiggles her brown whiskers in the soft clover glade. She has one last crunchy carrot left in her basket.",
+   "question": "What should Bella do when a hungry squirrel visits her?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Split the carrot to share with the squirrel",
+     "feedback": "Bella and the squirrel smile happily as they munch together.",
+     "is_correct": true
+    },
+    {
+     "id": "b",
+     "text": "Eat the whole carrot quickly by herself",
+     "feedback": "Bella can share her snack to make a new friend happy.",
+     "is_correct": false
+    }
+   ],
+   "image_prompt": "Bella the white rabbit with brown whiskers sitting in Clover Blossom Glade, sharing a bright orange carrot with a friendly squirrel, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella wiggles her brown whiskers in the soft clover glade. She has one last crunchy carrot left in her basket. What should Bella do when a hungry squirrel visits her?"
+  },
+  {
+   "index": 7,
+   "scenario": "Bella rests inside the Cozy Hollow Log with her empty basket. Her happy curved black eyes look at the quiet room.",
+   "question": "How can Bella feel happy inside her cozy home?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Wish she kept all the treats for herself.",
+     "feedback": "Sharing makes Bella and her friends much happier together.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Think of her friends smiling because she shared.",
+     "feedback": "Bella feels so warm and happy remembering their joyful smiles.",
+     "is_correct": true
+    }
+   ],
+   "image_prompt": "Bella the white rabbit with happy curved black eyes sitting happily inside a Cozy Hollow Log beside an empty woven basket, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Bella rests inside the Cozy Hollow Log with her empty basket. Her happy curved black eyes look at the quiet room. How can Bella feel happy inside her cozy home?"
+  },
+  {
+   "index": 8,
+   "scenario": "Friends bring sweet berries to Bella. Bella wiggles her small round tail with joy.",
+   "question": "What should Bella do with all the yummy treats?",
+   "choices": [
+    {
+     "id": "a",
+     "text": "Take the biggest pile of berries just for herself.",
+     "feedback": "Eating together will make Bella and her friends much happier.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Invite everyone to sit in a circle and eat together.",
+     "feedback": "Bella and her friends smile big as they share the feast.",
+     "is_correct": true
+    }
+   ],
+   "image_prompt": "Bella the white bunny with a small round tail sitting in a sunny meadow with her animal friends, surrounded by berries and flowers, soft children's-book watercolour style, no text in the image",
+   "narration_text": "Friends bring sweet berries to Bella. Bella wiggles her small round tail with joy. What should Bella do with all the yummy treats?"
+  }
+ ],
+ "media": {
+  "image:2": "pages/2/image.jpg",
+  "image:1": "pages/1/image.jpg",
+  "image:3": "pages/3/image.jpg",
+  "image:4": "pages/4/image.jpg",
+  "image:6": "pages/6/image.jpg",
+  "audio:1": "pages/1/audio.mp3",
+  "audio:2": "pages/2/audio.mp3",
+  "audio:3": "pages/3/audio.mp3",
+  "image:7": "pages/7/image.jpg",
+  "image:5": "pages/5/image.jpg",
+  "audio:4": "pages/4/audio.mp3",
+  "audio:5": "pages/5/audio.mp3",
+  "audio:6": "pages/6/audio.mp3",
+  "audio:8": "pages/8/audio.mp3",
+  "audio:7": "pages/7/audio.mp3",
+  "image:8": "pages/8/image.jpg"
+ },
+ "receipt": {
+  "story_id": "d22378bed4fa",
+  "oath_hash": "657ae5cd193a757353290cc80a059be52ab2526b9c8b95402e0d6ccd1bc0b379",
+  "arm": "B1",
+  "plain": "21 promises checked. 0 pages rewritten. All kept.",
+  "counts": {
+   "commitments": 22,
+   "checked": 21,
+   "checks": 99,
+   "violations_found": 0,
+   "repairs": 0,
+   "kept": 21,
+   "shipped_violations": 0,
+   "judge_enabled": true
+  },
+  "broken": [],
+  "promises": [
+   {
+    "id": "input_safe_visual",
+    "title": "The drawing is safe to turn into a story",
+    "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+    "scope": "run",
+    "core": true,
+    "status": "not_checked"
+   },
+   {
+    "id": "no_drawing_text_obedience",
+    "title": "Words written on the drawing are never obeyed",
+    "plain": "Words written on the drawing are ignored and never repeated in the story.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "story_safe_text",
+    "title": "Every page is safe and kind",
+    "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "schema_valid",
+    "title": "Eight complete pages",
+    "plain": "The story has exactly eight complete pages.",
+    "scope": "story",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "one_correct_choice",
+    "title": "Exactly one right answer",
+    "plain": "Every question has exactly one right answer.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "correct_choice_position_balanced",
+    "title": "The right answer moves around",
+    "plain": "The right answer is not always the first button.",
+    "scope": "story",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "character_named_in_scene",
+    "title": "The hero is named on every page",
+    "plain": "The hero's name is on every page.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "visual_trait_referenced",
+    "title": "The hero looks like the drawing",
+    "plain": "Each page mentions something the hero really looks like in the drawing.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "age_reading_level",
+    "title": "Simple words for the child's age",
+    "plain": "Sentences are short and the words are easy for this age.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "lesson_concept_in_scene",
+    "title": "The lesson is on every page",
+    "plain": "Every page is about the lesson, not just some pages.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "correct_choice_teaches_lesson",
+    "title": "The right answer teaches the lesson",
+    "plain": "The right answer is the one that shows the lesson.",
+    "scope": "scene",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "lesson_alignment",
+    "title": "The whole story teaches the lesson",
+    "plain": "The whole story teaches the chosen lesson.",
+    "scope": "story",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "no_repeated_scenario",
+    "title": "No page repeats another",
+    "plain": "No two pages tell the same moment.",
+    "scope": "story",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "card_traits_checkable",
+    "title": "The hero has checkable features",
+    "plain": "The hero was described by at least three things you can see.",
+    "scope": "run",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "original_character_only",
+    "title": "The hero is original",
+    "plain": "The hero is not a famous cartoon or film character.",
+    "scope": "run",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "trait_in_image_prompt",
+    "title": "Pictures are asked to show the hero",
+    "plain": "Each picture was asked to show the hero as drawn.",
+    "scope": "image",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "illustration_present",
+    "title": "Every page has a picture",
+    "plain": "Every page has a picture, or the story says plainly that one is missing.",
+    "scope": "image",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "image_matches_card",
+    "title": "The picture matches the hero",
+    "plain": "Pictures look like the same hero.",
+    "scope": "image",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "image_no_text",
+    "title": "Pictures contain no words",
+    "plain": "Pictures have no stray or garbled words painted into them.",
+    "scope": "image",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "narration_present",
+    "title": "Every page can be read aloud",
+    "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+    "scope": "audio",
+    "core": true,
+    "status": "kept"
+   },
+   {
+    "id": "lesson_specific_carrot_sharing",
+    "title": "Bella shares her favorite snack",
+    "plain": "Bella shares her fresh orange carrot with a friend and feels happy doing so.",
+    "scope": "story",
+    "core": false,
+    "status": "kept"
+   },
+   {
+    "id": "lesson_specific_mutual_happiness_shown",
+    "title": "Both characters show joy after sharing",
+    "plain": "In the scene where sharing happens, both Bella and the recipient express clear joy.",
+    "scope": "scene",
+    "core": false,
+    "status": "kept"
+   }
+  ],
+  "pages": [
+   {
+    "index": 1,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 2,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 3,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 4,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 5,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 6,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 7,
+    "attempts": 1,
+    "final": "pass"
+   },
+   {
+    "index": 8,
+    "attempts": 1,
+    "final": "pass"
+   }
+  ],
+  "coverage": {
+   "pct": 100,
+   "uncovered": []
+  },
+  "degradations": [],
+  "ignored_drawing_text": [],
+  "budget": {
+   "usd_estimate": 0.35553,
+   "estimate": true,
+   "seconds": 322.4,
+   "tokens_in": 35765,
+   "tokens_out": 20097,
+   "images": 8,
+   "calls": 44,
+   "by_model": {
+    "gemini-3.7-flash": {
+     "in": 16706,
+     "out": 3724,
+     "calls": 19,
+     "seconds": 201.38499999999993
+    },
+    "IFM/K2-Horizon-375B-A23B": {
+     "in": 7023,
+     "out": 6733,
+     "calls": 9,
+     "seconds": 45.175
+    },
+    "gemini-3.1-flash-image": {
+     "in": 4644,
+     "out": 4480,
+     "calls": 4,
+     "seconds": 43.906
+    },
+    "gemini-2.5-flash-image": {
+     "in": 7392,
+     "out": 5160,
+     "calls": 4,
+     "seconds": 41.18
+    },
+    "gemini-2.5-flash-tts": {
+     "in": 0,
+     "out": 0,
+     "calls": 8,
+     "seconds": 82.68
+    }
+   },
+   "first_page_s": 139.48
+  },
+  "prompt_version": "p3",
+  "models": {
+   "writer": "gemini-3.7-flash",
+   "judge": "IFM/K2-Horizon-375B-A23B",
+   "vision": "gemini-3.7-flash"
+  },
+  "trace_id": "a7dd9ae1b8322bd4fc7d1529c05751e0",
+  "generated_at": "2026-10-10T19:02:14+05:30"
+ },
+ "outcome": "shipped"
+}

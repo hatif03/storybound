@@ -21,3 +21,21 @@ Do proper research on harnesses and agentic loops and see if there exist open so
 ---
 
 check the mcp servers now
+
+---
+
+I have run this:
+
+<pasted_content id="f327">
+To fix it:
+
+Open a terminal in the repo and run . scripts\dev-shell.ps1. That loads .env into the shell without printing the key.
+Start claude from that shell, which makes NEATLOGS_API_KEY visible to the config.
+Run /mcp, approve neatlogs, cfoai and crustdata, then sign in to cfoai and crustdata.
+</pasted_content id="f327">
+
+Everyhting seems fine from the terminal
+
+---
+
+Here is the neatlog key: REDACTED

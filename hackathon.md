@@ -39,6 +39,15 @@ eatlogs\launch-video`.
 - 12:55 Spikes run against the real services, four traces read back through the neatlogs MCP server: Gemini text, Gemini vision on a sample drawing, K2 judge with a verbatim-quote check, and a GUARDRAIL span nested under a WORKFLOW root. Files: `evidence/spikes/`, `evidence/traces/`.
 - Found by running it: Gemini 3 thinking tokens count against `max_output_tokens` (a 200-token cap returned 8 words); the client now adds headroom and refuses output that stopped at the cap. neatlogs cost for Gemini excludes thinking tokens; K2 shows no cost.
 
+### 2026-10-10, 13:00-13:30 IST: M2 oath engine, M3 pipeline and API
+- 13:07 Commit `5b709a6` (M2): one verdict object for every check; 19 commitments (core fixed, additions only as `lesson_specific_*`, hashed); deterministic verifiers first, seeded judge sampling (safety always 1.0), K2 judge with a verbatim-quote check done in code; safety fails closed, quality fails open as a flagged warning; coverage report. 37 offline tests.
+- 13:18 Commit `8010a00` (M3a): LangGraph pipeline (safety, character card, oath author, planner, write/verify/repair/regen loop, story gate, media, receipt) and the observe-only arm B0. **First full real run** (bunny, sharing, gated arm, judge on): 8 pages, every page failed `age_reading_level` on the first pass and was repaired once, one page tripped `story_safe_text` ("fighting") in an earlier no-judge run and was regenerated; 0 broken promises shipped; 313 s; trace `301911c89d3eb42738c51022ab863a22` (39 LLM calls, measured $0.0255 against an estimate of $0.0144: thinking tokens). File: `evidence/runs/20261010-1318-IST-bunny-sharing-B1-first-full-run.json`.
+- 13:20 Safety screen run over all 26 fixture drawings: 24/26, then 25/26 matched; the one unsafe drawing refused (1/1); no benign drawing refused. Two expectations in my own fixture file were wrong (a name or place written on a drawing is a personal detail, so Tier B is right) and were corrected; one text-only fixture flips between sanitise and ask-redraw at temperature 0 (logged for hardening). Files: `evidence/runs/*safety-eval*`.
+- 13:22 Commit `283a4cf` (M3b): FastAPI app matching `docs/API.md`; 48 tests.
+- 13:24 Real picture (15 s, 2 MB PNG, re-encoded to a small JPEG for the web) and real narration (11 s, mp3) generated and checked. Entire graph search and diff outputs saved in `evidence/entire/`.
+- 13:27 Baseline sweep `sweep-1-p1` started (56 runs: 7 drawings x 2 lessons x 2 seeds x 2 arms, prompt version p1). The front end is being built in parallel in `web/`.
+- Honest gap: the sessions that wrote these commits were not rooted in the repo, so no Entire checkpoint is linked to them yet.
+
 (Next entries are appended after each work session.)
 
 ## Demo

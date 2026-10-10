@@ -1,0 +1,10 @@
+{
+  "trace_id": "cc85389a110d01e9407cab538a777ba4",
+  "verdict": {
+    "commitment": "character_named_in_scene",
+    "scope": "scene 1",
+    "status": "pass",
+    "verdict_by": "deterministic",
+    "attempt": 0
+  }
+}

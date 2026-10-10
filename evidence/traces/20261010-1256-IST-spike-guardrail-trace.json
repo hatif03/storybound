@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"trace_context_contract_version\":2,\"trace_id\":\"cc85389a110d01e9407cab538a777ba4\",\"name\":\"spike-guardrail\",\"workflow\":\"create-storybook\",\"framework\":\"\",\"status\":\"success\",\"finalization_status\":\"finalized\",\"latency_ms\":2,\"span_count\":2,\"root_span_count\":1,\"span_payload_complete\":true,\"span_tree_complete\":true,\"verification_ready\":true,\"returned_span_count\":2,\"offset\":0,\"next_offset\":null,\"llm_calls\":0,\"tool_calls\":0,\"retrieval_calls\":0,\"has_error\":false,\"error_count\":0,\"total_tokens\":0,\"prompt_tokens\":0,\"completion_tokens\":0,\"total_cost\":0,\"created_at\":\"2026-10-10T07:25:35.000Z\",\"detections\":[],\"spans\":[{\"span_id\":\"00ca8817f363a6d9\",\"name\":\"verify:character_named_in_scene\",\"type\":\"guardrail\",\"status\":\"SUCCESS\",\"duration_ms\":0,\"parent_span_id\":\"db860946acaa5ff3\",\"is_root\":false,\"input_value\":\"Benny the bunny...\",\"output_value\":\"Commitment: character_named_in_scene\\nScope: scene 1\\nStatus: pass\\nVerdict By: deterministic\\nAttempt: 0\"},{\"span_id\":\"db860946acaa5ff3\",\"name\":\"spike-guardrail\",\"type\":\"workflow\",\"status\":\"SUCCESS\",\"duration_ms\":2.013952,\"parent_span_id\":\"\",\"is_root\":true,\"input_value\":\"{}\",\"output_value\":\"{\\\"trace_id\\\":\\\"cc85389a110d01e9407cab538a777ba4\\\",\\\"verdict\\\":{\\\"commitment\\\":\\\"character_named_in_scene\\\",\\\"scope\\\":\\\"scene 1\\\",\\\"status\\\":\\\"pass\\\",\\\"verdict_by\\\":\\\"deterministic\\\",\\\"attempt\\\":0}}\"}]}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 1
+}

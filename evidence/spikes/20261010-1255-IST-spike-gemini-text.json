@@ -1,0 +1,11 @@
+{
+  "trace_id": "e16a18b5dbcb9cbcac0bd5371a8230f4",
+  "text": "After spending the whole morning hoarding his prized carrot, Pip the little bunny realized that snapping it in half to feed his hungry friend made it taste twice as sweet.",
+  "usage": {
+    "input_tokens": 13,
+    "output_tokens": 32,
+    "latency_s": 7.768,
+    "model": "gemini-3.7-flash",
+    "calls": 1
+  }
+}

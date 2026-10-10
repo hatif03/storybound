@@ -59,6 +59,7 @@ class Settings(BaseModel):
     request_timeout_s: float = 90.0
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
+    thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens
 
 
 @lru_cache

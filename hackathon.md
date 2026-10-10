@@ -33,6 +33,12 @@ Solo builder. AI coding help: Claude Code (checkpointed by Entire).
 - Launch video (a motion graphic from the demo drawings and brand assets, scratch voice-over by Gemini TTS) built outside the repo in `D:
 eatlogs\launch-video`.
 
+### 2026-10-10, 12:40-13:00 IST: M1, scaffold and first real calls
+- 12:48 Commit `4bfc19b`: ground-up design document (`docs/DESIGN.md`), old planning copy removed, links repointed, local reference folder gitignored.
+- 12:52 Commit `cf5b7d9`: Python package (`src/storybound`), config (models, thresholds, budget in one file), Gemini and K2 clients with retry and typed errors, neatlogs wrapper that degrades to a no-op, evidence ledger, 9 unit tests green, ruff clean.
+- 12:55 Spikes run against the real services, four traces read back through the neatlogs MCP server: Gemini text, Gemini vision on a sample drawing, K2 judge with a verbatim-quote check, and a GUARDRAIL span nested under a WORKFLOW root. Files: `evidence/spikes/`, `evidence/traces/`.
+- Found by running it: Gemini 3 thinking tokens count against `max_output_tokens` (a 200-token cap returned 8 words); the client now adds headroom and refuses output that stopped at the cap. neatlogs cost for Gemini excludes thinking tokens; K2 shows no cost.
+
 (Next entries are appended after each work session.)
 
 ## Demo

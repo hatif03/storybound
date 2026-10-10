@@ -1,0 +1,16 @@
+{
+  "trace_id": "7966c95b252e9e7fcda1f1cd7e21d6b8",
+  "verdict": {
+    "status": "pass",
+    "quote": "Benny the bunny shared his carrot with Rosie, and they both smiled.",
+    "reasoning": "The hero's name 'Benny' appears verbatim on the page."
+  },
+  "quote_is_substring": true,
+  "usage": {
+    "input_tokens": 87,
+    "output_tokens": 257,
+    "latency_s": 16.951,
+    "model": "IFM/K2-Horizon-375B-A23B",
+    "calls": 1
+  }
+}

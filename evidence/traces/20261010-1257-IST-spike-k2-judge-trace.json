@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"trace_context_contract_version\":2,\"trace_id\":\"faea948bb4924a0b1ddbe7bd260967e7\",\"name\":\"spike-k2-judge\",\"workflow\":\"create-storybook\",\"framework\":\"\",\"status\":\"success\",\"finalization_status\":\"finalized\",\"latency_ms\":8492,\"span_count\":2,\"root_span_count\":1,\"span_payload_complete\":true,\"span_tree_complete\":true,\"verification_ready\":true,\"returned_span_count\":2,\"offset\":0,\"next_offset\":null,\"llm_calls\":1,\"tool_calls\":0,\"retrieval_calls\":0,\"has_error\":false,\"error_count\":0,\"total_tokens\":404,\"prompt_tokens\":118,\"completion_tokens\":286,\"total_cost\":0,\"created_at\":\"2026-10-10T07:25:27.000Z\",\"detections\":[],\"spans\":[{\"span_id\":\"83ea280ac04807d1\",\"name\":\"spike-k2-judge\",\"type\":\"workflow\",\"status\":\"SUCCESS\",\"duration_ms\":8491.322112,\"parent_span_id\":\"\",\"is_root\":true,\"input_value\":\"{}\",\"output_value\":\"{\\\"trace_id\\\":\\\"faea948bb4924a0b1ddbe7bd260967e7\\\",\\\"verdict\\\":{\\\"status\\\":\\\"pass\\\",\\\"quote\\\":\\\"Benny the bunny shared his carrot with Rosie, and they both smiled.\\\",\\\"reasoning\\\":\\\"The hero's name 'Benny' appears verbatim on the page, satisfying the commitment.\\\"},\\\"quote_is_substring\\\":true,\\\"usage\\\":{\\\"input_tokens\\\":118,\\\"output_tokens\\\":286,\\\"latency_s\\\":6.864,\\\"model\\\":\\\"IFM/K2-Horizon-375B-A23B\\\",\\\"calls\\\":1}}\"},{\"span_id\":\"d234341157b9a245\",\"name\":\"IFM/K2-Horizon-375B-A23B\",\"type\":\"llm\",\"status\":\"SUCCESS\",\"duration_ms\":4266.511999,\"parent_span_id\":\"83ea280ac04807d1\",\"is_root\":false,\"input_value\":\"System Prompt template:\\nYou are a strict reviewer. Reply with JSON only: {\\\"status\\\": \\\"pass\\\"|\\\"violation\\\", \\\"quote\\\": \\\"<verbatim text from the page>\\\", \\\"reasoning\\\": \\\"<one sentence>\\\"}.\",\"output_value\":\"Status: pass\\nQuote: Benny the bunny shared his carrot with Rosie, and they both smiled.\\nReasoning: The hero's name 'Benny' appears verbatim on the page, satisfying the commitment.\"}]}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 1
+}

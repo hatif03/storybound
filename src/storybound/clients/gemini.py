@@ -62,14 +62,17 @@ def _usage(resp, model: str, t0: float) -> Usage:
     )
 
 
-def _call(model: str, contents, *, system: str | None, json_mode: bool, temperature: float, max_tokens: int):
+def _call(
+    model: str, contents, *, system: str | None, json_mode: bool, temperature: float, max_tokens: int, thinking: str
+):
     from google.genai import errors, types
 
     cfg = types.GenerateContentConfig(
         temperature=temperature,
-        max_output_tokens=max_tokens,
+        max_output_tokens=max_tokens + get_settings().thinking_headroom,  # thinking tokens share this budget
         system_instruction=system,
         response_mime_type="application/json" if json_mode else None,
+        thinking_config=types.ThinkingConfig(thinking_level=thinking),
     )
     t0 = time.time()
     try:
@@ -80,6 +83,9 @@ def _call(model: str, contents, *, system: str | None, json_mode: bool, temperat
     except Exception as e:  # network, timeout
         raise ClientError(f"{type(e).__name__}: {str(e)[:200]}", retryable=True) from e
     text = resp.text or ""
+    reason = str(resp.candidates[0].finish_reason) if resp.candidates else ""
+    if "MAX_TOKENS" in reason:  # never ship silently truncated output
+        raise ClientError(f"output truncated (finish_reason={reason})", retryable=False)
     return resp, text, _usage(resp, model, t0)
 
 
@@ -91,6 +97,7 @@ def generate(
     temperature: float = 0.7,
     max_tokens: int = 2048,
     images: list[tuple[bytes, str]] | None = None,
+    thinking: str = "low",
 ) -> Result:
     """Plain text answer. `images` are (bytes, mime) pairs for vision."""
     from google.genai import types
@@ -98,7 +105,15 @@ def generate(
     model = model or get_settings().models.writer
     parts = [types.Part.from_bytes(data=b, mime_type=m) for b, m in (images or [])] + [prompt]
     _, text, usage = with_retry(
-        lambda: _call(model, parts, system=system, json_mode=False, temperature=temperature, max_tokens=max_tokens)
+        lambda: _call(
+            model,
+            parts,
+            system=system,
+            json_mode=False,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            thinking=thinking,
+        )
     )
     return Result(value=text, usage=usage, raw_text=text)
 
@@ -111,6 +126,7 @@ def generate_json(
     temperature: float = 0.4,
     max_tokens: int = 4096,
     images: list[tuple[bytes, str]] | None = None,
+    thinking: str = "low",
 ) -> Result:
     """JSON answer, parsed. One re-ask on unparseable output."""
     from google.genai import types
@@ -121,7 +137,15 @@ def generate_json(
     last: ParseError | None = None
     for _i in range(2):
         _, text, usage = with_retry(
-            lambda: _call(model, parts, system=system, json_mode=True, temperature=temperature, max_tokens=max_tokens)
+            lambda: _call(
+                model,
+                parts,
+                system=system,
+                json_mode=True,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                thinking=thinking,
+            )
         )
         total = total + usage
         try:

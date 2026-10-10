@@ -95,6 +95,21 @@ def record(span_obj: Any, verdict: dict) -> None:
         log.warning("record failed: %s", e)
 
 
+def current_trace_id() -> str:
+    """The active trace id (from the W3C traceparent neatlogs injects), or empty."""
+    if not _ready:
+        return ""
+    try:
+        import neatlogs
+
+        carrier: dict = {}
+        neatlogs.inject_trace_context(carrier)
+        parts = carrier.get("traceparent", "").split("-")
+        return parts[1] if len(parts) > 2 else ""
+    except Exception:
+        return ""
+
+
 def flush() -> None:
     if not _ready:
         return

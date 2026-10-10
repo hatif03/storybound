@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"trace_context_contract_version\":2,\"trace_id\":\"e16a18b5dbcb9cbcac0bd5371a8230f4\",\"name\":\"spike-gemini-text\",\"workflow\":\"create-storybook\",\"framework\":\"\",\"status\":\"success\",\"finalization_status\":\"finalized\",\"latency_ms\":8380,\"span_count\":2,\"root_span_count\":1,\"span_payload_complete\":true,\"span_tree_complete\":true,\"verification_ready\":true,\"returned_span_count\":2,\"offset\":0,\"next_offset\":null,\"llm_calls\":1,\"tool_calls\":0,\"retrieval_calls\":0,\"has_error\":false,\"error_count\":0,\"total_tokens\":45,\"prompt_tokens\":13,\"completion_tokens\":32,\"total_cost\":0.00012975,\"created_at\":\"2026-10-10T07:25:16.000Z\",\"detections\":[],\"spans\":[{\"span_id\":\"e2f90e9607949f71\",\"name\":\"spike-gemini-text\",\"type\":\"workflow\",\"status\":\"SUCCESS\",\"duration_ms\":8380.733952,\"parent_span_id\":\"\",\"is_root\":true,\"input_value\":\"{}\",\"output_value\":\"{\\\"trace_id\\\":\\\"e16a18b5dbcb9cbcac0bd5371a8230f4\\\",\\\"text\\\":\\\"After spending the whole morning hoarding his prized carrot, Pip the little bunny realized that snapping it in half to feed his hungry friend made it taste twice as sweet.\\\",\\\"usage\\\":{\\\"input_tokens\\\":13,\\\"output_tokens\\\":32,\\\"latency_s\\\":7.768,\\\"model\\\":\\\"gemini-3.7-flash\\\",\\\"calls\\\":1}}\"},{\"span_id\":\"68780509786fb590\",\"name\":\"gemini-3.7-flash\",\"type\":\"llm\",\"status\":\"SUCCESS\",\"duration_ms\":4787.302,\"parent_span_id\":\"e2f90e9607949f71\",\"is_root\":false,\"input_value\":\"Write one sentence about a bunny who learns to share a carrot.\",\"output_value\":\"After spending the whole morning hoarding his prized carrot, Pip the little bunny realized that snapping it in half to feed his hungry friend made it taste twice as sweet.\"}]}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 1
+}

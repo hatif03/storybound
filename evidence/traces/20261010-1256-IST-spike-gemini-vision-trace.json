@@ -1,0 +1,12 @@
+{
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"trace_context_contract_version\":2,\"trace_id\":\"4c7153ad26291eb9cd8cedbeaca40f78\",\"name\":\"spike-gemini-vision\",\"workflow\":\"create-storybook\",\"framework\":\"\",\"status\":\"success\",\"finalization_status\":\"finalized\",\"latency_ms\":2898,\"span_count\":2,\"root_span_count\":1,\"span_payload_complete\":true,\"span_tree_complete\":true,\"verification_ready\":true,\"returned_span_count\":2,\"offset\":0,\"next_offset\":null,\"llm_calls\":1,\"tool_calls\":0,\"retrieval_calls\":0,\"has_error\":false,\"error_count\":0,\"total_tokens\":1173,\"prompt_tokens\":1127,\"completion_tokens\":46,\"total_cost\":0.00101775,\"created_at\":\"2026-10-10T07:25:24.000Z\",\"detections\":[],\"spans\":[{\"span_id\":\"4a03888e5f894435\",\"name\":\"gemini-3.7-flash\",\"type\":\"llm\",\"status\":\"SUCCESS\",\"duration_ms\":2883.206,\"parent_span_id\":\"0573f61eee084735\",\"is_root\":false,\"input_value\":\"\",\"output_value\":\"Subject: rabbit\\nTraits: wearing a pink bow on its head\\nholding a carrot\\ndrawn with pink outlines\"},{\"span_id\":\"0573f61eee084735\",\"name\":\"spike-gemini-vision\",\"type\":\"workflow\",\"status\":\"SUCCESS\",\"duration_ms\":2897.940736,\"parent_span_id\":\"\",\"is_root\":true,\"input_value\":\"{}\",\"output_value\":\"{\\\"trace_id\\\":\\\"4c7153ad26291eb9cd8cedbeaca40f78\\\",\\\"json\\\":{\\\"subject\\\":\\\"rabbit\\\",\\\"traits\\\":[\\\"wearing a pink bow on its head\\\",\\\"holding a carrot\\\",\\\"drawn with pink outlines\\\"]},\\\"usage\\\":{\\\"input_tokens\\\":1127,\\\"output_tokens\\\":46,\\\"latency_s\\\":2.895,\\\"model\\\":\\\"gemini-3.7-flash\\\",\\\"calls\\\":1}}\"}]}"
+      }
+    ]
+  },
+  "jsonrpc": "2.0",
+  "id": 1
+}

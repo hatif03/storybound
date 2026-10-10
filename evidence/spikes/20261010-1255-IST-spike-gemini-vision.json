@@ -1,0 +1,18 @@
+{
+  "trace_id": "4c7153ad26291eb9cd8cedbeaca40f78",
+  "json": {
+    "subject": "rabbit",
+    "traits": [
+      "wearing a pink bow on its head",
+      "holding a carrot",
+      "drawn with pink outlines"
+    ]
+  },
+  "usage": {
+    "input_tokens": 1127,
+    "output_tokens": 46,
+    "latency_s": 2.895,
+    "model": "gemini-3.7-flash",
+    "calls": 1
+  }
+}

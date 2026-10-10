@@ -1,0 +1,52 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K08HVYV2BDG3ABHGQ856DE",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T13:32:59.4260254Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 2,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "c3d58b27a9de",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 576,
+    "cache_creation_tokens": 742389,
+    "cache_read_tokens": 91053752,
+    "output_tokens": 259264,
+    "api_call_count": 273,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 26
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 143,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1342,
+      "agent_lines_removed": 3,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 142
+      }
+    }
+  ]
+}

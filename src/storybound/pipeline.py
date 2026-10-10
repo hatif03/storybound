@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import contextvars
+import os
 import threading
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -38,7 +39,7 @@ CALM_REFUSAL = "This drawing isn't one I can turn into a story. Could we try a d
 CALM_REDRAW = "I couldn't quite see a hero in that picture. Could you draw one a little bigger and darker?"
 OBSERVE = ("B0", "B2")  # arms where verification only observes: nothing is gated or repaired by the oath
 IMAGE_SLOTS = threading.BoundedSemaphore(2)
-MAX_AHEAD = 3  # pages written ahead of the oldest page still under review
+MAX_AHEAD = int(os.environ.get("STORYBOUND_MAX_AHEAD", "3"))  # pages written ahead of the oldest page under review; 1 = sequential (ablation)
 CALM_STOP = "I couldn't make this story gentle enough, so I stopped. Could we try another picture?"
 
 

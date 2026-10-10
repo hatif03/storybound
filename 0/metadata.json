@@ -1,0 +1,53 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JVM4MPM7NMQXEQQJZ9P7R4",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T12:11:55.5980374Z",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "save_step_count": 1,
+  "files_touched": [
+    "scripts/make_video.py",
+    "src/storybound/video/__init__.py",
+    "src/storybound/video/agent.py",
+    "src/storybound/video/claims.py",
+    "src/storybound/video/compose.py",
+    "src/storybound/video/render.py",
+    "src/storybound/video/spec.py",
+    "src/storybound/video/verify.py",
+    "tests/test_video.py",
+    "video/harness/claims/preview.json",
+    "video/harness/specs/preview-brief.txt",
+    "video/harness/template/hyperframes.json",
+    "video/harness/template/meta.json",
+    "video/harness/template/package.json",
+    "video/harness/vendor/gsap.min.js"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "8e33c708f044",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 338,
+    "cache_creation_tokens": 584772,
+    "cache_read_tokens": 37704087,
+    "output_tokens": 164660,
+    "api_call_count": 161
+  },
+  "session_metrics": {
+    "turn_count": 17
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T12:11:55.3642233Z",
+    "agent_lines": 166,
+    "agent_removed": 0,
+    "human_added": 7,
+    "human_modified": 636,
+    "human_removed": 0,
+    "total_committed": 809,
+    "total_lines_changed": 809,
+    "agent_percentage": 20.519159456118665,
+    "metric_version": 2
+  }
+}

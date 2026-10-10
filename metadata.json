@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JVM4MPM7NMQXEQQJZ9P7R4",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "scripts/make_video.py",
+    "src/storybound/video/__init__.py",
+    "src/storybound/video/agent.py",
+    "src/storybound/video/claims.py",
+    "src/storybound/video/compose.py",
+    "src/storybound/video/render.py",
+    "src/storybound/video/spec.py",
+    "src/storybound/video/verify.py",
+    "tests/test_video.py",
+    "video/harness/claims/preview.json",
+    "video/harness/specs/preview-brief.txt",
+    "video/harness/template/hyperframes.json",
+    "video/harness/template/meta.json",
+    "video/harness/template/package.json",
+    "video/harness/vendor/gsap.min.js"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 338,
+    "cache_creation_tokens": 584772,
+    "cache_read_tokens": 37704087,
+    "output_tokens": 164660,
+    "api_call_count": 161
+  }
+}

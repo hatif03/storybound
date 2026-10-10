@@ -67,7 +67,8 @@ class Settings(BaseModel):
     gcp_project: str = "project-f0b6b4ce-541f-43ff-9f7"
     gcp_location: str = "global"
     ifm_base_url: str = "https://api.ifm.ai/v1"
-    request_timeout_s: float = 90.0
+    request_timeout_s: float = 90.0  # images
+    text_timeout_s: float = 40.0  # text and vision: normal calls take 3-18 s, a stalled one should not hold a story for 90 s (HR-005)
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens

@@ -35,7 +35,7 @@ def _credentials():
 
 
 @lru_cache
-def client():
+def client(timeout_s: float | None = None):
     from google import genai
     from google.genai import types
 
@@ -46,7 +46,7 @@ def client():
         location=s.gcp_location,
         credentials=_credentials(),
         http_options=types.HttpOptions(
-            timeout=int(s.request_timeout_s * 1000), headers={"x-goog-user-project": s.gcp_project}
+            timeout=int((timeout_s or s.request_timeout_s) * 1000), headers={"x-goog-user-project": s.gcp_project}
         ),
     )
     return tracing.wrap(c)
@@ -77,7 +77,7 @@ def _call(
     )
     t0 = time.time()
     try:
-        resp = client().models.generate_content(model=model, contents=contents, config=cfg)
+        resp = client(get_settings().text_timeout_s).models.generate_content(model=model, contents=contents, config=cfg)
     except errors.APIError as e:
         code = getattr(e, "code", None)
         raise ClientError(str(e)[:300], retryable=code in _RETRYABLE, status=code) from e

@@ -1,0 +1,72 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JJVA37H0G8D03CT1YW9A44",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T09:38:33.1104689Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 2,
+  "files_touched": [
+    "scripts/report.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "459f5fe0655b",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 106,
+    "cache_creation_tokens": 141216,
+    "cache_read_tokens": 6308251,
+    "output_tokens": 41539,
+    "api_call_count": 52
+  },
+  "session_metrics": {
+    "turn_count": 2
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T09:38:33.0532064Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 144,
+    "human_removed": 0,
+    "total_committed": 144,
+    "total_lines_changed": 335,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 32,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 32
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 176,
+      "user_lines_removed": 0,
+      "agent_lines_added": 180,
+      "agent_lines_removed": 141,
+      "user_added_per_file": {
+        "docs/planning/video-harness.md": 135,
+        "evidence/ledger.jsonl": 41
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 4,
+      "user_lines_removed": 0,
+      "agent_lines_added": 397,
+      "agent_lines_removed": 141,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 4
+      }
+    }
+  ]
+}

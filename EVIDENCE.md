@@ -1,17 +1,82 @@
 # EVIDENCE
 
-Generated 2026-10-10 13:42 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (15 rows, 12 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-10 15:23 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (159 rows, 156 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
 ## 1. The agent improved: before and after, with numbers
 
-No hardening record yet.
+- [HR-001: reading level broke on almost every page (prompt p1 to p2)](evidence/hardening/HR-001.md)
+- [HR-002: gated stories took too long (pipelined review)](evidence/hardening/HR-002.md)
 
+- Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
+- Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
+
+### 20261010-1505-IST-sweep-2-p2
+
+84 runs. Same drawings, lessons and seeds in both arms; pictures and narration off.
+
+| Metric | B0 | B1 | B2 |
+| --- | --- | --- | --- |
+| Runs (errors) | 28 (0) | 28 (0) | 28 (0) |
+| Refused or asked to redraw | 0 | 0 | 0 |
+| Stories made | 28 | 28 | 28 |
+| **Shipped with a broken promise** | **27/28 (96%)** | **0/28 (0%)** | **27/28 (96%)** |
+| Broken promises shipped (total) | 97 | 0 | 110 |
+| Stopped on a critical safety failure | 0 | 0 | 0 |
+| A promise broken on the first pass | 27/28 (96%) | 19/28 (68%) | 27/28 (96%) |
+| Drawing text reached the shipped story | 0/8 (0%) | 0/8 (0%) | 0/8 (0%) |
+| Drawing text leaked on first pass | 0/8 (0%) | 0/8 (0%) | 0/8 (0%) |
+| Repairs per story (mean) | 0 | 1.82 | 0.04 |
+| Seconds per story (mean) | 150.3 | 142.7 | 170.5 |
+| Seconds to first page (mean) | 57.2 | 51.1 | 63.9 |
+| Estimated USD per story (mean) | 0.0083 | 0.0162 | 0.0198 |
+| Tokens per story (mean) | 21,384 | 35,540 | 27,559 |
+| Judge calls that could not verify | 3/500 (1%) | 7/601 (1%) | 1/490 (0%) |
+
+## Broken on the first pass, by promise
+
+| Promise | B0 | B1 | B2 |
+| --- | --- | --- | --- |
+| `age_reading_level` | 3 | 15 | 2 |
+| `character_named_in_scene` | 1 | 0 | 0 |
+| `correct_choice_position_balanced` | 22 | 0 | 24 |
+| `correct_choice_teaches_lesson` | 4 | 1 | 3 |
+
+### 20261010-1506-IST-sweep-1-p1
+
+56 runs. Same drawings, lessons and seeds in both arms; pictures and narration off.
+
+| Metric | B0 | B1 |
+| --- | --- | --- |
+| Runs (errors) | 28 (0) | 28 (3) |
+| Refused or asked to redraw | 0 | 0 |
+| Stories made | 28 | 25 |
+| **Shipped with a broken promise** | **28/28 (100%)** | **8/25 (32%)** |
+| Broken promises shipped (total) | 206 | 14 |
+| Stopped on a critical safety failure | 0 | 0 |
+| A promise broken on the first pass | 28/28 (100%) | 25/25 (100%) |
+| Drawing text reached the shipped story | 0/8 (0%) | 0/8 (0%) |
+| Drawing text leaked on first pass | 0/8 (0%) | 0/8 (0%) |
+| Repairs per story (mean) | 0.11 | 8.8 |
+| Seconds per story (mean) | 180.5 | 246.8 |
+| Seconds to first page (mean) | n/a | n/a |
+| Estimated USD per story (mean) | 0.0085 | 0.0150 |
+| Tokens per story (mean) | 23,833 | 37,011 |
+| Judge calls that could not verify | 4/553 (1%) | 4/620 (1%) |
+
+## Broken on the first pass, by promise
+
+| Promise | B0 | B1 |
+| --- | --- | --- |
+| `age_reading_level` | 26 | 25 |
+| `correct_choice_position_balanced` | 21 | 0 |
+| `correct_choice_teaches_lesson` | 1 | 0 |
+| `lesson_concept_in_scene` | 20 | 1 |
 
 ## 2. neatlogs traces
 
-12 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+156 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -22,6 +87,12 @@ No hardening record yet.
 | first-full-run-trace | `301911c89d3eb42738c51022ab863a22` | [20261010-1318-IST-first-full-run-trace.json](evidence/traces/20261010-1318-IST-first-full-run-trace.json) |
 | detections-created | `` | [20261010-1327-IST-detections-created.json](evidence/traces/20261010-1327-IST-detections-created.json) |
 | media-run-429-trace | `94db23729dac6323368749acba4be1cb` | [20261010-1340-IST-media-run-429-trace.json](evidence/traces/20261010-1340-IST-media-run-429-trace.json) |
+| sweep2-b1-reading-level-scene7 | `a32498d665231ab02f7218b8b54e9a3f` | [20261010-1505-IST-sweep2-b1-reading-level-scene7.json](evidence/traces/20261010-1505-IST-sweep2-b1-reading-level-scene7.json) |
+| sweep2-b1-reading-level-scene7-offset100 | `a32498d665231ab02f7218b8b54e9a3f` | [20261010-1506-IST-sweep2-b1-reading-level-scene7-offset100.json](evidence/traces/20261010-1506-IST-sweep2-b1-reading-level-scene7-offset100.json) |
+| sweep2-b1-reading-level-scene7-offset50 | `a32498d665231ab02f7218b8b54e9a3f` | [20261010-1506-IST-sweep2-b1-reading-level-scene7-offset50.json](evidence/traces/20261010-1506-IST-sweep2-b1-reading-level-scene7-offset50.json) |
+| sweep1-p1-bunny-sharing-B1-7-reading-level-repairs | `264208295ada9b28a96d2e29b32fb41c` | [20261010-1508-IST-sweep1-p1-bunny-sharing-B1-7-reading-level-repairs.json](evidence/traces/20261010-1508-IST-sweep1-p1-bunny-sharing-B1-7-reading-level-repairs.json) |
+| sweep2-bunny-sharing-B1-pipelined | `a32498d665231ab02f7218b8b54e9a3f` | [20261010-1522-IST-sweep2-bunny-sharing-B1-pipelined.json](evidence/traces/20261010-1522-IST-sweep2-bunny-sharing-B1-pipelined.json) |
+| sweep3-ahead1-bunny-sharing-B1-sequential | `e0d0e072d74ef1db7186b0cb445d744f` | [20261010-1522-IST-sweep3-ahead1-bunny-sharing-B1-sequential.json](evidence/traces/20261010-1522-IST-sweep3-ahead1-bunny-sharing-B1-sequential.json) |
 
 ## 3. A recovery run: an action failed, what the agent did next
 
@@ -31,7 +102,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 3 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 54 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -49,9 +120,16 @@ Repair recoveries inside the story loop: 3 gated runs repaired at least one page
 
 ## 6. Entire
 
-- Commits: 23; with an `Entire-Checkpoint` trailer: 0.
+- Commits: 30; with an `Entire-Checkpoint` trailer: 0.
 - Graph output: [20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json](evidence/entire/20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json)
 - Graph output: [20261010-1325-IST-graph-search-verify-repair.txt](evidence/entire/20261010-1325-IST-graph-search-verify-repair.txt)
+- Graph output: [20261010-1421-IST-graph-impact-story_safe_text.txt](evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt)
+- Graph output: [20261010-1421-IST-graph-impact-verify_scene_async.txt](evidence/entire/20261010-1421-IST-graph-impact-verify_scene_async.txt)
+- Graph output: [20261010-1421-IST-graph-verify-after.txt](evidence/entire/20261010-1421-IST-graph-verify-after.txt)
+- Graph output: [20261010-1421-IST-graph-verify-baseline-v.txt](evidence/entire/20261010-1421-IST-graph-verify-baseline-v.txt)
+- Graph output: [20261010-1421-IST-graph-verify-baseline.txt](evidence/entire/20261010-1421-IST-graph-verify-baseline.txt)
+- Graph output: [20261010-1421-IST-graph-verify-pytest.txt](evidence/entire/20261010-1421-IST-graph-verify-pytest.txt)
+- Graph output: [baseline.json](evidence/entire/baseline.json)
 
 ## 7. cfo.ai business plan
 
@@ -60,4 +138,4 @@ Not yet linked.
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T13:41:49+05:30; latest 2026-10-10T13:41:49+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T15:23:40+05:30; latest 2026-10-10T15:23:40+05:30. Window check: `python scripts/lint_evidence.py`.

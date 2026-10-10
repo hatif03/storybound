@@ -50,6 +50,16 @@ eatlogs\launch-video`.
 
 (Next entries are appended after each work session.)
 
+### 2026-10-10, 14:20-15:30 IST: sweep 2, hardening records HR-001 and HR-002
+- 14:18-15:04 `sweep-2-p2` (prompt p2, arms B0/B1/B2, 84 jobs, 0 errors). Shipped with a broken promise: B0 27/28, **B1 0/28**, B2 27/28. The model reviewing its own story (B2) did not narrow the gap. Report: `evidence/reports/*sweep-2-p2.md`. Cost per story (estimates): B0 $0.0083, B1 $0.0162, B2 $0.0198.
+- The sweep-1 report had been written before the last sweep-1 job finished (14:20); regenerated from the final ledger (B1 shipped broken 8/25, not 7/24) and the stale copy removed.
+- HR-001 (reading level, p1 to p2): hypothesis was that the writer was never told the word limit the check enforces. B0 (control, no other change) pages over the limit on the first pass 42.9% to 1.8%; B1 90.5% to 9.8%. B1's page-by-page writer still overshoots by about a word (trace `a32498d665231ab02f7218b8b54e9a3f`, scene 7: 15 words against 14); untested idea for HR-003: aim under the limit. Regression test added (58 tests pass). Record: `evidence/hardening/HR-001.md`.
+- HR-002 (latency, pipelined review): the sweep-1 to sweep-2 comparison is confounded by HR-001, so I ran an ablation: same 14 jobs, `STORYBOUND_MAX_AHEAD=1` (sequential) against the sweep-2 rows. Total time per story 230.6 s to 149.6 s mean (207.8 to 122.0 median), faster on 11 of 14 jobs; time to first page did **not** improve (median 45.8 s sequential, 61.7 s pipelined). Small sample, sampled outputs, estimated cost. Record: `evidence/hardening/HR-002.md`.
+- Seen, not fixed: the reading-level check counted "peach-colored" as one long word on one shipped-with-notes story (possible false positive).
+- Entire: first checkpoints exist for commits made in this repo (`bcdd0c4`, `7a13f29`, `0ad1832`, `55ccd97`). The change commits `04ffebb` and `daec9ea` were made outside the repo and have none; the records say so.
+- neatlogs: the MCP in `.mcp.json` fails with 401 in the VS Code session because `NEATLOGS_API_KEY` is not in that process's environment; traces were read through `scripts/neatlogs_mcp.py` (key from `.env`). cfo.ai and Crustdata MCP connected after approval.
+- Tests that ran: `pytest tests` (58 passed), `ruff check` clean.
+
 ## Demo
 Planned: a 3:00 video covering neatlogs, Entire and cfo.ai on architecture, implementation, runtime, reasoning and result; recovery and repair runs on camera; a family-friendly demo with a parent's consent. Not started.
 

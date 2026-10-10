@@ -1,0 +1,71 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K3Z7GM4TCHK29GWFWBM0RK",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T14:37:47.8357058Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 2,
+  "files_touched": [
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-003-05ca665.json",
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-004-deb8f0d.json",
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-006-468f029.json",
+    "evidence/entire/20261010-1953-IST-why-catalog.txt",
+    "evidence/entire/20261010-1953-IST-why-prompts.txt",
+    "evidence/entire/20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt",
+    "evidence/neatlogs/20261010-2000-IST-trace-costs.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "4470f095e416",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 834,
+    "cache_creation_tokens": 978551,
+    "cache_read_tokens": 172288313,
+    "output_tokens": 370316,
+    "api_call_count": 399,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 32
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T14:37:47.3661233Z",
+    "agent_lines": 399,
+    "agent_removed": 0,
+    "human_added": 915,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 1314,
+    "total_lines_changed": 1314,
+    "agent_percentage": 30.36529680365297,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 902,
+      "user_lines_removed": 0,
+      "agent_lines_added": 504,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json": 902
+      }
+    }
+  ]
+}

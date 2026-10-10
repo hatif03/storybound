@@ -1,0 +1,39 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K3Z7GM4TCHK29GWFWBM0RK",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-003-05ca665.json",
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-004-deb8f0d.json",
+    "evidence/entire/20261010-1953-IST-graph-diff-HR-006-468f029.json",
+    "evidence/entire/20261010-1953-IST-why-catalog.txt",
+    "evidence/entire/20261010-1953-IST-why-prompts.txt",
+    "evidence/entire/20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt",
+    "evidence/neatlogs/20261010-2000-IST-trace-costs.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 834,
+    "cache_creation_tokens": 978551,
+    "cache_read_tokens": 172288313,
+    "output_tokens": 370316,
+    "api_call_count": 399,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

@@ -119,16 +119,21 @@ def markdown(name: str, rows: list[dict], s: dict) -> str:
     return "\n".join(L)
 
 
+def rows_for(name: str) -> list[dict]:
+    """Ledger rows of one named sweep; a re-run of the same job replaces an earlier errored attempt."""
+    latest: dict[tuple, dict] = {}
+    for r in ledger.read():
+        if r.get("name") == name and r.get("arm"):
+            latest[(r["arm"], r["fixture"], r["lesson"], str(r["seed"]))] = r
+    return list(latest.values())
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
     ap.add_argument("--out", default=str(ROOT / "evidence" / "reports"))
     a = ap.parse_args()
-    latest: dict[tuple, dict] = {}
-    for r in ledger.read():  # a re-run of the same job replaces an earlier errored attempt
-        if r.get("name") == a.name and r.get("arm"):
-            latest[(r["arm"], r["fixture"], r["lesson"], str(r["seed"]))] = r
-    rows = list(latest.values())
+    rows = rows_for(a.name)
     if not rows:
         sys.exit(f"no ledger rows named {a.name}")
     s = summarise(rows)

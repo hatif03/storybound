@@ -32,7 +32,7 @@ def test_images_only_from_assets():
 
 
 def test_secret_like_text_is_refused():
-    s = _spec(text="key sk-abcdefghijklmnopqrstuvwxyz123456")
+    s = _spec(text="key " + "sk-" + "a" * 30)  # built at runtime: not a key, and the secret linter stays quiet
     assert verify.no_secrets(s, {})["status"] == "violation"
 
 

@@ -44,3 +44,10 @@ _private/
 video/launch/node_modules/
 video/launch/out/
 video/launch/*.log
+
+# video harness: renders and scratch (specs and receipts are kept)
+evidence/video/*/project/
+evidence/video/*/audio-cache/
+evidence/video/*/frames/
+evidence/video/*/video.mp4
+evidence/video/*.log

@@ -1,0 +1,10 @@
+[
+ {"id":"sweep_plain","label":"stories shipped with a broken promise: plain writer","refs":["report:sweep-2-p2#arms.B0.shipped_with_violation","report:sweep-2-p2#arms.B0.shipped"],"fmt":"{0}/{1}","spoken":"{0} of {1}","ratio":true},
+ {"id":"sweep_self","label":"stories shipped with a broken promise: the model reviewing itself","refs":["report:sweep-2-p2#arms.B2.shipped_with_violation","report:sweep-2-p2#arms.B2.shipped"],"fmt":"{0}/{1}","spoken":"{0} of {1}","ratio":true},
+ {"id":"sweep_gated","label":"stories shipped with a broken promise: gated by the oath","refs":["report:sweep-2-p2#arms.B1.shipped_with_violation","report:sweep-2-p2#arms.B1.shipped"],"fmt":"{0}/{1}","spoken":"{0} of {1}","ratio":true},
+ {"id":"rl_before","label":"stories with a reading-level break on the first pass, before the fix","refs":["report:sweep-1-p1#arms.B0.first_pass_by_commitment.age_reading_level","report:sweep-1-p1#arms.B0.stories"],"fmt":"{0}/{1}","spoken":"{0} of {1}","ratio":true},
+ {"id":"rl_after","label":"the same check after the prompt fix","refs":["report:sweep-2-p2#arms.B0.first_pass_by_commitment.age_reading_level","report:sweep-2-p2#arms.B0.stories"],"fmt":"{0}/{1}","spoken":"{0} of {1}","ratio":true},
+ {"id":"cost_plain","label":"estimated dollars per story, text only, no checking","refs":["report:sweep-2-p2#arms.B0.usd_est_mean"],"fmt":"${0:.3f}","spoken":"{0:.3f} dollars"},
+ {"id":"cost_gated","label":"estimated dollars per story, text only, every page checked","refs":["report:sweep-2-p2#arms.B1.usd_est_mean"],"fmt":"${0:.3f}","spoken":"{0:.3f} dollars"},
+ {"id":"runs_per_arm","label":"stories written per arm in the experiment","refs":["report:sweep-2-p2#arms.B1.stories"],"fmt":"{0}","spoken":"{0}"}
+]

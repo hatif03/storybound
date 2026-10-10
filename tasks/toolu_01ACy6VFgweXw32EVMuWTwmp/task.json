@@ -1,0 +1,15 @@
+{
+  "tool_use_id": "toolu_01ACy6VFgweXw32EVMuWTwmp",
+  "agent_id": "a15758f45348db260",
+  "subagent_type": "general-purpose",
+  "task_description": "Entire feature research",
+  "token_usage": {
+    "input_tokens": 34,
+    "cache_creation_tokens": 121320,
+    "cache_read_tokens": 1481111,
+    "output_tokens": 263,
+    "api_call_count": 17
+  },
+  "started_at": "2026-10-10T15:33:19.1081017+05:30",
+  "completed_at": "2026-10-10T15:37:15.3799398+05:30"
+}

@@ -1,0 +1,15 @@
+{
+  "tool_use_id": "toolu_01Dkzruoeb3jhYjsBBNbvtsm",
+  "agent_id": "af1e68ef5f1d3fabb",
+  "subagent_type": "general-purpose",
+  "task_description": "Competitors and pricing research",
+  "token_usage": {
+    "input_tokens": 14,
+    "cache_creation_tokens": 86185,
+    "cache_read_tokens": 372346,
+    "output_tokens": 146,
+    "api_call_count": 7
+  },
+  "started_at": "2026-10-10T15:33:19.1244921+05:30",
+  "completed_at": "2026-10-10T15:35:00.1782788+05:30"
+}

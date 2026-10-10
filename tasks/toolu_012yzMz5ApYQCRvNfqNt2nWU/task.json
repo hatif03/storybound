@@ -1,0 +1,15 @@
+{
+  "tool_use_id": "toolu_012yzMz5ApYQCRvNfqNt2nWU",
+  "agent_id": "a4ee32e5fe2b33292",
+  "subagent_type": "general-purpose",
+  "task_description": "cfo.ai feature research",
+  "token_usage": {
+    "input_tokens": 30,
+    "cache_creation_tokens": 249547,
+    "cache_read_tokens": 1815804,
+    "output_tokens": 1428,
+    "api_call_count": 15
+  },
+  "started_at": "2026-10-10T15:33:19.0761419+05:30",
+  "completed_at": "2026-10-10T15:35:59.3560987+05:30"
+}

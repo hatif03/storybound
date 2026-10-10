@@ -1,0 +1,1 @@
+verify requires --pre-edit-baseline <path> (or --record-baseline <path> to create one)

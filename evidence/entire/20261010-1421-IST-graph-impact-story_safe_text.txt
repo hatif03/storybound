@@ -1,0 +1,20 @@
+Index: cache-hit (124ms) | Query: 1ms | Total: 125ms
+Completeness: ok for this query (3 this query files failed to parse; 4 total diagnostics in this snapshot)
+- partial E_MINIFIED: evidence/traces/20261010-1318-IST-first-full-run-trace.json
+- partial E_MINIFIED: evidence/traces/20261010-1340-IST-media-run-429-trace.json
+- partial E_MINIFIED: web/src/mock/run-bunny.json
+"story_safe_text" matches 2 definitions; all are listed, the first 2 with source.
+- story_safe_text (evidence/reports/20261010-1417-IST-sweep-1-p1.json:17) [section]  --symbol story_safe_text --file evidence/reports/20261010-1417-IST-sweep-1-p1.json --line 17
+- story_safe_text (src/storybound/oath/deterministic.py:111) [function]  --symbol story_safe_text --file src/storybound/oath/deterministic.py --line 111
+
+evidence/reports/20261010-1417-IST-sweep-1-p1.json:17-17 story_safe_text [section]
+  17→         "story_safe_text": 4,
+
+src/storybound/oath/deterministic.py:111-117 story_safe_text [function]
+  111→ def story_safe_text(p: Page, ctx: Ctx) -> Det:
+  112→     hits = harm_hits(p.review_text()) + instruction_hits(p.review_text()) + find_pii(p.review_text())
+  113→     if hits:
+  114→         return _bad(
+  115→             f"unsafe or unkind terms: {', '.join(sorted(set(hits)))}", "critical", matched=hits[0], scene=p.index
+  116→         )
+  117→     return Det("pass", "no blocked terms", scene=p.index)

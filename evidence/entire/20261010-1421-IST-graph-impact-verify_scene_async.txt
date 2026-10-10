@@ -1,0 +1,39 @@
+Index: cache-miss (2090ms) | Query: 2ms | Total: 2092ms
+Completeness: no parse failures in Python (49 files parsed); 3 elsewhere (JSON 3) cannot affect this answer — see --format json.
+Impact: Engine.verify_scene_async (src/storybound/oath/engine.py:207) def=207 span=207-208 [method in Engine]
+Blast radius: 0 callers (0 direct, 0 transitive), 3 callees, 4 type consumers, 1 data flow, 4 co-change files, 16 siblings.
+Callers (0 direct, 0 transitive; who breaks if behavior changes):
+- none
+Callees (3; what it depends on):
+- page_block (src/storybound/oath/engine.py:37)
+- Engine.commitments (src/storybound/oath/engine.py:84)
+- Engine._run_async (src/storybound/oath/engine.py:151)
+Type consumers (0 in, 4 out; USES_TYPE/PARAM_TYPE/RETURNS_TYPE):
+- -> Page (src/storybound/models.py:21) [PARAM_TYPE]
+- -> Page (src/storybound/models.py:21) [USES_TYPE]
+- -> Pending (src/storybound/oath/engine.py:57) [RETURNS_TYPE]
+- -> Pending (src/storybound/oath/engine.py:57) [USES_TYPE]
+Data flows (0 in, 1 out):
+- -> page_block (src/storybound/oath/engine.py:37)
+Co-change coupling (4; files that historically change with src/storybound/oath/engine.py):
+- src/storybound/agents/writer.py [files changed together in 2 recent commits]
+- src/storybound/pipeline.py [files changed together in 3 recent commits]
+- tests/test_oath.py [files changed together in 2 recent commits]
+- tests/test_pipeline.py [files changed together in 3 recent commits]
+Same-container siblings (16):
+- Engine.commitments (src/storybound/oath/engine.py:84)
+- Engine.get (src/storybound/oath/engine.py:87)
+- Engine.rate (src/storybound/oath/engine.py:90)
+- Engine._judge_context (src/storybound/oath/engine.py:101)
+- Engine._emit (src/storybound/oath/engine.py:109)
+- Engine._combine (src/storybound/oath/engine.py:117)
+- Engine._run (src/storybound/oath/engine.py:146)
+- Engine._run_async (src/storybound/oath/engine.py:151)
+- Engine.finish (src/storybound/oath/engine.py:191)
+- Engine.verify_scene (src/storybound/oath/engine.py:204)
+- Engine.verify_story (src/storybound/oath/engine.py:210)
+- Engine.verify_run (src/storybound/oath/engine.py:214)
+- Engine.verify_image_prompt (src/storybound/oath/engine.py:219)
+- Engine.verify_image (src/storybound/oath/engine.py:223)
+- Engine.verify_audio (src/storybound/oath/engine.py:245)
+- ... +1 more (use --format json for the full list)

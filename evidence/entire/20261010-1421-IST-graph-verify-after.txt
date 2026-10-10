@@ -1,0 +1,2 @@
+VERDICT: PASS (exit 0)
+  the runner's output format was not recognised, so this verdict is exit-code only: it reports whether the suite passed, not which tests changed.

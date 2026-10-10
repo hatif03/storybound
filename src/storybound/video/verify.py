@@ -101,7 +101,10 @@ def _env_secrets() -> list[str]:
 
 def no_secrets(spec: Spec, resolved: dict[str, dict]) -> dict:
     blob = json.dumps(spec.model_dump()) + json.dumps(resolved)
-    hit = KEY_LIKE.search(re.sub(r"[a-f0-9]{16}", "", blob))  # source hashes are 16 hex characters, not keys
+    for r in resolved.values():
+        for src in r["sources"]:
+            blob = blob.replace(src["sha256"], "")  # our own source hashes are not keys; nothing else is stripped
+    hit = KEY_LIKE.search(blob)
     leaked = any(v in blob for v in _env_secrets())
     return _v("no_secrets", not hit and not leaked, "no key-like strings, no .env values", "found one" if (hit or leaked) else "none found")
 

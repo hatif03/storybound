@@ -1,0 +1,668 @@
+[
+ {
+  "file": "pip/welcome.mp3",
+  "text": "Hi! Let's make a story!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "welcome"
+ },
+ {
+  "file": "pip/draw.mp3",
+  "text": "Draw your hero!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "draw"
+ },
+ {
+  "file": "pip/done.mp3",
+  "text": "Wow! Who is this?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "done"
+ },
+ {
+  "file": "pip/lesson.mp3",
+  "text": "What should we learn today?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "lesson"
+ },
+ {
+  "file": "pip/confirm.mp3",
+  "text": "Is this the one?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "confirm"
+ },
+ {
+  "file": "pip/yes.mp3",
+  "text": "Yes!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "yes"
+ },
+ {
+  "file": "pip/making-look.mp3",
+  "text": "Pip is looking at your drawing.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "making-look"
+ },
+ {
+  "file": "pip/making-promise.mp3",
+  "text": "Pip is writing a promise.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "making-promise"
+ },
+ {
+  "file": "pip/making-paint.mp3",
+  "text": "Pip is painting your pictures.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "making-paint"
+ },
+ {
+  "file": "pip/making-voice.mp3",
+  "text": "Pip is finding a voice.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "making-voice"
+ },
+ {
+  "file": "pip/making-big.mp3",
+  "text": "This one is a big story!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "making-big"
+ },
+ {
+  "file": "pip/reader-turn.mp3",
+  "text": "Turn the page!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "reader-turn"
+ },
+ {
+  "file": "pip/reader-think.mp3",
+  "text": "Hmm, let's think about that.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "reader-think"
+ },
+ {
+  "file": "pip/reader-try-other.mp3",
+  "text": "Try the other one!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "reader-try-other"
+ },
+ {
+  "file": "pip/reader-kind.mp3",
+  "text": "That was a kind thing to do!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "reader-kind"
+ },
+ {
+  "file": "pip/end-done.mp3",
+  "text": "The end! You made a story!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "end-done"
+ },
+ {
+  "file": "pip/end-again.mp3",
+  "text": "Read it again?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "end-again"
+ },
+ {
+  "file": "pip/refusal-1.mp3",
+  "text": "Let's try a different drawing!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "refusal-1"
+ },
+ {
+  "file": "pip/refusal-2.mp3",
+  "text": "Draw something new?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "refusal-2"
+ },
+ {
+  "file": "pip/oops.mp3",
+  "text": "Oops, Pip dropped a page. One moment!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "oops"
+ },
+ {
+  "file": "pip/offline.mp3",
+  "text": "No internet. Let's try again!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "offline"
+ },
+ {
+  "file": "pip/gate.mp3",
+  "text": "Grown-ups, hold the button.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "gate"
+ },
+ {
+  "file": "pip/start-over.mp3",
+  "text": "Start over?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "start-over"
+ },
+ {
+  "file": "pip/keep-drawing.mp3",
+  "text": "Keep drawing!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "keep-drawing"
+ },
+ {
+  "file": "pip/checking-page-1.mp3",
+  "text": "Pip is checking page one!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-1"
+ },
+ {
+  "file": "pip/checking-page-2.mp3",
+  "text": "Pip is checking page two!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-2"
+ },
+ {
+  "file": "pip/checking-page-3.mp3",
+  "text": "Pip is checking page three!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-3"
+ },
+ {
+  "file": "pip/checking-page-4.mp3",
+  "text": "Pip is checking page four!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-4"
+ },
+ {
+  "file": "pip/checking-page-5.mp3",
+  "text": "Pip is checking page five!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-5"
+ },
+ {
+  "file": "pip/checking-page-6.mp3",
+  "text": "Pip is checking page six!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-6"
+ },
+ {
+  "file": "pip/checking-page-7.mp3",
+  "text": "Pip is checking page seven!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-7"
+ },
+ {
+  "file": "pip/checking-page-8.mp3",
+  "text": "Pip is checking page eight!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "pip",
+  "id": "checking-page-8"
+ },
+ {
+  "file": "numbers/page-1.mp3",
+  "text": "Page one.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-1"
+ },
+ {
+  "file": "numbers/page-2.mp3",
+  "text": "Page two.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-2"
+ },
+ {
+  "file": "numbers/page-3.mp3",
+  "text": "Page three.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-3"
+ },
+ {
+  "file": "numbers/page-4.mp3",
+  "text": "Page four.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-4"
+ },
+ {
+  "file": "numbers/page-5.mp3",
+  "text": "Page five.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-5"
+ },
+ {
+  "file": "numbers/page-6.mp3",
+  "text": "Page six.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-6"
+ },
+ {
+  "file": "numbers/page-7.mp3",
+  "text": "Page seven.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-7"
+ },
+ {
+  "file": "numbers/page-8.mp3",
+  "text": "Page eight.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "numbers",
+  "id": "page-8"
+ },
+ {
+  "file": "stickers/sticker-all.mp3",
+  "text": "Pip checked every page!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-all"
+ },
+ {
+  "file": "stickers/sticker-safe.mp3",
+  "text": "A kind and safe story!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-safe"
+ },
+ {
+  "file": "stickers/sticker-name.mp3",
+  "text": "The hero's name is on every page!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-name"
+ },
+ {
+  "file": "stickers/sticker-answer.mp3",
+  "text": "Every question has one right answer!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-answer"
+ },
+ {
+  "file": "stickers/sticker-lesson.mp3",
+  "text": "The lesson is on every page!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-lesson"
+ },
+ {
+  "file": "stickers/sticker-pictures.mp3",
+  "text": "The pictures look like your hero!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-pictures"
+ },
+ {
+  "file": "stickers/sticker-voice.mp3",
+  "text": "The story can be read out loud!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "stickers",
+  "id": "sticker-voice"
+ },
+ {
+  "file": "lessons/sharing.mp3",
+  "text": "Sharing my toys",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "sharing"
+ },
+ {
+  "file": "lessons/kindness.mp3",
+  "text": "Being kind with words",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "kindness"
+ },
+ {
+  "file": "lessons/honesty.mp3",
+  "text": "Telling the truth",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "honesty"
+ },
+ {
+  "file": "lessons/inclusion.mp3",
+  "text": "Including others",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "inclusion"
+ },
+ {
+  "file": "lessons/patience.mp3",
+  "text": "Being patient",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "patience"
+ },
+ {
+  "file": "lessons/helping.mp3",
+  "text": "Helping others",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "helping"
+ },
+ {
+  "file": "lessons/gratitude.mp3",
+  "text": "Saying thank you",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "gratitude"
+ },
+ {
+  "file": "lessons/listening.mp3",
+  "text": "Listening carefully",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "listening"
+ },
+ {
+  "file": "lessons/apologizing.mp3",
+  "text": "Saying sorry",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "apologizing"
+ },
+ {
+  "file": "lessons/courage.mp3",
+  "text": "Being brave",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "courage"
+ },
+ {
+  "file": "lessons/responsibility.mp3",
+  "text": "Taking care of things",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "responsibility"
+ },
+ {
+  "file": "lessons/emotions.mp3",
+  "text": "Understanding feelings",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "lessons",
+  "id": "emotions"
+ },
+ {
+  "file": "fallback/kind-1.mp3",
+  "text": "That was a kind choice!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "kind-1"
+ },
+ {
+  "file": "fallback/kind-2.mp3",
+  "text": "What a good idea!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "kind-2"
+ },
+ {
+  "file": "fallback/kind-3.mp3",
+  "text": "Everyone smiled!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "kind-3"
+ },
+ {
+  "file": "fallback/kind-4.mp3",
+  "text": "That felt nice for everyone!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "kind-4"
+ },
+ {
+  "file": "fallback/kind-5.mp3",
+  "text": "Great thinking!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "kind-5"
+ },
+ {
+  "file": "fallback/other-1.mp3",
+  "text": "Hmm, how would that feel?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "other-1"
+ },
+ {
+  "file": "fallback/other-2.mp3",
+  "text": "Let's think about that together.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "other-2"
+ },
+ {
+  "file": "fallback/other-3.mp3",
+  "text": "What else could we do?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "other-3"
+ },
+ {
+  "file": "fallback/other-4.mp3",
+  "text": "Is there a kinder way?",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "other-4"
+ },
+ {
+  "file": "fallback/other-5.mp3",
+  "text": "Let's try another idea.",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "fallback",
+  "id": "other-5"
+ },
+ {
+  "file": "voice-tests/narrator-joanna-neural.mp3",
+  "text": "Mila the pink bunny held her sparkly carrot. Would you like some? she asked her new friend.",
+  "voice": "Joanna",
+  "engine": "neural",
+  "rate_percent": 90,
+  "group": "voice-tests",
+  "id": "narrator-joanna-neural"
+ },
+ {
+  "file": "voice-tests/narrator-ruth-generative.mp3",
+  "text": "Mila the pink bunny held her sparkly carrot. Would you like some? she asked her new friend.",
+  "voice": "Ruth",
+  "engine": "generative",
+  "rate_percent": 92,
+  "group": "voice-tests",
+  "id": "narrator-ruth-generative"
+ },
+ {
+  "file": "voice-tests/narrator-salli-generative.mp3",
+  "text": "Mila the pink bunny held her sparkly carrot. Would you like some? she asked her new friend.",
+  "voice": "Salli",
+  "engine": "generative",
+  "rate_percent": 92,
+  "group": "voice-tests",
+  "id": "narrator-salli-generative"
+ },
+ {
+  "file": "voice-tests/pip-ivy-neural.mp3",
+  "text": "Hi! Let's make a story!",
+  "voice": "Ivy",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "voice-tests",
+  "id": "pip-ivy-neural"
+ },
+ {
+  "file": "voice-tests/pip-kevin-neural.mp3",
+  "text": "Hi! Let's make a story!",
+  "voice": "Kevin",
+  "engine": "neural",
+  "rate_percent": 92,
+  "group": "voice-tests",
+  "id": "pip-kevin-neural"
+ }
+]

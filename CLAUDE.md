@@ -2,11 +2,13 @@
 
 Storybound is a children's (age 4-8) storybook agent for the neatHack hackathon (10-12 Oct 2026, submit Mon 12 Oct 19:00-23:55 IST). It writes an **oath** for each drawing and lesson, verifies every page against it before the child sees it, repairs pages that break it, and ships a **receipt**. The full plan lives in `docs/planning/` (DESIGN.md, neatlog.md, entire.md, cfo.md, frontend.md, pitch.md). Read DESIGN.md first.
 
+**First, read `HANDOFF.md`** (state, what is running, next steps) and `docs/DESIGN.md` (design).
+
 ## Hard rules (do not break these)
 1. **All code is written between Sat 10 Oct 12:30 IST and Mon 12 Oct 23:55 IST.** Nothing is committed before the kickoff time. Commits must carry real dates; never backdate, never rewrite history to hide work.
 2. **Secrets never enter git, prompts, logs, traces or screenshots.** Keys live in `.env` (gitignored) or the OS credential store. Never paste a key into a chat, a commit message, a trace attribute or a doc. If a key leaks, say so at once so it can be rotated.
-3. **No real child's data in traces, the ledger, posts or the repo.** Test inputs are fixtures (see `fixtures/`). Family demo footage is allowed only with a parent's consent and never uses a surname, school or location; the child's face is not shown.
-4. **No Google ADK.** Orchestration is LangGraph. The only module that imports neatlogs is `backend/oath/observer.py`-style observer code plus the app entry point; keep it that way.
+3. **No real child's data in traces, the ledger, posts or the repo.** Test inputs are fixtures (see `assets/test-drawings/`; the sister's real drawings are in `_private/`, never commit them). Family demo footage is allowed only with a parent's consent and never uses a surname, school or location; the child's face is not shown.
+4. **No Google ADK.** Orchestration is LangGraph. The only module that imports neatlogs is `src/storybound/tracing.py`-style observer code plus the app entry point; keep it that way.
 5. **AWS limits (hackathon account):** us-east-1 only; only EC2, Lambda, IAM roles and load balancers; one EC2 instance per IAM user; EBS <= 50 GB; **total allowance $25**; other teams' resources are visible in the account and must never be touched; stop resources when done. There is **no Bedrock and no Polly** in this account. Models and speech come from other providers (see DESIGN.md, "Models").
 6. **Crustdata data never goes into the public repo.** Only our own aggregated numbers, with Crustdata cited. Never send children's data or personal data of minors to Crustdata.
 

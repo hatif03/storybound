@@ -38,3 +38,9 @@ evidence/_raw/
 # private local reference material, never committed
 _reference/
 runs/
+
+# private and generated
+_private/
+video/launch/node_modules/
+video/launch/out/
+video/launch/*.log

@@ -1,0 +1,10 @@
+[
+ {"id":"s1","text":"My little sister is seven. She draws rainbows, birds and waterfalls.","min":4.5},
+ {"id":"s2","text":"Now imagine an AI turns her drawings into stories.","min":3.5},
+ {"id":"s3","text":"But who checks every page before she reads it? A hero's name goes missing. A lesson drifts. Even a word written on the drawing can start giving the AI orders.","min":8},
+ {"id":"s4","text":"So I'm building Storybound. It writes an oath first: six promises about what the story owes her. And it keeps them.","min":7},
+ {"id":"s5","text":"Every page is checked against the oath before she sees it. If a page breaks a promise, the agent rewrites it. Her parents get a receipt showing what was checked.","min":9},
+ {"id":"s6","text":"I'll build it this weekend with neatlogs to trace every run, Entire to remember why every change was made, and cfo.ai to plan the business.","min":8},
+ {"id":"s7","text":"Planning, tool use, state, context, execution, recovery, verification and iteration. All visible in one trace.","min":8},
+ {"id":"s8","text":"Follow along. Every claim will come with evidence you can open.","min":4.5}
+]

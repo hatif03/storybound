@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="The hero's name is on every page">
+<title>The hero's name is on every page</title>
+<defs><filter id="s" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#2A2745" flood-opacity="0.28"/></filter></defs>
+<g filter="url(#s)"><circle cx="200" cy="200" r="182" fill="#FFFFFF"/></g>
+<circle cx="200" cy="200" r="158" fill="#59B8F3" stroke="#2A2745" stroke-width="6"/>
+<path d="M92 140 A130 130 0 0 1 250 78" fill="none" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
+<svg x="78" y="74" width="244" height="244" viewBox="0 0 256 256" fill="#FFFFFF"><g stroke="#2A2745" stroke-width="14" stroke-linejoin="round" paint-order="stroke fill"><path d="M200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM96,48h64a8,8,0,0,1,0,16H96a8,8,0,0,1,0-16Zm84.81,150.4a8,8,0,0,1-11.21-1.6,52,52,0,0,0-83.2,0,8,8,0,1,1-12.8-9.6A67.88,67.88,0,0,1,101,165.51a40,40,0,1,1,53.94,0A67.88,67.88,0,0,1,182.4,187.2,8,8,0,0,1,180.81,198.4ZM152,136a24,24,0,1,1-24-24A24,24,0,0,1,152,136Z"/></g></svg><path d="M62,52 Q69.28,70.72 88,78 Q69.28,85.28 62,104 Q54.72,85.28 36,78 Q54.72,70.72 62,52Z" fill="#FFC93C" stroke="#2A2745" stroke-width="5" stroke-linejoin="round"/><path d="M344,44 Q349.6,58.4 364,64 Q349.6,69.6 344,84 Q338.4,69.6 324,64 Q338.4,58.4 344,44Z" fill="#FFC93C" stroke="#2A2745" stroke-width="5" stroke-linejoin="round"/><path d="M352,286 Q355.92,296.08 366,300 Q355.92,303.92 352,314 Q348.08,303.92 338,300 Q348.08,296.08 352,286Z" fill="#FFC93C" stroke="#2A2745" stroke-width="5" stroke-linejoin="round"/>
+</svg>

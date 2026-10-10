@@ -1,0 +1,194 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:Fredoka;src:url(file:///D:/storybound/assets/fonts/Fredoka-Variable.woff2);font-weight:300 700}
+@font-face{font-family:Atkinson;src:url(file:///D:/storybound/assets/fonts/AtkinsonHyperlegible-Regular.woff2);font-weight:400}
+@font-face{font-family:Atkinson;src:url(file:///D:/storybound/assets/fonts/AtkinsonHyperlegible-Bold.woff2);font-weight:700}
+:root{--ink:#2A2745;--cream:#FFF8EA;--paper2:#FDEFD3;--sun:#FFC93C;--tang:#E8710A;--berry:#FF7096;--sky:#59B8F3;--leaf:#6CC57A;--grape:#8F73E0}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--cream);color:var(--ink);font-family:Atkinson,sans-serif}
+.f{font-family:Fredoka,sans-serif;font-weight:700}
+.abs{position:absolute}
+#bg{position:absolute;inset:-60px;background:var(--cream) radial-gradient(circle,rgba(42,39,69,.08) 2.6px,transparent 2.8px) 0 0/44px 44px}
+#grass{position:absolute;left:0;right:0;bottom:-8px;height:110px;background:url(file:///D:/storybound/assets/art/nature/grass-1-cutout.webp) repeat-x bottom/auto 110px}
+.sc{position:absolute;inset:0;opacity:0}
+.pol{position:absolute;background:#fff;padding:16px 16px 56px;border:6px solid var(--ink);border-radius:12px;box-shadow:0 14px 0 rgba(42,39,69,.18)}
+.pol img{display:block;width:100%}
+.card{position:absolute;background:#fff;border:8px solid var(--ink);border-radius:30px;box-shadow:0 12px 0 rgba(42,39,69,.2)}
+.line{height:18px;border-radius:9px;background:#E3DEF0;margin:14px 0}
+.chip{display:inline-block;border:6px solid var(--ink);border-radius:999px;padding:6px 20px;font-weight:700;font-size:34px;white-space:nowrap}
+.pill{display:inline-block;background:var(--ink);color:var(--cream);border-radius:999px;padding:12px 34px;font-family:Fredoka;font-weight:700}
+.h1{position:absolute;font-family:Fredoka;font-weight:700;line-height:1.02}
+.tag{position:absolute;font-size:26px;opacity:.7}
+</style>
+<body>
+<div id="bg"></div><div id="grass"></div>
+<div id="stage"></div>
+<script>
+const CFG = window.CFG || {scenes: [], total: 90};
+const FU = 'file:///D:/storybound/assets', LU = 'file:///D:/storybound/video/launch/img';
+const INK = '#2A2745';
+const stage = document.getElementById('stage');
+const anims = [];
+window.SFX = [];
+function mk(html, parent) { const d = document.createElement('div'); d.innerHTML = html.trim(); const e = d.firstChild; (parent || stage).appendChild(e); return e; }
+function A(el, kf, t0, dur, ease, fill) {
+  const a = el.animate(kf, {duration: dur * 1000, delay: t0 * 1000, fill: fill || 'both', easing: ease || 'cubic-bezier(.2,.8,.2,1)'});
+  a.pause(); anims.push(a); return a;
+}
+function pop(el, t0, d) { A(el, [{opacity: 0, transform: 'scale(.3)'}, {opacity: 1, transform: 'scale(1.12)', offset: .6}, {opacity: 1, transform: 'scale(1)'}], t0, d || .5, 'ease-out'); }
+function rise(el, t0, d) { A(el, [{opacity: 0, transform: 'translateY(60px)'}, {opacity: 1, transform: 'translateY(0)'}], t0, d || .6); }
+function fromLeft(el, t0, d) { A(el, [{opacity: 0, transform: 'translateX(-160px)'}, {opacity: 1, transform: 'translateX(0)'}], t0, d || .7); }
+function fromRight(el, t0, d) { A(el, [{opacity: 0, transform: 'translateX(160px)'}, {opacity: 1, transform: 'translateX(0)'}], t0, d || .7); }
+function sfx(t, file, vol) { window.SFX.push({t, file, vol: vol || 1}); }
+function scene(i) {
+  const s = CFG.scenes[i], e = mk('<div class="sc"></div>');
+  A(e, [{opacity: 0}, {opacity: 1}], s.start, .4, 'ease-out');
+  if (i < CFG.scenes.length - 1) A(e, [{opacity: 1}, {opacity: 0}], s.start + s.dur - .4, .4, 'ease-in', 'forwards');
+  sfx(s.start, 'page-turn.mp3', .5);
+  return [e, s.start, s.dur];
+}
+// persistent background drift
+A(document.getElementById('bg'), [{backgroundPosition: '0 0'}, {backgroundPosition: '-220px -110px'}], 0, CFG.total, 'linear');
+
+// ---------- S1: she is seven ----------
+{
+  const [sc, t0, d] = scene(0);
+  const main = mk(`<div class="pol" style="left:1010px;top:130px;width:780px;transform:rotate(3deg)"><img src="${LU}/draw-rainbow-birds.jpg"></div>`, sc);
+  fromRight(main, t0 + .2, .8);
+  A(main.querySelector('img'), [{transform: 'scale(1)'}, {transform: 'scale(1.06)'}], t0, d, 'linear');
+  [['draw-waterfall.jpg', 120, 640, 420, -6, 1.8], ['draw-two-birds.jpg', 620, 560, 300, 5, 2.4], ['draw-rainbow-sun.jpg', 1480, 700, 380, -4, 3.0]].forEach(([f, x, y, w, r, t]) => {
+    const p = mk(`<div class="pol" style="left:${x}px;top:${y}px;width:${w}px;transform:rotate(${r}deg)"><img src="${LU}/${f}"></div>`, sc);
+    pop(p, t0 + t, .6);
+  });
+  const h = mk('<div class="h1" style="left:110px;top:150px;font-size:132px;width:860px">My sister is <span style="color:var(--tang)">seven.</span></div>', sc);
+  rise(h, t0 + .3);
+  const sub = mk('<div class="abs" style="left:116px;top:430px;width:800px;font-size:54px;line-height:1.25">She draws rainbows, birds and waterfalls.</div>', sc);
+  rise(sub, t0 + 2.2);
+}
+// ---------- S2: imagine an AI ----------
+{
+  const [sc, t0, d] = scene(1);
+  const hd = mk('<div class="h1" style="left:0;width:1920px;text-align:center;top:70px;font-size:86px">Now imagine an AI turns her drawings into <span style="color:var(--tang)">stories.</span></div>', sc);
+  rise(hd, t0 + .2);
+  const sis = mk(`<img class="abs" src="${LU}/cutout-sister.png" style="left:150px;top:300px;height:640px">`, sc);
+  A(sis, [{opacity: 0, transform: 'translateY(200px)'}, {opacity: 1, transform: 'translateY(0)'}], t0 + .4, .8);
+  const ar = mk(`<svg class="abs" style="left:740px;top:560px" width="220" height="120" viewBox="0 0 120 100"><path d="M10 50 H92 M64 18 L96 50 L64 82" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`, sc);
+  pop(ar, t0 + 1.4, .5);
+  const card = mk(`<div class="card" style="left:1000px;top:330px;width:760px;height:560px;overflow:hidden"><img src="${FU}/art/scenes/forest-4x3.webp" style="width:100%;height:370px;object-fit:cover;display:block"><div style="padding:22px 32px"><div class="line" style="width:92%"></div><div class="line" style="width:78%"></div></div></div>`, sc);
+  A(card, [{opacity: 0, transform: 'translateX(200px) rotate(6deg)'}, {opacity: 1, transform: 'translateX(0) rotate(-1.5deg)'}], t0 + 1.6, .9);
+  const pip = mk(`<img class="abs" src="${FU}/animation/owl-stills/owl-02-wink.png" style="left:1630px;top:690px;height:300px">`, sc);
+  pop(pip, t0 + 2.8, .6);
+}
+// ---------- S3: who checks every page ----------
+{
+  const [sc, t0, d] = scene(2);
+  const hd = mk('<div class="h1" style="left:0;width:1920px;text-align:center;top:60px;font-size:84px">Who checks every page <span style="color:var(--tang)">before she reads it?</span></div>', sc);
+  rise(hd, t0 + .2);
+  const lines = (n) => Array.from({length: n}, (_, i) => `<div class="line" style="width:${[92, 80, 88, 70][i % 4]}%"></div>`).join('');
+  const c1 = mk(`<div class="card" style="left:80px;top:330px;width:550px;height:520px;padding:28px"><div class="f" style="font-size:40px">Page 5</div>${lines(4)}<div class="chip" style="background:var(--grape);color:#fff;margin-top:30px;font-size:30px">? Hero's name missing</div></div>`, sc);
+  A(c1, [{opacity: 0, transform: 'translateY(120px) rotate(-5deg)'}, {opacity: 1, transform: 'translateY(0) rotate(-1.5deg)'}], t0 + 4.0, .7);
+  const c2 = mk(`<div class="card" style="left:685px;top:330px;width:550px;height:520px;padding:28px"><div class="f" style="font-size:40px">Pages 1 to 8</div><div style="margin:18px 0;font-size:30px;line-height:1.5">1 Sharing a toy<br>3 Sharing a snack<br>6 A talking cake?</div><div class="chip" style="background:var(--grape);color:#fff;margin-top:30px;font-size:30px">? The lesson drifts</div></div>`, sc);
+  A(c2, [{opacity: 0, transform: 'translateY(120px) rotate(4deg)'}, {opacity: 1, transform: 'translateY(0) rotate(1deg)'}], t0 + 6.0, .7);
+  const c3 = mk(`<div class="card" style="left:1290px;top:330px;width:550px;height:520px;padding:24px"><img src="${FU}/test-drawings/tier-b-text/injection-ignore-instructions.png" style="width:100%;border-radius:14px;border:4px solid ${INK}"><div class="chip" style="background:var(--grape);color:#fff;margin-top:26px;font-size:28px">? Words give orders</div></div>`, sc);
+  A(c3, [{opacity: 0, transform: 'translateY(120px) rotate(-4deg)'}, {opacity: 1, transform: 'translateY(0) rotate(-1deg)'}], t0 + 8.0, .7);
+  [4.0, 6.0, 8.0].forEach(t => sfx(t0 + t, 'soft-boop.mp3', .7));
+}
+// ---------- S4: the oath ----------
+{
+  const [sc, t0, d] = scene(3);
+  const mark = mk(`<img class="abs" src="file:///D:/storybound/assets/brand/logo/storybound-mark.svg" style="left:110px;top:90px;height:470px">`, sc);
+  pop(mark, t0 + .3, .7);
+  const h = mk('<div class="h1" style="left:110px;top:590px;width:800px;font-size:112px">Write the <span style="color:var(--tang)">oath</span> first.</div>', sc);
+  rise(h, t0 + 2.4);
+  const card = mk(`<div class="card" style="left:1000px;top:130px;width:790px;height:800px;background:var(--paper2);transform:rotate(1.5deg)"><div class="f" style="position:absolute;left:44px;top:26px;font-size:60px">The oath</div></div>`, sc);
+  A(card, [{opacity: 0, transform: 'translateX(180px) rotate(6deg)'}, {opacity: 1, transform: 'translateX(0) rotate(1.5deg)'}], t0 + 2.6, .8);
+  const rows = [['safe', 'Safe and kind'], ['hero-name', "The hero's name, every page"], ['one-answer', 'One right answer'], ['lesson', 'The lesson, every page'], ['pictures', 'Pictures match the hero'], ['voice', 'Reads aloud']];
+  rows.forEach(([k, t], i) => {
+    const r = mk(`<div class="abs" style="left:1050px;top:${220 + i * 108}px;display:flex;align-items:center;gap:24px;font-size:42px;font-weight:700;white-space:nowrap;transform:rotate(1.5deg)"><img src="${FU}/art/stickers/promise/${k}.svg" style="height:100px"><span>${t}</span></div>`, sc);
+    pop(r, t0 + 4.3 + i * .6, .45);
+    sfx(t0 + 4.3 + i * .6, 'star-pop.mp3', .8);
+  });
+}
+// ---------- S5: checked before she sees it ----------
+{
+  const [sc, t0, d] = scene(4);
+  const hd = mk('<div class="h1" style="left:0;width:1920px;text-align:center;top:50px;font-size:84px">Every page is checked <span style="color:var(--tang)">before she sees it.</span></div>', sc);
+  rise(hd, t0 + .2);
+  const th = mk(`<div class="pol" style="left:120px;top:210px;width:240px;transform:rotate(-4deg)"><img src="${LU}/draw-rainbow-sun.jpg"></div>`, sc);
+  fromLeft(th, t0 + .3, .6);
+  const a1 = mk(`<svg class="abs" style="left:400px;top:250px" width="110" height="80" viewBox="0 0 120 100"><path d="M10 50 H92 M64 18 L96 50 L64 82" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>`, sc); pop(a1, t0 + .6, .4);
+  const oath = mk(`<div class="card" style="left:540px;top:210px;width:760px;height:190px;background:var(--paper2);display:flex;align-items:center;justify-content:space-around;padding:0 20px">${['safe', 'hero-name', 'one-answer', 'lesson', 'pictures', 'voice'].map(k => `<img src="${FU}/art/stickers/promise/${k}.svg" style="height:100px">`).join('')}</div>`, sc);
+  pop(oath, t0 + .9, .5);
+  const cap = mk('<div class="abs f" style="left:540px;top:410px;font-size:34px;opacity:.8">the oath, written first</div>', sc); rise(cap, t0 + 1.1);
+  const tiles = [];
+  for (let i = 0; i < 8; i++) {
+    const tl = mk(`<div class="card" style="left:${120 + i * 214}px;top:520px;width:184px;height:200px;text-align:center;padding-top:22px;transition:none"><div class="f" style="font-size:72px;line-height:1">${i + 1}</div><div class="line" style="width:70%;margin:12px auto 6px"></div><div class="line" style="width:50%;margin:6px auto"></div></div>`, sc);
+    rise(tl, t0 + .6 + i * .12, .4);
+    const ck = i === 4 ? null : mk(`<img class="abs" src="${FU}/icons/fill/check-circle.svg" style="left:${120 + i * 214 + 62}px;top:${740}px;height:60px;filter:invert(62%) sepia(40%) saturate(560%) hue-rotate(78deg) brightness(.95)">`, sc);
+    if (ck) { pop(ck, t0 + 1.2 + i * .42, .35); }
+    tiles.push(tl);
+  }
+  // page 5: grape (needs a rewrite) then leaf
+  const t5 = tiles[4];
+  A(t5, [{background: '#fff'}, {background: '#8F73E0'}], t0 + 4.6, .3, 'ease-out');
+  A(t5, [{background: '#8F73E0'}, {background: '#6CC57A'}], t0 + 6.9, .4, 'ease-out');
+  const q = mk(`<div class="chip abs" style="left:${120 + 4 * 214 - 30}px;top:790px;background:var(--grape);color:#fff;font-size:28px">? Rewrite</div>`, sc);
+  A(q, [{opacity: 0, transform: 'scale(.4)'}, {opacity: 1, transform: 'scale(1)'}, {opacity: 1, transform: 'scale(1)', offset: .7}, {opacity: 0, transform: 'scale(.8)'}], t0 + 4.7, 2.2, 'ease-out');
+  const ok5 = mk(`<img class="abs" src="${FU}/icons/fill/check-circle.svg" style="left:${120 + 4 * 214 + 62}px;top:740px;height:60px;filter:invert(62%) sepia(40%) saturate(560%) hue-rotate(78deg) brightness(.95)">`, sc);
+  pop(ok5, t0 + 7.0, .4);
+  const sp = mk(`<img class="abs" src="${FU}/animation/props/sparkle.svg" style="left:${120 + 4 * 214 + 120}px;top:490px;height:90px">`, sc);
+  A(sp, [{opacity: 0, transform: 'scale(.2) rotate(0)'}, {opacity: 1, transform: 'scale(1.2) rotate(40deg)'}, {opacity: 0, transform: 'scale(1.5) rotate(90deg)'}], t0 + 6.9, .9);
+  sfx(t0 + 4.6, 'soft-boop.mp3', .8); sfx(t0 + 6.9, 'happy-chime.mp3', .8);
+  const rc = mk(`<div class="card" style="left:560px;top:850px;width:800px;height:170px;background:var(--paper2);padding:22px 36px"><div class="f" style="font-size:44px">Receipt for the parents</div><div style="font-size:32px;margin-top:6px">14 promises checked · 1 page rewritten · all kept</div></div>`, sc);
+  rise(rc, t0 + 8.3, .6);
+  const il = mk('<div class="tag" style="left:1390px;top:960px">illustration</div>', sc); rise(il, t0 + 8.6, .4);
+}
+// ---------- S6: the three tools ----------
+{
+  const [sc, t0, d] = scene(5);
+  const hd = mk('<div class="h1" style="left:0;width:1920px;text-align:center;top:60px;font-size:84px">Built this weekend, <span style="color:var(--tang)">in the open.</span></div>', sc);
+  rise(hd, t0 + .2);
+  const SP = FU + '/brand/sponsors';
+  const data = [
+    [SP + '/neatlogs-icon-256.png', 'neatlogs', 'Traces every run: model and tool calls, state, retries, cost', 2.8],
+    [SP + '/entire-brand-kit/entire-brand-kit/lockup/entire-lockup-dark.svg', '', 'Remembers why every change was made', 5.4],
+    [SP + '/cfo-ai-mark.svg', 'cfo.ai', 'Plans the business: price, cost, runway', 8.6]];
+  data.forEach(([logo, name, line, t], i) => {
+    const c = mk(`<div class="card" style="left:${90 + i * 600}px;top:290px;width:560px;height:560px;padding:34px;text-align:center"><div style="height:150px;display:flex;align-items:center;justify-content:center"><img src="${logo}" style="height:${i === 1 ? 90 : 130}px;border-radius:22px"></div><div class="f" style="font-size:64px;margin-top:22px;height:80px">${name}</div><div style="font-size:40px;line-height:1.3;margin-top:14px">${line}</div></div>`, sc);
+    A(c, [{opacity: 0, transform: 'translateY(140px) scale(.9)'}, {opacity: 1, transform: 'translateY(0) scale(1)'}], t0 + t, .7);
+    sfx(t0 + t, 'tap.mp3', .9);
+  });
+  const mf = mk('<div class="abs" style="left:0;width:1920px;text-align:center;top:900px;font-size:34px;opacity:.75">Models: Gemini on Google Vertex AI, judged by K2 Horizon</div>', sc);
+  rise(mf, t0 + 9.8, .5);
+}
+// ---------- S7: eight capabilities + one trace ----------
+{
+  const [sc, t0, d] = scene(6);
+  const hd = mk('<div class="h1" style="left:0;width:1920px;text-align:center;top:50px;font-size:78px">Eight things an agent must do. <span style="color:var(--tang)">All in one trace.</span></div>', sc);
+  rise(hd, t0 + .2);
+  const caps = ['Planning', 'Tool use', 'State', 'Context', 'Execution', 'Recovery', 'Verification', 'Iteration'];
+  const cols = ['var(--sky)', 'var(--sun)', 'var(--leaf)', 'var(--berry)', 'var(--grape)', 'var(--sun)', 'var(--sky)', 'var(--leaf)'];
+  caps.forEach((c, i) => {
+    const e = mk(`<div class="chip f abs" style="left:${90 + (i % 4) * 440}px;top:${240 + Math.floor(i / 4) * 130}px;background:${cols[i]};font-size:50px;padding:14px 34px;color:${cols[i] === 'var(--grape)' ? '#fff' : INK}">${i + 1}  ${c}</div>`, sc);
+    pop(e, t0 + .3 + i * 1.05, .4);
+  });
+  const tr = mk(`<div class="card" style="left:300px;top:560px;width:1320px;height:420px;padding:28px 40px;font-size:34px;line-height:1.55"><div style="display:flex;align-items:center;gap:20px"><img src="${FU}/brand/sponsors/neatlogs-icon-256.png" style="height:60px;border-radius:14px"><span class="f" style="font-size:42px">one story = one trace</span></div><div style="margin-top:16px">● create-storybook<br>&nbsp;&nbsp;├ safety_screen · oath_author · story_planner<br>&nbsp;&nbsp;├ scene_writer → <b style="color:var(--grape)">guardrail: name missing</b> → repair → <b style="color:#2f8f46">guardrail: pass</b><br>&nbsp;&nbsp;└ illustrate · narrate · receipt &nbsp; <span style="opacity:.7">tokens · latency · cost</span></div></div>`, sc);
+  A(tr, [{opacity: 0, transform: 'translateY(120px)'}, {opacity: 1, transform: 'translateY(0)'}], t0 + 9.2, .8);
+  const il = mk('<div class="tag" style="left:1390px;top:990px">illustration</div>', sc); rise(il, t0 + 9.8, .4);
+}
+// ---------- S8: follow along ----------
+{
+  const [sc, t0, d] = scene(7);
+  const lg = mk(`<img class="abs" src="file:///D:/storybound/assets/brand/logo/storybound-lockup-stacked.svg" style="left:470px;top:20px;height:640px">`, sc);
+  pop(lg, t0 + .3, .8);
+  const h = mk('<div class="abs f" style="left:0;width:1920px;text-align:center;top:700px;font-size:68px">Follow along. <span style="color:var(--tang)">Evidence you can open.</span></div>', sc);
+  rise(h, t0 + 1.2, .6);
+  const p = mk('<div class="abs pill" style="left:790px;top:850px;font-size:56px">#neatHack</div>', sc); pop(p, t0 + 2.2, .5);
+  const o1 = mk(`<img class="abs" src="${FU}/animation/owl-stills/owl-01-happy-flap.png" style="left:60px;top:470px;height:480px">`, sc); pop(o1, t0 + 2.6, .6);
+  const o2 = mk(`<img class="abs" src="${FU}/animation/owl-stills/owl-14-balloons-party.png" style="left:1420px;top:440px;height:500px">`, sc); pop(o2, t0 + 2.9, .6);
+  sfx(t0 + 2.2, 'happy-chime.mp3', .9);
+}
+window.seek = (t) => { anims.forEach(a => { a.currentTime = t * 1000; }); };
+window.READY = true;
+</script>

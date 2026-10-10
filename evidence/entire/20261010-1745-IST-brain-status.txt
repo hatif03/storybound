@@ -1,0 +1,11 @@
+Brain  gh/hatif03/storybound
+  C:\Users\mdhat\AppData\Local\entire\plugins\data\brain\repos\gh\hatif03\storybound | manifest current | 213 files, 2322 symbols | 10 facts
+
+Onboarding
+  facts     .............. 0/1 distilled  (1 pending)
+  daemon    - not supported on windows yet (no launchd or systemd)
+  instant   + sessions  + seed  + docs  + semantic  + history  + patterns  + entities  + memory
+
+- freshness degraded -- commit or stash the working tree, then re-run `entire brain setup`; `entire enable` writes .entire/ and .claude/ without committing them, which is what a first run usually trips over
+  worktree=dirty-unindexed (semantic index is based on committed HEAD); seed=dirty-unindexed (seed and docs are based on committed HEAD; re...
+  `entire brain status --verbose` for the full report

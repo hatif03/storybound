@@ -1,0 +1,360 @@
+{
+  "generated_at": "2026-10-10T12:13:22.8123757Z",
+  "task": "add a scene type to the video harness",
+  "status": {
+    "generated_at": "2026-10-10T12:13:22.2516052Z",
+    "repo": {
+      "root": "D:\\storybound",
+      "key": "gh/hatif03/storybound"
+    },
+    "brain": {
+      "path": "C:\\Users\\mdhat\\AppData\\Local\\entire\\plugins\\data\\brain\\repos\\gh\\hatif03\\storybound",
+      "schema_version": 3,
+      "supported_schema_version": 3,
+      "manifest_state": "current",
+      "generated_at": "2026-10-10T12:13:04Z"
+    },
+    "sources": {
+      "seed": true,
+      "sessions": true,
+      "semantic": true,
+      "history": true,
+      "facts": true,
+      "docs": true
+    },
+    "facts": {
+      "facts": 10,
+      "distilled": 0,
+      "authored": 10,
+      "superseded": 0,
+      "branches": 1,
+      "proposals": 0
+    },
+    "semantic": {
+      "provider": {
+        "name": "entire-graph",
+        "version": "v0.4.0",
+        "schema_version": "1.1",
+        "snapshot_path": "semantic/snapshots/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/snapshot.ndjson",
+        "store_path": "semantic/generations/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/semantic.sqlite",
+        "capabilities": [
+          "local-only",
+          "ndjson",
+          "partial-failures",
+          "stable-symbol-id-v1"
+        ]
+      },
+      "freshness": {
+        "severity": "degraded",
+        "axes": {
+          "branch_tip": {
+            "state": "ok",
+            "current": "main",
+            "indexed": "main"
+          },
+          "head": {
+            "state": "ok",
+            "current": "5a92201df9bd0202802da97de669b80a26447aa3",
+            "indexed": "5a92201df9bd0202802da97de669b80a26447aa3"
+          },
+          "provider": {
+            "state": "ok",
+            "detail": "entire-graph v0.4.0"
+          },
+          "semantic_completeness": {
+            "state": "ok"
+          },
+          "snapshot": {
+            "state": "ok",
+            "detail": "semantic/snapshots/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/snapshot.ndjson"
+          },
+          "store": {
+            "state": "ok",
+            "detail": "semantic/generations/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/semantic.sqlite"
+          },
+          "worktree": {
+            "state": "dirty-unindexed",
+            "detail": "semantic index is based on committed HEAD"
+          }
+        },
+        "warnings": [
+          {
+            "code": "provider_unreported_skip",
+            "severity": "warning",
+            "path": "video/launch/package-lock.json",
+            "effect": "file was not parsed; its symbols and relations are absent from the index",
+            "detail": "semantic provider parsed neighbouring files of the same type but never emitted this one, and reported no failure for it"
+          },
+          {
+            "code": "provider_unreported_skip",
+            "severity": "warning",
+            "path": "web/package-lock.json",
+            "effect": "file was not parsed; its symbols and relations are absent from the index",
+            "detail": "semantic provider parsed neighbouring files of the same type but never emitted this one, and reported no failure for it"
+          }
+        ]
+      }
+    },
+    "retrieval": {
+      "seed_commit": "5a92201df9bd0202802da97de669b80a26447aa3",
+      "seed_mode": "tracked",
+      "docs_generated_at": "2026-10-10T12:12:56Z",
+      "docs_records": 119,
+      "docs_files": 27,
+      "conversation": {
+        "exchanges": 0,
+        "vector_state": "disabled"
+      },
+      "freshness": {
+        "severity": "degraded",
+        "axes": {
+          "docs": {
+            "state": "ok",
+            "detail": "docs index was built from the current seed"
+          },
+          "seed": {
+            "state": "dirty-unindexed",
+            "detail": "seed and docs are based on committed HEAD; refresh with --worktree to include current changes",
+            "current": "5a92201df9bd0202802da97de669b80a26447aa3",
+            "indexed": "5a92201df9bd0202802da97de669b80a26447aa3"
+          }
+        }
+      }
+    },
+    "onboarding": {
+      "facts_backfill": {
+        "sessions": 1,
+        "distilled": 0,
+        "running": false,
+        "started_at": "0001-01-01T00:00:00Z"
+      },
+      "daemon": {
+        "manager": "unsupported",
+        "label": "entire-brain-watch",
+        "installed": false,
+        "current": false,
+        "running": false,
+        "detail": "not supported on windows yet (no launchd or systemd)"
+      },
+      "last_tick_at": "0001-01-01T00:00:00Z",
+      "components": [
+        {
+          "name": "sessions",
+          "state": "built"
+        },
+        {
+          "name": "seed",
+          "state": "built"
+        },
+        {
+          "name": "docs",
+          "state": "built"
+        },
+        {
+          "name": "semantic",
+          "state": "built"
+        },
+        {
+          "name": "history",
+          "state": "built"
+        },
+        {
+          "name": "patterns",
+          "state": "built"
+        },
+        {
+          "name": "entities",
+          "state": "built"
+        },
+        {
+          "name": "memory",
+          "state": "built"
+        }
+      ]
+    },
+    "live": {
+      "branch": "main",
+      "head": "5a92201df9bd0202802da97de669b80a26447aa3",
+      "dirty": true,
+      "changed_files": [
+        "evidence/entire/20261010-1745-IST-brain-brief-video-scene-type.json"
+      ]
+    }
+  },
+  "semantic": {
+    "context": {
+      "symbols": [
+        {
+          "id": "gh/hatif03/storybound:Python:src/storybound/video/spec.py:class:Scene",
+          "kind": "class",
+          "name": "Scene",
+          "qualified_name": "Scene",
+          "file_path": "src/storybound/video/spec.py",
+          "start_line": 31,
+          "end_line": 37,
+          "signature": "class Scene(BaseModel)"
+        },
+        {
+          "id": "gh/hatif03/storybound:Python:src/storybound/video/agent.py:function:_scene_at",
+          "kind": "function",
+          "name": "_scene_at",
+          "qualified_name": "_scene_at",
+          "file_path": "src/storybound/video/agent.py",
+          "start_line": 100,
+          "end_line": 104,
+          "signature": "def _scene_at(timeline: dict, seconds: float) -\u003e str | None"
+        },
+        {
+          "id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:type:StoryEvent",
+          "kind": "type",
+          "name": "StoryEvent",
+          "qualified_name": "StoryEvent",
+          "file_path": "web/src/api/types.ts",
+          "start_line": 48,
+          "end_line": 65,
+          "signature": "type StoryEvent = | { id?: number; t: number; type: 'run.started'; data: { story_id: string; arm: string; lesson_id: string; age: number; seed: string; input_hash: string } } | { id?: number; t: number; type: 'safety.result'; data: { tier: 'none' | 'A' | 'B'; action: SafetyAction; ignored_text: string[]; reason_code: string } } | { id?: number; t: number; type: 'character.ready'; data: { card: CharacterCard } } | { id?: number; t: number; type: 'oath.ready'; data: { oath_hash: string; commitments: Commitment[]; added?: string[]; rejected?: string[] } } | { id?: number; t: number; type: 'plan.ready'; data: { beats: string[] } } | { id?: number; t: number; type: 'scene.started'; data: { index: number; attempt: number } } | { id?: number; t: number; type: 'verdict'; data: Verdict } // backend: index 0 means a run-level or whole-story repair, not a page | { id?: number; t: number; type: 'scene.repair'; data: { index: number; attempt: number; failed: string[]; because: string } } | { id?: number; t: number; type: 'scene.accepted'; data: { index: number; attempts_used: number; page: Page } } | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } } | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } } | { id?: number; t: number; type: 'degraded'; data: Degradation } | { id?: number; t: number; type: 'receipt'; data: Receipt } | { id?: number; t: number; type: 'run.finished'; data: { outcome: 'shipped' | 'shipped_with_notes'; story_id: string } } | { id?: number; t: number; type: 'run.refused'; data: { reason_code: string; message: string; trace_id: string } } | { id?: number; t: number; type: 'error'; data: { code: string; message: string } }"
+        }
+      ],
+      "relations": [
+        {
+          "from_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:type:StoryEvent",
+          "to_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.data#sig:2a8a5bac67ea8824",
+          "type": "CONTAINS",
+          "confidence": 1,
+          "reason": "symbol qualified name is nested in container"
+        },
+        {
+          "from_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:type:StoryEvent",
+          "to_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.id#sig:cef68c76c3a75709",
+          "type": "CONTAINS",
+          "confidence": 1,
+          "reason": "symbol qualified name is nested in container"
+        },
+        {
+          "from_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:type:StoryEvent",
+          "to_id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.t#sig:47b336ff95421632",
+          "type": "CONTAINS",
+          "confidence": 1,
+          "reason": "symbol qualified name is nested in container"
+        }
+      ],
+      "neighbors": [
+        {
+          "id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.data#sig:2a8a5bac67ea8824",
+          "kind": "field",
+          "name": "data",
+          "qualified_name": "StoryEvent.data",
+          "file_path": "web/src/api/types.ts",
+          "start_line": 49,
+          "end_line": 49,
+          "signature": "data : { story_id: string; arm: string; lesson_id: string; age: number; seed: string; input_hash: string }"
+        },
+        {
+          "id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.id#sig:cef68c76c3a75709",
+          "kind": "field",
+          "name": "id",
+          "qualified_name": "StoryEvent.id",
+          "file_path": "web/src/api/types.ts",
+          "start_line": 49,
+          "end_line": 49,
+          "signature": "id : number"
+        },
+        {
+          "id": "gh/hatif03/storybound:TypeScript:web/src/api/types.ts:field:StoryEvent.t#sig:47b336ff95421632",
+          "kind": "field",
+          "name": "t",
+          "qualified_name": "StoryEvent.t",
+          "file_path": "web/src/api/types.ts",
+          "start_line": 49,
+          "end_line": 49,
+          "signature": "t : number"
+        }
+      ]
+    },
+    "tests": {
+      "roots": [],
+      "suggestions": [
+        {
+          "symbol": {
+            "id": "gh/hatif03/storybound:Python:tests/test_oath.py:function:test_scene_all_pass",
+            "kind": "function",
+            "name": "test_scene_all_pass",
+            "qualified_name": "test_scene_all_pass",
+            "file_path": "tests/test_oath.py",
+            "start_line": 170,
+            "end_line": 174,
+            "signature": "def test_scene_all_pass()"
+          },
+          "reason": "name match"
+        },
+        {
+          "symbol": {
+            "id": "gh/hatif03/storybound:Python:tests/test_video.py:function:test_typed_number_is_refused_but_a_claim_placeholder_is_fine",
+            "kind": "function",
+            "name": "test_typed_number_is_refused_but_a_claim_placeholder_is_fine",
+            "qualified_name": "test_typed_number_is_refused_but_a_claim_placeholder_is_fine",
+            "file_path": "tests/test_video.py",
+            "start_line": 17,
+            "end_line": 20,
+            "signature": "def test_typed_number_is_refused_but_a_claim_placeholder_is_fine()"
+          },
+          "reason": "name match"
+        }
+      ]
+    }
+  },
+  "history": {},
+  "facts": [
+    {
+      "id": "fact:1003a999bd54959515488f99",
+      "paths": [
+        "architecture.video.repair"
+      ],
+      "kind": "decision",
+      "text": "In the video agent a failure not tied to a scene stops the repair loop and ships with notes, because rewriting a scene cannot fix it (found when brand fonts had no font-face declaration)."
+    },
+    {
+      "id": "fact:bf222828d4366ed806fed33e",
+      "paths": [
+        "constraints.video.claims"
+      ],
+      "kind": "invariant",
+      "locus": [
+        "claims_match_ledger"
+      ],
+      "text": "Video specs never hold typed numbers: every number on screen is a claim reference resolved from an evidence file at render time and rebuilt from the raw ledger before the video ships (video oath promise claims_match_ledger)."
+    },
+    {
+      "id": "fact:e7480fdf553a96f05ddd7164",
+      "paths": [
+        "constraints.video.hyperframes"
+      ],
+      "kind": "invariant",
+      "locus": [
+        "heygen",
+        "hyperframes"
+      ],
+      "text": "HyperFrames 0.8.145 is the video render and check layer: keep telemetry off and never use its publish, cloud or auth commands, which send content to HeyGen."
+    }
+  ],
+  "likely_edit_files": [
+    "src/storybound/video/agent.py",
+    "src/storybound/video/spec.py"
+  ],
+  "likely_test_files": [
+    "tests/test_oath.py",
+    "tests/test_api.py"
+  ],
+  "likely_files": [
+    "src/storybound/video/agent.py",
+    "src/storybound/video/spec.py",
+    "tests/test_oath.py",
+    "tests/test_api.py"
+  ],
+  "guidance": [
+    "Treat the brain as an indexed snapshot, not live memory.",
+    "Use likely_edit_files and history matches before text search; if search is still needed, scope it to likely_files and specific identifiers. Use likely_test_files for validation context.",
+    "Use the live-state overlay before trusting semantic results for files changed in this session.",
+    "Inspect full diffs or source files when the task intersects dirty files or when confidence is low."
+  ]
+}

@@ -60,6 +60,7 @@ class Engine:
     rates: dict[str, float] | None = None  # budget governor: may lower quality/image, never safety
     on_verdict: Callable[[Verdict], None] | None = None
     judge_enabled: bool = True  # False for the offline test mode; the receipt says so
+    defer_judge_on_det_fail: bool = False  # the gated arm sets this; the observe-only arm judges every page
 
     # ---- plumbing -----------------------------------------------------------------------------------------------------
 
@@ -140,8 +141,16 @@ class Engine:
                 dets[c.id] = d.Det("verification_error", f"verifier crashed: {type(e).__name__}: {e}"[:200])
         to_judge: list[Commitment] = []
         draws: dict[str, tuple[bool, str | None]] = {}
+        # Deterministic first, at page level too: a page that already failed a cheap check will be repaired and judged
+        # after the repair, so judging it now would only spend a slow call on text that is about to change. The last
+        # attempt is always judged: a page never ships without its safety review.
+        defer = (
+            self.defer_judge_on_det_fail
+            and attempt < get_settings().thresholds.max_repair_attempts
+            and any(x is not None and x.status != "pass" for x in dets.values())
+        )
         for c in commitments:
-            if c.verifier == "deterministic":
+            if c.verifier == "deterministic" or defer:
                 continue
             det = dets[c.id]
             if det is not None and det.status != "pass":

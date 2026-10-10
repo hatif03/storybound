@@ -55,7 +55,7 @@ def wire(monkeypatch, *, bad_first=None, safety_action="proceed", texts=None):
         "screen",
         lambda dr: safety.SafetyResult(safety_action, "none", "t", ok, ignored_text=texts or []),
     )
-    monkeypatch.setattr(character, "build_card", lambda dr, hero=None: (CARD, {}))
+    monkeypatch.setattr(character, "build_card", lambda dr, hero=None, seed="1": (CARD, {}))
     monkeypatch.setattr(
         oath_author, "author", lambda lesson, card: (catalog.core_oath(), {"added": [], "rejected": []})
     )

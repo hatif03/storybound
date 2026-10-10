@@ -277,3 +277,23 @@ def test_coverage_reports_gaps():
 @pytest.mark.parametrize("scope,n", [("scene", 8), ("story", 4), ("run", 3), ("image", 3), ("audio", 1)])
 def test_catalog_scope_counts(scope, n):
     assert len([c for c in catalog.CORE if c.scope == scope]) == n
+
+
+def test_judge_deferred_while_a_cheap_check_fails():
+    calls = []
+
+    def spy(items, text, context):
+        calls.append([c.id for c in items])
+        return {c.id: JudgeOut("pass", model="fake") for c in items}
+
+    bad = page(scenario="The rabbit has one orange carrot.")  # hero's name missing: deterministic failure
+    e = eng(spy)
+    e.defer_judge_on_det_fail = True
+    vs = by_id(e.verify_scene(bad))
+    assert vs["character_named_in_scene"].status == "violation" and not calls
+    assert vs["story_safe_text"].status == "pass" and vs["story_safe_text"].verdict_by == "deterministic"
+    e.verify_scene(page())  # a clean page is judged
+    assert calls
+    calls.clear()
+    eng(spy).verify_scene(bad)  # observe-only arm: judged regardless
+    assert calls

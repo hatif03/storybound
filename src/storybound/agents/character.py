@@ -8,7 +8,7 @@ from .. import prompts
 from ..media import Drawing
 from ..models import CharacterCard
 from ..safety_terms import franchise_hits, harm_hits
-from .common import ask_json
+from .common import ask_json, rng
 
 _NAME_OK = re.compile(r"^[A-Za-z][A-Za-z' -]{0,23}$")
 
@@ -23,8 +23,13 @@ def clean_hero_name(raw: str | None) -> str | None:
     return name
 
 
-def build_card(drawing: Drawing, hero_name: str | None = None) -> tuple[CharacterCard, dict]:
-    rule = f'use exactly this name: "{hero_name}"' if hero_name else "invent a short, friendly, original first name"
+def build_card(drawing: Drawing, hero_name: str | None = None, seed: str = "1") -> tuple[CharacterCard, dict]:
+    letter = rng(seed, "name").choice("ABCDEFGHJKLMNOPRSTWZ")
+    rule = (
+        f'use exactly this name: "{hero_name}"'
+        if hero_name
+        else f"invent a short, friendly, original first name that starts with the letter {letter} (never Pip: that is the owl guide)"
+    )
     user = prompts.CHARACTER_USER.replace("{hero_name_rule}", rule)
     r = ask_json(
         "character_card",

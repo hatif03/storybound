@@ -60,3 +60,12 @@ def prepare(raw: bytes) -> Drawing:
     out = io.BytesIO()
     im.save(out, "JPEG", quality=90)
     return Drawing(out.getvalue(), "image/jpeg", w, h, hashlib.sha256(raw).hexdigest(), too_small, blank)
+
+
+def web_image(data: bytes, max_side: int = 1024, quality: int = 82) -> bytes:
+    """Illustrations are 2 MB PNGs; the web needs a small JPEG (target well under 250 KB)."""
+    im = Image.open(io.BytesIO(data)).convert("RGB")
+    im.thumbnail((max_side, max_side), Image.LANCZOS)
+    out = io.BytesIO()
+    im.save(out, "JPEG", quality=quality, optimize=True)
+    return out.getvalue()

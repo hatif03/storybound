@@ -19,6 +19,7 @@ from typing import Any, TypedDict
 from langgraph.graph import END, StateGraph
 
 from . import ledger, lessons, prompts, tracing
+from . import media as media_mod
 from .agents import character, oath_author, planner, safety, writer
 from .agents.common import rng
 from .clients import images, tts
@@ -106,7 +107,13 @@ class Run:
         self.emit("verdict", v.model_dump(mode="json"))
 
     def make_engine(self, oath: Oath) -> Engine:
-        self.engine = Engine(oath=oath, ctx=self.ctx, on_verdict=self.on_verdict, judge_enabled=self.cfg.judge_enabled)
+        self.engine = Engine(
+            oath=oath,
+            ctx=self.ctx,
+            on_verdict=self.on_verdict,
+            judge_enabled=self.cfg.judge_enabled,
+            defer_judge_on_det_fail=self.cfg.arm == "B1",
+        )
         return self.engine
 
     def over_budget(self) -> bool:
@@ -170,7 +177,7 @@ def build_graph(run: Run):
     @tracing.span(kind="AGENT", name="node.character")
     def n_character(_: S) -> S:
         hero = character.clean_hero_name(cfg.hero_name)
-        card, _u = character.build_card(run.drawing, hero)
+        card, _u = character.build_card(run.drawing, hero, cfg.seed)
         run.ctx.card = card
         eng = run.make_engine(catalog.core_oath())  # run-scope checks use the core; the full oath follows
         for attempt in range(2):
@@ -182,7 +189,7 @@ def build_graph(run: Run):
                 run.repairs.append({"stage": "character", "failed": [v.commitment for v in bad]})
                 run.emit("scene.repair", {"index": 0, "attempt": 1, "failed": [v.commitment for v in bad],
                                           "because": "; ".join(v.actual for v in bad)})  # fmt: skip
-                card, _u = character.build_card(run.drawing, hero)
+                card, _u = character.build_card(run.drawing, hero, cfg.seed)
                 if any(v.commitment == "original_character_only" for v in bad):
                     card = card.model_copy(update={"name": "Pip", "one_line": ""})
                 run.ctx.card = card
@@ -422,7 +429,10 @@ def build_graph(run: Run):
         for v in vs:
             if not v.ok:
                 run.shipped.append({"commitment": v.commitment, "scope": v.scope, "actual": v.actual})
-        ext = "jpg" if "jpeg" in mime else "png"
+        try:
+            data, ext = media_mod.web_image(data), "jpg"
+        except Exception:  # keep the original bytes if re-encoding fails
+            ext = "jpg" if "jpeg" in mime else "png"
         path = save("image", p.index, data, ext)
         with run.lock:
             run.media_paths[f"image:{p.index}"] = path
@@ -619,10 +629,21 @@ def execute(run: Run) -> Run:
 
 def ledger_row(run: Run) -> dict:
     r = run.receipt or {}
+    fails = [
+        [v.commitment, v.scope, v.attempt, v.status]
+        for v in run.verdicts
+        if v.status in ("violation", "critical", "verification_error") or v.judge_status == "verification_error"
+    ]
+    first_pass = sorted(
+        {v.commitment for v in run.verdicts if v.attempt == 0 and v.status in ("violation", "critical")}
+    )
+    judged = [v for v in run.verdicts if v.verdict_by in ("judge", "both")]
     return {
         "name": run.cfg.ledger_name, "story_id": run.story_id, "fixture": run.cfg.fixture, "lesson": run.cfg.lesson_id,
         "arm": run.cfg.arm, "seed": run.cfg.seed, "age": run.cfg.age, "outcome": run.outcome, "trace_id": run.trace_id,
         "oath_hash": r.get("oath_hash"), "counts": r.get("counts"), "broken": r.get("broken"),
+        "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
+        "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "error": run.error or None,
+        "prompt_version": prompts.VERSION, "error": run.error or None,
     }  # fmt: skip

@@ -1,0 +1,184 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JVM23KRDAKQTMK1P7B31AX",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T12:11:53.1149092Z",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "save_step_count": 6,
+  "files_touched": [
+    "scripts/report.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "8e33c708f044",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 338,
+    "cache_creation_tokens": 584772,
+    "cache_read_tokens": 37704087,
+    "output_tokens": 164660,
+    "api_call_count": 161,
+    "subagent_tokens": {
+      "input_tokens": 146,
+      "cache_creation_tokens": 437993,
+      "cache_read_tokens": 21249734,
+      "output_tokens": 9919,
+      "api_call_count": 73
+    }
+  },
+  "session_metrics": {
+    "turn_count": 17
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T12:11:52.9278392Z",
+    "agent_lines": 0,
+    "agent_removed": 5,
+    "human_added": 0,
+    "human_modified": 149,
+    "human_removed": 0,
+    "total_committed": 149,
+    "total_lines_changed": 154,
+    "agent_percentage": 3.2467532467532463,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 316,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1260,
+      "agent_lines_removed": 144,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/video/preview-1/receipt.json": 315
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 850,
+      "user_lines_removed": 168,
+      "agent_lines_added": 913,
+      "agent_lines_removed": 144,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/video/preview-2/project/hyperframes.json": 12,
+        "evidence/video/preview-2/project/index.html": 26,
+        "evidence/video/preview-2/project/meta.json": 1,
+        "evidence/video/preview-2/project/package.json": 11,
+        "evidence/video/preview-2/project/vendor/gsap.min.js": 11,
+        "evidence/video/preview-2/receipt.json": 334,
+        "evidence/video/preview-2/spec.json": 266,
+        "src/storybound/video/agent.py": 5,
+        "src/storybound/video/render.py": 41,
+        "src/storybound/video/verify.py": 137,
+        "tests/test_video.py": 5
+      },
+      "user_removed_per_file": {
+        "src/storybound/video/agent.py": 4,
+        "src/storybound/video/render.py": 39,
+        "src/storybound/video/verify.py": 125
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 1040,
+      "user_lines_removed": 368,
+      "agent_lines_added": 914,
+      "agent_lines_removed": 144,
+      "user_added_per_file": {
+        "evidence/cfo/20261010-1745-IST-cfo-inspect-history.json": 177,
+        "evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json": 65,
+        "evidence/cfo/README.md": 48,
+        "evidence/video/preview-3/project/.video.hf-transaction-5KJQZV/owner.json": 1,
+        "evidence/video/preview-3/project/hyperframes.json": 12,
+        "evidence/video/preview-3/project/index.html": 28,
+        "evidence/video/preview-3/project/meta.json": 1,
+        "evidence/video/preview-3/project/package.json": 11,
+        "evidence/video/preview-3/project/vendor/gsap.min.js": 11,
+        "evidence/video/preview-3/spec.json": 287,
+        "src/storybound/video/agent.py": 6,
+        "src/storybound/video/compose.py": 152,
+        "src/storybound/video/render.py": 41,
+        "src/storybound/video/spec.py": 58,
+        "src/storybound/video/verify.py": 137,
+        "tests/test_video.py": 5
+      },
+      "user_removed_per_file": {
+        "src/storybound/video/agent.py": 5,
+        "src/storybound/video/compose.py": 142,
+        "src/storybound/video/render.py": 39,
+        "src/storybound/video/spec.py": 57,
+        "src/storybound/video/verify.py": 125
+      }
+    },
+    {
+      "checkpoint_number": 6,
+      "user_lines_added": 1399,
+      "user_lines_removed": 368,
+      "agent_lines_added": 1204,
+      "agent_lines_removed": 144,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/video/preview-3/project/hyperframes.json": 12,
+        "evidence/video/preview-3/project/index.html": 28,
+        "evidence/video/preview-3/project/meta.json": 1,
+        "evidence/video/preview-3/project/package.json": 11,
+        "evidence/video/preview-3/project/vendor/gsap.min.js": 11,
+        "evidence/video/preview-3/receipt.json": 649,
+        "evidence/video/preview-3/spec.json": 287,
+        "src/storybound/video/agent.py": 6,
+        "src/storybound/video/compose.py": 152,
+        "src/storybound/video/render.py": 41,
+        "src/storybound/video/spec.py": 58,
+        "src/storybound/video/verify.py": 137,
+        "tests/test_video.py": 5
+      },
+      "user_removed_per_file": {
+        "src/storybound/video/agent.py": 5,
+        "src/storybound/video/compose.py": 142,
+        "src/storybound/video/render.py": 39,
+        "src/storybound/video/spec.py": 57,
+        "src/storybound/video/verify.py": 125
+      }
+    },
+    {
+      "checkpoint_number": 7,
+      "user_lines_added": 1145,
+      "user_lines_removed": 250,
+      "agent_lines_added": 1205,
+      "agent_lines_removed": 144,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/video/preview-4/project/hyperframes.json": 12,
+        "evidence/video/preview-4/project/index.html": 32,
+        "evidence/video/preview-4/project/meta.json": 1,
+        "evidence/video/preview-4/project/package.json": 11,
+        "evidence/video/preview-4/project/vendor/gsap.min.js": 11,
+        "evidence/video/preview-4/receipt.json": 491,
+        "evidence/video/preview-4/spec.json": 296,
+        "src/storybound/video/agent.py": 9,
+        "src/storybound/video/compose.py": 40,
+        "src/storybound/video/render.py": 41,
+        "src/storybound/video/spec.py": 58,
+        "src/storybound/video/verify.py": 137,
+        "tests/test_video.py": 5
+      },
+      "user_removed_per_file": {
+        "src/storybound/video/agent.py": 5,
+        "src/storybound/video/compose.py": 24,
+        "src/storybound/video/render.py": 39,
+        "src/storybound/video/spec.py": 57,
+        "src/storybound/video/verify.py": 125
+      }
+    }
+  ]
+}

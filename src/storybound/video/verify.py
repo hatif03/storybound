@@ -25,6 +25,8 @@ def _v(commitment: str, ok: bool, expected: str, actual: str, scene: str | None 
 def _texts(spec: Spec):
     """Every string that reaches the screen or the narration, except resolved claim values."""
     for s in spec.scenes:
+        if s.kind == "story":  # words of an already verified story: the story oath covers them, not ours
+            continue
         yield s.id, "narration", s.narration
         for b in s.blocks:
             if b.text:
@@ -33,7 +35,7 @@ def _texts(spec: Spec):
                 if isinstance(it, str):
                     yield s.id, "list item", it
                 else:
-                    yield s.id, "bar label", it.get("label", "")
+                    yield s.id, "bar label", it.get("label", it.get("text", ""))
     for c in spec.claims:
         yield "claims", f"claim label {c.id}", c.label
 
@@ -109,9 +111,23 @@ def no_secrets(spec: Spec, resolved: dict[str, dict]) -> dict:
     return _v("no_secrets", not hit and not leaked, "no key-like strings, no .env values", "found one" if (hit or leaked) else "none found")
 
 
+def _image_allowed(src: str) -> bool:
+    if "_private" in src or ".." in src:
+        return False
+    if src.startswith("assets/"):
+        return True
+    if src.startswith("evidence/stories/"):  # a story package is allowed only if it came from a fixture drawing
+        pkg = ROOT / "/".join(src.split("/")[:3]) / "story.json"
+        try:
+            return bool(json.loads(pkg.read_text(encoding="utf-8")).get("fixture"))
+        except Exception:
+            return False
+    return False
+
+
 def no_child_data(spec: Spec) -> dict:
-    bad = [b.src for s in spec.scenes for b in s.blocks if b.type == "image" and (not b.src.startswith("assets/") or "_private" in b.src)]
-    return _v("no_child_data", not bad, "images only from assets/ (fixtures and brand art)", f"outside the allow-list: {bad}" if bad else "all images allowed")
+    bad = [b.src for s in spec.scenes for b in s.blocks if b.type == "image" and not _image_allowed(b.src)]
+    return _v("no_child_data", not bad, "images only from assets/ or a fixture-drawing story package", f"outside the allow-list: {bad}" if bad else "all images allowed")
 
 
 def static(spec: Spec, resolved: dict[str, dict], total: float) -> list[dict]:

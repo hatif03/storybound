@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import concurrent.futures as cf
 import contextvars
+import json
 import os
 import threading
 from dataclasses import dataclass, field
@@ -538,6 +539,7 @@ def build_graph(run: Run):
         run.receipt = make_receipt(run, s)
         run.emit("receipt", run.receipt)
         run.outcome = "shipped" if not run.shipped else "shipped_with_notes"
+        export_story(run, s)
         run.emit("run.finished", {"outcome": run.outcome, "story_id": run.story_id})
         return {}
 
@@ -696,6 +698,21 @@ def execute(run: Run) -> Run:
         run.bus.close()
         tracing.flush()
     return run
+
+
+def export_story(run: Run, s: S) -> None:
+    """Leave a story package next to the media (run_dir/story.json and drawing) so a video can be made from it."""
+    d = run.cfg.run_dir
+    if not d:
+        return
+    d.mkdir(parents=True, exist_ok=True)
+    ext = "png" if "png" in (run.drawing.mime or "") else "jpg"
+    (d / f"drawing.{ext}").write_bytes(run.drawing.data)
+    story = {"story_id": run.story_id, "fixture": run.cfg.fixture, "lesson": run.cfg.lesson_id, "age": run.cfg.age,
+             "drawing": f"drawing.{ext}", "card": s["card"].model_dump(), "pages": [p.model_dump() for p in s["pages"]],
+             "media": {k: Path(v).relative_to(d).as_posix() for k, v in run.media_paths.items() if v},
+             "receipt": run.receipt, "outcome": run.outcome}  # fmt: skip
+    (d / "story.json").write_text(json.dumps(story, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
 
 
 def ledger_row(run: Run) -> dict:

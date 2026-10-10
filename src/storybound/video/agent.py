@@ -133,7 +133,7 @@ def make(spec: Spec | None, *, brief: str = "", catalog: list[dict] | None = Non
             (out / "spec.json").write_text(spec.model_dump_json(indent=1), encoding="utf-8")
             for attempt in range(max_repairs + 1):
                 resolved = claims.resolve(spec)
-                audio = narrate_all(compose.spoken_text(spec, resolved), out)
+                audio = narrate_all(compose.spoken_text(spec, resolved), out, spec.narration_style or NARRATION_STYLE)
                 timeline = compose.build(spec, resolved, audio, out / "project")
                 chk = render.check(out / "project")
                 verdicts = [*verify.static(spec, resolved, timeline["total"]), verify.renders_clean(chk)]

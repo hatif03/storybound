@@ -52,3 +52,27 @@ def test_claim_files_cannot_leave_the_repo():
 def test_overclaiming_words_are_refused():
     assert verify.no_overclaims(_spec(text="a verifiable receipt"))[0]["status"] == "pass"
     assert verify.no_overclaims(_spec(text="cryptographic receipts"))[0]["status"] == "violation"
+
+
+def test_story_package_becomes_a_read_along_spec(tmp_path, monkeypatch):
+    import json
+
+    from storybound.video import story
+
+    monkeypatch.setattr(story, "ROOT", tmp_path)
+    pkg = tmp_path / "evidence" / "stories" / "t"
+    pkg.mkdir(parents=True)
+    page = {"index": 1, "scenario": "Zumi has a carrot.", "question": "What should Zumi do?", "image_prompt": "x",
+            "choices": [{"id": "a", "text": "Share it", "feedback": "Sharing feels warm.", "is_correct": True},
+                        {"id": "b", "text": "Hide it", "feedback": "Hiding feels lonely.", "is_correct": False}]}
+    (pkg / "story.json").write_text(json.dumps({
+        "drawing": "drawing.jpg", "card": {"name": "Zumi", "traits": ["pink bow"]}, "pages": [page],
+        "media": {"image:1": "pages/1/image.jpg"},
+        "receipt": {"counts": {"checks": 10, "repairs": 1, "commitments": 6}}}), encoding="utf-8")
+    spec = story.build_spec(pkg)
+    assert [s.id for s in spec.scenes] == ["intro", "p1-read", "p1-answer", "end"]
+    assert all(s.kind == "story" for s in spec.scenes[:3])
+    read, answer = spec.scenes[1], spec.scenes[2]
+    assert read.blocks[0].src.endswith("pages/1/image.jpg") and read.blocks[-1].items[0]["state"] == "neutral"
+    assert [i["state"] for i in answer.blocks[1].items] == ["correct", "wrong"]
+    assert {c.id for c in spec.claims} == {"checks", "repairs", "promises"}

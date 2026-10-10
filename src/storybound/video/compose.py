@@ -46,6 +46,14 @@ ul{list-style:none;display:flex;flex-direction:column;gap:26px}
 li{font-size:52px;font-weight:700;line-height:1.2;display:flex;align-items:flex-start;gap:26px}
 li:before{content:"";width:28px;height:28px;margin-top:16px;border-radius:50%;background:#FFC93C;flex:none}
 img.pic{max-height:560px;border-radius:24px;align-self:flex-start}
+.left{position:absolute;left:120px;top:170px;width:780px;height:780px;display:flex;align-items:center;justify-content:center}
+img.pic.big{width:760px;height:760px;object-fit:cover;border-radius:40px;box-shadow:0 20px 44px rgba(42,39,69,.28)}
+.body.split{left:960px;width:840px;height:660px;top:170px;gap:30px}
+.pip.small{height:230px;right:60px;bottom:36px}
+.choices{display:flex;flex-direction:column;gap:20px}
+.choice{font-size:40px;font-weight:700;line-height:1.2;padding:22px 30px;border-radius:26px;background:#fff;border:6px solid #EFE3C8}
+.choice.correct{border-color:#6CC57A;background:#E7F6E9}
+.split p.t{font-size:46px}
 """
 
 
@@ -89,19 +97,22 @@ def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, fl
     t, scenes, parts, audio_tags, js = 0.0, [], [], [], []
     for i, sc in enumerate(spec.scenes):
         mp3, vo = audio[sc.id]
-        dur = max(sc.min_seconds, vo + LEAD_S + 0.8)
+        dur = max(sc.min_seconds, vo + LEAD_S + sc.pause)
         scenes.append({"id": sc.id, "start": round(t, 3), "dur": round(dur, 3), "vo": round(vo, 3)})
         shutil.copy(mp3, out / "audio" / f"vo-{i}.mp3")
         audio_tags.append(
             f'<audio id="vo-{i}" data-start="{t + LEAD_S:.3f}" data-duration="{vo:.3f}" '
             f'data-track-index="{10 + i}" src="audio/vo-{i}.mp3" data-volume="1"></audio>'
         )
-        body = [f'<div class="band" id="s{i}-band"></div><img class="logo" id="s{i}-brand" src="assets/logo.png"/>',
-                f'<img class="pip" id="s{i}-pip" src="assets/pip-{sc.mood}.png"/>', f'<div class="body" id="s{i}-body">']
+        split = sc.layout == "split"
+        head = [f'<div class="band" id="s{i}-band"></div><img class="logo" id="s{i}-brand" src="assets/logo.png"/>',
+                f'<img class="pip{" small" if split else ""}" id="s{i}-pip" src="assets/pip-{sc.mood}.png"/>']
+        left: list[str] = []
+        body: list[str] = []
         js.append(f'tl.from("#s{i}-brand",{{opacity:0,duration:.4}},{t:.3f});')
         js.append(f'tl.from("#s{i}-pip",{{opacity:0,y:120,rotate:-6,duration:.7,ease:"back.out(1.6)"}},{t + 0.2:.3f});')
         for j, b in enumerate(sc.blocks):
-            bid, at = f"s{i}b{j}", t + LEAD_S + 0.35 * j
+            bid, at = f"s{i}b{j}", t + LEAD_S + (b.at_frac * vo if b.at_frac is not None else 0.35 * j)
             if b.type == "title":
                 body.append(f'<h1 id="{bid}">{html.escape(b.text)}</h1>')
             elif b.type == "text":
@@ -137,14 +148,23 @@ def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, fl
                 src = Path(b.src)
                 (out / "assets").mkdir(exist_ok=True)
                 shutil.copy(ROOT / src, out / "assets" / src.name)
-                body.append(f'<img class="pic" id="{bid}" src="assets/{src.name}"/>')
+                (left if split else body).append(f'<img class="pic{" big" if split else ""}" id="{bid}" src="assets/{src.name}"/>')
+            elif b.type == "choices":
+                cards = []
+                for k, it in enumerate(b.items):
+                    st = it.get("state", "neutral")
+                    cards.append(f'<div class="choice {st}" id="{bid}c{k}">{html.escape(it["text"])}</div>')
+                    if st == "wrong":
+                        js.append(f'tl.to("#{bid}c{k}",{{opacity:.4,duration:.5}},{t + LEAD_S + 0.6:.3f});')
+                    elif st == "correct":
+                        js.append(f'tl.fromTo("#{bid}c{k}",{{scale:1}},{{scale:1.04,duration:.4,yoyo:true,repeat:1}},{t + LEAD_S + 0.3:.3f});')
+                body.append(f'<div class="choices" id="{bid}">{"".join(cards)}</div>')
             js.append(f'tl.from("#{bid}",{{opacity:0,y:44,duration:.6,ease:"power2.out"}},{at:.3f});')
-        body.append("</div>")
-        body.append(f'<div class="foot" id="s{i}-foot">#neatHack · every number on screen is read from an evidence file</div>')
+        foot = f'<div class="foot" id="s{i}-foot">#neatHack · every number on screen is read from an evidence file</div>' if sc.kind == "claim" else ""
         parts.append(
-            f'<section id="scene-{i}" class="clip scene" data-start="{t:.3f}" data-duration="{dur:.3f}" '
-            f'data-track-index="1">{"".join(body)}</section>'
-        )  # fmt: skip
+            f'<section id="scene-{i}" class="clip scene" data-start="{t:.3f}" data-duration="{dur:.3f}" data-track-index="1">'
+            f'{"".join(head)}{"".join(left)}<div class="body{" split" if split else ""}" id="s{i}-body">{"".join(body)}</div>{foot}</section>'
+        )
         t += dur
     total = round(t + TAIL_S, 3)
     doc = (

@@ -226,20 +226,20 @@ class Engine:
         c = self.get("illustration_present")
         v = self._combine(c, label, attempt, d.illustration_present(data, self.ctx), None, False, None)
         out.append(self._emit(v, f"{len(data or b'')} bytes"))
-        m = self.get("image_matches_card")
-        if v.ok and data:
-            rate = self.rate(m)
-            u = sample_draw(self.ctx.seed, m.id, label, attempt)
-            hit = self.judge_enabled and u < rate
-            tag = f"seed={self.ctx.seed} rate={rate:.2f} draw={u:.3f}"
-            jo = (
-                self.judge_img(m, data, mime, json.dumps(self.ctx.card.model_dump())) if hit and self.ctx.card else None
-            )
-            vm = self._combine(m, label, attempt, None, jo, hit, tag)
-        else:
-            vm = self._combine(m, label, attempt, d.Det("pass"), None, False, None)
-            vm.status, vm.verdict_by, vm.actual = "skipped", "none", "no image to compare"
-        out.append(self._emit(vm, f"image {page.index}"))
+        for cid in ("image_matches_card", "image_no_text"):  # both need eyes: the vision judge reviews the real bytes
+            m = self.get(cid)
+            if v.ok and data:
+                rate = self.rate(m)
+                u = sample_draw(self.ctx.seed, m.id, label, attempt)
+                hit = self.judge_enabled and u < rate
+                tag = f"seed={self.ctx.seed} rate={rate:.2f} draw={u:.3f}"
+                card = json.dumps(self.ctx.card.model_dump()) if self.ctx.card else None
+                jo = self.judge_img(m, data, mime, card) if hit and card else None
+                vm = self._combine(m, label, attempt, None, jo, hit, tag)
+            else:
+                vm = self._combine(m, label, attempt, d.Det("pass"), None, False, None)
+                vm.status, vm.verdict_by, vm.actual = "skipped", "none", "no image to compare"
+            out.append(self._emit(vm, f"image {page.index}"))
         return out
 
     def verify_audio(self, page: Page, data: bytes | None, attempt: int = 0) -> list[Verdict]:

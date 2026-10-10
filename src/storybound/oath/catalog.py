@@ -39,6 +39,12 @@ IMAGE_RUBRIC = (
     "visible traits) appears, in a child-friendly style. Return a numeric score."
 )
 
+IMAGE_TEXT_RUBRIC = (
+    "Look at the picture. Score 1.0 if it has no readable words, letters, numbers or captions anywhere in it. "
+    "Score 0.0 if any text appears, even partial, garbled, in a banner or on a sign. Children are still learning to "
+    "read, so a picture must not carry stray or misspelled words."
+)
+
 # id -> (scope, deterministic function or None, definition)
 CORE: list[Commitment] = [
     C(
@@ -221,6 +227,18 @@ CORE: list[Commitment] = [
         rubric=IMAGE_RUBRIC,
         pass_score=0.8,
         cover="image",
+    ),
+    C(
+        id="image_no_text",
+        scope="image",
+        title="Pictures contain no words",
+        plain="Pictures have no stray or garbled words painted into them.",
+        klass="quality",
+        verifier="judge",
+        rubric=IMAGE_TEXT_RUBRIC,
+        pass_score=0.8,
+        cover="image",
+        repair_hint="Paint the picture again with no words, letters or captions in it.",
     ),
     C(
         id="narration_present",

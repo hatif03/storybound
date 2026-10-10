@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from storybound import lessons
@@ -22,6 +24,9 @@ def page(i=1, scenario="Benny the rabbit has one orange carrot.", question="What
     cs[correct_slot].is_correct = True
     return Page(index=i, scenario=scenario, question=question, choices=cs,
                 image_prompt=kw.pop("image_prompt", "Benny the rabbit with a pink bow holding a carrot"), **kw)  # fmt: skip
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def ctx(**kw) -> d.Ctx:
@@ -274,7 +279,7 @@ def test_coverage_reports_gaps():
     assert "narrate" in engine.coverage(stripped)["uncovered"]
 
 
-@pytest.mark.parametrize("scope,n", [("scene", 8), ("story", 4), ("run", 3), ("image", 3), ("audio", 1)])
+@pytest.mark.parametrize("scope,n", [("scene", 8), ("story", 4), ("run", 3), ("image", 4), ("audio", 1)])
 def test_catalog_scope_counts(scope, n):
     assert len([c for c in catalog.CORE if c.scope == scope]) == n
 
@@ -334,3 +339,18 @@ def test_a_lesson_can_say_hurts_without_stopping_the_story():
     assert mild.status == "violation" and "hurts" in mild.actual
     assert d.story_safe_text(page("The bunny had a knife."), d.Ctx(age=6)).status == "critical"
     assert d.story_safe_text(page("Zumi shares her carrot."), d.Ctx(age=6)).status == "pass"
+
+
+def test_a_picture_with_words_painted_into_it_fails_the_no_text_promise():
+    """HR-006: the image model painted story captions into a page picture despite 'no text in the image'."""
+    from storybound.oath.judge import JudgeOut
+
+    def vision(c, data, mime, card):
+        return JudgeOut("pass", 0.95, None, "ok", model="fake") if c.id == "image_matches_card" else JudgeOut("violation", 0.0, None, "caption painted in", model="fake")
+
+    e = eng()
+    e.judge_img = vision
+    e.rates = {"quality": 1.0, "image": 1.0}
+    vs = by_id(e.verify_image(page(), (ROOT / "assets/brand/logo/storybound-mark-512.png").read_bytes(), "image/png"))
+    assert vs["image_matches_card"].status == "pass"
+    assert vs["image_no_text"].status == "violation"

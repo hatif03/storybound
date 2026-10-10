@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-10 15:23 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (159 rows, 156 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-10 17:42 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (164 rows, 156 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -76,7 +76,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-156 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+161 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -93,6 +93,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 | sweep1-p1-bunny-sharing-B1-7-reading-level-repairs | `264208295ada9b28a96d2e29b32fb41c` | [20261010-1508-IST-sweep1-p1-bunny-sharing-B1-7-reading-level-repairs.json](evidence/traces/20261010-1508-IST-sweep1-p1-bunny-sharing-B1-7-reading-level-repairs.json) |
 | sweep2-bunny-sharing-B1-pipelined | `a32498d665231ab02f7218b8b54e9a3f` | [20261010-1522-IST-sweep2-bunny-sharing-B1-pipelined.json](evidence/traces/20261010-1522-IST-sweep2-bunny-sharing-B1-pipelined.json) |
 | sweep3-ahead1-bunny-sharing-B1-sequential | `e0d0e072d74ef1db7186b0cb445d744f` | [20261010-1522-IST-sweep3-ahead1-bunny-sharing-B1-sequential.json](evidence/traces/20261010-1522-IST-sweep3-ahead1-bunny-sharing-B1-sequential.json) |
+| video-preview-4-make-video | `3ec11cfc58c141c00b7119c53a05b821` | [20261010-1741-IST-video-preview-4-make-video.json](evidence/traces/20261010-1741-IST-video-preview-4-make-video.json) |
 
 ## 3. A recovery run: an action failed, what the agent did next
 
@@ -129,13 +130,17 @@ Repair recoveries inside the story loop: 54 gated runs repaired at least one pag
 - Graph output: [20261010-1421-IST-graph-verify-baseline-v.txt](evidence/entire/20261010-1421-IST-graph-verify-baseline-v.txt)
 - Graph output: [20261010-1421-IST-graph-verify-baseline.txt](evidence/entire/20261010-1421-IST-graph-verify-baseline.txt)
 - Graph output: [20261010-1421-IST-graph-verify-pytest.txt](evidence/entire/20261010-1421-IST-graph-verify-pytest.txt)
+- Graph output: [20261010-1716-IST-graph-diff-HR-001-04ffebb.json](evidence/entire/20261010-1716-IST-graph-diff-HR-001-04ffebb.json)
+- Graph output: [20261010-1716-IST-graph-diff-HR-002-daec9ea.json](evidence/entire/20261010-1716-IST-graph-diff-HR-002-daec9ea.json)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
 ## 7. cfo.ai business plan
 
-Not yet linked.
+- [20261010-1745-IST-cfo-inspect-history.json](evidence/cfo/20261010-1745-IST-cfo-inspect-history.json)
+- [20261010-1745-IST-cfo-readback-main-growth-downside.json](evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json)
+- [README.md](evidence/cfo/README.md)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T15:23:40+05:30; latest 2026-10-10T15:23:40+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T17:41:53+05:30; latest 2026-10-10T17:41:53+05:30. Window check: `python scripts/lint_evidence.py`.

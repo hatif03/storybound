@@ -320,3 +320,17 @@ def test_hyphenated_compound_is_not_one_long_word():
     page = Page(index=1, scenario="Zumi has a peach-colored bow. She wears it.", question="What should Zumi do?",
                 choices=[], image_prompt="x")  # fmt: skip
     assert d.age_reading_level(page, d.Ctx(age=6)).status == "pass"
+
+
+def test_a_lesson_can_say_hurts_without_stopping_the_story():
+    """HR-004: neatlogs triage found 'a secret that hurts trust' flagged critical. Mild terms now mean a rewrite."""
+    from storybound.models import Page
+    from storybound.oath import deterministic as d
+
+    def page(text):
+        return Page(index=1, scenario=text, question="What should Zumi do?", choices=[], image_prompt="a bunny")
+
+    mild = d.story_safe_text(page("Pretending keeps a secret that hurts trust."), d.Ctx(age=6))
+    assert mild.status == "violation" and "hurts" in mild.actual
+    assert d.story_safe_text(page("The bunny had a knife."), d.Ctx(age=6)).status == "critical"
+    assert d.story_safe_text(page("Zumi shares her carrot."), d.Ctx(age=6)).status == "pass"

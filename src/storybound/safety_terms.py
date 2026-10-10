@@ -7,14 +7,17 @@ from __future__ import annotations
 
 from .textutil import contains_word
 
-# Harm to people or animals, weapons, gore, cruelty. Critical when found in what a child will read.
-HARM_TERMS = [
+# Severe harm: weapons, gore, killing. Critical when found in what a child will read.
+SEVERE_TERMS = [
     "kill", "kills", "killed", "killing", "murder", "stab", "stabbed", "shoot", "shot", "gun", "guns", "knife", "knives",
-    "blood", "bloody", "weapon", "weapons", "sword", "bomb", "explode", "dead", "death", "dying",
-    "fight", "fights", "fighting", "fought", "punch", "hurt", "hurts", "attack", "gore", "suicide",
+    "blood", "bloody", "weapon", "weapons", "sword", "bomb", "explode", "dead", "death", "dying", "punch", "attack", "gore",
+    "suicide",
 ]  # fmt: skip
-# Name-calling and unkind labels, which are not allowed in a story that teaches kindness.
+# Mild terms that a moral lesson can use gently ("a secret that hurts trust", "friends do not fight"), and unkind labels.
+# A hit means the page is rewritten, not that the story stops (HR-004).
+MILD_TERMS = ["fight", "fights", "fighting", "fought", "hurt", "hurts"]
 INSULT_TERMS = ["stupid", "idiot", "dumb", "ugly", "hate", "hates", "shut up", "loser", "fat", "freak"]
+HARM_TERMS = SEVERE_TERMS + MILD_TERMS
 # Text that tries to steer the agent. Never obeyed; never repeated.
 INSTRUCTION_TERMS = [
     "ignore your rules",
@@ -39,6 +42,10 @@ def find_terms(text: str, terms: list[str]) -> list[str]:
 
 def harm_hits(text: str) -> list[str]:
     return find_terms(text, HARM_TERMS + INSULT_TERMS)
+
+
+def severe_hits(text: str) -> list[str]:
+    return find_terms(text, SEVERE_TERMS)
 
 
 def instruction_hits(text: str) -> list[str]:

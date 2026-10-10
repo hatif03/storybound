@@ -21,7 +21,7 @@ class Models(BaseModel):
     image_fallback: str = "gemini-2.5-flash-image"
     tts: str = "gemini-2.5-flash-tts"
     tts_voice: str = "Kore"
-    judge: str = "IFM/K2-Horizon-375B-A23B"
+    judge: str = os.environ.get("STORYBOUND_JUDGE_MODEL", "IFM/K2-Horizon-375B-A23B")
 
 
 class Thresholds(BaseModel):
@@ -68,7 +68,7 @@ class Settings(BaseModel):
     gcp_location: str = "global"
     ifm_base_url: str = "https://api.ifm.ai/v1"
     request_timeout_s: float = 90.0  # images
-    text_timeout_s: float = 40.0  # text and vision: normal calls take 3-18 s, a stalled one should not hold a story for 90 s (HR-005)
+    text_timeout_s: float = float(os.environ.get("STORYBOUND_TEXT_TIMEOUT_S", "40"))  # text and vision: normal calls take 3-18 s, a stalled one should not hold a story for 90 s (HR-005)
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens

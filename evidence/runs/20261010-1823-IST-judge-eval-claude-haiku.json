@@ -1,0 +1,550 @@
+{
+  "summary": {
+    "pages": 8,
+    "lesson": "sharing",
+    "false_alarms": "0/8",
+    "swap caught by correct_choice_teaches_lesson": "7/8",
+    "off-topic caught by lesson_concept_in_scene": "8/8",
+    "scary caught by story_safe_text": "8/8",
+    "judge_errors": "3/88"
+  },
+  "rows": [
+    {
+      "page": 1,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 1,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 2,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 3,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 4,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 1,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 5,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 6,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 7,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 8,
+      "kind": "clean",
+      "target": null,
+      "caught": null,
+      "flagged": [],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 1,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 1,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 1,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 2,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": false,
+      "flagged": [
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 1,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 2,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 2,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 3,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 3,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 3,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 4,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 4,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 4,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 5,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 5,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 5,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 6,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 6,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 6,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 7,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 7,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 7,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 8,
+      "kind": "swap",
+      "target": "correct_choice_teaches_lesson",
+      "caught": true,
+      "flagged": [
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 8,
+      "kind": "off-topic",
+      "target": "lesson_concept_in_scene",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "correct_choice_teaches_lesson",
+        "lesson_concept_in_scene"
+      ],
+      "judge_errors": 0,
+      "judged": 2,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "deterministic",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    },
+    {
+      "page": 8,
+      "kind": "scary",
+      "target": "story_safe_text",
+      "caught": true,
+      "flagged": [
+        "age_reading_level",
+        "lesson_concept_in_scene",
+        "story_safe_text"
+      ],
+      "judge_errors": 0,
+      "judged": 3,
+      "by": {
+        "story_safe_text": "both",
+        "lesson_concept_in_scene": "both",
+        "correct_choice_teaches_lesson": "judge"
+      }
+    }
+  ]
+}

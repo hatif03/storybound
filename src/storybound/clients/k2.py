@@ -16,14 +16,20 @@ _RETRYABLE = {408, 429, 500, 502, 503, 504}
 
 
 @lru_cache
-def client():
+def client(gateway: bool = False):
+    """The judge's OpenAI-compatible client: K2 by default, the hackathon LiteLLM gateway for claude-* and nova-* models."""
     from openai import OpenAI
 
     s = get_settings()
-    key = env("IFM_API_KEY")
-    if not key:
-        raise ClientError("IFM_API_KEY not set")
-    return tracing.wrap(OpenAI(api_key=key, base_url=s.ifm_base_url, timeout=s.judge_timeout_s, max_retries=0))
+    key = env("LITELLM_API_KEY") if gateway else env("IFM_API_KEY")
+    base = env("LITELLM_BASE_URL") if gateway else s.ifm_base_url
+    if not key or not base:
+        raise ClientError("LITELLM_API_KEY not set" if gateway else "IFM_API_KEY not set")
+    return tracing.wrap(OpenAI(api_key=key, base_url=base, timeout=s.judge_timeout_s, max_retries=0))
+
+
+def _is_gateway(model: str) -> bool:
+    return model.startswith(("claude", "nova"))
 
 
 def _once(messages, model: str, max_tokens: int):
@@ -31,7 +37,7 @@ def _once(messages, model: str, max_tokens: int):
 
     t0 = time.time()
     try:
-        r = client().chat.completions.create(model=model, messages=messages, temperature=0, max_tokens=max_tokens)
+        r = client(_is_gateway(model)).chat.completions.create(model=model, messages=messages, temperature=0, max_tokens=max_tokens)
     except openai.APIStatusError as e:
         raise ClientError(str(e)[:300], retryable=e.status_code in _RETRYABLE, status=e.status_code) from e
     except openai.APIError as e:

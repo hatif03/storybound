@@ -46,8 +46,8 @@ def illustrate(prompt: str, *, reference: tuple[bytes, str] | None = None) -> Re
     """Primary model, then the fallback model once. `reference` is the child's drawing."""
     s = get_settings()
     try:
-        data, mime, usage = with_retry(lambda: _once(s.models.image, prompt, reference), attempts=2)
+        data, mime, usage = with_retry(lambda: _once(s.models.image, prompt, reference), attempts=3, base=6.0)
     except ClientError:
-        data, mime, usage = with_retry(lambda: _once(s.models.image_fallback, prompt, reference), attempts=2)
+        data, mime, usage = with_retry(lambda: _once(s.models.image_fallback, prompt, reference), attempts=3, base=6.0)
     record(usage, "image")
     return Result(value=data, usage=usage, raw_text=mime)

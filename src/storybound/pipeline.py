@@ -36,6 +36,7 @@ from .textutil import norm_ws
 
 CALM_REFUSAL = "This drawing isn't one I can turn into a story. Could we try a different picture together?"
 CALM_REDRAW = "I couldn't quite see a hero in that picture. Could you draw one a little bigger and darker?"
+IMAGE_SLOTS = threading.BoundedSemaphore(2)
 MAX_AHEAD = 3  # pages written ahead of the oldest page still under review
 CALM_STOP = "I couldn't make this story gentle enough, so I stopped. Could we try another picture?"
 
@@ -451,7 +452,8 @@ def build_graph(run: Run):
         data, mime, err = None, "image/png", ""
         for attempt in range(2):
             try:
-                r = images.illustrate(prompt, reference=(run.drawing.data, run.drawing.mime))
+                with IMAGE_SLOTS:  # the image quota is per minute: at most two paintings at once
+                    r = images.illustrate(prompt, reference=(run.drawing.data, run.drawing.mime))
                 data, mime = r.value, r.raw_text or "image/png"
             except ClientError as e:
                 data = None

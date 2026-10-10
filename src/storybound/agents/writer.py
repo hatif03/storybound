@@ -8,6 +8,7 @@ from .. import prompts
 from ..clients.errors import ClientError
 from ..lessons import Lesson
 from ..models import CharacterCard, Choice, Oath, Page
+from ..oath.deterministic import max_sentence_words
 from ..textutil import sentences
 from .common import ask_json
 
@@ -90,7 +91,7 @@ def write_scene(
     return _page_from(
         lambda k: ask_json(
             f"scene_writer.{index}",
-            prompts.WRITE_SYSTEM.format(age=age),
+            prompts.WRITE_SYSTEM.format(age=age, max_words=max_sentence_words(age)),
             user,
             temperature=min(temperature + 0.15 * k, 1.0),
             max_tokens=900,
@@ -138,7 +139,7 @@ def repair_scene(
     return _page_from(
         lambda k: ask_json(
             f"scene_repair.{page.index}",
-            prompts.WRITE_SYSTEM.format(age=age),
+            prompts.WRITE_SYSTEM.format(age=age, max_words=max_sentence_words(age)),
             user,
             temperature=min(0.5 + 0.1 * attempt + 0.15 * k, 1.0),
             max_tokens=900,
@@ -152,7 +153,7 @@ def baseline_story(*, lesson: Lesson, card: CharacterCard, age: int, n: int = 8)
     """Arm B0: one call, the whole story, the same rules in the prompt. Whatever comes back is what ships."""
     r = ask_json(
         "baseline_writer",
-        prompts.BASELINE_SYSTEM.format(age=age),
+        prompts.BASELINE_SYSTEM.format(age=age, max_words=max_sentence_words(age)),
         prompts.BASELINE_USER.format(
             lesson=f"{lesson.title}: {lesson.concept}", card=json.dumps(card.model_dump(), ensure_ascii=False)
         ),

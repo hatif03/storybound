@@ -79,8 +79,12 @@ def visual_trait_referenced(p: Page, ctx: Ctx) -> Det:
 _MAX_SENT_WORDS = {4: 10, 5: 12, 6: 14, 7: 16, 8: 18}
 
 
+def max_sentence_words(age: int) -> int:
+    return _MAX_SENT_WORDS.get(age, 14)
+
+
 def age_reading_level(p: Page, ctx: Ctx) -> Det:
-    limit = _MAX_SENT_WORDS.get(ctx.age, 14)
+    limit = max_sentence_words(ctx.age)
     sents = sentences(p.scenario)
     if len(sents) > 2:
         return _bad(f"{len(sents)} sentences in the scenario, at most 2 allowed", scene=p.index)

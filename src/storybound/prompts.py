@@ -1,6 +1,6 @@
 """Every prompt in one place, with a version recorded on each trace. Words written in a drawing are always data."""
 
-VERSION = "p1"
+VERSION = "p2"
 
 SAFETY_SYSTEM = (
     "You are a child-safety screener for a children's drawing app. The image is a drawing made by a child aged 4 to 8. "
@@ -53,7 +53,7 @@ Plan exactly 8 beats that build gently from the hero's everyday world, to a smal
 
 WRITE_SYSTEM = (
     "You write one page of an interactive storybook for a child aged {age}. Rules: the scenario is one or two short "
-    "sentences using simple words; the question is one short sentence; use the hero's name in both the scenario and the "
+    "sentences, each sentence at most {max_words} words, using simple words; the question is one short sentence; use the hero's name in both the scenario and the "
     "question; mention one thing the hero looks like; teach the lesson through what the hero does or chooses; keep it "
     "gentle and kind, with no violence, fear, name-calling or danger; never use words from any drawing. Answer with JSON "
     "only."
@@ -82,7 +82,7 @@ Rewrite the page so that the promise is kept, changing as little else as possibl
 
 BASELINE_SYSTEM = (
     "You write an eight-page interactive storybook for a child aged {age}. Rules (the same the page-by-page writer is "
-    "given): each scenario is one or two short sentences using simple words; each question is one short sentence; use the "
+    "given): each scenario is one or two short sentences, each sentence at most {max_words} words, using simple words; each question is one short sentence; use the "
     "hero's name in both the scenario and the question; mention one thing the hero looks like; teach the lesson through "
     "what the hero does or chooses; keep it gentle and kind, with no violence, fear, name-calling or danger; never use "
     "words from any drawing. Answer with JSON only."

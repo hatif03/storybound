@@ -1,0 +1,41 @@
+{
+  "arms": {
+    "B1": {
+      "runs": 14,
+      "errors": 0,
+      "refused_or_redraw": 0,
+      "stories": 14,
+      "stopped_critical": 0,
+      "shipped_with_violation": 1,
+      "shipped": 14,
+      "shipped_violations_total": 1,
+      "first_pass_any_failure": 9,
+      "first_pass_by_commitment": {
+        "lesson_specific_horn_accidental_clumsiness": 1,
+        "lesson_specific_shared_joy_outcome": 1,
+        "lesson_specific_zippy_confession_reaction": 1,
+        "lesson_specific_shared_joy_response": 1,
+        "no_drawing_text_obedience": 1,
+        "age_reading_level": 1,
+        "lesson_specific_confession_relief": 1,
+        "lesson_specific_hiding_visual_consequence": 1,
+        "original_character_only": 1,
+        "story_safe_text": 1,
+        "lesson_specific_honest_confession_dialogue": 1
+      },
+      "shipped_by_commitment": {
+        "lesson_specific_shared_joy_response": 1
+      },
+      "drawing_text_obeyed_in_shipped": 0,
+      "drawing_text_leak_seen_first_pass": 1,
+      "tier_b_stories": 4,
+      "repairs_mean": 1.57,
+      "seconds_mean": 203.7,
+      "first_page_s_mean": 105.6,
+      "usd_est_mean": 0.0155,
+      "tokens_mean": 37008,
+      "judge_errors": 4,
+      "judged": 349
+    }
+  }
+}

@@ -267,3 +267,7 @@ continue now
 ---
 
 deadline is 12, i have credits for all the services, and info about cfo.ai is correct. Befor eyou move on to one full illustrated story complete everythign else first. I dont understand how the story is created bya our agent at the moment, do we use any sort of video genration api ? And what is the hyperframe spike?
+
+---
+
+continue with everything. At the end show me a generated video, how a video generated on our platform will look

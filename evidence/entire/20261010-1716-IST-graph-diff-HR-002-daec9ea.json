@@ -1,0 +1,298 @@
+{
+  "base": "daec9ea~1",
+  "head": "daec9ea",
+  "files": [
+    {
+      "path": "src/storybound/agents/writer.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "_page_from",
+          "before_start_line": 55,
+          "after_start_line": 55,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/oath/engine.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "class",
+          "name": "Pending",
+          "new_signature": "class Pending",
+          "after_start_line": 57,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Pending.result",
+          "new_signature": "def result(self) -\u003e list[Verdict]",
+          "after_start_line": 64,
+          "dependents_count": 17
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Engine",
+          "before_start_line": 55,
+          "after_start_line": 71,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "Engine._run",
+          "before_start_line": 129,
+          "after_start_line": 146,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Engine._run_async",
+          "new_signature": "def _run_async(self, commitments: list[Commitment], label: str, subject, text: str, attempt: int, *, det_subject=None) -\u003e Pending: # fmt: skip",
+          "after_start_line": 151,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Engine.finish",
+          "new_signature": "def finish() -\u003e list[Verdict]",
+          "after_start_line": 191,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Engine.verify_scene_async",
+          "new_signature": "def verify_scene_async(self, page: Page, attempt: int = 0) -\u003e Pending",
+          "after_start_line": 207,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "RunConfig",
+          "before_start_line": 43,
+          "after_start_line": 44,
+          "dependents_count": 7
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "S",
+          "before_start_line": 56,
+          "after_start_line": 58,
+          "dependents_count": 22
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Run",
+          "before_start_line": 77,
+          "after_start_line": 80,
+          "dependents_count": 12
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "Run.make_engine",
+          "before_start_line": 109,
+          "after_start_line": 112,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "build_graph",
+          "before_start_line": 133,
+          "after_start_line": 137,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_oath",
+          "before_start_line": 202,
+          "after_start_line": 206,
+          "dependents_count": 1
+        },
+        {
+          "type": "removed",
+          "kind": "function",
+          "name": "n_plan",
+          "old_signature": "def n_plan(s: S) -\u003e S",
+          "before_start_line": 215,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "chain",
+          "new_signature": "def chain(s: S) -\u003e list[Page]",
+          "after_start_line": 237,
+          "dependents_count": 7
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_write",
+          "before_start_line": 226,
+          "after_start_line": 241,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "decide",
+          "new_signature": "def decide(vs: list[Verdict], attempt: int, regens: int) -\u003e str",
+          "after_start_line": 250,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "bad_first",
+          "new_signature": "def bad_first(vs: list[Verdict]) -\u003e list[Verdict]",
+          "after_start_line": 259,
+          "dependents_count": 6
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_verify",
+          "before_start_line": 236,
+          "after_start_line": 266,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "n_submit",
+          "new_signature": "def n_submit(s: S) -\u003e S",
+          "after_start_line": 281,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "after_submit",
+          "new_signature": "def after_submit(s: S) -\u003e str",
+          "after_start_line": 284,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "n_settle",
+          "new_signature": "def n_settle(s: S) -\u003e S",
+          "after_start_line": 288,
+          "dependents_count": 1
+        },
+        {
+          "type": "removed",
+          "kind": "function",
+          "name": "accept",
+          "old_signature": "def accept(s: S, noted: bool) -\u003e S",
+          "before_start_line": 301,
+          "dependents_count": 8
+        },
+        {
+          "type": "removed",
+          "kind": "function",
+          "name": "n_accept",
+          "old_signature": "def n_accept(s: S) -\u003e S",
+          "before_start_line": 312,
+          "dependents_count": 0
+        },
+        {
+          "type": "removed",
+          "kind": "function",
+          "name": "n_accept_noted",
+          "old_signature": "def n_accept_noted(s: S) -\u003e S",
+          "before_start_line": 315,
+          "dependents_count": 0
+        },
+        {
+          "type": "removed",
+          "kind": "function",
+          "name": "after_accept",
+          "old_signature": "def after_accept(s: S) -\u003e str",
+          "before_start_line": 318,
+          "dependents_count": 0
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_repair",
+          "before_start_line": 265,
+          "after_start_line": 325,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_regen",
+          "before_start_line": 281,
+          "after_start_line": 341,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "make_receipt",
+          "before_start_line": 529,
+          "after_start_line": 571,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_failed_review_rolls_back_pages_written_ahead",
+          "new_signature": "def test_failed_review_rolls_back_pages_written_ahead(monkeypatch, drawing)",
+          "after_start_line": 194,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "spy_write",
+          "new_signature": "def spy_write(**kw)",
+          "after_start_line": 202,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "judge",
+          "new_signature": "def judge(items, text, context)",
+          "after_start_line": 209,
+          "dependents_count": 34
+        }
+      ]
+    }
+  ]
+}

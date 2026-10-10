@@ -1,0 +1,75 @@
+{
+  "base": "04ffebb~1",
+  "head": "04ffebb",
+  "files": [
+    {
+      "path": "src/storybound/agents/writer.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "write_scene",
+          "before_start_line": 68,
+          "after_start_line": 69,
+          "dependents_count": 7
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "repair_scene",
+          "before_start_line": 103,
+          "after_start_line": 104,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "baseline_story",
+          "before_start_line": 151,
+          "after_start_line": 152,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/oath/deterministic.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "max_sentence_words",
+          "new_signature": "def max_sentence_words(age: int) -\u003e int",
+          "after_start_line": 82,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "age_reading_level",
+          "before_start_line": 82,
+          "after_start_line": 86,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/prompts.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "module",
+          "name": "src/storybound/prompts.py",
+          "before_start_line": 1,
+          "after_start_line": 1,
+          "dependents_count": 0
+        }
+      ]
+    }
+  ]
+}

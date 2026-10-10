@@ -133,7 +133,15 @@ export function buildScenario(name: ScenarioName): StoryEvent[] {
     const { list: base, degradations } = bunnyBase(opt);
     const ignored = name === 'degraded' ? ['Kill fish'] : [];
     const last = base[base.length - 1].t + 2.2;
-    list = [...base, { type: 'receipt', t: last, data: makeReceipt(base, degradations, ignored) as never }, { type: 'run.finished', t: last + 0.01, data: { outcome: degradations.length ? 'shipped_with_notes' : 'shipped', story_id: 'demo' } }];
+    // A small quiz built from the recorded pages, so the quiz and game screens can be tried without a model run.
+    const pages = base.filter((e) => e.type === 'scene.accepted').map((e) => (e.data as { page: { index: number; scenario: string } }).page);
+    const items = [1, 3, 5, 7].filter((i) => pages[i - 1]).map((i, k) => ({
+      index: k + 1, kind: (['recall', 'detail', 'feeling', 'lesson'] as const)[k], question: `What happened on page ${i}?`,
+      options: [{ id: 'a', text: 'Something else', is_correct: false }, { id: 'b', text: 'This line is the answer', is_correct: true }, { id: 'c', text: 'Nothing at all', is_correct: false }],
+      evidence_page: i, evidence_quote: pages[i - 1].scenario.split(' ').slice(0, 6).join(' '), explain: 'Look: the line on the page.',
+    }));
+    const quizEvent = { type: 'quiz.ready', t: last - 0.4, data: { items, talk_about: 'What do you like to share with your friends?' } };
+    list = [...base, quizEvent as never, { type: 'receipt', t: last, data: makeReceipt(base, degradations, ignored) as never }, { type: 'run.finished', t: last + 0.01, data: { outcome: degradations.length ? 'shipped_with_notes' : 'shipped', story_id: 'demo' } }];
   }
   return list.map((e, id) => ({ ...e, id })) as unknown as StoryEvent[];
 }

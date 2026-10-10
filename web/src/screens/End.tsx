@@ -13,8 +13,9 @@ const PRAISE = ['you-did-it', 'amazing', 'great-job', 'awesome'];
 const pick = (id: string | undefined) => PRAISE[(id ?? 'x').split('').reduce((a, c) => a + c.charCodeAt(0), 0) % PRAISE.length];
 
 // 6.8 The end. Stickers are shown only for promises that were kept; the receipt (behind the grown-ups gate) shows everything.
-export function End({ story, lessonTitle, restSuggested, onAgain, onNew, onGrownups }: {
-  story: StoryState; lessonTitle?: string; restSuggested?: boolean; onAgain(): void; onNew(): void; onGrownups(): void;
+export function End({ story, lessonTitle, restSuggested, canOrder, onQuiz, onOrder, onAgain, onNew, onGrownups }: {
+  story: StoryState; lessonTitle?: string; restSuggested?: boolean; canOrder?: boolean; onQuiz(): void; onOrder(): void;
+  onAgain(): void; onNew(): void; onGrownups(): void;
 }) {
   const h = useFocusHeading<HTMLHeadingElement>();
   const fams = familyViews(story.promises, lessonTitle);
@@ -66,6 +67,15 @@ export function End({ story, lessonTitle, restSuggested, onAgain, onNew, onGrown
                 <li className="sticker praise"><img src={`/assets/stickers/praise-${pick(story.storyId)}.webp`} alt="You did it!" width={112} height={112} /></li>
               </ul>
             </section>
+          )}
+          {(story.quiz?.items.length || canOrder) && (
+            <div className="end-actions" aria-label="Games">
+              {story.quiz?.items.length ? <Btn big variant="sun" icon="star" onClick={onQuiz}>Play Pip&apos;s quiz</Btn> : null}
+              {canOrder && <Btn big variant="sky" icon="play" onClick={onOrder}>Put the pictures in order</Btn>}
+            </div>
+          )}
+          {!story.quiz && finishing && (
+            <p className="muted" role="status">Pip is still thinking of quiz questions. They will show up here.</p>
           )}
           {!finishing && movie !== 'done' && (
             <div className="end-actions">

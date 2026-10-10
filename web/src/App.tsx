@@ -103,7 +103,9 @@ export default function App() {
   // After the last page: a quiz about the story (if it passed its promises), then a picture-order game, then the end.
   const finishPlay = () => { setStoriesMade((n) => n + 1); go('end'); };
   const afterQuiz = () => (orderPages(story).length ? go('order') : finishPlay());
-  const afterReading = () => (story.quiz?.items.length ? go('quiz') : orderPages(story).length ? go('order') : finishPlay());
+  // The quiz is made after the story is verified, so it may arrive after the child has read the last page: it is offered on the
+  // end screen as a button that appears when it is ready, never forced.
+  const afterReading = () => (story.quiz?.items.length ? go('quiz') : finishPlay());
 
   const forget = async () => {
     if (story.storyId) await forgetStory(story.storyId).catch(() => { /* the server may already have lost it */ });
@@ -138,7 +140,7 @@ export default function App() {
       view = <OrderGame story={story} onBack={finishPlay} onDone={() => { setPractice((p) => ({ ...p, ordered: true })); finishPlay(); }} />;
       break;
     case 'end':
-      view = <End story={story} lessonTitle={lessonTitle} restSuggested={storiesMade >= 2} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={newStory} onGrownups={() => openGrownups('end')} />;
+      view = <End story={story} lessonTitle={lessonTitle} restSuggested={storiesMade >= 2} canOrder={orderPages(story).length > 0} onQuiz={() => go('quiz')} onOrder={() => go('order')} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={newStory} onGrownups={() => openGrownups('end')} />;
       break;
     case 'refusal':
       view = <Refusal story={story} onAgain={newStory} onGrownups={() => openGrownups('refusal')} />;

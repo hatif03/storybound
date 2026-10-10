@@ -11,7 +11,7 @@ from pathlib import Path
 from .claims import ROOT
 from .spec import Block, Claim, Scene, Spec
 
-STYLE = "Read warmly and slowly to a young child, like a bedtime story, with a little wonder."
+STYLE = "Read warmly like a friendly storyteller to a young child, at a natural lively pace with gentle expression."
 PAGE_MOODS = ["happy-flap", "wink", "shy-giggle", "cool-sunglasses"]
 
 
@@ -43,14 +43,14 @@ def build_spec(story_dir: Path) -> Spec:
         pic = [Block(type="image", src=f"{base}/{img}")] if img else []
         right = next(c for c in p["choices"] if c["is_correct"])
         scenes.append(Scene(
-            id=f"p{n}-read", kind="story", layout="split", mood=PAGE_MOODS[k % len(PAGE_MOODS)], pause=2.8,
+            id=f"p{n}-read", kind="story", layout="split", mood=PAGE_MOODS[k % len(PAGE_MOODS)], pause=2.0,
             narration=f"{p['scenario']} {p['question']}",
             blocks=[*pic, Block(type="text", text=p["scenario"]),
                     Block(type="choices", at_frac=0.72, items=[{"text": c["text"], "state": "neutral"} for c in p["choices"]])],
         ))
         scenes.append(Scene(
             id=f"p{n}-answer", kind="story", layout="split", mood="heart-eyes", pause=0.9,
-            narration=f"{right['text']}. {right['feedback']}",
+            narration=f"Yes! {right['feedback']}",
             blocks=[*pic, Block(type="choices", items=[{"text": c["text"], "state": "correct" if c["is_correct"] else "wrong"} for c in p["choices"]]),
                     Block(type="text", text=right["feedback"], at_frac=0.35)],
         ))

@@ -76,3 +76,18 @@ def test_story_package_becomes_a_read_along_spec(tmp_path, monkeypatch):
     assert read.blocks[0].src.endswith("pages/1/image.jpg") and read.blocks[-1].items[0]["state"] == "neutral"
     assert [i["state"] for i in answer.blocks[1].items] == ["correct", "wrong"]
     assert {c.id for c in spec.claims} == {"checks", "repairs", "promises"}
+
+
+def test_page_pictures_with_the_same_file_name_do_not_overwrite_each_other(tmp_path):
+    """Every page picture is called image.jpg; the first story video showed page 8's picture on every page."""
+    from storybound.video import compose
+
+    root = compose.ROOT
+    src = [root / "assets/animation/owl-stills/owl-01-happy-flap.png", root / "assets/animation/owl-stills/owl-02-wink.png"]
+    a = tmp_path / "pages" / "1"
+    b = tmp_path / "pages" / "2"
+    a.mkdir(parents=True), b.mkdir(parents=True)
+    (a / "image.jpg").write_bytes(src[0].read_bytes())
+    (b / "image.jpg").write_bytes(src[1].read_bytes())
+    unique = {compose.re.sub(r"[^A-Za-z0-9.]+", "-", (p / "image.jpg").as_posix()) for p in (a, b)}
+    assert len(unique) == 2

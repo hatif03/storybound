@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -47,7 +48,7 @@ li{font-size:52px;font-weight:700;line-height:1.2;display:flex;align-items:flex-
 li:before{content:"";width:28px;height:28px;margin-top:16px;border-radius:50%;background:#FFC93C;flex:none}
 img.pic{max-height:560px;border-radius:24px;align-self:flex-start}
 .left{position:absolute;left:120px;top:170px;width:780px;height:780px;display:flex;align-items:center;justify-content:center}
-img.pic.big{width:760px;height:760px;object-fit:cover;border-radius:40px;box-shadow:0 20px 44px rgba(42,39,69,.28)}
+img.pic.big{max-height:none;width:760px;height:760px;object-fit:cover;border-radius:40px;box-shadow:0 20px 44px rgba(42,39,69,.28)}
 .body.split{left:960px;width:840px;height:660px;top:170px;gap:30px}
 .pip.small{height:230px;right:60px;bottom:36px}
 .choices{display:flex;flex-direction:column;gap:20px}
@@ -147,8 +148,9 @@ def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, fl
             elif b.type == "image":
                 src = Path(b.src)
                 (out / "assets").mkdir(exist_ok=True)
-                shutil.copy(ROOT / src, out / "assets" / src.name)
-                (left if split else body).append(f'<img class="pic{" big" if split else ""}" id="{bid}" src="assets/{src.name}"/>')
+                unique = re.sub(r"[^A-Za-z0-9.]+", "-", src.as_posix())  # pages share the file name image.jpg
+                shutil.copy(ROOT / src, out / "assets" / unique)
+                (left if split else body).append(f'<img class="pic{" big" if split else ""}" id="{bid}" src="assets/{unique}"/>')
             elif b.type == "choices":
                 cards = []
                 for k, it in enumerate(b.items):
@@ -163,7 +165,7 @@ def build(spec: Spec, resolved: dict[str, dict], audio: dict[str, tuple[Path, fl
         foot = f'<div class="foot" id="s{i}-foot">#neatHack · every number on screen is read from an evidence file</div>' if sc.kind == "claim" else ""
         parts.append(
             f'<section id="scene-{i}" class="clip scene" data-start="{t:.3f}" data-duration="{dur:.3f}" data-track-index="1">'
-            f'{"".join(head)}{"".join(left)}<div class="body{" split" if split else ""}" id="s{i}-body">{"".join(body)}</div>{foot}</section>'
+            f'{"".join(head)}<div class="left">{"".join(left)}</div><div class="body{" split" if split else ""}" id="s{i}-body">{"".join(body)}</div>{foot}</section>'
         )
         t += dur
     total = round(t + TAIL_S, 3)

@@ -1,0 +1,28 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JVN3HC27BXSVA3BKD47ER6",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "files_touched": [
+    "evidence/cfo/20261010-1745-IST-cfo-inspect-history.json",
+    "evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json",
+    "evidence/cfo/README.md"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 342,
+    "cache_creation_tokens": 588647,
+    "cache_read_tokens": 38493545,
+    "output_tokens": 167382,
+    "api_call_count": 163
+  }
+}

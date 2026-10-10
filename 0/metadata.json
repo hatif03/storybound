@@ -1,0 +1,41 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JVN3HC27BXSVA3BKD47ER6",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T12:12:27.0556337Z",
+  "branch": "main",
+  "checkpoints_count": 5,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/cfo/20261010-1745-IST-cfo-inspect-history.json",
+    "evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json",
+    "evidence/cfo/README.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "8e33c708f044",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 342,
+    "cache_creation_tokens": 588647,
+    "cache_read_tokens": 38493545,
+    "output_tokens": 167382,
+    "api_call_count": 163
+  },
+  "session_metrics": {
+    "turn_count": 17
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T12:12:26.8112083Z",
+    "agent_lines": 114,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 176,
+    "human_removed": 0,
+    "total_committed": 290,
+    "total_lines_changed": 290,
+    "agent_percentage": 39.310344827586206,
+    "metric_version": 2
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4K3HC1A9JYVM5RY4JYRJDRW",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "web/scripts/e2e-real.mjs",
+    "web/src/App.tsx",
+    "web/src/api/client.ts",
+    "web/src/api/types.ts",
+    "web/src/screens/End.tsx",
+    "web/src/screens/Grownups.tsx",
+    "web/src/screens/PickLesson.tsx",
+    "web/src/styles/screens.css"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 782,
+    "cache_creation_tokens": 889199,
+    "cache_read_tokens": 154207879,
+    "output_tokens": 343963,
+    "api_call_count": 374,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

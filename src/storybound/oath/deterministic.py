@@ -257,3 +257,60 @@ _PII = [
 
 def find_pii(text: str) -> list[str]:
     return [label for rx, label in _PII if rx.search(text)]
+
+
+# ---- quiz scope -------------------------------------------------------------------------------------------------------
+
+
+def _quiz_page_text(q, ctx: Ctx) -> str:
+    p = next((x for x in ctx.pages if x.index == q.evidence_page), None)
+    if p is None:
+        return ""
+    return " ".join([p.scenario, p.question] + [f"{c.text} {c.feedback}" for c in p.choices])
+
+
+def quiz_quote_in_story(q, ctx: Ctx) -> Det:
+    text = _quiz_page_text(q, ctx)
+    if not text:
+        return _bad(f"there is no page {q.evidence_page}")
+    quote = " ".join(q.evidence_quote.split()).lower()
+    if len(words(quote)) < 3:
+        return _bad("the quoted line is too short to point at")
+    if quote not in " ".join(text.split()).lower():
+        return _bad(f"the quoted line is not on page {q.evidence_page}")
+    return Det("pass", f"line found on page {q.evidence_page}", quote=q.evidence_quote)
+
+
+def quiz_one_correct(q, ctx: Ctx) -> Det:
+    opts = [" ".join(o.text.lower().split()) for o in q.options]
+    if len(q.options) != 3:
+        return _bad(f"{len(q.options)} answers, exactly 3 are needed")
+    if sum(1 for o in q.options if o.is_correct) != 1:
+        return _bad("there must be exactly one right answer")
+    if len(set(opts)) != 3:
+        return _bad("two answers are the same")
+    if not q.question.strip().endswith("?"):
+        return _bad("the question does not end with a question mark")
+    return Det("pass", "3 answers, one right")
+
+
+def quiz_reading_level(q, ctx: Ctx) -> Det:
+    limit = max_sentence_words(ctx.age)
+    for label, text in [("question", q.question)] + [(f"answer {o.id}", o.text) for o in q.options]:
+        n = len(words(text))
+        if n > limit:
+            return _bad(f"the {label} has {n} words; the limit for age {ctx.age} is {limit}")
+        if any(len(part) > 10 for w in words(text) for part in w.split("-")):
+            return _bad(f"the {label} has a long hard word")
+    return Det("pass", "short and simple")
+
+
+def quiz_safe_text(q, ctx: Ctx) -> Det:
+    text = " ".join([q.question, q.explain] + [o.text for o in q.options])
+    grave = severe_hits(text) + instruction_hits(text) + find_pii(text)
+    if grave:
+        return _bad(f"unsafe terms: {', '.join(sorted(set(grave)))}", "critical", matched=grave[0])
+    mild = harm_hits(text)
+    if mild:
+        return _bad(f"unkind or harsh terms: {', '.join(sorted(set(mild)))}", matched=mild[0])
+    return Det("pass", "no blocked terms")

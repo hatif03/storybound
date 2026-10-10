@@ -255,6 +255,10 @@ CORE: list[Commitment] = [
 DET: dict[str, Callable] = {
     "no_drawing_text_obedience": d.no_drawing_text_obedience_scene,
     "story_safe_text": d.story_safe_text,
+    "quiz_quote_in_story": d.quiz_quote_in_story,
+    "quiz_one_correct": d.quiz_one_correct,
+    "quiz_reading_level": d.quiz_reading_level,
+    "quiz_safe_text": d.quiz_safe_text,
     "schema_valid": d.schema_valid,
     "one_correct_choice": d.one_correct_choice,
     "correct_choice_position_balanced": d.correct_choice_position_balanced,
@@ -366,4 +370,37 @@ def merge_grownup(base: Oath, promises: list[str]) -> Oath:
                 repair_hint=f"Change the page so it keeps this grown-up promise: {t}"[:200],
             )
         )  # fmt: skip
+    return Oath(commitments=cs, hash=oath_hash(cs))
+
+
+QUIZ_RUBRIC = (
+    "You are checking one quiz question for a young child about a story. Using ONLY the page text shown and the quoted "
+    "line, decide: is the answer marked CORRECT really supported by the story, and is every other answer clearly wrong "
+    "or not supported? Score 1.0 if yes. Score 0.0 if the marked answer is not supported, the question cannot be "
+    "answered from the story, or another answer could also be right. Quote the words that show it."
+)
+
+QUIZ = [
+    C(id="quiz_quote_in_story", scope="quiz", title="Quiz answers come from the story",
+      plain="Every quiz question points to the exact line of the story that answers it.", klass="quality",
+      verifier="deterministic", cover="quiz", repair_hint="Quote a line that appears on the cited page, word for word."),
+    C(id="quiz_one_correct", scope="quiz", title="One right answer",
+      plain="Every quiz question has three answers and exactly one is right.", klass="quality",
+      verifier="deterministic", cover="quiz", repair_hint="Give exactly three different answers, one of them right."),
+    C(id="quiz_reading_level", scope="quiz", title="Quiz words are easy",
+      plain="Quiz questions and answers use short, easy words for the child's age.", klass="quality",
+      verifier="deterministic", cover="quiz", repair_hint="Use shorter sentences and easy words."),
+    C(id="quiz_safe_text", scope="quiz", title="Quiz is kind and safe",
+      plain="Quiz questions and answers are gentle, with no scary or unkind words.", klass="safety",
+      verifier="deterministic", cover="quiz", repair_hint="Use gentle words only."),
+    C(id="quiz_answerable", scope="quiz", title="Quiz can be answered from the story",
+      plain="A quiz question can be answered from the story alone, and only one answer is right.", klass="quality",
+      verifier="judge", rubric=QUIZ_RUBRIC, pass_score=0.8, cover="quiz",
+      repair_hint="Make the right answer follow from the quoted line and the others clearly not."),
+]
+
+
+def with_quiz(base: Oath) -> Oath:
+    """The quiz promises are added to the oath of every gated story; the core is untouched."""
+    cs = [c.model_copy(deep=True) for c in base.commitments if c.scope != "quiz"] + [c.model_copy(deep=True) for c in QUIZ]
     return Oath(commitments=cs, hash=oath_hash(cs))

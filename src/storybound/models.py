@@ -88,7 +88,7 @@ class Commitment(BaseModel):
     """One promise in the oath. `plain` is the parent-readable sentence."""
 
     id: str
-    scope: Literal["run", "story", "scene", "image", "audio"]
+    scope: Literal["run", "story", "scene", "image", "audio", "quiz"]
     title: str
     plain: str
     core: bool = True
@@ -103,3 +103,26 @@ class Commitment(BaseModel):
 class Oath(BaseModel):
     commitments: list[Commitment]
     hash: str = ""
+
+
+class QuizOption(BaseModel):
+    id: str
+    text: str
+    is_correct: bool
+
+
+class QuizItem(BaseModel):
+    """One question about the finished story. It is shown only if every quiz promise held for it."""
+
+    index: int
+    kind: Literal["recall", "order", "feeling", "lesson"]
+    question: str
+    options: list[QuizOption]
+    evidence_page: int
+    evidence_quote: str  # copied exactly from that page: the line that answers the question
+    explain: str = ""  # one short sentence shown when a child picks a wrong answer: "Look at the page"
+
+
+class Quiz(BaseModel):
+    items: list[QuizItem] = []
+    talk_about: str = ""  # one open question for a grown-up to ask (dialogic reading); never graded

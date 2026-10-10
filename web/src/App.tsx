@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useRef, useState } from 'react';
-import { ApiError, startStory } from './api/client';
+import { ApiError, forgetStory, startStory } from './api/client';
 import { connectEvents, type Connection } from './api/events';
 import type { Fixture } from './api/types';
 import { DemoBadge } from './components/DemoBadge';
@@ -27,6 +27,7 @@ export default function App() {
   const [heroName, setHeroName] = useState('');
   const [lessonId, setLessonId] = useState<string | null>(null);
   const [lessonTitle, setLessonTitle] = useState<string | undefined>();
+  const [promises, setPromises] = useState<string[]>([]);
   const [starting, setStarting] = useState(false);
   const [startError, setStartError] = useState('');
   const [readFrom, setReadFrom] = useState(1);
@@ -55,6 +56,7 @@ export default function App() {
     setSource(null);
     setHeroName('');
     setLessonId(null);
+    setPromises([]);
     setStartError('');
     go('draw');
   };
@@ -65,7 +67,7 @@ export default function App() {
     setStartError('');
     try {
       const { storyId } = await startStory({
-        lessonId, age: getSettings().age, heroName: heroName || undefined,
+        lessonId, age: getSettings().age, heroName: heroName || undefined, promises: promises.map((p) => p.trim()).filter(Boolean),
         drawing: source.kind === 'sample' ? { kind: 'fixture', id: source.id } : { kind: 'file', blob: source.blob, name: source.kind === 'photo' ? 'drawing.jpg' : 'drawing.png' },
       });
       closeStream();
@@ -93,7 +95,11 @@ export default function App() {
     go('name');
   };
 
-  const forget = () => { newStory(); go('welcome'); };
+  const forget = async () => {
+    if (story.storyId) await forgetStory(story.storyId).catch(() => { /* the server may already have lost it */ });
+    newStory();
+    go('welcome');
+  };
 
   let view;
   switch (screen) {
@@ -107,7 +113,7 @@ export default function App() {
       view = source ? <NameHero source={source} name={heroName} onRedraw={() => { releaseSource(source); setSource(null); go('draw'); }} onNext={(n) => { setHeroName(n); go('lesson'); }} /> : null;
       break;
     case 'lesson':
-      view = <PickLesson chosen={lessonId} starting={starting} error={startError} onBack={() => go('name')} onPick={(l) => { setLessonId(l.id); setLessonTitle(l.title); }} onGo={begin} />;
+      view = <PickLesson chosen={lessonId} starting={starting} error={startError} promises={promises} onPromises={setPromises} onBack={() => go('name')} onPick={(l) => { setLessonId(l.id); setLessonTitle(l.title); }} onGo={begin} />;
       break;
     case 'making':
       view = <Making story={story} source={source} lessonTitle={lessonTitle} onCancel={newStory} onRetry={() => conn.current?.retry()} onRead={() => { setReadFrom(1); go('reader'); }} />;

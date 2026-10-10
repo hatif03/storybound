@@ -22,7 +22,7 @@ from langgraph.graph import END, StateGraph
 
 from . import ledger, lessons, prompts, tracing
 from . import media as media_mod
-from .agents import character, oath_author, planner, safety, writer
+from .agents import character, oath_author, planner, quizmaker, safety, writer
 from .agents.common import rng
 from .clients import images, tts
 from .clients.errors import ClientError
@@ -30,7 +30,7 @@ from .clients.usage import Meter, metered
 from .config import get_settings
 from .events import EventLog
 from .media import Drawing
-from .models import CharacterCard, Oath, Page, Verdict
+from .models import CharacterCard, Oath, Page, Quiz, Verdict
 from .oath import catalog
 from .oath import deterministic as d
 from .oath.engine import Engine, coverage
@@ -57,6 +57,7 @@ class RunConfig:
     ledger_name: str | None = None
     judge_enabled: bool = True
     judge_fn: Any = None  # tests inject a fake judge; None means the K2 judge
+    quiz: bool = True  # gated arm only: a verified quiz after the story
     grownup_promises: tuple[str, ...] = ()  # a parent's or teacher's own promises, already cleaned
 
 
@@ -102,6 +103,7 @@ class Run:
     receipt: dict | None = None
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
+    quiz: Quiz | None = None
     forgotten: bool = False  # the parent asked to forget this story: nothing more is written to disk
     lock: threading.Lock = field(default_factory=threading.Lock)
 
@@ -218,6 +220,8 @@ def build_graph(run: Run):
         oath, info = oath_author.author(lesson, s["card"])
         if cfg.grownup_promises:
             oath = catalog.merge_grownup(oath, list(cfg.grownup_promises))
+        if cfg.arm == "B1" and cfg.quiz:
+            oath = catalog.with_quiz(oath)
         run.engine.oath = oath
         plain = {c.id: c.plain for c in oath.commitments}
         run.emit(
@@ -518,6 +522,38 @@ def build_graph(run: Run):
         run.emit("audio.ready", {"index": p.index, "url": f"/api/stories/{run.story_id}/pages/{p.index}/audio",
                                  "seconds": round(len(data) * 8 / 48_000, 1)})  # fmt: skip
 
+    @tracing.span(kind="AGENT", name="node.quiz")
+    def n_quiz(s: S) -> S:
+        """A quiz about the finished story. A question that cannot pass its promises is dropped, never shown."""
+        if cfg.arm != "B1" or not cfg.quiz or run.engine is None:
+            return {}
+        pages = s["pages"]
+        run.ctx.pages = pages
+        try:
+            made = quizmaker.make_quiz(pages, s["card"], lesson, cfg.age, cfg.seed)
+        except Exception as e:  # no quiz is better than a broken one: the story itself is already complete
+            run.degrade("check", f"quiz maker failed: {type(e).__name__}", "no quiz")
+            return {}
+        kept = []
+        for q in made.items:
+            for attempt in range(max_rep + 1):
+                bad = [v for v in run.engine.verify_quiz(q, attempt) if not v.ok]
+                if not bad:
+                    kept.append(q)
+                    break
+                if attempt < max_rep:
+                    run.repairs.append({"stage": "quiz", "index": q.index, "attempt": attempt + 1, "failed": ", ".join(v.commitment for v in bad)})
+                    try:
+                        q = quizmaker.repair_item(q, "; ".join(f"{v.commitment}: {v.actual}" for v in bad)[:400], pages, cfg.age, cfg.seed)
+                    except Exception:
+                        break
+        if len(kept) >= 2:
+            run.quiz = Quiz(items=kept, talk_about=made.talk_about)
+            run.emit("quiz.ready", run.quiz.model_dump())
+        else:
+            run.degrade("check", "fewer than two questions passed their promises", "no quiz")
+        return {}
+
     @tracing.span(kind="CHAIN", name="node.media")
     def n_media(s: S) -> S:
         if not cfg.media:
@@ -556,7 +592,7 @@ def build_graph(run: Run):
     for name, fn in [("intake", n_intake), ("safety", n_safety), ("character", n_character), ("oath", n_oath),
                      ("write", n_write), ("verify", n_verify), ("submit", n_submit), ("settle", n_settle),
                      ("repair", n_repair), ("regen", n_regen), ("stop", n_stop),
-                     ("baseline", n_baseline), ("story_gate", n_story_gate), ("media", n_media),
+                     ("baseline", n_baseline), ("story_gate", n_story_gate), ("quiz", n_quiz), ("media", n_media),
                      ("receipt", n_receipt)]:  # fmt: skip
         g.add_node(name, fn)
     g.set_entry_point("intake")
@@ -578,7 +614,8 @@ def build_graph(run: Run):
     g.add_edge("regen", "verify")
     g.add_edge("stop", END)
     g.add_edge("baseline", "story_gate")
-    g.add_edge("story_gate", "media")
+    g.add_edge("story_gate", "quiz")
+    g.add_edge("quiz", "media")
     g.add_edge("media", "receipt")
     g.add_edge("receipt", END)
     return g.compile()
@@ -715,6 +752,7 @@ def export_story(run: Run, s: S) -> None:
     story = {"story_id": run.story_id, "fixture": run.cfg.fixture, "lesson": run.cfg.lesson_id, "age": run.cfg.age,
              "drawing": f"drawing.{ext}", "card": s["card"].model_dump(), "pages": [p.model_dump() for p in s["pages"]],
              "media": {k: Path(v).relative_to(d).as_posix() for k, v in run.media_paths.items() if v},
+             "quiz": run.quiz.model_dump() if run.quiz else None,
              "receipt": run.receipt, "outcome": run.outcome}  # fmt: skip
     (d / "story.json").write_text(json.dumps(story, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
 

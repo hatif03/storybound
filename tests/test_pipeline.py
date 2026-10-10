@@ -48,7 +48,22 @@ def drawing():
     return media.prepare(b.getvalue())
 
 
+def fake_quiz(pages, card, lesson, age, seed, bad_quote_on=None):
+    from storybound.models import Quiz, QuizItem, QuizOption
+
+    items = []
+    for i, p in enumerate(pages[:4], 1):
+        quote = "this line is not on the page at all" if i == bad_quote_on else " ".join(p.scenario.split()[:5])
+        items.append(QuizItem(index=i, kind=("recall", "order", "feeling", "lesson")[i - 1], question=f"What did {card.name} do?",
+                              options=[QuizOption(id="a", text="Shared", is_correct=True), QuizOption(id="b", text="Hid", is_correct=False),
+                                       QuizOption(id="c", text="Ran", is_correct=False)],
+                              evidence_page=p.index, evidence_quote=quote, explain="Look: the line."))  # fmt: skip
+    return Quiz(items=items, talk_about="Who do you like to share with?")
+
+
 def wire(monkeypatch, *, bad_first=None, safety_action="proceed", texts=None):
+    monkeypatch.setattr(pipeline.quizmaker, "make_quiz", fake_quiz)
+
     ok = Verdict(commitment="input_safe_visual", scope="run", status="pass")
     monkeypatch.setattr(
         safety,
@@ -247,7 +262,7 @@ def test_receipt_lists_each_promise_and_gate_rewrites_are_resent(monkeypatch, dr
     revised = [e for e in evs if e["type"] == "scene.accepted" and e["data"].get("revised")]
     assert revised, "pages reordered by the story gate are sent again"
     promises = run.receipt["promises"]
-    assert len(promises) == len(catalog.core_oath().commitments)
+    assert len(promises) == len(catalog.with_quiz(catalog.core_oath()).commitments)
     assert {p["status"] for p in promises} <= {"kept", "broken", "not_checked"}
     assert next(p for p in promises if p["id"] == "correct_choice_position_balanced")["status"] == "kept"
 
@@ -261,3 +276,26 @@ def test_self_critique_arm_observes_without_repairing(monkeypatch, drawing):
     run, evs = go(drawing, arm="B2")
     assert called and "scene.repair" not in [e["type"] for e in evs]
     assert "correct_choice_position_balanced" in {s["commitment"] for s in run.shipped}
+
+
+def test_quiz_questions_that_fail_a_promise_are_dropped_not_shown(monkeypatch, drawing):
+    wire(monkeypatch)
+    monkeypatch.setattr(pipeline.quizmaker, "make_quiz", lambda *a, **kw: fake_quiz(*a, bad_quote_on=2, **kw))
+
+    def broken_repair(q, failures, pages, age, seed):
+        return q  # the repair does not fix it
+
+    monkeypatch.setattr(pipeline.quizmaker, "repair_item", broken_repair)
+    run, evs = go(drawing)
+    ready = [e for e in evs if e["type"] == "quiz.ready"]
+    assert ready and [i["index"] for i in ready[0]["data"]["items"]] == [1, 3, 4]
+    assert any(v.commitment == "quiz_quote_in_story" and v.status == "violation" for v in run.verdicts)
+    assert run.outcome == "shipped" and run.shipped == []
+
+
+def test_quiz_is_only_for_the_gated_arm(monkeypatch, drawing):
+    wire(monkeypatch)
+    pages = [good_page(i, 1) for i in range(1, 9)]
+    monkeypatch.setattr(writer, "baseline_story", lambda **kw: (pages, {}))
+    run, evs = go(drawing, arm="B0")
+    assert not [e for e in evs if e["type"] == "quiz.ready"]

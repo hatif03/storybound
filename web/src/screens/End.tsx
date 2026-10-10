@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { getVideoStatus, startVideo, videoUrl } from '../api/client';
 import { Btn } from '../components/Btn';
 import { Icon } from '../components/Icon';
 import { Pip } from '../components/Pip';
@@ -20,6 +21,23 @@ export function End({ story, lessonTitle, onAgain, onNew, onGrownups }: {
   const earned = fams.filter((f) => f.earned);
   const finishing = !isDone(story);
   useEffect(() => { sfx('happy-chime'); say('end-done'); }, []);
+  const [movie, setMovie] = useState<'idle' | 'making' | 'done' | 'failed'>('idle');
+  const timer = useRef<number | undefined>(undefined);
+  useEffect(() => () => window.clearInterval(timer.current), []);
+  const makeMovie = async () => {
+    if (!story.storyId || movie === 'making') return;
+    setMovie('making');
+    try {
+      const first = await startVideo(story.storyId);
+      if (first.status === 'failed') { setMovie('failed'); return; }
+      timer.current = window.setInterval(async () => {
+        try {
+          const s = await getVideoStatus(story.storyId!);
+          if (s.status === 'done' || s.status === 'failed') { window.clearInterval(timer.current); setMovie(s.status); }
+        } catch { /* keep trying: the movie takes a few minutes */ }
+      }, 5000);
+    } catch { setMovie('failed'); }
+  };
   return (
     <main className="screen end">
       <div className="confetti" aria-hidden="true">
@@ -47,6 +65,21 @@ export function End({ story, lessonTitle, onAgain, onNew, onGrownups }: {
                 ))}
                 <li className="sticker praise"><img src={`/assets/stickers/praise-${pick(story.storyId)}.webp`} alt="You did it!" width={112} height={112} /></li>
               </ul>
+            </section>
+          )}
+          {!finishing && movie !== 'done' && (
+            <div className="end-actions">
+              <Btn big variant="sun" icon="play" disabled={movie === 'making'} onClick={makeMovie}>
+                {movie === 'making' ? 'Pip is making your movie…' : movie === 'failed' ? 'Try the movie again' : 'Make my movie'}
+              </Btn>
+            </div>
+          )}
+          {movie === 'making' && <p className="muted" role="status">This takes a few minutes. You can keep reading while Pip works.</p>}
+          {movie === 'failed' && <p className="muted" role="status">The movie did not work this time. You can try again.</p>}
+          {movie === 'done' && story.storyId && (
+            <section className="movie" aria-label="Your movie">
+              <video controls preload="metadata" src={videoUrl(story.storyId)} width={640} />
+              <a className="g-btn" href={videoUrl(story.storyId)} download="my-story.mp4"><Icon name="play" /> Save the movie</a>
             </section>
           )}
           <div className="end-actions">

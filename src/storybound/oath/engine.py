@@ -89,7 +89,7 @@ class Engine:
 
     def rate(self, c: Commitment) -> float:
         s = get_settings().sampling
-        if c.klass == "safety" or c.id == "image_no_text":
+        if c.klass == "safety" or c.id in ("image_no_text", "quiz_answerable"):
             return 1.0  # never lowered: words in a child's picture are caught on every picture, not on a sample
         base = s.image if c.scope == "image" else 1.0 if c.id == "lesson_alignment" else s.quality
         if self.rates and c.scope == "image" and "image" in self.rates:
@@ -206,6 +206,13 @@ class Engine:
 
     def verify_scene_async(self, page: Page, attempt: int = 0) -> Pending:
         return self._run_async(self.commitments("scene"), f"scene {page.index}", page, page_block(page), attempt)
+
+    def verify_quiz(self, q, attempt: int = 0) -> list[Verdict]:
+        page = next((p for p in self.ctx.pages if p.index == q.evidence_page), None)
+        block = page_block(page) if page else "(no such page)"
+        text = (f"QUIZ QUESTION {q.index}, ABOUT THIS PAGE:\n{block}\n\nQUOTED LINE: {q.evidence_quote}\nQUESTION: {q.question}\n"
+                + "\n".join(f"Answer {o.id} [{'CORRECT' if o.is_correct else 'WRONG'}]: {o.text}" for o in q.options))
+        return self._run(self.commitments("quiz"), f"quiz {q.index}", q, text, attempt)
 
     def verify_story(self, pages: list[Page], attempt: int = 0) -> list[Verdict]:
         text = "\n\n".join(page_block(p) for p in pages)

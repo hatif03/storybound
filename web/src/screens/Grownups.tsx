@@ -153,7 +153,7 @@ function Settings({ onForget }: { onForget(): void }) {
       <div className="setting">
         <div>
           <strong>Forget this story</strong>
-          <p className="muted">Clears the drawing and story from this browser tab. (The server keeps its own run record for the evidence ledger; there is no delete button for it yet.)</p>
+          <p className="muted">Deletes the drawing, pictures, narration and movie from this browser tab and from the server. (The neatlogs trace of the run has names and places redacted and expires by itself.)</p>
         </div>
         <button type="button" className="g-btn" onClick={onForget}><Icon name="trash" /> Forget</button>
       </div>

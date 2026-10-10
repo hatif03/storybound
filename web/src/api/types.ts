@@ -71,6 +71,6 @@ export const EVENT_TYPES: EventType[] = [
 ];
 
 export interface StartRequest {
-  lessonId: string; age: number; heroName?: string;
+  lessonId: string; age: number; heroName?: string; promises?: string[];
   drawing: { kind: 'file'; blob: Blob; name: string } | { kind: 'fixture'; id: string };
 }

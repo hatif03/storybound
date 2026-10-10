@@ -366,3 +366,9 @@ button.stone::after { content: ''; position: absolute; inset: -10px -4px; }
   .refusal-pip { width: min(30vw, 320px); }
   .refusal-text { align-items: flex-start; text-align: left; }
 }
+
+.grownup-promises { max-width: 640px; margin: 8px auto 0; padding: 8px 16px; font-size: 18px; }
+.grownup-promises summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.grownup-promises input { display: block; width: 100%; margin: 8px 0; padding: 10px 14px; font: inherit; border: 3px solid #EFE3C8; border-radius: 16px; background: #fff; }
+.movie { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 16px 0; }
+.movie video { max-width: 100%; border-radius: 20px; box-shadow: 0 12px 30px rgba(42, 39, 69, 0.25); }

@@ -13,8 +13,9 @@ const KNOWN_CARDS = new Set(['sharing', 'kindness', 'honesty', 'inclusion', 'pat
 const HAS_VOICE = new Set(['sharing', 'honesty', 'kindness', 'patience']);
 
 // The backend's icon names (gift, star, heart, clock) are Phosphor names: they are the card picture when a lesson has no card art.
-export function PickLesson({ chosen, starting, error, onBack, onPick, onGo }: {
-  chosen: string | null; starting: boolean; error: string; onBack(): void; onPick(l: Lesson): void; onGo(): void;
+export function PickLesson({ chosen, starting, error, promises, onPromises, onBack, onPick, onGo }: {
+  chosen: string | null; starting: boolean; error: string; promises: string[]; onPromises(p: string[]): void;
+  onBack(): void; onPick(l: Lesson): void; onGo(): void;
 }) {
   const h = useFocusHeading<HTMLHeadingElement>();
   const { sound } = useSettings();
@@ -69,6 +70,18 @@ export function PickLesson({ chosen, starting, error, onBack, onPick, onGo }: {
           ))}
         </ul>
       )}
+
+      <details className="grownup-promises">
+        <summary>A grown-up can add a promise (optional)</summary>
+        <p className="muted">Pip will keep it on every page and check it, like all the other promises. Up to three, for example: “Nobody in the story is left out.”</p>
+        {[0, 1, 2].map((i) => (
+          <input
+            key={i} type="text" maxLength={140} aria-label={`Grown-up promise ${i + 1}`} placeholder={i === 0 ? 'Nobody in the story is left out' : ''}
+            value={promises[i] ?? ''}
+            onChange={(e) => { const next = [...promises]; next[i] = e.target.value; onPromises(next.slice(0, 3)); }}
+          />
+        ))}
+      </details>
 
       <div className="confirm-bar" aria-live="polite">
         {error && <p className="problem" role="alert">{error}</p>}

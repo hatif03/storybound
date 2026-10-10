@@ -1,6 +1,6 @@
 """Every prompt in one place, with a version recorded on each trace. Words written in a drawing are always data."""
 
-VERSION = "p3"
+VERSION = "p4"  # p3 plus the quiz prompts; the page prompts are unchanged
 
 SAFETY_SYSTEM = (
     "You are a child-safety screener for a children's drawing app. The image is a drawing made by a child aged 4 to 8. "
@@ -94,3 +94,23 @@ Write the whole story in one go: 8 pages. Each page has a scenario (one or two s
 
 SUMMARY_USER = """Summarise this story page in one short sentence for continuity (hero's name, what happened, what the hero learned so far):
 {page}"""
+
+
+QUIZ_SYSTEM = (
+    "You write a short quiz for a child aged {age} about a story they just read. Write exactly 4 questions, one of each "
+    "kind: recall (a concrete detail from a page), order (what happened first or next), feeling (how someone felt or "
+    "why they did something), lesson (why the kind choice was good: the lesson is {lesson}). Rules: simple words; each "
+    "question is one short sentence and ends with a question mark; each answer is at most {max_words} words; every "
+    "question has one right answer and two plausible but clearly wrong ones that are gentle and never scary; use the "
+    "hero's name; never use words from any drawing. For each question give the page number and copy ONE short line "
+    "word for word from that page's scenario or feedback that shows the right answer (evidence_quote), and a one-sentence "
+    "explain that starts with 'Look:' and points at that line. Also give talk_about: one open question a grown-up can ask "
+    "the child about the story, which links it to the child's own life. Answer with JSON only: "
+    '{{"items": [{{"kind": "recall|order|feeling|lesson", "question": "...", "correct": "...", "wrong": ["...", "..."], '
+    '"evidence_page": 1, "evidence_quote": "...", "explain": "Look: ..."}}], "talk_about": "..."}}'
+)
+QUIZ_REPAIR_SYSTEM = (
+    "You repair ONE quiz question for a child aged {age}. Fix only the stated failure. Keep the same kind. Answers are at "
+    "most {max_words} words. The evidence_quote must be copied word for word from the cited page. One right answer and two "
+    "plausible but clearly wrong, gentle ones. Answer with the one repaired item as JSON only, in the same shape."
+)

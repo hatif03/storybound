@@ -43,6 +43,26 @@ async function request(url: string, init?: RequestInit): Promise<Response> {
   return res;
 }
 
+/** Forget a story: the server deletes its pictures, narration, drawing and video. */
+export async function forgetStory(storyId: string): Promise<void> {
+  if (MOCK) return;
+  await request(`/api/stories/${storyId}`, { method: 'DELETE' });
+}
+
+export type VideoStatus = { status: 'none' | 'making' | 'done' | 'failed'; seconds?: number };
+
+export async function startVideo(storyId: string): Promise<VideoStatus> {
+  if (MOCK) return { status: 'failed' };
+  return (await request(`/api/stories/${storyId}/video`, { method: 'POST' })).json();
+}
+
+export async function getVideoStatus(storyId: string): Promise<VideoStatus> {
+  if (MOCK) return { status: 'none' };
+  return (await request(`/api/stories/${storyId}/video/status`)).json();
+}
+
+export const videoUrl = (storyId: string) => `/api/stories/${storyId}/video`;
+
 export const getLessons = (): Promise<Lesson[]> =>
   MOCK ? Promise.resolve(mockLessons()) : withRetry(async () => (await request('/api/lessons')).json());
 
@@ -56,6 +76,7 @@ export async function startStory(req: StartRequest): Promise<{ storyId: string }
   form.set('lesson_id', req.lessonId);
   form.set('age', String(req.age));
   if (req.heroName) form.set('hero_name', req.heroName);
+  for (const p of req.promises ?? []) form.append('promise', p);
   if (req.drawing.kind === 'fixture') form.set('fixture_id', req.drawing.id);
   else form.set('drawing', req.drawing.blob, req.drawing.name);
   const res = await request('/api/stories', { method: 'POST', body: form });

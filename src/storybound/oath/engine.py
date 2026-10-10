@@ -89,8 +89,8 @@ class Engine:
 
     def rate(self, c: Commitment) -> float:
         s = get_settings().sampling
-        if c.klass == "safety":
-            return 1.0  # never lowered
+        if c.klass == "safety" or c.id == "image_no_text":
+            return 1.0  # never lowered: words in a child's picture are caught on every picture, not on a sample
         base = s.image if c.scope == "image" else 1.0 if c.id == "lesson_alignment" else s.quality
         if self.rates and c.scope == "image" and "image" in self.rates:
             return self.rates["image"]

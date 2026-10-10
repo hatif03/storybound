@@ -350,7 +350,7 @@ def test_a_picture_with_words_painted_into_it_fails_the_no_text_promise():
 
     e = eng()
     e.judge_img = vision
-    e.rates = {"quality": 1.0, "image": 1.0}
+    e.rates = {"quality": 0.0, "image": 0.0}  # sampling switched off: the no-text promise is still checked
     vs = by_id(e.verify_image(page(), (ROOT / "assets/brand/logo/storybound-mark-512.png").read_bytes(), "image/png"))
-    assert vs["image_matches_card"].status == "pass"
+    assert vs["image_matches_card"].status == "skipped"
     assert vs["image_no_text"].status == "violation"

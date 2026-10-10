@@ -1,0 +1,47 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JKQ263DXNS9BG84EV5X52E",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T09:53:42.5802034Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/ledger.jsonl",
+    "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+    "evidence/reports/20261010-1505-IST-sweep-2-p2.md",
+    "evidence/reports/20261010-1506-IST-sweep-1-p1.json",
+    "evidence/reports/20261010-1506-IST-sweep-1-p1.md",
+    "evidence/traces/20261010-1505-IST-sweep2-b1-reading-level-scene7.json",
+    "evidence/traces/20261010-1506-IST-sweep2-b1-reading-level-scene7-offset100.json",
+    "evidence/traces/20261010-1506-IST-sweep2-b1-reading-level-scene7-offset50.json",
+    "evidence/traces/20261010-1508-IST-sweep1-p1-bunny-sharing-B1-7-reading-level-repairs.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "cf51519b6092",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 138,
+    "cache_creation_tokens": 177623,
+    "cache_read_tokens": 9309939,
+    "output_tokens": 57312,
+    "api_call_count": 68
+  },
+  "session_metrics": {
+    "turn_count": 4
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T09:53:42.4535063Z",
+    "agent_lines": 105,
+    "agent_removed": 0,
+    "human_added": 24,
+    "human_modified": 519,
+    "human_removed": 0,
+    "total_committed": 648,
+    "total_lines_changed": 648,
+    "agent_percentage": 16.203703703703702,
+    "metric_version": 2
+  }
+}

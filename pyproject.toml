@@ -39,3 +39,4 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501", "E741"]  # the formatter wraps code; long prose strings and rubrics are fine

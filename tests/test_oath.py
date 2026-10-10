@@ -297,3 +297,14 @@ def test_judge_deferred_while_a_cheap_check_fails():
     calls.clear()
     eng(spy).verify_scene(bad)  # observe-only arm: judged regardless
     assert calls
+
+
+@pytest.mark.parametrize("age", [4, 5, 6, 7, 8])
+def test_writer_prompts_state_the_reading_limit_the_verifier_enforces(age):
+    """HR-001: the writer is told the same per-age sentence limit that age_reading_level checks."""
+    from storybound import prompts
+    from storybound.oath.deterministic import max_sentence_words
+
+    n = max_sentence_words(age)
+    for system in (prompts.WRITE_SYSTEM, prompts.BASELINE_SYSTEM):
+        assert f"at most {n} words" in system.format(age=age, max_words=n)

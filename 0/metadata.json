@@ -1,0 +1,116 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JZX45A5Q6WWA6FCY79H3WQ",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T13:26:44.5052919Z",
+  "branch": "main",
+  "checkpoints_count": 4,
+  "save_step_count": 4,
+  "files_touched": [
+    "src/storybound/video/compose.py",
+    "src/storybound/video/story.py",
+    "tests/test_video.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "e0e733272182",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 558,
+    "cache_creation_tokens": 734426,
+    "cache_read_tokens": 86683624,
+    "output_tokens": 255520,
+    "api_call_count": 265,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 25
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T13:26:44.0373816Z",
+    "agent_lines": 15,
+    "agent_removed": 7,
+    "human_added": 0,
+    "human_modified": 296,
+    "human_removed": 0,
+    "total_committed": 311,
+    "total_lines_changed": 318,
+    "agent_percentage": 6.918238993710692,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 1,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 236,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1331,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/project/hyperframes.json": 12,
+        "evidence/stories/bunny-sharing-1/video/project/index.html": 40,
+        "evidence/stories/bunny-sharing-1/video/project/meta.json": 1,
+        "evidence/stories/bunny-sharing-1/video/project/package.json": 11,
+        "evidence/stories/bunny-sharing-1/video/project/vendor/gsap.min.js": 11,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 160
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 242,
+      "user_lines_removed": 17,
+      "agent_lines_added": 1572,
+      "agent_lines_removed": 240,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/project/hyperframes.json": 12,
+        "evidence/stories/bunny-sharing-1/video/project/index.html": 40,
+        "evidence/stories/bunny-sharing-1/video/project/meta.json": 1,
+        "evidence/stories/bunny-sharing-1/video/project/package.json": 11,
+        "evidence/stories/bunny-sharing-1/video/project/vendor/gsap.min.js": 11,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 149,
+        "evidence/stories/bunny-sharing-1/video/spec.json": 17
+      },
+      "user_removed_per_file": {
+        "evidence/stories/bunny-sharing-1/video/spec.json": 17
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 235,
+      "user_lines_removed": 17,
+      "agent_lines_added": 1644,
+      "agent_lines_removed": 294,
+      "user_added_per_file": {
+        "evidence/ledger.jsonl": 1,
+        "evidence/stories/bunny-sharing-1/video/project/hyperframes.json": 12,
+        "evidence/stories/bunny-sharing-1/video/project/index.html": 40,
+        "evidence/stories/bunny-sharing-1/video/project/meta.json": 1,
+        "evidence/stories/bunny-sharing-1/video/project/package.json": 11,
+        "evidence/stories/bunny-sharing-1/video/project/vendor/gsap.min.js": 11,
+        "evidence/stories/bunny-sharing-1/video/receipt.json": 142,
+        "evidence/stories/bunny-sharing-1/video/spec.json": 17
+      },
+      "user_removed_per_file": {
+        "evidence/stories/bunny-sharing-1/video/spec.json": 17
+      }
+    }
+  ]
+}

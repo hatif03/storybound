@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Storybound"><title>Storybound</title>
+<rect width="512" height="512" rx="112" fill="#FFC93C"/>
+<path d="M118 200 L96 92 L204 152Z" fill="#8A5530" stroke="#2A2745" stroke-width="12" stroke-linejoin="round"/>
+<path d="M394 200 L416 92 L308 152Z" fill="#8A5530" stroke="#2A2745" stroke-width="12" stroke-linejoin="round"/>
+<ellipse cx="256" cy="300" rx="178" ry="160" fill="#B9794F" stroke="#2A2745" stroke-width="14"/>
+<circle cx="184" cy="268" r="78" fill="#F6E7C6" stroke="#2A2745" stroke-width="10"/>
+<circle cx="328" cy="268" r="78" fill="#F6E7C6" stroke="#2A2745" stroke-width="10"/>
+<circle cx="190" cy="274" r="40" fill="#5A3418"/><circle cx="322" cy="274" r="40" fill="#5A3418"/>
+<circle cx="204" cy="258" r="13" fill="#FFFFFF"/><circle cx="336" cy="258" r="13" fill="#FFFFFF"/>
+<path d="M226 322 L286 322 L256 376Z" fill="#F5A33A" stroke="#2A2745" stroke-width="10" stroke-linejoin="round"/>
+</svg>

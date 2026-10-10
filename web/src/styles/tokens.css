@@ -1,0 +1,44 @@
+/* Design tokens (docs/planning/frontend.md section 4). Colour for delight, luminance for legibility, never colour alone for meaning. */
+:root {
+  color-scheme: light; /* the child's world is always bright; only the grown-ups area follows a dark device (see grownup.css) */
+
+  --paper: #fff8ea;
+  --paper-2: #fdefd3;
+  --paper-3: #fffdf7;
+  --ink: #2a2745;
+  --ink-soft: #4d4a70; /* 8.6:1 on paper */
+  --sun: #ffc93c;
+  --sun-deep: #f0a800;
+  --sky: #59b8f3;
+  --sky-soft: #d6eefc;
+  --leaf: #6cc57a;
+  --leaf-soft: #d8f3dc;
+  --berry: #ff7096;
+  --tangerine: #ff9a3c;
+  --tangerine-text: #b34f00; /* darker orange for text on paper: 5:1 */
+  --grape: #8f73e0;
+  --grape-soft: #e7defa;
+  --cloud: #e9e4f5;
+  --focus: #4a2fc2; /* 8:1 on paper; used for focus rings */
+  --shadow: rgba(42, 39, 69, 0.18);
+
+  --outline: 4px;
+  --r-card: 32px;
+  --r-md: 22px;
+  --lift: 0 6px 0 var(--ink);
+
+  --font-story: 'Andika', 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --font-display: 'Fredoka', 'Andika', system-ui, sans-serif;
+  --font-ui: 'Atkinson Hyperlegible', system-ui, sans-serif;
+
+  --text-scale: 1;
+  --story-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
+  --head-size: clamp(1.6rem, 1.2rem + 1.7vw, 2.4rem);
+  --gap: clamp(12px, 2vw, 24px);
+  --edge: max(16px, env(safe-area-inset-left, 0px));
+  --tap: 56px;
+  --tap-big: 80px;
+}
+
+:root[data-text='s'] { --text-scale: 0.88; }
+:root[data-text='l'] { --text-scale: 1.2; }

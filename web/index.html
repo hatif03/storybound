@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FFF8EA" />
+    <title>Storybound</title>
+    <meta name="description" content="Draw a hero, pick a lesson, and Pip makes you a storybook. Every page is checked before you see it." />
+    <meta property="og:title" content="Storybound" />
+    <meta property="og:description" content="A storybook made from your drawing. Every page is checked before you see it." />
+    <meta property="og:image" content="/assets/brand/og.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/assets/brand/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png" />
+    <link rel="preload" href="/assets/fonts/Fredoka-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/Andika-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <!-- Pip's Rive artboards have a white backdrop: this turns near-white into transparent (alpha = 6 x how far from white). -->
+      <filter id="pip-knockout" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -6 -6 -6 0 18" result="k" /><feComposite in="k" in2="SourceAlpha" operator="in" /></filter>
+    </svg>
+    <div id="root"></div>
+    <noscript>Storybound needs JavaScript to draw and read stories.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

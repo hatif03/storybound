@@ -1,0 +1,6 @@
+/* All fonts are self-hosted (Latin WOFF2, SIL OFL). No font CDN: a font request would tell a third party about the child. */
+@font-face { font-family: 'Andika'; src: url('/assets/fonts/Andika-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Andika'; src: url('/assets/fonts/Andika-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fredoka'; src: url('/assets/fonts/Fredoka-Variable.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible'; src: url('/assets/fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Atkinson Hyperlegible'; src: url('/assets/fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }

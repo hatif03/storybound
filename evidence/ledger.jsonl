@@ -1,0 +1,2 @@
+{"ts_ist": "2026-10-10T13:18:50+05:30", "ts_utc": "2026-10-10T07:48:50+00:00", "git_sha": "8010a00", "name": "safety-eval", "kind": "safety-eval", "summary": {"total": 26, "matched": 24, "unsafe_refused": "1/1", "benign_wrongly_refused": 0}, "file": "20261010-1318-IST-safety-eval.json"}
+{"ts_ist": "2026-10-10T13:19:33+05:30", "ts_utc": "2026-10-10T07:49:33+00:00", "git_sha": "8010a00", "name": "safety-eval-2", "kind": "safety-eval", "summary": {"total": 26, "matched": 25, "unsafe_refused": "1/1", "benign_wrongly_refused": 0}, "file": "20261010-1319-IST-safety-eval-2.json"}

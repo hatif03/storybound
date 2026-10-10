@@ -1,0 +1,76 @@
+Index: cache-miss (378ms) | Query: 154ms | Preselect: 250ms | Total: 783ms
+Coverage: degraded (4 languages/60 files; 1 warning; 1 partial failure)
+- warning W_WORKTREE_SNAPSHOT
+- partial E_MINIFIED: evidence/traces/20261010-1318-IST-first-full-run-trace.json
+VERIFY: python -m pytest tests/test_oath.py -k test_oath_hash_is_stable_and_order_independent
+  targets tests/test_oath.py (from pyproject.toml pytest config + covering test path) tier=narrow
+  run it ONCE after editing; if it fails, fix the code and re-run THIS command.
+  do not build an alternative test harness, hand-assemble a classpath, or re-verify by
+  reverting and reapplying the edit.
+1. src/storybound/agents/writer.py:15-18 oath_summary s=19.1 [focus:15]
+def oath_summary(oath: Oath) -> str:
+    """A short promise list for the writer: titles only, so context per call stays flat."""
+    scene = [c for c in oath.commitments if c.scope == "scene" or c.id == "card_traits_checkable"]
+    return "; ".join(c.title for c in scene if c.id != "no_drawing_text_obedience")[:600]
+
+2. src/storybound/oath/catalog.py:258-262 oath_hash s=18.7 [focus:258]
+def oath_hash(commitments: list[Commitment]) -> str:
+    blob = json.dumps(
+        [c.model_dump() for c in sorted(commitments, key=lambda c: c.id)], sort_keys=True, ensure_ascii=False
+    )
+    return hashlib.sha256(blob.encode("utf-8")).hexdigest()
+
+3. src/storybound/oath/engine.py:35-40 page_block s=18.2 [focus:35]
+def page_block(p: Page) -> str:
+    lines = [f"PAGE {p.index}", f"Scenario: {p.scenario}", f"Question: {p.question}"]
+    for c in p.choices:
+        lines.append(f"Choice {c.id} [{'CORRECT' if c.is_correct else 'WRONG'}]: {c.text} | Feedback: {c.feedback}")
+    lines.append(f"Image prompt: {p.image_prompt}")
+    return "\n".join(lines)
+
+4. src/storybound/pipeline.py:202-212 n_oath s=17.3 [focus:208]
+    def n_oath(s: S) -> S:
+        oath, info = oath_author.author(lesson, s["card"])
+        run.engine.oath = oath
+        plain = {c.id: c.plain for c in oath.commitments}
+        run.emit(
+            "oath.ready",
+            {"oath_hash": oath.hash, "added": info["added"], "rejected": info["rejected"],
+             "commitments": [{"id": c.id, "scope": c.scope, "title": c.title, "plain": plain[c.id], "core": c.core,
+                              "verifier": c.verifier} for c in oath.commitments]},
+        )  # fmt: skip
+        return {"oath": oath}
+
+5. src/storybound/agents/oath_author.py:15-39 author s=17.1 [focus:16]
+def author(lesson: Lesson, card: CharacterCard) -> tuple[Oath, dict]:
+    base = catalog.core_oath()
+    info: dict = {"rejected": [], "added": [], "tokens_in": 0, "tokens_out": 0, "author_failed": False}
+    try:
+        r = ask_json(
+            "oath_author",
+            prompts.OATH_SYSTEM,
+            prompts.OATH_USER.format(
+                lesson=f"{lesson.title}: {lesson.concept}", card=json.dumps(card.model_dump(), ensure_ascii=False)
+            ),
+            temperature=0.3,
+            max_tokens=900,
+        )
+        adds = r.value.get("additions", []) if isinstance(r.value, dict) else []
+        oath, rejected = catalog.merge_additions(base, [a for a in adds if isinstance(a, dict)])
+        info.update(
+            rejected=rejected,
+            added=[c.id for c in oath.commitments if not c.core],
+            tokens_in=r.usage.input_tokens,
+            tokens_out=r.usage.output_tokens,
+        )
+        return oath, info
+    except ClientError:
+        info["author_failed"] = True  # the core oath alone is still a complete oath
+        return base, info
+
+6. tests/test_oath.py:264-266 test_oath_hash_is_stable_and_order_independent (covers) [focus:266]
+    base = catalog.core_oath()
+    rev = list(reversed(base.commitments))
+    assert catalog.oath_hash(rev) == base.hash
+SAME-CONCEPT LITERAL "oath_summary" — 2 in 1 file repo-wide:
+  src/storybound/agents/writer.py:73 write_scene CONSUMER

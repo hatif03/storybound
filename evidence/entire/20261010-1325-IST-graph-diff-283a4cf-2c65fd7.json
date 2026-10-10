@@ -1,0 +1,232 @@
+{
+  "base": "283a4cf",
+  "head": "2c65fd7",
+  "files": [
+    {
+      "path": "scripts/report.py",
+      "status": "A",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "rate",
+          "new_signature": "def rate(n: int, d: int) -\u003e str",
+          "after_start_line": 20,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "summarise",
+          "new_signature": "def summarise(rows: list[dict]) -\u003e dict",
+          "after_start_line": 24,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "markdown",
+          "new_signature": "def markdown(name: str, rows: list[dict], s: dict) -\u003e str",
+          "after_start_line": 68,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "row",
+          "new_signature": "def row(label, fn)",
+          "after_start_line": 78,
+          "dependents_count": 7
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "main",
+          "new_signature": "def main() -\u003e None",
+          "after_start_line": 119,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "scripts/sweep.py",
+      "status": "A",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "fixture_path",
+          "new_signature": "def fixture_path(fid: str) -\u003e Path",
+          "after_start_line": 36,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "one",
+          "new_signature": "def one(name: str, arm: str, fid: str, lesson: str, seed: str) -\u003e str",
+          "after_start_line": 43,
+          "dependents_count": 33
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "main",
+          "new_signature": "def main() -\u003e None",
+          "after_start_line": 56,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/agents/character.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "signature_changed",
+          "kind": "function",
+          "name": "build_card",
+          "old_signature": "def build_card(drawing: Drawing, hero_name: str | None = None) -\u003e tuple[CharacterCard, dict]",
+          "new_signature": "def build_card(drawing: Drawing, hero_name: str | None = None, seed: str = \"1\") -\u003e tuple[CharacterCard, dict]",
+          "before_start_line": 26,
+          "after_start_line": 26,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/media.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "web_image",
+          "new_signature": "def web_image(data: bytes, max_side: int = 1024, quality: int = 82) -\u003e bytes",
+          "after_start_line": 65,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/oath/engine.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Engine",
+          "before_start_line": 55,
+          "after_start_line": 55,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "Engine._run",
+          "before_start_line": 128,
+          "after_start_line": 129,
+          "dependents_count": 5
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Run",
+          "before_start_line": 76,
+          "after_start_line": 77,
+          "dependents_count": 10
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "Run.make_engine",
+          "before_start_line": 108,
+          "after_start_line": 109,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "build_graph",
+          "before_start_line": 126,
+          "after_start_line": 133,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_character",
+          "before_start_line": 171,
+          "after_start_line": 178,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "one_image",
+          "before_start_line": 396,
+          "after_start_line": 403,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "ledger_row",
+          "before_start_line": 620,
+          "after_start_line": 630,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "tests/test_oath.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_judge_deferred_while_a_cheap_check_fails",
+          "new_signature": "def test_judge_deferred_while_a_cheap_check_fails()",
+          "after_start_line": 282,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "spy",
+          "new_signature": "def spy(items, text, context)",
+          "after_start_line": 285,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "wire",
+          "before_start_line": 51,
+          "after_start_line": 51,
+          "dependents_count": 5
+        }
+      ]
+    }
+  ]
+}

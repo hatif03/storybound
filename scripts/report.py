@@ -121,7 +121,11 @@ def main() -> None:
     ap.add_argument("--name", required=True)
     ap.add_argument("--out", default=str(ROOT / "evidence" / "reports"))
     a = ap.parse_args()
-    rows = [r for r in ledger.read() if r.get("name") == a.name and r.get("arm")]
+    latest: dict[tuple, dict] = {}
+    for r in ledger.read():  # a re-run of the same job replaces an earlier errored attempt
+        if r.get("name") == a.name and r.get("arm"):
+            latest[(r["arm"], r["fixture"], r["lesson"], str(r["seed"]))] = r
+    rows = list(latest.values())
     if not rows:
         sys.exit(f"no ledger rows named {a.name}")
     s = summarise(rows)

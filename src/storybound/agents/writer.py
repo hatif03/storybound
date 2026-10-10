@@ -31,7 +31,8 @@ def assemble(index: int, j: dict, correct_slot: int) -> Page:
     """Build a Page from the writer's JSON; the code decides where the correct choice goes (seeded, balanced)."""
     try:
         correct, wrong = j["correct"], j["wrong"]
-        scenario, question, image_prompt = j["scenario"], j["question"], j["image_prompt"]
+        scenario, question = j["scenario"], j["question"]
+        image_prompt = j.get("image_prompt") or f"Soft children's-book watercolour illustration of: {scenario}"
         picks = [
             Choice(id="a", text=str(wrong["text"]), feedback=str(wrong["feedback"]), is_correct=False),
             Choice(id="b", text=str(correct["text"]), feedback=str(correct["feedback"]), is_correct=True),
@@ -51,6 +52,19 @@ def assemble(index: int, j: dict, correct_slot: int) -> Page:
     )
 
 
+def _page_from(call, index: int, correct_slot: int) -> tuple[Page, dict]:
+    """Run a model call and assemble the page; one fresh attempt if the JSON was not a usable page."""
+    for attempt in range(2):
+        r = call(attempt)
+        try:
+            page = assemble(index, r.value if isinstance(r.value, dict) else {}, correct_slot)
+            return page, {"tokens_in": r.usage.input_tokens, "tokens_out": r.usage.output_tokens}
+        except ClientError:
+            if attempt == 1:
+                raise
+    raise ClientError("unreachable")  # pragma: no cover
+
+
 def write_scene(
     *,
     index: int,
@@ -64,25 +78,26 @@ def write_scene(
     temperature: float = 0.7,
 ) -> tuple[Page, dict]:
     last = pages[-1].question if pages else "(none)"
-    r = ask_json(
-        f"scene_writer.{index}",
-        prompts.WRITE_SYSTEM.format(age=age),
-        prompts.WRITE_USER.format(
-            lesson=f"{lesson.title}: {lesson.concept}",
-            card=json.dumps(card.model_dump(), ensure_ascii=False),
-            oath=oath_summary(oath),
-            summary=rolling_summary(pages),
-            last_line=last,
-            index=index,
-            beat=beat,
-        ),
-        temperature=temperature,
-        max_tokens=900,
+    user = prompts.WRITE_USER.format(
+        lesson=f"{lesson.title}: {lesson.concept}",
+        card=json.dumps(card.model_dump(), ensure_ascii=False),
+        oath=oath_summary(oath),
+        summary=rolling_summary(pages),
+        last_line=last,
+        index=index,
+        beat=beat,
     )
-    return assemble(index, r.value if isinstance(r.value, dict) else {}, correct_slot), {
-        "tokens_in": r.usage.input_tokens,
-        "tokens_out": r.usage.output_tokens,
-    }
+    return _page_from(
+        lambda k: ask_json(
+            f"scene_writer.{index}",
+            prompts.WRITE_SYSTEM.format(age=age),
+            user,
+            temperature=min(temperature + 0.15 * k, 1.0),
+            max_tokens=900,
+        ),
+        index,
+        correct_slot,
+    )
 
 
 def repair_scene(
@@ -109,27 +124,28 @@ def repair_scene(
         },
         ensure_ascii=False,
     )
-    r = ask_json(
-        f"scene_repair.{page.index}",
-        prompts.WRITE_SYSTEM.format(age=age),
-        prompts.REPAIR_USER.format(
-            lesson=f"{lesson.title}: {lesson.concept}",
-            card=json.dumps(card.model_dump(), ensure_ascii=False),
-            index=page.index,
-            beat=beat,
-            page=shown,
-            commitment=commitment,
-            expected=expected,
-            actual=actual,
-            hint=hint or "Fix exactly what the review found.",
-        ),
-        temperature=0.5 + 0.1 * attempt,
-        max_tokens=900,
+    user = prompts.REPAIR_USER.format(
+        lesson=f"{lesson.title}: {lesson.concept}",
+        card=json.dumps(card.model_dump(), ensure_ascii=False),
+        index=page.index,
+        beat=beat,
+        page=shown,
+        commitment=commitment,
+        expected=expected,
+        actual=actual,
+        hint=hint or "Fix exactly what the review found.",
     )
-    return assemble(page.index, r.value if isinstance(r.value, dict) else {}, correct_slot), {
-        "tokens_in": r.usage.input_tokens,
-        "tokens_out": r.usage.output_tokens,
-    }
+    return _page_from(
+        lambda k: ask_json(
+            f"scene_repair.{page.index}",
+            prompts.WRITE_SYSTEM.format(age=age),
+            user,
+            temperature=min(0.5 + 0.1 * attempt + 0.15 * k, 1.0),
+            max_tokens=900,
+        ),
+        page.index,
+        correct_slot,
+    )
 
 
 def baseline_story(*, lesson: Lesson, card: CharacterCard, age: int, n: int = 8) -> tuple[list[Page], dict]:

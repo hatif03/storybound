@@ -168,3 +168,24 @@ def test_baseline_arm_does_not_repair(monkeypatch, drawing):
     assert "scene.repair" not in types and run.outcome == "shipped_with_notes"
     broken = {s["commitment"] for s in run.shipped}
     assert {"character_named_in_scene", "correct_choice_position_balanced"} <= broken
+
+
+def test_writer_tolerates_a_missing_image_prompt_and_retries_bad_json():
+    from storybound.clients.errors import ClientError
+    from storybound.clients.usage import Result
+
+    good = {"scenario": "Benny hops.", "question": "What now?", "correct": {"text": "Share", "feedback": "Yay"},
+            "wrong": {"text": "Keep", "feedback": "Hmm"}}  # fmt: skip
+    p = writer.assemble(3, good, 0)
+    assert p.image_prompt.startswith("Soft children's-book") and p.choices[0].is_correct
+
+    calls = []
+
+    def call(k):
+        calls.append(k)
+        return Result(value={"scenario": "x"} if k == 0 else good)
+
+    page, _ = writer._page_from(call, 2, 1)
+    assert calls == [0, 1] and page.index == 2 and page.choices[1].is_correct
+    with pytest.raises(ClientError):
+        writer._page_from(lambda k: Result(value={}), 1, 0)

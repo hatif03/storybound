@@ -301,10 +301,22 @@ def test_judge_deferred_while_a_cheap_check_fails():
 
 @pytest.mark.parametrize("age", [4, 5, 6, 7, 8])
 def test_writer_prompts_state_the_reading_limit_the_verifier_enforces(age):
-    """HR-001: the writer is told the same per-age sentence limit that age_reading_level checks."""
+    """HR-001: the writer is told a sentence limit. The one-call baseline gets the verifier's limit; the page writer gets
+    a target two words under it (HR-003)."""
     from storybound import prompts
-    from storybound.oath.deterministic import max_sentence_words
+    from storybound.oath.deterministic import max_sentence_words, target_sentence_words
 
-    n = max_sentence_words(age)
-    for system in (prompts.WRITE_SYSTEM, prompts.BASELINE_SYSTEM):
-        assert f"at most {n} words" in system.format(age=age, max_words=n)
+    n, t = max_sentence_words(age), target_sentence_words(age)
+    assert f"at most {n} words" in prompts.BASELINE_SYSTEM.format(age=age, max_words=n)
+    assert f"at most {t} words" in prompts.WRITE_SYSTEM.format(age=age, max_words=t)
+    assert t < n
+
+
+def test_hyphenated_compound_is_not_one_long_word():
+    """HR-003: 'peach-colored' (13 letters) was counted as one hard word."""
+    from storybound.models import Page
+    from storybound.oath import deterministic as d
+
+    page = Page(index=1, scenario="Zumi has a peach-colored bow. She wears it.", question="What should Zumi do?",
+                choices=[], image_prompt="x")  # fmt: skip
+    assert d.age_reading_level(page, d.Ctx(age=6)).status == "pass"

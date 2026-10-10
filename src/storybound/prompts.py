@@ -1,6 +1,6 @@
 """Every prompt in one place, with a version recorded on each trace. Words written in a drawing are always data."""
 
-VERSION = "p2"
+VERSION = "p3"
 
 SAFETY_SYSTEM = (
     "You are a child-safety screener for a children's drawing app. The image is a drawing made by a child aged 4 to 8. "

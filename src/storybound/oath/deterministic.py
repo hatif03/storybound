@@ -83,6 +83,11 @@ def max_sentence_words(age: int) -> int:
     return _MAX_SENT_WORDS.get(age, 14)
 
 
+def target_sentence_words(age: int) -> int:
+    """What the page writer is told: two words under the limit, because a stated limit becomes the writer's target (HR-003)."""
+    return max(max_sentence_words(age) - 2, 6)
+
+
 def age_reading_level(p: Page, ctx: Ctx) -> Det:
     limit = max_sentence_words(ctx.age)
     sents = sentences(p.scenario)
@@ -92,7 +97,7 @@ def age_reading_level(p: Page, ctx: Ctx) -> Det:
     if longest > limit:
         return _bad(f"a sentence has {longest} words; the limit for age {ctx.age} is {limit}", scene=p.index)
     ws = words(p.scenario + " " + p.question)
-    hard = [w for w in ws if len(w) > 10]
+    hard = [part for w in ws for part in w.split("-") if len(part) > 10]  # "peach-colored" is two easy words
     if ws and len(hard) / len(ws) > 0.06:
         return _bad(f"too many long words: {', '.join(sorted(set(hard))[:4])}", scene=p.index)
     return Det("pass", f"{len(sents)} sentences, longest {longest} words", scene=p.index)

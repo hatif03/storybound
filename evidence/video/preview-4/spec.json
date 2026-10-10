@@ -1,0 +1,296 @@
+{
+ "title": "preview",
+ "claims": [
+  {
+   "id": "sweep_plain",
+   "label": "stories shipped with a broken promise: plain writer",
+   "refs": [
+    "report:sweep-2-p2#arms.B0.shipped_with_violation",
+    "report:sweep-2-p2#arms.B0.shipped"
+   ],
+   "fmt": "{0}/{1}",
+   "spoken": "{0} of {1}",
+   "ratio": true
+  },
+  {
+   "id": "sweep_self",
+   "label": "stories shipped with a broken promise: the model reviewing itself",
+   "refs": [
+    "report:sweep-2-p2#arms.B2.shipped_with_violation",
+    "report:sweep-2-p2#arms.B2.shipped"
+   ],
+   "fmt": "{0}/{1}",
+   "spoken": "{0} of {1}",
+   "ratio": true
+  },
+  {
+   "id": "sweep_gated",
+   "label": "stories shipped with a broken promise: gated by the oath",
+   "refs": [
+    "report:sweep-2-p2#arms.B1.shipped_with_violation",
+    "report:sweep-2-p2#arms.B1.shipped"
+   ],
+   "fmt": "{0}/{1}",
+   "spoken": "{0} of {1}",
+   "ratio": true
+  },
+  {
+   "id": "rl_before",
+   "label": "stories with a reading-level break on the first pass, before the fix",
+   "refs": [
+    "report:sweep-1-p1#arms.B0.first_pass_by_commitment.age_reading_level",
+    "report:sweep-1-p1#arms.B0.stories"
+   ],
+   "fmt": "{0}/{1}",
+   "spoken": "{0} of {1}",
+   "ratio": true
+  },
+  {
+   "id": "rl_after",
+   "label": "the same check after the prompt fix",
+   "refs": [
+    "report:sweep-2-p2#arms.B0.first_pass_by_commitment.age_reading_level",
+    "report:sweep-2-p2#arms.B0.stories"
+   ],
+   "fmt": "{0}/{1}",
+   "spoken": "{0} of {1}",
+   "ratio": true
+  },
+  {
+   "id": "cost_plain",
+   "label": "estimated dollars per story, text only, no checking",
+   "refs": [
+    "report:sweep-2-p2#arms.B0.usd_est_mean"
+   ],
+   "fmt": "${0:.3f}",
+   "spoken": "{0:.3f} dollars",
+   "ratio": false
+  },
+  {
+   "id": "cost_gated",
+   "label": "estimated dollars per story, text only, every page checked",
+   "refs": [
+    "report:sweep-2-p2#arms.B1.usd_est_mean"
+   ],
+   "fmt": "${0:.3f}",
+   "spoken": "{0:.3f} dollars",
+   "ratio": false
+  },
+  {
+   "id": "runs_per_arm",
+   "label": "stories written per arm in the experiment",
+   "refs": [
+    "report:sweep-2-p2#arms.B1.stories"
+   ],
+   "fmt": "{0}",
+   "spoken": "{0}",
+   "ratio": false
+  }
+ ],
+ "scenes": [
+  {
+   "id": "scene_title",
+   "narration": "Meet Storybound, the bedtime story agent that keeps its promises to parents and kids.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "Storybound",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "A story agent that keeps its promises.",
+     "claim": null,
+     "items": [],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "happy-flap",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_problem",
+   "narration": "AI can dream up delightful adventures, but no one checks every page before a child reads it.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "The Unchecked Story",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Generated bedtime stories can quietly break family rules.",
+     "claim": null,
+     "items": [],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "dizzy-confused",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_fix",
+   "narration": "Storybound drafts a clear oath first, checks each page, rewrites any slip, and hands parents a receipt.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "The Oath Gate",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "list",
+     "text": "",
+     "claim": null,
+     "items": [
+      "Write an oath of family promises first",
+      "Check every single page before display",
+      "Rewrite pages that break a promise",
+      "Provide parents with a verified receipt"
+     ],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "cool-sunglasses",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_experiment",
+   "narration": "Across {runs_per_arm} test stories per arm, the oath gate stopped broken promises that slipped past standard writing.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "Stories Shipped With Broken Promises",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "bars",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "label": "Plain Writer",
+       "claim": "sweep_plain",
+       "tone": "bad"
+      },
+      {
+       "label": "Self Review",
+       "claim": "sweep_self",
+       "tone": "bad"
+      },
+      {
+       "label": "Oath Gated",
+       "claim": "sweep_gated",
+       "tone": "good"
+      }
+     ],
+     "src": ""
+    }
+   ],
+   "covers": [
+    "runs_per_arm"
+   ],
+   "mood": "party-cupcake",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_hardening",
+   "narration": "We even hardened the reading level promise, dropping first pass issues dramatically.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "Reading Level First Pass Breaks",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "bars",
+     "text": "",
+     "claim": null,
+     "items": [
+      {
+       "label": "Before Prompt Fix",
+       "claim": "rl_before",
+       "tone": "bad"
+      },
+      {
+       "label": "After Prompt Fix",
+       "claim": "rl_after",
+       "tone": "good"
+      }
+     ],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "wink",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_cost",
+   "narration": "Checking each page adds only a few extra pennies to make bedtime much safer.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "Estimated Cost Per Story",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "cost_plain",
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "claim",
+     "text": "",
+     "claim": "cost_gated",
+     "items": [],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "heart-eyes",
+   "min_seconds": 4.0
+  },
+  {
+   "id": "scene_closing",
+   "narration": "Every single number here comes straight from verified evidence, with its own video receipt.",
+   "blocks": [
+    {
+     "type": "title",
+     "text": "Backed By Evidence",
+     "claim": null,
+     "items": [],
+     "src": ""
+    },
+    {
+     "type": "text",
+     "text": "Verified numbers, backed by an immutable demo receipt.",
+     "claim": null,
+     "items": [],
+     "src": ""
+    }
+   ],
+   "covers": [],
+   "mood": "shy-giggle",
+   "min_seconds": 4.0
+  }
+ ],
+ "max_seconds": 180.0,
+ "requires_coverage": false
+}

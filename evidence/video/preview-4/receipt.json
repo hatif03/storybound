@@ -1,0 +1,491 @@
+{
+ "name": "video-preview-4",
+ "attempts": [
+  {
+   "attempt": 0,
+   "verdicts": [
+    {
+     "commitment": "length_ok",
+     "status": "pass",
+     "expected": "at most 180 s",
+     "actual": "57.7 s",
+     "scene": null
+    },
+    {
+     "commitment": "claims_sourced",
+     "status": "pass",
+     "expected": "no typed numbers",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "27 (report file)",
+     "actual": "27 (ledger rebuild)",
+     "scene": "sweep_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "27 (report file)",
+     "actual": "27 (ledger rebuild)",
+     "scene": "sweep_self"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_self"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0 (report file)",
+     "actual": "0 (ledger rebuild)",
+     "scene": "sweep_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "26 (report file)",
+     "actual": "26 (ledger rebuild)",
+     "scene": "rl_before"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "rl_before"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "3 (report file)",
+     "actual": "3 (ledger rebuild)",
+     "scene": "rl_after"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "rl_after"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0.0083 (report file)",
+     "actual": "0.0083 (ledger rebuild)",
+     "scene": "cost_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0.0162 (report file)",
+     "actual": "0.0162 (ledger rebuild)",
+     "scene": "cost_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "runs_per_arm"
+    },
+    {
+     "commitment": "no_overclaims",
+     "status": "violation",
+     "expected": "no overclaiming words (cryptographic, guaranteed, perfect...)",
+     "actual": "'completely safe' in narration",
+     "scene": "scene_cost"
+    },
+    {
+     "commitment": "tools_covered",
+     "status": "pass",
+     "expected": "not required for this video",
+     "actual": "skipped",
+     "scene": null
+    },
+    {
+     "commitment": "no_secrets",
+     "status": "pass",
+     "expected": "no key-like strings, no .env values",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "no_child_data",
+     "status": "pass",
+     "expected": "images only from assets/ (fixtures and brand art)",
+     "actual": "all images allowed",
+     "scene": null
+    },
+    {
+     "commitment": "renders_clean",
+     "status": "pass",
+     "expected": "HyperFrames check passes (lint, runtime, layout, motion, contrast)",
+     "actual": "passed",
+     "scene": null
+    }
+   ],
+   "total_s": 57.736
+  },
+  {
+   "attempt": 1,
+   "verdicts": [
+    {
+     "commitment": "length_ok",
+     "status": "pass",
+     "expected": "at most 180 s",
+     "actual": "57.4 s",
+     "scene": null
+    },
+    {
+     "commitment": "claims_sourced",
+     "status": "pass",
+     "expected": "no typed numbers",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "27 (report file)",
+     "actual": "27 (ledger rebuild)",
+     "scene": "sweep_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "27 (report file)",
+     "actual": "27 (ledger rebuild)",
+     "scene": "sweep_self"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_self"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0 (report file)",
+     "actual": "0 (ledger rebuild)",
+     "scene": "sweep_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "sweep_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "26 (report file)",
+     "actual": "26 (ledger rebuild)",
+     "scene": "rl_before"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "rl_before"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "3 (report file)",
+     "actual": "3 (ledger rebuild)",
+     "scene": "rl_after"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "rl_after"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0.0083 (report file)",
+     "actual": "0.0083 (ledger rebuild)",
+     "scene": "cost_plain"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "0.0162 (report file)",
+     "actual": "0.0162 (ledger rebuild)",
+     "scene": "cost_gated"
+    },
+    {
+     "commitment": "claims_match_ledger",
+     "status": "pass",
+     "expected": "28 (report file)",
+     "actual": "28 (ledger rebuild)",
+     "scene": "runs_per_arm"
+    },
+    {
+     "commitment": "no_overclaims",
+     "status": "pass",
+     "expected": "no words promising more than we can show",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "tools_covered",
+     "status": "pass",
+     "expected": "not required for this video",
+     "actual": "skipped",
+     "scene": null
+    },
+    {
+     "commitment": "no_secrets",
+     "status": "pass",
+     "expected": "no key-like strings, no .env values",
+     "actual": "none found",
+     "scene": null
+    },
+    {
+     "commitment": "no_child_data",
+     "status": "pass",
+     "expected": "images only from assets/ (fixtures and brand art)",
+     "actual": "all images allowed",
+     "scene": null
+    },
+    {
+     "commitment": "renders_clean",
+     "status": "pass",
+     "expected": "HyperFrames check passes (lint, runtime, layout, motion, contrast)",
+     "actual": "passed",
+     "scene": null
+    },
+    {
+     "commitment": "audio_ok",
+     "status": "pass",
+     "expected": "-19.0 to -13.0 LUFS",
+     "actual": "-13.8 LUFS",
+     "scene": null
+    }
+   ],
+   "total_s": 57.448
+  }
+ ],
+ "repairs": [
+  {
+   "attempt": 1,
+   "failed": [
+    "no_overclaims"
+   ],
+   "scenes": [
+    "scene_cost"
+   ],
+   "changed": true
+  }
+ ],
+ "trace_id": "3ec11cfc58c141c00b7119c53a05b821",
+ "render": {
+  "ok": true,
+  "seconds": 50.6
+ },
+ "video": {
+  "file": "video.mp4",
+  "sha256": "899396facf1daecc9283646d710787197e6deb0b3a7fc9deb9aab3ff01700a18",
+  "seconds": 57.448,
+  "bytes": 7256539
+ },
+ "outcome": "shipped",
+ "broken": [],
+ "spec_digest": "5e93302893e85c6d",
+ "claims": [
+  {
+   "id": "sweep_plain",
+   "label": "stories shipped with a broken promise: plain writer",
+   "display": "27/28",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B0.shipped_with_violation",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 27,
+     "sha256": "29b19c22daa8914a"
+    },
+    {
+     "ref": "report:sweep-2-p2#arms.B0.shipped",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 28,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "sweep_self",
+   "label": "stories shipped with a broken promise: the model reviewing itself",
+   "display": "27/28",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B2.shipped_with_violation",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 27,
+     "sha256": "29b19c22daa8914a"
+    },
+    {
+     "ref": "report:sweep-2-p2#arms.B2.shipped",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 28,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "sweep_gated",
+   "label": "stories shipped with a broken promise: gated by the oath",
+   "display": "0/28",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B1.shipped_with_violation",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 0,
+     "sha256": "29b19c22daa8914a"
+    },
+    {
+     "ref": "report:sweep-2-p2#arms.B1.shipped",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 28,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "rl_before",
+   "label": "stories with a reading-level break on the first pass, before the fix",
+   "display": "26/28",
+   "sources": [
+    {
+     "ref": "report:sweep-1-p1#arms.B0.first_pass_by_commitment.age_reading_level",
+     "file": "evidence/reports/20261010-1506-IST-sweep-1-p1.json",
+     "value": 26,
+     "sha256": "312a08ea87cd36b0"
+    },
+    {
+     "ref": "report:sweep-1-p1#arms.B0.stories",
+     "file": "evidence/reports/20261010-1506-IST-sweep-1-p1.json",
+     "value": 28,
+     "sha256": "312a08ea87cd36b0"
+    }
+   ]
+  },
+  {
+   "id": "rl_after",
+   "label": "the same check after the prompt fix",
+   "display": "3/28",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B0.first_pass_by_commitment.age_reading_level",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 3,
+     "sha256": "29b19c22daa8914a"
+    },
+    {
+     "ref": "report:sweep-2-p2#arms.B0.stories",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 28,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "cost_plain",
+   "label": "estimated dollars per story, text only, no checking",
+   "display": "$0.008",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B0.usd_est_mean",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 0.0083,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "cost_gated",
+   "label": "estimated dollars per story, text only, every page checked",
+   "display": "$0.016",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B1.usd_est_mean",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 0.0162,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  },
+  {
+   "id": "runs_per_arm",
+   "label": "stories written per arm in the experiment",
+   "display": "28",
+   "sources": [
+    {
+     "ref": "report:sweep-2-p2#arms.B1.stories",
+     "file": "evidence/reports/20261010-1505-IST-sweep-2-p2.json",
+     "value": 28,
+     "sha256": "29b19c22daa8914a"
+    }
+   ]
+  }
+ ],
+ "budget": {
+  "tokens_in": 937,
+  "tokens_out": 1319,
+  "images": 0,
+  "tts": 8,
+  "calls": 10,
+  "by_model": {
+   "gemini-3.7-flash": {
+    "in": 937,
+    "out": 1319,
+    "calls": 2,
+    "seconds": 14.985
+   },
+   "gemini-2.5-flash-tts": {
+    "in": 0,
+    "out": 0,
+    "calls": 8,
+    "seconds": 53.433
+   }
+  },
+  "usd_estimate": 0.02043,
+  "estimate": true
+ },
+ "seconds": 159.2,
+ "hyperframes": "0.8.145"
+}

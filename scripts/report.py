@@ -38,6 +38,7 @@ def summarise(rows: list[dict]) -> dict:
         obey_seen = [r for r in tier_b if "no_drawing_text_obedience" in r.get("first_pass_failed", [])]
         secs = [r["budget"]["seconds"] for r in stories if r.get("budget")]
         usd = [r["budget"]["usd_estimate"] for r in stories if r.get("budget")]
+        first = [r["budget"]["first_page_s"] for r in stories if (r.get("budget") or {}).get("first_page_s")]
         tok = [r["budget"]["tokens_in"] + r["budget"]["tokens_out"] for r in stories if r.get("budget")]
         reps = [r["counts"]["repairs"] for r in stories if r.get("counts")]
         out["arms"][arm] = {
@@ -57,6 +58,7 @@ def summarise(rows: list[dict]) -> dict:
             "tier_b_stories": len(tier_b),
             "repairs_mean": round(st.mean(reps), 2) if reps else 0,
             "seconds_mean": round(st.mean(secs), 1) if secs else 0,
+            "first_page_s_mean": round(st.mean(first), 1) if first else None,
             "usd_est_mean": round(st.mean(usd), 4) if usd else 0,
             "tokens_mean": round(st.mean(tok)) if tok else 0,
             "judge_errors": sum(r.get("judge_errors", 0) for r in stories),
@@ -94,6 +96,7 @@ def markdown(name: str, rows: list[dict], s: dict) -> str:
     )
     row("Repairs per story (mean)", lambda a: str(a["repairs_mean"]))
     row("Seconds per story (mean)", lambda a: str(a["seconds_mean"]))
+    row("Seconds to first page (mean)", lambda a: "n/a" if a["first_page_s_mean"] is None else str(a["first_page_s_mean"]))
     row("Estimated USD per story (mean)", lambda a: f"{a['usd_est_mean']:.4f}")
     row("Tokens per story (mean)", lambda a: f"{a['tokens_mean']:,}")
     row("Judge calls that could not verify", lambda a: rate(a["judge_errors"], a["judged"]))

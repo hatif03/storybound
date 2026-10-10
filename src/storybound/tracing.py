@@ -12,16 +12,19 @@ from .config import env
 
 log = logging.getLogger("storybound.tracing")
 _ready = False
+_warned = False
 
 
 def init() -> bool:
     """Initialise neatlogs once. Call before importing LLM libraries where possible."""
-    global _ready
+    global _ready, _warned
     if _ready:
         return True
     key = env("NEATLOGS_API_KEY")
     if not key:
-        log.warning("NEATLOGS_API_KEY not set: tracing disabled")
+        if not _warned:
+            log.warning("NEATLOGS_API_KEY not set: tracing disabled")
+            _warned = True
         return False
     try:
         import neatlogs
@@ -30,6 +33,8 @@ def init() -> bool:
             api_key=key,
             workflow_name=env("NEATLOGS_WORKFLOW", "create-storybook"),
             capture_logs=True,
+            pii_enabled=True,  # server-side redaction: a drawing may carry names or phone numbers
+            pii_entities=["PERSON", "PHONE_NUMBER", "EMAIL_ADDRESS", "LOCATION"],
         )
         _ready = True
     except Exception as e:  # pragma: no cover - depends on SDK/network

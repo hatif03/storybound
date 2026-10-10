@@ -47,11 +47,22 @@ class Budget(BaseModel):
     seconds_per_story: float = 240.0
 
 
+class Prices(BaseModel):
+    """ESTIMATES, labelled as such everywhere they are shown. neatlogs holds the measured figure; cfo.ai gets that one."""
+
+    gemini_in_per_m: float = 0.30
+    gemini_out_per_m: float = 2.50
+    k2_per_m: float = 0.0  # no price known
+    image_each: float = 0.04
+    tts_each: float = 0.002
+
+
 class Settings(BaseModel):
     models: Models = Field(default_factory=Models)
     thresholds: Thresholds = Field(default_factory=Thresholds)
     sampling: Sampling = Field(default_factory=Sampling)
     budget: Budget = Field(default_factory=Budget)
+    prices: Prices = Field(default_factory=Prices)
 
     gcp_project: str = "project-f0b6b4ce-541f-43ff-9f7"
     gcp_location: str = "global"

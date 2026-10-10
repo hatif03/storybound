@@ -105,7 +105,7 @@ def lesson_concept_in_scene(p: Page, ctx: Ctx) -> Det:
 
 
 def story_safe_text(p: Page, ctx: Ctx) -> Det:
-    hits = harm_hits(p.review_text()) + instruction_hits(p.review_text())
+    hits = harm_hits(p.review_text()) + instruction_hits(p.review_text()) + find_pii(p.review_text())
     if hits:
         return _bad(
             f"unsafe or unkind terms: {', '.join(sorted(set(hits)))}", "critical", matched=hits[0], scene=p.index

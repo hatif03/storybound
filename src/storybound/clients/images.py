@@ -9,7 +9,7 @@ from ..config import get_settings
 from .errors import ClientError
 from .gemini import client
 from .retry import with_retry
-from .usage import Result, Usage
+from .usage import Result, Usage, record
 
 _RETRYABLE = {408, 429, 500, 502, 503, 504}
 
@@ -49,4 +49,5 @@ def illustrate(prompt: str, *, reference: tuple[bytes, str] | None = None) -> Re
         data, mime, usage = with_retry(lambda: _once(s.models.image, prompt, reference), attempts=2)
     except ClientError:
         data, mime, usage = with_retry(lambda: _once(s.models.image_fallback, prompt, reference), attempts=2)
+    record(usage, "image")
     return Result(value=data, usage=usage, raw_text=mime)

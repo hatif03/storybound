@@ -12,7 +12,7 @@ from ..config import get_settings
 from .errors import ClientError
 from .gemini import _credentials
 from .retry import with_retry
-from .usage import Result, Usage
+from .usage import Result, Usage, record
 
 URL = "https://texttospeech.googleapis.com/v1/text:synthesize"
 _RETRYABLE = {408, 429, 500, 502, 503, 504}
@@ -53,4 +53,6 @@ def _once(text: str, voice: str, model: str, style: str | None) -> tuple[bytes, 
 def narrate(text: str, *, style: str | None = "Read warmly and slowly to a young child.") -> Result:
     s = get_settings()
     audio, lat = with_retry(lambda: _once(text, s.models.tts_voice, s.models.tts, style))
-    return Result(value=audio, usage=Usage(latency_s=lat, model=s.models.tts))
+    usage = Usage(latency_s=lat, model=s.models.tts)
+    record(usage, "tts")
+    return Result(value=audio, usage=usage)

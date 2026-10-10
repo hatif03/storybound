@@ -11,7 +11,7 @@ from ..config import get_settings
 from .errors import ClientError, ParseError
 from .jsonutil import extract_json
 from .retry import with_retry
-from .usage import Result, Usage
+from .usage import Result, Usage, record
 
 _RETRYABLE = {408, 429, 500, 502, 503, 504}
 
@@ -86,7 +86,9 @@ def _call(
     reason = str(resp.candidates[0].finish_reason) if resp.candidates else ""
     if "MAX_TOKENS" in reason:  # never ship silently truncated output
         raise ClientError(f"output truncated (finish_reason={reason})", retryable=False)
-    return resp, text, _usage(resp, model, t0)
+    usage = _usage(resp, model, t0)
+    record(usage)
+    return resp, text, usage
 
 
 def generate(

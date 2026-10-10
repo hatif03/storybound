@@ -10,7 +10,7 @@ from ..config import env, get_settings
 from .errors import ClientError, ParseError
 from .jsonutil import extract_json
 from .retry import with_retry
-from .usage import Result, Usage
+from .usage import Result, Usage, record
 
 _RETRYABLE = {408, 429, 500, 502, 503, 504}
 
@@ -44,6 +44,7 @@ def _once(messages, model: str, max_tokens: int):
         latency_s=round(time.time() - t0, 3),
         model=model,
     )
+    record(usage)
     return text, usage
 
 

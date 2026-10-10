@@ -1,0 +1,36 @@
+# secrets and local state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+.claude/settings.local.json
+.entire/settings.local.json
+.cursor/mcp.local.json
+mcp.local.json
+
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# node
+node_modules/
+dist/
+build/
+.next/
+
+# editor and OS
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# generated at runtime
+evidence/_raw/
+*.log

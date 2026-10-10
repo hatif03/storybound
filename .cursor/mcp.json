@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "neatlogs": {
+      "url": "https://ingest.neatlogs.com/mcp",
+      "headers": { "Authorization": "Bearer ${env:NEATLOGS_API_KEY}" }
+    },
+    "cfoai": {
+      "url": "https://api.cfo.ai/mcp"
+    },
+    "crustdata": {
+      "url": "https://install.crustdata.com/mcp"
+    }
+  }
+}

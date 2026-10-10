@@ -1,0 +1,10 @@
+
+  src/storybound/oath/catalog.py
+  369 lines · 16% AI (60) · 84% human (309)
+
+  Top checkpoints:
+  - 01M4K2GZDG9K21K7FAE7FR5HTA  42 lines · Claude Code · session 531bd6f2 · "continue the sweep-2 hardening records and EVIDENCE.md --- Ok i have logged into entire..."
+  - 01M4JZX6VW56B56JRRDJPXQX7P  18 lines · Claude Code · session 531bd6f2 · "continue the sweep-2 hardening records and EVIDENCE.md --- Ok i have logged into entire..."
+
+  Tip: entire why src/storybound/oath/catalog.py:<line> shows the prompt behind a specific line.
+

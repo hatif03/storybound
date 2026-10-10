@@ -1,0 +1,90 @@
+{
+  "base": "05ca665~1",
+  "head": "05ca665",
+  "files": [
+    {
+      "path": "src/storybound/agents/writer.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "write_scene",
+          "before_start_line": 69,
+          "after_start_line": 69,
+          "dependents_count": 9
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "repair_scene",
+          "before_start_line": 104,
+          "after_start_line": 104,
+          "dependents_count": 4
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/oath/deterministic.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "target_sentence_words",
+          "new_signature": "def target_sentence_words(age: int) -\u003e int",
+          "after_start_line": 86,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "age_reading_level",
+          "before_start_line": 86,
+          "after_start_line": 91,
+          "dependents_count": 11
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/prompts.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "module",
+          "name": "src/storybound/prompts.py",
+          "before_start_line": 1,
+          "after_start_line": 1,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "tests/test_oath.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "test_writer_prompts_state_the_reading_limit_the_verifier_enforces",
+          "before_start_line": 303,
+          "after_start_line": 303,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_hyphenated_compound_is_not_one_long_word",
+          "new_signature": "def test_hyphenated_compound_is_not_one_long_word()",
+          "after_start_line": 315,
+          "dependents_count": 0
+        }
+      ]
+    }
+  ]
+}

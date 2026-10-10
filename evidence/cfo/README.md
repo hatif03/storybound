@@ -46,3 +46,16 @@ Policy at month 6 under Main: Verify all with Full (8 pictures) 43.4% no, Half 6
 - Classroom at $29 with 100 stories included is the weak point: 57% margin at 60% usage, 42% at 85% usage.
 - Overage is computed on average usage per customer, so it is zero in all scenarios and heavy users are not captured.
 - Screenshots, the Version history screenshot and the spreadsheet download are not taken yet (UI steps).
+
+## 10 Oct 2026, 20:15 IST: measured cost replaces the estimate (change-log id 275839)
+
+In the "Cost per story inputs" table (Main scenario) the two text-and-verification rows were replaced with neatlogs measurements, status "estimate" changed to "measured":
+
+| Row | Was (token estimate) | Now (neatlogs measured) | Basis |
+| --- | --- | --- | --- |
+| Text and verification, B0 ungated | 0.0083 | **0.0097** | mean of 28 sweep-2-p2 B0 traces |
+| Text and verification, B1 gated | 0.0162 | **0.0199** | mean of 28 sweep-2-p2 B1 traces (14 sweep-6 traces: 0.0201) |
+
+Our estimate was about 20% low. Evidence: `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json`.
+
+**Still assumed, and why:** pictures (0.04 each) and narration (0.002 per page) remain list-price assumptions. neatlogs does not price image or narration spans: for the two illustrated stories it measured only 0.041 and 0.038 USD per story against our 0.358 and 0.356 estimates, so the neatlogs number is text only and must not be used for a full story. The true cost of pictures and voice is on the Google Cloud bill, which we have not read.

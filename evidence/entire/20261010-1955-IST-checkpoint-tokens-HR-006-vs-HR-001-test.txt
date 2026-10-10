@@ -1,0 +1,32 @@
+Checkpoint tokens
+
+Checkpoint: 01M4JZX6VW56B56JRRDJPXQX7P
+Session:    531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6
+Agent:      Claude Code
+Model:      claude-sonnet-5-5
+Branch:     main
+
+Token usage
+Total:  87674.1k tokens
+  Input: 558 | Cache read: 86683.6k | Cache write: 734.4k | Output: 255.5k | API calls: 265
+
+Comparison
+Baseline: 01M4JJVC33HW1MZ6GFP2R3Q2BD
+Caveat: Total tokens include cache/context replay; use the cache/context replay delta below before treating total direction as work saved or added.
+Total tokens: up 1250.7% (6491.1k -> 87674.1k)
+Input: up 426.4% (106 -> 558)
+Cache/context replay: up 1274.1% (6308.3k -> 86683.6k)
+Cache write: up 420.1% (141.2k -> 734.4k)
+Output: up 515.1% (41.5k -> 255.5k)
+API calls: up 409.6% (52 -> 265)
+
+Qualification
+Observed total token use increased for this checkpoint comparison. Check whether the extra context was necessary before treating it as waste.
+
+Recommendations
+- Cache/context replay is 98.9% of token volume; reduce unnecessary follow-up calls in this large-context session.
+- Large context was replayed across 265 API calls; batch the next diagnosis and reduce iterative tool calls.
+- Cache write is elevated; avoid broad new context and narrow the next read before continuing.
+- Output tokens are elevated; keep the next answer tight and avoid restating evidence.
+- Compact or restart after summarizing this investigation; do not discard useful findings just because cache read is high.
+- Compact or restart after summarizing the useful findings if older context is no longer needed.

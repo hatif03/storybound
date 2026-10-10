@@ -1,0 +1,190 @@
+{
+  "base": "deb8f0d~1",
+  "head": "deb8f0d",
+  "files": [
+    {
+      "path": "scripts/story_video.py",
+      "status": "A",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "main",
+          "new_signature": "def main() -\u003e None",
+          "after_start_line": 21,
+          "dependents_count": 26
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "build_graph",
+          "before_start_line": 140,
+          "after_start_line": 141,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_receipt",
+          "before_start_line": 537,
+          "after_start_line": 538,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "export_story",
+          "new_signature": "def export_story(run: Run, s: S) -\u003e None",
+          "after_start_line": 703,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/video/agent.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "make",
+          "before_start_line": 118,
+          "after_start_line": 118,
+          "dependents_count": 14
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "_go",
+          "before_start_line": 127,
+          "after_start_line": 127,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/video/compose.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "build",
+          "before_start_line": 73,
+          "after_start_line": 81,
+          "dependents_count": 10
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/video/spec.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Block",
+          "before_start_line": 23,
+          "after_start_line": 23,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Scene",
+          "before_start_line": 31,
+          "after_start_line": 32,
+          "dependents_count": 15
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Spec",
+          "before_start_line": 40,
+          "after_start_line": 44,
+          "dependents_count": 17
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/video/story.py",
+      "status": "A",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "_rel",
+          "new_signature": "def _rel(p: Path) -\u003e str",
+          "after_start_line": 18,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "build_spec",
+          "new_signature": "def build_spec(story_dir: Path) -\u003e Spec",
+          "after_start_line": 22,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/video/verify.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "_texts",
+          "before_start_line": 25,
+          "after_start_line": 25,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "_image_allowed",
+          "new_signature": "def _image_allowed(src: str) -\u003e bool",
+          "after_start_line": 114,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "no_child_data",
+          "before_start_line": 112,
+          "after_start_line": 128,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "tests/test_video.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_story_package_becomes_a_read_along_spec",
+          "new_signature": "def test_story_package_becomes_a_read_along_spec(tmp_path, monkeypatch)",
+          "after_start_line": 57,
+          "dependents_count": 0
+        }
+      ]
+    }
+  ]
+}

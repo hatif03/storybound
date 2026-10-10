@@ -1,0 +1,902 @@
+{
+ "a32498d665231ab02f7218b8b54e9a3f": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.017136,
+  "tokens": 17476,
+  "est_usd": 0.01423,
+  "images": 0,
+  "tts": 0
+ },
+ "f3c18b0eed524aa5d3a4d41b5a672552": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010696500000000001,
+  "tokens": 19158,
+  "est_usd": 0.00939,
+  "images": 0,
+  "tts": 0
+ },
+ "9ac60464c282af61f4861605956d98b8": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.0100005,
+  "tokens": 21321,
+  "est_usd": 0.00905,
+  "images": 0,
+  "tts": 0
+ },
+ "33a9c06a4b7699a76438bc6559c54122": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.023316000000000003,
+  "tokens": 28197,
+  "est_usd": 0.02166,
+  "images": 0,
+  "tts": 0
+ },
+ "e13bfff02ea46274db4f34cb88d0a44f": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.01017825,
+  "tokens": 18110,
+  "est_usd": 0.00925,
+  "images": 0,
+  "tts": 0
+ },
+ "cc907a460c79abae0d8ecf5b4cd57c7b": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.017840250000000002,
+  "tokens": 18178,
+  "est_usd": 0.0151,
+  "images": 0,
+  "tts": 0
+ },
+ "57233238e74cb87ebb83b08d5565b810": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0298425,
+  "tokens": 26175,
+  "est_usd": 0.02355,
+  "images": 0,
+  "tts": 0
+ },
+ "065d9c6ddcf626fdc0eea3f4161e6a01": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.0217005,
+  "tokens": 24297,
+  "est_usd": 0.02153,
+  "images": 0,
+  "tts": 0
+ },
+ "17e509161d8e573376607fc20d382994": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02027325,
+  "tokens": 30527,
+  "est_usd": 0.0169,
+  "images": 0,
+  "tts": 0
+ },
+ "dd1ace84e8d9072ea8677da1672966e7": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.016205249999999997,
+  "tokens": 16972,
+  "est_usd": 0.01247,
+  "images": 0,
+  "tts": 0
+ },
+ "11a2900d813d091f129fa76179de73d9": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.0101955,
+  "tokens": 24337,
+  "est_usd": 0.00925,
+  "images": 0,
+  "tts": 0
+ },
+ "bcffacdbdb6ddda3ccc522f32c347141": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.021309750000000002,
+  "tokens": 26455,
+  "est_usd": 0.01945,
+  "images": 0,
+  "tts": 0
+ },
+ "28c96ba6babe42f6dd56e7fe16a32e1f": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.01653225,
+  "tokens": 21904,
+  "est_usd": 0.01357,
+  "images": 0,
+  "tts": 0
+ },
+ "9980267feca1ae769d445d400bb32cbb": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.019419,
+  "tokens": 25212,
+  "est_usd": 0.01499,
+  "images": 0,
+  "tts": 0
+ },
+ "40aedc061573b18caee21c745d868d30": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.008834250000000002,
+  "tokens": 25468,
+  "est_usd": 0.00703,
+  "images": 0,
+  "tts": 0
+ },
+ "60887d1cd69ecb18a7245a5a5405baaa": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010245750000000001,
+  "tokens": 21985,
+  "est_usd": 0.00941,
+  "images": 0,
+  "tts": 0
+ },
+ "28f84e0f0694dff2f52e31803684f32d": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02141475,
+  "tokens": 24862,
+  "est_usd": 0.02326,
+  "images": 0,
+  "tts": 0
+ },
+ "82324ced0211cd591c2360b2e5395b9d": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.021532500000000003,
+  "tokens": 20837,
+  "est_usd": 0.01749,
+  "images": 0,
+  "tts": 0
+ },
+ "06a2527e2d27f905762a9642451ad972": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009252,
+  "tokens": 21058,
+  "est_usd": 0.00739,
+  "images": 0,
+  "tts": 0
+ },
+ "6d4a0a4b07640cf66dbc45913c387078": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022833,
+  "tokens": 23314,
+  "est_usd": 0.0203,
+  "images": 0,
+  "tts": 0
+ },
+ "2bcb0474f7aa0f708675478c71ff32e4": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.026874000000000006,
+  "tokens": 35234,
+  "est_usd": 0.02105,
+  "images": 0,
+  "tts": 0
+ },
+ "542a53687b76c3e97ecc37017c5d3ffe": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02007825,
+  "tokens": 21838,
+  "est_usd": 0.01574,
+  "images": 0,
+  "tts": 0
+ },
+ "c80e56c06504b524cdfa1a759230a9e6": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.017063250000000002,
+  "tokens": 16154,
+  "est_usd": 0.01319,
+  "images": 0,
+  "tts": 0
+ },
+ "d1cd9e91843895d71200ad3fdbbdedd9": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009964500000000001,
+  "tokens": 18294,
+  "est_usd": 0.00886,
+  "images": 0,
+  "tts": 0
+ },
+ "488bcf59fb5794050bfc16dee2a567ec": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010188,
+  "tokens": 21583,
+  "est_usd": 0.00816,
+  "images": 0,
+  "tts": 0
+ },
+ "5c34851669032352f8f3345788ddf189": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.034878,
+  "tokens": 34347,
+  "est_usd": 0.02905,
+  "images": 0,
+  "tts": 0
+ },
+ "ec040be8940378890b7191cffa80a8bc": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02162925,
+  "tokens": 24515,
+  "est_usd": 0.01846,
+  "images": 0,
+  "tts": 0
+ },
+ "db920e87a679ed1b5f4437ad168001b4": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.023879249999999998,
+  "tokens": 28183,
+  "est_usd": 0.01999,
+  "images": 0,
+  "tts": 0
+ },
+ "dc0a1f2fdca4c1c32d2b7f5314755c82": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010002750000000001,
+  "tokens": 24850,
+  "est_usd": 0.00835,
+  "images": 0,
+  "tts": 0
+ },
+ "6100ca8e5378f12488bd13027fea7f0e": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.02012025,
+  "tokens": 21197,
+  "est_usd": 0.0168,
+  "images": 0,
+  "tts": 0
+ },
+ "0ed983085b48cec3468cea9c850da6b9": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009992999999999998,
+  "tokens": 19249,
+  "est_usd": 0.00871,
+  "images": 0,
+  "tts": 0
+ },
+ "c68e670fedeb3ab88314f0bd16bb2323": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.017367,
+  "tokens": 17214,
+  "est_usd": 0.01457,
+  "images": 0,
+  "tts": 0
+ },
+ "2c7f9adb747631751d791b6c44eefe4b": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.008750250000000001,
+  "tokens": 20539,
+  "est_usd": 0.00795,
+  "images": 0,
+  "tts": 0
+ },
+ "d827a56b831bcc8e60873a084d5451db": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.024104249999999994,
+  "tokens": 21699,
+  "est_usd": 0.02062,
+  "images": 0,
+  "tts": 0
+ },
+ "8e8a479226405c0e52eddbc406f5b002": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022733999999999997,
+  "tokens": 24731,
+  "est_usd": 0.02123,
+  "images": 0,
+  "tts": 0
+ },
+ "29ce2d5d10f19b98261faa72193225a1": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0193575,
+  "tokens": 19929,
+  "est_usd": 0.0153,
+  "images": 0,
+  "tts": 0
+ },
+ "25814968ad9c72802191ac3d6561c79e": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009465000000000001,
+  "tokens": 26656,
+  "est_usd": 0.00869,
+  "images": 0,
+  "tts": 0
+ },
+ "52eca2707ec9f9964dc4f4afee72bf61": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.016980000000000002,
+  "tokens": 17675,
+  "est_usd": 0.01303,
+  "images": 0,
+  "tts": 0
+ },
+ "76c35d5c75344ae43f5f8883810842e9": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.020303250000000002,
+  "tokens": 37363,
+  "est_usd": 0.01937,
+  "images": 0,
+  "tts": 0
+ },
+ "56fcffeb9f74ba190870d980785501e7": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.00934425,
+  "tokens": 30183,
+  "est_usd": 0.00713,
+  "images": 0,
+  "tts": 0
+ },
+ "4be84575d263a6c5265fc77ab047f6a4": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02280075,
+  "tokens": 31067,
+  "est_usd": 0.0245,
+  "images": 0,
+  "tts": 0
+ },
+ "496897728a73a5700d419c98d3c80d81": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.008591999999999999,
+  "tokens": 18204,
+  "est_usd": 0.0077,
+  "images": 0,
+  "tts": 0
+ },
+ "8d6422d66e5ea879bd2dbfbab05e2cca": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0198645,
+  "tokens": 20481,
+  "est_usd": 0.01633,
+  "images": 0,
+  "tts": 0
+ },
+ "257acf701defe64fcd1edc3707bdd9d5": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02316675,
+  "tokens": 28265,
+  "est_usd": 0.01789,
+  "images": 0,
+  "tts": 0
+ },
+ "26fbc879cddba411dc327286643276c3": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010316249999999999,
+  "tokens": 19319,
+  "est_usd": 0.00926,
+  "images": 0,
+  "tts": 0
+ },
+ "dace67b9361faf09a407e86d8e624efd": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.01635825,
+  "tokens": 17189,
+  "est_usd": 0.01362,
+  "images": 0,
+  "tts": 0
+ },
+ "f697d150595e705029dd5d3dcff4d445": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022347,
+  "tokens": 30735,
+  "est_usd": 0.02165,
+  "images": 0,
+  "tts": 0
+ },
+ "bb283a1712ffc4f0d2395887a24b74bc": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02117475,
+  "tokens": 23368,
+  "est_usd": 0.02063,
+  "images": 0,
+  "tts": 0
+ },
+ "f979e2a091cd8cd2b0c521fc9196788a": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.01062225,
+  "tokens": 18004,
+  "est_usd": 0.0085,
+  "images": 0,
+  "tts": 0
+ },
+ "0be38d1782aff4af53b138e60608ebd1": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.015627000000000002,
+  "tokens": 15274,
+  "est_usd": 0.01328,
+  "images": 0,
+  "tts": 0
+ },
+ "99d901758372a32f8bc3067f0123e776": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.021020250000000004,
+  "tokens": 21869,
+  "est_usd": 0.01715,
+  "images": 0,
+  "tts": 0
+ },
+ "9f7caa9d3a86ce4d5e2c0002857a05b8": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022059000000000002,
+  "tokens": 23790,
+  "est_usd": 0.02028,
+  "images": 0,
+  "tts": 0
+ },
+ "d8922ecb0894f3ecb12ab46847ccbcfb": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.0206835,
+  "tokens": 22646,
+  "est_usd": 0.0188,
+  "images": 0,
+  "tts": 0
+ },
+ "abb4d05bda6bb43534405526e8538890": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009078,
+  "tokens": 18470,
+  "est_usd": 0.00814,
+  "images": 0,
+  "tts": 0
+ },
+ "b65bfe0a5b7569fde4fa6e2f3d3068ad": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.008897249999999999,
+  "tokens": 19482,
+  "est_usd": 0.00823,
+  "images": 0,
+  "tts": 0
+ },
+ "dc3bcbbce9d6ba681841c565ea901683": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.015855750000000002,
+  "tokens": 15927,
+  "est_usd": 0.01223,
+  "images": 0,
+  "tts": 0
+ },
+ "97771b7bd8d6089b1b33f60e1e6e88aa": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.017965500000000002,
+  "tokens": 18113,
+  "est_usd": 0.01479,
+  "images": 0,
+  "tts": 0
+ },
+ "7a4c4121f2664461a3f9a1d79244be00": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022389750000000003,
+  "tokens": 22993,
+  "est_usd": 0.01739,
+  "images": 0,
+  "tts": 0
+ },
+ "1bb8572083c8f4e3f48b488220f42fd5": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.008889,
+  "tokens": 20392,
+  "est_usd": 0.00819,
+  "images": 0,
+  "tts": 0
+ },
+ "ac7816a069c13e687f11b28d5435c1ad": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.015426,
+  "tokens": 17650,
+  "est_usd": 0.0125,
+  "images": 0,
+  "tts": 0
+ },
+ "ff215ef2e47c76965b23a252d9586d4a": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.010272,
+  "tokens": 24809,
+  "est_usd": 0.00905,
+  "images": 0,
+  "tts": 0
+ },
+ "7644b7f2f616637b11b98ade2811db23": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.023671499999999998,
+  "tokens": 32098,
+  "est_usd": 0.01964,
+  "images": 0,
+  "tts": 0
+ },
+ "5f57f14292cf5a1a8814768eb009de0c": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.020969250000000002,
+  "tokens": 24226,
+  "est_usd": 0.01642,
+  "images": 0,
+  "tts": 0
+ },
+ "b1d80d98b0830f8aa1332fac4d95088b": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.00915375,
+  "tokens": 18715,
+  "est_usd": 0.00719,
+  "images": 0,
+  "tts": 0
+ },
+ "42f920fd8de523b9b5babb65f61d673f": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.01662075,
+  "tokens": 19236,
+  "est_usd": 0.01364,
+  "images": 0,
+  "tts": 0
+ },
+ "dd395ca78e2036ec7482b9abdd41de8c": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0168735,
+  "tokens": 16936,
+  "est_usd": 0.01464,
+  "images": 0,
+  "tts": 0
+ },
+ "6de47dff8896523bb4a0f861c5983cb0": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009936750000000001,
+  "tokens": 18396,
+  "est_usd": 0.00799,
+  "images": 0,
+  "tts": 0
+ },
+ "23cedc2ba31b86e50bca3724282142b4": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.022865999999999997,
+  "tokens": 22493,
+  "est_usd": 0.02218,
+  "images": 0,
+  "tts": 0
+ },
+ "f857f498d80404b2fbeb951a87949216": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0155415,
+  "tokens": 16530,
+  "est_usd": 0.01355,
+  "images": 0,
+  "tts": 0
+ },
+ "d3f4e835593956cba0defdb9da982f6e": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.023725500000000004,
+  "tokens": 28038,
+  "est_usd": 0.01977,
+  "images": 0,
+  "tts": 0
+ },
+ "e41c2a1e44583522f1cbd2c268a8b11f": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.01050525,
+  "tokens": 24370,
+  "est_usd": 0.00843,
+  "images": 0,
+  "tts": 0
+ },
+ "2cc43c3ba6ca1405b0a6442f6b6b967c": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.0174105,
+  "tokens": 17893,
+  "est_usd": 0.01439,
+  "images": 0,
+  "tts": 0
+ },
+ "df4d0940fee473682affd8ffa57fab8c": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.0102915,
+  "tokens": 21151,
+  "est_usd": 0.00841,
+  "images": 0,
+  "tts": 0
+ },
+ "4c2e40b6a5a3f8342b5891c0edf61fed": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.021122250000000002,
+  "tokens": 22088,
+  "est_usd": 0.02018,
+  "images": 0,
+  "tts": 0
+ },
+ "f0fce521a3699fe2914cd30a6abf36e2": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.0234555,
+  "tokens": 30680,
+  "est_usd": 0.02408,
+  "images": 0,
+  "tts": 0
+ },
+ "ddb944561f681cd1c35d7e4e0bd5dda4": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.018639,
+  "tokens": 17920,
+  "est_usd": 0.01516,
+  "images": 0,
+  "tts": 0
+ },
+ "405614cddf460661c3b1423fa94aeb60": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.009864749999999999,
+  "tokens": 20189,
+  "est_usd": 0.00851,
+  "images": 0,
+  "tts": 0
+ },
+ "2b4d5ad820abe3b32e33501f285a3af9": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.00965625,
+  "tokens": 19249,
+  "est_usd": 0.00768,
+  "images": 0,
+  "tts": 0
+ },
+ "c058ab0d50f82f2f05312721a8ffcbc9": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.02067225,
+  "tokens": 26259,
+  "est_usd": 0.01707,
+  "images": 0,
+  "tts": 0
+ },
+ "f9c689ca79fc7fdfbaaff6c1ba3e1da8": {
+  "name": "sweep-2-p2",
+  "arm": "B0",
+  "measured_usd": 0.0092265,
+  "tokens": 16872,
+  "est_usd": 0.00732,
+  "images": 0,
+  "tts": 0
+ },
+ "18f83fc66710ce474a20402406a4f7ab": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.023824500000000002,
+  "tokens": 29626,
+  "est_usd": 0.02097,
+  "images": 0,
+  "tts": 0
+ },
+ "a534baeb9d47166ae8b19fcee1f1c7d9": {
+  "name": "sweep-2-p2",
+  "arm": "B2",
+  "measured_usd": 0.024537749999999997,
+  "tokens": 25978,
+  "est_usd": 0.02029,
+  "images": 0,
+  "tts": 0
+ },
+ "1b3aec29d4fd0af7432dd64960b5d783": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.027886499999999995,
+  "tokens": 28769,
+  "est_usd": 0.02118,
+  "images": 0,
+  "tts": 0
+ },
+ "b8883a6238abdecadb2ef3a56a5b0dcd": {
+  "name": "sweep-2-p2",
+  "arm": "B1",
+  "measured_usd": 0.025493249999999995,
+  "tokens": 28119,
+  "est_usd": 0.02042,
+  "images": 0,
+  "tts": 0
+ },
+ "21f5547097cbe68778d95e0c5e54d7c0": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01650075,
+  "tokens": 17259,
+  "est_usd": 0.01373,
+  "images": 0,
+  "tts": 0
+ },
+ "eae44a8a2a9deed1534e4fdedbae4714": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01539975,
+  "tokens": 15337,
+  "est_usd": 0.01291,
+  "images": 0,
+  "tts": 0
+ },
+ "cf9d38b77aa52a4297761e17a813ab29": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.017139,
+  "tokens": 18123,
+  "est_usd": 0.01311,
+  "images": 0,
+  "tts": 0
+ },
+ "3288c844950af2060c9ba38547e65571": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01601625,
+  "tokens": 14224,
+  "est_usd": 0.0134,
+  "images": 0,
+  "tts": 0
+ },
+ "ed70e8bdeee997f6d62fda297dc9ad07": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.020620499999999996,
+  "tokens": 31477,
+  "est_usd": 0.01634,
+  "images": 0,
+  "tts": 0
+ },
+ "bff850ff5905d81cb52a2b2082abb451": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01860675,
+  "tokens": 18400,
+  "est_usd": 0.01502,
+  "images": 0,
+  "tts": 0
+ },
+ "0c929bb20c68b51beaaca3a985de51a8": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.016096499999999996,
+  "tokens": 18124,
+  "est_usd": 0.01349,
+  "images": 0,
+  "tts": 0
+ },
+ "86ec38f79ef5457dfe5281aa907406f7": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.025340249999999998,
+  "tokens": 28153,
+  "est_usd": 0.02018,
+  "images": 0,
+  "tts": 0
+ },
+ "f617f05f5849b6edaa2456e718b9ca55": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.020600999999999998,
+  "tokens": 18819,
+  "est_usd": 0.01636,
+  "images": 0,
+  "tts": 0
+ },
+ "c71cb8ad15e7fdd6f7571f9f0c3e2ddd": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.0226815,
+  "tokens": 21813,
+  "est_usd": 0.01851,
+  "images": 0,
+  "tts": 0
+ },
+ "43f4a3be064cbbc50b6fa13658f07488": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.025297499999999997,
+  "tokens": 24862,
+  "est_usd": 0.01969,
+  "images": 0,
+  "tts": 0
+ },
+ "0dc67d0ee50c77e2c3c32c468a59dda8": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.033742499999999995,
+  "tokens": 41875,
+  "est_usd": 0.0267,
+  "images": 0,
+  "tts": 0
+ },
+ "e38cfbb6969ab363d13d72b976f9b782": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01691625,
+  "tokens": 22557,
+  "est_usd": 0.01412,
+  "images": 0,
+  "tts": 0
+ },
+ "986917427679277931d5db443f0f7a1e": {
+  "name": "sweep-6-t90",
+  "arm": "B1",
+  "measured_usd": 0.01674825,
+  "tokens": 19046,
+  "est_usd": 0.01384,
+  "images": 0,
+  "tts": 0
+ },
+ "0fd459e70b5165e1455980c72c77f66d": {
+  "name": "story-video-1",
+  "arm": "B1",
+  "measured_usd": 0.0411468,
+  "tokens": 57529,
+  "est_usd": 0.35822,
+  "images": 8,
+  "tts": 0
+ },
+ "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+  "name": "story-video-2",
+  "arm": "B1",
+  "measured_usd": 0.03821085,
+  "tokens": 45649,
+  "est_usd": 0.35553,
+  "images": 8,
+  "tts": 0
+ }
+}

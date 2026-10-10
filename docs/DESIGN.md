@@ -77,14 +77,16 @@ drawing + lesson + age
    vision_character  AGENT   character card (name, ≥3 checkable traits, palette)
         │
    oath_author  AGENT   core commitments + lesson-specific additions; hash the oath
+   story_planner  AGENT   8 beats (runs at the same time as the oath author; gated arm only)
         │
-   story_planner  AGENT   8 beats, per-beat lesson concept, temptation, setting
-        │
-   scene loop, i = 1..8
+   scene loop, i = 1..8, pipelined
      scene_writer(i)  AGENT   inputs: oath summary, card, beat i, rolling summary
-     verify_scene(i)  GUARDRAIL spans (deterministic → judge)
-       pass → next · violation and attempts < 2 → repair_scene(i) → verify again
-       output critical → quarantine, regenerate once, then stop · budget spent → ship with the failure recorded
+     verify (cheap checks, now)   a failed cheap check → repair_scene(i) at once, judge after the repair
+     submit → the slow judge reviews page i in the background while page i+1 is written (at most 3 ahead)
+     settle (oldest review)   clean → the page is shown (scene.accepted, always in order)
+                              not clean → roll back to page i: pages written after it are discarded, page i is repaired
+       violation and attempts < 2 → repair_scene(i) · output critical → quarantine, regenerate once, then stop
+       attempts spent → ship with the failure recorded (safety commitments never ship with a violation)
         │ story-level gate: schema, position balance, no repeats, lesson alignment
    illustrate (parallel, bounded)  TOOL per page → verify_image → retry once → degrade to text
    narrate (parallel)  TOOL per page → verify_audio → retry once → degrade
@@ -94,6 +96,7 @@ drawing + lesson + age
 
 - **State** (LangGraph): run id and seed, input hash, lesson and age, safety outcome and ignored text, character card, oath and hash, plan, accepted pages, rolling summary, attempt counters, the tool-call log (a plain list), verdicts, budget spent, degradations.
 - **Context policy:** a page-writer call receives only a short oath summary, the card, beat *i*, a short rolling summary and the previous page's last line. On repair it also gets the failed verdict's expected and actual. Input tokens per page call should be flat from page 2 to 8: that curve in neatlogs is the evidence of context management.
+- **Pipelining and the gate:** review latency is the largest cost (the judge is a slow reasoning model), so pages are written ahead while earlier pages are under review. This does not weaken the gate: a page is shown only after its own review is back and clean, in order, and a failed review throws away everything written after it. The last attempt at a page is always judged, so no page ships without its safety review.
 - **Repair:** two attempts per node, each a new span with `repair_attempt`. Programmatic repairs where possible (position shuffle). A repair counts only if re-verification passes. An exhausted budget ships with the violation recorded; safety commitments never ship with a violation.
 - **Safety tiers:** Tier A (visual danger) refuses with a calm message and a reason code only. Tier B (words in the drawing, harmless pixels) sanitises: the card is built from visual traits only, the text is recorded as ignored, and `no_drawing_text_obedience` is verified. Tier C (our own output trips the blocklist or the judge) quarantines the page and regenerates once, then stops. Any failure of a safety check itself is treated as Tier A (input) or Tier C (output).
 - **Budget governor:** state carries `budget_usd` and `deadline_s`; if the projection exceeds the budget the run degrades non-safety checks first (judge sampling on quality commitments to 0, skip image checks, illustrate only key pages, text only). Every degradation is listed on the receipt.

@@ -1,0 +1,40 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4JTF5JW7VKGJT84JQ57FPRT",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-10T11:51:43.8868865Z",
+  "branch": "main",
+  "checkpoints_count": 8,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/spikes/20261010-1720-IST-hyperframes-spike.md",
+    "evidence/spikes/hyperframes/index.html"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "6f550c371511",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 228,
+    "cache_creation_tokens": 494447,
+    "cache_read_tokens": 19924371,
+    "output_tokens": 105559,
+    "api_call_count": 111
+  },
+  "session_metrics": {
+    "turn_count": 12
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-10T11:51:43.7102233Z",
+    "agent_lines": 24,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 33,
+    "human_removed": 0,
+    "total_committed": 57,
+    "total_lines_changed": 57,
+    "agent_percentage": 42.10526315789473,
+    "metric_version": 2
+  }
+}

@@ -1,30 +1,22 @@
-# Storybound — the pitch
+# Storybound: the pitch
 
-> **Update 10 Oct:** the model stack is Google Vertex AI (Gemini) plus K2 Horizon as an independent judge; AWS has no Bedrock or Polly in this account (hosting only, $25 cap). See [plan.md section 0](plan.md#0-decisions-of-10-october). Wherever this file says Bedrock, Polly, Nova or Titan, read Vertex, Gemini TTS and Gemini image.
+Companion to [../DESIGN.md](../DESIGN.md). Everything in square brackets, like `[k of n]`, is a number that does **not exist yet**. It is filled from `evidence/ledger.jsonl` after the sweeps and never before. A pitch that quotes a number we did not measure loses the one thing the hackathon is judging: evidence.
 
-Written 9 October 2026. Companion to [plan.md](plan.md). Everything in square brackets, like `[k of n]`, is a number that does **not exist yet**. It gets filled from `evidence/ledger.jsonl` after the sweeps and never before. A pitch that quotes a number we did not measure loses the one thing the hackathon is judging: evidence.
+Stack: Google Vertex AI (Gemini) for writing, vision, images and speech; K2 Horizon as the independent judge; AWS for optional hosting only ($25 cap).
 
-## 1. Why the two source projects won
+## 1. What the judges care about
 
-Both took part in Datadog's challenge at the "AI Partner Catalyst" hackathon on Devpost. Storytopia's Lighthouse placed **second**, Sworn's Agentic Contract Framework **third**. I read both pitches in full. What they share and what each did well:
+The agent (30%), neatlogs/Entire/cfo.ai (25%), a video of at most 3 minutes that covers each tool on architecture, implementation, runtime, reasoning and result (20%), building in public (15%), usefulness and originality (10%). Habits that serve that rubric:
 
-| Pattern | Lighthouse (Storytopia) | Agentic Contract Framework (Sworn) | What Storybound takes |
-| --- | --- | --- | --- |
-| **A question a judge feels** | "Traditional metrics told us the app was 'healthy', but couldn't answer: are the agents always producing high-quality *and safe* outputs?" The gap between *up* and *good* | "As we rely on agents for healthcare, finance and learning, we need to verify their output against domain knowledge, not only infrastructure" | One sentence that names the gap: *an agent that scores itself after the child has already seen the page is not trustworthy* |
-| **One memorable model** | Five named signals (creative intent, inappropriate content, lesson alignment, visual consistency, narration status) | **"A contract is a test suite and a commitment is a test case."** Everything else fits that picture. The author is proud of the data model, not the demo | The **oath**: a promise list written before the story, checked page by page |
-| **Domain, not generic metrics** | Child safety and lesson alignment, not just latency and tokens | Pedagogy: Socratic questioning, hint frequency, pacing | Children's stories: name in every scene, one correct choice, lesson concept present, no text from the drawing obeyed |
-| **A real thing, running** | A hosted app with real kids and parents; "genuinely enjoy creating" | A hosted tutor (Morph) and a pip-installable library (Sworn) built to prove it | A working agent with a child-facing page and a receipt, plus a repo anyone can clone and run |
-| **Numbers and a table** | Seven monitors in a table: threshold, purpose, impact | Six detection rules with explicit pass-rate thresholds (70% critical, 80% warning) | A before/after table with counts, and a commitment table |
-| **A story of being wrong that produced the insight** | Instrumenting where to attach evaluations was hard; they taught themselves | The agent never closed simulations because the contract did not mention it, which gave "contract coverage". The "confessions" idea failed because agents defend themselves ("a delusional criminal at a lie-detection test"), which gave the *independent verifier* | A real hardening record: a failure we found, the commitment it added, the numbers before and after |
-| **Mapped to the sponsor's checklist** | Dashboard, monitors, cases with context, traffic generator, public dashboard link | A **"Key Deliverables and Where to Find Them"** list at the top that points to each required artefact by path | `EVIDENCE.md` generated from a ledger, and a linter that checks the rules the hackathon states |
-| **Visual proof** | Six annotated screenshots and a public dashboard | Screenshots of flow, gap, dashboard, alert, plus a video | Trace screenshots, the receipt, the cfo.ai page |
-| **Closed the loop** | "Turns observability from passive monitoring into an **active control layer**" (in alerts and cases) | "Finding gaps … turns a linear process into a **cyclical** one" (but listed as *next*) | The loop is **inside the run**: the failure is repaired before shipping, and across runs: trace → fix → proof |
-| **Honest about cost and limits** | Mobile not yet optimized; says so | A whole section on "the cost of verifying", sampling and prompt caching | A cost-of-gating number and the cfo.ai decision it feeds |
-| **Voice** | Plain, warm, specific | Personal, candid, quotable | Same: first person, concrete, no jargon without a picture |
+- One sentence that names the gap a judge feels.
+- One memorable model that everything else fits into (here: the oath).
+- Domain checks, not generic metrics.
+- A real thing, running, that anyone can clone.
+- Numbers in a table, a before/after, and a story of being wrong that produced an insight.
+- A "Key deliverables and where to find them" list that points to each required artefact by path.
+- Honesty about cost and limits.
 
-**What was left on the table** (this is our opening): neither closed the loop *during* the run. Lighthouse's scores arrived after the child had the page; Sworn's verification ran once at the end and listed in-loop control and "finding gaps" as future work. Neither measured whether verification *changes outcomes*. Storybound's claim is exactly that, with numbers.
-
-**What the judges here care about** (from the hackathon page): the agent (30%), neatlogs/Entire/cfo.ai (25%), a ≤ 3-minute video that covers each tool on architecture, implementation, runtime, reasoning and result (20%), building in public (15%), usefulness and originality (10%). The winners' habits above map onto that rubric almost line for line.
+The opening: most agent checks run after the child has already seen the page. Storybound closes the loop **during** the run, and measures whether that changes outcomes.
 
 ## 2. The pitch in one breath
 
@@ -34,18 +26,18 @@ Short forms, pick by room:
 
 - **Tagline:** *A story agent you can leave alone with a child's drawing.*
 - **Alternates:** *Stories that keep their promises.* · *Verified before it's read.* · *The oath comes first.*
-- **Ten-second hook (video):** "A child draws a bunny. By page five the bunny has lost its name — and the story is about to teach the wrong lesson. Storybound catches it before the child ever turns the page."
-- **Tweet-length (≤ 280):** "Storybound turns a child's drawing into an 8-page story — and writes an oath first: name on every page, one right answer, the lesson, nothing from the drawing's caption. Every page is checked before it's shown. Break it → rewrite. #neatHack"
+- **Ten-second hook (video):** "A child draws a bunny. By page five the bunny has lost its name, and the story is about to teach the wrong lesson. Storybound catches it before the child ever turns the page."
+- **Tweet-length (≤ 280):** "Storybound turns a child's drawing into an 8-page story, and writes an oath first: name on every page, one right answer, the lesson, nothing from the drawing's caption. Every page is checked before it's shown. Break it → rewrite. #neatHack"
 
 ## 3. The story (the long version)
 
 ### The problem
 
-A story generator can fail silently in ways that matter to a six-year-old. The hero's name vanishes on page five. Both answers teach the same lesson. The correct answer is always the first button, so a child wins by tapping it. A word written *on the drawing* ("Kill fish") reaches the story. Server metrics are green the whole time. And the checks we have for this kind of failure run after the content exists, so the child has already seen it.
+A story generator can fail silently in ways that matter to a six-year-old. The hero's name vanishes on page five. Both answers teach the same lesson. The correct answer is always the first button, so a child wins by tapping it. A word written *on the drawing* ("Kill fish") reaches the story. Server metrics are green the whole time, and the checks we have for this kind of failure run after the content exists, so the child has already seen it.
 
 ### The insight
 
-Two ideas existed, and nobody had joined them. **Storytopia** showed what to measure for a children's story: lesson alignment, character consistency, safety, narration. **Sworn** showed how to be accountable for an agent: write what it owes *before* it runs, give each promise its own verifier, and let a verifier with a different incentive from the writer decide. Put them in the loop instead of after it, and a failed check stops being an alert and becomes a decision: repair, or stop.
+Write down what the agent owes *before* it runs, give each promise its own verifier, and let a verifier with a different incentive from the writer decide. Put those checks in the loop instead of after it, and a failed check stops being an alert and becomes a decision: repair, or stop.
 
 ### What it does
 
@@ -59,7 +51,7 @@ Two ideas existed, and nobody had joined them. **Storytopia** showed what to mea
 
 - **Verification inside the run**, per page, with repair, not a score afterwards.
 - **An oath that can only get stricter**, written from the lesson and the drawing.
-- **An independent, quote-checked judge**, because a judge that grades itself, or a judge that invents its reasons, is not a judge.
+- **An independent, quote-checked judge**, because a judge that grades itself, or one that invents its reasons, is not a judge.
 - **Measured, not claimed:** an observe-only arm against a gated arm, same oath, same fixtures, **[n]** runs each. Shipped-violation rate: **[x]** against **[y]**.
 - **The drawing as an attack surface**, tested with a real fixture.
 - **The receipt**: verification as something a parent can read.
@@ -75,7 +67,7 @@ Each gets the five points the hackathon asks for: architecture, implementation, 
 
 ### neatlogs: the story agent's flight recorder, and how we found our bugs
 
-- **Architecture:** LangGraph handler for nodes and model calls, decorators for tools, one **guardrail span per promise**, one observer module.
+- **Architecture:** decorators for nodes and tools, wrapped model clients, one **guardrail span per promise**, one observer module.
 - **Implementation:** each verdict sets `neatlogs.guardrail.passed`, a status-word output and eval attributes; prompts are managed versions.
 - **Runtime:** one trace shows scene 5 go red on `character_named_in_scene`, the repair spans, the green re-check; input tokens flat from scene 2 to scene 8; the detection that fired.
 - **Reasoning:** Investigate / MCP named the cause of **[failure]**; detections key off the oath, not off generic latency.
@@ -103,7 +95,7 @@ Parents and teachers want a story from a child's drawing and cannot read every p
 
 ## 6. The three-minute video: script with narration
 
-Target ~430 spoken words (about 2.5 words a second). Recorded Sunday night from the frozen path. Each tool section carries the five points. The times follow [plan.md §12](plan.md#12-the-three-minute-demo).
+Target ~430 spoken words (about 2.5 words a second). Recorded from the frozen path. Each tool section carries the five points.
 
 | Time | On screen | Narration |
 | --- | --- | --- |
@@ -114,11 +106,11 @@ Target ~430 spoken words (about 2.5 words a second). Recorded Sunday night from 
 | 2:15–2:45 | cfo.ai: shared page; Version history; Main vs Growth; the sampling-rate and budget decision | "cfo.ai models the business. Cost per story is **[$c]**, measured from neatlogs, and Version history shows that edit. Household and classroom plans, Main and Growth: margin **[x]**, **[y]**, runway **[N]** months. The model chose the verification policy and the per-story budget, and those are fields in the oath config." |
 | 2:45–3:00 | The receipt, repo URL, `#neatHack` | "Storybound: a story agent that keeps its promises, and can prove it. The repo, the traces, the checkpoints and the model are linked below." |
 
-Rules for the recording: no scrolling through logs; one cut per segment; captions on every number; the three tools each get a visible label with the five words (architecture, implementation, runtime, reasoning, result) so a judge scoring the FAQ line can tick it; export at ≤ 3:00 and verify with the linter.
+Rules for the recording: no scrolling through logs; one cut per segment; captions on every number; each tool gets a visible label with the five words (architecture, implementation, runtime, reasoning, result); export at ≤ 3:00 and verify with the linter.
 
 ## 7. Building in public: five posts, each tied to an artefact
 
-Each post shows something we actually ran. Replace brackets only with ledger numbers. Include `#neatHack`. Under 280 characters.
+Each post shows something we actually ran. Replace brackets only with ledger numbers. Include `#neatHack`. Under 280 characters. The full calendar is in [content.md](content.md).
 
 1. **Saturday, after kickoff (the idea):** "Building Storybound for #neatHack: a storybook agent that writes an *oath* before the story and checks every page against it before a child sees it. Tools: @neatlogs, Entire, cfo.ai. Repo: [url]" + the graph image.
 2. **Saturday night (first red trace):** "Page 5 lost the hero's name. The check failed, the page was rewritten, the check passed. That's one trace. The oath caught it before the child could. #neatHack" + the trace screenshot.
@@ -132,12 +124,12 @@ Never post a number we have not measured. Never post a child's real drawing.
 
 Quote-post the official neatlogs submission post with: team (solo, your name), project (Storybound), the public repo, the demo video, and one sentence: "A story agent that writes its oath first, checks every page before the child sees it, and ships a receipt: observe-only broke the oath in [k of n] stories, gated in [k of n]." Submit by 20:00 IST. Opening the draft is not submitting.
 
-## 9. The README opening (the Devpost equivalent)
+## 9. The README opening
 
-The hackathon submits on X plus a repo, so the README is the long-form page, and it should read like the winners': a short summary, a **"Key deliverables and where to find them"** list that maps each hackathon requirement to a path or link (this is Sworn's best habit), then Inspiration, What it does, How it's built, Challenges, What's next. The deliverables list is generated from `EVIDENCE.md`. Skeleton:
+The hackathon submits on X plus a repo, so the README is the long-form page: a short summary, a **"Key deliverables and where to find them"** list that maps each hackathon requirement to a path or link, then Inspiration, What it does, How it's built, Challenges, What's next. The deliverables list is generated from `EVIDENCE.md`. Skeleton:
 
 ```text
-# Storybound — a story agent that keeps its promises
+# Storybound: a story agent that keeps its promises
 <one-breath pitch>   <receipt screenshot>
 
 ## Key deliverables and where to find them
@@ -149,20 +141,19 @@ cfo.ai business plan (pricing, costs, revenue, runway) EVIDENCE.md §8 and the s
 Public posts (#neatHack) ............................ evidence/posts.md
 Public repo, commits in the window .................. linter: window check
 Demo video .......................................... <url>
-Design lineage: Storytopia (Lighthouse) and Sworn (ACF), both MIT, both Datadog-challenge winners
 ```
 
 ## 10. The questions judges will ask, and the honest answers
 
 | Question | Answer |
 | --- | --- |
-| "Isn't this just Storytopia plus Sworn?" | They are the lineage and we say so. Neither gated a run. Storytopia scored after the child saw the page; Sworn verified once at the end. The new thing is verification *inside* the run, with repair, and a measurement of whether it changes outcomes ([k of n] vs [k of n]) |
+| "Isn't this just an LLM-as-judge on a story app?" | The new thing is verification *inside* the run, with repair, per page, against an oath written before the story, and a measurement of whether it changes outcomes ([k of n] vs [k of n]) |
 | "Who judges the judge?" | The judge is a different model family, must quote the text it relies on (code checks the quote), and we measure agreement with human labels on a sample: **[x%]** [if built]. Where a deterministic check exists, it decides |
 | "What did verification cost?" | **[+$z] and [+s] seconds per story**, measured by neatlogs, and cfo.ai's margin under each policy. That is why sampling is a number from the model, not a constant |
 | "What if the verifier is wrong?" | Safety fails closed. Quality fails open *and* is flagged in the receipt, so a story is never presented as checked when it wasn't |
 | "Can the model write itself an easy oath?" | No. It can add promises, never remove or relax the core. The oath is hashed before any story text exists, and the hash is on the trace |
-| "Did you stage the failure?" | No. The baseline is Storytopia's own pipeline shape with the same oath, run **[n]** times. If it was clean on a promise, we say so [and where it was not] |
-| "Where did the code come from?" | Written this weekend. The sample drawings and lesson data come from Storytopia with the organizers' approval; the Sworn logic is re-implemented. The git history is dated inside the window |
+| "Did you stage the failure?" | No. The baseline is a plain single-shot generation with the same oath evaluated afterwards, run **[n]** times. If it was clean on a promise, we say so [and where it was not] |
+| "Where did the code come from?" | Written during the hackathon window; the git history is dated inside it. Sample drawings and lesson data are used with the organizers' approval |
 | "Is a child's data safe?" | No accounts, no stored drawings beyond fixtures, PII redaction on, no real child's drawing in any trace or post |
 | "Does the business work?" | **[margin / runway]**, with measured cost and clearly labelled assumptions; image cost is the main lever |
 | "What would you do next?" | The adaptive path (the child's answers shape later pages), more lessons, and publishing the oath engine as a library |
@@ -181,4 +172,4 @@ Design lineage: Storytopia (Lighthouse) and Sworn (ACF), both MIT, both Datadog-
 
 ## 12. Voice
 
-First person singular ("I"): we are one builder. Plain words. Concrete before abstract (the bunny before the architecture). One picture per idea. Say the failure out loud; both source pitches were strongest where the author admitted being wrong. Never call it "revolutionary". Never say "AI-powered".
+First person singular ("I"): one builder. Plain words. Concrete before abstract (the bunny before the architecture). One picture per idea. Say the failure out loud; the pitch is strongest where the author admits being wrong. Never call it "revolutionary". Never say "AI-powered".

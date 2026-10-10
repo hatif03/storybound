@@ -1,8 +1,8 @@
 # How Storybound uses neatlogs (v2)
 
-> **Update 10 Oct:** the model stack is Google Vertex AI (Gemini) plus K2 Horizon as an independent judge; AWS has no Bedrock or Polly in this account (hosting only, $25 cap). See [plan.md section 0](plan.md#0-decisions-of-10-october). Wherever this file says Bedrock, Polly, Nova or Titan, read Vertex, Gemini TTS and Gemini image.
+> **Update 10 Oct:** the model stack is Google Vertex AI (Gemini) plus K2 Horizon as an independent judge; AWS has no Bedrock or Polly in this account (hosting only, $25 cap). See [DESIGN.md](DESIGN.md#0-decisions-of-10-october). Wherever this file says Bedrock, Polly, Nova or Titan, read Vertex, Gemini TTS and Gemini image.
 
-Instrumentation plan for the story agent and for the way we find and prove fixes. Companion to [plan.md](plan.md); [entire.md](entire.md) and [cfo.md](cfo.md) cover the other two required tools. Written 9 October 2026 from the live docs ([full bundle](https://docs.neatlogs.com/llms-full.txt)), re-verified against `plan.v1`'s [neatlog.v1.md](neatlog.v1.md). No application code: short API lines below are reference for the spikes, not project code.
+Instrumentation plan for the story agent and for the way we find and prove fixes. Companion to [DESIGN.md](../DESIGN.md); [entire.md](entire.md) and [cfo.md](cfo.md) cover the other two required tools. Written 9 October 2026 from the live docs ([full bundle](https://docs.neatlogs.com/llms-full.txt)), re-verified against `plan.v1`'s [neatlog.v1.md](neatlog.v1.md). No application code: short API lines below are reference for the spikes, not project code.
 
 neatlogs does two jobs here. It records what the **story agent** did, so a judge can open a run and see a commitment break and the agent respond. And it is the loop we use to **find, fix and prove** a failure: trace → Investigate or MCP → change → ledger rows that show the fix. Judges score whether it was used to build and improve the agent, not whether a badge was attached.
 
@@ -10,7 +10,7 @@ neatlogs does two jobs here. It records what the **story agent** did, so a judge
 
 From [neatlogs.com/hackathon](https://neatlogs.com/hackathon) and its FAQ (9 Oct):
 
-- Every project uses neatlogs "with a clear role … in building the agent". The demo video must cover it on five points: **architecture, implementation, runtime, reasoning, result** ([plan.md §12](plan.md#12-the-three-minute-demo) maps each).
+- Every project uses neatlogs "with a clear role … in building the agent". The demo video must cover it on five points: **architecture, implementation, runtime, reasoning, result** ([DESIGN.md](../DESIGN.md) maps each).
 - Evidence: neatlogs trace links **or screenshots**; before/after "with the numbers you compared"; "a run where an action failed, showing what the agent did next".
 - "All code must be written between October 10 and October 12." Installing the SDK and writing the first span happen after Saturday 12:30 IST. Today is accounts and docs only.
 - The hackathon `neathack` skill ([neatlogs.com/hackathon/skill](https://neatlogs.com/hackathon/skill)): keep `hackathon.md` at the repo root with sections Project, Team, Stack, Build log, Demo, Known limitations and next steps, Submission; append a dated entry after each work session; record only tests that actually ran; link only "sanitized, shareable evidence"; never include keys, `.env`, personal data, private traces or tokens.
@@ -50,7 +50,7 @@ Per the builder, hackathon participants get **special credits for neatlogs, Enti
 | Trained classifiers not on Free | Built-in `nsfw`/`hate` classifier detections: try in the dashboard; they may consume a detector slot |
 | 1 project | One project, `storybound`. No second project for the traffic script or for coding-session traces |
 
-Winners get 3 months of Pro. No Pro credit for participants is listed. If the span cap or retention bites mid-weekend, one month of Starter ($99) is the fallback; decide before Sunday.
+The hackathon winners get 3 months of Pro. No Pro credit for participants is listed. If the span cap or retention bites mid-weekend, one month of Starter ($99) is the fallback; decide before Sunday.
 
 **Span budget.** One full B1 story: ~150 spans (a GUARDRAIL span per commitment per scene dominates: ~8 scenes × ~8 commitments, plus node, LLM, tool and LOG spans). B0 ~50. The 72-run matrix at K = 3: 72 × (150 + 50)/2 ≈ 7–11k spans. A full real-image demo story is the same ~150. 100k spans ≈ 650 full stories. LOG spans from `neatlogs.log` count; use them for repair reasons only.
 
@@ -93,7 +93,7 @@ FastAPI is long-running: the exporter flushes in the background. Call `flush()` 
 - `end_user_metadata`: `lesson`, `arm` (B0/B1), `seed`, `run_id`.
 - `session_custom_fields`: `fixture_id`, `entry_point`. Whether these work without a `session_id` is **spike S6**; the fallback is `end_user_metadata` alone.
 
-Only if the adaptive path ships ([plan.md §7.7](plan.md#77-adaptive-path-p2-stretch)) do turns share a `session_id` equal to the story id, each turn its own trace.
+Only if the adaptive path ships ([DESIGN.md](../DESIGN.md)) do turns share a `session_id` equal to the story id, each turn its own trace.
 
 ### 6.1 The span tree
 
@@ -134,7 +134,7 @@ Further attributes on the same span (all under a prefix; `neatlogs.eval.` is the
 ```text
 neatlogs.eval.commitment          stable id
 neatlogs.eval.scope               run | story | scene | image | audio
-neatlogs.eval.status              the Sworn status word
+neatlogs.eval.status              the status word
 neatlogs.eval.verdict_by          deterministic | judge | both
 neatlogs.eval.sampled             true | false     neatlogs.eval.seed
 neatlogs.eval.judge_model         family and id
@@ -144,9 +144,9 @@ neatlogs.eval.attempt             0, 1, 2
 neatlogs.eval.evidence_quote      judge's verbatim quote (truncated)
 ```
 
-Workflow root: `neatlogs.eval.contract_coverage_pct`, `neatlogs.eval.oath_hash`, `neatlogs.eval.outcome`, `neatlogs.eval.budget_used_usd`. These are the same fields as the ledger row ([plan.md §10.1](plan.md#101-the-run-ledger)). The observer writes both from one verdict object, so they cannot diverge.
+Workflow root: `neatlogs.eval.contract_coverage_pct`, `neatlogs.eval.oath_hash`, `neatlogs.eval.outcome`, `neatlogs.eval.budget_used_usd`. These are the same fields as the ledger row ([DESIGN.md](../DESIGN.md)). The observer writes both from one verdict object, so they cannot diverge.
 
-`NeatlogsObserver` keeps Sworn's three-method shape: capture the current span, submit an evaluation (open and fill a GUARDRAIL span), submit coverage. No other module imports neatlogs.
+`NeatlogsObserver` has three methods: capture the current span, submit an evaluation (open and fill a GUARDRAIL span), submit coverage. No other module imports neatlogs.
 
 ## 8. Detections, alerts, evals
 
@@ -154,19 +154,19 @@ Configuration in the dashboard, after the first real traces exist so previews (i
 
 **Five detectors** (Free limit):
 
-| # | Name | Type | Rule | Replaces (Storytopia) |
+| # | Name | Type | Rule | Purpose |
 | --- | --- | --- | --- | --- |
-| 1 | `critical-safety` | Regex on span output | `^CRITICAL:` | Inappropriate-content spike. Infra failures no longer count (S3 in plan §5.2) |
-| 2 | `oath-violation` | Regex on span output | `^VIOLATION:` | The pass/fail monitors |
+| 1 | `critical-safety` | Regex on span output | `^CRITICAL:` | Safety spike. Infra failures no longer count (see DESIGN.md §3.3) |
+| 2 | `oath-violation` | Regex on span output | `^VIOLATION:` | Any broken promise |
 | 3 | `lesson-drift` | Condition | lesson alignment score `< 0.6` | Lesson prompt drift |
 | 4 | `image-drift` | Condition | image match score `< 0.7` | Visual consistency degradation |
-| 5 | `injection-obeyed` | Regex on span output | `VIOLATION: no_drawing_text_obedience` | New: the "Kill fish" fixture |
+| 5 | `injection-obeyed` | Regex on span output | `VIOLATION: no_drawing_text_obedience` | The "Kill fish" fixture |
 
 Built-in PII detection is a project/SDK setting, not one of the five. A built-in `nsfw` or `hate` classifier may be tried if a slot or the plan allows; the API route for classifiers is disabled in production, so try the dashboard only.
 
-**Alerts** ([Alerts](https://docs.neatlogs.com/docs/features/alerts)), server-side, no code: per-event on `critical-safety` (severity critical, email or in-app); metric thresholds on workflow latency and cost per story (provisional $1.80 and 18 s from Storytopia until Bedrock numbers exist, replaced from the first real sweep and the cfo.ai model); cooldown on so a sweep does not page us for every fixture. The evidence for the cost/latency family is the alert history, since cost and latency do not use a detector slot.
+**Alerts** ([Alerts](https://docs.neatlogs.com/docs/features/alerts)), server-side, no code: per-event on `critical-safety` (severity critical, email or in-app); metric thresholds on workflow latency and cost per story (provisional $1.80 and 18 s until measured numbers exist, replaced from the first real sweep and the cfo.ai model); cooldown on so a sweep does not page us for every fixture. The evidence for the cost/latency family is the alert history, since cost and latency do not use a detector slot.
 
-**Evals** ([Evals](https://docs.neatlogs.com/docs/features/evals)). Free plan: human evaluators, unlimited. We use them for the **judge-agreement sample** ([plan.md §8.3](plan.md#83-verification-mechanics)): 30–40 scene verdicts are shown to a human ("is the lesson in this scene? yes/no"; "safe for a 4–8-year-old? yes/no"). Export the batch (CSV/JSON) into `evidence/`. An AI evaluator with an oath-shaped rubric is P2 and needs Starter.
+**Evals** ([Evals](https://docs.neatlogs.com/docs/features/evals)). Free plan: human evaluators, unlimited. We use them for the **judge-agreement sample** ([DESIGN.md](../DESIGN.md)): 30–40 scene verdicts are shown to a human ("is the lesson in this scene? yes/no"; "safe for a 4–8-year-old? yes/no"). Export the batch (CSV/JSON) into `evidence/`. An AI evaluator with an oath-shaped rubric is P2 and needs Starter.
 
 **Investigate and Fixes** ([Investigate](https://docs.neatlogs.com/docs/features/ai-search), [Fixes](https://docs.neatlogs.com/docs/features/triage)). On a hardening record's trigger trace, ask Investigate why the commitment failed; read the suggestion in Claude Code through MCP `triage_get` and `triage_get_investigation`. Apply the change locally. Cloud dispatch to a GitHub PR is optional and needs the GitHub integration. After the next ledger rows show the fix, `triage_accept` and `triage_update_status`.
 

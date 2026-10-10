@@ -1,6 +1,6 @@
 # Storybound — frontend design plan
 
-Written 9 October 2026. Companion to [plan.md](plan.md) and [pitch.md](pitch.md); the asset shopping list is [assets.md](assets.md). No code. This file decides what the child sees, hears and touches, on a phone, a tablet and a desktop, and why.
+Written 9 October 2026. Companion to [DESIGN.md](../DESIGN.md) and [pitch.md](pitch.md); the asset shopping list is [assets.md](assets.md). No code. This file decides what the child sees, hears and touches, on a phone, a tablet and a desktop, and why.
 
 Research basis: NN/g on children's physical development and touch targets, the MTAGIC touch study (Anthony et al., IJHCS 2019), Google's "building for kids" guidance, the Cooney Center / Sesame preschool-tablet practices, the UK ICO Children's Code age bands, the Radesky et al. 2022 study of manipulative design in apps for 3–5-year-olds, the UC Irvine enhanced-ebook study, Katzir et al. 2013 on font size, WCAG 2.2, Apple's Kids Category rules, and the FTC's COPPA guidance and 2025 amendments. Where a rule is my inference rather than a finding, it says **(inference)**. Several primary sources (the full NN/g report, PBS Kids and Common Sense design principles) were paywalled or not found; the gaps are listed in §13. **Test with a real 4–8-year-old on a real device**: published touch-size studies cover ages 5–10 on specific hardware.
 
@@ -46,7 +46,7 @@ Design stance in one line: **a paper-craft storybook world, where the child's ow
 
 **Mood words:** warm, tactile, rounded, sunlit, slow. Not: neon, glossy, busy, loud.
 
-**What we keep from Storytopia's look, and what we do not.** Kept as ideas: an orange brand warmth, crayon swatches for colour choice, a watercolour tree-and-grass border, a tablet-first storybook card with the picture up top and two choice buttons below, progress dots. Changed: bigger targets, no text-only buttons, a guide, randomised choice order (their correct answer was always the first button), voice on everything, no mobile caveat ("best viewed on desktop or iPad").
+**Look decisions.** An orange brand warmth, crayon swatches for colour choice, a watercolour tree-and-grass border, a tablet-first storybook card with the picture up top and two choice buttons below, progress dots. Also: big targets, no text-only buttons, a guide, randomised choice order (the correct answer is never always the first button), voice on everything, no "best on desktop" caveat.
 
 ## 4. Visual system
 
@@ -63,7 +63,7 @@ Names are CSS custom properties. Contrast is for the stated pairing; verify with
 | `--sky` | `#59B8F3` | Secondary, drawing | `--ink` text |
 | `--leaf` | `#6CC57A` | Success, "kept" | `--ink` text; always with a star icon |
 | `--berry` | `#FF7096` | Accent, hearts | `--ink` text |
-| `--tangerine` | `#FF9A3C` | Brand warm (nods to Storytopia) | `--ink` text |
+| `--tangerine` | `#FF9A3C` | Brand warm | `--ink` text |
 | `--grape` | `#8F73E0` | "Let's think" feedback | `--ink` text, or white on a dark grape |
 | `--cloud` | `#E9E4F5` | Disabled, quiet panels | |
 | `--shadow` | ink at 18% | Sticker shadow | |
@@ -105,7 +105,7 @@ Narration is the primary audio; everything else sits underneath it.
 
 ## 5. Responsive layout
 
-Mobile-first, but **tablet landscape is the reference device**: preschoolers usually hold tablets in landscape, and Storytopia was built for it.
+Mobile-first, but **tablet landscape is the reference device**: preschoolers usually hold tablets in landscape.
 
 | Class | Width | Layout notes |
 | --- | --- | --- |
@@ -122,7 +122,7 @@ Details:
 - **Hit areas:** every control ≥ 80 px with the enlarged invisible area; a minimum 16 px gap between targets.
 - **Orientation:** works in both; a spread on landscape, a single page on portrait; no forced rotation prompt.
 - **Image ratio:** generate one master at **4:3** with the hero inside the middle 80% (works for portrait stacks and landscape spreads, and crops safely to 3:2). Allowed sizes depend on the image model, so spike S1 confirms; fallback 3:2 with a crop.
-- **Performance:** preload the next page's image and audio; WebP/AVIF; scene images ≤ ~250 KB on mobile; lazy-load the rest; the first page appears while later ones are still being generated (Storytopia's 4-then-4 idea, driven by the real graph).
+- **Performance:** preload the next page's image and audio; WebP/AVIF; scene images ≤ ~250 KB on mobile; lazy-load the rest; the first page appears while later ones are still being generated (four pages then four, driven by the real graph).
 - **Input:** pointer events for drawing (check `pointerType` and contact size, ignore large palm contacts); touch, mouse and stylus work; no hover-only controls.
 
 ## 6. The flow, screen by screen
@@ -160,7 +160,7 @@ The book. Per page:
 - **Picture** (the page's illustration) with a small copy of the child's drawing as a "hero sticker" in a corner.
 - **Text plate** (`--paper-2`): 1–2 short sentences, Andika, with a **speaker button** to replay. Narration plays automatically on arrival; the current sentence is softly highlighted (sentence-level, on by default; word-level is off, because the evidence for word highlighting is thin and vendor-sourced). A text toggle hides the words for pre-readers.
 - **The question**, voiced, with a picture icon.
-- **Two choice cards**, large, each with an illustration icon, its words, and its own speaker. **Their order is randomised per page** (the correct answer is not always the first button, which fixes Storytopia's pattern).
+- **Two choice cards**, large, each with an illustration icon, its words, and its own speaker. **Their order is randomised per page** (the correct answer is not always the first button).
 - **After a tap:** the choice lifts and Pip reacts. A "kind" choice: a leaf-green star pops, a chime, Pip cheers, the feedback line is voiced ("Mila shared her blocks, and everyone smiled!"). The other choice: a grape thought-bubble, a soft boop, Pip tilts his head: "Hmm, let's think about that." The feedback explains gently, then the child taps **"Try the other"** or **"Next"**. Never an X, never red, never a lost point.
 - **Navigation:** big arrows at mid-height on the sides (a second route to swipe); eight stepping stones along the top show position (never a score); keyboard arrows on desktop; a "home" door in a corner behind a hold.
 
@@ -251,7 +251,7 @@ Confetti (reduced-motion: a static burst), Pip cheers, **the sticker sheet** fil
 **Test plan:**
 
 - Devices: a real iPhone and iPad (Safari, audio unlock, landscape), an Android phone (Chrome), desktop Chrome/Edge/Firefox. Responsive mode in devtools is not enough for touch and audio.
-- Automated: a layout check at the five breakpoints, Lighthouse accessibility and performance, a contrast check on the tokens.
+- Automated: a layout check at the five breakpoints, browser accessibility audit and performance, a contrast check on the tokens.
 - **A 10-minute usability test with a real child of 4–8, with a parent present and consent** (if one is available): can they get from Welcome to the first page unaided; can they pick a choice on the first try; do they find the Grown-ups area; do they get stuck anywhere. Target: first-try tap success ≥ 90% on primary targets, zero help needed to start. Do not record the child; never put the child's drawing in a trace or a post.
 - Honesty test: a story with a deliberately failed promise must show that promise *missing* from the child's sticker sheet and *listed* in the parent's receipt.
 
@@ -265,7 +265,6 @@ Confetti (reduced-motion: a static burst), Pip cheers, **the sticker sheet** fil
 | Duolingo ABC | A narrative reason for each task | Its repetition and imprecise tracing |
 | Epic, Homer | Read-to-me with sentence highlighting | Word-level highlighting as a default, subscription prompts |
 | Yoto, Tonies | One obvious, tactile action to start a story | Physical hardware |
-| Storytopia | Tablet-first storybook card, crayon swatches, a warm orange brand | Text-only buttons, always-first correct answer, "best on desktop" |
 
 **Not covered by the research (check before freezing):** the full NN/g children's report (paid), the Sesame/Cooney touch-tablet report, Anthony's one-page recommendation sheet (mtagic.wordpress.com), PBS Kids and Common Sense design principles, screenshot-level layouts of PBS Kids, Nick Jr, Bluey, StoryBots and Libby, and per-country GDPR-K age-of-consent (13–16). Brush sizes, undo depth and palm-rejection thresholds above are my proposals, not findings.
 

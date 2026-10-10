@@ -1,8 +1,8 @@
 # How Storybound uses cfo.ai (v2)
 
-> **Update 10 Oct:** the model stack is Google Vertex AI (Gemini) plus K2 Horizon as an independent judge; AWS has no Bedrock or Polly in this account (hosting only, $25 cap). See [plan.md section 0](plan.md#0-decisions-of-10-october). Wherever this file says Bedrock, Polly, Nova or Titan, read Vertex, Gemini TTS and Gemini image.
+> **Update 10 Oct:** the model stack is Google Vertex AI (Gemini) plus K2 Horizon as an independent judge; AWS has no Bedrock or Polly in this account (hosting only, $25 cap). See [DESIGN.md](DESIGN.md#0-decisions-of-10-october). Wherever this file says Bedrock, Polly, Nova or Titan, read Vertex, Gemini TTS and Gemini image.
 
-cfo.ai plans the business around the agent. It is not a dependency of the story process: nothing in FastAPI, LangGraph or the oath imports it. Companion to [plan.md](plan.md); see also [neatlog.md](neatlog.md) and [entire.md](entire.md). Written 9 October 2026 against [docs.cfo.ai](https://docs.cfo.ai/llms.txt), [cfo.ai/skill.md](https://cfo.ai/skill.md) and [cfo.ai/pricing](https://cfo.ai/pricing), corrected from [cfo.v1.md](cfo.v1.md). No application code.
+cfo.ai plans the business around the agent. It is not a dependency of the story process: nothing in FastAPI, LangGraph or the oath imports it. Companion to [DESIGN.md](../DESIGN.md); see also [neatlog.md](neatlog.md) and [entire.md](entire.md). Written 9 October 2026 against [docs.cfo.ai](https://docs.cfo.ai/llms.txt), [cfo.ai/skill.md](https://cfo.ai/skill.md) and [cfo.ai/pricing](https://cfo.ai/pricing), corrected from [cfo.v1.md](cfo.v1.md). No application code.
 
 The hackathon asks for "a business plan covering pricing, costs, revenue, and runway", shown in the demo, with a clear role for cfo.ai in "planning its business". Its illustrative table is Base 100 customers / $2,000 revenue / $400 infra / $1,600 gross profit / 80% margin against Growth 250 / $5,000 / $850 / $4,150 / 83%. That table is their example of the shape, not numbers to reuse.
 
@@ -21,7 +21,7 @@ The hackathon asks for "a business plan covering pricing, costs, revenue, and ru
 | "Cursor" | The docs cover Claude Code and Codex; others via the generic "custom connector / MCP server" route. We use Claude Code | [mcp-server](https://docs.cfo.ai/integrations/mcp-server.md) |
 | Export "or screenshot" | The only documented export is **Download spreadsheet** (xlsx; one sheet per Table Block plus "Model inputs"; charts and Canvas blocks excluded). PDF, CSV and PNG export are not documented, so screenshots are the visual backup | [share-pages](https://docs.cfo.ai/dashboards/share-pages-and-scenarios.md) |
 | "Ari's changelog" | **Version history** (clock icon in the Page header) records every change by Ari or a human with author and time; view as-of, undo, redo, restore. MCP has `inspect_history` | same |
-| Cost per story ≈ $0.40 with **one** illustration | Storybound makes **eight** illustrations, one per scene. See §5 | [plan.md §4](plan.md#4-what-storybound-is) |
+| Cost per story ≈ $0.40 with **one** illustration | Storybound makes **eight** illustrations, one per scene. See §5 | [DESIGN.md](../DESIGN.md) |
 | neatlogs spans per story ≈ 40 | A gated story is ~**150** spans ([neatlog.md §3](neatlog.md#3-free-plan-limits-and-what-they-force)); to be replaced by a measurement | |
 | Household $12, Classroom $49 | Category median list price is $9.99/month and $44.99/year ([RevenueCat 2026](https://www.revenuecat.com/state-of-subscription-apps-2026-education)); $49 per classroom per month (~$20 per student per year for 30) is at the top of the K-12 licence range. See §4 | |
 | "70% gross margin" as the bar | AI-native application gross margins are reported around 50–60% (secondary sources). 70% is ours, aggressive, and clearable only with a cheap image model or fewer images. Show 60% as the typical-AI-app reference line | [§6](#6-the-decision-the-model-exists-to-make) |
@@ -43,7 +43,7 @@ The cfo.ai subscription itself is a planning tool for us, not a cost of goods; i
 Two questions, both wired back into the agent:
 
 1. **What can we charge a household and a classroom, and what does it cost to serve them?** Cost per story is measured from neatlogs, not guessed.
-2. **How much verification can we afford, and what per-story budget should the agent run under?** The agent has two cost knobs: the judge sampling rate on quality commitments ([plan.md §8.3](plan.md#83-verification-mechanics)) and the budget governor's per-story budget ([plan.md §7.6](plan.md#76-budget-governor-p1)). The model's gross margin under "Verify all" versus "Sampled" and under a given image count decides both. The values we ship are the values the model supports, and the commit that sets them is named in the evidence. That is the difference between attaching a spreadsheet and using cfo.ai to plan the business. Safety checks stay at sampling 1.0 regardless: they are not a cost knob.
+2. **How much verification can we afford, and what per-story budget should the agent run under?** The agent has two cost knobs: the judge sampling rate on quality commitments ([DESIGN.md](../DESIGN.md)) and the budget governor's per-story budget ([DESIGN.md](../DESIGN.md)). The model's gross margin under "Verify all" versus "Sampled" and under a given image count decides both. The values we ship are the values the model supports, and the commit that sets them is named in the evidence. That is the difference between attaching a spreadsheet and using cfo.ai to plan the business. Safety checks stay at sampling 1.0 regardless: they are not a cost knob.
 
 ## 4. Model shape
 

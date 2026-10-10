@@ -2,13 +2,13 @@
 
 > **Update 10 Oct (verified while setting up):** Entire CLI is **0.11.4**; `entire enable -y --agent claude-code` installs 9 hooks; entire-graph is **0.4.0** (local only, no network egress). **Brain** is not in the plugin index and its bash installer refuses Windows: install the v0.1.0 Windows zip from github.com/entireio/entire-brain/releases (verify the checksum), copy `entire-brain.exe` into `%LOCALAPPDATA%\entire\pluginsin\`, then `entire brain setup --no-backfill --no-daemon` (the daemon is not supported on Windows). `entire brain remember` needs a **three-part path** with no hyphens (`constraints.security.secrets`). **Trails** are feature-flagged: submit the access form linked from https://hack.entire.io/neathacks-2026/ (a page for judges, not a dashboard; its submission checklist asks for a checkpoint link and ID in the form `https://entire.io/gh/OWNER/REPO/commit/FULL_SHA`), then a repo admin enables Runners, Auto build and Trails on entire.io. A trail is one branch and one PR from intent to shipped code; `entire runner setup --defaults-only` scaffolds runners without a model call; `entire review` and `entire dispatch --local` work without Trails. The GitHub repository is `hatif03/storybound` (private until publish).
 
-Entire is how we **build** the agent, not a library the story calls. The story process never imports it. Companion to [plan.md](plan.md); see also [neatlog.md](neatlog.md) and [cfo.md](cfo.md). Written 9 October 2026 against [docs.entire.io](https://docs.entire.io/llms.txt) (CLI docs at 0.10.5) and corrected from [entire.v1.md](entire.v1.md). No application code.
+Entire is how we **build** the agent, not a library the story calls. The story process never imports it. Companion to [DESIGN.md](../DESIGN.md); see also [neatlog.md](neatlog.md) and [cfo.md](cfo.md). Written 9 October 2026 against [docs.entire.io](https://docs.entire.io/llms.txt) (CLI docs at 0.10.5) and corrected from [entire.v1.md](entire.v1.md). No application code.
 
 neatlogs records what the **story agent** did. Entire records what the **coding agent** did when we wrote and fixed it. A neatlogs trace without a checkpoint, or a checkpoint without a trace, is half a submission. The pairing is the point: a `(commit sha, Entire checkpoint id, neatlogs trace id)` triple for every key change.
 
 ## 1. What the hackathon needs
 
-[neatlogs.com/hackathon](https://neatlogs.com/hackathon): "Checkpoints or entire-graph output from your repository." Entire must have "a clear role in building the agent", and the three-minute video must cover it on five points: **architecture, implementation, runtime, reasoning, result** ([plan.md §12](plan.md#12-the-three-minute-demo)). Entire staff are judges. No Entire credits are listed. All code is written 10–12 October, so `entire enable` runs in the new repo after Saturday 12:30 IST, not in the folder holding the two source checkouts, and not today.
+[neatlogs.com/hackathon](https://neatlogs.com/hackathon): "Checkpoints or entire-graph output from your repository." Entire must have "a clear role in building the agent", and the three-minute video must cover it on five points: **architecture, implementation, runtime, reasoning, result** ([DESIGN.md](../DESIGN.md)). Entire staff are judges. No Entire credits are listed. All code is written 10–12 October, so `entire enable` runs in the new repo after Saturday 12:30 IST, not in the folder holding the two source checkouts, and not today.
 
 ## 2. Corrections to v1 (verified against the docs)
 
@@ -67,7 +67,7 @@ Windows pitfalls from the docs and inference: Git hooks may not find `entire` on
 ## 4. Privacy, because the repo is public
 
 - Checkpoints store prompts, transcripts and metadata in the repo. **A key that appears in a prompt is a leaked key.** Keys stay in the environment or a gitignored `.env`, are never pasted into the chat, and a leaked one is rotated, not hidden.
-- Consider `redaction.pii.enabled: true`. Review what is *not* redacted (images, `path` fields, raw session files). Drawings used as fixtures are the sample drawings from Storytopia (reuse approved), not a real child's work.
+- Consider `redaction.pii.enabled: true`. Review what is *not* redacted (images, `path` fields, raw session files). Drawings used as fixtures are the sample drawings supplied for the hackathon (reuse approved), not a real child's work.
 - Consider `entire configure --checkpoint-remote github:owner/repo` (same owner) to keep checkpoints in a separate repo, if we would rather not put transcripts in the code repo. The trade-off is judges cloning the code repo see no checkpoints; we choose the default (same repo) because the judges' access path is simpler.
 - Write a one-line privacy note into `EVIDENCE.md`: what is public, whether PII redaction is on, that no real child data was used.
 

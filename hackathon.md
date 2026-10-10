@@ -3,7 +3,7 @@
 Kept in the format of the neatHack `neathack` skill. Only sanitized, shareable evidence is linked here: no keys, no `.env` contents, no personal data, no private traces. Planned and completed work are kept apart; only tests that actually ran are recorded.
 
 ## Project
-**Storybound**: a children's (age 4-8) storybook agent. A drawing and a lesson go in; the agent writes an *oath* (what it owes the child), writes and checks each page against it before the child sees it, repairs pages that break it, and ships a *receipt*. Planning documents (written 9-10 Oct, before the window, no application code) are in `docs/planning/`; the decisions of 10 Oct are at the top of `docs/planning/plan.md`.
+**Storybound**: a children's (age 4-8) storybook agent. A drawing and a lesson go in; the agent writes an *oath* (what it owes the child), writes and checks each page against it before the child sees it, repairs pages that break it, and ships a *receipt*. Planning documents (written 9-10 Oct, before the window, no application code) are in `docs/planning/`; the design is in `docs/DESIGN.md`.
 
 ## Team
 Solo builder. AI coding help: Claude Code (checkpointed by Entire).
@@ -12,7 +12,7 @@ Solo builder. AI coding help: Claude Code (checkpointed by Entire).
 - Orchestration: LangGraph (no Google ADK). API: FastAPI. Python 3.12.
 - Models: Gemini on Google Vertex AI (writer, vision, image, speech) and K2 Horizon (independent judge). AWS is hosting only (no Bedrock or Polly in the hackathon account).
 - Observability: neatlogs (project `482c3038-22f9-49e6-8938-e816ce252f75`). Coding-agent memory: Entire (checkpoints, graph). Business plan: cfo.ai. Market data: Crustdata (never in the public repo).
-- Design lineage: Storytopia (Lighthouse) and Sworn (Agentic Contract Framework), both MIT; code is re-written, not copied; sample drawings and lesson data reused with the organizers' approval.
+- Code written during the window; sample drawings and lesson data used with the organizers' approval.
 
 ## Build log
 
@@ -46,4 +46,4 @@ Planned: a 3:00 video covering neatlogs, Entire and cfo.ai on architecture, impl
 - Free neatlogs plan limits (100k spans, 5 detectors, 14-day retention) may apply; traces are exported into `evidence/traces/` as we go.
 
 ## Submission
-Not yet. Window: Mon 12 Oct 19:00-23:55 IST, by quote-posting the official neatlogs post on X. Checklist lives in `docs/planning/plan.md` section 10.4 and `EVIDENCE.md`.
+Not yet. Window: Mon 12 Oct 19:00-23:55 IST, by quote-posting the official neatlogs post on X. Checklist lives in `EVIDENCE.md` and the linter.

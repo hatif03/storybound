@@ -34,3 +34,6 @@ Thumbs.db
 # generated at runtime
 evidence/_raw/
 *.log
+
+# private local reference material, never committed
+_reference/

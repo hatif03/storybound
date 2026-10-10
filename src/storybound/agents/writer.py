@@ -183,3 +183,62 @@ def baseline_story(*, lesson: Lesson, card: CharacterCard, age: int, n: int = 8)
         except (KeyError, TypeError, IndexError):
             pages.append(Page(index=i, scenario="", question="", choices=[], image_prompt=""))
     return pages, {"tokens_in": r.usage.input_tokens, "tokens_out": r.usage.output_tokens}
+
+
+def self_critique(pages: list[Page], *, lesson: Lesson, card: CharacterCard, age: int, rounds: int = 2) -> list[Page]:
+    """Arm B2: what a capable general agent does without our harness. The same model reviews its own story against the
+    same rules and returns a corrected story, up to `rounds` times. No verifiers, no judge, no gate."""
+    for _ in range(rounds):
+        shown = json.dumps(
+            [
+                {
+                    "scenario": p.scenario,
+                    "question": p.question,
+                    "choices": [c.model_dump(exclude={"id"}) for c in p.choices],
+                    "image_prompt": p.image_prompt,
+                }
+                for p in pages
+            ],
+            ensure_ascii=False,
+        )
+        r = ask_json(
+            "self_critique",
+            prompts.BASELINE_SYSTEM.format(age=age, max_words=max_sentence_words(age)),
+            f"LESSON: {lesson.title}: {lesson.concept}\nHERO CARD: {json.dumps(card.model_dump(), ensure_ascii=False)}\n"
+            f"Here is the story you wrote:\n{shown}\n"
+            "Review every page against every rule above. Fix any page that breaks a rule. Return the whole corrected "
+            'story in exactly this shape: {"pages": [{"scenario": "...", "question": "...", "choices": [{"text": "...", '
+            '"feedback": "...", "is_correct": true | false}, {...}], "image_prompt": "..."}]}',
+            temperature=0.4,
+            max_tokens=7000,
+        )
+        rows = r.value.get("pages", []) if isinstance(r.value, dict) else []
+        fixed: list[Page] = []
+        for i, row in enumerate(rows[: len(pages)], 1):
+            try:
+                cs = [
+                    Choice(
+                        id="ab"[k],
+                        text=str(c["text"]),
+                        feedback=str(c.get("feedback", "")),
+                        is_correct=bool(c.get("is_correct")),
+                    )
+                    for k, c in enumerate(row["choices"][:2])
+                ]
+                sc, q = str(row["scenario"]).strip(), str(row["question"]).strip()
+                fixed.append(
+                    Page(
+                        index=i,
+                        scenario=sc,
+                        question=q,
+                        choices=cs,
+                        image_prompt=str(row.get("image_prompt", "")).strip(),
+                        narration_text=f"{sc} {q}",
+                    )
+                )
+            except (KeyError, TypeError, IndexError):
+                fixed = []
+                break
+        if len(fixed) == len(pages):
+            pages = fixed
+    return pages

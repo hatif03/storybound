@@ -137,7 +137,7 @@ async def create_story(
         return err(422, "unknown_lesson", "That lesson is not one I know yet.")
     if not 4 <= age <= 8:
         return err(422, "bad_input", "Age should be between 4 and 8.")
-    if arm not in ("B0", "B1"):
+    if arm not in ("B0", "B1", "B2"):
         return err(422, "bad_input", "Unknown arm.")
     if drawing is not None and drawing.filename:
         raw = await drawing.read(media.MAX_UPLOAD + 1)

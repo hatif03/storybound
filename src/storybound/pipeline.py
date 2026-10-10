@@ -36,6 +36,7 @@ from .textutil import norm_ws
 
 CALM_REFUSAL = "This drawing isn't one I can turn into a story. Could we try a different picture together?"
 CALM_REDRAW = "I couldn't quite see a hero in that picture. Could you draw one a little bigger and darker?"
+OBSERVE = ("B0", "B2")  # arms where verification only observes: nothing is gated or repaired by the oath
 IMAGE_SLOTS = threading.BoundedSemaphore(2)
 MAX_AHEAD = 3  # pages written ahead of the oldest page still under review
 CALM_STOP = "I couldn't make this story gentle enough, so I stopped. Could we try another picture?"
@@ -207,7 +208,7 @@ def build_graph(run: Run):
     def n_oath(s: S) -> S:
         """Write the oath. In the gated arm the story plan is made at the same time: it needs only the card."""
         pool, fut = None, None
-        if cfg.arm != "B0":
+        if cfg.arm == "B1":
             pool = cf.ThreadPoolExecutor(max_workers=1)
             fut = pool.submit(contextvars.copy_context().run, planner.plan, lesson, s["card"], cfg.age, n_pages)
         oath, info = oath_author.author(lesson, s["card"])
@@ -364,6 +365,8 @@ def build_graph(run: Run):
     @tracing.span(kind="AGENT", name="node.baseline")
     def n_baseline(s: S) -> S:
         pages, _u = writer.baseline_story(lesson=lesson, card=s["card"], age=cfg.age, n=n_pages)
+        if cfg.arm == "B2":  # the general-purpose-agent baseline: the same model reviews and fixes its own story
+            pages = writer.self_critique(pages, lesson=lesson, card=s["card"], age=cfg.age)
         run.ctx.pages = pages
         eng = run.engine
         for p in pages:
@@ -395,12 +398,12 @@ def build_graph(run: Run):
         eng, pages = run.engine, list(s["pages"])
         before = [p.model_dump() for p in s["pages"]]  # rebalancing edits pages in place
         card = s["card"]
-        rounds = 1 if cfg.arm == "B0" else 2
+        rounds = 1 if cfg.arm in OBSERVE else 2
         for rnd in range(rounds + 1):
             run.ctx.pages = pages
             vs = eng.verify_story(pages, rnd)
             bad = [v for v in vs if eng.gate(v) != "accept"]
-            if not bad or cfg.arm == "B0" or rnd == rounds:
+            if not bad or cfg.arm in OBSERVE or rnd == rounds:
                 for v in bad:
                     run.shipped.append({"commitment": v.commitment, "scope": v.scope, "actual": v.actual})
                 break
@@ -554,7 +557,7 @@ def build_graph(run: Run):
     g.add_conditional_edges("safety", halted, {"end": END, "go": "character"})
     g.add_edge("character", "oath")
     g.add_conditional_edges(
-        "oath", lambda s: "baseline" if cfg.arm == "B0" else "write", {"baseline": "baseline", "write": "write"}
+        "oath", lambda s: "write" if cfg.arm == "B1" else "baseline", {"baseline": "baseline", "write": "write"}
     )
     g.add_edge("write", "verify")
     g.add_conditional_edges("verify", lambda s: s["route"],
@@ -593,8 +596,8 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
     n_checks = sum(1 for v in run.verdicts if v.status != "skipped")
     repairs = len(run.repairs)
     rewritten = len({(r.get("index"), r.get("stage")) for r in run.repairs if r.get("stage") == "scene"})
-    if run.cfg.arm == "B0":
-        plain = f"{len(checked)} promises checked afterwards. {len(broken)} broken. Nothing was repaired (observe-only run)."
+    if run.cfg.arm in OBSERVE:
+        plain = f"{len(checked)} promises checked afterwards. {len(broken)} broken. Nothing was repaired by the oath (observe-only run)."
     elif broken:
         plain = f"{len(checked)} promises checked. {rewritten} pages rewritten. {len(broken)} could not be fully kept: {', '.join(broken)}."
     else:

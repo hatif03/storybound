@@ -250,3 +250,14 @@ def test_receipt_lists_each_promise_and_gate_rewrites_are_resent(monkeypatch, dr
     assert len(promises) == len(catalog.core_oath().commitments)
     assert {p["status"] for p in promises} <= {"kept", "broken", "not_checked"}
     assert next(p for p in promises if p["id"] == "correct_choice_position_balanced")["status"] == "kept"
+
+
+def test_self_critique_arm_observes_without_repairing(monkeypatch, drawing):
+    wire(monkeypatch)
+    pages = [good_page(i, 1) for i in range(1, 9)]
+    monkeypatch.setattr(writer, "baseline_story", lambda **kw: (pages, {}))
+    called = []
+    monkeypatch.setattr(writer, "self_critique", lambda p, **kw: called.append(1) or p)
+    run, evs = go(drawing, arm="B2")
+    assert called and "scene.repair" not in [e["type"] for e in evs]
+    assert "correct_choice_position_balanced" in {s["commitment"] for s in run.shipped}

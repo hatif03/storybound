@@ -213,7 +213,8 @@ class Engine:
 
     def verify_run(self, card, attempt: int = 0) -> list[Verdict]:
         text = json.dumps(card.model_dump(), ensure_ascii=False)
-        return self._run(self.commitments("run"), "run", card, text, attempt)
+        cs = [c for c in self.commitments("run") if c.id != "input_safe_visual"]  # decided by the safety screen
+        return self._run(cs, "run", card, text, attempt)
 
     def verify_image_prompt(self, page: Page, attempt: int = 0) -> list[Verdict]:
         cs = [c for c in self.commitments("image") if c.id == "trait_in_image_prompt"]

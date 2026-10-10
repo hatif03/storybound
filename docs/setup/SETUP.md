@@ -15,7 +15,7 @@ Last updated 2026-10-10 12:30 IST. Secrets are never listed here; they live in `
 ## Needs you (interactive steps I cannot do)
 1. **Entire login**: `entire login` (browser) or `entire login --device`. Sign in at entire.io with GitHub and authorise the Entire GitHub App for the repo you will publish. Verify with `entire auth status`.
 2. **Entire Trails**: submit the access form from https://hack.entire.io/neathacks-2026/ (it is feature-flagged; staff enable it manually). The page says a GitHub org admin imports the repo; for a personal repo you are the admin: test early whether import works.
-3. **Publish the repo** (public, after kickoff): `gh repo create storybound --public --source . --push`. Then confirm `git ls-remote origin 'refs/entire/checkpoints/*'` shows checkpoint refs after the first commit.
+3. **Publish the repo** (public, after kickoff): `gh repo create storybond --public --source . --push` (the GitHub repository is named **storybond**; the local folder stays `storybound`). Then confirm `git ls-remote origin 'refs/entire/checkpoints/*'` shows checkpoint refs after the first commit.
 4. **cfo.ai MCP**: start Claude Code from a shell that ran `. .\scripts\dev-shell.ps1`, run `/mcp`, select `cfoai`, Authenticate (browser). Then `list_orgs`, `inspect_skills` (build-model).
 5. **Crustdata**: put the key in `.env` as `CRUSTDATA_API_KEY=...` and run `crustdata auth login --with-token < key.txt`, or authenticate the MCP server through `/mcp`. Free smoke test: `crustdata account credits --jq .account.credits`.
 6. **Google ADC for the app**: `gcloud auth application-default login` (browser) and `gcloud auth application-default set-quota-project project-f0b6b4ce-541f-43ff-9f7`, so the Python SDK can call Vertex without a key file.

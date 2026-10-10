@@ -50,8 +50,8 @@ class Budget(BaseModel):
 class Prices(BaseModel):
     """ESTIMATES, labelled as such everywhere they are shown. neatlogs holds the measured figure; cfo.ai gets that one."""
 
-    gemini_in_per_m: float = 0.30
-    gemini_out_per_m: float = 2.50
+    gemini_in_per_m: float = 0.50
+    gemini_out_per_m: float = 3.00
     k2_per_m: float = 0.0  # no price known
     image_each: float = 0.04
     tts_each: float = 0.002

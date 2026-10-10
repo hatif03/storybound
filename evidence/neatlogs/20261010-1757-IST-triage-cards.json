@@ -1,0 +1,329 @@
+{
+ "list": {
+  "total": 3,
+  "triage_cards": [
+   {
+    "triage_id": "67e5d3bd-b2b5-4bbc-9f40-17321d049074",
+    "title": "Over-Aggressive PII/NER Anonymization Filter Triggering Guardrail Failures and Infinite Repair Loops",
+    "root_cause": "An over-aggressive Named Entity Recognition (NER) or PII anonymization filter is running on the generated character cards and story text. It is incorrectly identifying benign words (e.g., 'honest', 'forest', 'grey') and character names (e.g., 'Mimi', 'Zippy') as sensitive entities, replacing them with placeholders like `<PERSON>` and `<LOCATION>`. This triggers the 'Oath violation' guardrail (quality/safety commitments), which enters a `scene_repair` loop to fix the pages. Because the scrubber continues to inject placeholders or the character card name remains `<PERSON>`, the repair loop runs repeatedly, leading to extreme latency and eventually exhausting resources, causing the LLM client to close prematurely.",
+    "status": "open",
+    "severity": "high",
+    "category": "config",
+    "triage_label": "tool_contract_misuse",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "a83ae4e4-57c2-4b98-b587-0774ed8bec56",
+    "linked_trace_ids": [
+     "9ac60464c282af61f4861605956d98b8",
+     "1b3aec29d4fd0af7432dd64960b5d783",
+     "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+     "ac528975dda17c3fb8eed01278eaa04d",
+     "4c79169d1827065eadc273e214912789",
+     "0f14bcea11132340345dfdbc2ae48405",
+     "17e509161d8e573376607fc20d382994",
+     "271150144a95bc89c355b054f32f0db5",
+     "a44e5cc42ae06542dc1eb9471d958e9d",
+     "598d07098a3a928164ad492061984dc3"
+    ],
+    "confidence": 0.7649999856948853,
+    "created_at": "2026-10-10T09:52:14.443504Z"
+   },
+   {
+    "triage_id": "ebcff17a-12c3-4196-bb21-a09bffb49070",
+    "title": "Overly Restrictive Deterministic Blocklist in `verify:story_safe_text` Guardrail Triggering False Positives on Benign Words (e.g., \"hurts\")",
+    "root_cause": "The deterministic safety guardrail `verify:story_safe_text` has an overly aggressive blocklist that flags benign words like `\"hurts\"` as `\"unsafe or unkind terms\"` regardless of context. In trace {{trace:26fbc879cddba411dc327286643276c3}}, the LLM generated a story page with the feedback: `\"Pretending keeps a secret that hurts trust.\"`. The guardrail evaluated this text and triggered a `critical` status because of the word `\"hurts\"`, leading to a workflow halt (`create-storybook` returning `null`). This false positive safety stop is causing a spike in the `Critical safety stop` detection group and leading to workflow failures across multiple traces.",
+    "status": "open",
+    "severity": "critical",
+    "category": "config",
+    "triage_label": "tool_contract_misuse",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "ae11aadf-1474-4f09-8285-8e4d3647e7ad",
+    "linked_trace_ids": [
+     "76c35d5c75344ae43f5f8883810842e9",
+     "26fbc879cddba411dc327286643276c3",
+     "668b46f85e19468569cadb0eb81c534c",
+     "257acf701defe64fcd1edc3707bdd9d5",
+     "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+     "06a2527e2d27f905762a9642451ad972",
+     "856ced2d8c24f1c42cdd08b2559ea4cd",
+     "4c79169d1827065eadc273e214912789",
+     "a534baeb9d47166ae8b19fcee1f1c7d9",
+     "2b4d5ad820abe3b32e33501f285a3af9"
+    ],
+    "confidence": 0.7020000219345093,
+    "created_at": "2026-10-10T09:49:12.153814Z"
+   },
+   {
+    "triage_id": "bdd1f6f1-f359-4d80-b6dd-f671af96b731",
+    "title": "Investigate Gemini 3.7 Flash 504 Timeout in create-storybook Workflow",
+    "root_cause": "Root cause is not established. The observed symptom is a high rate of `504 Deadline expired` errors from the `gemini-3.7-flash` model during the `create-storybook` workflow, resulting in overall workflow durations exceeding 220 seconds.\n\nWhile the traces show that the LLM calls consistently time out after approximately 87 seconds (e.g., in {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}), the underlying cause of this latency—whether it is due to an extremely large input payload, an inefficient loop in the orchestration logic generating excessive pages, or an upstream service degradation on Google's side—cannot be definitively determined without inspecting the LLM client configuration and the input payloads.",
+    "status": "open",
+    "severity": "high",
+    "category": "config",
+    "triage_label": "latency_anomaly",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "1f478565-97aa-4d49-b5cd-a46f8a7fd061",
+    "linked_trace_ids": [
+     "87b07c47da3f8900684ad1d97a7a95e6",
+     "050dc8b85289002f084c67e8cfc23a42",
+     "264208295ada9b28a96d2e29b32fb41c",
+     "08177d773d0e88d8b26febc22898ba03",
+     "6a0c03f8ce1c32a55f38620da4f1fbdc",
+     "73ce7d9dfb289752745283abfc445009",
+     "b8883a6238abdecadb2ef3a56a5b0dcd",
+     "6d4a0a4b07640cf66dbc45913c387078",
+     "e0d0e072d74ef1db7186b0cb445d744f",
+     "33a9c06a4b7699a76438bc6559c54122"
+    ],
+    "confidence": 0.6499999761581421,
+    "created_at": "2026-10-10T09:47:26.040256Z"
+   }
+  ]
+ },
+ "cards": [
+  {
+   "triage_id": "67e5d3bd-b2b5-4bbc-9f40-17321d049074",
+   "title": "Over-Aggressive PII/NER Anonymization Filter Triggering Guardrail Failures and Infinite Repair Loops",
+   "status": "open",
+   "severity": "high",
+   "category": "config",
+   "triage_label": "tool_contract_misuse",
+   "workflow_name": "create-storybook",
+   "source": "auto_triggered",
+   "thread_id": "a83ae4e4-57c2-4b98-b587-0774ed8bec56",
+   "root_cause": "An over-aggressive Named Entity Recognition (NER) or PII anonymization filter is running on the generated character cards and story text. It is incorrectly identifying benign words (e.g., 'honest', 'forest', 'grey') and character names (e.g., 'Mimi', 'Zippy') as sensitive entities, replacing them with placeholders like `<PERSON>` and `<LOCATION>`. This triggers the 'Oath violation' guardrail (quality/safety commitments), which enters a `scene_repair` loop to fix the pages. Because the scrubber continues to inject placeholders or the character card name remains `<PERSON>`, the repair loop runs repeatedly, leading to extreme latency and eventually exhausting resources, causing the LLM client to close prematurely.",
+   "evidence_reasoning": "In trace {{trace:a44e5cc42ae06542dc1eb9471d958e9d}}, the character's name in the card is scrubbed to `<PERSON>`, causing the LLM to generate the entire storybook using `<PERSON>` as the character's name. In trace {{trace:271150144a95bc89c355b054f32f0db5}}, benign words in the story pages (like 'honest' or 'forest') are scrubbed to `<LOCATION>` or `<PERSON>`. These placeholders trigger the 'Oath violation' guardrail, which enters a `scene_repair` loop to fix the pages. Because the scrubber continues to inject placeholders, the repair loop runs repeatedly (up to dozens of times, as seen in the high span counts: 134 guardrails in {{trace:271150144a95bc89c355b054f32f0db5}} and 95 in {{trace:a44e5cc42ae06542dc1eb9471d958e9d}}). This causes extreme latency (150s-210s+) and eventually exhausts resources, causing the LLM client to close prematurely with the error: `Cannot send a request, as the client has been closed.`",
+   "recommended_action": {
+    "title": "Adjust PII/NER Scrubber Sensitivity and Add Exception List for Character Names and Benign Words",
+    "steps": [
+     {
+      "type": "step",
+      "title": "Locate the PII/NER anonymization filter configuration (e.g., Presidio, SpaCy, or custom regex/LLM-based scrubber) used in the `create-storybook` workflow.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Add an **allowlist** (exception list) to the scrubber to prevent it from anonymizing character names generated in the character card (e.g., 'Zippy', 'Mimi') and common benign words/adjectives (e.g., 'honest', 'truthful', 'forest', 'grey', 'brown').",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Adjust the confidence threshold of the NER model to reduce false positives on common nouns and adjectives.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Implement a maximum retry limit (e.g., max 3 attempts) on the `scene_repair` loop to prevent infinite loops and client closure in case of persistent guardrail failures.",
+      "content": "",
+      "code_location": ""
+     }
+    ],
+    "verification": [
+     "Run the `create-storybook` workflow with a drawing description that previously triggered scrubbing (e.g., 'A cute white rabbit with a pink bow holding an orange carrot').",
+     "Verify that the character card is generated with a natural name (not `<PERSON>`) and that the story pages do not contain `<PERSON>` or `<LOCATION>` placeholders.",
+     "Check that the workflow completes successfully in under 30 seconds without triggering the `scene_repair` loop or closing the LLM client."
+    ],
+    "risk_assessment": "Low risk. Adding an allowlist for character names and common adjectives will not leak actual PII, as these are fictional children's stories. However, care must be taken to ensure actual user-submitted PII (like real names or addresses in drawings/text) is still properly handled if required by privacy policies.",
+    "rollback_plan": "Revert the scrubber configuration changes in the repository to the previous version using `git revert`."
+   },
+   "recommended_action_md": "## Recommended action\n\n### Adjust PII/NER Scrubber Sensitivity and Add Exception List for Character Names and Benign Words\n\n**Steps**\n\n1. Locate the PII/NER anonymization filter configuration (e.g., Presidio, SpaCy, or custom regex/LLM-based scrubber) used in the `create-storybook` workflow.\n2. Add an **allowlist** (exception list) to the scrubber to prevent it from anonymizing character names generated in the character card (e.g., 'Zippy', 'Mimi') and common benign words/adjectives (e.g., 'honest', 'truthful', 'forest', 'grey', 'brown').\n3. Adjust the confidence threshold of the NER model to reduce false positives on common nouns and adjectives.\n4. Implement a maximum retry limit (e.g., max 3 attempts) on the `scene_repair` loop to prevent infinite loops and client closure in case of persistent guardrail failures.\n\n**Verification**\n\n- Run the `create-storybook` workflow with a drawing description that previously triggered scrubbing (e.g., 'A cute white rabbit with a pink bow holding an orange carrot').\n- Verify that the character card is generated with a natural name (not `<PERSON>`) and that the story pages do not contain `<PERSON>` or `<LOCATION>` placeholders.\n- Check that the workflow completes successfully in under 30 seconds without triggering the `scene_repair` loop or closing the LLM client.\n\n**Risk assessment**\n\nLow risk. Adding an allowlist for character names and common adjectives will not leak actual PII, as these are fictional children's stories. However, care must be taken to ensure actual user-submitted PII (like real names or addresses in drawings/text) is still properly handled if required by privacy policies.\n\n**Rollback plan**\n\nRevert the scrubber configuration changes in the repository to the previous version using `git revert`.",
+   "confidence": 0.7649999856948853,
+   "confidence_factors": {
+    "expected_impact": 0.95,
+    "historical_match": 0.5,
+    "evidence_strength": 0.9,
+    "user_signal_weight": 0,
+    "detection_alignment": 0.95,
+    "pattern_consistency": 0.9
+   },
+   "linked_trace_ids": [
+    "9ac60464c282af61f4861605956d98b8",
+    "1b3aec29d4fd0af7432dd64960b5d783",
+    "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+    "ac528975dda17c3fb8eed01278eaa04d",
+    "4c79169d1827065eadc273e214912789",
+    "0f14bcea11132340345dfdbc2ae48405",
+    "17e509161d8e573376607fc20d382994",
+    "271150144a95bc89c355b054f32f0db5",
+    "a44e5cc42ae06542dc1eb9471d958e9d",
+    "598d07098a3a928164ad492061984dc3"
+   ],
+   "cloud_agent_runs": [],
+   "accepted_by": null,
+   "accepted_at": "2026-10-10 09:52:14.443504+00:00",
+   "resolved_by": null,
+   "resolved_at": null,
+   "resolution_note": null,
+   "created_at": "2026-10-10 09:52:14.443504+00:00",
+   "updated_at": "2026-10-10 09:52:14.443504+00:00"
+  },
+  {
+   "triage_id": "ebcff17a-12c3-4196-bb21-a09bffb49070",
+   "title": "Overly Restrictive Deterministic Blocklist in `verify:story_safe_text` Guardrail Triggering False Positives on Benign Words (e.g., \"hurts\")",
+   "status": "open",
+   "severity": "critical",
+   "category": "config",
+   "triage_label": "tool_contract_misuse",
+   "workflow_name": "create-storybook",
+   "source": "auto_triggered",
+   "thread_id": "ae11aadf-1474-4f09-8285-8e4d3647e7ad",
+   "root_cause": "The deterministic safety guardrail `verify:story_safe_text` has an overly aggressive blocklist that flags benign words like `\"hurts\"` as `\"unsafe or unkind terms\"` regardless of context. In trace {{trace:26fbc879cddba411dc327286643276c3}}, the LLM generated a story page with the feedback: `\"Pretending keeps a secret that hurts trust.\"`. The guardrail evaluated this text and triggered a `critical` status because of the word `\"hurts\"`, leading to a workflow halt (`create-storybook` returning `null`). This false positive safety stop is causing a spike in the `Critical safety stop` detection group and leading to workflow failures across multiple traces.",
+   "evidence_reasoning": "In trace {{trace:26fbc879cddba411dc327286643276c3}}, the `verify:story_safe_text` guardrail span output shows:\n```json\n{\n  \"status\": \"critical\",\n  \"verdict_by\": \"deterministic\",\n  \"det_status\": \"critical\",\n  \"expected\": \"Every page was checked for anything scary, unkind or unsafe before you could see it.\",\n  \"actual\": \"unsafe or unkind terms: hurts\",\n  \"evidence\": \"Scene: 6\",\n  \"matched\": \"hurts\"\n}\n```\nThe input to this guardrail was a story page containing the sentence: `\"Pretending keeps a secret that hurts trust.\"`. This is a completely safe, educational context explaining the consequences of lying, but the deterministic filter blocked it solely based on the substring `\"hurts\"`. This matches the `Critical safety stop` detection signal spike (5x) and explains why the `create-storybook` workflow returned `null` in both {{trace:26fbc879cddba411dc327286643276c3}} and {{trace:a534baeb9d47166ae8b19fcee1f1c7d9}}. Similar traces like {{trace:2b4d5ad820abe3b32e33501f285a3af9}} (started Oct 10 09:26 UTC) and {{trace:f9c689ca79fc7fdfbaaff6c1ba3e1da8}} (started Oct 10 09:28 UTC) also show the same workflow failing with high guardrail span counts.",
+   "recommended_action": {
+    "title": "Refine `verify:story_safe_text` Guardrail Blocklist and Add Contextual Exceptions",
+    "steps": [
+     {
+      "type": "step",
+      "title": "Locate the configuration file or database record defining the deterministic blocklist for the `verify:story_safe_text` guardrail.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Remove the word `\"hurts\"` (and potentially other overly broad terms like `\"hurt\"`, `\"pain\"`) from the global blocklist.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "If safety requirements necessitate keeping `\"hurts\"` on the blocklist, implement contextual/regex exceptions (e.g., allowing `\"hurts trust\"`, `\"hurts feelings\"`) or transition the check to an LLM-based classifier rather than a naive substring match.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Alternatively, update the system prompt for the story generator to explicitly avoid using any words that might trigger the safety filter, though refining the guardrail is the more robust solution.",
+      "content": "",
+      "code_location": ""
+     }
+    ],
+    "verification": [
+     "Re-run the payload from {{trace:26fbc879cddba411dc327286643276c3}} through the `verify:story_safe_text` guardrail and verify that it now passes.",
+     "Run a test suite of 50+ historical storybook outputs to ensure no regression or false positives on other benign educational terms."
+    ],
+    "risk_assessment": "Removing `\"hurts\"` from the blocklist might allow genuinely unkind or unsafe content (e.g., physical violence descriptions like \"he hurts the dog\") to pass if there are no other safety layers. To mitigate this, ensure that the LLM-based safety screen (`safety_screen.vision` or other LLM guardrails) remains active as a secondary layer to catch actual physical harm or violence.",
+    "rollback_plan": "Revert the blocklist configuration change in the repository or database to restore the original list of blocked terms."
+   },
+   "recommended_action_md": "## Recommended action\n\n### Refine `verify:story_safe_text` Guardrail Blocklist and Add Contextual Exceptions\n\n**Steps**\n\n1. Locate the configuration file or database record defining the deterministic blocklist for the `verify:story_safe_text` guardrail.\n2. Remove the word `\"hurts\"` (and potentially other overly broad terms like `\"hurt\"`, `\"pain\"`) from the global blocklist.\n3. If safety requirements necessitate keeping `\"hurts\"` on the blocklist, implement contextual/regex exceptions (e.g., allowing `\"hurts trust\"`, `\"hurts feelings\"`) or transition the check to an LLM-based classifier rather than a naive substring match.\n4. Alternatively, update the system prompt for the story generator to explicitly avoid using any words that might trigger the safety filter, though refining the guardrail is the more robust solution.\n\n**Verification**\n\n- Re-run the payload from {{trace:26fbc879cddba411dc327286643276c3}} through the `verify:story_safe_text` guardrail and verify that it now passes.\n- Run a test suite of 50+ historical storybook outputs to ensure no regression or false positives on other benign educational terms.\n\n**Risk assessment**\n\nRemoving `\"hurts\"` from the blocklist might allow genuinely unkind or unsafe content (e.g., physical violence descriptions like \"he hurts the dog\") to pass if there are no other safety layers. To mitigate this, ensure that the LLM-based safety screen (`safety_screen.vision` or other LLM guardrails) remains active as a secondary layer to catch actual physical harm or violence.\n\n**Rollback plan**\n\nRevert the blocklist configuration change in the repository or database to restore the original list of blocked terms.",
+   "confidence": 0.7020000219345093,
+   "confidence_factors": {
+    "expected_impact": 0.95,
+    "historical_match": 0,
+    "evidence_strength": 0.95,
+    "user_signal_weight": 0,
+    "detection_alignment": 0.95,
+    "pattern_consistency": 0.9
+   },
+   "linked_trace_ids": [
+    "76c35d5c75344ae43f5f8883810842e9",
+    "26fbc879cddba411dc327286643276c3",
+    "668b46f85e19468569cadb0eb81c534c",
+    "257acf701defe64fcd1edc3707bdd9d5",
+    "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+    "06a2527e2d27f905762a9642451ad972",
+    "856ced2d8c24f1c42cdd08b2559ea4cd",
+    "4c79169d1827065eadc273e214912789",
+    "a534baeb9d47166ae8b19fcee1f1c7d9",
+    "2b4d5ad820abe3b32e33501f285a3af9"
+   ],
+   "cloud_agent_runs": [],
+   "accepted_by": null,
+   "accepted_at": "2026-10-10 09:49:12.153814+00:00",
+   "resolved_by": null,
+   "resolved_at": null,
+   "resolution_note": null,
+   "created_at": "2026-10-10 09:49:12.153814+00:00",
+   "updated_at": "2026-10-10 09:49:12.153814+00:00"
+  },
+  {
+   "triage_id": "bdd1f6f1-f359-4d80-b6dd-f671af96b731",
+   "title": "Investigate Gemini 3.7 Flash 504 Timeout in create-storybook Workflow",
+   "status": "open",
+   "severity": "high",
+   "category": "config",
+   "triage_label": "latency_anomaly",
+   "workflow_name": "create-storybook",
+   "source": "auto_triggered",
+   "thread_id": "1f478565-97aa-4d49-b5cd-a46f8a7fd061",
+   "root_cause": "Root cause is not established. The observed symptom is a high rate of `504 Deadline expired` errors from the `gemini-3.7-flash` model during the `create-storybook` workflow, resulting in overall workflow durations exceeding 220 seconds.\n\nWhile the traces show that the LLM calls consistently time out after approximately 87 seconds (e.g., in {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}), the underlying cause of this latency—whether it is due to an extremely large input payload, an inefficient loop in the orchestration logic generating excessive pages, or an upstream service degradation on Google's side—cannot be definitively determined without inspecting the LLM client configuration and the input payloads.",
+   "evidence_reasoning": "The latency spike is clearly visible in the anchor traces {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}, where the `gemini-3.7-flash` LLM spans fail with a `504 Deadline expired` error after `87575ms` and `87663ms` respectively. This directly causes the parent `create-storybook` workflow to run for over 220 seconds before failing or completing with null outputs. Similar patterns of extremely long execution times and errors are observed in other traces from Oct 10, such as {{trace:264208295ada9b28a96d2e29b32fb41c}} (started Oct 10 07:58 UTC), {{trace:73ce7d9dfb289752745283abfc445009}} (started Oct 10 08:43 UTC), and {{trace:33a9c06a4b7699a76438bc6559c54122}} (started Oct 10 08:48 UTC).",
+   "recommended_action": {
+    "title": "Inspect LLM Client Configuration and Payload Sizes for Gemini 3.7 Flash",
+    "steps": [
+     {
+      "type": "step",
+      "title": "Inspect the LLM client configuration for `gemini-3.7-flash` in the `create-storybook` workflow to check the configured timeout/deadline settings.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Analyze the input payload size (tokens and image data) being sent to the `gemini-3.7-flash` model in the failing traces, such as {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "Check if the `create-storybook` workflow is executing an excessive number of iterations or generating too many pages, as indicated by the high number of `node.verify` spans (over 120 spans).",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "If the payload is reasonable, consider increasing the client-side timeout or implementing a retry mechanism with exponential backoff for 504 status codes.",
+      "content": "",
+      "code_location": ""
+     },
+     {
+      "type": "step",
+      "title": "If the payload is excessively large, optimize the orchestration logic to chunk the requests or reduce the context size.",
+      "content": "",
+      "code_location": ""
+     }
+    ],
+    "verification": [
+     "Verify that the client-side timeout is set appropriately (e.g., 120 seconds) and that retries are configured for transient 5xx errors.",
+     "Run a test execution of the `create-storybook` workflow with a standard payload and monitor the latency of the `gemini-3.7-flash` span.",
+     "Confirm that the number of `node.verify` spans per workflow run is within expected limits."
+    ],
+    "risk_assessment": "Increasing timeouts may lead to longer wait times for users if the upstream service is completely unresponsive. Optimizing payloads or reducing loop iterations carries a low risk but requires careful testing to ensure story quality is maintained.",
+    "rollback_plan": "Revert any changes to the client timeout configurations or orchestration loop logic to their previous states."
+   },
+   "recommended_action_md": "## Recommended action\n\n### Inspect LLM Client Configuration and Payload Sizes for Gemini 3.7 Flash\n\n**Steps**\n\n1. Inspect the LLM client configuration for `gemini-3.7-flash` in the `create-storybook` workflow to check the configured timeout/deadline settings.\n2. Analyze the input payload size (tokens and image data) being sent to the `gemini-3.7-flash` model in the failing traces, such as {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}.\n3. Check if the `create-storybook` workflow is executing an excessive number of iterations or generating too many pages, as indicated by the high number of `node.verify` spans (over 120 spans).\n4. If the payload is reasonable, consider increasing the client-side timeout or implementing a retry mechanism with exponential backoff for 504 status codes.\n5. If the payload is excessively large, optimize the orchestration logic to chunk the requests or reduce the context size.\n\n**Verification**\n\n- Verify that the client-side timeout is set appropriately (e.g., 120 seconds) and that retries are configured for transient 5xx errors.\n- Run a test execution of the `create-storybook` workflow with a standard payload and monitor the latency of the `gemini-3.7-flash` span.\n- Confirm that the number of `node.verify` spans per workflow run is within expected limits.\n\n**Risk assessment**\n\nIncreasing timeouts may lead to longer wait times for users if the upstream service is completely unresponsive. Optimizing payloads or reducing loop iterations carries a low risk but requires careful testing to ensure story quality is maintained.\n\n**Rollback plan**\n\nRevert any changes to the client timeout configurations or orchestration loop logic to their previous states.",
+   "confidence": 0.6499999761581421,
+   "confidence_factors": {
+    "expected_impact": 0.85,
+    "historical_match": 0,
+    "evidence_strength": 0.8,
+    "user_signal_weight": 0,
+    "detection_alignment": 0.95,
+    "pattern_consistency": 0.9
+   },
+   "linked_trace_ids": [
+    "87b07c47da3f8900684ad1d97a7a95e6",
+    "050dc8b85289002f084c67e8cfc23a42",
+    "264208295ada9b28a96d2e29b32fb41c",
+    "08177d773d0e88d8b26febc22898ba03",
+    "6a0c03f8ce1c32a55f38620da4f1fbdc",
+    "73ce7d9dfb289752745283abfc445009",
+    "b8883a6238abdecadb2ef3a56a5b0dcd",
+    "6d4a0a4b07640cf66dbc45913c387078",
+    "e0d0e072d74ef1db7186b0cb445d744f",
+    "33a9c06a4b7699a76438bc6559c54122"
+   ],
+   "cloud_agent_runs": [],
+   "accepted_by": null,
+   "accepted_at": "2026-10-10 09:47:26.040256+00:00",
+   "resolved_by": null,
+   "resolved_at": null,
+   "resolution_note": null,
+   "created_at": "2026-10-10 09:47:26.040256+00:00",
+   "updated_at": "2026-10-10 09:47:26.040256+00:00"
+  }
+ ]
+}

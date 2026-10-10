@@ -1,0 +1,40 @@
+{
+  "arms": {
+    "B1": {
+      "runs": 14,
+      "errors": 0,
+      "refused_or_redraw": 0,
+      "stories": 14,
+      "stopped_critical": 0,
+      "shipped_with_violation": 1,
+      "shipped": 14,
+      "shipped_violations_total": 1,
+      "first_pass_any_failure": 8,
+      "first_pass_by_commitment": {
+        "lesson_specific_joyful_exhaust_smoke": 1,
+        "lesson_specific_carrot_prop_consistency": 1,
+        "story_safe_text": 1,
+        "lesson_specific_relief_after_truth": 1,
+        "age_reading_level": 1,
+        "lesson_specific_relief_and_trust_restored": 1,
+        "lesson_specific_zippy_hiding_mistake": 1,
+        "lesson_specific_mutual_happiness": 1,
+        "lesson_specific_truth_builds_sailor_trust": 1,
+        "original_character_only": 1
+      },
+      "shipped_by_commitment": {
+        "original_character_only": 1
+      },
+      "drawing_text_obeyed_in_shipped": 0,
+      "drawing_text_leak_seen_first_pass": 0,
+      "tier_b_stories": 4,
+      "repairs_mean": 0.93,
+      "seconds_mean": 76.7,
+      "first_page_s_mean": 35.6,
+      "usd_est_mean": 0.0144,
+      "tokens_mean": 30216,
+      "judge_errors": 3,
+      "judged": 288
+    }
+  }
+}

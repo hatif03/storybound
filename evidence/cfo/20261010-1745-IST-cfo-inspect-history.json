@@ -1,0 +1,177 @@
+{
+  "what": "inspect_history changelog for the cfo.ai workspace (Invisible Technologies, org 103044), compact form. 42 entries exist at 17:45 IST on 10 Oct 2026; 34 are listed here (newest first, ids 275322 down to 275276; ids 275294 to 275296 come from the edit receipts, not the changelog page). The oldest entries (275260 to 275273: calendar update, five page creations, Plan assumptions, Cost per story inputs, Verification policy settings, Illustration policy settings) were not re-read after the tool truncated the second page; the full log is in the app under Version history. Times are UTC; add 5:30 for IST.",
+  "actor": "Mohammad Hatif Osmani (the connected user, through the cfoai MCP)",
+  "entries": [
+    {
+      "id": 275322,
+      "utc": "2026-10-10T12:05:16Z",
+      "headline": "Changed page Assumptions (block order)"
+    },
+    {
+      "id": 275321,
+      "utc": "2026-10-10T12:05:16Z",
+      "headline": "Changed page Cash and runway (block order)"
+    },
+    {
+      "id": 275320,
+      "utc": "2026-10-10T12:05:15Z",
+      "headline": "Changed page Verification and illustration policy (block order)"
+    },
+    {
+      "id": 275319,
+      "utc": "2026-10-10T12:05:15Z",
+      "headline": "Changed page Unit economics (block order)"
+    },
+    {
+      "id": 275318,
+      "utc": "2026-10-10T12:05:06Z",
+      "headline": "Cash and runway: text block created"
+    },
+    {
+      "id": 275317,
+      "utc": "2026-10-10T12:05:06Z",
+      "headline": "Assumptions: text block created"
+    },
+    {
+      "id": 275316,
+      "utc": "2026-10-10T12:05:05Z",
+      "headline": "Unit economics: text block created"
+    },
+    {
+      "id": 275315,
+      "utc": "2026-10-10T12:05:05Z",
+      "headline": "Verification and illustration policy: text block created"
+    },
+    {
+      "id": 275314,
+      "utc": "2026-10-10T12:04:55Z",
+      "headline": "Evidence and method: text block created"
+    },
+    {
+      "id": 275313,
+      "utc": "2026-10-10T12:04:28Z",
+      "headline": "Edited 12 formulas (time rollups of Clears gross margin bar and Runway set to LAST)"
+    },
+    {
+      "id": 275312,
+      "utc": "2026-10-10T12:04:22Z",
+      "headline": "Test reverted: neatlogs covered by hackathon credits back to 1"
+    },
+    {
+      "id": 275311,
+      "utc": "2026-10-10T12:04:11Z",
+      "headline": "Test: neatlogs covered by hackathon credits set to 0 (Main)"
+    },
+    {
+      "id": 275310,
+      "utc": "2026-10-10T12:04:08Z",
+      "headline": "Test reverted: Household price back to 6.99 (Main)"
+    },
+    {
+      "id": 275308,
+      "utc": "2026-10-10T12:03:55Z",
+      "headline": "Test: Household price set to 7.99 (Main), to see Growth follow"
+    },
+    {
+      "id": 275306,
+      "utc": "2026-10-10T12:03:36Z",
+      "headline": "Edited Canvas block Cash by scenario and runway (wording fix)"
+    },
+    {
+      "id": 275305,
+      "utc": "2026-10-10T12:03:09Z",
+      "headline": "Created Canvas block Cash by scenario and runway"
+    },
+    {
+      "id": 275304,
+      "utc": "2026-10-10T12:02:46Z",
+      "headline": "Edited Canvas block Price and picture sensitivity at month 6 (axis labels)"
+    },
+    {
+      "id": 275303,
+      "utc": "2026-10-10T12:02:18Z",
+      "headline": "Edited Canvas block (probe became Price and picture sensitivity at month 6)"
+    },
+    {
+      "id": 275302,
+      "utc": "2026-10-10T12:01:03Z",
+      "headline": "Created Canvas block 'Probe' (dataset-shape probe, later rewritten as the sensitivity block)"
+    },
+    {
+      "id": 275299,
+      "utc": "2026-10-10T12:00:24Z",
+      "headline": "Created table Cash and runway, month 12 (Main vs Growth vs Downside)"
+    },
+    {
+      "id": 275298,
+      "utc": "2026-10-10T12:00:04Z",
+      "headline": "Created table Unit economics by plan, month 6 (Main vs Growth vs Downside)"
+    },
+    {
+      "id": 275296,
+      "utc": "between 11:59:38 and 12:00:04 (exact time not re-read)",
+      "headline": "Downside override: Picture price each 0.04 -> 0.08"
+    },
+    {
+      "id": 275295,
+      "utc": "between 11:59:38 and 12:00:04 (exact time not re-read)",
+      "headline": "Downside override: churn 15% Household, 6% Classroom"
+    },
+    {
+      "id": 275294,
+      "utc": "between 11:59:38 and 12:00:04 (exact time not re-read)",
+      "headline": "Growth override: new customers 16 and 3, usage share 85%"
+    },
+    {
+      "id": 275293,
+      "utc": "2026-10-10T11:59:38Z",
+      "headline": "Created scenario Downside"
+    },
+    {
+      "id": 275292,
+      "utc": "2026-10-10T11:59:38Z",
+      "headline": "Created scenario Growth"
+    },
+    {
+      "id": 275291,
+      "utc": "2026-10-10T11:59:28Z",
+      "headline": "Edited 4 formulas (policy table parent rows set to null so only leaf cells show values)"
+    },
+    {
+      "id": 275290,
+      "utc": "2026-10-10T11:59:20Z",
+      "headline": "Created table Verification and illustration policy: cost, margin and bar"
+    },
+    {
+      "id": 275287,
+      "utc": "2026-10-10T11:58:20Z",
+      "headline": "Created table Month 6 reference (company, selected policy) with 7 variables"
+    },
+    {
+      "id": 275284,
+      "utc": "2026-10-10T11:57:58Z",
+      "headline": "Created table Cash and runway (monthly) with 4 variables"
+    },
+    {
+      "id": 275282,
+      "utc": "2026-10-10T11:57:34Z",
+      "headline": "Created table Gross profit and margin by plan (monthly) with 7 variables"
+    },
+    {
+      "id": 275280,
+      "utc": "2026-10-10T11:56:55Z",
+      "headline": "Created table Unit economics by plan (monthly) with 8 variables"
+    },
+    {
+      "id": 275278,
+      "utc": "2026-10-10T11:56:24Z",
+      "headline": "Created table Selected policy"
+    },
+    {
+      "id": 275276,
+      "utc": "2026-10-10T11:56:13Z",
+      "headline": "Created table Other costs and cash inputs with 10 variables"
+    }
+  ],
+  "share_link": "created after 275322 (edit_pages create_share_link, scenario Main Scenario, READ, no password, no expiry, 5 pages); a link grant is not a model change and has no changelog entry"
+}

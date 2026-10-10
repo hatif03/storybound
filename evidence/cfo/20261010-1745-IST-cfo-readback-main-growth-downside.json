@@ -1,0 +1,65 @@
+{
+  "what": "Summary numbers read back from the cfo.ai model for Main, Growth and Downside (inspect_table_blocks, comparison reads, scenario named explicitly). Rounded. Every input is an assumption or an estimate; there are no accounting actuals.",
+  "read_at_ist": "2026-10-10 17:45",
+  "workspace": "Invisible Technologies (org 103044)",
+  "calendar": {"granularity": "MONTH", "last_close": "2026-09-30", "opening_values_month": "2026-09", "table_window": "2026-10 to 2027-09", "month_6": "2027-03", "month_12": "2027-09"},
+  "scenarios": {
+    "Main": {"policy": "Verify all, Half (4 pictures)", "overrides": "none (base)"},
+    "Growth": {"overrides": ["New customers per month: Household 8->16, Classroom 1->3", "Stories used, share of included: 60%->85% (both plans)"]},
+    "Downside": {"overrides": ["Monthly churn: Household 8%->15%, Classroom 3%->6%", "Picture price each: $0.04->$0.08 (x2)"]}
+  },
+  "cost_per_story_selected_policy_usd_estimate": {"Main": 0.1922, "Growth": 0.1922, "Downside": 0.3522},
+  "monthly_company_totals": {
+    "months": ["2026-10 (month 1)", "2027-03 (month 6)", "2027-09 (month 12)"],
+    "ending_customers": {"Main": [55.5, 77.5, 95.1], "Growth": [65.5, 128.0, 178.7], "Downside": [52.4, 60.4, 64.9]},
+    "stories_delivered": {"Main": [965, 1292, 1590], "Growth": [1618, 3178, 4632], "Downside": [926, 1072, 1180]},
+    "revenue_usd": {"Main": [623.45, 847.72, 1041.97], "Growth": [737.37, 1445.80, 2075.87], "Downside": [595.18, 687.61, 750.87]},
+    "inference_cost_usd_estimate": {"Main": [185.39, 248.30, 305.56], "Growth": [310.99, 610.85, 890.28], "Downside": [326.28, 377.50, 415.59]},
+    "infra_and_inference_usd": {"Main": [210.39, 273.30, 330.56], "Growth": [335.99, 635.85, 915.28], "Downside": [351.28, 402.50, 440.59]},
+    "gross_profit_usd": {"Main": [413.06, 574.41, 711.41], "Growth": [401.38, 809.95, 1160.59], "Downside": [243.90, 285.10, 310.28]},
+    "gross_margin": {"Main": [0.6625, 0.6776, 0.6828], "Growth": [0.5443, 0.5602, 0.5591], "Downside": [0.4098, 0.4146, 0.4132]},
+    "clears_60pct_bar": {"Main": [1, 1, 1], "Growth": [0, 0, 0], "Downside": [0, 0, 0]}
+  },
+  "gross_margin_by_plan_month_6": {
+    "Main": {"Household": 0.7725, "Classroom": 0.5729},
+    "Growth": {"Household": 0.7022, "Classroom": 0.4194},
+    "Downside": {"Household": 0.6009, "Classroom": 0.2350}
+  },
+  "cash": {
+    "starting_cash_usd": 2000,
+    "ending_cash_month_1_usd": {"Main": 2363.06, "Growth": 2351.38, "Downside": 2193.90},
+    "ending_cash_month_12_usd": {"Main": 8333.83, "Growth": 11232.98, "Downside": 4804.92},
+    "net_cash_flow_month_12_usd": {"Main": 661.41, "Growth": 1110.59, "Downside": 260.28},
+    "runway_months": {"Main": "0 = not burning cash", "Growth": "0 = not burning cash", "Downside": "0 = not burning cash"},
+    "note": "Cash-flow positive in every month of every scenario because fixed costs are $75 a month (hosting $25, other $50) and no founder pay, marketing or compliance cost is modelled."
+  },
+  "policy_matrix_month_6": {
+    "bar": 0.6,
+    "per_story_budget_that_clears_bar_usd": {"Main": 0.2431, "Growth": 0.1741, "Downside": 0.2333},
+    "cost_per_story_usd_estimate": {
+      "Main_and_Growth": {"Verify all": {"Full (8 pictures)": 0.3522, "Half (4 pictures)": 0.1922, "Text only (0)": 0.0322}, "Sampled": {"Full (8 pictures)": 0.34983, "Half (4 pictures)": 0.18983, "Text only (0)": 0.02983}},
+      "Downside": {"Verify all": {"Full (8 pictures)": 0.6722, "Half (4 pictures)": 0.3522, "Text only (0)": 0.0322}, "Sampled": {"Full (8 pictures)": 0.66983, "Half (4 pictures)": 0.34983, "Text only (0)": 0.02983}}
+    },
+    "gross_margin_and_clears_bar": {
+      "Main": {
+        "Verify all": {"Full (8 pictures)": [0.4338, "no"], "Half (4 pictures)": [0.6776, "yes"], "Text only (0)": [0.9214, "yes"]},
+        "Sampled": {"Full (8 pictures)": [0.4374, "no"], "Half (4 pictures)": [0.6812, "yes"], "Text only (0)": [0.9250, "yes"]}
+      },
+      "Growth": {
+        "Verify all": {"Full (8 pictures)": [0.2085, "no"], "Half (4 pictures)": [0.5602, "no"], "Text only (0)": [0.9119, "yes"]},
+        "Sampled": {"Full (8 pictures)": [0.2137, "no"], "Half (4 pictures)": [0.5654, "no"], "Text only (0)": [0.9171, "yes"]}
+      },
+      "Downside": {
+        "Verify all": {"Full (8 pictures)": [-0.0842, "no"], "Half (4 pictures)": [0.4146, "no"], "Text only (0)": [0.9134, "yes"]},
+        "Sampled": {"Full (8 pictures)": [-0.0805, "no"], "Half (4 pictures)": [0.4183, "no"], "Text only (0)": [0.9171, "yes"]}
+      }
+    }
+  },
+  "checks_run": {
+    "reconciliation_selected_policy_margin_monthly_table_vs_policy_arithmetic": "difference 0 (Main, month 6: 67.76% both ways); recalculate:true read reported 0 differing cells",
+    "hand_check_month_6_main": "Household 40*0.92^6 + 8*(1-0.92^6)/0.08 = 63.6 customers; model 63.62. Revenue 63.62*6.99 + 13.90*29 = 847.7; model 847.72.",
+    "main_edit_flows_to_growth": "Main Household price 6.99->7.99: Main month-6 revenue 847.72->911.34, Growth 1445.80->1548.78 (+102.98 = Growth's 102.98 Household customers x $1). Reverted to 6.99 (changelog 275308, 275310).",
+    "neatlogs_not_covered_test": "Switched 'neatlogs covered by hackathon credits' to 0 on Main: neatlogs bill $99 a month in all months (spans 144k to 238k, between the 100k Free cap and 250k Starter limit); Main gross margin month 1/6/12 = 50.4%/56.1%/58.8% (below the bar); per-story budget fell from $0.2431 to $0.1665. Reverted to 1 (changelog 275311, 275312)."
+  },
+  "scenario_override_check": {"Growth": "4 formula overrides stored (New customers x2 plans, usage share x2 plans)", "Downside": "3 formula overrides stored (churn x2 plans, Picture price each)", "source": "inspect_history scenario_summary"}
+}

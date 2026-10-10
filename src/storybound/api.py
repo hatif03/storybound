@@ -218,7 +218,11 @@ def story_state(sid: str):
         elif t == "oath.ready":
             state["oath"] = d
         elif t == "scene.accepted":
-            state["pages"].append(d["page"])
+            pg = d["page"]
+            if d.get("revised"):  # the story gate rewrote an accepted page: replace it
+                state["pages"] = [pg if x["index"] == pg["index"] else x for x in state["pages"]]
+            else:
+                state["pages"].append(pg)
         elif t == "safety.result":
             state["safety"] = d
         elif t in ("run.finished", "run.refused", "error"):

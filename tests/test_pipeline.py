@@ -225,7 +225,9 @@ def test_failed_review_rolls_back_pages_written_ahead(monkeypatch, drawing):
     pipeline.execute(run)
     evs = bus.all()
     accepted = [e["data"]["index"] for e in evs if e["type"] == "scene.accepted"]
-    assert accepted == list(range(1, 9)), f"pages are shown in order, each exactly once: {run.error} {[e['type'] for e in evs][-6:]}"
+    assert accepted == list(range(1, 9)), (
+        f"pages are shown in order, each exactly once: {run.error} {[e['type'] for e in evs][-6:]}"
+    )
     assert run.outcome == "shipped" and run.error == ""
     assert seen[3] == 2, "page 3 was reviewed, failed, repaired and reviewed again"
     assert writes.count(4) >= 2, "page 4 was written ahead, discarded after the rollback, and written again"
@@ -235,3 +237,16 @@ def test_failed_review_rolls_back_pages_written_ahead(monkeypatch, drawing):
     first3 = next(i for i, e in enumerate(evs) if e["type"] == "scene.accepted" and e["data"]["index"] == 3)
     repair = next(i for i, e in enumerate(evs) if e["type"] == "scene.repair")
     assert repair < first3
+
+
+def test_receipt_lists_each_promise_and_gate_rewrites_are_resent(monkeypatch, drawing):
+    wire(monkeypatch)
+    # all pages put the correct answer in slot 1: the story gate must reorder some, and say so
+    monkeypatch.setattr(writer, "write_scene", lambda **kw: (good_page(kw["index"], 1), {}))
+    run, evs = go(drawing)
+    revised = [e for e in evs if e["type"] == "scene.accepted" and e["data"].get("revised")]
+    assert revised, "pages reordered by the story gate are sent again"
+    promises = run.receipt["promises"]
+    assert len(promises) == len(catalog.core_oath().commitments)
+    assert {p["status"] for p in promises} <= {"kept", "broken", "not_checked"}
+    assert next(p for p in promises if p["id"] == "correct_choice_position_balanced")["status"] == "kept"

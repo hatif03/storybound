@@ -19,7 +19,7 @@ Errors use `{ "error": { "code": "...", "message": "..." } }` with a calm, child
 
 ## Events
 
-Every event is `{ "type": "...", "t": <seconds since start>, "data": { ... } }`. Types, in the order they normally occur:
+Every event is `{ "id": <n>, "type": "...", "t": <seconds since start>, "data": { ... } }`. `scene.repair` with `index: 0` means the hero card or the whole story, not a page. Pictures and narration arrive after all pages are accepted. Types, in the order they normally occur:
 
 | Type | Data |
 | --- | --- |
@@ -31,7 +31,7 @@ Every event is `{ "type": "...", "t": <seconds since start>, "data": { ... } }`.
 | `scene.started` | `index` (1-8), `attempt` (0 first pass, 1-2 repair) |
 | `verdict` | One verdict object (below) |
 | `scene.repair` | `index`, `attempt`, `failed` (commitment ids), `because` (plain text) |
-| `scene.accepted` | `index`, `attempts_used`, `page` (the page object below) |
+| `scene.accepted` | `index`, `attempts_used`, `page` (the page object below), `revised` (true when the story gate rewrote or reordered an already accepted page: replace it) |
 | `image.ready` | `index`, `url`, `verdict` status |
 | `audio.ready` | `index`, `url`, `seconds` |
 | `degraded` | `what` (`image` / `audio` / `judge` / `check`), `index` (optional), `why`, `fallback` |
@@ -73,7 +73,8 @@ Choice order is already randomised server-side; `is_correct` is included because
   "coverage": { "pct": 86, "uncovered": ["..."] },
   "degradations": [ { "what": "audio", "index": 3, "why": "...", "fallback": "text only" } ],
   "ignored_drawing_text": ["Kill fish"],
-  "budget": { "usd": 0.00, "seconds": 0.0, "tokens_in": 0, "tokens_out": 0 },
+  "promises": [ { "id": "story_safe_text", "title": "...", "plain": "...", "scope": "scene", "core": true, "status": "kept" } ],
+  "budget": { "usd_estimate": 0.00, "estimate": true, "seconds": 0.0, "first_page_s": 0.0, "tokens_in": 0, "tokens_out": 0, "images": 0 },
   "trace_id": "...", "generated_at": "..." }
 ```
 The receipt never contains the child's drawing, a name other than the hero's, or a key.

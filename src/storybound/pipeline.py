@@ -393,6 +393,7 @@ def build_graph(run: Run):
     @tracing.span(kind="CHAIN", name="node.story_gate")
     def n_story_gate(s: S) -> S:
         eng, pages = run.engine, list(s["pages"])
+        before = [p.model_dump() for p in s["pages"]]  # rebalancing edits pages in place
         card = s["card"]
         rounds = 1 if cfg.arm == "B0" else 2
         for rnd in range(rounds + 1):
@@ -429,6 +430,12 @@ def build_graph(run: Run):
                 for sv in eng.verify_scene(new, rnd + 1):
                     if eng.gate(sv) == "critical":
                         pages[target - 1] = p  # keep the page that was already accepted
+        for old, new in zip(before, pages, strict=False):
+            if old != new.model_dump():  # the story gate rewrote or reordered this page
+                run.emit(
+                    "scene.accepted",
+                    {"index": new.index, "attempts_used": 0, "page": _public_page(new), "revised": True},
+                )
         return {"pages": pages}
 
     # ---- media --------------------------------------------------------------------------------------------------------
@@ -616,6 +623,13 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
             "shipped_violations": len(run.shipped), "judge_enabled": run.cfg.judge_enabled,
         },
         "broken": broken,
+        "promises": [
+            {
+                "id": c.id, "title": c.title, "plain": c.plain, "scope": c.scope, "core": c.core,
+                "status": _promise_status(by_commitment.get(c.id, [])),
+            }
+            for c in oath.commitments
+        ],
         "pages": pages,
         "coverage": cov,
         "degradations": run.degradations,
@@ -631,6 +645,14 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
         "trace_id": run.trace_id,
         "generated_at": ledger.now_ist().isoformat(timespec="seconds"),
     }  # fmt: skip
+
+
+def _promise_status(vs: list[Verdict]) -> str:
+    """kept | broken | not_checked, from the latest verdict of each place the promise applies."""
+    live = [v for v in vs if v.status != "skipped"]
+    if not live:
+        return "not_checked"
+    return "kept" if all(v.ok for v in live) else "broken"
 
 
 def _worth_listing(t: str) -> bool:

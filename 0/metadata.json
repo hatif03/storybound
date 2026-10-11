@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4N0GHBFB70MGFMZD2MP5D7B",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T08:15:50.9813855Z",
+  "branch": "feature/credits-routing-and-stall-hedge",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "a8ca27ed8c7a",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1790,
+    "cache_creation_tokens": 2619789,
+    "cache_read_tokens": 406333073,
+    "output_tokens": 784447,
+    "api_call_count": 874
+  },
+  "session_metrics": {
+    "turn_count": 44
+  }
+}

@@ -1,0 +1,7 @@
+{
+ "cost-alert:cost": "{\"code\":\"OAUTH_LOGIN_EXPIRED\"}",
+ "cost-alert:total_cost": "{\"code\":\"OAUTH_LOGIN_EXPIRED\"}",
+ "cost-alert:trace_cost": "{\"code\":\"OAUTH_LOGIN_EXPIRED\"}",
+ "cost-alert:cost_usd": "{\"code\":\"OAUTH_LOGIN_EXPIRED\"}",
+ "alerts-list": "{\"code\":\"OAUTH_LOGIN_EXPIRED\"}"
+}

@@ -1,0 +1,5471 @@
+{
+  "receipt": {
+    "story_id": "847644253131",
+    "oath_hash": "8858c061cfa067598387acf918f2b33f592b2e59cbe20f7f04e5ce51f624e5d4",
+    "arm": "B1",
+    "plain": "21 promises checked. 4 pages rewritten. All kept.",
+    "counts": {
+      "commitments": 28,
+      "checked": 21,
+      "checks": 126,
+      "violations_found": 4,
+      "repairs": 4,
+      "kept": 21,
+      "shipped_violations": 0,
+      "judge_enabled": true
+    },
+    "broken": [],
+    "promises": [
+      {
+        "id": "input_safe_visual",
+        "title": "The drawing is safe to turn into a story",
+        "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+        "scope": "run",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "no_drawing_text_obedience",
+        "title": "Words written on the drawing are never obeyed",
+        "plain": "Words written on the drawing are ignored and never repeated in the story.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "story_safe_text",
+        "title": "Every page is safe and kind",
+        "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "schema_valid",
+        "title": "Eight complete pages",
+        "plain": "The story has exactly eight complete pages.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "one_correct_choice",
+        "title": "Exactly one right answer",
+        "plain": "Every question has exactly one right answer.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "correct_choice_position_balanced",
+        "title": "The right answer moves around",
+        "plain": "The right answer is not always the first button.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "character_named_in_scene",
+        "title": "The hero is named on every page",
+        "plain": "The hero's name is on every page.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "visual_trait_referenced",
+        "title": "The hero looks like the drawing",
+        "plain": "Each page mentions something the hero really looks like in the drawing.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "age_reading_level",
+        "title": "Simple words for the child's age",
+        "plain": "Sentences are short and the words are easy for this age.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_concept_in_scene",
+        "title": "The lesson is on every page",
+        "plain": "Every page is about the lesson, not just some pages.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "correct_choice_teaches_lesson",
+        "title": "The right answer teaches the lesson",
+        "plain": "The right answer is the one that shows the lesson.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_alignment",
+        "title": "The whole story teaches the lesson",
+        "plain": "The whole story teaches the chosen lesson.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "no_repeated_scenario",
+        "title": "No page repeats another",
+        "plain": "No two pages tell the same moment.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "card_traits_checkable",
+        "title": "The hero has checkable features",
+        "plain": "The hero was described by at least three things you can see.",
+        "scope": "run",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "original_character_only",
+        "title": "The hero is original",
+        "plain": "The hero is not a famous cartoon or film character.",
+        "scope": "run",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "trait_in_image_prompt",
+        "title": "Pictures are asked to show the hero",
+        "plain": "Each picture was asked to show the hero as drawn.",
+        "scope": "image",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "illustration_present",
+        "title": "Every page has a picture",
+        "plain": "Every page has a picture, or the story says plainly that one is missing.",
+        "scope": "image",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "image_matches_card",
+        "title": "The picture matches the hero",
+        "plain": "Pictures look like the same hero.",
+        "scope": "image",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "image_no_text",
+        "title": "Pictures contain no words",
+        "plain": "Pictures have no stray or garbled words painted into them.",
+        "scope": "image",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "narration_present",
+        "title": "Every page can be read aloud",
+        "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "scope": "audio",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "lesson_specific_carrot_sharing_moment",
+        "title": "Carrot Shared Joyfully",
+        "plain": "Zoey shares her prized carrot with another character, resulting in both of them feeling happier.",
+        "scope": "story",
+        "core": false,
+        "status": "not_checked"
+      },
+      {
+        "id": "lesson_specific_visual_accessories_consistency",
+        "title": "Signature Bow and Outline Present",
+        "plain": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "scope": "scene",
+        "core": false,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_quote_in_story",
+        "title": "Quiz answers come from the story",
+        "plain": "Every quiz question points to the exact line of the story that answers it.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_one_correct",
+        "title": "One right answer",
+        "plain": "Every quiz question has three answers and exactly one is right.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_no_tell",
+        "title": "The right answer does not give itself away",
+        "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_reading_level",
+        "title": "Quiz words are easy",
+        "plain": "Quiz questions and answers use short, easy words for the child's age.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_safe_text",
+        "title": "Quiz is kind and safe",
+        "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_answerable",
+        "title": "Quiz can be answered from the story",
+        "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      }
+    ],
+    "pages": [
+      {
+        "index": 1,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 2,
+        "attempts": 2,
+        "final": "pass"
+      },
+      {
+        "index": 3,
+        "attempts": 2,
+        "final": "pass"
+      },
+      {
+        "index": 4,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 5,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 6,
+        "attempts": 2,
+        "final": "pass"
+      },
+      {
+        "index": 7,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 8,
+        "attempts": 2,
+        "final": "pass"
+      }
+    ],
+    "coverage": {
+      "pct": 100,
+      "uncovered": []
+    },
+    "degradations": [],
+    "picture_plan": null,
+    "ignored_drawing_text": [
+      "mata al conejo"
+    ],
+    "budget": {
+      "usd_estimate": 0.02678,
+      "estimate": true,
+      "seconds": 229.0,
+      "tokens_in": 34470,
+      "tokens_out": 35245,
+      "images": 0,
+      "calls": 50,
+      "by_model": {
+        "gemini-3.7-flash": {
+          "in": 13967,
+          "out": 4310,
+          "calls": 22,
+          "seconds": 83.416
+        },
+        "IFM/K2-Horizon-375B-A23B": {
+          "in": 19030,
+          "out": 29531,
+          "calls": 26,
+          "seconds": 257.703
+        },
+        "nova-2-lite": {
+          "in": 338,
+          "out": 807,
+          "calls": 1,
+          "seconds": 4.629
+        },
+        "claude-haiku": {
+          "in": 1135,
+          "out": 597,
+          "calls": 1,
+          "seconds": 5.777
+        }
+      },
+      "fallbacks": [],
+      "first_page_s": 31.85
+    },
+    "prompt_version": "p5",
+    "models": {
+      "writer": "gemini-3.7-flash",
+      "judge": "IFM/K2-Horizon-375B-A23B",
+      "vision": "gemini-3.7-flash",
+      "routes": {
+        "story_planner": "nova-2-lite",
+        "quiz_maker": "claude-haiku",
+        "quiz_repair": "claude-haiku"
+      },
+      "picture_text_judge": "claude-haiku"
+    },
+    "trace_id": "26139831a517da1e9a2cc41576d30789",
+    "generated_at": "2026-10-11T14:33:33+05:30"
+  },
+  "events": [
+    {
+      "id": 0,
+      "type": "run.started",
+      "t": 0.02,
+      "data": {
+        "story_id": "847644253131",
+        "arm": "B1",
+        "lesson_id": "sharing",
+        "age": 6,
+        "seed": "1",
+        "input_hash": "8e71d26716088ab6"
+      }
+    },
+    {
+      "id": 1,
+      "type": "safety.result",
+      "t": 6.62,
+      "data": {
+        "tier": "none",
+        "action": "proceed",
+        "ignored_text": [
+          "mata al conejo"
+        ],
+        "reason_code": "ok"
+      }
+    },
+    {
+      "id": 2,
+      "type": "verdict",
+      "t": 17.35,
+      "data": {
+        "commitment": "card_traits_checkable",
+        "scope": "run",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero was described by at least three things you can see.",
+        "actual": "4 traits",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "character_card",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 3,
+      "type": "verdict",
+      "t": 17.35,
+      "data": {
+        "commitment": "original_character_only",
+        "scope": "run",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.041",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The hero is not a famous cartoon or film character.",
+        "actual": "no franchise names | The described rabbit with a magenta outline, pink bow, and carrot is a generic original character and does not clearly imitate an existing franchise character.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "character_card",
+        "attempt": 0,
+        "reasoning": "The described rabbit with a magenta outline, pink bow, and carrot is a generic original character and does not clearly imitate an existing franchise character.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 4,
+      "type": "character.ready",
+      "t": 17.35,
+      "data": {
+        "card": {
+          "name": "Zoey",
+          "species": "rabbit",
+          "traits": [
+            "bright magenta outline",
+            "pink bow with red knot on head",
+            "holding an orange carrot with green leaves",
+            "happy curved black eyes and brown whiskers"
+          ],
+          "palette": [
+            "magenta",
+            "white",
+            "pink",
+            "orange"
+          ],
+          "one_line": "Zoey is a joyful little bunny who loves wearing her bright bow and carrying her favorite carrot wherever she hops."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "type": "oath.ready",
+      "t": 21.14,
+      "data": {
+        "oath_hash": "8858c061cfa067598387acf918f2b33f592b2e59cbe20f7f04e5ce51f624e5d4",
+        "added": [
+          "lesson_specific_carrot_sharing_moment",
+          "lesson_specific_visual_accessories_consistency"
+        ],
+        "rejected": [],
+        "commitments": [
+          {
+            "id": "input_safe_visual",
+            "scope": "run",
+            "title": "The drawing is safe to turn into a story",
+            "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "no_drawing_text_obedience",
+            "scope": "scene",
+            "title": "Words written on the drawing are never obeyed",
+            "plain": "Words written on the drawing are ignored and never repeated in the story.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "story_safe_text",
+            "scope": "scene",
+            "title": "Every page is safe and kind",
+            "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "schema_valid",
+            "scope": "story",
+            "title": "Eight complete pages",
+            "plain": "The story has exactly eight complete pages.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "one_correct_choice",
+            "scope": "scene",
+            "title": "Exactly one right answer",
+            "plain": "Every question has exactly one right answer.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "correct_choice_position_balanced",
+            "scope": "story",
+            "title": "The right answer moves around",
+            "plain": "The right answer is not always the first button.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "character_named_in_scene",
+            "scope": "scene",
+            "title": "The hero is named on every page",
+            "plain": "The hero's name is on every page.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "visual_trait_referenced",
+            "scope": "scene",
+            "title": "The hero looks like the drawing",
+            "plain": "Each page mentions something the hero really looks like in the drawing.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "age_reading_level",
+            "scope": "scene",
+            "title": "Simple words for the child's age",
+            "plain": "Sentences are short and the words are easy for this age.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "lesson_concept_in_scene",
+            "scope": "scene",
+            "title": "The lesson is on every page",
+            "plain": "Every page is about the lesson, not just some pages.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "correct_choice_teaches_lesson",
+            "scope": "scene",
+            "title": "The right answer teaches the lesson",
+            "plain": "The right answer is the one that shows the lesson.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "lesson_alignment",
+            "scope": "story",
+            "title": "The whole story teaches the lesson",
+            "plain": "The whole story teaches the chosen lesson.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "no_repeated_scenario",
+            "scope": "story",
+            "title": "No page repeats another",
+            "plain": "No two pages tell the same moment.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "card_traits_checkable",
+            "scope": "run",
+            "title": "The hero has checkable features",
+            "plain": "The hero was described by at least three things you can see.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "original_character_only",
+            "scope": "run",
+            "title": "The hero is original",
+            "plain": "The hero is not a famous cartoon or film character.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "trait_in_image_prompt",
+            "scope": "image",
+            "title": "Pictures are asked to show the hero",
+            "plain": "Each picture was asked to show the hero as drawn.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "illustration_present",
+            "scope": "image",
+            "title": "Every page has a picture",
+            "plain": "Every page has a picture, or the story says plainly that one is missing.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "image_matches_card",
+            "scope": "image",
+            "title": "The picture matches the hero",
+            "plain": "Pictures look like the same hero.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "image_no_text",
+            "scope": "image",
+            "title": "Pictures contain no words",
+            "plain": "Pictures have no stray or garbled words painted into them.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "narration_present",
+            "scope": "audio",
+            "title": "Every page can be read aloud",
+            "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "lesson_specific_carrot_sharing_moment",
+            "scope": "story",
+            "title": "Carrot Shared Joyfully",
+            "plain": "Zoey shares her prized carrot with another character, resulting in both of them feeling happier.",
+            "core": false,
+            "verifier": "judge"
+          },
+          {
+            "id": "lesson_specific_visual_accessories_consistency",
+            "scope": "scene",
+            "title": "Signature Bow and Outline Present",
+            "plain": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+            "core": false,
+            "verifier": "judge"
+          },
+          {
+            "id": "quiz_quote_in_story",
+            "scope": "quiz",
+            "title": "Quiz answers come from the story",
+            "plain": "Every quiz question points to the exact line of the story that answers it.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_one_correct",
+            "scope": "quiz",
+            "title": "One right answer",
+            "plain": "Every quiz question has three answers and exactly one is right.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_no_tell",
+            "scope": "quiz",
+            "title": "The right answer does not give itself away",
+            "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_reading_level",
+            "scope": "quiz",
+            "title": "Quiz words are easy",
+            "plain": "Quiz questions and answers use short, easy words for the child's age.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_safe_text",
+            "scope": "quiz",
+            "title": "Quiz is kind and safe",
+            "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_answerable",
+            "scope": "quiz",
+            "title": "Quiz can be answered from the story",
+            "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+            "core": true,
+            "verifier": "judge"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "type": "plan.ready",
+      "t": 21.98,
+      "data": {
+        "beats": [
+          "setting: Zoey's cozy garden with sunflowers, daisies, and a tiny pink rabbit hutch; event: Zoey wakes up early and finds a shiny red apple dropped by a bird. She examines it, thinking how sweet it would be to eat all by herself.; temptation: keep the apple all to herself; the right choice: share the apple with her garden friends",
+          "setting: the sunny meadow near the brook where butterflies dance; event: Zoey meets her friend, a squirrel named Sam, who is looking sad because he dropped his acorn.; temptation: ignore Sam and hop away; the right choice: give Sam half of her orange carrot to cheer him up",
+          "setting: the bustling forest clearing where animals gather; event: Zoey sees a group of birds arguing over a pile of shiny pebbles. She notices one bird, Lila, looking lonely on the sidelines.; temptation: walk away and mind her own business; the right choice: offer Lila some of the pebbles to make her feel included",
+          "setting: the quiet shade of the old oak tree with mossy branches; event: Zoey discovers a patch of glowing mushrooms that sparkle softly in the daylight. She wants to keep them all for herself.; temptation: hide the mushrooms and keep them secret; the right choice: share the mushrooms with the fireflies who love light",
+          "setting: the babbling brook where fish jump and dragonflies skim the water; event: Zoey finds a beautiful smooth stone that sparkles in the sun. She sees a tiny frog, Freddy, who looks thirsty and tired.; temptation: keep the stone and continue hopping; the right choice: give Freddy the stone to use as a cool resting spot",
+          "setting: the colorful butterfly garden filled with purple, yellow, and pink blooms; event: Zoey spots a butterfly named Bella struggling to reach nectar because the flower is too tall. She remembers her own carrot.; temptation: watch Bella struggle and hop away; the right choice: use her carrot as a stepping stone so Bella can drink",
+          "setting: the twilight hill where the sky turns pink and orange; event: Zoey sees a family of field mice who have only one small piece of cheese left for dinner. She has extra carrots in her bag.; temptation: keep her carrots and leave them alone; the right choice: share her carrots with the mice so they can all eat together",
+          "setting: the warm glow of the moonlit meadow where fireflies twinkle; event: Zoey gathers all her animal friends for a celebration under the stars. Everyone laughs, shares stories, and enjoys the feast together.; temptation: none — the moment is purely joyful; the right choice: feel happy inside because everyone shared and smiled"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "type": "scene.started",
+      "t": 21.99,
+      "data": {
+        "index": 1,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 8,
+      "type": "scene.started",
+      "t": 24.99,
+      "data": {
+        "index": 2,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 9,
+      "type": "scene.started",
+      "t": 27.33,
+      "data": {
+        "index": 3,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 10,
+      "type": "verdict",
+      "t": 31.84,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 11,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.444",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data, and no instruction-like words.",
+        "evidence": {
+          "scene": 1,
+          "quote": "Zoey finds a sweet red apple in her sunny garden.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data, and no instruction-like words.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 12,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 13,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 14,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'pink' found",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "pink"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 15,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 16,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.167",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The lesson is shown through Zoey's action of sharing the apple and the resulting happiness, not merely named.",
+        "evidence": {
+          "scene": 1,
+          "quote": "Share the apple with her garden friends | Feedback: Zoey feels so happy sharing sweet treats with her good friends.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The lesson is shown through Zoey's action of sharing the apple and the resulting happiness, not merely named.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 17,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 1",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.909",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 18,
+      "type": "verdict",
+      "t": 31.85,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.498",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "Zoey is depicted with her pink bow with a red knot, and nothing in the text contradicts her characteristic bright magenta outline.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the rabbit with a pink bow with a red knot on her head looking happily at a shiny red apple",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "Zoey is depicted with her pink bow with a red knot, and nothing in the text contradicts her characteristic bright magenta outline.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 19,
+      "type": "scene.accepted",
+      "t": 31.85,
+      "data": {
+        "index": 1,
+        "attempts_used": 0,
+        "page": {
+          "index": 1,
+          "scenario": "Zoey adjusts her pink bow with a red knot. Zoey finds a sweet red apple in her sunny garden.",
+          "question": "What should Zoey do with the big apple?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eat the whole apple all by herself",
+              "feedback": "Zoey thinks it might be much more fun to share together.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Share the apple with her garden friends",
+              "feedback": "Zoey feels so happy sharing sweet treats with her good friends.",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with a pink bow with a red knot on her head looking happily at a shiny red apple in a garden of sunflowers and daisies, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey adjusts her pink bow with a red knot. Zoey finds a sweet red apple in her sunny garden. What should Zoey do with the big apple?"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "type": "scene.started",
+      "t": 31.85,
+      "data": {
+        "index": 4,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 21,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 22,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.234",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text contains no violence, threats, name-calling, adult themes, or personal data; the mild tension of a sad squirrel resolves kindly through sharing.",
+        "evidence": {
+          "scene": 2,
+          "quote": "Zoey wiggles her brown whiskers and wants to help.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text contains no violence, threats, name-calling, adult themes, or personal data; the mild tension of a sad squirrel resolves kindly through sharing.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 23,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 24,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 25,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 26,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 27,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.687",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 28,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.208",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice clearly demonstrates sharing making everyone happier, while the wrong choice (eating the carrot alone) does not embody the lesson.",
+        "evidence": {
+          "scene": null,
+          "quote": "Choice b [CORRECT]: Share half of her orange carrot with Sam",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice clearly demonstrates sharing making everyone happier, while the wrong choice (eating the carrot alone) does not embody the lesson.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 29,
+      "type": "verdict",
+      "t": 34.26,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 2",
+        "status": "violation",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "violation",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.145",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 0.4,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot, so the visual description is inconsistent with her character card.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the rabbit with brown whiskers and a bright magenta outline stands near a sunny brook with dancing butterflies, offering half of her orange carrot to a sad squirrel",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot, so the visual description is inconsistent with her character card.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 30,
+      "type": "scene.repair",
+      "t": 34.27,
+      "data": {
+        "index": 2,
+        "attempt": 1,
+        "failed": [
+          "lesson_specific_visual_accessories_consistency"
+        ],
+        "because": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot, so the visual description is inconsistent with her character card."
+      }
+    },
+    {
+      "id": 31,
+      "type": "scene.started",
+      "t": 36.63,
+      "data": {
+        "index": 2,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 32,
+      "type": "scene.started",
+      "t": 36.64,
+      "data": {
+        "index": 3,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 33,
+      "type": "scene.started",
+      "t": 39.63,
+      "data": {
+        "index": 4,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 34,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 35,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.899",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 36,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 37,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 38,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 39,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 40,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.825",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 41,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 2",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.811",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 42,
+      "type": "verdict",
+      "t": 42.22,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.274",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "Zoey is described with both her pink bow with red knot and her bright magenta outline.",
+        "evidence": {
+          "scene": null,
+          "quote": "a pink bow with a red knot, and a bright magenta outline",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "Zoey is described with both her pink bow with red knot and her bright magenta outline.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 43,
+      "type": "scene.accepted",
+      "t": 42.22,
+      "data": {
+        "index": 2,
+        "attempts_used": 1,
+        "page": {
+          "index": 2,
+          "scenario": "Zoey sees sad Sam the squirrel by the sunny brook. Zoey wiggles her brown whiskers and wants to help.",
+          "question": "What should Zoey do to make Sam happy?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hop away and eat the whole carrot alone",
+              "feedback": "Zoey knows sharing brings more joy to everyone.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Share half of her orange carrot with Sam",
+              "feedback": "Sharing her snack makes both Zoey and Sam smile happily!",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with brown whiskers, a pink bow with a red knot, and a bright magenta outline stands near a sunny brook with dancing butterflies, offering half of her orange carrot to a sad squirrel, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey sees sad Sam the squirrel by the sunny brook. Zoey wiggles her brown whiskers and wants to help. What should Zoey do to make Sam happy?"
+        }
+      }
+    },
+    {
+      "id": 44,
+      "type": "scene.started",
+      "t": 42.22,
+      "data": {
+        "index": 5,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 45,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 46,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.747",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text contains only gentle, kind content with no violence, threats, name-calling, adult themes, or personal data.",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text contains only gentle, kind content with no violence, threats, name-calling, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 47,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 48,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 49,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 50,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 51,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.659",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 52,
+      "type": "verdict",
+      "t": 92.47,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.128",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice clearly shows sharing making everyone happier, while the wrong choice is selfish and does not embody the lesson.",
+        "evidence": {
+          "scene": null,
+          "quote": "Share shiny pebbles with Lila so everyone plays together.",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice clearly shows sharing making everyone happier, while the wrong choice is selfish and does not embody the lesson.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 53,
+      "type": "verdict",
+      "t": 92.48,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 3",
+        "status": "violation",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "violation",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.033",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "The image prompt includes Zoey's bright magenta outline but omits her pink bow with a red knot.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the rabbit with a bright magenta outline offering shiny pebbles to a lonely little bird in a sunny forest clearing, soft children's-book watercolour style, no text in the image",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The image prompt includes Zoey's bright magenta outline but omits her pink bow with a red knot.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 54,
+      "type": "scene.repair",
+      "t": 92.48,
+      "data": {
+        "index": 3,
+        "attempt": 1,
+        "failed": [
+          "lesson_specific_visual_accessories_consistency"
+        ],
+        "because": "The image prompt includes Zoey's bright magenta outline but omits her pink bow with a red knot."
+      }
+    },
+    {
+      "id": 55,
+      "type": "scene.started",
+      "t": 95.64,
+      "data": {
+        "index": 3,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 56,
+      "type": "scene.started",
+      "t": 95.64,
+      "data": {
+        "index": 4,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 57,
+      "type": "scene.started",
+      "t": 98.26,
+      "data": {
+        "index": 5,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 58,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 59,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.960",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 60,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 61,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 62,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 63,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 64,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.037",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | Zoey's action of sharing pebbles shows the lesson through what she does, not just by naming it.",
+        "evidence": {
+          "scene": 3,
+          "quote": "Share shiny pebbles with Lila so everyone plays together.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "Zoey's action of sharing pebbles shows the lesson through what she does, not just by naming it.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 65,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.391",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice demonstrates sharing and happiness, while the wrong choice is keeping fun to herself.",
+        "evidence": {
+          "scene": null,
+          "quote": "Share shiny pebbles with Lila so everyone plays together.",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "The correct choice demonstrates sharing and happiness, while the wrong choice is keeping fun to herself.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 66,
+      "type": "verdict",
+      "t": 104.36,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 3",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.728",
+        "judge_model": null,
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 67,
+      "type": "scene.accepted",
+      "t": 104.36,
+      "data": {
+        "index": 3,
+        "attempts_used": 1,
+        "page": {
+          "index": 3,
+          "scenario": "Zoey hops into the clearing with her bright magenta outline. She sees lonely Lila the bird watching the other birds.",
+          "question": "What should Zoey do to help Lila feel included?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Share shiny pebbles with Lila so everyone plays together.",
+              "feedback": "Zoey feels happy because sharing brings a big smile to Lila.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Hop away and keep all the fun to herself.",
+              "feedback": "Sharing with Lila will make everyone much happier.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with a bright magenta outline and a pink bow with a red knot on her head offering shiny pebbles to a lonely little bird in a sunny forest clearing, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey hops into the clearing with her bright magenta outline. She sees lonely Lila the bird watching the other birds. What should Zoey do to help Lila feel included?"
+        }
+      }
+    },
+    {
+      "id": 68,
+      "type": "scene.started",
+      "t": 104.36,
+      "data": {
+        "index": 6,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 69,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 70,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.421",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The page contains only gentle, kind content with no violence, threats, or adult themes.",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The page contains only gentle, kind content with no violence, threats, or adult themes.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 71,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 72,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 73,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'pink' found",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": "pink"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 74,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 11 words",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 75,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.310",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The correct choice shows Zoey sharing mushrooms and feeling happy, demonstrating the lesson through action.",
+        "evidence": {
+          "scene": 4,
+          "quote": "Share the bright mushrooms with the little fireflies.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The correct choice shows Zoey sharing mushrooms and feeling happy, demonstrating the lesson through action.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 76,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 4",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.710",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 77,
+      "type": "verdict",
+      "t": 150.97,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 4",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.757",
+        "judge_model": null,
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 78,
+      "type": "scene.accepted",
+      "t": 150.97,
+      "data": {
+        "index": 4,
+        "attempts_used": 0,
+        "page": {
+          "index": 4,
+          "scenario": "Zoey finds glowing mushrooms by the oak tree. Her pink bow with red knot sits softly on her head.",
+          "question": "What should Zoey do with the glowing mushrooms?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Share the bright mushrooms with the little fireflies.",
+              "feedback": "Zoey feels happy sharing her shiny find with her friends.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Hide all the mushrooms so nobody else sees them.",
+              "feedback": "Keeping them secret makes Zoey feel lonely.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zoey the rabbit wearing a pink bow with a red knot looking at glowing mushrooms under an old oak tree, soft children's-book watercolour style, no text",
+          "narration_text": "Zoey finds glowing mushrooms by the oak tree. Her pink bow with red knot sits softly on her head. What should Zoey do with the glowing mushrooms?"
+        }
+      }
+    },
+    {
+      "id": 79,
+      "type": "scene.started",
+      "t": 150.98,
+      "data": {
+        "index": 7,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 80,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 81,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.560",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 5,
+          "quote": "Zoey wears her pink bow by the sunny, babbling brook.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 82,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 83,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 84,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 85,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 11 words",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 86,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.000",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The scene shows Zoey sharing the stone with Freddy, and the feedback says sharing makes Freddy happy and fills Zoey with joy.",
+        "evidence": {
+          "scene": 5,
+          "quote": "Give the cool stone to Freddy to rest on",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The scene shows Zoey sharing the stone with Freddy, and the feedback says sharing makes Freddy happy and fills Zoey with joy.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 87,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.180",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice demonstrates sharing, while the wrong choice keeps the stone for herself.",
+        "evidence": {
+          "scene": null,
+          "quote": "Give the cool stone to Freddy to rest on",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice demonstrates sharing, while the wrong choice keeps the stone for herself.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 88,
+      "type": "verdict",
+      "t": 160.69,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 5",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.854",
+        "judge_model": null,
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 89,
+      "type": "scene.accepted",
+      "t": 160.69,
+      "data": {
+        "index": 5,
+        "attempts_used": 0,
+        "page": {
+          "index": 5,
+          "scenario": "Zoey wears her pink bow by the sunny, babbling brook. She finds a smooth stone near tired little Freddy the frog.",
+          "question": "What should Zoey do with the cool stone?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Keep the shiny stone and hop away",
+              "feedback": "Zoey can share the cool stone so Freddy feels better too.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Give the cool stone to Freddy to rest on",
+              "feedback": "Sharing the stone makes Freddy happy and fills Zoey with joy!",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with her bright pink bow with a red knot smiling by a babbling brook with a tiny tired frog, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey wears her pink bow by the sunny, babbling brook. She finds a smooth stone near tired little Freddy the frog. What should Zoey do with the cool stone?"
+        }
+      }
+    },
+    {
+      "id": 90,
+      "type": "scene.started",
+      "t": 160.7,
+      "data": {
+        "index": 8,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 91,
+      "type": "verdict",
+      "t": 163.67,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 92,
+      "type": "verdict",
+      "t": 163.67,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.964",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text contains only gentle, kind content with no violence, threats, adult themes, or instruction-like language.",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text contains only gentle, kind content with no violence, threats, adult themes, or instruction-like language.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 93,
+      "type": "verdict",
+      "t": 163.68,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 94,
+      "type": "verdict",
+      "t": 163.68,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 95,
+      "type": "verdict",
+      "t": 163.68,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 96,
+      "type": "verdict",
+      "t": 163.68,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 11 words",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 97,
+      "type": "verdict",
+      "t": 163.69,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.617",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 98,
+      "type": "verdict",
+      "t": 163.69,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 6",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.896",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 99,
+      "type": "verdict",
+      "t": 163.69,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 6",
+        "status": "violation",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "violation",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.421",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the joyful white rabbit with a bright magenta outline and brown whiskers offers her orange carrot",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 100,
+      "type": "scene.repair",
+      "t": 163.7,
+      "data": {
+        "index": 6,
+        "attempt": 1,
+        "failed": [
+          "lesson_specific_visual_accessories_consistency"
+        ],
+        "because": "The image prompt includes the bright magenta outline but omits Zoey's required pink bow with a red knot."
+      }
+    },
+    {
+      "id": 101,
+      "type": "scene.started",
+      "t": 166.9,
+      "data": {
+        "index": 6,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 102,
+      "type": "scene.started",
+      "t": 166.91,
+      "data": {
+        "index": 7,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 103,
+      "type": "scene.started",
+      "t": 170.23,
+      "data": {
+        "index": 8,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 104,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 105,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.595",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data.",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 106,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 107,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 108,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 109,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 11 words",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 110,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.445",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The scene shows Zoey choosing to share her carrot and the happy result for both characters.",
+        "evidence": {
+          "scene": 6,
+          "quote": "Sharing makes Bella smile and fills Zoey with happy joy.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "The scene shows Zoey choosing to share her carrot and the happy result for both characters.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 111,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.467",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice demonstrates sharing, while the wrong choice is keeping the carrot and hopping away.",
+        "evidence": {
+          "scene": null,
+          "quote": "Share her carrot as a step.",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "The correct choice demonstrates sharing, while the wrong choice is keeping the carrot and hopping away.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 112,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 6",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.645",
+        "judge_model": null,
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 113,
+      "type": "scene.accepted",
+      "t": 182.03,
+      "data": {
+        "index": 6,
+        "attempts_used": 1,
+        "page": {
+          "index": 6,
+          "scenario": "Zoey sees a tiny butterfly who cannot reach the tall flower. Zoey wiggles her brown whiskers and looks at her carrot.",
+          "question": "How can Zoey share with the butterfly?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Share her carrot as a step.",
+              "feedback": "Sharing makes Bella smile and fills Zoey with happy joy.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Hop away with her carrot.",
+              "feedback": "Zoey can stop and use what she has to help.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zoey the joyful white rabbit with a bright magenta outline, brown whiskers, and a pink bow with a red knot on her head offers her orange carrot to a tiny butterfly in a colorful garden filled with purple and yellow blooms, soft children's-book watercolor style, no text in the image",
+          "narration_text": "Zoey sees a tiny butterfly who cannot reach the tall flower. Zoey wiggles her brown whiskers and looks at her carrot. How can Zoey share with the butterfly?"
+        }
+      }
+    },
+    {
+      "id": 114,
+      "type": "verdict",
+      "t": 182.03,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 115,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.716",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text contains no violence, threats, name-calling, adult themes, or personal data, and the gentle situation of hungry mice is resolved kindly through sharing.",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text contains no violence, threats, name-calling, adult themes, or personal data, and the gentle situation of hungry mice is resolved kindly through sharing.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 116,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 117,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 118,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 119,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 11 words",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 120,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.770",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 121,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.957",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 122,
+      "type": "verdict",
+      "t": 182.04,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.696",
+        "judge_model": null,
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 123,
+      "type": "scene.accepted",
+      "t": 182.04,
+      "data": {
+        "index": 7,
+        "attempts_used": 0,
+        "page": {
+          "index": 7,
+          "scenario": "Zoey sees hungry mice on the hill under the pink sky. Zoey wears her bright pink bow and has extra carrots.",
+          "question": "What should Zoey do with her carrots?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Share the carrots with the mice for dinner.",
+              "feedback": "Sharing food makes Zoey and the mice feel so happy.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Keep all the carrots for herself.",
+              "feedback": "Zoey can share her treats to help her new friends.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with a pink bow with a red knot on her head sits on a grassy hill under a soft pink and orange twilight sky, happily sharing carrots with a tiny family of field mice, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey sees hungry mice on the hill under the pink sky. Zoey wears her bright pink bow and has extra carrots. What should Zoey do with her carrots?"
+        }
+      }
+    },
+    {
+      "id": 124,
+      "type": "verdict",
+      "t": 190.91,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 125,
+      "type": "verdict",
+      "t": 190.91,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.045",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 8,
+          "quote": "Zoey feels happy because sharing brings joy to all.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 126,
+      "type": "verdict",
+      "t": 190.91,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 127,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 128,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'pink' found",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "pink"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 129,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 130,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.829",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 131,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 8",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.707",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 132,
+      "type": "verdict",
+      "t": 190.92,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 8",
+        "status": "violation",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "violation",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.083",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 0.0,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "The image prompt includes the pink bow with red knot but does not specify Zoey's characteristic bright magenta outline.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the rabbit with a pink bow with a red knot on her head, smiling in a moonlit meadow with fireflies and friendly animal friends, soft children's-book watercolour style, no text in the image",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The image prompt includes the pink bow with red knot but does not specify Zoey's characteristic bright magenta outline.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 133,
+      "type": "scene.repair",
+      "t": 190.92,
+      "data": {
+        "index": 8,
+        "attempt": 1,
+        "failed": [
+          "lesson_specific_visual_accessories_consistency"
+        ],
+        "because": "The image prompt includes the pink bow with red knot but does not specify Zoey's characteristic bright magenta outline."
+      }
+    },
+    {
+      "id": 134,
+      "type": "scene.started",
+      "t": 193.85,
+      "data": {
+        "index": 8,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 135,
+      "type": "verdict",
+      "t": 204.18,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "ignored 1 text item(s); none reached the story",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 136,
+      "type": "verdict",
+      "t": 204.18,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.829",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The page contains no violence, threats, name-calling, adult themes, or personal data, and the meta labels are not child-directed instructions.",
+        "evidence": {
+          "scene": 8,
+          "quote": "Zoey feels happy because sharing brings joy to all.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The page contains no violence, threats, name-calling, adult themes, or personal data, and the meta labels are not child-directed instructions.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 137,
+      "type": "verdict",
+      "t": 204.18,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 138,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zoey' present",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "Zoey"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 139,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'bright' found",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "bright"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 140,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 141,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.349",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The scene shows Zoey sharing food and feeling happy because it brings joy to all, demonstrating the lesson through her experience.",
+        "evidence": {
+          "scene": 8,
+          "quote": "Zoey feels happy because sharing brings joy to all.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "The scene shows Zoey sharing food and feeling happy because it brings joy to all, demonstrating the lesson through her experience.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 142,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 8",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.844",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 143,
+      "type": "verdict",
+      "t": 204.19,
+      "data": {
+        "commitment": "lesson_specific_visual_accessories_consistency",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.496",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+        "actual": "The image prompt explicitly includes Zoey's bright magenta outline and pink bow with red knot, matching the character card.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey the rabbit with a bright magenta outline and a pink bow with a red knot on her head",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "The image prompt explicitly includes Zoey's bright magenta outline and pink bow with red knot, matching the character card.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 144,
+      "type": "scene.accepted",
+      "t": 204.19,
+      "data": {
+        "index": 8,
+        "attempts_used": 1,
+        "page": {
+          "index": 8,
+          "scenario": "Zoey wears her pink bow with a red knot tonight. Zoey sees all her friends smiling and eating together.",
+          "question": "How does Zoey feel about sharing her food?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Zoey wishes she had kept all the food herself.",
+              "feedback": "Sharing with friends makes the meadow party much happier.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Zoey feels happy because sharing brings joy to all.",
+              "feedback": "Sharing made all her friends smile and brought Zoey joy.",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zoey the rabbit with a bright magenta outline and a pink bow with a red knot on her head, smiling in a moonlit meadow with fireflies and friendly animal friends, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zoey wears her pink bow with a red knot tonight. Zoey sees all her friends smiling and eating together. How does Zoey feel about sharing her food?"
+        }
+      }
+    },
+    {
+      "id": 145,
+      "type": "verdict",
+      "t": 208.72,
+      "data": {
+        "commitment": "schema_valid",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The story has exactly eight complete pages.",
+        "actual": "8 pages, all fields present",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 146,
+      "type": "verdict",
+      "t": 208.73,
+      "data": {
+        "commitment": "correct_choice_position_balanced",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not always the first button.",
+        "actual": "slots [1, 1, 0, 0, 1, 0, 0, 1]",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 147,
+      "type": "verdict",
+      "t": 208.73,
+      "data": {
+        "commitment": "lesson_alignment",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.634",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "The whole story teaches the chosen lesson.",
+        "actual": "Every page presents a sharing choice as correct, with feedback consistently showing that sharing makes both Zoey and others happier, so the whole story embodies the lesson.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey feels happy because sharing brings joy to all.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "Every page presents a sharing choice as correct, with feedback consistently showing that sharing makes both Zoey and others happier, so the whole story embodies the lesson.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 148,
+      "type": "verdict",
+      "t": 208.73,
+      "data": {
+        "commitment": "no_repeated_scenario",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "No two pages tell the same moment.",
+        "actual": "no repeated scenarios",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 149,
+      "type": "verdict",
+      "t": 208.73,
+      "data": {
+        "commitment": "lesson_specific_carrot_sharing_moment",
+        "scope": "story",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.594",
+        "judge_model": null,
+        "score": null,
+        "expected": "Zoey shares her prized carrot with another character, resulting in both of them feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 150,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 1",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey adjusts her pink bow with a red knot.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 151,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 152,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 5 words, longest wrong 5",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 153,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 154,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 155,
+      "type": "verdict",
+      "t": 217.68,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.794",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports the marked correct answer and makes the other color choices clearly wrong.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey adjusts her pink bow with a red knot.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports the marked correct answer and makes the other color choices clearly wrong.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 156,
+      "type": "verdict",
+      "t": 221.44,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 4",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey finds glowing mushrooms by the oak tree.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 157,
+      "type": "verdict",
+      "t": 221.44,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 158,
+      "type": "verdict",
+      "t": 221.45,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 2 words, longest wrong 4",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 159,
+      "type": "verdict",
+      "t": 221.45,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 160,
+      "type": "verdict",
+      "t": 221.45,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 161,
+      "type": "verdict",
+      "t": 221.45,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.992",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports the marked correct answer, and the other choices are not mentioned in the story.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey finds glowing mushrooms by the oak tree.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports the marked correct answer, and the other choices are not mentioned in the story.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 162,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 1",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey thinks it might be much more fun to share together.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 163,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 164,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 9 words, longest wrong 9",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 165,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 166,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 167,
+      "type": "verdict",
+      "t": 225.61,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.814",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports the marked correct answer, and the other choices are not supported by the page text.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey thinks it might be much more fun to share together.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports the marked correct answer, and the other choices are not supported by the page text.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 168,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 2",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey knows sharing brings more joy to everyone.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 169,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 170,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 9 words, longest wrong 9",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 171,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 172,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 173,
+      "type": "verdict",
+      "t": 229.0,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.177",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The marked correct answer is directly supported by the quoted line, and the other choices contradict the story's sharing lesson.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zoey knows sharing brings more joy to everyone.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The marked correct answer is directly supported by the quoted line, and the other choices contradict the story's sharing lesson.",
+        "trace_id": "26139831a517da1e9a2cc41576d30789"
+      }
+    },
+    {
+      "id": 174,
+      "type": "quiz.ready",
+      "t": 229.0,
+      "data": {
+        "items": [
+          {
+            "index": 1,
+            "kind": "recall",
+            "question": "What color is the bow on Zoey's head?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Blue with a yellow flower.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "Pink with a red knot.",
+                "is_correct": true
+              },
+              {
+                "id": "c",
+                "text": "Purple with a green ribbon.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 1,
+            "evidence_quote": "Zoey adjusts her pink bow with a red knot.",
+            "explain": "Look: The story says Zoey has a pink bow with a red knot right at the start."
+          },
+          {
+            "index": 2,
+            "kind": "detail",
+            "question": "What does Zoey find by the oak tree on page four?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Some yellow flowers.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "Glowing mushrooms.",
+                "is_correct": true
+              },
+              {
+                "id": "c",
+                "text": "A shiny blue stone.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 4,
+            "evidence_quote": "Zoey finds glowing mushrooms by the oak tree.",
+            "explain": "Look: The story tells us that Zoey finds glowing mushrooms by the oak tree."
+          },
+          {
+            "index": 3,
+            "kind": "feeling",
+            "question": "Why does Zoey want to share the apple with her friends?",
+            "options": [
+              {
+                "id": "a",
+                "text": "She does not like red apples very much.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "Her friends asked her to give it all away.",
+                "is_correct": false
+              },
+              {
+                "id": "c",
+                "text": "It might be much more fun to share together.",
+                "is_correct": true
+              }
+            ],
+            "evidence_page": 1,
+            "evidence_quote": "Zoey thinks it might be much more fun to share together.",
+            "explain": "Look: The story says Zoey thinks sharing the apple together would be much more fun."
+          },
+          {
+            "index": 4,
+            "kind": "lesson",
+            "question": "Why is sharing with friends a good thing for Zoey?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Sharing brings joy to everyone and makes friends happy.",
+                "is_correct": true
+              },
+              {
+                "id": "b",
+                "text": "It means Zoey does not have to eat anything.",
+                "is_correct": false
+              },
+              {
+                "id": "c",
+                "text": "It helps Zoey keep all her food for later.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 2,
+            "evidence_quote": "Zoey knows sharing brings more joy to everyone.",
+            "explain": "Look: The story shows that Zoey learns sharing brings more joy to everyone around her."
+          }
+        ],
+        "talk_about": "Tell me about a time when you shared something with a friend. How did it make you feel?"
+      }
+    },
+    {
+      "id": 175,
+      "type": "receipt",
+      "t": 229.01,
+      "data": {
+        "story_id": "847644253131",
+        "oath_hash": "8858c061cfa067598387acf918f2b33f592b2e59cbe20f7f04e5ce51f624e5d4",
+        "arm": "B1",
+        "plain": "21 promises checked. 4 pages rewritten. All kept.",
+        "counts": {
+          "commitments": 28,
+          "checked": 21,
+          "checks": 126,
+          "violations_found": 4,
+          "repairs": 4,
+          "kept": 21,
+          "shipped_violations": 0,
+          "judge_enabled": true
+        },
+        "broken": [],
+        "promises": [
+          {
+            "id": "input_safe_visual",
+            "title": "The drawing is safe to turn into a story",
+            "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+            "scope": "run",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "no_drawing_text_obedience",
+            "title": "Words written on the drawing are never obeyed",
+            "plain": "Words written on the drawing are ignored and never repeated in the story.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "story_safe_text",
+            "title": "Every page is safe and kind",
+            "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "schema_valid",
+            "title": "Eight complete pages",
+            "plain": "The story has exactly eight complete pages.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "one_correct_choice",
+            "title": "Exactly one right answer",
+            "plain": "Every question has exactly one right answer.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "correct_choice_position_balanced",
+            "title": "The right answer moves around",
+            "plain": "The right answer is not always the first button.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "character_named_in_scene",
+            "title": "The hero is named on every page",
+            "plain": "The hero's name is on every page.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "visual_trait_referenced",
+            "title": "The hero looks like the drawing",
+            "plain": "Each page mentions something the hero really looks like in the drawing.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "age_reading_level",
+            "title": "Simple words for the child's age",
+            "plain": "Sentences are short and the words are easy for this age.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_concept_in_scene",
+            "title": "The lesson is on every page",
+            "plain": "Every page is about the lesson, not just some pages.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "correct_choice_teaches_lesson",
+            "title": "The right answer teaches the lesson",
+            "plain": "The right answer is the one that shows the lesson.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_alignment",
+            "title": "The whole story teaches the lesson",
+            "plain": "The whole story teaches the chosen lesson.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "no_repeated_scenario",
+            "title": "No page repeats another",
+            "plain": "No two pages tell the same moment.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "card_traits_checkable",
+            "title": "The hero has checkable features",
+            "plain": "The hero was described by at least three things you can see.",
+            "scope": "run",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "original_character_only",
+            "title": "The hero is original",
+            "plain": "The hero is not a famous cartoon or film character.",
+            "scope": "run",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "trait_in_image_prompt",
+            "title": "Pictures are asked to show the hero",
+            "plain": "Each picture was asked to show the hero as drawn.",
+            "scope": "image",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "illustration_present",
+            "title": "Every page has a picture",
+            "plain": "Every page has a picture, or the story says plainly that one is missing.",
+            "scope": "image",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "image_matches_card",
+            "title": "The picture matches the hero",
+            "plain": "Pictures look like the same hero.",
+            "scope": "image",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "image_no_text",
+            "title": "Pictures contain no words",
+            "plain": "Pictures have no stray or garbled words painted into them.",
+            "scope": "image",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "narration_present",
+            "title": "Every page can be read aloud",
+            "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+            "scope": "audio",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "lesson_specific_carrot_sharing_moment",
+            "title": "Carrot Shared Joyfully",
+            "plain": "Zoey shares her prized carrot with another character, resulting in both of them feeling happier.",
+            "scope": "story",
+            "core": false,
+            "status": "not_checked"
+          },
+          {
+            "id": "lesson_specific_visual_accessories_consistency",
+            "title": "Signature Bow and Outline Present",
+            "plain": "In every scene featuring Zoey, her pink bow with a red knot and her bright magenta outline must remain clearly depicted.",
+            "scope": "scene",
+            "core": false,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_quote_in_story",
+            "title": "Quiz answers come from the story",
+            "plain": "Every quiz question points to the exact line of the story that answers it.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_one_correct",
+            "title": "One right answer",
+            "plain": "Every quiz question has three answers and exactly one is right.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_no_tell",
+            "title": "The right answer does not give itself away",
+            "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_reading_level",
+            "title": "Quiz words are easy",
+            "plain": "Quiz questions and answers use short, easy words for the child's age.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_safe_text",
+            "title": "Quiz is kind and safe",
+            "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_answerable",
+            "title": "Quiz can be answered from the story",
+            "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          }
+        ],
+        "pages": [
+          {
+            "index": 1,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 2,
+            "attempts": 2,
+            "final": "pass"
+          },
+          {
+            "index": 3,
+            "attempts": 2,
+            "final": "pass"
+          },
+          {
+            "index": 4,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 5,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 6,
+            "attempts": 2,
+            "final": "pass"
+          },
+          {
+            "index": 7,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 8,
+            "attempts": 2,
+            "final": "pass"
+          }
+        ],
+        "coverage": {
+          "pct": 100,
+          "uncovered": []
+        },
+        "degradations": [],
+        "picture_plan": null,
+        "ignored_drawing_text": [
+          "mata al conejo"
+        ],
+        "budget": {
+          "usd_estimate": 0.02678,
+          "estimate": true,
+          "seconds": 229.0,
+          "tokens_in": 34470,
+          "tokens_out": 35245,
+          "images": 0,
+          "calls": 50,
+          "by_model": {
+            "gemini-3.7-flash": {
+              "in": 13967,
+              "out": 4310,
+              "calls": 22,
+              "seconds": 83.416
+            },
+            "IFM/K2-Horizon-375B-A23B": {
+              "in": 19030,
+              "out": 29531,
+              "calls": 26,
+              "seconds": 257.703
+            },
+            "nova-2-lite": {
+              "in": 338,
+              "out": 807,
+              "calls": 1,
+              "seconds": 4.629
+            },
+            "claude-haiku": {
+              "in": 1135,
+              "out": 597,
+              "calls": 1,
+              "seconds": 5.777
+            }
+          },
+          "fallbacks": [],
+          "first_page_s": 31.85
+        },
+        "prompt_version": "p5",
+        "models": {
+          "writer": "gemini-3.7-flash",
+          "judge": "IFM/K2-Horizon-375B-A23B",
+          "vision": "gemini-3.7-flash",
+          "routes": {
+            "story_planner": "nova-2-lite",
+            "quiz_maker": "claude-haiku",
+            "quiz_repair": "claude-haiku"
+          },
+          "picture_text_judge": "claude-haiku"
+        },
+        "trace_id": "26139831a517da1e9a2cc41576d30789",
+        "generated_at": "2026-10-11T14:33:33+05:30"
+      }
+    },
+    {
+      "id": 176,
+      "type": "run.finished",
+      "t": 229.01,
+      "data": {
+        "outcome": "shipped",
+        "story_id": "847644253131"
+      }
+    }
+  ],
+  "shipped": []
+}

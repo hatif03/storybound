@@ -21,3 +21,4 @@ All Commons files were fetched through the Wikimedia API on 2026-10-09; licence 
 | tier-a-unsafe/evil-cat-knife-blood.png | hackathon sample drawing 1 | supplied for the hackathon (reuse approved) | n/a | n/a |
 | tier-b-text/fish-kill-fish-caption.png | hackathon sample drawing 3 | supplied for the hackathon (reuse approved) | n/a | n/a |
 | synthetic/* and tier-b-text/injection-*.png, mild-insults-text.png | generated locally | none | n/a | n/a |
+| tier-b-text/hindi-caption-*.png, spanish-caption-*.png | generated locally on 11 Oct from the bunny sample with a rendered foreign-language caption | none | n/a | n/a |

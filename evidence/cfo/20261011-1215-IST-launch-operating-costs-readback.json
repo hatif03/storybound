@@ -1,0 +1,32 @@
+{
+  "note": "Readback of the table 'Launch operating costs (assumed, for real children's use)' on the Assumptions page, Main Scenario, as returned by the cfoai MCP after change-log ids 279306 (table created) and 279307 (share-of-price row added). Every input is an assumption; the compliance figure is a placeholder, not legal advice and not a quote.",
+  "url": "https://app.cfo.ai/s/p_AQKEpQYkYWY4ZDYzMTctZGI5MC00ZGQ0LThlNWYtMWU2ZWIwMjlmMDRiDWRlZmF1bHRfbGF5ZXI",
+  "inputs_assumed": {
+    "Support tickets per 100 households per month": 8,
+    "Minutes per support ticket": 12,
+    "Support hourly cost (USD)": 25,
+    "Stories flagged for a human look per 100 stories": 2,
+    "Minutes per flagged story review": 10,
+    "Safety reviewer hourly cost (USD)": 30,
+    "Stories per household per month": 12,
+    "Child-privacy compliance per year (USD, placeholder)": 6000,
+    "Households sharing the compliance cost": 500,
+    "Pictures per story when Pip chooses (from config pictures_usd_per_story 0.16 at 0.04 each)": 4,
+    "One video clip, 4 s, Veo 3.1 Lite (USD, list price estimate)": 0.2
+  },
+  "derived": {
+    "Support cost per household per month (USD)": 0.4,
+    "Safety review cost per story (USD)": 0.1,
+    "Safety review cost per household per month (USD)": 1.2,
+    "Compliance cost per household per month (USD)": 1.0,
+    "Launch operating cost per household per month (USD)": 2.6,
+    "Picture cost per story when Pip chooses (USD)": 0.16,
+    "Video clip per story, one clip, 1.4 retry allowance (USD)": 0.28,
+    "Launch operating cost as a share of the Household price (6.99)": 0.3719599427753934
+  },
+  "caveats": [
+    "The existing margin tables do not include these rows; the 67.8% month-6 margin is the infrastructure margin only.",
+    "At about 80 households (the model's Household count near month 6) the same compliance placeholder would be about USD 6.25 per household per month, close to the whole price.",
+    "No data from Crustdata or any child is in this table."
+  ]
+}

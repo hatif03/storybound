@@ -4,7 +4,11 @@
 // Prints a step log and every console error, failed request or request that leaves the app's own origin.
 import fs from 'node:fs';
 import path from 'node:path';
-import puppeteer from 'puppeteer-core';
+import puppeteer, { ElementHandle } from 'puppeteer-core';
+// The app drops taps that land within 350 ms of a screen change (ghost taps from small hands): a script that clicks the moment an
+// element appears has to wait like a child would.
+const nativeClick = ElementHandle.prototype.click;
+ElementHandle.prototype.click = async function (...a) { await new Promise((r) => setTimeout(r, 450)); return nativeClick.apply(this, a); };
 
 const EDGE = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
 const root = path.resolve(import.meta.dirname, '..');

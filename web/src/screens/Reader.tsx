@@ -38,7 +38,9 @@ function Picture({ story, page, source }: { story: StoryState; page: Page; sourc
       ) : (
         <div className="paper-cut">
           <Pip pose="read" className="cut-pip" />
-          <p>No picture on this page. The words still tell the story!</p>
+          <p>{story.degradations.some((d) => d.what === 'image' && d.index === page.index && /kept its picture budget|paints some pages only/.test(d.why))
+            ? 'Pip saved the paint for the big moments. Listen to this page!'
+            : 'No picture on this page. The words still tell the story!'}</p>
         </div>
       )}
       {source && <img className="hero-sticker" src={source.url} alt="" />}

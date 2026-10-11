@@ -8,11 +8,11 @@ export interface Settings {
   textSize: 's' | 'm' | 'l';
   calm: boolean; // reduce motion (also follows the device setting)
   age: number; // the reader's age, 4 to 8, sent with the next story
-  pictures: 'full' | 'half' | 'none'; // pictures on every page, half the pages, or none: sent with the next story
+  pictures: 'auto' | 'full' | 'half' | 'none'; // Pip chooses the pages that matter most (auto), every page, half the pages, or none: sent with the next story
 }
 
 const KEY = 'storybound.settings';
-const defaults: Settings = { sound: false, music: false, textSize: 'm', calm: false, age: 6, pictures: 'full' };
+const defaults: Settings = { sound: false, music: false, textSize: 'm', calm: false, age: 6, pictures: 'auto' };
 let current: Settings = load();
 const listeners = new Set<() => void>();
 

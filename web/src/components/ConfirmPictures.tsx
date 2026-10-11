@@ -1,6 +1,8 @@
 // A confirm that never needs reading: two big picture buttons (a tick and a "keep going" arrow), with Pip asking. Esc keeps going.
+// The "yes" must be HELD for a moment, so a palm or a stray tap can never throw work away; "keep going" is a plain tap and has focus.
 import { useEffect, useRef, type ReactNode } from 'react';
 import { Btn } from './Btn';
+import { HoldButton } from './HoldButton';
 import { Pip, type Pose } from './Pip';
 
 interface Props { title: string; yesLabel: string; noLabel: string; pose?: Pose; onYes(): void; onNo(): void; children?: ReactNode }
@@ -21,7 +23,7 @@ export function ConfirmPictures({ title, yesLabel, noLabel, pose = 'wink', onYes
         {children}
         <div className="confirm-actions">
           <Btn variant="sky" icon="arrow-left" onClick={onNo} data-autofocus>{noLabel}</Btn>
-          <Btn variant="leaf" icon="check-circle" onClick={onYes}>{yesLabel}</Btn>
+          <HoldButton variant="leaf" icon="check-circle" onHold={onYes}>{yesLabel}</HoldButton>
         </div>
       </div>
     </div>

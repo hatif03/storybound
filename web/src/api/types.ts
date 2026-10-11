@@ -66,6 +66,7 @@ export type StoryEvent =
   | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } }
   | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } }
   | { id?: number; t: number; type: 'quiz.ready'; data: Quiz }
+  | { id?: number; t: number; type: 'paint.plan'; data: { painted: number[]; importance: Record<string, number>; budget_usd: number } }
   | { id?: number; t: number; type: 'degraded'; data: Degradation }
   | { id?: number; t: number; type: 'receipt'; data: Receipt }
   | { id?: number; t: number; type: 'run.finished'; data: { outcome: 'shipped' | 'shipped_with_notes'; story_id: string } }
@@ -75,10 +76,10 @@ export type StoryEvent =
 export type EventType = StoryEvent['type'];
 export const EVENT_TYPES: EventType[] = [
   'run.started', 'safety.result', 'character.ready', 'oath.ready', 'plan.ready', 'scene.started', 'verdict', 'scene.repair',
-  'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
+  'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'paint.plan', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
 ];
 
 export interface StartRequest {
-  lessonId: string; age: number; heroName?: string; promises?: string[]; pictures?: 'full' | 'half' | 'none';
+  lessonId: string; age: number; heroName?: string; promises?: string[]; pictures?: 'full' | 'half' | 'none' | 'auto';
   drawing: { kind: 'file'; blob: Blob; name: string } | { kind: 'fixture'; id: string };
 }

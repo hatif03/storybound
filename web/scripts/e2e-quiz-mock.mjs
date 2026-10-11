@@ -2,7 +2,11 @@
 //   node scripts/e2e-quiz-mock.mjs [--url http://127.0.0.1:8000]
 import fs from 'node:fs';
 import path from 'node:path';
-import puppeteer from 'puppeteer-core';
+import puppeteer, { ElementHandle } from 'puppeteer-core';
+// The app drops taps that land within 350 ms of a screen change (ghost taps from small hands): a script that clicks the moment an
+// element appears has to wait like a child would.
+const nativeClick = ElementHandle.prototype.click;
+ElementHandle.prototype.click = async function (...a) { await new Promise((r) => setTimeout(r, 450)); return nativeClick.apply(this, a); };
 
 const BASE = (process.argv.includes('--url') ? process.argv[process.argv.indexOf('--url') + 1] : 'http://127.0.0.1:8000') + '/?mock=1&speed=12';
 const OUT = path.resolve(import.meta.dirname, '../shots/quiz');

@@ -151,8 +151,9 @@ function Settings({ onForget }: { onForget(): void }) {
         </select>
       </div>
       <div className="setting">
-        <div><strong>Pictures</strong><p className="muted">Pictures cost the most to make. Painting half the pages keeps the story lighter; none keeps only the words and the voice. Used for the next story.</p></div>
-        <select aria-label="Pictures" value={s.pictures} onChange={(e) => setSettings({ pictures: e.target.value as 'full' | 'half' | 'none' })}>
+        <div><strong>Pictures</strong><p className="muted">Pictures cost the most to make. With "Pip chooses", the story agent spends a small picture budget on the pages that matter most (the meeting, the hard choice, the happy ending) and stops painting if the picture service keeps failing; the other pages keep their words and voice. Used for the next story.</p></div>
+        <select aria-label="Pictures" value={s.pictures} onChange={(e) => setSettings({ pictures: e.target.value as 'auto' | 'full' | 'half' | 'none' })}>
+          <option value="auto">Pip chooses the big moments</option>
           <option value="full">Every page</option>
           <option value="half">Half the pages</option>
           <option value="none">No pictures</option>

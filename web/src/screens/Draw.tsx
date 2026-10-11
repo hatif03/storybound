@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { getFixtures } from '../api/client';
 import type { Fixture } from '../api/types';
 import { Btn } from '../components/Btn';
-import { ConfirmPictures } from '../components/ConfirmPictures';
 import { DrawCanvas, type DrawHandle } from '../components/DrawCanvas';
 import { Icon } from '../components/Icon';
 import { Pip } from '../components/Pip';
@@ -27,14 +26,15 @@ async function preparephoto(file: File): Promise<Blob> {
   return new Promise((res, rej) => c.toBlob((b) => (b ? res(b) : rej(new Error('encode'))), 'image/jpeg', 0.9));
 }
 
-// 6.2 Draw. Crayons, three brush sizes, undo, start over (asks with pictures), a photo of a paper drawing, and sample drawings.
+// 6.2 Draw. Crayons, three brush sizes, undo, start over (never final: "Bring my drawing back"), a photo of a paper drawing, and sample
+// drawings. The picture is kept in this tab while it is drawn, so a reload or a stray swipe cannot lose it.
 export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDone(s: Source): void; onBack(): void }) {
   const h = useFocusHeading<HTMLHeadingElement>();
   const pad = useRef<DrawHandle>(null);
   const [color, setColor] = useState<string>(CRAYONS[0].id);
   const [brush, setBrush] = useState<number>(1);
   const [ink, setInk] = useState(0);
-  const [confirmClear, setConfirmClear] = useState(false);
+  const [restorable, setRestorable] = useState(false);
   const [preview, setPreview] = useState<Source | null>(initial && initial.kind !== 'canvas' ? initial : null);
   const [samples, setSamples] = useState<Fixture[]>([]);
   const [hint, setHint] = useState('');
@@ -47,7 +47,7 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
   }, []);
 
   const hex = color === ERASER.id ? ERASER.hex : CRAYONS.find((c) => c.id === color)!.hex;
-  const onChange = useCallback((n: number) => { setInk(n); if (n) setHint(''); }, []);
+  const onChange = useCallback((n: number, canRestore: boolean) => { setInk(n); setRestorable(canRestore); if (n) setHint(''); }, []);
 
   const finish = async () => {
     if (preview) { onDone(preview); return; }
@@ -120,7 +120,7 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
               </div>
               <div className="tool-row">
                 <Btn variant="paper" round icon="arrow-counter-clockwise" aria-label="Undo" disabled={!ink} onClick={() => pad.current?.undo()} />
-                <Btn variant="paper" round icon="trash" aria-label="Start over" disabled={!ink} onClick={() => setConfirmClear(true)} />
+                <Btn variant="paper" round icon="trash" aria-label="Start over" disabled={!ink} onClick={() => pad.current?.clear()} />
                 <label className="btn btn-paper btn-round file-btn" aria-label="Use a photo of a paper drawing">
                   <Icon name="camera" />
                   <input type="file" accept="image/*" onChange={(e) => { pickPhoto(e.target.files?.[0]); e.target.value = ''; }} />
@@ -129,6 +129,9 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
             </>
           ) : (
             <Btn variant="paper" icon="paint-brush" onClick={() => setPreview(null)}>Draw my own</Btn>
+          )}
+          {!preview && !ink && restorable && (
+            <Btn variant="sky" icon="arrow-counter-clockwise" onClick={() => pad.current?.restore()}>Bring my drawing back</Btn>
           )}
           <Btn big icon="star" onClick={finish} disabled={busy} aria-disabled={!preview && !ink} className={!preview && !ink ? 'is-soft' : ''}>Done!</Btn>
           <p className="hint" role="status" aria-live="polite">{hint}</p>
@@ -152,9 +155,6 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
         )}
       </div>
 
-      {confirmClear && (
-        <ConfirmPictures title="Start over?" yesLabel="Yes, start over" noLabel="Keep drawing" onNo={() => setConfirmClear(false)} onYes={() => { pad.current?.clear(); setConfirmClear(false); }} />
-      )}
     </main>
   );
 }

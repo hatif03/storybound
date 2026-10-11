@@ -1,9 +1,14 @@
 import { useEffect, useReducer, useRef, useState } from 'react';
-import { ApiError, forgetStory, startStory } from './api/client';
+import { ApiError, forgetStory, startStory, storyExists } from './api/client';
 import { connectEvents, type Connection } from './api/events';
 import type { Fixture } from './api/types';
 import { DemoBadge } from './components/DemoBadge';
 import { stop } from './lib/sound';
+import { clearActive, loadActive, saveActive } from './lib/resume';
+import { guard, installTouchGuard, keepInApp } from './lib/touchGuard';
+import { clearDraft } from './components/DrawCanvas';
+import { MOCK } from './mock/mockApi';
+import { ConfirmPictures } from './components/ConfirmPictures';
 import { End } from './screens/End';
 import { Grownups } from './screens/Grownups';
 import { OrderGame, orderPages } from './screens/OrderGame';
@@ -38,6 +43,14 @@ export default function App() {
   const [story, dispatch] = useReducer(storyReducer, initialStory);
   const conn = useRef<Connection | null>(null);
   const [online, setOnline] = useState(typeof navigator === 'undefined' ? true : navigator.onLine);
+  const [askNew, setAskNew] = useState(false);
+
+  // Small hands: drop ghost taps and palms, no pinch or long-press menus, the browser's back swipe stays inside the app, the voice stops
+  // when the tab is hidden.
+  useEffect(() => {
+    const offs = [installTouchGuard(stop), keepInApp()];
+    return () => offs.forEach((f) => f());
+  }, []);
 
   useEffect(() => {
     const on = () => setOnline(true);
@@ -50,7 +63,26 @@ export default function App() {
   const closeStream = () => { conn.current?.close(); conn.current = null; };
   useEffect(() => closeStream, []);
 
-  const go = (s: Screen) => { stop(); setScreen(s); window.scrollTo?.(0, 0); };
+  // A reload, a tab that the tablet threw away, or a pull-to-refresh must not lose the story: the server keeps it, so pick it back up.
+  useEffect(() => {
+    const a = MOCK ? null : loadActive();
+    if (!a) return;
+    let live = true;
+    storyExists(a.storyId).then((has) => {
+      if (!live) return;
+      if (has === 'no') { clearActive(); return; }
+      closeStream();
+      dispatch({ type: 'reset' });
+      conn.current = connectEvents(a.storyId, { onEvent: (ev) => dispatch({ type: 'event', ev }), onNet: (net) => dispatch({ type: 'net', net }) });
+      setLessonTitle(a.lessonTitle);
+      setReadFrom(1);
+      go('making');
+    });
+    return () => { live = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const go = (s: Screen) => { stop(); guard.lock(); setScreen(s); window.scrollTo?.(0, 0); }; // lock(): a tap meant for the last screen must not hit this one
   const openGrownups = (from: Screen) => { setBack(from); go('grownups'); };
 
   const newStory = () => {
@@ -77,6 +109,8 @@ export default function App() {
       });
       closeStream();
       dispatch({ type: 'reset' });
+      clearDraft(); // the drawing is on its way to the story; the saved copy is not kept
+      saveActive({ storyId, lessonTitle });
       conn.current = connectEvents(storyId, { onEvent: (ev) => dispatch({ type: 'event', ev }), onNet: (net) => dispatch({ type: 'net', net }) });
       setReadFrom(1);
       go('making');
@@ -89,7 +123,7 @@ export default function App() {
   };
 
   // A refusal arrives as a normal event: move to the calm screen. Never keep the child on the progress screen.
-  useEffect(() => { if (story.phase === 'refused' && screen === 'making') go('refusal'); }, [story.phase, screen]);
+  useEffect(() => { if (story.phase === 'refused' && screen === 'making') { clearActive(); go('refusal'); } }, [story.phase, screen]);
 
   const useSample = (f: Fixture) => {
     closeStream();
@@ -109,6 +143,8 @@ export default function App() {
 
   const forget = async () => {
     if (story.storyId) await forgetStory(story.storyId).catch(() => { /* the server may already have lost it */ });
+    clearActive();
+    clearDraft();
     newStory();
     go('welcome');
   };
@@ -140,7 +176,7 @@ export default function App() {
       view = <OrderGame story={story} onBack={finishPlay} onDone={() => { setPractice((p) => ({ ...p, ordered: true })); finishPlay(); }} />;
       break;
     case 'end':
-      view = <End story={story} lessonTitle={lessonTitle} restSuggested={storiesMade >= 2} canOrder={orderPages(story).length > 0} onQuiz={() => go('quiz')} onOrder={() => go('order')} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={newStory} onGrownups={() => openGrownups('end')} />;
+      view = <End story={story} lessonTitle={lessonTitle} restSuggested={storiesMade >= 2} canOrder={orderPages(story).length > 0} onQuiz={() => go('quiz')} onOrder={() => go('order')} onAgain={() => { setReadFrom(1); go('reader'); }} onNew={() => setAskNew(true)} onGrownups={() => openGrownups('end')} />;
       break;
     case 'refusal':
       view = <Refusal story={story} onAgain={newStory} onGrownups={() => openGrownups('refusal')} />;
@@ -156,6 +192,11 @@ export default function App() {
         <div className="offline" role="status"><Icon name="cloud" /> No internet. Pip will keep trying.</div>
       )}
       {view}
+      {askNew && (
+        <ConfirmPictures title="Make another story?" yesLabel="Yes, a new story" noLabel="Not yet" pose="wink" onNo={() => setAskNew(false)} onYes={() => { setAskNew(false); newStory(); }}>
+          <p className="muted center">This story will go away.</p>
+        </ConfirmPictures>
+      )}
       <DemoBadge />
     </div>
   );

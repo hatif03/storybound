@@ -49,6 +49,14 @@ export async function forgetStory(storyId: string): Promise<void> {
   await request(`/api/stories/${storyId}`, { method: 'DELETE' });
 }
 
+/** 'yes' | 'no' | 'unknown' (offline, server busy): used to pick a story back up after a reload. */
+export async function storyExists(storyId: string): Promise<'yes' | 'no' | 'unknown'> {
+  try {
+    const r = await fetch(`/api/stories/${encodeURIComponent(storyId)}`);
+    return r.ok ? 'yes' : r.status === 404 ? 'no' : 'unknown';
+  } catch { return 'unknown'; }
+}
+
 export type VideoStatus = { status: 'none' | 'making' | 'done' | 'failed'; seconds?: number };
 
 export async function startVideo(storyId: string): Promise<VideoStatus> {

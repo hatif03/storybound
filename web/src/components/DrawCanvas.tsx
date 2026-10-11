@@ -1,15 +1,40 @@
 // The drawing canvas. Pointer events only (finger, pen, mouse). Strokes are kept as data, so undo is unlimited and the picture is
 // re-painted cleanly. Exported at 1024 px on the long edge on a white page (metadata-free PNG).
 import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef } from 'react';
+import { guard, PALM_PX } from '../lib/touchGuard';
 
 export const W = 1024;
 export const H = 768;
+const PEN_QUIET_MS = 6000; // after the pencil was last seen, touches on the drawing are a resting hand
 
 interface Stroke { color: string; size: number; pts: { x: number; y: number }[] }
 
+const DRAFT_KEY = 'storybound.draft';
+const DRAFT_MAX = 1_500_000; // characters; sessionStorage allows about five million
+
+/** The drawing in progress is kept in this tab only (sessionStorage: gone when the tab closes), so a reload, a crash of the tab or a
+ *  stray swipe never costs the child their picture. It is deleted when the story starts and by Forget. */
+export function clearDraft(): void { try { sessionStorage.removeItem(DRAFT_KEY); } catch { /* storage blocked */ } }
+function saveDraft(strokes: Stroke[]): void {
+  try {
+    if (!strokes.length) { sessionStorage.removeItem(DRAFT_KEY); return; }
+    const json = JSON.stringify(strokes.map((s) => ({ c: s.color, w: s.size, p: s.pts.map((q) => [Math.round(q.x), Math.round(q.y)]) })));
+    if (json.length < DRAFT_MAX) sessionStorage.setItem(DRAFT_KEY, json);
+  } catch { /* storage blocked or full: the drawing just is not kept */ }
+}
+function loadDraft(): Stroke[] {
+  try {
+    const raw = sessionStorage.getItem(DRAFT_KEY);
+    if (!raw) return [];
+    const a = JSON.parse(raw) as { c: string; w: number; p: [number, number][] }[];
+    return a.filter((s) => s && Array.isArray(s.p) && s.p.length).map((s) => ({ color: s.c, size: s.w, pts: s.p.map(([x, y]) => ({ x, y })) }));
+  } catch { return []; }
+}
+
 export interface DrawHandle {
   undo(): void;
-  clear(): void;
+  clear(): void; // soft: the strokes are kept aside until restore() or the next clear()
+  restore(): void; // bring back what clear() put aside, under anything drawn since
   hasInk(): boolean;
   toBlob(): Promise<Blob>;
 }
@@ -17,7 +42,7 @@ export interface DrawHandle {
 interface Props {
   color: string;
   size: number; // brush width in canvas pixels
-  onChange(strokes: number): void;
+  onChange(strokes: number, restorable: boolean): void;
   label: string;
 }
 
@@ -50,6 +75,7 @@ export const DrawCanvas = forwardRef<DrawHandle, Props>(function DrawCanvas({ co
   const canvas = useRef<HTMLCanvasElement>(null);
   const strokes = useRef<Stroke[]>([]);
   const live = useRef<{ id: number; s: Stroke; drawn: number } | null>(null);
+  const aside = useRef<Stroke[]>([]); // what "start over" put aside
   const penUntil = useRef(0);
   const props = useRef({ color, size });
   props.current = { color, size };
@@ -63,14 +89,22 @@ export const DrawCanvas = forwardRef<DrawHandle, Props>(function DrawCanvas({ co
     strokes.current.forEach((s) => paint(c, s));
   }, []);
 
-  useEffect(() => { redraw(); }, [redraw]);
+  const changed = useCallback(() => { saveDraft(strokes.current); onChange(strokes.current.length, aside.current.length > 0); }, [onChange]);
+
+  useEffect(() => {
+    strokes.current = loadDraft(); // a picture left behind by a reload or an accidental leave comes back
+    redraw();
+    if (strokes.current.length) onChange(strokes.current.length, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [redraw]);
 
   useImperativeHandle(ref, () => ({
-    undo() { strokes.current.pop(); redraw(); onChange(strokes.current.length); },
-    clear() { strokes.current = []; redraw(); onChange(0); },
+    undo() { strokes.current.pop(); redraw(); changed(); },
+    clear() { if (strokes.current.length) aside.current = strokes.current; strokes.current = []; redraw(); changed(); },
+    restore() { strokes.current = [...aside.current, ...strokes.current]; aside.current = []; redraw(); changed(); },
     hasInk: () => strokes.current.length > 0,
     toBlob: () => new Promise<Blob>((resolve, reject) => canvas.current!.toBlob((b) => (b ? resolve(b) : reject(new Error('no image'))), 'image/png')),
-  }), [onChange, redraw]);
+  }), [changed, redraw]);
 
   const at = (e: React.PointerEvent) => {
     const r = canvas.current!.getBoundingClientRect();
@@ -79,9 +113,10 @@ export const DrawCanvas = forwardRef<DrawHandle, Props>(function DrawCanvas({ co
 
   const down = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (live.current) return; // a second finger never starts a second stroke
-    if (e.pointerType === 'pen') penUntil.current = Date.now() + 2000;
-    // Palm rejection: ignore large contacts, and any touch just after the pen was used.
-    if (e.pointerType === 'touch' && (Math.max(e.width, e.height) > 48 || Date.now() < penUntil.current)) return;
+    if (e.pointerType === 'pen') penUntil.current = Date.now() + PEN_QUIET_MS;
+    // Palm rejection: ignore large contacts, any touch while the pencil is in use (a resting hand), and a touch when two or more
+    // fingers are already down (a hand, not a stroke).
+    if (e.pointerType === 'touch' && (Math.max(e.width, e.height) > PALM_PX || Date.now() < penUntil.current || guard.fingers() > 1)) return;
     if (e.button > 0) return;
     e.preventDefault();
     canvas.current!.setPointerCapture(e.pointerId);
@@ -91,6 +126,7 @@ export const DrawCanvas = forwardRef<DrawHandle, Props>(function DrawCanvas({ co
   };
 
   const move = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    if (e.pointerType === 'pen') penUntil.current = Date.now() + PEN_QUIET_MS; // hovering counts: the hand is on the glass
     const l = live.current;
     if (!l || l.id !== e.pointerId) return;
     const events = e.nativeEvent.getCoalescedEvents?.() ?? [e.nativeEvent];
@@ -107,7 +143,7 @@ export const DrawCanvas = forwardRef<DrawHandle, Props>(function DrawCanvas({ co
     live.current = null;
     strokes.current.push(l.s);
     redraw(); // smooth, final version of the stroke
-    onChange(strokes.current.length);
+    changed();
   };
 
   return (

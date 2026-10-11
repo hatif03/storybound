@@ -53,4 +53,4 @@ Profile `neathack` (us-east-1). Only EC2, Lambda, IAM roles and load balancers; 
 MCP connected and used once (11 Oct, 11.6 of 5,200 credits) for a field-size note with derived counts only: `evidence/cfo/20261011-0850-IST-market-note-crustdata.md`. No market figure from it is in the cfo.ai model. Raw Crustdata data must never enter the public repo.
 
 ## GitHub
-`hatif03/storybound`. Commits after 12:30 IST on 10 Oct are inside the window. History was rewritten on 11 Oct (keys and six images removed; [note](../evidence/history-rewrite/NOTE.md)); the old-to-new sha map is published.
+`hatif03/storybound`, public since 11 Oct (made public after the rewrite and a scan of a fresh clone). Commits after 12:30 IST on 10 Oct are inside the window. History was rewritten on 11 Oct (keys and six images removed; [note](../evidence/history-rewrite/NOTE.md)); the old-to-new sha map is published.

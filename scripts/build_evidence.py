@@ -143,7 +143,7 @@ def section_public() -> list[str]:
     posts = EV / "posts.md"
     n = len(re.findall(r"#neatHack", posts.read_text(encoding="utf-8"), re.I)) if posts.exists() else 0
     L.append(f"- Posts logged with #neatHack: {n} ([evidence/posts.md](evidence/posts.md)).")
-    first = git("log", "--reverse", "--format=%aI", "-1").strip()
+    first = git("log", "--format=%aI", git("rev-list", "--max-parents=0", "HEAD").split()[0], "-1").strip()
     last = git("log", "--format=%aI", "-1").strip()
     L.append(f"- First commit {first}; latest {last}. Window check: `python scripts/lint_evidence.py`.")
     return L + [""]

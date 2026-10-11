@@ -1,6 +1,6 @@
 {
-  "base": "468f029~1",
-  "head": "468f029",
+  "base": "7b2f310~1",
+  "head": "7b2f310",
   "files": [
     {
       "path": "src/storybound/oath/catalog.py",

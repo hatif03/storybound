@@ -35,8 +35,8 @@
         "name": "entire-graph",
         "version": "v0.4.0",
         "schema_version": "1.1",
-        "snapshot_path": "semantic/snapshots/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/snapshot.ndjson",
-        "store_path": "semantic/generations/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/semantic.sqlite",
+        "snapshot_path": "semantic/snapshots/b31876ec2b294c74de352783a3132dcb1e9a0c64-a452c299af199ff4/snapshot.ndjson",
+        "store_path": "semantic/generations/b31876ec2b294c74de352783a3132dcb1e9a0c64-a452c299af199ff4/semantic.sqlite",
         "capabilities": [
           "local-only",
           "ndjson",
@@ -54,8 +54,8 @@
           },
           "head": {
             "state": "ok",
-            "current": "5a92201df9bd0202802da97de669b80a26447aa3",
-            "indexed": "5a92201df9bd0202802da97de669b80a26447aa3"
+            "current": "b31876ec2b294c74de352783a3132dcb1e9a0c64",
+            "indexed": "b31876ec2b294c74de352783a3132dcb1e9a0c64"
           },
           "provider": {
             "state": "ok",
@@ -66,11 +66,11 @@
           },
           "snapshot": {
             "state": "ok",
-            "detail": "semantic/snapshots/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/snapshot.ndjson"
+            "detail": "semantic/snapshots/b31876ec2b294c74de352783a3132dcb1e9a0c64-a452c299af199ff4/snapshot.ndjson"
           },
           "store": {
             "state": "ok",
-            "detail": "semantic/generations/5a92201df9bd0202802da97de669b80a26447aa3-a452c299af199ff4/semantic.sqlite"
+            "detail": "semantic/generations/b31876ec2b294c74de352783a3132dcb1e9a0c64-a452c299af199ff4/semantic.sqlite"
           },
           "worktree": {
             "state": "dirty-unindexed",
@@ -96,7 +96,7 @@
       }
     },
     "retrieval": {
-      "seed_commit": "5a92201df9bd0202802da97de669b80a26447aa3",
+      "seed_commit": "b31876ec2b294c74de352783a3132dcb1e9a0c64",
       "seed_mode": "tracked",
       "docs_generated_at": "2026-10-10T12:12:56Z",
       "docs_records": 119,
@@ -115,8 +115,8 @@
           "seed": {
             "state": "dirty-unindexed",
             "detail": "seed and docs are based on committed HEAD; refresh with --worktree to include current changes",
-            "current": "5a92201df9bd0202802da97de669b80a26447aa3",
-            "indexed": "5a92201df9bd0202802da97de669b80a26447aa3"
+            "current": "b31876ec2b294c74de352783a3132dcb1e9a0c64",
+            "indexed": "b31876ec2b294c74de352783a3132dcb1e9a0c64"
           }
         }
       }
@@ -174,7 +174,7 @@
     },
     "live": {
       "branch": "main",
-      "head": "5a92201df9bd0202802da97de669b80a26447aa3",
+      "head": "b31876ec2b294c74de352783a3132dcb1e9a0c64",
       "dirty": true,
       "changed_files": [
         "evidence/entire/20261010-1745-IST-brain-brief-video-scene-type.json"

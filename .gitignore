@@ -56,3 +56,7 @@ evidence/stories/*/video/audio-cache/
 evidence/stories/*/video/frames/
 evidence/stories/*/video/video.mp4
 evidence/stories/*.log
+
+# the sister's drawings and cutouts: kept locally only, never in git (see docs/STATUS.md)
+video/launch/img/
+_private/

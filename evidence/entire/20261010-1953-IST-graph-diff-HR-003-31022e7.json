@@ -1,6 +1,6 @@
 {
-  "base": "05ca665~1",
-  "head": "05ca665",
+  "base": "31022e7~1",
+  "head": "31022e7",
   "files": [
     {
       "path": "src/storybound/agents/writer.py",

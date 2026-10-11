@@ -1,6 +1,6 @@
 {
-  "base": "deb8f0d~1",
-  "head": "deb8f0d",
+  "base": "748ce42~1",
+  "head": "748ce42",
   "files": [
     {
       "path": "scripts/story_video.py",

@@ -299,3 +299,10 @@ def test_quiz_is_only_for_the_gated_arm(monkeypatch, drawing):
     monkeypatch.setattr(writer, "baseline_story", lambda **kw: (pages, {}))
     run, evs = go(drawing, arm="B0")
     assert not [e for e in evs if e["type"] == "quiz.ready"]
+
+
+def test_picture_policy_chooses_which_pages_are_painted():
+    pages = list(range(1, 9))
+    assert pipeline.picture_pages("full", pages) == set(pages)
+    assert pipeline.picture_pages("half", pages) == {1, 3, 5, 7}
+    assert pipeline.picture_pages("none", pages) == set()

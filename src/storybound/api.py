@@ -136,6 +136,7 @@ async def create_story(
     seed: str | None = Form(None),
     fixture_id: str | None = Form(None),
     promise: list[str] = Form(default=[]),
+    pictures: str = Form("full"),
     drawing: UploadFile | None = File(None),
 ):
     if lesson_id not in lessons.LESSONS:
@@ -157,6 +158,8 @@ async def create_story(
         d = media.prepare(raw)
     except media.BadDrawing as e:
         return err(413 if e.code == "too_large" else 422, e.code, str(e))
+    if pictures not in ("full", "half", "none"):
+        return err(422, "bad_input", "Pictures should be every page, half the pages, or none.")
     kept, left_out = clean_promises(promise)
     if not _slots.acquire(blocking=False):
         return err(429, "busy", "I am busy making other stories. Please try again in a minute.")
@@ -164,7 +167,7 @@ async def create_story(
     cfg = RunConfig(
         lesson_id=lesson_id, age=age, hero_name=clean_hero_name(hero_name), arm=arm,
         seed=seed or secrets.token_hex(3), media=env("STORYBOUND_MEDIA", "1") != "0",
-        run_dir=RUNS_DIR / sid, fixture=fixture_id, ledger_name=None, grownup_promises=tuple(kept),
+        run_dir=RUNS_DIR / sid, fixture=fixture_id, ledger_name=None, grownup_promises=tuple(kept), pictures=pictures,
     )  # fmt: skip
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=sid)
     RUNS[sid] = run

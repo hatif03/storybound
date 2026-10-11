@@ -77,6 +77,7 @@ export async function startStory(req: StartRequest): Promise<{ storyId: string }
   form.set('age', String(req.age));
   if (req.heroName) form.set('hero_name', req.heroName);
   for (const p of req.promises ?? []) form.append('promise', p);
+  if (req.pictures) form.set('pictures', req.pictures);
   if (req.drawing.kind === 'fixture') form.set('fixture_id', req.drawing.id);
   else form.set('drawing', req.drawing.blob, req.drawing.name);
   const res = await request('/api/stories', { method: 'POST', body: form });

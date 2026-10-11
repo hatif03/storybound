@@ -72,7 +72,7 @@ export default function App() {
     setStartError('');
     try {
       const { storyId } = await startStory({
-        lessonId, age: getSettings().age, heroName: heroName || undefined, promises: promises.map((p) => p.trim()).filter(Boolean),
+        lessonId, age: getSettings().age, heroName: heroName || undefined, pictures: getSettings().pictures, promises: promises.map((p) => p.trim()).filter(Boolean),
         drawing: source.kind === 'sample' ? { kind: 'fixture', id: source.id } : { kind: 'file', blob: source.blob, name: source.kind === 'photo' ? 'drawing.jpg' : 'drawing.png' },
       });
       closeStream();

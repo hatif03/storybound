@@ -151,6 +151,14 @@ function Settings({ onForget }: { onForget(): void }) {
         </select>
       </div>
       <div className="setting">
+        <div><strong>Pictures</strong><p className="muted">Pictures cost the most to make. Painting half the pages keeps the story lighter; none keeps only the words and the voice. Used for the next story.</p></div>
+        <select aria-label="Pictures" value={s.pictures} onChange={(e) => setSettings({ pictures: e.target.value as 'full' | 'half' | 'none' })}>
+          <option value="full">Every page</option>
+          <option value="half">Half the pages</option>
+          <option value="none">No pictures</option>
+        </select>
+      </div>
+      <div className="setting">
         <div>
           <strong>Forget this story</strong>
           <p className="muted">Deletes the drawing, pictures, narration and movie from this browser tab and from the server. (The neatlogs trace of the run has names and places redacted and expires by itself.)</p>

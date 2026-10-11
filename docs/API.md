@@ -14,6 +14,14 @@ Base path `/api`. JSON in and out, except the drawing upload (multipart) and the
 | `GET /api/stories/{id}` | The current state: status, character card, oath, pages accepted so far, receipt when finished |
 | `GET /api/stories/{id}/pages/{n}/image` and `/audio` | The illustration (PNG/JPEG) and narration (MP3) for page *n*; `404` until ready, `410` if degraded |
 | `GET /api/stories/{id}/receipt` | The receipt (below) |
+| `DELETE /api/stories/{id}` | **Forget this story.** Deletes its pictures, narration, drawing, story package and video from the server and drops it from memory; `204`, then every later call for it is `404`. A story still being made stops writing to disk. The neatlogs trace of the run (names and places redacted) cannot be deleted by us and expires on its own |
+| `POST /api/stories/{id}/video` | Start the **read-along video** of a finished story (`202`; `409 not_ready` until the story has finished; `429 busy` while another render runs, because a render uses the whole machine). Built in the background by the video harness from the story package: the drawing, each page with its picture, text and choices, the answer with feedback, and a receipt card |
+| `GET /api/stories/{id}/video/status` | `{ "status": "none" / "making" / "done" / "failed", "seconds"?, "outcome"?, "broken"? }` |
+| `GET /api/stories/{id}/video` | The MP4 (`video/mp4`) when `done`, otherwise `404` |
+
+`POST /api/stories` also takes `pictures` (`full` default, `half` for pages 1, 3, 5 and 7, or `none`): the illustration policy chosen with the cfo.ai model, because pictures dominate the cost of a story. A page that is not painted is reported as a `degraded` event with `what: "image"` and the reason "this plan paints some pages only"; it keeps its words and narration.
+
+`POST /api/stories` also takes `promise` (repeat the field, up to three): a parent's or teacher's own promises, for example "Nobody in the story is left out". They are cleaned (8 to 140 characters; text that looks like an instruction to the agent, or like personal details, is left out), added to the oath as judged, non-core promises, and answered in the `202` body as `promises_used` and `promises_left_out`. They are data to check, never instructions.
 
 Errors use `{ "error": { "code": "...", "message": "..." } }` with a calm, child-safe message. Codes: `bad_input`, `too_large`, `unknown_lesson`, `not_found`, `internal`. A refused drawing is **not** an HTTP error: it is a normal run that ends with `run.refused`.
 
@@ -32,6 +40,7 @@ Every event is `{ "id": <n>, "type": "...", "t": <seconds since start>, "data": 
 | `verdict` | One verdict object (below) |
 | `scene.repair` | `index`, `attempt`, `failed` (commitment ids), `because` (plain text) |
 | `scene.accepted` | `index`, `attempts_used`, `page` (the page object below), `revised` (true when the story gate rewrote or reordered an already accepted page: replace it) |
+| `quiz.ready` | A **verified quiz** about the finished story (gated arm only): `items` (2 to 4, each a Quiz item, below) and `talk_about`. Sent after the whole-story check and before the receipt, so it may arrive after the child has read the last page. A question that cannot pass its promises is never sent |
 | `image.ready` | `index`, `url`, `verdict` status |
 | `audio.ready` | `index`, `url`, `seconds` |
 | `degraded` | `what` (`image` / `audio` / `judge` / `check`), `index` (optional), `why`, `fallback` |
@@ -78,6 +87,12 @@ Choice order is already randomised server-side; `is_correct` is included because
   "trace_id": "...", "generated_at": "..." }
 ```
 The receipt never contains the child's drawing, a name other than the hero's, or a key.
+
+### Quiz
+
+`{ "items": [ QuizItem ], "talk_about": "one open question for a grown-up" }`
+
+`QuizItem`: `index`, `kind` (`recall` / `detail` / `feeling` / `lesson`), `question`, `options` (three, each `{ id, text, is_correct }`, exactly one right), `evidence_page`, `evidence_quote` (copied word for word from that page: the line that answers the question) and `explain`. Every item has kept five promises (scope `quiz` in the oath): the quote is on the cited page, one right answer, easy words, gentle words, and a judge on every question confirms the story alone supports the answer. A fixed rule also stops the right answer being simply the longest.
 
 ## Conventions
 

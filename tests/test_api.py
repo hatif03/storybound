@@ -130,3 +130,10 @@ def test_video_endpoint_waits_for_a_finished_story_then_builds(client, monkeypat
             break
         __import__("time").sleep(0.05)
     assert client.get(f"/api/stories/{sid}/video").content == b"mp4"
+
+
+def test_pictures_policy_is_validated_and_passed_on(client):
+    ok = client.post("/api/stories", data={"lesson_id": "sharing", "fixture_id": "benign/bunny-bow-carrot", "pictures": "half"}).json()
+    assert api.RUNS[ok["story_id"]].cfg.pictures == "half"
+    bad = client.post("/api/stories", data={"lesson_id": "sharing", "fixture_id": "benign/bunny-bow-carrot", "pictures": "lots"})
+    assert bad.status_code == 422

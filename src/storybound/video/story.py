@@ -43,13 +43,13 @@ def build_spec(story_dir: Path, *, own_media: bool = False) -> Spec:
         pic = [Block(type="image", src=f"{base}/{img}")] if img else []
         right = next(c for c in p["choices"] if c["is_correct"])
         scenes.append(Scene(
-            id=f"p{n}-read", kind="story", layout="split", mood=PAGE_MOODS[k % len(PAGE_MOODS)], pause=2.0,
+            id=f"p{n}-read", kind="story", layout="split" if pic else "stack", mood=PAGE_MOODS[k % len(PAGE_MOODS)], pause=2.0,
             narration=f"{p['scenario']} {p['question']}",
             blocks=[*pic, Block(type="text", text=p["scenario"]),
                     Block(type="choices", at_frac=0.72, items=[{"text": c["text"], "state": "neutral"} for c in p["choices"]])],
         ))
         scenes.append(Scene(
-            id=f"p{n}-answer", kind="story", layout="split", mood="heart-eyes", pause=0.9,
+            id=f"p{n}-answer", kind="story", layout="split" if pic else "stack", mood="heart-eyes", pause=0.9,
             narration=f"Yes! {right['feedback']}",
             blocks=[*pic, Block(type="choices", items=[{"text": c["text"], "state": "correct" if c["is_correct"] else "wrong"} for c in p["choices"]]),
                     Block(type="text", text=right["feedback"], at_frac=0.35)],

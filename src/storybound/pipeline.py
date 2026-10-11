@@ -57,6 +57,7 @@ class RunConfig:
     ledger_name: str | None = None
     judge_enabled: bool = True
     judge_fn: Any = None  # tests inject a fake judge; None means the K2 judge
+    pictures: str = "full"  # illustration policy from the cfo.ai model: full (every page), half (pages 1, 3, 5, 7) or none
     quiz: bool = True  # gated arm only: a verified quiz after the story
     grownup_promises: tuple[str, ...] = ()  # a parent's or teacher's own promises, already cleaned
 
@@ -547,7 +548,11 @@ def build_graph(run: Run):
         if not cfg.media:
             return {}
         pages, card = s["pages"], s["card"]
-        jobs = [(one_image, p, card) for p in pages] + [(one_audio, p) for p in pages]
+        painted = picture_pages(cfg.pictures, [p.index for p in pages])
+        for p in pages:
+            if p.index not in painted:  # a plan choice, not a failure: the page keeps its words and its narration
+                run.degrade("image", "this plan paints some pages only", "text only", p.index)
+        jobs = [(one_image, p, card) for p in pages if p.index in painted] + [(one_audio, p) for p in pages]
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
@@ -727,6 +732,15 @@ def execute(run: Run) -> Run:
         run.bus.close()
         tracing.flush()
     return run
+
+
+def picture_pages(policy: str, indices: list[int]) -> set[int]:
+    """Which pages get a picture. Pictures dominate the cost of a story (cfo.ai model), so the plan can paint half of them."""
+    if policy == "none":
+        return set()
+    if policy == "half":
+        return {i for i in indices if i % 2 == 1}
+    return set(indices)
 
 
 def export_story(run: Run, s: S) -> None:

@@ -12,6 +12,7 @@ const arg = (name, dflt) => { const i = process.argv.indexOf(`--${name}`); retur
 const BASE = arg('url', 'http://127.0.0.1:8000');
 const OUT = path.resolve(root, arg('out', 'shots/e2e'));
 const VIDEO = !process.argv.includes('--no-video');
+const PICTURES = arg('pictures', 'full'); // full | half | none: the illustration policy
 fs.mkdirSync(OUT, { recursive: true });
 
 const t0 = Date.now();
@@ -35,6 +36,10 @@ const clickText = async (text, sel = 'button, a', timeout = 30000) => {
 };
 
 await page.goto(BASE, { waitUntil: 'networkidle0' });
+if (PICTURES !== 'full') { // the grown-up setting lives in sessionStorage and is read at load
+  await page.evaluate((v) => sessionStorage.setItem('storybound.settings', JSON.stringify({ pictures: v })), PICTURES);
+  await page.reload({ waitUntil: 'networkidle0' });
+}
 await shot('01-welcome');
 log('welcome');
 await clickText("Let's go");
@@ -82,9 +87,11 @@ log('first page ready');
 await shot('05-making-first-page');
 
 const TOTAL = 8;
+let painted = 0;
 for (let n = 1; n <= TOTAL; n++) {
   await page.waitForSelector('.choice', { timeout: 300000 });
-  const hasPic = await page.evaluate(() => !!document.querySelector('.page-left img, .page-left canvas'));
+  const hasPic = await page.evaluate(() => !!document.querySelector('.picture[data-status="ready"]'));
+  if (hasPic) painted++;
   if (n === 1) await shot('06-reader-page-1');
   const choices = await page.$$('.choice');
   await choices[0].click();
@@ -94,18 +101,22 @@ for (let n = 1; n <= TOTAL; n++) {
   log(`page ${n} read${hasPic ? '' : ' (no picture element)'}`);
   await clickText(n < TOTAL ? 'Next' : 'The end', '.next-inline');
 }
-// the quiz after the story: answer like a child (try answers until the story's line says so), check a wrong answer shows the line
+log(`pages with a painted picture: ${painted} of ${TOTAL} (policy: ${PICTURES})`);
+// the end screen offers the quiz and the picture game when they are ready (the quiz is verified after the story)
+await page.waitForFunction(() => document.body.innerText.includes('The end!'), { timeout: 60000 });
+await shot('08-end');
 let quizQs = 0, wrongShowedLine = false, orderPlayed = false;
-if (await page.waitForSelector('.quiz-body', { timeout: 120000 }).catch(() => null)) {
+const hasQuizButton = await page.waitForFunction(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes("Play Pip's quiz")), { timeout: 240000 }).then(() => true).catch(() => false);
+log(`quiz button offered on the end screen: ${hasQuizButton}`);
+if (hasQuizButton) {
+  await clickText("Play Pip's quiz");
   while (await page.$('.quiz-body')) {
     quizQs++;
-    const opts = await page.$$('.quiz-body .choice');
-    for (let k = 0; k < opts.length; k++) {
-      const btns = await page.$$('.quiz-body .choice');
-      await btns[k].click();
+    const n = (await page.$$('.quiz-body .choice')).length;
+    for (let k = 0; k < n; k++) {
+      await (await page.$$('.quiz-body .choice'))[k].click();
       await sleep(300);
-      if (!(await page.$('.quiz-body .look-card'))) continue;
-      const head = await page.$eval('.look-head', (e) => e.textContent);
+      const head = await page.$eval('.look-head', (e) => e.textContent).catch(() => '');
       if (head.includes('Good try')) wrongShowedLine = true;
       if (head.includes('Yes!')) break;
     }
@@ -115,23 +126,23 @@ if (await page.waitForSelector('.quiz-body', { timeout: 120000 }).catch(() => nu
   }
   log(`quiz played: ${quizQs} questions, a wrong answer showed the story line: ${wrongShowedLine}`);
 }
-if (await page.waitForSelector('.order-tray', { timeout: 20000 }).catch(() => null)) {
+if (await page.$('button.btn') && await page.evaluate(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes('Put the pictures in order')))) {
+  await clickText('Put the pictures in order');
+  await page.waitForSelector('.order-tray', { timeout: 20000 });
   await shot('08b-order-game');
   for (let slot = 0; slot < 3; slot++) {
-    const cards = await page.$$('.order-card:not([disabled])');
-    for (const c of cards) {
+    for (const c of await page.$$('.order-card:not([disabled])')) {
       await c.click();
       await sleep(250);
       if ((await page.$$('.slot[data-filled="true"]')).length > slot) break;
     }
   }
   orderPlayed = (await page.$$('.slot[data-filled="true"]')).length === 3;
-  await shot('08c-order-done');
   log(`picture-order game finished: ${orderPlayed}`);
   await clickText('Next', 'button');
 }
+else log('picture-order game not offered (fewer than three pictures: expected with the half-pictures policy only if fewer than 3 pages are painted)');
 await page.waitForFunction(() => document.body.innerText.includes('The end!'), { timeout: 60000 });
-await shot('08-end');
 log(`talk-about card shown: ${await page.evaluate(() => !!document.querySelector('.talk'))}`);
 log('reached the end screen');
 

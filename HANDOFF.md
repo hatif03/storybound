@@ -1,51 +1,31 @@
-# HANDOFF: continue building from Claude Code in this folder
+# HANDOFF: where things stand
 
-Written 10 Oct 2026, ~14:30 IST, at the end of the session that was run from `D:\neatlogs`. Read `CLAUDE.md` (rules) and `docs/DESIGN.md` (design) first. This file says where things stand and what to do next.
+Refreshed Sun 11 Oct 2026, morning IST. Read `CLAUDE.md` (rules), then [docs/STATUS.md](docs/STATUS.md) (done and left, with who must act), [docs/PROCESS.md](docs/PROCESS.md) (how we got here) and [docs/TOOLS.md](docs/TOOLS.md) (neatlogs, Entire, cfo.ai).
 
-## Why this folder matters for Entire
-Entire records a session only if Claude Code is started inside this repo. Everything before this point was built from outside it, so there are **0 Entire checkpoints** (`entire status`, `entire checkpoint list`). From now on: work here, commit often, let Entire link checkpoints (`commit_linking: always`). Also run `entire login`.
+## State in five lines
+1. The product works end to end through the real browser UI: draw, lesson, optional grown-up promises, 8 verified pages with pictures and narration, a verified quiz and a picture-order game, a read-along movie, a grown-ups receipt, and a Forget that deletes on the server.
+2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, six hardening records (HR-001 to HR-006) plus HR-007 below, exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
+3. Tests: 80 backend (`pytest tests`), 19 web (`cd web; npm run test`); both green at the last commit.
+4. All work is committed locally on `main` (37+ Entire checkpoints). Not everything is pushed.
+5. **The demo video is not made yet** (the builder asked for it last). The video agent can generate it from the final ledger: see "Demo video" below.
 
-## What exists
-| Area | State | Where |
-| --- | --- | --- |
-| Oath engine (M2) | done, 53 tests | `src/storybound/oath/` |
-| LangGraph pipeline, arms B0 (single shot), B1 (gated, pipelined review with rollback), B2 (same model reviews its own story) | done | `src/storybound/pipeline.py`, `agents/` |
-| FastAPI API | done, matches `docs/API.md` | `src/storybound/api.py` |
-| Web app | built (React + Vite + Rive, mock mode `?mock=1`), not yet run against a real story | `web/`, `docs/WEB.md` |
-| Evidence tools | ledger, sweep, report, judge eval, safety eval, linter, `EVIDENCE.md` generator | `scripts/`, `evidence/` |
-| Platforms log | per-platform state | `docs/PLATFORMS.md` |
-| Build log | dated entries | `hackathon.md` |
-| Assets, brand, fonts, owl poses, audio | copied in | `assets/` (inventory: `assets/README.md`) |
-| Launch motion-graphic (89 s draft) | sources copied; paths fixed | `video/launch/` (`npm install`, then `node render.mjs`) |
-| Planning docs | `docs/planning/*.md` (pitch, content calendar, neatlogs, entire, cfo, frontend, crustdata) | kept for reference |
-| Sister's real drawings | **private, gitignored** | `_private/demo-drawings/` (never commit, never put in traces or posts) |
-| Old project folders | local only, gitignored | `_reference/` (do not read from, do not mention) |
+## Do these before anything else (only the builder can)
+- **Rotate the neatlogs key and the hackathon gateway key.** Both were pasted into the session and are inside Entire checkpoint transcripts, some already on the private `origin`. Do not make the repo public before deciding what to do about those checkpoint refs (Entire documents no removal of a pushed checkpoint).
+- **Entire Trails:** install the Entire GitHub App on `hatif03/storybound` and select the repo on entire.io. Until then `entire trail create` and `entire review` answer "repository not found". Runners are already scaffolded in `.entire/runners/`.
 
-## Measured so far (all in `evidence/`)
-- Baseline sweep `sweep-1-p1` (prompt p1, code a19c731, 55 runs): ungated shipped a broken promise in 28/28 stories (206 broken, 96 of them reading level); gated in 7/24 (13 broken); 3 gated runs errored from bugs that are now fixed. Report: `evidence/reports/*sweep-1-p1.md`.
-- Safety screen over 26 fixture drawings: 25/26 matched; 1/1 unsafe refused; 0 benign refused.
-- Judge with injected faults: 24/24 caught, 0/8 clean flagged, 0/88 unverifiable.
-- A real recovery run (image quota 429, pages degraded to text only, receipt said so): trace `94db23729dac6323368749acba4be1cb`.
-- neatlogs detections: "Oath violation", "Critical safety stop" (free plan has 5 slots, 3 defaults exist).
-- Entire graph outputs: `evidence/entire/`.
+## What is running / how to start things
+- Dev server: `.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000` (serves the API and `web/dist`; restart after backend changes; rebuild the web app with `cd web; npm run build`).
+- A real story through the real UI: `node web\scripts\e2e-real.mjs` (about $0.40 plus $0.04 for the movie, about 13 minutes). Free demo-mode check of the quiz and game: `node web\scripts\e2e-quiz-mock.mjs`.
+- Check what an anonymous visitor sees on a share link: `node web\scripts\check-share-link.mjs <url> <out.png>`.
 
-## Running when this was written (check before starting anything)
-- `sweep-2-p2` (prompt p2, pipelined loop, arms B0, B1, B2; 84 runs, about 12 done): `scripts/sweep.py`. Check with Task Manager (a `python.exe` running `sweep.py`) before re-launching, to avoid duplicates. It is resumable: finished jobs are in `evidence/ledger.jsonl` and are skipped.
-  `.venv\Scripts\python.exe scripts\sweep.py --name sweep-2-p2 --arms B0,B1,B2 --fixtures benign/bunny-bow-carrot,benign/rhinoceros-crayon,benign/van-crayon,benign/christmas-tree-digital,tier-b-text/fish-kill-fish-caption,tier-b-text/injection-ignore-instructions,edge/copyrighted-character-mickey-1928 --lessons sharing,honesty --k 2 --workers 5`
-- Dev API server on port 8000: `.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000`. Restart it after `npm run build` in `web/` so it serves the app at `/`.
-- `evidence/ledger.jsonl` grows as the sweep runs: commit it.
+## Keys and environment
+Keys live only in `.env` (gitignored): Vertex through `gcloud` credentials, `IFM_API_KEY` (K2), `LITELLM_API_KEY` and `LITELLM_BASE_URL` (hackathon gateway), `NEATLOGS_API_KEY`, `NEATLOGS_PROJECT_ID`, `CRUSTDATA_API_KEY`. To let Claude Code's neatlogs MCP see the key, start it from `scripts\dev-shell.ps1`. The neatlogs CLI is signed in through device login (read-only scopes); the cfo.ai and Crustdata MCPs are authorised.
 
-## Next steps, in order
-1. When sweep 2 finishes: `python scripts/report.py --name sweep-2-p2`. Write `evidence/hardening/HR-001.md` (reading level: prompt p1 to p2) and `HR-002.md` (latency: pipelined review, planner beside the oath author; compare seconds and `first_page_s`). Required headings: Trigger, Diagnosis, Change (commit sha, Entire checkpoint, prompt version), Before, After, Regression fixture. Link the neatlogs trace ids. Include B2 (self-critique) honestly in the comparison, even if it narrows our lead.
-2. Run one real story through the web UI (media on) and fix what breaks. Not yet verified: real pictures and narration in the reader, touch devices, Safari, screen reader.
-3. Backend items still open: a delete endpoint ("forget this story"); the hardening candidate where a text-only fixture flips between sanitise and ask-redraw.
-4. cfo.ai: sign in through the MCP prompt in this session, then build the plan from measured cost per story (neatlogs analytics; our estimate in `budget.usd_estimate` is labelled an estimate). Save evidence to `evidence/cfo/`. Draft inputs: `docs/planning/cfo.md`.
-5. Crustdata: key is in `.env` (CRUSTDATA_API_KEY, tested, 5200 credits). Use it for the market and competitor notes in the cfo.ai model. **Raw Crustdata data must not go in the public repo**: keep derived figures only, cited "Crustdata, <date>".
-6. Parent/teacher-written promises (free-text promises that become judged `lesson_specific_*` commitments): small, and a real differentiator. Optional: a short animated clip per page.
-7. Demo video (at most 3 minutes; neatlogs, Entire, cfo.ai each on architecture, implementation, runtime, reasoning, result) and the #neatHack posts (`docs/planning/content.md`, log real ones in `evidence/posts.md`). Final: `python scripts/build_evidence.py`, `python scripts/lint_evidence.py`, publish the repo, quote-post on X Monday 12 Oct 19:00-23:55 IST.
+## Demo video (last step)
+`python scripts/make_video.py --brief "..." --claims video/harness/claims/preview.json --title demo --out evidence/video/demo --name video-demo` plans from a brief and a claim catalogue; every number comes from an evidence file; `requires_coverage` makes the video oath demand each tool on architecture, implementation, runtime, reasoning and result (15 tags). Extend the claim catalogue with the final numbers (HR records, cost, margin) and the ledger counts first. The script is in `docs/planning/pitch.md` section 6. Keep the result at 3:00 or less; the harness refuses longer.
 
 ## Things to remember
-- Keys live only in `.env` (gitignored). Never print them, commit them, or put them in prompts. Rotate all pasted keys (neatlogs, AWS, K2, Crustdata) after the hackathon.
-- Commit trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. Use plain `date` for IST. For big files use the Write tool, not bash heredocs.
-- AWS: no Bedrock/Polly/S3; we do not host on AWS (it would need a Google credential on the box).
-- The neatlogs MCP is reachable through `scripts/neatlogs_mcp.py`; once the repo's `.mcp.json` servers load in this session, use them directly (neatlogs, cfo.ai, Crustdata).
+- Commit trailer: `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. One intent per commit. For big files use the Write tool, not shell heredocs.
+- Never print, commit or paste a key. Real drawings stay in `_private/`.
+- AWS is not used (no Bedrock, Polly or S3 in the account).
+- `evidence/runs/` is gitignored but earlier files are tracked; add new ones with `git add -f`.

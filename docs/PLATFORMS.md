@@ -50,7 +50,7 @@ Apache-2.0, pinned 0.8.145, telemetry disabled. Not used: `publish`, `cloud` ren
 Profile `neathack` (us-east-1). Only EC2, Lambda, IAM roles and load balancers; $25 team allowance; no Bedrock, Polly or S3. Not used: the app runs locally.
 
 ## Crustdata (market data)
-CLI 0.2.19 installed and the MCP connected, **not used**: no market figure from it is in the repository or the cfo.ai model. Raw Crustdata data must never enter the public repo.
+MCP connected and used once (11 Oct, 11.6 of 5,200 credits) for a field-size note with derived counts only: `evidence/cfo/20261011-0850-IST-market-note-crustdata.md`. No market figure from it is in the cfo.ai model. Raw Crustdata data must never enter the public repo.
 
 ## GitHub
 `hatif03/storybound`, private. Commits after 12:30 IST on 10 Oct are inside the window. Publishing is a decision for the builder: see [STATUS.md](STATUS.md) (keys in checkpoints, Entire link access).

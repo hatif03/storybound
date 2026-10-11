@@ -80,6 +80,15 @@ eatlogs\launch-video`.
 - cfo.ai: the one full illustrated story cost an estimated $0.358 and $0.356, in line with the model's assumed $0.35; the measured figure still has to replace the estimate in the "Cost per story inputs" table (the neatlogs cost excludes Gemini thinking tokens, so it understates).
 - Tests that ran: `pytest tests` (70 passed), `ruff check` clean.
 
+### 2026-10-11, morning IST: documentation, Trails, quiz quality, the cfo.ai loop
+- Documentation written: [docs/PROCESS.md](docs/PROCESS.md) (hour-by-hour process and what went wrong), [docs/TOOLS.md](docs/TOOLS.md) (how neatlogs, Entire and cfo.ai were used, with five points each), [docs/STATUS.md](docs/STATUS.md) (done and left), README, PLATFORMS, HANDOFF, API and DESIGN refreshed.
+- Entire Trails: `entire runner setup --defaults-only` created six runners (no model call); the security, drift and review runners are tailored to this repo's hard rules and committed. `entire trail create --repo gh/hatif03/storybound` and `entire review general` both fail with "repository not found (404)": the Entire GitHub App is not installed on the repository (a web step). `entire repo mirror add` was not run because it would upload the whole repository, including checkpoints that hold pasted keys.
+- neatlogs: CLI signed in (read-only scopes). Org plan `legacy_unmetered`; no evaluations yet; prompts auto-imported by neatlogs. Two detections added for the new promises (`Picture has words painted in`, `Quiz question failed a promise`), 7 in total. neatlogs-measured cost replaced the estimate in cfo.ai (change 275839).
+- cfo.ai: the share link was checked from a clean headless browser with no cfo.ai session: the full model renders, with a dismissible sign-in prompt (`evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png`). The model's recommendation (paint half the pages) is now a product setting (`pictures`).
+- Crustdata used once for a derived field-size note (11.6 credits): `evidence/cfo/20261011-0850-IST-market-note-crustdata.md`.
+- Quiz sweep `sweep-7-quiz` (gated arm, 7 drawings x 2 lessons x 2 seeds): results in `docs/STATUS.md` and the ledger rows' `quiz` field. Two jobs ended on a Vertex 429 at the first call: HR-007 (longer backoff for quota errors).
+- Tests that ran: `pytest tests` (80 passed), `npm run test` in `web/` (19 passed).
+
 ## Demo
 Planned: a 3:00 video covering neatlogs, Entire and cfo.ai on architecture, implementation, runtime, reasoning and result; recovery and repair runs on camera; a family-friendly demo with a parent's consent. Not started.
 

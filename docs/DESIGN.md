@@ -151,3 +151,21 @@ Model ids live in one config file so they can be swapped without touching the gr
 | M7 | Business and content | cfo.ai model with measured cost, Crustdata market notes, posts, demo video |
 
 Each milestone ends with a commit, an update to `docs/PLATFORMS.md` and a line in `hackathon.md`.
+
+## 10. Additions after the first design (10 to 11 Oct 2026)
+
+The design above is the starting point; these were added while building, each with its evidence. Details and numbers are in [PROCESS.md](PROCESS.md) and [TOOLS.md](TOOLS.md).
+
+| Addition | What it is | Why | Evidence |
+| --- | --- | --- | --- |
+| Arm B2 | The same model writes and then reviews its own story | The honest comparison: does self-review close the gap? It does not (27/28 shipped broken, like ungated) | `sweep-2-p2` |
+| Pipelined review | Pages are written ahead while the judge reviews earlier ones; a failed review discards what was written after it | Latency of the gate (HR-002) | HR-002 |
+| Sentence target under the limit | The page writer is told the limit minus two words | A stated limit became the target (HR-003) | HR-003 |
+| Severity tiers for safe text | Severe terms stay critical; mild terms ask for a rewrite | A lesson can say "hurts trust" (HR-004) | HR-004 |
+| `image_no_text` | A vision-judged promise on every picture | The image model painted words into a picture (HR-006) | HR-006 |
+| Quote-checked quiz (scope `quiz`) | Four questions after the story, six promises, a judge on every question; a question that fails is dropped | Games that teach without hooks; every question provably answerable from the story | `docs/WEB.md`, `sweep-7-quiz` |
+| Grown-up promises | Free-text promises become judged, non-core commitments; treated as data, never instructions | Teachers and parents can add what the story owes the child | API `promise` field |
+| Illustration policy | `pictures: full / half / none` | The cfo.ai model: picture count decides the margin | `docs/TOOLS.md` section 3 |
+| Forget a story | `DELETE /api/stories/{id}` | A parent can remove a child's story and drawing | API doc, test |
+| Story video | A video agent builds a read-along video from a story package, with its own oath and receipt | A second verified artifact; also generates the demo video from the evidence | `src/storybound/video/`, `evidence/stories/` |
+| Longer backoff on quota errors | A 429 waits four times longer and gets one more try | Runs ended on a per-minute quota (HR-007) | HR-007 |

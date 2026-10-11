@@ -116,7 +116,7 @@ On Main, month 6: Household 76.9% and Classroom 56.5%. Cash at the end of the wi
 - Anonymous check: the share link renders for a visitor with no cfo.ai session (headless browser, no cookies; screenshot `evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png`). A dismissible "Keep your access" sign-in prompt appears; the workspace name "Invisible Technologies" is visible in the page title.
 - Competitor price anchors in the model are approximate and come from app listings and secondary sources (see `docs/planning/plan-to-submission.md`, section 3).
 - Month 6 is hard-coded as March 2027, and the text blocks quote figures as of the build; the quiz and video add-ons are **not** yet priced in the model.
-- Crustdata is connected (MCP) but **not used**: no market numbers from it are in the model. Raw Crustdata data must not enter the public repository.
+- Crustdata was used once, for a field-size note with **derived counts only** ([evidence/cfo/20261011-0850-IST-market-note-crustdata.md](../evidence/cfo/20261011-0850-IST-market-note-crustdata.md): of the 60 closest AI story products, 43 have 1 to 10 employees and 42 were founded in 2023 or later). It does not feed a number in the model. Raw Crustdata data must not enter the public repository.
 - The workspace is on a trial that ends 24 Oct 2026; the builder has confirmed hackathon credits cover it.
 - cfo.ai tool limits met: `dry_run` exists only on `create`, so updates had no dry run; a nested dimension layout produced a "one member's result" warning and was rebuilt with variable rows; no Version-history screenshot or workbook download could be made through the MCP (UI steps).
 

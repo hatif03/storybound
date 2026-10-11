@@ -16,6 +16,7 @@ const arg = (name, dflt) => { const i = process.argv.indexOf(`--${name}`); retur
 const BASE = arg('url', 'http://127.0.0.1:8000');
 const OUT = path.resolve(root, arg('out', 'shots/e2e'));
 const VIDEO = !process.argv.includes('--no-video');
+const DWELL = Number(arg('dwell', '0')); // seconds spent on each page, like a child reading (0 = click straight through)
 const PICTURES = arg('pictures', 'full'); // full | half | none: the illustration policy
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -100,6 +101,7 @@ const TOTAL = 8;
 let painted = 0;
 for (let n = 1; n <= TOTAL; n++) {
   await page.waitForSelector('.choice', { timeout: 300000 });
+  if (DWELL) await sleep(DWELL * 1000);
   const hasPic = await page.evaluate(() => !!document.querySelector('.picture[data-status="ready"]'));
   if (hasPic) painted++;
   if (n === 1) await shot('06-reader-page-1');
@@ -136,8 +138,10 @@ if (hasQuizButton) {
   }
   log(`quiz played: ${quizQs} questions, a wrong answer showed the story line: ${wrongShowedLine}`);
 }
-if (await page.$('button.btn') && await page.evaluate(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes('Put the pictures in order')))) {
-  await clickText('Put the pictures in order');
+await sleep(600);
+const onOrder = !!(await page.$('.order-tray')); // after the quiz the app goes straight to the order game when three or more pictures are ready
+if (onOrder || (await page.evaluate(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes('Put the pictures in order'))))) {
+  if (!onOrder) await clickText('Put the pictures in order');
   await page.waitForSelector('.order-tray', { timeout: 20000 });
   await shot('08b-order-game');
   for (let slot = 0; slot < 3; slot++) {

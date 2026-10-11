@@ -79,9 +79,9 @@ await tapText('Start over').catch(async () => { // the trash button has only an 
   await touch('touchStart', [finger(1, pt.x, pt.y)]); await sleep(60); await touch('touchEnd', []); await sleep(250);
 });
 check('start over clears the page at once', (await draft()) === 0, `strokes: ${await draft()}`);
-check('and offers "Bring my drawing back"', await textBtn('Bring my drawing back'));
+check('and offers "Bring it back"', await textBtn('Bring it back'));
 await p.screenshot({ path: path.join(OUT, '02-start-over-can-be-undone.png') });
-await tapText('Bring my drawing back');
+await tapText('Bring it back');
 check('bringing it back restores every stroke', (await draft()) === 3, `strokes: ${await draft()}`);
 
 // 6. the browser's back button stays inside the app

@@ -131,7 +131,7 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
             <Btn variant="paper" icon="paint-brush" onClick={() => setPreview(null)}>Draw my own</Btn>
           )}
           {!preview && !ink && restorable && (
-            <Btn variant="sky" icon="arrow-counter-clockwise" onClick={() => pad.current?.restore()}>Bring my drawing back</Btn>
+            <Btn variant="sky" icon="arrow-counter-clockwise" aria-label="Bring my drawing back" onClick={() => pad.current?.restore()}>Bring it back</Btn>
           )}
           <Btn big icon="star" onClick={finish} disabled={busy} aria-disabled={!preview && !ink} className={!preview && !ink ? 'is-soft' : ''}>Done!</Btn>
           <p className="hint" role="status" aria-live="polite">{hint}</p>

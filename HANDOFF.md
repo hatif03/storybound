@@ -6,12 +6,13 @@ Refreshed Sun 11 Oct 2026, morning IST. Read `CLAUDE.md` (rules), then [docs/STA
 1. The product works end to end through the real browser UI: draw, lesson, optional grown-up promises, 8 verified pages with pictures and narration, a verified quiz and a picture-order game, a read-along movie, a grown-ups receipt, and a Forget that deletes on the server.
 2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, six hardening records (HR-001 to HR-006) plus HR-007 below, exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
 3. Tests: 80 backend (`pytest tests`), 19 web (`cd web; npm run test`); both green at the last commit.
-4. All work is committed locally on `main` (37+ Entire checkpoints). Not everything is pushed.
+4. All work is committed on `main` and pushed (40+ Entire checkpoints); the work branch for the Trails PR is `docs/after-history-rewrite`.
 5. **The demo video is not made yet** (the builder asked for it last). The video agent can generate it from the final ledger: see "Demo video" below.
 
 ## Do these before anything else (only the builder can)
-- **Rotate the neatlogs key and the hackathon gateway key.** Both were pasted into the session and are inside Entire checkpoint transcripts, some already on the private `origin`. Do not make the repo public before deciding what to do about those checkpoint refs (Entire documents no removal of a pushed checkpoint).
-- **Entire Trails:** install the Entire GitHub App on `hatif03/storybound` and select the repo on entire.io. Until then `entire trail create` and `entire review` answer "repository not found". Runners are already scaffolded in `.entire/runners/`.
+- **Rotate the neatlogs key and the hackathon gateway key.** Both were pasted into the session. History was rewritten on 11 Oct to remove them (and six images of the sister's drawings) from every ref, including Entire checkpoint refs: see `evidence/history-rewrite/NOTE.md`. Commit shas changed; `sha-map.txt` maps old to new. GitHub may still hold unreachable objects, so rotate anyway.
+- **neatlogs:** sign in again (`neatlogs auth login`; the login expired) and retry the cost alert (`INVALID_ARGUMENTS` on the first try).
+- **Entire link:** test `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` from a private window.
 
 ## What is running / how to start things
 - Dev server: `.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000` (serves the API and `web/dist`; restart after backend changes; rebuild the web app with `cd web; npm run build`).

@@ -19,7 +19,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Forget a story (`DELETE /api/stories/{id}`) | Done; the story 404s afterwards | `tests/test_api.py`, browser run |
 | Read-along video from a story | Done: 3:37 and 3:45 renders, all promises pass | `evidence/stories/bunny-sharing-2/video/receipt.json` |
 | Web app through a real browser | Two live runs. Run 1: drawing, 8 pages, movie, Forget. Run 2 (`--pictures half`, 11 Oct): pictures painted on pages 1, 3, 5, 7 only and narration on all 8; the quiz was offered on the end screen and played (4 questions, a wrong answer showed the story line); the receipt read "28 promises checked, 0 pages rewritten, all kept", with the grown-up promise and all six quiz promises kept | `web/scripts/e2e-real.mjs`, `evidence/runs/20261011-0910-IST-live-ui-half-pictures-quiz.json`, `evidence/screens/` |
-| neatlogs | Traces, 7 detections, triage review, CLI signed in (alert rules, evaluations and trace sharing are empty or disabled), measured cost | [TOOLS.md](TOOLS.md) |
+| neatlogs | Traces, 7 detections, triage review, measured cost; one alert rule and one evaluation draft created through the CLI (cost alert rejected, see item 4) | [TOOLS.md](TOOLS.md) |
 | Entire | 37+ checkpoints, graph diffs, Brain, runners tailored | [TOOLS.md](TOOLS.md) |
 | cfo.ai | Model built; measured cost in (change 275839); share link checked anonymously | [TOOLS.md](TOOLS.md), `evidence/cfo/` |
 | Crustdata | Used once, derived counts only | `evidence/cfo/20261011-0850-IST-market-note-crustdata.md` |
@@ -47,14 +47,14 @@ The quote promise and the one-right-answer promise never failed on the first pas
 ### Only the builder can do these
 | # | Item | Why it is blocked | What to do |
 | --- | --- | --- | --- |
-| 1 | **Rotate the neatlogs key and the hackathon gateway key** | Both were pasted into the session and are in Entire checkpoint transcripts (some already on the private `origin`) | Rotate; update `.env`; then decide what to do about the pushed checkpoint refs before any public push |
-| 2 | **Entire Trails: branch, PR, runners, review** | Trail #1 exists. The rest needs a push; the push sends checkpoints containing the two pasted keys to GitHub, so it was blocked until rotation | After item 1: `git push origin main`; create a branch with a small real change, push it, `entire trail create --branch ...`, open the PR, then `entire review general`, `entire trail show --json`; save outputs under `evidence/entire/` |
-| 3 | **Make the repo public (requested)** | Three things block it, in order: (a) the two pasted keys are in checkpoint refs that would become public: rotate both first; (b) `video/launch/img/` holds four of the sister's real drawings and two cutouts (face covered by a cartoon): `CLAUDE.md` allows family footage only with a parent's consent, and the files are already in git history, so confirm consent or decide to remove them before anything is public; (c) after that, `gh repo edit hatif03/storybound --visibility public --accept-visibility-change-consequences`, then test `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` in a private window and record the sha and the 26-character checkpoint id |
-| 4 | **neatlogs write-access steps** | The CLI login has read-only scopes (alert rules need `configuration:write`) | Approve a second sign-in with write scopes (link offered in the chat), or create in the dashboard: a human evaluation of 20 judge verdicts, alerts on cost and latency per story, a guest link for one trace |
+| 1 | **Rotate the neatlogs key and the hackathon gateway key** | Both were pasted into the session. The key text has been scrubbed from every ref (history rewrite, 11 Oct, see `evidence/history-rewrite/NOTE.md`) but GitHub may retain unreachable objects, and the session transcript on this machine still has them | Rotate (the builder said they will); update `.env` |
+| 2 | **Entire Trails: branch, PR, runners, review** | Done: trail 2 https://entire.io/gh/hatif03/storybound/trails/2, PR #1, `entire review general` ran (5 findings, fixed); see `TOOLS.md` (Trails). **Left: merge PR #1** (docs fixes are only on the branch until then); the approvals gate needs a second reviewer | Check the trail and PR on entire.io and read the runner results |
+| 3 | **Entire checkpoint link: confirm from your own private window** | The repo is public now. A clean headless browser (no cookies) rendered the commit page: [screenshot](../evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png). A "Log in" button is shown but the page content is visible | Submission link: `https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2`, checkpoint id `01M4MJM5TRM7NE2F8FHFJ49NE6` (the commit and its trailer are on `main`) |
+| 4 | **neatlogs: guest link and human review** | (Update: the cost alert "Expensive story run", metric `cost`, max above 0.8, was created after the operator was sent as `>`; `evidence/neatlogs/20261011-cost-alert-results.json`.) Earlier state: | The write sign-in worked (11 Oct): a **critical safety stop** alert rule and a draft **human evaluation of judge verdicts** were created through the CLI (`evidence/neatlogs/20261011-write-config-results.json`). The **cost-per-story alert** was rejected (`INVALID_ARGUMENTS`) and the login has since expired (`OAUTH_LOGIN_EXPIRED`) | Sign in again (`neatlogs auth login`), then retry the cost alert; create a guest link for one trace; run the human review on 20 verdicts |
 | 5 | **cfo.ai UI steps** | Not available through the MCP | Screenshot Version history (change 275839), download the workbook, keep both in `evidence/cfo/` |
 | 6 | **`#neatHack` posts and the submission post** | Posting is the builder's act | Log each in `evidence/posts.md` (URL, time, what it shows); content ideas in `docs/planning/content.md` |
 | 7 | **Demo video (last)** | Requested last | `scripts/make_video.py` with `requires_coverage` (see HANDOFF.md); at most 3:00 |
-| 8 | **Publish decision** | See items 1 and 3 | After rotation: `build_evidence.py`, `lint_evidence.py`, publish, quote-post Mon 12 Oct 19:00 to 23:55 IST |
+| 8 | **Publish** | Repo visibility is the builder's call | After rotation: `build_evidence.py`, `lint_evidence.py`, quote-post Mon 12 Oct 19:00 to 23:55 IST |
 
 ### Work that can still be done (not blocking)
 | Item | Note |
@@ -66,7 +66,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 
 ## 3. Known limits (said plainly)
 - Costs of pictures and narration are list-price assumptions; neatlogs prices text only. The true figure is on the Google Cloud bill, which we have not read.
-- The evidence videos are made from fixture drawings only; the sister's real drawings were never put through the pipeline for the repository.
+- The evidence videos are made from fixture drawings only. The sister's drawings and cutouts used by the launch video were removed from git history (with the builder's consent for the drawings) and live only in the gitignored `video/launch/img/` and `_private/` on the builder's disk, so the launch video cannot be re-rendered from a fresh clone.
 - Early work (before 15:08 on 10 Oct) has no Entire checkpoint; `entire why` shows older code as human-written.
 - The quiz was played live through the browser UI (run 2). The picture-order game was checked in demo mode only; in the live half-pictures run the pictures were not ready when the script looked, so the game was not offered then, and the movie step of run 2 was not completed because the script's wait exceeded a browser timeout (fixed in the script; the movie was completed in run 1).
 - neatlogs retention on the free plan is 14 days; traces are exported to the repo.
@@ -75,7 +75,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 ## 4. Risks
 | Risk | Mitigation |
 | --- | --- |
-| Pasted keys in checkpoints | Rotate; do not publish until decided |
+| Pasted keys (scrubbed from refs; may be cached on GitHub) | Rotate both |
 | A model quota error ending a run | HR-007 backoff; the receipt states degradations |
 | Render time for the movie (about 7 minutes for 3:45) | The API runs it in the background with a status endpoint; one render at a time |
 | Judges cannot open the Entire link | Item 3 |

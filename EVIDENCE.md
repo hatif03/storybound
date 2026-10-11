@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 09:41 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 09:56 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -278,6 +278,9 @@ Repair recoveries inside the story loop: 103 gated runs repaired at least one pa
 - Graph output: [20261010-1953-IST-why-prompts.txt](evidence/entire/20261010-1953-IST-why-prompts.txt)
 - Graph output: [20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt](evidence/entire/20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt)
 - Graph output: [20261011-0925-IST-trail-1-created.txt](evidence/entire/20261011-0925-IST-trail-1-created.txt)
+- Graph output: [20261011-1010-IST-review-general-pr1.txt](evidence/entire/20261011-1010-IST-review-general-pr1.txt)
+- Graph output: [20261011-1010-IST-trail-2-show.json](evidence/entire/20261011-1010-IST-trail-2-show.json)
+- Graph output: [20261011-1030-IST-trail-2-gates.json](evidence/entire/20261011-1030-IST-trail-2-gates.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
@@ -292,4 +295,4 @@ Repair recoveries inside the story loop: 103 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-11T09:04:31+05:30; latest 2026-10-11T09:04:31+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T09:53:28+05:30. Window check: `python scripts/lint_evidence.py`.

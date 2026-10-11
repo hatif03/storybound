@@ -9,7 +9,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | Used for | One trace per story and per video; one GUARDRAIL span per verdict; 7 detections; trace readback and export; triage review; measured cost |
 | Evidence | `evidence/traces/`, `evidence/neatlogs/` (triage cards and review, trace costs, measured-vs-estimated cost), `evidence/setup/` |
 | CLI | `neatlogs-cli` 0.2.0 signed in by device login with **read-only** scopes (observability, evaluation, configuration, sharing, billing) |
-| Not done | Creating human evaluations, alerts, guest links and managed-prompt labels needs write access: dashboard steps for the builder |
+| Write config | Through the CLI after a write sign-in (11 Oct): alert rule "Critical safety stop" (threshold on the critical detection) and a draft human evaluation "Human review of judge verdicts". Cost alert rejected (`INVALID_ARGUMENTS`); the login has expired. Not done: guest links, managed-prompt labels |
 | Watch out | The `.mcp.json` server needs `NEATLOGS_API_KEY` in the process environment (start Claude Code from `scripts/dev-shell.ps1`); the MCP rate-limits fast polling; `search_traces fields` is not enabled yet; free-plan traces expire after 14 days |
 
 ## Entire (coding-agent memory), required
@@ -17,9 +17,9 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | --- | --- |
 | Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`; 40+ checkpoints; entire-graph 0.4.0 (local); Brain 0.1.0 with ten durable facts |
 | Evidence | `evidence/entire/` (graph diffs for HR-001 to HR-004 and HR-006, impact, verify, `why`, Brain brief and status, checkpoint token comparison), `.entire/runners/` |
-| Trails | Enabled on the dashboard by the builder. Trail #1 created (`01M4MG92JRX974RCWS1FQ1ZWJ8`, https://entire.io/gh/hatif03/storybound/trails/1). Runners scaffolded (6), three tailored to this repo; they run when a branch is pushed. Pushing waits for key rotation |
-| Honest gaps | Work before 15:08 on 10 Oct was done in a session started outside the repo (no checkpoints); checkpoints contain two pasted keys (rotate both) |
-| Submission | Needs `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` and a checkpoint id; the repo is private, so judges need access or the repo must be public |
+| Trails | Enabled on the dashboard by the builder. Trail #1 created (`01M4MG92JRX974RCWS1FQ1ZWJ8`, https://entire.io/gh/hatif03/storybound/trails/1). Runners scaffolded (6), three tailored to this repo. History was rewritten and pushed on 11 Oct, then a branch and PR were opened (see TOOLS.md) |
+| Honest gaps | Work before 15:08 on 10 Oct was done in a session started outside the repo (no checkpoints); two pasted keys were scrubbed from all refs by a history rewrite (rotate both anyway); custom redactions now set |
+| Submission | Needs `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` and a checkpoint id; judges need the repo public or access |
 
 ## cfo.ai (business plan), required
 | | |
@@ -41,7 +41,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 `IFM/K2-Horizon-375B-A23B`, OpenAI-compatible. Different model family from the writer. 24/24 injected faults caught, 0/88 judge calls unverifiable; 6 to 14 s per call, so judge calls run in parallel and the quiz judge runs on every question.
 
 ## Hackathon LiteLLM gateway
-`https://litellm.vision.aivar.app/v1` with `claude-haiku`, `claude-sonnet-4.6`, `claude-opus-4.6` and Nova models; key in `.env` as `LITELLM_API_KEY`. Used for a judge comparison only (Claude Sonnet and Haiku caught 23/24 faults, 1 to 3 of 88 unverifiable, 1 to 2 s per call); K2 stays the judge. The key was pasted into the session: rotate it.
+`https://litellm.vision.aivar.app/v1` with `claude-haiku`, `claude-sonnet-4.6`, `claude-opus-4.6` and Nova models; key in `.env` as `LITELLM_API_KEY`. Used for a judge comparison only (Claude Sonnet and Haiku caught 23/24 faults, 1 to 3 of 88 unverifiable, 1 to 2 s per call); K2 stays the judge. The key was pasted into the session and scrubbed from git history: rotate it anyway.
 
 ## HyperFrames (video rendering)
 Apache-2.0, pinned 0.8.145, telemetry disabled. Not used: `publish`, `cloud` rendering, `auth` (they send content to HeyGen). GSAP 3.14.2 is vendored under GreenSock's standard licence.
@@ -53,4 +53,4 @@ Profile `neathack` (us-east-1). Only EC2, Lambda, IAM roles and load balancers; 
 MCP connected and used once (11 Oct, 11.6 of 5,200 credits) for a field-size note with derived counts only: `evidence/cfo/20261011-0850-IST-market-note-crustdata.md`. No market figure from it is in the cfo.ai model. Raw Crustdata data must never enter the public repo.
 
 ## GitHub
-`hatif03/storybound`, private. Commits after 12:30 IST on 10 Oct are inside the window. Publishing is a decision for the builder: see [STATUS.md](STATUS.md) (keys in checkpoints, Entire link access).
+`hatif03/storybound`, public since 11 Oct (made public after the rewrite and a scan of a fresh clone). Commits after 12:30 IST on 10 Oct are inside the window. History was rewritten on 11 Oct (keys and six images removed; [note](../evidence/history-rewrite/NOTE.md)); the old-to-new sha map is published.

@@ -5,7 +5,7 @@ Storybound is a children's (age 4-8) storybook agent for the neatHack hackathon 
 **First, read `HANDOFF.md`** (state, what is running, next steps) and `docs/DESIGN.md` (design).
 
 ## Hard rules (do not break these)
-1. **All code is written between Sat 10 Oct 12:30 IST and Mon 12 Oct 23:55 IST.** Nothing is committed before the kickoff time. Commits must carry real dates; never backdate, never rewrite history to hide work.
+1. **All code is written between Sat 10 Oct 12:30 IST and Mon 12 Oct 23:55 IST.** Nothing is committed before the kickoff time. Commits must carry real dates; never backdate, never rewrite history to hide work. (One approved exception: on 11 Oct the builder approved a rewrite that removed a pasted key and six images, nothing else; see `evidence/history-rewrite/NOTE.md` and `sha-map.txt`.)
 2. **Secrets never enter git, prompts, logs, traces or screenshots.** Keys live in `.env` (gitignored) or the OS credential store. Never paste a key into a chat, a commit message, a trace attribute or a doc. If a key leaks, say so at once so it can be rotated.
 3. **No real child's data in traces, the ledger, posts or the repo.** Test inputs are fixtures (see `assets/test-drawings/`; the sister's real drawings are in `_private/`, never commit them). Family demo footage is allowed only with a parent's consent and never uses a surname, school or location; the child's face is not shown.
 4. **No Google ADK.** Orchestration is LangGraph. The only module that imports neatlogs is `src/storybound/tracing.py`-style observer code plus the app entry point; keep it that way.

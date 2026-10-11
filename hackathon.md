@@ -102,3 +102,11 @@ Planned: a 3:00 video covering neatlogs, Entire and cfo.ai on architecture, impl
 
 ## Submission
 Not yet. Window: Mon 12 Oct 19:00-23:55 IST, by quote-posting the official neatlogs post on X. Checklist lives in `EVIDENCE.md` and the linter.
+
+### 2026-10-11, late morning IST: history rewrite, public repo, Trails, neatlogs write config
+- Approved by the builder: removed six images (four drawings by the sister, two cutouts) and the pasted gateway key from every commit with `git filter-repo` (backup of the folder first). Verified by counts on a fresh clone of the remote: 0 files with any key value, 0 commits touching the images, `entire checkpoint list` and `explain` still work. Details, the old-to-new sha map and the limits: `evidence/history-rewrite/`. Short shas in the docs, HR records and ledger re-pointed. Hypothesis from CLAUDE.md rule 1 (never hide work) answered with a note and an exception line.
+- Force-pushing all `refs/entire/*` in one command failed ("remote rejected (failed)" for every ref); one ref at a time worked (43 of 43).
+- Entire custom redactions added (`redaction.custom_redactions`), so new checkpoints mask the key shapes.
+- Repo made public. Entire commit link checked in a clean browser: renders; screenshot in `evidence/screens/`.
+- Trails: trail 2 on branch `docs/after-history-rewrite`, PR #1 created by itself on push (checks: GitGuardian passed, Entire Gates running). `entire review general` ran: five findings, one a real bug in `scripts/build_evidence.py` ("First commit" showed the latest commit); all five fixed.
+- neatlogs write sign-in worked: alert rule "Critical safety stop" and a draft human evaluation of judge verdicts created through the CLI; the cost alert was rejected (`INVALID_ARGUMENTS`) and the login then expired. Only the tests that ran are listed here: no code tests were run this session (docs and scripts only); `lint_evidence.py` 0 FAIL.

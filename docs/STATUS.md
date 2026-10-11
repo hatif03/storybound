@@ -9,7 +9,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-010 written (HR-008 to HR-010 on 11 Oct: evaluation gaps, the clip oath, early pictures) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-012 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |
@@ -18,6 +18,9 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Evaluation practice (SWE-bench, OpenAI guides) | Judge bias test, frozen 16-case regression set, tuning/holdout split, holdout sweep | HR-008, `docs/research/evals-and-observability.md` |
 | Generated video (Veo) | Access checked, one clip made, clip oath rejected it | HR-009, `docs/research/video-generation.md` |
 | Launch readiness | Situations, what is built and what is open | `docs/LAUNCH-READINESS.md` |
+| Model routing (hackathon credits) | The planner on Nova 2 Lite, the quiz maker and the picture-text check on Claude Haiku via the gateway; writer, oath author, character card and safety screen stay on Gemini (measured, HR-012); gateway spend $1.79 of $20 | [CREDITS.md](CREDITS.md), HR-012 |
+| neatlogs second pass | Incident review; hedged retry for the 87 s stall, tiered "ignore all", a corrected quiz detection | [research/neatlogs-incident-review.md](research/neatlogs-incident-review.md), HR-011 |
+| Business model beyond the hackathon | Video AI scenarios (margin -70% with three cheapest clips), a real-launch plan (about 2,490 households to break even at $6.99) | [BUSINESS.md](BUSINESS.md), `evidence/cfo/` |
 | Verified quiz | Four questions per story, six promises, judge on every question, dropped if unverified | `docs/WEB.md`, sweep 7 below |
 | Picture-order game, healthy-play rules | Done; skippable, no timers, streaks, scores or autoplay | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
 | Grown-up promises | Done, end to end (appears on the receipt) | API doc, `tests/test_oath.py`, browser run |

@@ -30,6 +30,10 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | What is done and what is left | [docs/STATUS.md](docs/STATUS.md) |
 | Why it fits the hackathon's problem statement | [docs/QUALIFICATION.md](docs/QUALIFICATION.md) |
 | If this launched to real children: situations, what is built, what is open | [docs/LAUNCH-READINESS.md](docs/LAUNCH-READINESS.md) |
+| How neatlogs, Entire and cfo.ai helped, as a story with evidence | [docs/STORY.md](docs/STORY.md) |
+| What a real product needs, and what video AI would cost (cfo.ai scenarios) | [docs/BUSINESS.md](docs/BUSINESS.md) |
+| The hackathon credits and how work is split across providers | [docs/CREDITS.md](docs/CREDITS.md) |
+| A second pass through every neatlogs trace, detection, alert and analytics view | [docs/research/neatlogs-incident-review.md](docs/research/neatlogs-incident-review.md) |
 | Research: evaluation practice (SWE-bench, OpenAI) and video generation (Veo access, landscape, plan) | [docs/research/evals-and-observability.md](docs/research/evals-and-observability.md), [docs/research/video-generation.md](docs/research/video-generation.md) |
 | Every claim with its evidence | [EVIDENCE.md](EVIDENCE.md) (generated) and `evidence/` |
 | The agent's design | [docs/DESIGN.md](docs/DESIGN.md) |
@@ -49,11 +53,11 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | What | Value | Where |
 | --- | --- | --- |
 | Stories shipped with a broken promise (B0 / B2 / B1) | 27/28, 27/28, **0/28** | `evidence/reports/*sweep-2-p2.md` |
-| Hardening records, each with before and after | HR-001 to HR-010 | `evidence/hardening/` |
+| Hardening records, each with before and after | HR-001 to HR-012 | `evidence/hardening/` |
 | Judge on 24 injected faults | 24/24 caught, 0/8 clean pages flagged | `evidence/runs/20261010-1334-IST-judge-eval.json` |
 | Text cost per gated story, measured by neatlogs | $0.0199 | `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json` |
 | Month-6 gross margin (cfo.ai, Main / Growth / Downside) | 67.2% / 55.2% / 40.9% (estimates) | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg |
-| Tests | 85 backend, 26 web (plus 11 browser checks for touch safety) | `pytest tests`, `npm run test` in `web/` |
+| Tests | 91 backend, 26 web (plus 11 browser checks for touch safety) | `pytest tests`, `npm run test` in `web/` |
 
 ## Run it (development)
 ```powershell

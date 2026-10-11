@@ -32,6 +32,7 @@ planning (break a goal into steps) · tool use (choose tools, supply inputs, han
 - Small commits, one intent each, messages that say why. Run tests before committing. No unrequested abstractions.
 - Trace first: before fixing a failure, find it in neatlogs (MCP `search_traces` / `get_trace_context`), write the hypothesis in `hackathon.md`, then fix, then compare runs.
 - Report outcomes faithfully: if a test fails or a step was skipped, say so.
+- Keep the documentation current with every change: a change to behaviour updates `docs/STATUS.md`, `docs/TOOLS.md` (how neatlogs, Entire and cfo.ai were used), the relevant HR record, `hackathon.md` and `EVIDENCE.md` in the same session; `python scripts/lint_evidence.py` warns when the docs fall behind the code. `docs/STORY.md` is the judge-facing account of how the three tools helped.
 
 
 

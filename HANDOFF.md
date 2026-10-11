@@ -4,8 +4,8 @@ Refreshed Sun 11 Oct 2026, morning IST. Read `CLAUDE.md` (rules), then [docs/STA
 
 ## State in five lines
 1. The product works end to end through the real browser UI: draw, lesson, optional grown-up promises, 8 verified pages with pictures and narration, a verified quiz and a picture-order game, a read-along movie, a grown-ups receipt, and a Forget that deletes on the server.
-2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, ten hardening records (HR-001 to HR-010), exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
-3. Tests: 85 backend (`pytest tests`), 26 web (`cd web; npm run test`), 11 touch checks (`node web/scripts/e2e-touch.mjs`, demo mode); all green at the last commit.
+2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, twelve hardening records (HR-001 to HR-012), exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
+3. Tests: 91 backend (`pytest tests`), 26 web (`cd web; npm run test`), 11 touch checks (`node web/scripts/e2e-touch.mjs`, demo mode); all green at the last commit.
 4. All work is committed on `main` and pushed (40+ Entire checkpoints); the work branch for the Trails PR is `docs/after-history-rewrite`.
 5. **The demo video is not made yet** (the builder asked for it last). The video agent can generate it from the final ledger: see "Demo video" below.
 

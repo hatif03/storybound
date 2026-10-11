@@ -162,11 +162,30 @@ def check_posts_video_cfo() -> None:
     add("PASS" if names else "WARN", "exported traces", f"{len(names)} file(s)")
 
 
+def check_docs_fresh() -> None:
+    """Keep the documentation updated: the docs must not lag behind the code, and the headline files must mention the latest records."""
+
+    def last(*paths: str) -> int:
+        out = git("log", "-1", "--format=%ct", "--", *paths).strip()
+        return int(out) if out else 0
+
+    code, docs = last("src", "web/src", "scripts"), last("docs/STATUS.md", "docs/TOOLS.md", "hackathon.md")
+    lag_h = (code - docs) / 3600
+    add("PASS" if lag_h <= 6 else "WARN", "docs not older than the code", f"STATUS/TOOLS/hackathon.md trail the latest code change by {max(lag_h, 0):.1f} h (limit 6 h)")
+    recs = sorted(p.stem for p in (ROOT / "evidence" / "hardening").glob("HR-*.md"))
+    readme = (ROOT / "README.md").read_text(encoding="utf-8") + (ROOT / "docs" / "STATUS.md").read_text(encoding="utf-8")
+    latest = recs[-1] if recs else ""
+    add("PASS" if (not latest or latest in readme or f"HR-001 to {latest}" in readme) else "WARN", "README or STATUS mention the latest hardening record", latest)
+    tools = (ROOT / "docs" / "TOOLS.md").read_text(encoding="utf-8")
+    missing = [t for t in ("neatlogs", "Entire", "cfo.ai") if "## " not in tools or t not in tools]
+    add("PASS" if not missing else "FAIL", "TOOLS.md covers neatlogs, Entire and cfo.ai", f"missing: {missing or 'none'}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true")
     a = ap.parse_args()
-    for fn in (check_commits, check_checkpoints, check_secrets, check_ledger, check_hardening, check_posts_video_cfo):
+    for fn in (check_commits, check_checkpoints, check_secrets, check_ledger, check_hardening, check_posts_video_cfo, check_docs_fresh):
         try:
             fn()
         except Exception as e:

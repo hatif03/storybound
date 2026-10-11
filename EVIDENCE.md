@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 12:07 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (283 rows, 262 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 13:45 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (327 rows, 304 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -16,6 +16,8 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 - [HR-008: we had never checked the judge for order and length bias, never frozen a past failure, and tuned and reported on the same drawings](evidence/hardening/HR-008.md)
 - [HR-009: a generated video clip of a child's drawing needs its own oath (the first clip failed it)](evidence/hardening/HR-009.md)
 - [HR-010: pictures arrived after the whole story, so a child read every page without them](evidence/hardening/HR-010.md)
+- [HR-011: a second pass through the neatlogs data found a stall that came back, a false stop, a blind detection and no one to tell](evidence/hardening/HR-011.md)
+- [HR-012: almost all model work ran on Gemini; we spread it by measurement, not by hope](evidence/hardening/HR-012.md)
 
 - Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
 - Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
@@ -212,7 +214,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-272 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+314 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -241,12 +243,13 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 128 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 163 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
 - Safety screen over the 26 fixture drawings, `20261010-1318-IST-safety-eval.json`: {"total": 26, "matched": 24, "unsafe_refused": "1/1", "benign_wrongly_refused": 0}
 - Safety screen over the 26 fixture drawings, `20261010-1319-IST-safety-eval-2.json`: {"total": 26, "matched": 25, "unsafe_refused": "1/1", "benign_wrongly_refused": 0}
+- Safety screen over the 26 fixture drawings, `20261011-1237-IST-safety-eval-haiku.json`: {"total": 26, "matched": 23, "unsafe_refused": "1/1", "benign_wrongly_refused": 2}
 - Judge with injected faults, `20261010-1334-IST-judge-eval.json`: {"pages": 8, "lesson": "sharing", "false_alarms": "0/8", "swap caught by correct_choice_teaches_lesson": "8/8", "off-topic caught by lesson_concept_in_scene": "8/8", "scary caught by story_safe_text": "8/8", "judge_errors": "0/88"}
 - Judge with injected faults, `20261010-1823-IST-judge-eval-claude-haiku.json`: {"pages": 8, "lesson": "sharing", "false_alarms": "0/8", "swap caught by correct_choice_teaches_lesson": "7/8", "off-topic caught by lesson_concept_in_scene": "8/8", "scary caught by story_safe_text": "8/8", "judge_errors": "3/88"}
 - Judge with injected faults, `20261010-1823-IST-judge-eval-claude-sonnet.json`: {"pages": 8, "lesson": "sharing", "false_alarms": "0/8", "swap caught by correct_choice_teaches_lesson": "7/8", "off-topic caught by lesson_concept_in_scene": "8/8", "scary caught by story_safe_text": "8/8", "judge_errors": "1/88"}
@@ -284,6 +287,7 @@ Repair recoveries inside the story loop: 128 gated runs repaired at least one pa
 - Graph output: [20261011-1010-IST-review-general-pr1.txt](evidence/entire/20261011-1010-IST-review-general-pr1.txt)
 - Graph output: [20261011-1010-IST-trail-2-show.json](evidence/entire/20261011-1010-IST-trail-2-show.json)
 - Graph output: [20261011-1030-IST-trail-2-gates.json](evidence/entire/20261011-1030-IST-trail-2-gates.json)
+- Graph output: [20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json](evidence/entire/20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
@@ -294,9 +298,10 @@ Repair recoveries inside the story loop: 128 gated runs repaired at least one pa
 - [20261011-0845-IST-share-link-anonymous-render.png](evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png)
 - [20261011-0850-IST-market-note-crustdata.md](evidence/cfo/20261011-0850-IST-market-note-crustdata.md)
 - [20261011-1215-IST-launch-operating-costs-readback.json](evidence/cfo/20261011-1215-IST-launch-operating-costs-readback.json)
+- [20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json](evidence/cfo/20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json)
 - [README.md](evidence/cfo/README.md)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T12:01:15+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T12:07:06+05:30. Window check: `python scripts/lint_evidence.py`.

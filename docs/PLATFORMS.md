@@ -44,7 +44,7 @@ Veo models are listed on Vertex in `us-central1` (`veo-2.0-generate-001`, `veo-3
 `IFM/K2-Horizon-375B-A23B`, OpenAI-compatible. Different model family from the writer. 24/24 injected faults caught, 0/88 judge calls unverifiable; 6 to 14 s per call, so judge calls run in parallel and the quiz judge runs on every question.
 
 ## Hackathon LiteLLM gateway
-`https://litellm.vision.aivar.app/v1` with `claude-haiku`, `claude-sonnet-4.6`, `claude-opus-4.6` and Nova models; key in `.env` as `LITELLM_API_KEY`. Used for a judge comparison only (Claude Sonnet and Haiku caught 23/24 faults, 1 to 3 of 88 unverifiable, 1 to 2 s per call); K2 stays the judge. The key was pasted into the session and scrubbed from git history: rotate it anyway.
+`https://litellm.vision.aivar.app/v1` with `claude-haiku`, `claude-sonnet-4.6`, `claude-opus-4.6` and Nova models; key in `.env` as `LITELLM_API_KEY`; budget $20 over 30 days and 60 requests a minute. Since 11 Oct it also runs the planner (Nova 2 Lite), the quiz maker and the picture-text check (Claude Haiku): see [CREDITS.md](CREDITS.md). Earlier it was used for a judge comparison only (Claude Sonnet and Haiku caught 23/24 faults, 1 to 3 of 88 unverifiable, 1 to 2 s per call); K2 stays the judge. The key was pasted into the session and scrubbed from git history: rotate it anyway.
 
 ## HyperFrames (video rendering)
 Apache-2.0, pinned 0.8.145, telemetry disabled. Not used: `publish`, `cloud` rendering, `auth` (they send content to HeyGen). GSAP 3.14.2 is vendored under GreenSock's standard licence.

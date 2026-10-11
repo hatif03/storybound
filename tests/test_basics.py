@@ -59,3 +59,27 @@ def test_ledger_append(tmp_path):
 def test_stamp_format():
     s = ledger.stamp("trace")
     assert s.endswith("-IST-trace") and len(s.split("-")[0]) == 8
+
+
+def test_retry_waits_longer_and_tries_once_more_on_a_quota_error(monkeypatch):
+    """HR-007: a Vertex 429 ended runs after three 1 s tries; a per-minute quota needs seconds."""
+    sleeps, calls = [], []
+    monkeypatch.setattr("storybound.clients.retry.time.sleep", sleeps.append)
+
+    def quota():
+        calls.append(1)
+        raise ClientError("429 RESOURCE_EXHAUSTED", retryable=True, status=429)
+
+    with pytest.raises(ClientError):
+        with_retry(quota, attempts=3, base=1.0)
+    assert len(calls) == 4 and all(s >= 4.0 for s in sleeps)  # one extra try, each wait four times longer
+
+    calls.clear(), sleeps.clear()
+
+    def flaky():
+        calls.append(1)
+        raise ClientError("503", retryable=True, status=503)
+
+    with pytest.raises(ClientError):
+        with_retry(flaky, attempts=3, base=1.0)
+    assert len(calls) == 3 and sleeps[0] < 2.0  # other errors are unchanged

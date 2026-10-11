@@ -1,20 +1,61 @@
 # Storybound
 
-A story agent that keeps its promises. A child's drawing and a lesson go in; the agent writes an oath, checks every page against it before the child sees it, repairs pages that break it, and ships a receipt.
+**A story agent that keeps its promises, and can prove it.** A child's drawing and a lesson go in. The agent writes an **oath** (a list of promises), checks every page against it **before the child sees it**, rewrites any page that breaks a promise, and ships a **receipt** for the grown-ups. Then: pictures and narration, a **quiz** whose every question is verified against the story, a picture-order game, a read-along **video** made from the finished story, and grown-up-written promises. Built for neatHack (10 to 12 Oct 2026) with neatlogs, Entire and cfo.ai.
 
-Built for neatHack (10-12 Oct 2026) with neatlogs, Entire and cfo.ai. Work in progress: see `hackathon.md` for the build log, `docs/DESIGN.md` for the design, `docs/API.md` for the HTTP contract and `docs/PLATFORMS.md` for the state of every platform.
+> Why it is not just a chat model with a good prompt: in our 84-run experiment the same writer shipped at least one broken promise in **27 of 28 stories** when ungated and in **27 of 28** when it reviewed its own story, and in **0 of 28** when an independent gate checked every page ([report](evidence/reports/20261010-1505-IST-sweep-2-p2.md)). Most broken promises were quality failures (answer position, lesson missing, reading level), not safety failures.
 
-The code here is written during the hackathon window.
+## Read this first
+| If you want | Open |
+| --- | --- |
+| How it was built, hour by hour, and what went wrong | [docs/PROCESS.md](docs/PROCESS.md) |
+| How neatlogs, Entire and cfo.ai were used (architecture, implementation, runtime, reasoning, result) | [docs/TOOLS.md](docs/TOOLS.md) |
+| What is done and what is left | [docs/STATUS.md](docs/STATUS.md) |
+| Every claim with its evidence | [EVIDENCE.md](EVIDENCE.md) (generated) and `evidence/` |
+| The agent's design | [docs/DESIGN.md](docs/DESIGN.md) |
+| The HTTP contract | [docs/API.md](docs/API.md) |
+| The web app, healthy-play rules | [docs/WEB.md](docs/WEB.md) |
+| The build log, dated | [hackathon.md](hackathon.md) |
+| State of every platform | [docs/PLATFORMS.md](docs/PLATFORMS.md) |
+
+## The pieces
+- **Story agent** (`src/storybound/`): safety screen, character card, oath, planner, page loop with pipelined review and repair (LangGraph), whole-story gate, quiz, pictures, narration, receipt. Arms: **B0** ungated, **B1** gated (the product), **B2** the same model reviews its own story.
+- **Oath** (`src/storybound/oath/`): 22 core promises plus lesson-specific ones, grown-up promises and 6 quiz promises, checked by deterministic code and an independent judge (K2, a different model family from the writer) with a verbatim-quote check.
+- **Video agent** (`src/storybound/video/`): plans or reads a spec of typed blocks, resolves every number from an evidence file, narrates, builds and renders with HyperFrames, checks its own **video oath**, repairs the failing scene, and ships a receipt. Used for the read-along video of a story and for the demo video.
+- **Web app** (`web/`): draw, pick a lesson, read, quiz and game, movie, grown-ups area (receipt, settings, forget).
+- **Evidence** (`evidence/`): the run ledger, sweep reports, six hardening records, exported neatlogs traces, screenshots, Entire and cfo.ai outputs.
+
+## Numbers you can check
+| What | Value | Where |
+| --- | --- | --- |
+| Stories shipped with a broken promise (B0 / B2 / B1) | 27/28, 27/28, **0/28** | `evidence/reports/*sweep-2-p2.md` |
+| Hardening records, each with before and after | HR-001 to HR-006 | `evidence/hardening/` |
+| Judge on 24 injected faults | 24/24 caught, 0/8 clean pages flagged | `evidence/runs/20261010-1334-IST-judge-eval.json` |
+| Text cost per gated story, measured by neatlogs | $0.0199 | `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json` |
+| Month-6 gross margin (cfo.ai, Main / Growth / Downside) | 67.2% / 55.2% / 40.9% (estimates) | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg |
+| Tests | 79 backend, 19 web | `pytest tests`, `npm run test` in `web/` |
 
 ## Run it (development)
-
 ```powershell
-uv sync                      # creates .venv from pyproject.toml
-copy .env.example .env       # then fill in the keys; never commit .env
+uv sync                              # creates .venv from pyproject.toml
+copy .env.example .env               # fill in the keys; never commit .env
 .venv\Scripts\python.exe -m pytest -q
-.venv\Scripts\python.exe scripts\spikes\spike_m1.py     # one traced call per integration
+.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000   # serves the API and web/dist
+cd web; npm install; npm run build   # the web app, served at http://127.0.0.1:8000
 ```
-Google credentials come from `gcloud auth application-default login` (or the signed-in gcloud account).
+Google credentials come from `gcloud auth application-default login`. Demo mode (no models, free): open `http://127.0.0.1:8000/?mock=1`.
 
-## Key deliverables and where to find them
-Filled in as the build progresses (`EVIDENCE.md` will be generated from `evidence/`).
+Useful commands:
+```powershell
+.venv\Scripts\python.exe scripts\run_story.py benign/bunny-bow-carrot --lesson sharing --media --name my-run   # one story, one ledger row
+.venv\Scripts\python.exe scripts\sweep.py --name my-sweep --arms B0,B1,B2 --fixtures ... --lessons sharing,honesty --k 2
+.venv\Scripts\python.exe scripts\report.py --name my-sweep           # the sweep report
+.venv\Scripts\python.exe scripts\story_video.py evidence\stories\bunny-sharing-2   # read-along video from a story package
+.venv\Scripts\python.exe scripts\build_evidence.py; .venv\Scripts\python.exe scripts\lint_evidence.py
+node web\scripts\e2e-real.mjs        # a real story through the real UI (costs about $0.40 plus $0.04)
+```
+
+## Rules this project keeps (`CLAUDE.md`)
+All code written inside the hackathon window (first commit Sat 10 Oct 12:30 IST); secrets only in `.env`; no real child's data in the repo, traces, ledger or posts (fixtures only; real drawings stay in the gitignored `_private/`); no Google ADK; AWS limits respected; no raw Crustdata data in the repo.
+
+## Privacy and healthy play, in short
+No accounts, ads, tracking or purchases. No timers, lives, streaks, scores or autoplay for the child; every game is skippable; practice results stay in the browser tab. A parent can **forget a story**: the server deletes its pictures, narration, drawing and video (`DELETE /api/stories/{id}`). neatlogs traces keep names and places redacted and expire on their own.

@@ -1,80 +1,56 @@
 # Platforms: what we use, what is done, what is waiting
 
-Updated at the end of every milestone. Times are IST. Evidence paths are relative to the repo root. Nothing here contains a key.
+Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the repo root. Nothing here contains a key. How each of the three required tools was used is in [TOOLS.md](TOOLS.md); this page is the state of each platform.
 
-## neatlogs (observability)
-
+## neatlogs (observability), required
 | | |
 | --- | --- |
-| Status | Working. SDK 1.4.26 in `.venv`; project `482c3038-22f9-49e6-8938-e816ce252f75`; workflow `create-storybook` |
-| Used for | One trace per story; model calls via `neatlogs.wrap`; one GUARDRAIL span per verdict; readback through the MCP server to export traces into the repo |
-| Evidence | `evidence/setup/` (doctor local and probe, MCP whoami); `evidence/spikes/` (spike outputs with trace ids); `evidence/traces/` (readbacks) |
-| Waiting on you | `neatlogs auth login` (OAuth) if we want the CLI analytics and alert commands; the five detections are created through the MCP `create_detection` tool in M3 |
+| Status | Working. SDK 1.4.26; project `482c3038-22f9-49e6-8938-e816ce252f75`; workflows `create-storybook` and `make-video`; org plan `legacy_unmetered` (read through the CLI) |
+| Used for | One trace per story and per video; one GUARDRAIL span per verdict; 7 detections; trace readback and export; triage review; measured cost |
+| Evidence | `evidence/traces/`, `evidence/neatlogs/` (triage cards and review, trace costs, measured-vs-estimated cost), `evidence/setup/` |
+| CLI | `neatlogs-cli` 0.2.0 signed in by device login with **read-only** scopes (observability, evaluation, configuration, sharing, billing) |
+| Not done | Creating human evaluations, alerts, guest links and managed-prompt labels needs write access: dashboard steps for the builder |
+| Watch out | The `.mcp.json` server needs `NEATLOGS_API_KEY` in the process environment (start Claude Code from `scripts/dev-shell.ps1`); the MCP rate-limits fast polling; `search_traces fields` is not enabled yet; free-plan traces expire after 14 days |
 
-Log:
-- 10 Oct 12:55 Four spike traces sent and read back through the MCP server (`scripts/neatlogs_mcp.py`): Gemini text (`e16a18b5dbcb9cbcac0bd5371a8230f4`, 1 LLM span, 45 tokens, $0.00013), Gemini vision (`4c7153ad26291eb9cd8cedbeaca40f78`, 1173 tokens), K2 judge (`faea948bb4924a0b1ddbe7bd260967e7`, 404 tokens), guardrail (`cc85389a110d01e9407cab538a777ba4`: GUARDRAIL span nested under the WORKFLOW root, input and our output captured).
-- Learned: `neatlogs.wrap` on the google-genai client and the OpenAI client both produce proper LLM spans with tokens and cost. Gemini cost counts prompt and answer tokens only, not thinking tokens, so cost is understated (we record our own). K2 cost shows 0 (no price known to neatlogs). The trace id is available mid-run through `neatlogs.inject_trace_context` (the `traceparent` header). The MCP server needs an `initialize` handshake and a session id before `tools/call`.
-
-## Entire (coding-agent memory)
-
+## Entire (coding-agent memory), required
 | | |
 | --- | --- |
-| Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`. entire-graph 0.4.0 local; Brain installed by hand |
-| Used for | Checkpoints of the sessions that build each milestone, the graph for `graph diff` / `graph verify` evidence, `entire why` for hardening records |
-| Evidence | `evidence/entire/` (CLI outputs, added as they are produced) |
-| Waiting on you | A Claude Code session started inside `D:\storybound` (checkpoints are only recorded for sessions rooted in the repo); `entire login`; Trails access form and the GitHub App import |
+| Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`; 37 checkpoints; entire-graph 0.4.0 (local); Brain 0.1.0 with ten durable facts |
+| Evidence | `evidence/entire/` (graph diffs for HR-001 to HR-004 and HR-006, impact, verify, `why`, Brain brief and status, checkpoint token comparison), `.entire/runners/` |
+| Trails | Runners scaffolded (6) and three tailored to this repo. `entire trail create` and `entire review` answer "repository not found (404)": the Entire GitHub App must be installed on `hatif03/storybound` and the repository selected on entire.io (web step) |
+| Honest gaps | Work before 15:08 on 10 Oct was done in a session started outside the repo (no checkpoints); checkpoints contain two pasted keys (rotate both) |
+| Submission | Needs `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` and a checkpoint id; the repo is private, so judges need access or the repo must be public |
 
-Log:
-- 10 Oct 12:21 Enabled, graph initialised. 12:37 Brain installed, six project rules stored.
-- 10 Oct 12:50 Honest gap: the session that wrote the first milestone commits was started from `D:\neatlogs`, so Entire has no checkpoint for them. Milestones from M2 on should be built from a session started in `D:\storybound`.
-
-## cfo.ai (business plan)
-
+## cfo.ai (business plan), required
 | | |
 | --- | --- |
-| Status | MCP configured (`.mcp.json`, `.cursor/mcp.json`), OAuth not yet done |
-| Used for | The business plan after we have measured cost per story (M7) |
-| Waiting on you | Sign in through the MCP prompt in a session rooted in the repo |
+| Status | MCP connected and authorised; workspace "Invisible Technologies" (trial ends 24 Oct; credits confirmed by the builder) |
+| Model | Plans (Household, Classroom) x verification policy x illustration policy; scenarios Main, Growth, Downside; pages for assumptions, unit economics, policy, cash, evidence |
+| Evidence | `evidence/cfo/` (README with the measured-cost change 275839, readbacks, change history, anonymous-render screenshot) |
+| Share link | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg (read-only; checked anonymously 11 Oct) |
+| Open | The quiz and video add-ons are not priced in the model; pictures and voice remain assumed list prices; month 6 is hard-coded as March 2027 |
 
 ## Vertex AI Gemini (writer, vision, images, speech)
-
 | | |
 | --- | --- |
-| Status | Working. Project `project-f0b6b4ce-541f-43ff-9f7`, location `global`, Application Default Credentials (the signed-in gcloud account) |
-| Models | `gemini-3.7-flash` (writer and vision), `gemini-3.1-pro-preview` (reserve), `gemini-3.1-flash-image` and `gemini-2.5-flash-image` (illustration), Cloud TTS `gemini-2.5-flash-tts` voice Kore |
-| Evidence | `evidence/spikes/*gemini*` |
-
-Log:
-- 10 Oct 12:55 Text and vision spikes pass. Gemini 3 thinking tokens count against `max_output_tokens`, even at `thinking_level=low`: a 200-token cap returned 8 words. The client now adds a 2048-token headroom and refuses to return output that stopped at `MAX_TOKENS`. `thinking_level="minimal"` is rejected by this model; `low` is the floor.
-- Claude on Vertex has no quota; Llama and Mistral are not enabled.
+| Status | Working. Project `project-f0b6b4ce-541f-43ff-9f7`, location `global`, Application Default Credentials |
+| Models | `gemini-3.7-flash` (writer, vision, quiz maker, video planner), `gemini-3.1-flash-image` with `gemini-2.5-flash-image` fallback (pictures), Cloud TTS `gemini-2.5-flash-tts` voice Kore |
+| Learned | Thinking tokens count against `max_output_tokens`; image quota errors (429) are real and handled by retry and fall-back to text; a 40 s text timeout was tried and reverted (HR-005) |
 
 ## K2 Horizon (independent judge)
+`IFM/K2-Horizon-375B-A23B`, OpenAI-compatible. Different model family from the writer. 24/24 injected faults caught, 0/88 judge calls unverifiable; 6 to 14 s per call, so judge calls run in parallel and the quiz judge runs on every question.
 
-| | |
-| --- | --- |
-| Status | Working. `IFM/K2-Horizon-375B-A23B` at `https://api.ifm.ai/v1` (OpenAI-compatible) |
-| Evidence | `evidence/spikes/*k2-judge*` |
+## Hackathon LiteLLM gateway
+`https://litellm.vision.aivar.app/v1` with `claude-haiku`, `claude-sonnet-4.6`, `claude-opus-4.6` and Nova models; key in `.env` as `LITELLM_API_KEY`. Used for a judge comparison only (Claude Sonnet and Haiku caught 23/24 faults, 1 to 3 of 88 unverifiable, 1 to 2 s per call); K2 stays the judge. The key was pasted into the session: rotate it.
 
-Log:
-- 10 Oct 12:55 Judge spike passes: structured JSON with a verbatim quote that is a substring of the reviewed text (quote check passes). Latency about 12 s for a 117-token answer, so judge calls run in parallel and are sampled.
+## HyperFrames (video rendering)
+Apache-2.0, pinned 0.8.145, telemetry disabled. Not used: `publish`, `cloud` rendering, `auth` (they send content to HeyGen). GSAP 3.14.2 is vendored under GreenSock's standard licence.
 
 ## AWS
-
-| | |
-| --- | --- |
-| Status | Profile `neathack` (us-east-1). Only EC2, Lambda, IAM roles and load balancers; $25 team allowance; Bedrock, Polly and S3 denied |
-| Used for | Optional hosting of the demo (M5/M7); not on the critical path |
+Profile `neathack` (us-east-1). Only EC2, Lambda, IAM roles and load balancers; $25 team allowance; no Bedrock, Polly or S3. Not used: the app runs locally.
 
 ## Crustdata (market data)
-
-| | |
-| --- | --- |
-| Status | CLI 0.2.19 installed, MCP configured, not signed in. Raw data must never enter the public repo |
-| Waiting on you | An API key or browser sign-in |
+CLI 0.2.19 installed and the MCP connected, **not used**: no market figure from it is in the repository or the cfo.ai model. Raw Crustdata data must never enter the public repo.
 
 ## GitHub
-
-| | |
-| --- | --- |
-| Status | `hatif03/storybound`, private, history pushed at kickoff. Commits after 12:30 IST on 10 Oct are inside the window |
-| Waiting on you | Publish before submission (`docs/setup/SETUP.md`) |
+`hatif03/storybound`, private. Commits after 12:30 IST on 10 Oct are inside the window. Publishing is a decision for the builder: see [STATUS.md](STATUS.md) (keys in checkpoints, Entire link access).

@@ -732,7 +732,7 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
         "budget": {
             "usd_estimate": run.meter.cost_usd(st.prices), "estimate": True, "seconds": round(_now() - run.t0, 1),
             "tokens_in": totals["tokens_in"], "tokens_out": totals["tokens_out"], "images": totals["images"],
-            "calls": totals["calls"], "by_model": totals["by_model"],
+            "calls": totals["calls"], "by_model": totals["by_model"], "fallbacks": list(run.meter.fallbacks),
             "first_page_s": next((e["t"] for e in run.bus.all() if e["type"] == "scene.accepted"), None),
         },
         "prompt_version": prompts.VERSION,

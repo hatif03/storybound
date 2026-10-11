@@ -6,7 +6,8 @@ import hashlib
 import random
 
 from .. import tracing
-from ..clients import gateway, gemini
+from ..clients import gateway, gemini, usage
+from ..clients.errors import ClientError
 from ..clients.usage import Result
 from ..config import get_settings
 
@@ -30,7 +31,11 @@ def ask_json(
     @tracing.span(kind="AGENT", name=name)
     def _call() -> Result:
         if chosen and gateway.is_gateway(chosen):
-            return gateway.generate_json(user, model=chosen, system=system, images=images, temperature=temperature, max_tokens=max_tokens)
+            try:
+                return gateway.generate_json(user, model=chosen, system=system, images=images, temperature=temperature, max_tokens=max_tokens)
+            except ClientError as e:  # the gateway is down, throttled or out of credits: the role falls back to the default model, and the receipt says so
+                usage.record_fallback(name, chosen, str(e))
+                return gemini.generate_json(user, system=system, images=images, model=model, temperature=temperature, max_tokens=max_tokens)
         return gemini.generate_json(
             user, system=system, images=images, model=chosen, temperature=temperature, max_tokens=max_tokens
         )

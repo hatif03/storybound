@@ -87,14 +87,14 @@ def _call_once(
     reason = str(resp.candidates[0].finish_reason) if resp.candidates else ""
     if "MAX_TOKENS" in reason:  # never ship silently truncated output
         raise ClientError(f"output truncated (finish_reason={reason})", retryable=False)
-    usage = _usage(resp, model, t0)
-    record(usage)
-    return resp, text, usage
+    return resp, text, _usage(resp, model, t0)  # recorded by `_call`, for the winner of a hedged pair only
 
 
 def _call(model: str, contents, **kw):
     """One model call, hedged: a request that has not answered after `hedge_after_s` is sent a second time (the 87 s stall, HR-011)."""
-    return hedged(lambda: _call_once(model, contents, **kw), after=get_settings().hedge_after_s)
+    out = hedged(lambda: _call_once(model, contents, **kw), after=get_settings().hedge_after_s)
+    record(out[2])
+    return out
 
 
 def generate(

@@ -314,10 +314,10 @@ def quiz_reading_level(q, ctx: Ctx) -> Det:
 
 def quiz_safe_text(q, ctx: Ctx) -> Det:
     text = " ".join([q.question, q.explain] + [o.text for o in q.options])
-    grave = severe_hits(text) + instruction_hits(text) + find_pii(text)
+    grave = severe_hits(text) + hard_instruction_hits(text) + find_pii(text)
     if grave:
         return _bad(f"unsafe terms: {', '.join(sorted(set(grave)))}", "critical", matched=grave[0])
-    mild = harm_hits(text)
+    mild = harm_hits(text) + soft_instruction_hits(text)
     if mild:
         return _bad(f"unkind or harsh terms: {', '.join(sorted(set(mild)))}", matched=mild[0])
     return Det("pass", "no blocked terms")

@@ -170,3 +170,30 @@ def test_hedging_waits_for_the_other_call_when_one_fails_and_can_be_switched_off
     assert hedged(fn, after=0.1) == "ok"
     state["n"] = 5
     assert hedged(lambda: "plain", after=0) == "plain"
+
+
+def test_a_gateway_failure_falls_back_to_gemini_and_is_recorded(monkeypatch):
+    from storybound.agents import common
+    from storybound.clients import gateway, gemini
+    from storybound.clients.errors import ClientError
+    from storybound.clients.usage import Result, metered
+
+    def down(user, **kw):
+        raise ClientError("503 gateway down", retryable=False, status=503)
+
+    monkeypatch.setattr(gateway, "configured", lambda: True)
+    monkeypatch.setattr(gateway, "generate_json", down)
+    monkeypatch.setattr(gemini, "generate_json", lambda user, **kw: Result(value={"ok": True}))
+    monkeypatch.setattr(common.get_settings().models, "routes", {"planner": "nova-2-lite"})
+    with metered() as m:
+        assert common.ask_json("planner", "s", "u").value == {"ok": True}
+    assert m.fallbacks and m.fallbacks[0]["role"] == "planner" and m.fallbacks[0]["model"] == "nova-2-lite"
+
+
+def test_an_unknown_gateway_model_is_priced_at_the_dearest_known_one():
+    from storybound.clients.usage import Meter, Usage
+    from storybound.config import Prices
+
+    m = Meter()
+    m.add(Usage(input_tokens=1_000_000, output_tokens=0, model="claude-future"))
+    assert m.cost_usd(Prices()) == 5.5  # opus input price, never under-reported

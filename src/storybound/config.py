@@ -104,7 +104,7 @@ class Settings(BaseModel):
     text_timeout_s: float = float(os.environ.get("STORYBOUND_TEXT_TIMEOUT_S", "90"))  # HR-005: 40 s was tried and not kept
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
-    hedge_after_s: float = float(os.environ.get("STORYBOUND_HEDGE_S", "30"))  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
+    hedge_after_s: float = float(os.environ.get("STORYBOUND_HEDGE_S", "45"))  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens
 
 

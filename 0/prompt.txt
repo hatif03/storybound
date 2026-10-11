@@ -566,3 +566,7 @@ for the neatlogs write configuration, use cli, give me the link if i'll sign in 
 ---
 
 I have signed in using the link. My sister images do not need to go to go in the repo, gitignore them. For her drawings i give you consent. keys will be rotated but make sure they do not go on github. i approve history rewrite. do it for both th eimages and the api key. Complete everything that is left
+
+---
+
+I have logged in again. I have reviewed pr 1, merge it. I will add screenshot and workbook form cfo.ai later as well but I want you to the the screenshot of the application to readme and wherever necessary.

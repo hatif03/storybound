@@ -1,7 +1,7 @@
 {
- "dismiss_67e5d3bd": "{\"error\":\"User \\\"md.hatifosmani.15@gmail.com\\\" not found in this project's team\",\"errorCode\":\"not_found\"}",
- "resolve_ebcff17a": "{\"error\":\"User \\\"md.hatifosmani.15@gmail.com\\\" not found in this project's team\",\"errorCode\":\"not_found\"}",
- "note_ebcff17a": "{\"error\":\"User \\\"md.hatifosmani.15@gmail.com\\\" not found in this project's team\",\"errorCode\":\"not_found\"}",
- "progress_bdd1f6f1": "{\"error\":\"User \\\"md.hatifosmani.15@gmail.com\\\" not found in this project's team\",\"errorCode\":\"not_found\"}",
- "note_bdd1f6f1": "{\"error\":\"User \\\"md.hatifosmani.15@gmail.com\\\" not found in this project's team\",\"errorCode\":\"not_found\"}"
+ "dismiss_67e5d3bd": "{\"id\":\"67e5d3bd-b2b5-4bbc-9f40-17321d049074\",\"status\":\"archived\",\"message\":\"Suggestion dismissed and archived\"}",
+ "resolve_ebcff17a": "{\"id\":\"ebcff17a-12c3-4196-bb21-a09bffb49070\",\"status\":\"resolved\",\"message\":\"Status changed to resolved\"}",
+ "note_ebcff17a": "{\"id\":\"ebcff17a-12c3-4196-bb21-a09bffb49070\",\"status\":\"resolved\",\"message\":\"Fix updated\",\"updated_fields\":[\"resolution_note\"]}",
+ "progress_bdd1f6f1": "{\"id\":\"bdd1f6f1-f359-4d80-b6dd-f671af96b731\",\"status\":\"in_progress\",\"message\":\"Status changed to in_progress\"}",
+ "note_bdd1f6f1": "{\"id\":\"bdd1f6f1-f359-4d80-b6dd-f671af96b731\",\"status\":\"in_progress\",\"message\":\"Fix updated\",\"updated_fields\":[\"resolution_note\"]}"
 }

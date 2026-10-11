@@ -65,6 +65,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | Ages other than 6; languages other than English | Not tested |
 
 ## 3. Known limits (said plainly)
+- Fit to the hackathon's problem statement (an agent that completes a substantial task start to finish, each result guiding the next action) is argued in [QUALIFICATION.md](QUALIFICATION.md), including the honest limit that the stage order is a fixed graph with open-ended repair inside it.
 - Costs of pictures and narration are list-price assumptions; neatlogs prices text only. The true figure is on the Google Cloud bill, which we have not read.
 - The evidence videos are made from fixture drawings only. The sister's drawings and cutouts used by the launch video were removed from git history (with the builder's consent for the drawings) and live only in the gitignored `video/launch/img/` and `_private/` on the builder's disk, so the launch video cannot be re-rendered from a fresh clone.
 - Early work (before 15:08 on 10 Oct) has no Entire checkpoint; `entire why` shows older code as human-written.

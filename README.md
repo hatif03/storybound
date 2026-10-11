@@ -4,6 +4,13 @@
 
 > Why it is not just a chat model with a good prompt: in our 84-run experiment the same writer shipped at least one broken promise in **27 of 28 stories** when ungated and in **27 of 28** when it reviewed its own story, and in **0 of 28** when an independent gate checked every page ([report](evidence/reports/20261010-1505-IST-sweep-2-p2.md)). Most broken promises were quality failures (answer position, lesson missing, reading level), not safety failures.
 
+## Does it fit the problem statement?
+*"Build an AI agent, or a team of agents, that completes a substantial task from start to finish. Give it a goal, tools and an environment; let each result guide its next action."* **Yes**, in four lines (full case with evidence and limits: [docs/QUALIFICATION.md](docs/QUALIFICATION.md)):
+- **Goal, tools, environment:** a drawing and a lesson become an oath (a checkable list of promises); tools are vision, a writer, an independent judge from another model family, pictures, voice, deterministic checkers and a video renderer; the environment is a LangGraph run with state, quotas, budgets and a child using a real web app.
+- **Each result guides the next action:** a failed check rewrites that page; a judge's quoted objection rolls the run back to that page; a quota error waits and retries, then degrades that page to text and says so; a quiz question that cannot be verified is dropped; a movie scene that fails its own checks is repaired. Gated, the same writer shipped a broken promise in **0 of 28** stories after fixing breaks on 19 first passes (1.82 repairs per story); ungated or self-reviewing, **27 of 28**.
+- **Substantial, start to finish:** drawing, safety screen, character, oath, eight verified pages, whole-story check, verified quiz, pictures, narration, receipt, then a read-along movie, with no human step in between.
+- **Said plainly:** it is a bounded agentic workflow (a fixed stage order with open-ended repair inside it, by design for children's content), not an open-ended tool-picking agent; the judge is not a human; samples are small.
+
 ## What it looks like
 The web app, desktop width. Screens marked *live* came from a real story run through the browser (`web/scripts/e2e-real.mjs`, real models); screens marked *demo mode* come from the free scripted mode (`?mock=1`), which shows the same screens without calling any model. The drawings are test fixtures or drawn by the test script, never a real child's.
 
@@ -21,6 +28,7 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | How it was built, hour by hour, and what went wrong | [docs/PROCESS.md](docs/PROCESS.md) |
 | How neatlogs, Entire and cfo.ai were used (architecture, implementation, runtime, reasoning, result) | [docs/TOOLS.md](docs/TOOLS.md) |
 | What is done and what is left | [docs/STATUS.md](docs/STATUS.md) |
+| Why it fits the hackathon's problem statement | [docs/QUALIFICATION.md](docs/QUALIFICATION.md) |
 | Every claim with its evidence | [EVIDENCE.md](EVIDENCE.md) (generated) and `evidence/` |
 | The agent's design | [docs/DESIGN.md](docs/DESIGN.md) |
 | The HTTP contract | [docs/API.md](docs/API.md) |

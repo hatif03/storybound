@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 10:06 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 10:23 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -295,4 +295,4 @@ Repair recoveries inside the story loop: 103 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T10:05:46+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T10:06:51+05:30. Window check: `python scripts/lint_evidence.py`.

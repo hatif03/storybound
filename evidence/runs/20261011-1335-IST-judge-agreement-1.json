@@ -9,11 +9,11 @@
   ],
   "models": {
    "claude-haiku": {
-    "cells": 72,
-    "agree_with_k2": "62/72",
-    "ground_truth_cells": 40,
-    "model_matches_ground_truth": "39/40",
-    "k2_matches_ground_truth": "40/40",
+    "cells": 69,
+    "agree_with_k2": "60/69",
+    "ground_truth_cells": 37,
+    "model_matches_ground_truth": "37/37",
+    "k2_matches_ground_truth": "37/37",
     "disagreements": [
      "correct_choice_teaches_lesson",
      "lesson_concept_in_scene"
@@ -42,7 +42,8 @@
     ],
     "errors": 0
    }
-  }
+  },
+  "note": "recomputed 11 Oct after review: verification_error cells are excluded from both sides of every ratio"
  },
  "cells": [
   {

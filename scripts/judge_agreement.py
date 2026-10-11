@@ -27,6 +27,7 @@ tracing.init()
 
 from eval_judge import mutate  # noqa: E402
 from judge_bias import capture  # noqa: E402
+
 from storybound.config import get_settings  # noqa: E402
 from storybound.models import CharacterCard, Page  # noqa: E402
 from storybound.oath.judge import judge_batch  # noqa: E402
@@ -36,8 +37,7 @@ BAD = {"violation", "critical"}
 
 
 def verdicts_with(model: str, items, text, ctx) -> dict[str, str]:
-    get_settings().models.judge = model  # the judge client reads this per call
-    return {cid: o.status for cid, o in judge_batch(items, text, ctx).items()}
+    return {cid: o.status for cid, o in judge_batch(items, text, ctx).items()}  # the judge model is set by main(), once per model
 
 
 def main() -> None:
@@ -56,7 +56,9 @@ def main() -> None:
     kinds = ["clean", "swap", "scary"]
     jobs = [(p if k == "clean" else mutate(p, k, card.name), k) for p in pages for k in kinds]
     cells: list[dict] = []
+    saved = get_settings().models.judge
     for model in a.models.split(","):
+        get_settings().models.judge = model  # the judge client reads this per call: set once per model, restored after the loop
         with cf.ThreadPoolExecutor(max_workers=a.workers) as pool:
             futs = []
             for (page, kind), row in zip(jobs, k2_rows, strict=True):
@@ -66,9 +68,11 @@ def main() -> None:
                 got = f.result()
                 for c in items:
                     cells.append({"model": model, "kind": kind, "promise": c.id, "model_status": got.get(c.id), "k2_status": row["base"].get(c.id)})
+    get_settings().models.judge = saved
     out_models = {}
     for model in a.models.split(","):
-        cs = [c for c in cells if c["model"] == model and c["model_status"] and c["k2_status"]]
+        # a verification_error is not a pass: errors are left out of both sides of every ratio (and counted separately below)
+        cs = [c for c in cells if c["model"] == model and c["model_status"] not in (None, "verification_error") and c["k2_status"] not in (None, "verification_error")]
         agree = sum(1 for c in cs if (c["model_status"] in BAD) == (c["k2_status"] in BAD))
         truth = [c for c in cs if (c["kind"] == "clean") or c["promise"] == TARGET.get(c["kind"])]
         right = sum(1 for c in truth if (c["model_status"] in BAD) == (c["kind"] != "clean"))

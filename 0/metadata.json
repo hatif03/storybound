@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4N3VYQYHT2NHADA4RY7EVMZ",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T09:14:30.8052223Z",
+  "branch": "chore/cfo-workbooks-and-open-items",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "e6bd4058c432",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1922,
+    "cache_creation_tokens": 2711799,
+    "cache_read_tokens": 456740644,
+    "output_tokens": 837295,
+    "api_call_count": 940
+  },
+  "session_metrics": {
+    "turn_count": 47
+  }
+}

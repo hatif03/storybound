@@ -1,0 +1,6999 @@
+{
+ "85357c732ba5a305cd2cfc4627f8d2e3": {
+  "head": {
+   "status": "error",
+   "latency_ms": 230175,
+   "span_count": 175,
+   "llm_calls": 23,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 26056,
+   "total_cost": 0.01047525,
+   "created_at": "2026-10-11T07:14:26.290Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 11,
+   "node.write": 8,
+   "node.verify": 8,
+   "node.settle": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_specific_discovery_shared": 8,
+   "IFM/K2-Horizon-375B-A23B": 7,
+   "claude-haiku": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "verify:quiz_no_tell": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87137,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    230175.330048,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91135.650304,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91133.669888,
+    "scene_writer.1",
+    "agent_action"
+   ],
+   [
+    87136.880896,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    42824.965888,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    42821.969664,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "21330f9aa6b19e167ef2f563ed7638da": {
+  "head": {
+   "status": "error",
+   "latency_ms": 125462,
+   "span_count": 208,
+   "llm_calls": 27,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 28700,
+   "total_cost": 0.011501250000000001,
+   "created_at": "2026-10-11T07:08:03.930Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 13,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:lesson_specific_happiness_visible": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:one_correct_choice": 10,
+   "node.verify": 9,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "node.write": 8,
+   "node.settle": 8,
+   "claude-haiku": 5,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_alignment": 2,
+   "verify:lesson_specific_befriending_through_sharing": 2,
+   "verify:lesson_specific_zephyr_shares_perspective": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1534,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 567,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    125461.54368,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    45219.249152,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    18924.232,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    16637.092608,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    14112.269568,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    14107.759616,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "5ab672764360a66b30a86d8fa89f4fc1": {
+  "head": {
+   "status": "error",
+   "latency_ms": 219678,
+   "span_count": 314,
+   "llm_calls": 39,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 39988,
+   "total_cost": 0.02695724999999999,
+   "created_at": "2026-10-11T07:07:55.931Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 26,
+   "node.verify": 22,
+   "node.write": 15,
+   "verify:age_reading_level": 15,
+   "verify:character_named_in_scene": 15,
+   "verify:correct_choice_teaches_lesson": 15,
+   "verify:lesson_concept_in_scene": 15,
+   "verify:lesson_specific_hard_choice_visible": 15,
+   "verify:no_drawing_text_obedience": 15,
+   "verify:one_correct_choice": 15,
+   "verify:story_safe_text": 15,
+   "verify:visual_trait_referenced": 15,
+   "verify:lesson_specific_zephyr_color_change": 15,
+   "node.settle": 13,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "node.repair": 7,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "claude-haiku": 3,
+   "scene_writer.4": 3,
+   "scene_repair.4": 3
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1277,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 681,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    219677.238016,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    37755.65,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    22982.592768,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    20374.253056,
+    "node.settle",
+    "chain"
+   ],
+   [
+    14675.030272,
+    "node.settle",
+    "chain"
+   ],
+   [
+    13984.566272,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "05cbd7082ddc5208b181ba55a9d80fd9": {
+  "head": {
+   "status": "error",
+   "latency_ms": 251557,
+   "span_count": 262,
+   "llm_calls": 38,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 37412,
+   "total_cost": 0.022584749999999997,
+   "created_at": "2026-10-11T07:08:03.908Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 25,
+   "node.verify": 19,
+   "node.write": 15,
+   "node.settle": 12,
+   "verify:age_reading_level": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_gathering_amplified": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "node.repair": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "claude-haiku": 3,
+   "scene_writer.8": 3,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1560,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 703,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 43354,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    251556.309504,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    53510.936832,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    53508.311808,
+    "scene_writer.5",
+    "agent_action"
+   ],
+   [
+    50298.016,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    43354.064384,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    39438.260992,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "8e2a6a444965c57ea8ca13760da3189e": {
+  "head": {
+   "status": "error",
+   "latency_ms": 304574,
+   "span_count": 280,
+   "llm_calls": 35,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 35960,
+   "total_cost": 0.03255825,
+   "created_at": "2026-10-11T06:24:34.289Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 27,
+   "node.verify": 20,
+   "node.write": 14,
+   "verify:age_reading_level": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_emotional_relief_of_honesty": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "verify:one_correct_choice": 14,
+   "verify:story_safe_text": 14,
+   "verify:visual_trait_referenced": 14,
+   "node.settle": 12,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "node.repair": 6,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.3": 3,
+   "scene_writer.4": 3,
+   "scene_writer.2": 2,
+   "scene_repair.3": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87566,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    304574.201856,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    103596.790784,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    103594.794752,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    103586.212608,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    87565.649408,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    48949.822976,
+    "node.quiz",
+    "agent_action"
+   ]
+  ]
+ },
+ "4dba10f45ce6d379ce18ece76686f801": {
+  "head": {
+   "status": "error",
+   "latency_ms": 197940,
+   "span_count": 177,
+   "llm_calls": 23,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 23369,
+   "total_cost": 0.01935675,
+   "created_at": "2026-10-11T05:55:03.362Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 15,
+   "node.verify": 9,
+   "verify:age_reading_level": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "node.write": 8,
+   "node.settle": 8,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "verify:quiz_one_correct": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87431,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    197939.965952,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    94533.994496,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    94528.571904,
+    "oath_author",
+    "agent_action"
+   ],
+   [
+    87430.81984,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    19291.072,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    17932.132352,
+    "node.character",
+    "agent_action"
+   ]
+  ]
+ },
+ "f65dd4d4e6442d0dc61b03aad3933539": {
+  "head": {
+   "status": "error",
+   "latency_ms": 278068,
+   "span_count": 242,
+   "llm_calls": 35,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 29690,
+   "total_cost": 0.02900175,
+   "created_at": "2026-10-11T05:50:35.974Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 27,
+   "node.verify": 17,
+   "node.write": 14,
+   "node.settle": 11,
+   "verify:age_reading_level": 11,
+   "verify:character_named_in_scene": 11,
+   "verify:correct_choice_teaches_lesson": 11,
+   "verify:lesson_concept_in_scene": 11,
+   "verify:lesson_specific_mutual_joy_of_sharing": 11,
+   "verify:no_drawing_text_obedience": 11,
+   "verify:one_correct_choice": 11,
+   "verify:story_safe_text": 11,
+   "verify:visual_trait_referenced": 11,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "scene_writer.3": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "node.repair": 3,
+   "scene_writer.4": 3,
+   "scene_writer.2": 2,
+   "scene_repair.2": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 542,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1326,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87410,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    278068.023552,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    90883.501568,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    90880.502016,
+    "scene_writer.4",
+    "agent_action"
+   ],
+   [
+    87409.570304,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    36157.659136,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    36154.519552,
+    "story_planner",
+    "agent_action"
+   ]
+  ]
+ },
+ "40bbb0726111153e6899dbfc9ca94feb": {
+  "head": {
+   "status": "error",
+   "latency_ms": 125899,
+   "span_count": 190,
+   "llm_calls": 25,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 29424,
+   "total_cost": 0.019485000000000002,
+   "created_at": "2026-10-11T05:52:56.839Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 15,
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:age_reading_level": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_mutual_happiness_after_sharing": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "verify:character_named_in_scene": 9,
+   "node.write": 8,
+   "node.verify": 8,
+   "node.settle": 8,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_safe_text": 4,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_specific_ziggy_shares_vessel_feature": 2,
+   "verify:no_repeated_scenario": 2,
+   "verify:schema_valid": 2,
+   "verify:lesson_alignment": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1710,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    125898.982912,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    31850.866176,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    21057.158,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    15231.522304,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    13684.211,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    11500.74624,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "55bb3418fe6fd056c778475634cbb709": {
+  "head": {
+   "status": "error",
+   "latency_ms": 354062,
+   "span_count": 240,
+   "llm_calls": 32,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 31630,
+   "total_cost": 0.028524750000000005,
+   "created_at": "2026-10-11T05:52:37.917Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 25,
+   "node.verify": 17,
+   "node.write": 14,
+   "node.settle": 11,
+   "verify:age_reading_level": 11,
+   "verify:character_named_in_scene": 11,
+   "verify:correct_choice_teaches_lesson": 11,
+   "verify:lesson_concept_in_scene": 11,
+   "verify:lesson_specific_internal_relief_after_truth": 11,
+   "verify:no_drawing_text_obedience": 11,
+   "verify:one_correct_choice": 11,
+   "verify:story_safe_text": 11,
+   "verify:visual_trait_referenced": 11,
+   "IFM/K2-Horizon-375B-A23B": 7,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.3": 3,
+   "node.repair": 3,
+   "scene_writer.2": 2,
+   "scene_writer.4": 2,
+   "scene_writer.6": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87545,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87129,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    354062.30656,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91098.4512,
+    "node.repair",
+    "agent_action"
+   ],
+   [
+    91096.454144,
+    "scene_repair.1",
+    "agent_action"
+   ],
+   [
+    90844.708352,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    90843.817216,
+    "scene_writer.5",
+    "agent_action"
+   ],
+   [
+    87545.466624,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "3d9e833be22b4b727c60b6a63b96ae52": {
+  "head": {
+   "status": "error",
+   "latency_ms": 474555,
+   "span_count": 374,
+   "llm_calls": 61,
+   "tool_calls": 15,
+   "error_count": 8,
+   "total_tokens": 60567,
+   "total_cost": 0.04693049999999999,
+   "created_at": "2026-10-11T05:19:43.704Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 41,
+   "node.verify": 24,
+   "node.write": 18,
+   "verify:age_reading_level": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:grownup_1": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_shape_based_expression": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "verify:one_correct_choice": 14,
+   "verify:story_safe_text": 14,
+   "verify:visual_trait_referenced": 14,
+   "node.settle": 14,
+   "gemini-3.1-flash-image": 11,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "node.repair": 6,
+   "illustrate": 5,
+   "verify:illustration_present": 5,
+   "verify:image_matches_card": 5,
+   "verify:image_no_text": 5,
+   "scene_writer.4": 4,
+   "verify:quiz_answerable": 4
+  },
+  "bad": [
+   {
+    "name": "scene_writer.4",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 10103,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 488,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 295,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 88003,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 271,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 637,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 647,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 676,
+    "out": ""
+   }
+  ],
+  "bad_n": 8,
+  "longest": [
+   [
+    474554.578432,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    226448.305664,
+    "node.media",
+    "chain"
+   ],
+   [
+    180759.8016,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    88002.895104,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    84108.244,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    83946.469632,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "d0bb16b76ed0d55a65d1baade5eaadd3": {
+  "head": {
+   "status": "error",
+   "latency_ms": 395254,
+   "span_count": 404,
+   "llm_calls": 47,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 48070,
+   "total_cost": 0.04520775,
+   "created_at": "2026-10-11T05:20:36.305Z",
+   "detections": [
+    "Oath violation",
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 38,
+   "node.verify": 31,
+   "verify:age_reading_level": 22,
+   "verify:character_named_in_scene": 22,
+   "verify:correct_choice_teaches_lesson": 22,
+   "verify:lesson_concept_in_scene": 22,
+   "verify:lesson_specific_honest_nautical_whistle": 22,
+   "verify:no_drawing_text_obedience": 22,
+   "verify:one_correct_choice": 22,
+   "verify:story_safe_text": 22,
+   "verify:visual_trait_referenced": 22,
+   "node.write": 18,
+   "node.settle": 14,
+   "node.repair": 13,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "scene_repair.7": 6,
+   "scene_writer.5": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.4": 3,
+   "scene_writer.6": 3
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87737,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    395253.422336,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    94379.316736,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    94376.279296,
+    "scene_writer.7",
+    "agent_action"
+   ],
+   [
+    87736.599296,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    55281.650944,
+    "node.settle",
+    "chain"
+   ],
+   [
+    44818.261,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "4fd436b1fcc137691d584d1429d10a2e": {
+  "head": {
+   "status": "error",
+   "latency_ms": 368661,
+   "span_count": 289,
+   "llm_calls": 39,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 33840,
+   "total_cost": 0.03412875,
+   "created_at": "2026-10-11T05:15:23.680Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 30,
+   "node.verify": 22,
+   "node.write": 16,
+   "verify:age_reading_level": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_carrot_prop_honesty": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "verify:one_correct_choice": 14,
+   "verify:story_safe_text": 14,
+   "verify:visual_trait_referenced": 14,
+   "node.settle": 12,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "node.repair": 6,
+   "scene_writer.5": 4,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.6": 3,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 584,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 431,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87502,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    368661.430528,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91018.990592,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91017.066496,
+    "scene_writer.2",
+    "agent_action"
+   ],
+   [
+    87501.510912,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    47756.755968,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    47754.656,
+    "scene_writer.4",
+    "agent_action"
+   ]
+  ]
+ },
+ "27be0932e50af5fefac5c7d6fceb0375": {
+  "_failed": "{'_failed': True}"
+ },
+ "e8a7ceeb2621480130783322e57c49d8": {
+  "_failed": "{'_failed': True}"
+ },
+ "1092b1bbc158b2901ee34dcebb5944a1": {
+  "_failed": "{'_failed': True}"
+ },
+ "148a4920b0e0bd6b2aa04023197ee545": {
+  "_failed": "{'_failed': True}"
+ },
+ "954c5fc36e7cd071ea3f925bb4e5f303": {
+  "head": {
+   "status": "error",
+   "latency_ms": 113488,
+   "span_count": 173,
+   "llm_calls": 23,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 22955,
+   "total_cost": 0.018465,
+   "created_at": "2026-10-11T03:13:18.971Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 15,
+   "node.write": 8,
+   "node.verify": 8,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_rhino_physicality_honesty": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "node.settle": 8,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 26101,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 808,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    113487.871744,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    29635.963136,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    29633.968896,
+    "scene_writer.3",
+    "agent_action"
+   ],
+   [
+    26101.376512,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    18950.931968,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    11538.372096,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "114c3ee394b2b46e41419284edc3f322": {
+  "head": {
+   "status": "error",
+   "latency_ms": 174863,
+   "span_count": 217,
+   "llm_calls": 29,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 32036,
+   "total_cost": 0.02553975,
+   "created_at": "2026-10-11T03:09:10.593Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 20,
+   "node.verify": 14,
+   "node.write": 12,
+   "node.settle": 10,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:lesson_specific_relief_after_truth": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "IFM/K2-Horizon-375B-A23B": 9,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.3": 3,
+   "scene_writer.2": 2,
+   "node.repair": 2,
+   "scene_writer.4": 2,
+   "safety_screen.vision": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 2707,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    174862.945792,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    36351.96416,
+    "node.settle",
+    "chain"
+   ],
+   [
+    26223.02336,
+    "node.settle",
+    "chain"
+   ],
+   [
+    22305.891,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    17880.76032,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    15401.866496,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "8e8b988aaeb90df588d08884d3d650ed": {
+  "head": {
+   "status": "error",
+   "latency_ms": 113139,
+   "span_count": 196,
+   "llm_calls": 27,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 25133,
+   "total_cost": 0.02390625,
+   "created_at": "2026-10-11T03:08:53.413Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 19,
+   "node.verify": 11,
+   "node.write": 10,
+   "node.settle": 9,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_mutual_joy_outcome": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "scene_writer.7": 2,
+   "scene_writer.8": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1133,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    113138.817536,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    20329.031168,
+    "node.settle",
+    "chain"
+   ],
+   [
+    18320.467712,
+    "node.quiz",
+    "agent_action"
+   ],
+   [
+    9111.454208,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    9107.544832,
+    "story_planner",
+    "agent_action"
+   ],
+   [
+    9104.791,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "6c8c28dda3c92555ca689643f2863b80": {
+  "head": {
+   "status": "error",
+   "latency_ms": 281346,
+   "span_count": 238,
+   "llm_calls": 33,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 36381,
+   "total_cost": 0.028553249999999995,
+   "created_at": "2026-10-11T03:05:28.749Z",
+   "detections": []
+  },
+  "names": {
+   "gemini-3.7-flash": 23,
+   "node.verify": 16,
+   "node.write": 13,
+   "node.settle": 11,
+   "verify:age_reading_level": 11,
+   "verify:character_named_in_scene": 11,
+   "verify:correct_choice_teaches_lesson": 11,
+   "verify:lesson_concept_in_scene": 11,
+   "verify:lesson_specific_carrot_prop_consistency": 11,
+   "verify:no_drawing_text_obedience": 11,
+   "verify:one_correct_choice": 11,
+   "verify:story_safe_text": 11,
+   "verify:visual_trait_referenced": 11,
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:quiz_answerable": 4,
+   "verify:quiz_no_tell": 4,
+   "verify:quiz_one_correct": 4,
+   "verify:quiz_quote_in_story": 4,
+   "verify:quiz_reading_level": 4,
+   "verify:quiz_safe_text": 4,
+   "node.repair": 3,
+   "scene_writer.3": 2,
+   "scene_writer.4": 2,
+   "scene_writer.5": 2,
+   "scene_writer.6": 2
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87425,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    281345.576704,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    98915.434752,
+    "node.repair",
+    "agent_action"
+   ],
+   [
+    98913.378304,
+    "scene_repair.2",
+    "agent_action"
+   ],
+   [
+    87425.128448,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    41475.287552,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    26213.511,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "c83d5a3fa720247da64e20ef924e59c5": {
+  "head": {
+   "status": "error",
+   "latency_ms": 313988,
+   "span_count": 39,
+   "llm_calls": 11,
+   "tool_calls": 4,
+   "error_count": 3,
+   "total_tokens": 11407,
+   "total_cost": 0.0056040000000000005,
+   "created_at": "2026-10-11T03:24:09.342Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 5,
+   "gemini-3.1-flash-image": 4,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "verify:image_no_text": 2,
+   "safety_screen.vision": 1,
+   "node.safety": 1,
+   "safety_screen": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "scene_writer.4": 1,
+   "node.write": 1,
+   "node.verify": 1,
+   "node.settle": 1,
+   "verify:age_reading_level": 1,
+   "verify:correct_choice_teaches_lesson": 1,
+   "verify:grownup_1": 1,
+   "verify:lesson_concept_in_scene": 1,
+   "verify:lesson_specific_joyful_giver_reaction": 1,
+   "verify:no_drawing_text_obedience": 1,
+   "verify:one_correct_choice": 1,
+   "verify:story_safe_text": 1,
+   "verify:visual_trait_referenced": 1,
+   "verify:character_named_in_scene": 1,
+   "illustrate": 1,
+   "node.media": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 265,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 607,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 374,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    313987.895552,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    208220.664064,
+    "node.media",
+    "chain"
+   ],
+   [
+    18897.318656,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    12551.55584,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    12551.55584,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    12541.338112,
+    "safety_screen.vision",
+    "agent_action"
+   ]
+  ]
+ },
+ "aeea65c6b2cdfac7815d22620a741597": {
+  "head": {
+   "status": "error",
+   "latency_ms": 365323,
+   "span_count": 376,
+   "llm_calls": 83,
+   "tool_calls": 20,
+   "error_count": 31,
+   "total_tokens": 67781,
+   "total_cost": 0.06019334999999999,
+   "created_at": "2026-10-10T14:35:39.889Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 39,
+   "gemini-3.1-flash-image": 27,
+   "node.verify": 17,
+   "node.write": 13,
+   "verify:age_reading_level": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:grownup_1": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_diamond_expression_glow": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "node.settle": 12,
+   "illustrate": 10,
+   "verify:illustration_present": 10,
+   "verify:image_matches_card": 10,
+   "verify:image_no_text": 10,
+   "gemini-2.5-flash-image": 10,
+   "verify:trait_in_image_prompt": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "IFM/K2-Horizon-375B-A23B": 7,
+   "node.repair": 4
+  },
+  "bad": [
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 510,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 328,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 294,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 705,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 743,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 293,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 631,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 300,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 51340,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 692,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 325,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 651,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 274,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4513,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4657,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 278,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 697,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4381,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 287,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 52568,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 682,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 690,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 277,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 299,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4924,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 652,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5611,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 272,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4495,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 276,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 622,
+    "out": ""
+   }
+  ],
+  "bad_n": 31,
+  "longest": [
+   [
+    365322.450176,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    176126.522624,
+    "node.media",
+    "chain"
+   ],
+   [
+    52568.105472,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    51339.566592,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    30482.217728,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    30437.149952,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "c9a78b746d479b1f6671b7acf2254de3": {
+  "head": {
+   "status": "error",
+   "latency_ms": 401972,
+   "span_count": 280,
+   "llm_calls": 76,
+   "tool_calls": 22,
+   "error_count": 48,
+   "total_tokens": 45694,
+   "total_cost": 0.03961230000000001,
+   "created_at": "2026-10-10T14:23:19.611Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation"
+   ]
+  },
+  "names": {
+   "gemini-3.1-flash-image": 32,
+   "gemini-3.7-flash": 21,
+   "gemini-2.5-flash-image": 20,
+   "illustrate": 12,
+   "verify:illustration_present": 12,
+   "verify:image_matches_card": 12,
+   "verify:image_no_text": 12,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:grownup_1": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_geometric_clarity": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "verify:trait_in_image_prompt": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "IFM/K2-Horizon-375B-A23B": 3,
+   "safety_screen.vision": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 192,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 52419,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 701,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 498,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 300,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5378,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 279,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4284,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 323,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4656,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 267,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 52601,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 284,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 297,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 426,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 642,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4885,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 295,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5122,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 712,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5019,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 265,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 313,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 53825,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 313,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 279,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 440,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 698,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4760,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 372,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5278,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 716,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 683,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5488,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5871,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5489,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 299,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 51572,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 273,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 399,
+    "out": ""
+   }
+  ],
+  "bad_n": 48,
+  "longest": [
+   [
+    401971.6224,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    307399.63392,
+    "node.media",
+    "chain"
+   ],
+   [
+    61228.3264,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    56509.755904,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    53825.362176,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    52601.235968,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+  "head": {
+   "status": "error",
+   "latency_ms": 360966,
+   "span_count": 254,
+   "llm_calls": 65,
+   "tool_calls": 20,
+   "error_count": 32,
+   "total_tokens": 50176,
+   "total_cost": 0.0416913,
+   "created_at": "2026-10-10T14:19:58.658Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.1-flash-image": 27,
+   "gemini-3.7-flash": 24,
+   "illustrate": 10,
+   "verify:illustration_present": 10,
+   "verify:image_matches_card": 10,
+   "verify:image_no_text": 10,
+   "gemini-2.5-flash-image": 10,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:grownup_1": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "verify:trait_in_image_prompt": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87149,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 467,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 218,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 228,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 227,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 594,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 461,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 566,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 252,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 51591,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 208,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 210,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 605,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 379,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4626,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4376,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 206,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 600,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5256,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 192,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 51512,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 225,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 369,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 236,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 401,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 252,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4603,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4692,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 251,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4567,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 667,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 380,
+    "out": ""
+   }
+  ],
+  "bad_n": 32,
+  "longest": [
+   [
+    360965.370624,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    179456.383744,
+    "node.media",
+    "chain"
+   ],
+   [
+    91265.541888,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91261.544448,
+    "scene_writer.6",
+    "agent_action"
+   ],
+   [
+    87148.500224,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    51591.475712,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+  "head": {
+   "status": "error",
+   "latency_ms": 322360,
+   "span_count": 228,
+   "llm_calls": 48,
+   "tool_calls": 18,
+   "error_count": 19,
+   "total_tokens": 45649,
+   "total_cost": 0.03821085,
+   "created_at": "2026-10-10T13:26:52.624Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.1-flash-image": 21,
+   "gemini-3.7-flash": 19,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:age_reading_level": 8,
+   "verify:lesson_specific_mutual_happiness_shown": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "node.settle": 8,
+   "verify:trait_in_image_prompt": 8,
+   "illustrate": 8,
+   "verify:illustration_present": 8,
+   "verify:image_matches_card": 8,
+   "verify:image_no_text": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "gemini-2.5-flash-image": 6,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 471,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 289,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 295,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 348,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 775,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 466,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 696,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 363,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 278,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 709,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 494,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 692,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4708,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5062,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 264,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 607,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 520,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 337,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 552,
+    "out": ""
+   }
+  ],
+  "bad_n": 19,
+  "longest": [
+   [
+    322360.170752,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    138862.261504,
+    "node.media",
+    "chain"
+   ],
+   [
+    79438.142464,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    79425.386752,
+    "character_card",
+    "agent_action"
+   ],
+   [
+    79420.802,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    62491.975168,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "0fd459e70b5165e1455980c72c77f66d": {
+  "head": {
+   "status": "error",
+   "latency_ms": 304858,
+   "span_count": 255,
+   "llm_calls": 61,
+   "tool_calls": 19,
+   "error_count": 27,
+   "total_tokens": 57529,
+   "total_cost": 0.0411468,
+   "created_at": "2026-10-10T12:58:38.404Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation"
+   ]
+  },
+  "names": {
+   "gemini-3.1-flash-image": 24,
+   "gemini-3.7-flash": 22,
+   "node.verify": 11,
+   "node.write": 10,
+   "gemini-2.5-flash-image": 10,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_mutual_happiness_reaction": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.settle": 9,
+   "illustrate": 9,
+   "verify:illustration_present": 9,
+   "verify:image_matches_card": 9,
+   "verify:trait_in_image_prompt": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "scene_writer.5": 2,
+   "scene_writer.6": 2,
+   "safety_screen.vision": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 464,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 422,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 312,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 294,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 660,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 537,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 668,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 298,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 336,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 469,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 532,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 447,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5282,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4741,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 283,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 51960,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 489,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 680,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4146,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 277,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4646,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 673,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5237,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 326,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 284,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 670,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4121,
+    "out": ""
+   }
+  ],
+  "bad_n": 27,
+  "longest": [
+   [
+    304857.616896,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    172126.413568,
+    "node.media",
+    "chain"
+   ],
+   [
+    61776.383488,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    54562.430208,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    51960.13056,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    39277.142272,
+    "illustrate",
+    "tool_call"
+   ]
+  ]
+ },
+ "3288c844950af2060c9ba38547e65571": {
+  "head": {
+   "status": "error",
+   "latency_ms": 92938,
+   "span_count": 133,
+   "llm_calls": 16,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 14224,
+   "total_cost": 0.01601625,
+   "created_at": "2026-10-10T12:49:02.194Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 12,
+   "node.write": 8,
+   "node.verify": 8,
+   "node.settle": 8,
+   "verify:age_reading_level": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:character_named_in_scene": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 289,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    92937.735936,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    29328.491264,
+    "node.settle",
+    "chain"
+   ],
+   [
+    11778.171648,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    11775.159808,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    11748.182272,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    9375.57632,
+    "node.character",
+    "agent_action"
+   ]
+  ]
+ },
+ "ed70e8bdeee997f6d62fda297dc9ad07": {
+  "head": {
+   "status": "error",
+   "latency_ms": 149977,
+   "span_count": 179,
+   "llm_calls": 23,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 31477,
+   "total_cost": 0.020620499999999996,
+   "created_at": "2026-10-10T12:49:02.189Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 17,
+   "node.verify": 12,
+   "node.write": 10,
+   "node.settle": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:lesson_specific_cherished_carrot_truth": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:age_reading_level": 10,
+   "IFM/K2-Horizon-375B-A23B": 6,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2,
+   "node.repair": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 678,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 76,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    149976.797696,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    42385.8048,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    33977.552384,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    24446.036,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    24308.526,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    17933.288,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "21f5547097cbe68778d95e0c5e54d7c0": {
+  "head": {
+   "status": "error",
+   "latency_ms": 61711,
+   "span_count": 135,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 17259,
+   "total_cost": 0.01650075,
+   "created_at": "2026-10-10T12:49:06.702Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:story_safe_text": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 730,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    61710.736384,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    12721.233408,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    12713.220608,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    12689.243136,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    12243.431,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    7727.197696,
+    "node.character",
+    "agent_action"
+   ]
+  ]
+ },
+ "cf9d38b77aa52a4297761e17a813ab29": {
+  "head": {
+   "status": "error",
+   "latency_ms": 83933,
+   "span_count": 164,
+   "llm_calls": 20,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 18123,
+   "total_cost": 0.017139,
+   "created_at": "2026-10-10T12:49:06.749Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 15,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:one_correct_choice": 10,
+   "node.verify": 9,
+   "node.settle": 9,
+   "node.write": 8,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_specific_horn_clumsiness_mishap": 2,
+   "verify:lesson_specific_truth_relief_moment": 2,
+   "verify:no_repeated_scenario": 2,
+   "verify:schema_valid": 2,
+   "verify:lesson_alignment": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 682,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 356,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    83933.270784,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    12940.32,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    11318.18496,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    11312.545792,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    11300.549632,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    10163.067648,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "0178d61c069b8b9f575a98652719f0d8": {
+  "head": {
+   "status": "error",
+   "latency_ms": 297748,
+   "span_count": 223,
+   "llm_calls": 29,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 22715,
+   "total_cost": 0.026836500000000003,
+   "created_at": "2026-10-10T12:27:57.203Z",
+   "detections": [
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 26,
+   "node.verify": 18,
+   "node.write": 14,
+   "verify:age_reading_level": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_honest_confession_dialogue": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "node.settle": 12,
+   "node.repair": 4,
+   "IFM/K2-Horizon-375B-A23B": 3,
+   "scene_writer.6": 3,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2,
+   "scene_writer.5": 2,
+   "scene_writer.7": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 36663,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37921,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37495,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    297747.687936,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    82605.164288,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    82598.62528,
+    "oath_author",
+    "agent_action"
+   ],
+   [
+    70816.059648,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    70814.262528,
+    "scene_writer.6",
+    "agent_action"
+   ],
+   [
+    37920.626432,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "77ccb4d9ff41de576164efb1b034d599": {
+  "head": {
+   "status": "error",
+   "latency_ms": 174452,
+   "span_count": 154,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 18465,
+   "total_cost": 0.016485,
+   "created_at": "2026-10-10T12:27:23.709Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.verify": 9,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_relief_after_truth": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:visual_trait_referenced": 9,
+   "verify:story_safe_text": 9,
+   "node.write": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "story_planner": 1,
+   "oath_author": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37130,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    174452.076544,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    62410.142464,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    60170.960896,
+    "character_card",
+    "agent_action"
+   ],
+   [
+    37129.948672,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    21800.838,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    20587.280896,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "eef22eafcc69e2855234e3a374c17433": {
+  "head": {
+   "status": "error",
+   "latency_ms": 391845,
+   "span_count": 217,
+   "llm_calls": 27,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 29028,
+   "total_cost": 0.025048499999999994,
+   "created_at": "2026-10-10T12:24:50.951Z",
+   "detections": [
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 21,
+   "node.verify": 15,
+   "node.write": 12,
+   "verify:age_reading_level": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_hiding_visual_consequence": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "node.settle": 11,
+   "IFM/K2-Horizon-375B-A23B": 6,
+   "scene_writer.5": 3,
+   "node.repair": 3,
+   "scene_writer.4": 2,
+   "scene_writer.6": 2,
+   "scene_repair.8": 2,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_alignment": 2,
+   "verify:lesson_specific_confession_relief": 2,
+   "verify:no_repeated_scenario": 2,
+   "verify:schema_valid": 2,
+   "safety_screen.vision": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37412,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    391845.019392,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    63449.351936,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    63446.079744,
+    "scene_writer.5",
+    "agent_action"
+   ],
+   [
+    41977.205504,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    37411.911424,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    31920.041728,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "27cf10c0fed878adf1cf6f00c88cc40a": {
+  "head": {
+   "status": "error",
+   "latency_ms": 397298,
+   "span_count": 257,
+   "llm_calls": 35,
+   "tool_calls": 2,
+   "error_count": 5,
+   "total_tokens": 31420,
+   "total_cost": 0.031139250000000004,
+   "created_at": "2026-10-10T12:22:06.808Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 30,
+   "node.verify": 21,
+   "node.write": 15,
+   "verify:age_reading_level": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_shared_joy_response": 14,
+   "verify:one_correct_choice": 14,
+   "verify:story_safe_text": 14,
+   "verify:visual_trait_referenced": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "node.settle": 13,
+   "node.repair": 6,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "scene_writer.4": 3,
+   "scene_writer.3": 2,
+   "scene_writer.5": 2,
+   "scene_repair.3": 2,
+   "scene_writer.6": 2,
+   "scene_writer.7": 2,
+   "scene_writer.8": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 645,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 306,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37823,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37422,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37422,
+    "out": ""
+   }
+  ],
+  "bad_n": 5,
+  "longest": [
+   [
+    397298.06208,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    61752.591872,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    61748.983808,
+    "oath_author",
+    "agent_action"
+   ],
+   [
+    47467.416576,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    47464.508928,
+    "scene_writer.4",
+    "agent_action"
+   ],
+   [
+    40788.5632,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "67fa16b7a0f40948cc2ee5053058d54c": {
+  "head": {
+   "status": "error",
+   "latency_ms": 150311,
+   "span_count": 134,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 23494,
+   "total_cost": 0.015577500000000001,
+   "created_at": "2026-10-10T12:22:06.812Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 13,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "story_planner": 1,
+   "oath_author": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37788,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    150311.262976,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    58896.800768,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    42757.946368,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    42752.43264,
+    "oath_author",
+    "agent_action"
+   ],
+   [
+    37788.362496,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    29338.119,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "36c52379cbfcaf5fe6fd2851c0582680": {
+  "head": {
+   "status": "error",
+   "latency_ms": 155285,
+   "span_count": 180,
+   "llm_calls": 24,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 22689,
+   "total_cost": 0.02021775,
+   "created_at": "2026-10-10T12:22:06.785Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 19,
+   "node.verify": 12,
+   "node.write": 10,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:lesson_specific_horn_accidental_clumsiness": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "node.settle": 10,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "scene_writer.7": 2,
+   "scene_writer.8": 2,
+   "node.repair": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 673,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37418,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    155285.141248,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    40465.407232,
+    "scene_writer.3",
+    "agent_action"
+   ],
+   [
+    40465.407232,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    37418.318592,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    35752.95104,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    35750.012928,
+    "scene_writer.5",
+    "agent_action"
+   ]
+  ]
+ },
+ "a9b78604d006ccf7e60bd4a5d3963295": {
+  "head": {
+   "status": "error",
+   "latency_ms": 163465,
+   "span_count": 143,
+   "llm_calls": 19,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 19909,
+   "total_cost": 0.015096,
+   "created_at": "2026-10-10T12:22:10.553Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_horns_gentle_use": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:age_reading_level": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 696,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37521,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    163464.909824,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    43763.101952,
+    "node.oath",
+    "agent_action"
+   ],
+   [
+    43761.005312,
+    "story_planner",
+    "agent_action"
+   ],
+   [
+    37520.682752,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    32782.75456,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    24756.401,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "8ab1756e501b7122db78db90724fdd30": {
+  "head": {
+   "status": "error",
+   "latency_ms": 163273,
+   "span_count": 141,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 14551,
+   "total_cost": 0.015531000000000001,
+   "created_at": "2026-10-10T12:22:10.562Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_joyful_sharing_reaction": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 3,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 656,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 37120,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    163273.345024,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    76625.197056,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    76623.032064,
+    "scene_writer.3",
+    "agent_action"
+   ],
+   [
+    38251.857,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    37120.20864,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    27795.90272,
+    "node.write",
+    "agent_action"
+   ]
+  ]
+ },
+ "83ec4cf94685fdb8f1cb204f88832b9a": {
+  "head": {
+   "status": "error",
+   "latency_ms": 149796,
+   "span_count": 186,
+   "llm_calls": 24,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 20758,
+   "total_cost": 0.022601249999999996,
+   "created_at": "2026-10-10T12:16:28.305Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 20,
+   "node.verify": 14,
+   "node.write": 12,
+   "node.settle": 10,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_specific_relief_after_truth": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "scene_writer.1": 2,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2,
+   "scene_writer.7": 2,
+   "scene_writer.8": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 753,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    149795.937536,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    61691.345152,
+    "node.settle",
+    "chain"
+   ],
+   [
+    10556.455424,
+    "node.settle",
+    "chain"
+   ],
+   [
+    8915.725312,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    8910.034944,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    8889.030144,
+    "safety_screen.vision",
+    "agent_action"
+   ]
+  ]
+ },
+ "09e6e4e53c1d23ebe8a8813b0d82cbaa": {
+  "head": {
+   "status": "error",
+   "latency_ms": 101709,
+   "span_count": 164,
+   "llm_calls": 21,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 22008,
+   "total_cost": 0.0190185,
+   "created_at": "2026-10-10T12:16:28.319Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 16,
+   "node.verify": 11,
+   "node.write": 10,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_carrot_prop_consistency": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.settle": 9,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "scene_writer.3": 2,
+   "scene_writer.4": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 756,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 639,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    101708.346368,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    33658.64448,
+    "node.settle",
+    "chain"
+   ],
+   [
+    29849.357,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    9934.221312,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    8684.490752,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    8682.401536,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "2776b05792e0e7ef1bc47f12bc6df571": {
+  "head": {
+   "status": "error",
+   "latency_ms": 55914,
+   "span_count": 134,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 14895,
+   "total_cost": 0.01650525,
+   "created_at": "2026-10-10T12:16:28.287Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 3,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 759,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    55913.753088,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    8725.100032,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    8723.098112,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    8688.594432,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    7521.336832,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    6461.267456,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "5f7a042b3a5ebfd74d4bd4a58412354d": {
+  "head": {
+   "status": "error",
+   "latency_ms": 96764,
+   "span_count": 156,
+   "llm_calls": 19,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 17140,
+   "total_cost": 0.0165735,
+   "created_at": "2026-10-10T12:16:28.283Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.verify": 9,
+   "node.settle": 9,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_joyful_exhaust_smoke": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.write": 8,
+   "IFM/K2-Horizon-375B-A23B": 5,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 756,
+    "out": ""
+   },
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 711,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    96763.128064,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    37988.474368,
+    "node.settle",
+    "chain"
+   ],
+   [
+    10277.061632,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    9487.397,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    9280.64896,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    9277.65376,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "6b0be8f142fac3c0a8c8b41378f44e3c": {
+  "head": {
+   "status": "error",
+   "latency_ms": 54046,
+   "span_count": 143,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 17027,
+   "total_cost": 0.01796175,
+   "created_at": "2026-10-10T12:16:28.291Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_mutual_happiness": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "scene_writer.6": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1
+  },
+  "bad": [
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 309,
+    "out": ""
+   },
+   {
+    "name": "scene_writer.6",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 5007,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    54045.592832,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    9780.633344,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    8298.759,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    7979.769344,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    7974.651392,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    7934.52544,
+    "safety_screen.vision",
+    "agent_action"
+   ]
+  ]
+ },
+ "7b22237107ed6a6cb3b286086b2b54d1": {
+  "head": {
+   "status": "error",
+   "latency_ms": 274019,
+   "span_count": 163,
+   "llm_calls": 16,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 15677,
+   "total_cost": 0.018114000000000005,
+   "created_at": "2026-10-10T09:46:43.098Z",
+   "detections": [
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.settle": 10,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_specific_relief_and_trust_restored": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:visual_trait_referenced": 10,
+   "node.verify": 9,
+   "node.write": 7,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "node.repair": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87233,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    274018.71872,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    122557.360896,
+    "node.repair",
+    "agent_action"
+   ],
+   [
+    122554.426368,
+    "scene_repair.5",
+    "agent_action"
+   ],
+   [
+    87233.49376,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    34309.362,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    19430.36544,
+    "node.settle",
+    "chain"
+   ]
+  ]
+ },
+ "c1e644106cb3bc3ed685dc3731f38f77": {
+  "head": {
+   "status": "error",
+   "latency_ms": 483322,
+   "span_count": 223,
+   "llm_calls": 22,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 18959,
+   "total_cost": 0.022058249999999998,
+   "created_at": "2026-10-10T09:40:47.202Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response",
+    "Oath violation"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 20,
+   "node.verify": 14,
+   "verify:age_reading_level": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_trust_restored_among_seaweed": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "verify:one_correct_choice": 14,
+   "verify:visual_trait_referenced": 14,
+   "verify:story_safe_text": 14,
+   "node.settle": 13,
+   "node.write": 8,
+   "node.repair": 6,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "scene_repair.4": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87605,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87968,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    483321.473792,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91938.548992,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91935.544064,
+    "scene_writer.6",
+    "agent_action"
+   ],
+   [
+    91226.715648,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91224.665856,
+    "scene_writer.3",
+    "agent_action"
+   ],
+   [
+    87968.48,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "050dc8b85289002f084c67e8cfc23a42": {
+  "head": {
+   "status": "error",
+   "latency_ms": 240998,
+   "span_count": 132,
+   "llm_calls": 15,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 13213,
+   "total_cost": 0.015942,
+   "created_at": "2026-10-10T09:40:38.212Z",
+   "detections": [
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 13,
+   "node.write": 8,
+   "node.verify": 8,
+   "node.settle": 8,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87575,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    240997.27616,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91347.625472,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91345.627136,
+    "scene_writer.6",
+    "agent_action"
+   ],
+   [
+    87575.033088,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    56038.418688,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    56033.411584,
+    "scene_writer.7",
+    "agent_action"
+   ]
+  ]
+ },
+ "7ae65ad1592c18eef8e0179593c64203": {
+  "head": {
+   "status": "error",
+   "latency_ms": 426699,
+   "span_count": 220,
+   "llm_calls": 21,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 18331,
+   "total_cost": 0.0227685,
+   "created_at": "2026-10-10T09:39:35.676Z",
+   "detections": [
+    "Oath violation",
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 19,
+   "node.verify": 14,
+   "verify:age_reading_level": 14,
+   "verify:correct_choice_teaches_lesson": 14,
+   "verify:lesson_concept_in_scene": 14,
+   "verify:lesson_specific_antenna_truth_indicator": 14,
+   "verify:story_safe_text": 14,
+   "verify:visual_trait_referenced": 14,
+   "verify:character_named_in_scene": 14,
+   "verify:no_drawing_text_obedience": 14,
+   "verify:one_correct_choice": 14,
+   "node.settle": 11,
+   "node.write": 8,
+   "node.repair": 6,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "scene_repair.5": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87631,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    426699.18336,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    145268.705024,
+    "node.repair",
+    "agent_action"
+   ],
+   [
+    145264.69888,
+    "scene_repair.5",
+    "agent_action"
+   ],
+   [
+    87631.375104,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    86540.41344,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    86538.398208,
+    "scene_writer.7",
+    "agent_action"
+   ]
+  ]
+ },
+ "08177d773d0e88d8b26febc22898ba03": {
+  "head": {
+   "status": "error",
+   "latency_ms": 223544,
+   "span_count": 140,
+   "llm_calls": 16,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 14160,
+   "total_cost": 0.015812999999999997,
+   "created_at": "2026-10-10T09:39:49.617Z",
+   "detections": [
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.write": 8,
+   "node.verify": 8,
+   "node.settle": 8,
+   "verify:age_reading_level": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_joy_of_sharing": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:one_correct_choice": 8,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87663,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    223543.281664,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    94125.955072,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    94122.951168,
+    "scene_writer.6",
+    "agent_action"
+   ],
+   [
+    87663.195648,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    20097.48608,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    20095.485184,
+    "scene_writer.5",
+    "agent_action"
+   ]
+  ]
+ },
+ "a44e5cc42ae06542dc1eb9471d958e9d": {
+  "head": {
+   "status": "error",
+   "latency_ms": 183232,
+   "span_count": 162,
+   "llm_calls": 19,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 22597,
+   "total_cost": 0.01786425,
+   "created_at": "2026-10-10T09:37:38.325Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 15,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "node.verify": 9,
+   "node.write": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_alignment": 2,
+   "verify:lesson_specific_truth_relief_moment": 2,
+   "verify:no_repeated_scenario": 2,
+   "verify:schema_valid": 2,
+   "verify:lesson_specific_affirm_trust_earned": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 679,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    183232.728064,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    49510.360576,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    43237.158912,
+    "node.settle",
+    "chain"
+   ],
+   [
+    23870.579,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    15490.539,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    9946.137088,
+    "node.safety",
+    "tool_call"
+   ]
+  ]
+ },
+ "598d07098a3a928164ad492061984dc3": {
+  "head": {
+   "status": "error",
+   "latency_ms": 147603,
+   "span_count": 193,
+   "llm_calls": 19,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 17330,
+   "total_cost": 0.01935525,
+   "created_at": "2026-10-10T09:37:38.328Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 17,
+   "node.verify": 12,
+   "verify:age_reading_level": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_horn_accidental_clumsiness": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "node.settle": 10,
+   "node.write": 8,
+   "node.repair": 4,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "scene_repair.4": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 671,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    147602.988544,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    17537.612544,
+    "node.settle",
+    "chain"
+   ],
+   [
+    10875.524864,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    10866.291,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    10663.278848,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    10656.280064,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "76c35d5c75344ae43f5f8883810842e9": {
+  "head": {
+   "status": "error",
+   "latency_ms": 293785,
+   "span_count": 113,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 37363,
+   "total_cost": 0.020303250000000002,
+   "created_at": "2026-10-10T09:06:03.381Z",
+   "detections": [
+    "Oath violation",
+    "Slow LLM Response",
+    "Critical safety stop",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 12,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_explicit_truth_telling": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "gemini-3.7-flash": 6,
+   "self_critique": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "baseline_writer": 1,
+   "node.baseline": 1
+  },
+  "bad": [
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 81,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    293785.206528,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    253276.044544,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    59740.809,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    30617.79,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    30221.162,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    29373.759,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "c68e670fedeb3ab88314f0bd16bb2323": {
+  "head": {
+   "status": "error",
+   "latency_ms": 106140,
+   "span_count": 152,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 17214,
+   "total_cost": 0.017366999999999997,
+   "created_at": "2026-10-10T09:05:09.563Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_explicit_truth_telling_scene": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.verify": 8,
+   "node.settle": 8,
+   "node.write": 7,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "scene_writer.2": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1
+  },
+  "bad": [
+   {
+    "name": "scene_writer.2",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 8105,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    106139.591168,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    20958.037504,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    15850.746624,
+    "node.settle",
+    "chain"
+   ],
+   [
+    12847.583232,
+    "scene_writer.2",
+    "agent_action"
+   ],
+   [
+    12846.373,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    11237.022,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "065d9c6ddcf626fdc0eea3f4161e6a01": {
+  "head": {
+   "status": "error",
+   "latency_ms": 134063,
+   "span_count": 112,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 24297,
+   "total_cost": 0.0217005,
+   "created_at": "2026-10-10T08:51:59.852Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 11,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_horn_or_strength_aid": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "gemini-3.7-flash": 6,
+   "self_critique": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "baseline_writer": 1,
+   "node.baseline": 1
+  },
+  "bad": [
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 84,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    134063.410688,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    103482.17472,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    17629.892352,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    15392.224,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    14862.242304,
+    "self_critique",
+    "agent_action"
+   ],
+   [
+    14859.949,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "a32498d665231ab02f7218b8b54e9a3f": {
+  "head": {
+   "status": "error",
+   "latency_ms": 121895,
+   "span_count": 154,
+   "llm_calls": 18,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 17476,
+   "total_cost": 0.017136,
+   "created_at": "2026-10-10T08:48:43.775Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 14,
+   "node.verify": 9,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:lesson_specific_mutual_happiness_after_sharing": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.write": 8,
+   "node.settle": 8,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 801,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    121894.4192,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    17942.776832,
+    "scene_writer.1",
+    "agent_action"
+   ],
+   [
+    17942.776832,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    17940.88,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    15637.922304,
+    "node.settle",
+    "chain"
+   ],
+   [
+    14255.444,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "33a9c06a4b7699a76438bc6559c54122": {
+  "head": {
+   "status": "error",
+   "latency_ms": 200538,
+   "span_count": 112,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 28197,
+   "total_cost": 0.023316000000000003,
+   "created_at": "2026-10-10T08:48:43.676Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_mutual_happiness_reaction": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "gemini-3.7-flash": 7,
+   "self_critique": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "baseline_writer": 1,
+   "node.baseline": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 901,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    200537.595136,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    147957.595392,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    22995.290112,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    22993.290496,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    22979.301376,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    22812.029,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "57233238e74cb87ebb83b08d5565b810": {
+  "head": {
+   "status": "error",
+   "latency_ms": 269450,
+   "span_count": 223,
+   "llm_calls": 29,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 26175,
+   "total_cost": 0.0298425,
+   "created_at": "2026-10-10T08:48:43.712Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 25,
+   "node.verify": 18,
+   "node.write": 14,
+   "node.settle": 12,
+   "verify:character_named_in_scene": 12,
+   "verify:correct_choice_teaches_lesson": 12,
+   "verify:lesson_concept_in_scene": 12,
+   "verify:lesson_specific_carrot_or_bow_focus": 12,
+   "verify:no_drawing_text_obedience": 12,
+   "verify:one_correct_choice": 12,
+   "verify:story_safe_text": 12,
+   "verify:visual_trait_referenced": 12,
+   "verify:age_reading_level": 12,
+   "IFM/K2-Horizon-375B-A23B": 4,
+   "node.repair": 4,
+   "scene_writer.2": 2,
+   "scene_writer.3": 2,
+   "scene_writer.5": 2,
+   "scene_writer.6": 2,
+   "scene_writer.7": 2,
+   "scene_writer.8": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 862,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    269450.04928,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    60261.682688,
+    "node.settle",
+    "chain"
+   ],
+   [
+    39851.711488,
+    "node.settle",
+    "chain"
+   ],
+   [
+    26151.269632,
+    "node.settle",
+    "chain"
+   ],
+   [
+    16877.12,
+    "node.settle",
+    "chain"
+   ],
+   [
+    13044.332,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "9ac60464c282af61f4861605956d98b8": {
+  "head": {
+   "status": "error",
+   "latency_ms": 159414,
+   "span_count": 101,
+   "llm_calls": 15,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 21321,
+   "total_cost": 0.0100005,
+   "created_at": "2026-10-10T08:48:43.715Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "gemini-3.7-flash": 5,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "verify:input_safe_visual": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "baseline_writer": 1,
+   "node.baseline": 1,
+   "node.story_gate": 1,
+   "node.media": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 861,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    159413.367296,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    87918.628864,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    43085.761792,
+    "node.story_gate",
+    "chain"
+   ],
+   [
+    43077.189,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    27308.601,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    16201.107,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "06dac7f3455fd12d0f348875e46d2722": {
+  "head": {
+   "status": "error",
+   "latency_ms": 103280,
+   "span_count": 150,
+   "llm_calls": 24,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 22877,
+   "total_cost": 0.0210915,
+   "created_at": "2026-10-10T08:34:00.689Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 17,
+   "verify:age_reading_level": 10,
+   "verify:character_named_in_scene": 10,
+   "verify:correct_choice_teaches_lesson": 10,
+   "verify:lesson_concept_in_scene": 10,
+   "verify:no_drawing_text_obedience": 10,
+   "verify:one_correct_choice": 10,
+   "verify:story_safe_text": 10,
+   "verify:visual_trait_referenced": 10,
+   "node.verify": 10,
+   "IFM/K2-Horizon-375B-A23B": 7,
+   "node.write": 6,
+   "node.repair": 5,
+   "verify:input_safe_visual": 2,
+   "scene_repair.2": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "create-storybook",
+    "type": "workflow",
+    "status": "ERROR",
+    "ms": 103281,
+    "out": "Vs: Commitment: no_drawing_text_obedience\nScope: scene 5\nStatus: pass\nVerdict By: deterministic\nDet Status: pass\nSampled: false\nExpected: Words written on the drawing are ignored and never repeated in the story.\nActual: no text in the drawing\nCover: scenario,question,choices,image_prompt\nAttempt: 1\nTrace Id: 06dac7f3455fd12d0f348875e46d2722\nCommitm"
+   },
+   {
+    "name": "scene_writer.6",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 5307,
+    "out": ""
+   },
+   {
+    "name": "node.write",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 5312,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    103280.673024,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    26419.79136,
+    "node.verify",
+    "chain"
+   ],
+   [
+    26413.965,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    7209.889792,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    6999.714816,
+    "node.plan",
+    "agent_action"
+   ],
+   [
+    6998.715136,
+    "story_planner",
+    "agent_action"
+   ]
+  ]
+ },
+ "25298c2f3367f18103a5d742bfef022c": {
+  "head": {
+   "status": "error",
+   "latency_ms": 236648,
+   "span_count": 112,
+   "llm_calls": 16,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 26672,
+   "total_cost": 0.014392499999999999,
+   "created_at": "2026-10-10T08:23:59.639Z",
+   "detections": [
+    "Oath violation",
+    "Slow LLM Response",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:lesson_specific_mutual_joy_of_sharing": 8,
+   "gemini-3.7-flash": 6,
+   "verify:input_safe_visual": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1,
+   "node.plan": 1,
+   "baseline_writer": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 56721,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    236648.387072,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    191519.25888,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    70040.778496,
+    "baseline_writer",
+    "agent_action"
+   ],
+   [
+    56721.481984,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    45675.917,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    22413.678,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "b5571b93a725ab38404546da8f042797": {
+  "head": {
+   "status": "error",
+   "latency_ms": 319582,
+   "span_count": 113,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 19958,
+   "total_cost": 0.01391025,
+   "created_at": "2026-10-10T08:01:36.384Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_mutual_happiness_reaction": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "gemini-3.7-flash": 7,
+   "verify:input_safe_visual": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1,
+   "node.plan": 1,
+   "baseline_writer": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 88222,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87817,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    319582.49344,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    182486.982144,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    182480.505344,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    182469.906688,
+    "safety_screen.vision",
+    "agent_action"
+   ],
+   [
+    97304.626944,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    88221.677056,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "e46e796a4a9ee7dde51ee0756eefae80": {
+  "head": {
+   "status": "error",
+   "latency_ms": 250574,
+   "span_count": 200,
+   "llm_calls": 28,
+   "tool_calls": 2,
+   "error_count": 4,
+   "total_tokens": 26799,
+   "total_cost": 0.02347875,
+   "created_at": "2026-10-10T08:02:43.769Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 20,
+   "verify:age_reading_level": 13,
+   "verify:character_named_in_scene": 13,
+   "verify:correct_choice_teaches_lesson": 13,
+   "verify:lesson_concept_in_scene": 13,
+   "verify:lesson_specific_mutual_joy_of_sharing": 13,
+   "verify:no_drawing_text_obedience": 13,
+   "verify:one_correct_choice": 13,
+   "verify:story_safe_text": 13,
+   "verify:visual_trait_referenced": 13,
+   "node.verify": 13,
+   "IFM/K2-Horizon-375B-A23B": 8,
+   "node.write": 8,
+   "node.repair": 6,
+   "verify:input_safe_visual": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1
+  },
+  "bad": [
+   {
+    "name": "create-storybook",
+    "type": "workflow",
+    "status": "ERROR",
+    "ms": 250574,
+    "out": "Vs: Commitment: no_drawing_text_obedience\nScope: scene 7\nStatus: pass\nVerdict By: deterministic\nDet Status: pass\nSampled: false\nExpected: Words written on the drawing are ignored and never repeated in the story.\nActual: no text in the drawing\nCover: scenario,question,choices,image_prompt\nAttempt: 1\nTrace Id: e46e796a4a9ee7dde51ee0756eefae80\nCommitm"
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87119,
+    "out": ""
+   },
+   {
+    "name": "scene_writer.8",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 5490,
+    "out": ""
+   },
+   {
+    "name": "node.write",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 5494,
+    "out": ""
+   }
+  ],
+  "bad_n": 4,
+  "longest": [
+   [
+    250573.668864,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    90155.565824,
+    "scene_writer.1",
+    "agent_action"
+   ],
+   [
+    90155.565824,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    87118.717184,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    21671.11296,
+    "node.verify",
+    "chain"
+   ],
+   [
+    21662.322,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "20b89ff4b7cc6a4f7384ce3ec5156d05": {
+  "head": {
+   "status": "error",
+   "latency_ms": 540964,
+   "span_count": 250,
+   "llm_calls": 36,
+   "tool_calls": 2,
+   "error_count": 4,
+   "total_tokens": 36419,
+   "total_cost": 0.02587425,
+   "created_at": "2026-10-10T07:58:33.448Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 25,
+   "verify:age_reading_level": 17,
+   "verify:character_named_in_scene": 17,
+   "verify:correct_choice_teaches_lesson": 17,
+   "verify:lesson_concept_in_scene": 17,
+   "verify:no_drawing_text_obedience": 17,
+   "verify:one_correct_choice": 17,
+   "verify:story_safe_text": 17,
+   "verify:visual_trait_referenced": 17,
+   "node.verify": 16,
+   "IFM/K2-Horizon-375B-A23B": 11,
+   "node.write": 8,
+   "node.repair": 8,
+   "verify:input_safe_visual": 2,
+   "scene_repair.1": 2,
+   "verify:correct_choice_position_balanced": 2,
+   "verify:lesson_alignment": 2,
+   "verify:lesson_specific_confession_and_relief": 2,
+   "verify:no_repeated_scenario": 2,
+   "verify:schema_valid": 2,
+   "verify:lesson_specific_no_magical_evasion": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 838,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87693,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87756,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87546,
+    "out": ""
+   }
+  ],
+  "bad_n": 4,
+  "longest": [
+   [
+    540963.556608,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    115101.798912,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    115099.6864,
+    "scene_writer.5",
+    "agent_action"
+   ],
+   [
+    100821.7088,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    100818.710784,
+    "safety_screen",
+    "tool_call"
+   ],
+   [
+    100804.715776,
+    "safety_screen.vision",
+    "agent_action"
+   ]
+  ]
+ },
+ "264208295ada9b28a96d2e29b32fb41c": {
+  "head": {
+   "status": "error",
+   "latency_ms": 358616,
+   "span_count": 220,
+   "llm_calls": 32,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 31893,
+   "total_cost": 0.02482275,
+   "created_at": "2026-10-10T07:58:33.454Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 22,
+   "verify:age_reading_level": 15,
+   "verify:character_named_in_scene": 15,
+   "verify:correct_choice_teaches_lesson": 15,
+   "verify:lesson_concept_in_scene": 15,
+   "verify:no_drawing_text_obedience": 15,
+   "verify:one_correct_choice": 15,
+   "verify:story_safe_text": 15,
+   "verify:visual_trait_referenced": 15,
+   "node.verify": 15,
+   "IFM/K2-Horizon-375B-A23B": 10,
+   "node.write": 8,
+   "node.repair": 7,
+   "verify:input_safe_visual": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 855,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 87500,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    358616.414208,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    91271.634688,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    91269.733632,
+    "scene_writer.8",
+    "agent_action"
+   ],
+   [
+    87500.080384,
+    "gemini-3.7-flash",
+    "llm"
+   ],
+   [
+    52072.341504,
+    "node.write",
+    "agent_action"
+   ],
+   [
+    52070.352896,
+    "scene_writer.5",
+    "agent_action"
+   ]
+  ]
+ },
+ "182e4ea264bea12151a21d77dcbce847": {
+  "head": {
+   "status": "error",
+   "latency_ms": 256413,
+   "span_count": 113,
+   "llm_calls": 17,
+   "tool_calls": 2,
+   "error_count": 1,
+   "total_tokens": 29665,
+   "total_cost": 0.01407225,
+   "created_at": "2026-10-10T07:58:33.426Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed",
+    "Slow LLM Response"
+   ]
+  },
+  "names": {
+   "IFM/K2-Horizon-375B-A23B": 11,
+   "verify:age_reading_level": 8,
+   "verify:character_named_in_scene": 8,
+   "verify:correct_choice_teaches_lesson": 8,
+   "verify:lesson_concept_in_scene": 8,
+   "verify:lesson_specific_bow_and_carrot_tell": 8,
+   "verify:one_correct_choice": 8,
+   "verify:story_safe_text": 8,
+   "verify:visual_trait_referenced": 8,
+   "verify:no_drawing_text_obedience": 8,
+   "gemini-3.7-flash": 6,
+   "verify:input_safe_visual": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "character_card": 1,
+   "node.character": 1,
+   "verify:card_traits_checkable": 1,
+   "verify:original_character_only": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1,
+   "node.plan": 1,
+   "baseline_writer": 1
+  },
+  "bad": [
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 847,
+    "out": ""
+   }
+  ],
+  "bad_n": 1,
+  "longest": [
+   [
+    256413.239808,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    144315.16928,
+    "node.baseline",
+    "agent_action"
+   ],
+   [
+    75776.614656,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    55061.543,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    27110.838,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    20625.349,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ]
+  ]
+ },
+ "d30e44ebaa326f237903e1bff51f6fe7": {
+  "head": {
+   "status": "error",
+   "latency_ms": 149299,
+   "span_count": 139,
+   "llm_calls": 22,
+   "tool_calls": 2,
+   "error_count": 2,
+   "total_tokens": 21447,
+   "total_cost": 0.019463999999999995,
+   "created_at": "2026-10-10T07:55:30.676Z",
+   "detections": [
+    "Oath violation",
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 16,
+   "verify:age_reading_level": 9,
+   "verify:character_named_in_scene": 9,
+   "verify:correct_choice_teaches_lesson": 9,
+   "verify:lesson_concept_in_scene": 9,
+   "verify:no_drawing_text_obedience": 9,
+   "verify:one_correct_choice": 9,
+   "verify:story_safe_text": 9,
+   "verify:visual_trait_referenced": 9,
+   "node.verify": 9,
+   "IFM/K2-Horizon-375B-A23B": 6,
+   "node.write": 5,
+   "node.repair": 4,
+   "verify:input_safe_visual": 3,
+   "character_card": 2,
+   "verify:card_traits_checkable": 2,
+   "verify:original_character_only": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "node.character": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1
+  },
+  "bad": [
+   {
+    "name": "create-storybook",
+    "type": "workflow",
+    "status": "ERROR",
+    "ms": 149299,
+    "out": "{\"vs\":[{\"commitment\":\"age_reading_level\",\"scope\":\"scene 5\",\"status\":\"violation\",\"verdict_by\":\"deterministic\",\"det_status\":\"violation\",\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"Sentences are short and the words are easy for this age.\",\"actual\":\"a sentence has 17 words; the limit for age 6 is 1"
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1049,
+    "out": ""
+   }
+  ],
+  "bad_n": 2,
+  "longest": [
+   [
+    149299,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    33882.332928,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    22867.864064,
+    "node.verify",
+    "chain"
+   ],
+   [
+    22857.634,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    13266.839552,
+    "character_card",
+    "agent_action"
+   ],
+   [
+    13258.454,
+    "gemini-3.7-flash",
+    "llm"
+   ]
+  ]
+ },
+ "ac528975dda17c3fb8eed01278eaa04d": {
+  "head": {
+   "status": "error",
+   "latency_ms": 64892,
+   "span_count": 29,
+   "llm_calls": 9,
+   "tool_calls": 2,
+   "error_count": 3,
+   "total_tokens": 8757,
+   "total_cost": 0.010252500000000001,
+   "created_at": "2026-10-10T07:55:30.663Z",
+   "detections": [
+    "Execution Failed"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 7,
+   "verify:input_safe_visual": 3,
+   "character_card": 2,
+   "IFM/K2-Horizon-375B-A23B": 2,
+   "verify:card_traits_checkable": 2,
+   "verify:original_character_only": 2,
+   "safety_screen.vision": 1,
+   "safety_screen": 1,
+   "node.safety": 1,
+   "create-storybook": 1,
+   "node.character": 1,
+   "oath_author": 1,
+   "node.oath": 1,
+   "story_planner": 1,
+   "node.plan": 1,
+   "scene_writer.1": 1,
+   "node.write": 1
+  },
+  "bad": [
+   {
+    "name": "create-storybook",
+    "type": "workflow",
+    "status": "ERROR",
+    "ms": 64892,
+    "out": "<PERSON> garden patch\",\"event\":\"<PERSON> helps her friend Pip the squirrel water the shiny sunflower sprouts, but accidentally knocks over Pip's favorite watering can, leaving a small dent.\",\"temptation\":\"Pretend the wind blew it over before Pip turns around.\",\"right_choice\":\"Tell Pip right away that she bumped it by accident.<LOCATION> burrow kitc"
+   },
+   {
+    "name": "gemini-3.7-flash",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 1071,
+    "out": ""
+   },
+   {
+    "name": "node.write",
+    "type": "agent_action",
+    "status": "ERROR",
+    "ms": 4619,
+    "out": ""
+   }
+  ],
+  "bad_n": 3,
+  "longest": [
+   [
+    64891.809792,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    35093.597696,
+    "node.character",
+    "agent_action"
+   ],
+   [
+    13602.481,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    11277.926,
+    "IFM/K2-Horizon-375B-A23B",
+    "llm"
+   ],
+   [
+    11252.741888,
+    "node.safety",
+    "tool_call"
+   ],
+   [
+    11251.688704,
+    "safety_screen",
+    "tool_call"
+   ]
+  ]
+ },
+ "94db23729dac6323368749acba4be1cb": {
+  "head": {
+   "status": "error",
+   "latency_ms": 379427,
+   "span_count": 368,
+   "llm_calls": 82,
+   "tool_calls": 22,
+   "error_count": 45,
+   "total_tokens": 57433,
+   "total_cost": 0.034390050000000005,
+   "created_at": "2026-10-10T07:51:31.600Z",
+   "detections": [
+    "Execution Failed",
+    "Oath violation",
+    "Slow LLM Response",
+    "Critical safety stop"
+   ]
+  },
+  "names": {
+   "gemini-3.7-flash": 22,
+   "gemini-3.1-flash-image": 22,
+   "IFM/K2-Horizon-375B-A23B": 20,
+   "gemini-2.5-flash-image": 18,
+   "node.verify": 17,
+   "verify:age_reading_level": 17,
+   "verify:character_named_in_scene": 17,
+   "verify:correct_choice_teaches_lesson": 17,
+   "verify:lesson_concept_in_scene": 17,
+   "verify:lesson_specific_pip_physical_traits": 17,
+   "verify:no_drawing_text_obedience": 17,
+   "verify:visual_trait_referenced": 17,
+   "verify:one_correct_choice": 17,
+   "verify:story_safe_text": 17,
+   "illustrate": 12,
+   "verify:illustration_present": 12,
+   "verify:image_matches_card": 12,
+   "node.write": 8,
+   "node.repair": 8,
+   "verify:trait_in_image_prompt": 8,
+   "narrate": 8,
+   "verify:narration_present": 8,
+   "verify:input_safe_visual": 2,
+   "scene_repair.4": 2,
+   "scene_writer.6": 2
+  },
+  "bad": [
+   {
+    "name": "IFM/K2-Horizon-375B-A23B",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 78,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 682,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 691,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 254,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 260,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 379,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 12572,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 259,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 11908,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 251,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 272,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4604,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4728,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4497,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5083,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 254,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 256,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 12052,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 13040,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 264,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 269,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 5649,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4904,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4356,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4610,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 245,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 12550,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 252,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 601,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 11871,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 318,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4647,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4633,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4860,
+    "out": ""
+   },
+   {
+    "name": "gemini-2.5-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 4414,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 240,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 13631,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 307,
+    "out": ""
+   },
+   {
+    "name": "illustrate",
+    "type": "tool_call",
+    "status": "ERROR",
+    "ms": 12644,
+    "out": ""
+   },
+   {
+    "name": "gemini-3.1-flash-image",
+    "type": "llm",
+    "status": "ERROR",
+    "ms": 223,
+    "out": ""
+   }
+  ],
+  "bad_n": 45,
+  "longest": [
+   [
+    379427.56992,
+    "create-storybook",
+    "workflow"
+   ],
+   [
+    73958.092544,
+    "node.media",
+    "chain"
+   ],
+   [
+    34923.936512,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    34857.123,
+    "gemini-3.1-flash-image",
+    "llm"
+   ],
+   [
+    34055.095296,
+    "illustrate",
+    "tool_call"
+   ],
+   [
+    33994.171,
+    "gemini-3.1-flash-image",
+    "llm"
+   ]
+  ]
+ }
+}

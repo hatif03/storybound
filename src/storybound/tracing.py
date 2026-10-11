@@ -33,6 +33,7 @@ def init() -> bool:
             api_key=key,
             workflow_name=env("NEATLOGS_WORKFLOW", "create-storybook"),
             capture_logs=True,
+            tags=[t.strip() for t in env("STORYBOUND_TAGS", "").split(",") if t.strip()] or None,  # e.g. eval, sweep, live-ui: lets the dashboard tell experiments from product runs
             pii_enabled=True,  # server-side redaction: a drawing may carry names or phone numbers
             pii_entities=["PERSON", "PHONE_NUMBER", "EMAIL_ADDRESS", "LOCATION"],
         )

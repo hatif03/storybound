@@ -10,7 +10,14 @@ from dataclasses import dataclass, field
 
 from ..lessons import Lesson
 from ..models import CharacterCard, Page, Status
-from ..safety_terms import franchise_hits, harm_hits, instruction_hits, severe_hits
+from ..safety_terms import (
+    franchise_hits,
+    hard_instruction_hits,
+    harm_hits,
+    instruction_hits,
+    severe_hits,
+    soft_instruction_hits,
+)
 from ..textutil import contains_word, content_words, jaccard, sentences, stem_hit, words
 
 
@@ -115,10 +122,10 @@ def lesson_concept_in_scene(p: Page, ctx: Ctx) -> Det:
 
 def story_safe_text(p: Page, ctx: Ctx) -> Det:
     text = p.review_text()
-    grave = severe_hits(text) + instruction_hits(text) + find_pii(text)
+    grave = severe_hits(text) + hard_instruction_hits(text) + find_pii(text)
     if grave:
         return _bad(f"unsafe terms: {', '.join(sorted(set(grave)))}", "critical", matched=grave[0], scene=p.index)
-    mild = harm_hits(text)
+    mild = harm_hits(text) + soft_instruction_hits(text)
     if mild:  # a rewrite, not a stop: "a secret that hurts trust" is a lesson, not violence (HR-004)
         return _bad(f"unkind or harsh terms: {', '.join(sorted(set(mild)))}", matched=mild[0], scene=p.index)
     return Det("pass", "no blocked terms", scene=p.index)

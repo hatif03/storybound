@@ -10,10 +10,10 @@ from .. import tracing
 from ..config import get_settings
 from .errors import ClientError, ParseError
 from .jsonutil import extract_json
-from .retry import with_retry
+from .retry import hedged, with_retry
 from .usage import Result, Usage, record
 
-_RETRYABLE = {408, 429, 499, 500, 502, 503, 504}  # 499 CANCELLED: Vertex cancelled the call under load (found by the regression set, HR-010)
+_RETRYABLE = {408, 429, 499, 500, 502, 503, 504}  # 499 CANCELLED: Vertex cancelled the call under load (found by the regression set, HR-008)
 
 
 def _credentials():
@@ -63,7 +63,7 @@ def _usage(resp, model: str, t0: float) -> Usage:
     )
 
 
-def _call(
+def _call_once(
     model: str, contents, *, system: str | None, json_mode: bool, temperature: float, max_tokens: int, thinking: str
 ):
     from google.genai import errors, types
@@ -90,6 +90,11 @@ def _call(
     usage = _usage(resp, model, t0)
     record(usage)
     return resp, text, usage
+
+
+def _call(model: str, contents, **kw):
+    """One model call, hedged: a request that has not answered after `hedge_after_s` is sent a second time (the 87 s stall, HR-011)."""
+    return hedged(lambda: _call_once(model, contents, **kw), after=get_settings().hedge_after_s)
 
 
 def generate(

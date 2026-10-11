@@ -1,0 +1,200 @@
+{
+ "model:gemini-3.7-flash": 351,
+ "model:IFM/K2-Horizon-375B-A23B": 1832,
+ "model:gemini-3.1-flash-image": 15,
+ "model:gemini-2.5-flash-image": 6,
+ "model:claude-haiku": 90,
+ "model:claude-sonnet": 0,
+ "model:nova-2-lite": 30,
+ "model:tts": 0,
+ "status:6fec4ae3": {
+  "id": "6fec4ae3-29be-4f84-9798-4762d830062e",
+  "type": "regex",
+  "isActive": true,
+  "config": {
+   "operator": "OR",
+   "input_pattern": null,
+   "case_sensitive": false,
+   "output_pattern": "quiz_(quote_in_story|one_correct|reading_level|no_tell|safe_text|answerable).{0,400}(violation|critical|verification_error)"
+  },
+  "runOn": {
+   "frequency": "trace",
+   "span_names": null,
+   "span_types": null
+  },
+  "threshold": 0.5,
+  "backfillStatus": "completed",
+  "backfillProgress": {
+   "completed_at": "2026-10-11T03:14:51.501101+00:00",
+   "heartbeat_at": "2026-10-11T03:14:51.501101+00:00",
+   "total_traces": 1299,
+   "failed_traces": 0,
+   "flagged_count": 0,
+   "backfill_token": "e79d37a2-dbeb-4987-9bb8-602b756831ca",
+   "skipped_traces": 0,
+   "failure_details": [],
+   "failure_reasons": {},
+   "attempted_traces": 1299,
+   "processed_traces": 1299
+  },
+  "updatedAt": "2026-10-11T03:14:51.504Z",
+  "configFingerprint": "cbadfa08421e1dbafd2c58ac945f07652d0064c728f29411528c633b5e751d56",
+  "processing_complete": true,
+  "quality_verified": null
+ },
+ "status:b71b5f8c": {
+  "id": "b71b5f8c-8f26-4b3f-99bf-ad99e4c6733c",
+  "type": "regex",
+  "isActive": true,
+  "config": {
+   "operator": "OR",
+   "input_pattern": null,
+   "case_sensitive": false,
+   "output_pattern": "image_no_text.{0,400}violation|violation.{0,400}image_no_text"
+  },
+  "runOn": {
+   "frequency": "trace",
+   "span_names": null,
+   "span_types": null
+  },
+  "threshold": 0.5,
+  "backfillStatus": "completed",
+  "backfillProgress": {
+   "completed_at": "2026-10-11T03:14:49.691729+00:00",
+   "heartbeat_at": "2026-10-11T03:14:49.691729+00:00",
+   "total_traces": 1299,
+   "failed_traces": 0,
+   "flagged_count": 0,
+   "backfill_token": "c107d7a2-1491-4a57-9976-a31b724b5386",
+   "skipped_traces": 0,
+   "failure_details": [],
+   "failure_reasons": {},
+   "attempted_traces": 1299,
+   "processed_traces": 1299
+  },
+  "updatedAt": "2026-10-11T03:14:49.695Z",
+  "configFingerprint": "e7e4c98e4e0b5d3d29dc6b199ad3aa54baa26fb2ad63410f711fd3e74a6efbb1",
+  "processing_complete": true,
+  "quality_verified": null
+ },
+ "status:195c2e97": {
+  "id": "195c2e97-38be-4e54-8ebc-e97cdf57ab3c",
+  "type": "regex",
+  "isActive": true,
+  "config": {
+   "operator": "OR",
+   "input_pattern": null,
+   "case_sensitive": false,
+   "output_pattern": "Status: violation"
+  },
+  "runOn": {
+   "frequency": "span_type",
+   "span_names": null,
+   "span_types": [
+    "GUARDRAIL"
+   ]
+  },
+  "threshold": 0.5,
+  "backfillStatus": "completed",
+  "backfillProgress": {
+   "completed_at": "2026-10-10T07:57:42.226837+00:00",
+   "heartbeat_at": "2026-10-10T07:57:42.226837+00:00",
+   "total_traces": 110,
+   "failed_traces": 0,
+   "flagged_count": 19,
+   "backfill_token": "c1384f3e-d144-4c5f-8a72-aa2e6473e858",
+   "skipped_traces": 0,
+   "failure_details": [],
+   "failure_reasons": {},
+   "attempted_traces": 110,
+   "processed_traces": 110
+  },
+  "updatedAt": "2026-10-10T07:57:42.231Z",
+  "configFingerprint": "b8d33c6d5cf9b75f61dc9f2d3d2d3434db9b04ef4290661a5e879dd69836a451",
+  "processing_complete": true,
+  "quality_verified": null
+ },
+ "triage": {
+  "total": 3,
+  "triage_cards": [
+   {
+    "triage_id": "67e5d3bd-b2b5-4bbc-9f40-17321d049074",
+    "title": "Over-Aggressive PII/NER Anonymization Filter Triggering Guardrail Failures and Infinite Repair Loops",
+    "root_cause": "An over-aggressive Named Entity Recognition (NER) or PII anonymization filter is running on the generated character cards and story text. It is incorrectly identifying benign words (e.g., 'honest', 'forest', 'grey') and character names (e.g., 'Mimi', 'Zippy') as sensitive entities, replacing them with placeholders like `<PERSON>` and `<LOCATION>`. This triggers the 'Oath violation' guardrail (quality/safety commitments), which enters a `scene_repair` loop to fix the pages. Because the scrubber continues to inject placeholders or the character card name remains `<PERSON>`, the repair loop runs repeatedly, leading to extreme latency and eventually exhausting resources, causing the LLM client to close prematurely.",
+    "status": "open",
+    "severity": "high",
+    "category": "config",
+    "triage_label": "tool_contract_misuse",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "a83ae4e4-57c2-4b98-b587-0774ed8bec56",
+    "linked_trace_ids": [
+     "9ac60464c282af61f4861605956d98b8",
+     "1b3aec29d4fd0af7432dd64960b5d783",
+     "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+     "ac528975dda17c3fb8eed01278eaa04d",
+     "4c79169d1827065eadc273e214912789",
+     "0f14bcea11132340345dfdbc2ae48405",
+     "17e509161d8e573376607fc20d382994",
+     "271150144a95bc89c355b054f32f0db5",
+     "a44e5cc42ae06542dc1eb9471d958e9d",
+     "598d07098a3a928164ad492061984dc3"
+    ],
+    "confidence": 0.7649999856948853,
+    "created_at": "2026-10-10T09:52:14.443504Z"
+   },
+   {
+    "triage_id": "ebcff17a-12c3-4196-bb21-a09bffb49070",
+    "title": "Overly Restrictive Deterministic Blocklist in `verify:story_safe_text` Guardrail Triggering False Positives on Benign Words (e.g., \"hurts\")",
+    "root_cause": "The deterministic safety guardrail `verify:story_safe_text` has an overly aggressive blocklist that flags benign words like `\"hurts\"` as `\"unsafe or unkind terms\"` regardless of context. In trace {{trace:26fbc879cddba411dc327286643276c3}}, the LLM generated a story page with the feedback: `\"Pretending keeps a secret that hurts trust.\"`. The guardrail evaluated this text and triggered a `critical` status because of the word `\"hurts\"`, leading to a workflow halt (`create-storybook` returning `null`). This false positive safety stop is causing a spike in the `Critical safety stop` detection group and leading to workflow failures across multiple traces.",
+    "status": "open",
+    "severity": "critical",
+    "category": "config",
+    "triage_label": "tool_contract_misuse",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "ae11aadf-1474-4f09-8285-8e4d3647e7ad",
+    "linked_trace_ids": [
+     "76c35d5c75344ae43f5f8883810842e9",
+     "26fbc879cddba411dc327286643276c3",
+     "668b46f85e19468569cadb0eb81c534c",
+     "257acf701defe64fcd1edc3707bdd9d5",
+     "f9c689ca79fc7fdfbaaff6c1ba3e1da8",
+     "06a2527e2d27f905762a9642451ad972",
+     "856ced2d8c24f1c42cdd08b2559ea4cd",
+     "4c79169d1827065eadc273e214912789",
+     "a534baeb9d47166ae8b19fcee1f1c7d9",
+     "2b4d5ad820abe3b32e33501f285a3af9"
+    ],
+    "confidence": 0.7020000219345093,
+    "created_at": "2026-10-10T09:49:12.153814Z"
+   },
+   {
+    "triage_id": "bdd1f6f1-f359-4d80-b6dd-f671af96b731",
+    "title": "Investigate Gemini 3.7 Flash 504 Timeout in create-storybook Workflow",
+    "root_cause": "Root cause is not established. The observed symptom is a high rate of `504 Deadline expired` errors from the `gemini-3.7-flash` model during the `create-storybook` workflow, resulting in overall workflow durations exceeding 220 seconds.\n\nWhile the traces show that the LLM calls consistently time out after approximately 87 seconds (e.g., in {{trace:050dc8b85289002f084c67e8cfc23a42}} and {{trace:08177d773d0e88d8b26febc22898ba03}}), the underlying cause of this latency—whether it is due to an extremely large input payload, an inefficient loop in the orchestration logic generating excessive pages, or an upstream service degradation on Google's side—cannot be definitively determined without inspecting the LLM client configuration and the input payloads.",
+    "status": "open",
+    "severity": "high",
+    "category": "config",
+    "triage_label": "latency_anomaly",
+    "workflow_name": "create-storybook",
+    "source": "auto_triggered",
+    "thread_id": "1f478565-97aa-4d49-b5cd-a46f8a7fd061",
+    "linked_trace_ids": [
+     "87b07c47da3f8900684ad1d97a7a95e6",
+     "050dc8b85289002f084c67e8cfc23a42",
+     "264208295ada9b28a96d2e29b32fb41c",
+     "08177d773d0e88d8b26febc22898ba03",
+     "6a0c03f8ce1c32a55f38620da4f1fbdc",
+     "73ce7d9dfb289752745283abfc445009",
+     "b8883a6238abdecadb2ef3a56a5b0dcd",
+     "6d4a0a4b07640cf66dbc45913c387078",
+     "e0d0e072d74ef1db7186b0cb445d744f",
+     "33a9c06a4b7699a76438bc6559c54122"
+    ],
+    "confidence": 0.6499999761581421,
+    "created_at": "2026-10-10T09:47:26.040256Z"
+   }
+  ]
+ }
+}

@@ -1,0 +1,1 @@
+{"id":"23c770b3-5257-4627-8524-dea06b741b91","slug":"custom_regex_J2eXINRZFx","display_name":"Quiz promise broken (GUARDRAIL span)","group_name":"Negative","type":"regex","backfill_status":"pending","message":"Detection created. A 14-day backfill is running to score recent traces; it will appear scoring in the dashboard shortly."}

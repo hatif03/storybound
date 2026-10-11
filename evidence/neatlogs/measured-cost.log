@@ -1,0 +1,6 @@
+sweep-2 B0: n=28 neatlogs-measured $0.0097  our estimate $0.0083
+sweep-2 B1: n=28 neatlogs-measured $0.0199  our estimate $0.0162
+sweep-2 B2: n=28 neatlogs-measured $0.0221  our estimate $0.0198
+sweep-6 B1: n=14 neatlogs-measured $0.0201  our estimate $0.0162
+story-video-1: n=1 neatlogs-measured $0.0411  our estimate $0.3582
+story-video-2: n=1 neatlogs-measured $0.0382  our estimate $0.3555

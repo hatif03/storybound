@@ -1,0 +1,5 @@
+{
+ "alert-critical-safety-stop": "{\"data\":{\"createdAt\":\"2026-10-11T03:38:24.737Z\",\"detectionId\":\"419644ba-6cd5-4a66-8a84-10528e4467c0\",\"detectionName\":\"Critical safety stop\",\"enabled\":true,\"id\":\"ac910f51-6b82-4a91-8df5-e37d9ac4269e\",\"name\":\"Critical safety stop\",\"ruleType\":\"threshold\",\"severity\":\"critical\",\"updatedAt\":\"2026-10-11T03",
+ "alert-cost-per-story": "{\"code\":\"INVALID_ARGUMENTS\"}",
+ "evaluation-draft-judge-verdicts": "{\"data\":{\"createdAt\":\"2026-10-11T03:38:26.484Z\",\"id\":\"aea3e3ce-d209-4391-91c4-b7be6844ff07\",\"isRecurring\":false,\"name\":\"Human review of judge verdicts\",\"status\":\"draft\",\"traceSource\":\"existing\",\"type\":\"human\",\"updatedAt\":\"2026-10-11T03:38:26.484Z\"},\"requestId\":\"req_d5f99d47b7a940265c121ba9bb9fcaa3\","
+}

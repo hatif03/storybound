@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 13:50 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (327 rows, 304 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 13:59 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (327 rows, 304 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -264,7 +264,7 @@ Repair recoveries inside the story loop: 163 gated runs repaired at least one pa
 
 ## 6. Entire
 
-- Commits: 31; with an `Entire-Checkpoint` trailer: 0.
+- Commits: 32; with an `Entire-Checkpoint` trailer: 0.
 - Graph output: [20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json](evidence/entire/20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json)
 - Graph output: [20261010-1325-IST-graph-search-verify-repair.txt](evidence/entire/20261010-1325-IST-graph-search-verify-repair.txt)
 - Graph output: [20261010-1421-IST-graph-impact-story_safe_text.txt](evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt)
@@ -288,6 +288,8 @@ Repair recoveries inside the story loop: 163 gated runs repaired at least one pa
 - Graph output: [20261011-1010-IST-trail-2-show.json](evidence/entire/20261011-1010-IST-trail-2-show.json)
 - Graph output: [20261011-1030-IST-trail-2-gates.json](evidence/entire/20261011-1030-IST-trail-2-gates.json)
 - Graph output: [20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json](evidence/entire/20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json)
+- Graph output: [20261011-1415-IST-review-general-pr2.txt](evidence/entire/20261011-1415-IST-review-general-pr2.txt)
+- Graph output: [20261011-1415-IST-trail-3-gates.json](evidence/entire/20261011-1415-IST-trail-3-gates.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
@@ -304,4 +306,4 @@ Repair recoveries inside the story loop: 163 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T13:50:22+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T13:56:14+05:30. Window check: `python scripts/lint_evidence.py`.

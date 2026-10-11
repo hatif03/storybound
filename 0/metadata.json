@@ -1,0 +1,52 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4MFTZK90E28G33P1N1HTETC",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T03:24:26.6030699Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/stories/bunny-sharing-2/quiz.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "66ce35b65c4f",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 996,
+    "cache_creation_tokens": 1895353,
+    "cache_read_tokens": 240378083,
+    "output_tokens": 454956,
+    "api_call_count": 480
+  },
+  "session_metrics": {
+    "turn_count": 34
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-11T03:24:25.9368442Z",
+    "agent_lines": 1,
+    "agent_removed": 0,
+    "human_added": 305,
+    "human_modified": 104,
+    "human_removed": 0,
+    "total_committed": 410,
+    "total_lines_changed": 425,
+    "agent_percentage": 0.2352941176470588,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 99,
+      "user_lines_removed": 0,
+      "agent_lines_added": 105,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "docs/STATUS.md": 71,
+        "evidence/ledger.jsonl": 28
+      }
+    }
+  ]
+}

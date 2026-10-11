@@ -77,9 +77,11 @@ Entire records the *coding agent*. CLI 0.11.4 with hooks installed for Claude Co
 ### Runtime and reasoning
 The checkpoints are how a reader answers "why is this prompt this way": the HR commit messages carry the trigger, the trace ids and the before/after numbers, and the checkpoint carries the session that wrote them.
 
-### Trails (explored; blocked by one web step)
+### Trails (a trail is created; branch, PR and runners wait for a push)
 - `entire runner setup --defaults-only` created the six trail runners (risk, confidence, drift, review, security, summary) with no model call. The **security, drift and review runners are tailored to this repo's hard rules** (no secrets, no child data, evidence discipline, the oath as the product, no timers or streaks for children) and committed under `.entire/runners/`.
-- `entire trail create --repo gh/hatif03/storybound ...` and `entire review general` both answer **"repository not found (404)"**. Trails and review need the repository registered on entire.io, which needs the Entire GitHub App installed on `hatif03/storybound` and the repository selected in entire.io: a web step, not a CLI one. (`entire repo mirror add` could create a mirror from the CLI; we did not run it, because it uploads the whole repository, including checkpoints that hold keys pasted into the session.)
+- First attempt (before the builder enabled Trails on the dashboard): `entire trail create` and `entire review general` answered **"repository not found (404)"**.
+- After Trails, Runners and Auto build were switched on in entire.io: `entire trail create --repo gh/hatif03/storybound --no-branch --title ... --type feature` **worked**. Trail **#1, ID `01M4MG92JRX974RCWS1FQ1ZWJ8`**, https://entire.io/gh/hatif03/storybound/trails/1 (evidence: `evidence/entire/20261011-0925-IST-trail-1-created.txt`). Per hack.entire.io section 06, each trail is backed by a GitHub PR and runners fire on push, so the next steps need a **push of a branch** (see STATUS.md). That push is blocked on purpose until the two pasted keys are rotated, because it sends Entire checkpoints whose transcripts contain them to GitHub; the permission check refused it and we did not work around it.
+- `entire review` still needs a pushed branch to compare; not yet run.
 
 ### Result and limits (said plainly)
 - Early work (the first ~13:00 to 14:30 IST of Saturday, M1 to M5 and the first sweeps) was done in a session started outside the repository, so it has **no checkpoint**; the HR-001 and HR-002 *change* commits (`04ffebb`, `daec9ea`) say so. `entire why` shows most older code as "human" for the same reason.

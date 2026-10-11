@@ -17,7 +17,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | --- | --- |
 | Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`; 40+ checkpoints; entire-graph 0.4.0 (local); Brain 0.1.0 with ten durable facts |
 | Evidence | `evidence/entire/` (graph diffs for HR-001 to HR-004 and HR-006, impact, verify, `why`, Brain brief and status, checkpoint token comparison), `.entire/runners/` |
-| Trails | Runners scaffolded (6) and three tailored to this repo. `entire trail create` and `entire review` answer "repository not found (404)": the Entire GitHub App must be installed on `hatif03/storybound` and the repository selected on entire.io (web step) |
+| Trails | Enabled on the dashboard by the builder. Trail #1 created (`01M4MG92JRX974RCWS1FQ1ZWJ8`, https://entire.io/gh/hatif03/storybound/trails/1). Runners scaffolded (6), three tailored to this repo; they run when a branch is pushed. Pushing waits for key rotation |
 | Honest gaps | Work before 15:08 on 10 Oct was done in a session started outside the repo (no checkpoints); checkpoints contain two pasted keys (rotate both) |
 | Submission | Needs `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` and a checkpoint id; the repo is private, so judges need access or the repo must be public |
 

@@ -46,6 +46,7 @@ def main() -> None:
     ap.add_argument("--hero")
     ap.add_argument("--media", action="store_true")
     ap.add_argument("--no-judge", action="store_true")
+    ap.add_argument("--pictures", default="full", help="full | half | none | auto (the agent chooses the pages)")
     ap.add_argument("--name", help="ledger name; omit for a scratch run")
     ap.add_argument("--out", help="write the receipt and events JSON here")
     a = ap.parse_args()
@@ -56,7 +57,7 @@ def main() -> None:
     cfg = RunConfig(
         lesson_id=a.lesson, age=a.age, hero_name=a.hero, arm=a.arm, seed=a.seed, media=a.media,
         run_dir=(ROOT / "runs" / sid) if a.media else None, fixture=a.fixture, ledger_name=a.name,
-        judge_enabled=not a.no_judge,
+        judge_enabled=not a.no_judge, pictures=a.pictures,
     )  # fmt: skip
     bus = EventLog()
     run = Run(cfg=cfg, drawing=drawing, bus=bus, story_id=sid)

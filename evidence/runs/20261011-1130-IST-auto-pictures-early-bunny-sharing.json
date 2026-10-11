@@ -1,0 +1,5805 @@
+{
+  "receipt": {
+    "story_id": "cb7c125c1227",
+    "oath_hash": "2459ef3a4897d72aab9dfbdedc9f755764e3c1ade33ed14bc4f6277bda652dcb",
+    "arm": "B1",
+    "plain": "27 promises checked. 2 pages rewritten. All kept.",
+    "counts": {
+      "commitments": 28,
+      "checked": 27,
+      "checks": 128,
+      "violations_found": 2,
+      "repairs": 2,
+      "kept": 27,
+      "shipped_violations": 0,
+      "judge_enabled": true
+    },
+    "broken": [],
+    "promises": [
+      {
+        "id": "input_safe_visual",
+        "title": "The drawing is safe to turn into a story",
+        "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+        "scope": "run",
+        "core": true,
+        "status": "not_checked"
+      },
+      {
+        "id": "no_drawing_text_obedience",
+        "title": "Words written on the drawing are never obeyed",
+        "plain": "Words written on the drawing are ignored and never repeated in the story.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "story_safe_text",
+        "title": "Every page is safe and kind",
+        "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "schema_valid",
+        "title": "Eight complete pages",
+        "plain": "The story has exactly eight complete pages.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "one_correct_choice",
+        "title": "Exactly one right answer",
+        "plain": "Every question has exactly one right answer.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "correct_choice_position_balanced",
+        "title": "The right answer moves around",
+        "plain": "The right answer is not always the first button.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "character_named_in_scene",
+        "title": "The hero is named on every page",
+        "plain": "The hero's name is on every page.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "visual_trait_referenced",
+        "title": "The hero looks like the drawing",
+        "plain": "Each page mentions something the hero really looks like in the drawing.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "age_reading_level",
+        "title": "Simple words for the child's age",
+        "plain": "Sentences are short and the words are easy for this age.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_concept_in_scene",
+        "title": "The lesson is on every page",
+        "plain": "Every page is about the lesson, not just some pages.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "correct_choice_teaches_lesson",
+        "title": "The right answer teaches the lesson",
+        "plain": "The right answer is the one that shows the lesson.",
+        "scope": "scene",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_alignment",
+        "title": "The whole story teaches the lesson",
+        "plain": "The whole story teaches the chosen lesson.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "no_repeated_scenario",
+        "title": "No page repeats another",
+        "plain": "No two pages tell the same moment.",
+        "scope": "story",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "card_traits_checkable",
+        "title": "The hero has checkable features",
+        "plain": "The hero was described by at least three things you can see.",
+        "scope": "run",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "original_character_only",
+        "title": "The hero is original",
+        "plain": "The hero is not a famous cartoon or film character.",
+        "scope": "run",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "trait_in_image_prompt",
+        "title": "Pictures are asked to show the hero",
+        "plain": "Each picture was asked to show the hero as drawn.",
+        "scope": "image",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "illustration_present",
+        "title": "Every page has a picture",
+        "plain": "Every page has a picture, or the story says plainly that one is missing.",
+        "scope": "image",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "image_matches_card",
+        "title": "The picture matches the hero",
+        "plain": "Pictures look like the same hero.",
+        "scope": "image",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "image_no_text",
+        "title": "Pictures contain no words",
+        "plain": "Pictures have no stray or garbled words painted into them.",
+        "scope": "image",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "narration_present",
+        "title": "Every page can be read aloud",
+        "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "scope": "audio",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_specific_carrot_sharing_action",
+        "title": "Carrot Shared Joyfully",
+        "plain": "Zuzu must divide or offer a piece of her cherished orange carrot to a friend who needs or wants food.",
+        "scope": "story",
+        "core": false,
+        "status": "kept"
+      },
+      {
+        "id": "lesson_specific_mutual_happiness_outcome",
+        "title": "Mutual Happiness After Sharing",
+        "plain": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "scope": "scene",
+        "core": false,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_quote_in_story",
+        "title": "Quiz answers come from the story",
+        "plain": "Every quiz question points to the exact line of the story that answers it.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_one_correct",
+        "title": "One right answer",
+        "plain": "Every quiz question has three answers and exactly one is right.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_no_tell",
+        "title": "The right answer does not give itself away",
+        "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_reading_level",
+        "title": "Quiz words are easy",
+        "plain": "Quiz questions and answers use short, easy words for the child's age.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_safe_text",
+        "title": "Quiz is kind and safe",
+        "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      },
+      {
+        "id": "quiz_answerable",
+        "title": "Quiz can be answered from the story",
+        "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "scope": "quiz",
+        "core": true,
+        "status": "kept"
+      }
+    ],
+    "pages": [
+      {
+        "index": 1,
+        "attempts": 2,
+        "final": "pass"
+      },
+      {
+        "index": 2,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 3,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 4,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 5,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 6,
+        "attempts": 1,
+        "final": "pass"
+      },
+      {
+        "index": 7,
+        "attempts": 2,
+        "final": "pass"
+      },
+      {
+        "index": 8,
+        "attempts": 1,
+        "final": "pass"
+      }
+    ],
+    "coverage": {
+      "pct": 100,
+      "uncovered": []
+    },
+    "degradations": [
+      {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 2
+      },
+      {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 4
+      },
+      {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 6
+      },
+      {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 7
+      }
+    ],
+    "picture_plan": {
+      "painted": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "importance": {
+        "1": 2,
+        "2": 1,
+        "3": 3,
+        "4": 1,
+        "5": 3,
+        "6": 1,
+        "7": 1,
+        "8": 2
+      },
+      "budget_usd": 0.16
+    },
+    "ignored_drawing_text": [],
+    "budget": {
+      "usd_estimate": 0.2022,
+      "estimate": true,
+      "seconds": 277.3,
+      "tokens_in": 36846,
+      "tokens_out": 18484,
+      "images": 4,
+      "calls": 53,
+      "by_model": {
+        "gemini-3.7-flash": {
+          "in": 20591,
+          "out": 5300,
+          "calls": 25,
+          "seconds": 160.02300000000005
+        },
+        "IFM/K2-Horizon-375B-A23B": {
+          "in": 11621,
+          "out": 8704,
+          "calls": 16,
+          "seconds": 101.71499999999999
+        },
+        "gemini-3.1-flash-image": {
+          "in": 4634,
+          "out": 4480,
+          "calls": 4,
+          "seconds": 44.816
+        },
+        "gemini-2.5-flash-tts": {
+          "in": 0,
+          "out": 0,
+          "calls": 8,
+          "seconds": 78.976
+        }
+      },
+      "first_page_s": 50.93
+    },
+    "prompt_version": "p5",
+    "models": {
+      "writer": "gemini-3.7-flash",
+      "judge": "IFM/K2-Horizon-375B-A23B",
+      "vision": "gemini-3.7-flash"
+    },
+    "trace_id": "fa20da316e4ce642035a12bbffb4f514",
+    "generated_at": "2026-10-11T11:20:25+05:30"
+  },
+  "events": [
+    {
+      "id": 0,
+      "type": "run.started",
+      "t": 0.02,
+      "data": {
+        "story_id": "cb7c125c1227",
+        "arm": "B1",
+        "lesson_id": "sharing",
+        "age": 6,
+        "seed": "1",
+        "input_hash": "8453d22442fa2a7e"
+      }
+    },
+    {
+      "id": 1,
+      "type": "safety.result",
+      "t": 6.97,
+      "data": {
+        "tier": "none",
+        "action": "proceed",
+        "ignored_text": [],
+        "reason_code": "ok"
+      }
+    },
+    {
+      "id": 2,
+      "type": "verdict",
+      "t": 15.51,
+      "data": {
+        "commitment": "card_traits_checkable",
+        "scope": "run",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero was described by at least three things you can see.",
+        "actual": "5 traits",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "character_card",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 3,
+      "type": "verdict",
+      "t": 15.51,
+      "data": {
+        "commitment": "original_character_only",
+        "scope": "run",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.041",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The hero is not a famous cartoon or film character.",
+        "actual": "no franchise names | The character is a generic, original bunny with no clear match to an existing franchise character.",
+        "evidence": {
+          "scene": null,
+          "quote": "Zuzu is a cheerful white bunny with a bright bow who always keeps a crunchy carrot close by.",
+          "matched": null
+        },
+        "cover": "character_card",
+        "attempt": 0,
+        "reasoning": "The character is a generic, original bunny with no clear match to an existing franchise character.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 4,
+      "type": "character.ready",
+      "t": 15.51,
+      "data": {
+        "card": {
+          "name": "Zuzu",
+          "species": "rabbit",
+          "traits": [
+            "bright magenta outline",
+            "large pink bow between her ears",
+            "holding an orange carrot with a green top",
+            "happy curved black eyes and brown whiskers",
+            "round tail"
+          ],
+          "palette": [
+            "magenta",
+            "white",
+            "pink",
+            "orange"
+          ],
+          "one_line": "Zuzu is a cheerful white bunny with a bright bow who always keeps a crunchy carrot close by."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "type": "oath.ready",
+      "t": 21.28,
+      "data": {
+        "oath_hash": "2459ef3a4897d72aab9dfbdedc9f755764e3c1ade33ed14bc4f6277bda652dcb",
+        "added": [
+          "lesson_specific_carrot_sharing_action",
+          "lesson_specific_mutual_happiness_outcome"
+        ],
+        "rejected": [],
+        "commitments": [
+          {
+            "id": "input_safe_visual",
+            "scope": "run",
+            "title": "The drawing is safe to turn into a story",
+            "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "no_drawing_text_obedience",
+            "scope": "scene",
+            "title": "Words written on the drawing are never obeyed",
+            "plain": "Words written on the drawing are ignored and never repeated in the story.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "story_safe_text",
+            "scope": "scene",
+            "title": "Every page is safe and kind",
+            "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "schema_valid",
+            "scope": "story",
+            "title": "Eight complete pages",
+            "plain": "The story has exactly eight complete pages.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "one_correct_choice",
+            "scope": "scene",
+            "title": "Exactly one right answer",
+            "plain": "Every question has exactly one right answer.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "correct_choice_position_balanced",
+            "scope": "story",
+            "title": "The right answer moves around",
+            "plain": "The right answer is not always the first button.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "character_named_in_scene",
+            "scope": "scene",
+            "title": "The hero is named on every page",
+            "plain": "The hero's name is on every page.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "visual_trait_referenced",
+            "scope": "scene",
+            "title": "The hero looks like the drawing",
+            "plain": "Each page mentions something the hero really looks like in the drawing.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "age_reading_level",
+            "scope": "scene",
+            "title": "Simple words for the child's age",
+            "plain": "Sentences are short and the words are easy for this age.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "lesson_concept_in_scene",
+            "scope": "scene",
+            "title": "The lesson is on every page",
+            "plain": "Every page is about the lesson, not just some pages.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "correct_choice_teaches_lesson",
+            "scope": "scene",
+            "title": "The right answer teaches the lesson",
+            "plain": "The right answer is the one that shows the lesson.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "lesson_alignment",
+            "scope": "story",
+            "title": "The whole story teaches the lesson",
+            "plain": "The whole story teaches the chosen lesson.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "no_repeated_scenario",
+            "scope": "story",
+            "title": "No page repeats another",
+            "plain": "No two pages tell the same moment.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "card_traits_checkable",
+            "scope": "run",
+            "title": "The hero has checkable features",
+            "plain": "The hero was described by at least three things you can see.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "original_character_only",
+            "scope": "run",
+            "title": "The hero is original",
+            "plain": "The hero is not a famous cartoon or film character.",
+            "core": true,
+            "verifier": "both"
+          },
+          {
+            "id": "trait_in_image_prompt",
+            "scope": "image",
+            "title": "Pictures are asked to show the hero",
+            "plain": "Each picture was asked to show the hero as drawn.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "illustration_present",
+            "scope": "image",
+            "title": "Every page has a picture",
+            "plain": "Every page has a picture, or the story says plainly that one is missing.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "image_matches_card",
+            "scope": "image",
+            "title": "The picture matches the hero",
+            "plain": "Pictures look like the same hero.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "image_no_text",
+            "scope": "image",
+            "title": "Pictures contain no words",
+            "plain": "Pictures have no stray or garbled words painted into them.",
+            "core": true,
+            "verifier": "judge"
+          },
+          {
+            "id": "narration_present",
+            "scope": "audio",
+            "title": "Every page can be read aloud",
+            "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "lesson_specific_carrot_sharing_action",
+            "scope": "story",
+            "title": "Carrot Shared Joyfully",
+            "plain": "Zuzu must divide or offer a piece of her cherished orange carrot to a friend who needs or wants food.",
+            "core": false,
+            "verifier": "judge"
+          },
+          {
+            "id": "lesson_specific_mutual_happiness_outcome",
+            "scope": "scene",
+            "title": "Mutual Happiness After Sharing",
+            "plain": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+            "core": false,
+            "verifier": "judge"
+          },
+          {
+            "id": "quiz_quote_in_story",
+            "scope": "quiz",
+            "title": "Quiz answers come from the story",
+            "plain": "Every quiz question points to the exact line of the story that answers it.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_one_correct",
+            "scope": "quiz",
+            "title": "One right answer",
+            "plain": "Every quiz question has three answers and exactly one is right.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_no_tell",
+            "scope": "quiz",
+            "title": "The right answer does not give itself away",
+            "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_reading_level",
+            "scope": "quiz",
+            "title": "Quiz words are easy",
+            "plain": "Quiz questions and answers use short, easy words for the child's age.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_safe_text",
+            "scope": "quiz",
+            "title": "Quiz is kind and safe",
+            "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+            "core": true,
+            "verifier": "deterministic"
+          },
+          {
+            "id": "quiz_answerable",
+            "scope": "quiz",
+            "title": "Quiz can be answered from the story",
+            "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+            "core": true,
+            "verifier": "judge"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "type": "plan.ready",
+      "t": 25.07,
+      "data": {
+        "beats": [
+          "setting: Sunny Meadow Vegetable Patch; event: Zuzu harvests the crunchiest, sweetest orange carrot of the season with her bright pink bow bouncing happily.; temptation: Hide the big carrot away in her burrow so nobody else can ask for a bite.; the right choice: Carry the carrot proudly to the meadow to enjoy it in the sunshine where friends play.",
+          "setting: Clover Hill Picnic Blanket; event: Zuzu sits down to nibble her snack when Pippin the hungry field mouse arrives with an empty acorn cup.; temptation: Pretend not to hear Pippin's tummy rumble and quickly take a huge bite.; the right choice: Greet Pippin warmly and ask if he would like to sit together.",
+          "setting: Shady Willow Tree by the Brook; event: Pippin mentions he couldn't find any berries today and gazes wistfully at Zuzu's bright orange carrot.; temptation: Clutch the whole carrot tight and say it is only enough for one bunny.; the right choice: Snap the crisp tip off the carrot and offer the sweet piece to Pippin.",
+          "setting: Bubbling Brook Stepping Stones; event: While walking together, they meet Barnaby the bluebird, who lost his trail mix in the tall grass.; temptation: Look away and hurry across the stones before Barnaby notices the carrot.; the right choice: Pause on the stones and ask Barnaby if he'd like a crunchy slice too.",
+          "setting: Daisy Circle Clearing; event: Zuzu looks down and sees she only has one last medium piece of carrot left for herself.; temptation: Keep the remaining piece tucked safely behind her back so no one else gets any.; the right choice: Realize that sharing made her friends smile, and divide the rest into equal nibbles.",
+          "setting: Old Oak Hollow; event: Pippin and Barnaby return with wild mint leaves and sweet clover flowers they found nearby to add to the feast.; temptation: Eat her own piece quickly without trying the new treats her friends brought.; the right choice: Combine all their snacks together on a broad green leaf to make a friendship salad.",
+          "setting: Sunset Hilltop Flower Bed; event: The friends crunch and laugh together as the sky turns warm pink and orange, matching Zuzu's bow.; temptation: Wish she had eaten the giant carrot all alone in silence.; the right choice: Celebrate how much more fun the afternoon was with friends sharing every bite.",
+          "setting: Cozy Burrow Doorstep at Twilight; event: Zuzu heads home with a happy heart, finding a basket of berries left by her friends as a thank-you gift.; temptation: Gobble the berries alone inside before bedtime.; the right choice: Save the berries to share with everyone at breakfast tomorrow."
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "type": "paint.plan",
+      "t": 25.07,
+      "data": {
+        "painted": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "importance": {
+          "1": 2,
+          "2": 1,
+          "3": 3,
+          "4": 1,
+          "5": 3,
+          "6": 1,
+          "7": 1,
+          "8": 2
+        },
+        "budget_usd": 0.16
+      }
+    },
+    {
+      "id": 8,
+      "type": "degraded",
+      "t": 25.07,
+      "data": {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 2
+      }
+    },
+    {
+      "id": 9,
+      "type": "degraded",
+      "t": 25.07,
+      "data": {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 4
+      }
+    },
+    {
+      "id": 10,
+      "type": "degraded",
+      "t": 25.07,
+      "data": {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 6
+      }
+    },
+    {
+      "id": 11,
+      "type": "degraded",
+      "t": 25.07,
+      "data": {
+        "what": "image",
+        "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+        "fallback": "text only",
+        "index": 7
+      }
+    },
+    {
+      "id": 12,
+      "type": "scene.started",
+      "t": 25.08,
+      "data": {
+        "index": 1,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 13,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 14,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 15,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 16,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 17,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'large' found",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "large"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 18,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 19,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 1",
+        "status": "violation",
+        "verdict_by": "deterministic",
+        "det_status": "violation",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "none of the sharing terms appear in this page",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 20,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 1",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 21,
+      "type": "verdict",
+      "t": 27.22,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 1",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 22,
+      "type": "scene.repair",
+      "t": 27.23,
+      "data": {
+        "index": 1,
+        "attempt": 1,
+        "failed": [
+          "lesson_concept_in_scene"
+        ],
+        "because": "none of the sharing terms appear in this page"
+      }
+    },
+    {
+      "id": 23,
+      "type": "scene.started",
+      "t": 37.99,
+      "data": {
+        "index": 1,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 24,
+      "type": "scene.started",
+      "t": 38.0,
+      "data": {
+        "index": 2,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 25,
+      "type": "scene.started",
+      "t": 43.72,
+      "data": {
+        "index": 3,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 26,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 27,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.087",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 1,
+          "quote": "Zuzu wiggles her large pink bow between her ears. She finds a sweet carrot she can share with friends.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 28,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 29,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 30,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'large' found",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "large"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 31,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 32,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.685",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 1,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 33,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 1",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.526",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 34,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 1",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.947",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 35,
+      "type": "scene.accepted",
+      "t": 50.93,
+      "data": {
+        "index": 1,
+        "attempts_used": 1,
+        "page": {
+          "index": 1,
+          "scenario": "Zuzu wiggles her large pink bow between her ears. She finds a sweet carrot she can share with friends.",
+          "question": "What should Zuzu choose to do with her carrot?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hide the carrot away so she does not share.",
+              "feedback": "Zuzu knows that sharing with friends brings much more joy.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Bring the carrot to the sunny meadow to share it.",
+              "feedback": "Sharing her sweet treat with friends makes Zuzu feel so happy.",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zuzu the rabbit with a large pink bow between her ears holds an orange carrot in a sunny vegetable patch, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zuzu wiggles her large pink bow between her ears. She finds a sweet carrot she can share with friends. What should Zuzu choose to do with her carrot?"
+        }
+      }
+    },
+    {
+      "id": 36,
+      "type": "verdict",
+      "t": 50.93,
+      "data": {
+        "commitment": "trait_in_image_prompt",
+        "scope": "image 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each picture was asked to show the hero as drawn.",
+        "actual": "hero trait present in the image prompt",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 37,
+      "type": "scene.started",
+      "t": 50.93,
+      "data": {
+        "index": 4,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 38,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 39,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.234",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 2,
+          "quote": "Zuzu feels happy welcoming her friendly guest.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 40,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 41,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 42,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'large' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "large"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 43,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "1 sentences, longest 11 words",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 44,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.687",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 2,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 45,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 2",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.208",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice demonstrates sharing and the resulting happiness, while the wrong choice does not.",
+        "evidence": {
+          "scene": null,
+          "quote": "Invite Pippin to sit and share the picnic blanket.",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice demonstrates sharing and the resulting happiness, while the wrong choice does not.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 46,
+      "type": "verdict",
+      "t": 53.53,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 2",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.918",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 47,
+      "type": "scene.accepted",
+      "t": 53.53,
+      "data": {
+        "index": 2,
+        "attempts_used": 0,
+        "page": {
+          "index": 2,
+          "scenario": "Zuzu adjusts her large pink bow as a little mouse visits.",
+          "question": "What should Zuzu do when her new friend arrives?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hide her snack and quickly eat it alone.",
+              "feedback": "Sharing will make Zuzu and Pippin much happier together.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Invite Pippin to sit and share the picnic blanket.",
+              "feedback": "Zuzu feels happy welcoming her friendly guest.",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zuzu the white rabbit with a large pink bow between her ears sitting on a picnic blanket on Clover Hill next to a small field mouse, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zuzu adjusts her large pink bow as a little mouse visits. What should Zuzu do when her new friend arrives?"
+        }
+      }
+    },
+    {
+      "id": 48,
+      "type": "scene.started",
+      "t": 53.53,
+      "data": {
+        "index": 5,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 49,
+      "type": "verdict",
+      "t": 63.88,
+      "data": {
+        "commitment": "illustration_present",
+        "scope": "image 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page has a picture, or the story says plainly that one is missing.",
+        "actual": "2031703 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 50,
+      "type": "verdict",
+      "t": 67.52,
+      "data": {
+        "commitment": "image_matches_card",
+        "scope": "image 1",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.056",
+        "judge_model": "gemini-3.7-flash",
+        "score": 0.98,
+        "expected": "Pictures look like the same hero.",
+        "actual": "The illustration faithfully portrays Zuzu as a cheerful white rabbit with a large pink bow, curved black eyes, holding a carrot, perfectly matching all key traits and palette in a charming storybook style.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The illustration faithfully portrays Zuzu as a cheerful white rabbit with a large pink bow, curved black eyes, holding a carrot, perfectly matching all key traits and palette in a charming storybook style.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 51,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 52,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.747",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text contains only gentle, kind content with no violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text contains only gentle, kind content with no violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 53,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 54,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 55,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'carrot' found",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "carrot"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 56,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 8 words",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 57,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.659",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 3,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 58,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.128",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice clearly demonstrates sharing, while the wrong choice does not.",
+        "evidence": {
+          "scene": null,
+          "quote": "Break off a sweet piece for Pippin.",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice clearly demonstrates sharing, while the wrong choice does not.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 59,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 3",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.973",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 60,
+      "type": "scene.accepted",
+      "t": 68.08,
+      "data": {
+        "index": 3,
+        "attempts_used": 0,
+        "page": {
+          "index": 3,
+          "scenario": "Pippin has no snack. Zuzu twitches her brown whiskers near her carrot.",
+          "question": "What should Zuzu share with her hungry friend?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Break off a sweet piece for Pippin.",
+              "feedback": "Sharing the carrot brings happy smiles to both friends.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Keep the whole carrot for herself.",
+              "feedback": "Sharing a crunchy bite will make them both glad.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zuzu the white rabbit with brown whiskers sitting under a shady willow tree by a brook, offering a piece of carrot to a little mouse, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Pippin has no snack. Zuzu twitches her brown whiskers near her carrot. What should Zuzu share with her hungry friend?"
+        }
+      }
+    },
+    {
+      "id": 61,
+      "type": "verdict",
+      "t": 68.08,
+      "data": {
+        "commitment": "trait_in_image_prompt",
+        "scope": "image 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each picture was asked to show the hero as drawn.",
+        "actual": "hero trait present in the image prompt",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 62,
+      "type": "scene.started",
+      "t": 68.09,
+      "data": {
+        "index": 6,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 63,
+      "type": "verdict",
+      "t": 70.57,
+      "data": {
+        "commitment": "image_no_text",
+        "scope": "image 1",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.640",
+        "judge_model": "gemini-3.7-flash",
+        "score": 1.0,
+        "expected": "Pictures have no stray or garbled words painted into them.",
+        "actual": "The illustration contains no readable words, letters, numbers, or text elements.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The illustration contains no readable words, letters, numbers, or text elements.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 64,
+      "type": "image.ready",
+      "t": 70.61,
+      "data": {
+        "index": 1,
+        "url": "/api/stories/cb7c125c1227/pages/1/image",
+        "verdict": "pass"
+      }
+    },
+    {
+      "id": 65,
+      "type": "verdict",
+      "t": 80.42,
+      "data": {
+        "commitment": "illustration_present",
+        "scope": "image 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page has a picture, or the story says plainly that one is missing.",
+        "actual": "2086407 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 66,
+      "type": "verdict",
+      "t": 88.71,
+      "data": {
+        "commitment": "image_matches_card",
+        "scope": "image 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.217",
+        "judge_model": "gemini-3.7-flash",
+        "score": 0.85,
+        "expected": "Pictures look like the same hero.",
+        "actual": "The white rabbit accurately features the pink bow, carrot, happy expression, and round tail, though it lacks the specific bright magenta outline.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The white rabbit accurately features the pink bow, carrot, happy expression, and round tail, though it lacks the specific bright magenta outline.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 67,
+      "type": "verdict",
+      "t": 92.13,
+      "data": {
+        "commitment": "image_no_text",
+        "scope": "image 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.787",
+        "judge_model": "gemini-3.7-flash",
+        "score": 1.0,
+        "expected": "Pictures have no stray or garbled words painted into them.",
+        "actual": "The illustration is completely free of any text, letters, numbers, or captions.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The illustration is completely free of any text, letters, numbers, or captions.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 68,
+      "type": "image.ready",
+      "t": 92.18,
+      "data": {
+        "index": 3,
+        "url": "/api/stories/cb7c125c1227/pages/3/image",
+        "verdict": "pass"
+      }
+    },
+    {
+      "id": 69,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 70,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.421",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 4,
+          "quote": "Sharing her snack makes Zuzu and Barnaby smile together.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle and kind, with no violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 71,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 72,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 73,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'round' found",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": "round"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 74,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 9 words",
+        "evidence": {
+          "scene": 4,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 75,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.310",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The scene shows Zuzu sharing her carrot with a hungry bird, demonstrating the lesson through action.",
+        "evidence": {
+          "scene": 4,
+          "quote": "Offer Barnaby a sweet slice of carrot",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The scene shows Zuzu sharing her carrot with a hungry bird, demonstrating the lesson through action.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 76,
+      "type": "verdict",
+      "t": 110.2,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 4",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.710",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 77,
+      "type": "verdict",
+      "t": 110.21,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 4",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.142",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "The feedback explicitly states that both Zuzu and Barnaby smile after the sharing.",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing her snack makes Zuzu and Barnaby smile together.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The feedback explicitly states that both Zuzu and Barnaby smile after the sharing.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 78,
+      "type": "scene.accepted",
+      "t": 110.21,
+      "data": {
+        "index": 4,
+        "attempts_used": 0,
+        "page": {
+          "index": 4,
+          "scenario": "Zuzu wiggles her round tail near the bubbling brook. Barnaby the hungry bluebird lands on a stone.",
+          "question": "What should Zuzu do for the little bird?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Offer Barnaby a sweet slice of carrot",
+              "feedback": "Sharing her snack makes Zuzu and Barnaby smile together.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Hurry across the stones with her snack",
+              "feedback": "Zuzu knows sharing her food will bring more joy.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zuzu the cheerful white rabbit with a round tail stands on stepping stones over a gentle bubbling brook, smiling at Barnaby the little bluebird, in a soft children's book watercolour style, no text in the image",
+          "narration_text": "Zuzu wiggles her round tail near the bubbling brook. Barnaby the hungry bluebird lands on a stone. What should Zuzu do for the little bird?"
+        }
+      }
+    },
+    {
+      "id": 79,
+      "type": "scene.started",
+      "t": 110.21,
+      "data": {
+        "index": 7,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 80,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 81,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.560",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 5,
+          "quote": "Zuzu smiles with her happy curved black eyes at the Daisy Circle.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 82,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 83,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 84,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'happy' found",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": "happy"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 85,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "1 sentences, longest 12 words",
+        "evidence": {
+          "scene": 5,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 86,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.000",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The scene shows Zuzu choosing to share her last carrot, which demonstrates the lesson through action.",
+        "evidence": {
+          "scene": 5,
+          "quote": "Cut it into tiny nibbles for all her friends.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "The scene shows Zuzu choosing to share her last carrot, which demonstrates the lesson through action.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 87,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 5",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.180",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "The correct choice embodies sharing and happiness, while the wrong choice is hiding the carrot.",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing the crunchy snack makes Zuzu and her friends feel happy!",
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "The correct choice embodies sharing and happiness, while the wrong choice is hiding the carrot.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 88,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 5",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.834",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 89,
+      "type": "scene.accepted",
+      "t": 113.12,
+      "data": {
+        "index": 5,
+        "attempts_used": 0,
+        "page": {
+          "index": 5,
+          "scenario": "Zuzu smiles with her happy curved black eyes at the Daisy Circle.",
+          "question": "What should Zuzu do with her last piece of carrot?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Hide the piece behind her back.",
+              "feedback": "Eating together will bring more smiles to everyone.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Cut it into tiny nibbles for all her friends.",
+              "feedback": "Sharing the crunchy snack makes Zuzu and her friends feel happy!",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zuzu the white rabbit with happy curved black eyes smiling in the Daisy Circle Clearing, surrounded by blooming white daisies, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zuzu smiles with her happy curved black eyes at the Daisy Circle. What should Zuzu do with her last piece of carrot?"
+        }
+      }
+    },
+    {
+      "id": 90,
+      "type": "scene.started",
+      "t": 113.12,
+      "data": {
+        "index": 8,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 91,
+      "type": "verdict",
+      "t": 113.12,
+      "data": {
+        "commitment": "trait_in_image_prompt",
+        "scope": "image 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each picture was asked to show the hero as drawn.",
+        "actual": "hero trait present in the image prompt",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 92,
+      "type": "verdict",
+      "t": 122.83,
+      "data": {
+        "commitment": "illustration_present",
+        "scope": "image 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page has a picture, or the story says plainly that one is missing.",
+        "actual": "1844704 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 93,
+      "type": "verdict",
+      "t": 122.83,
+      "data": {
+        "commitment": "image_matches_card",
+        "scope": "image 5",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.989",
+        "judge_model": null,
+        "score": null,
+        "expected": "Pictures look like the same hero.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 94,
+      "type": "verdict",
+      "t": 127.0,
+      "data": {
+        "commitment": "image_no_text",
+        "scope": "image 5",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.292",
+        "judge_model": "gemini-3.7-flash",
+        "score": 1.0,
+        "expected": "Pictures have no stray or garbled words painted into them.",
+        "actual": "The image is completely free of any text, letters, numbers, or captions.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The image is completely free of any text, letters, numbers, or captions.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 95,
+      "type": "image.ready",
+      "t": 127.05,
+      "data": {
+        "index": 5,
+        "url": "/api/stories/cb7c125c1227/pages/5/image",
+        "verdict": "pass"
+      }
+    },
+    {
+      "id": 96,
+      "type": "verdict",
+      "t": 206.23,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 97,
+      "type": "verdict",
+      "t": 206.23,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.964",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data.",
+        "evidence": {
+          "scene": 6,
+          "quote": "Sharing their treats makes everyone smile with joy.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle and kind, with no violence, threats, name-calling, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 98,
+      "type": "verdict",
+      "t": 206.23,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 99,
+      "type": "verdict",
+      "t": 206.23,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 100,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'large' found",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "large"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 101,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 102,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.617",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 6,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 103,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 6",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.896",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 104,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 6",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.848",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 105,
+      "type": "scene.accepted",
+      "t": 206.24,
+      "data": {
+        "index": 6,
+        "attempts_used": 0,
+        "page": {
+          "index": 6,
+          "scenario": "Zuzu adjusts her large pink bow in Old Oak Hollow. Her friends bring fresh mint and clover to share.",
+          "question": "What should Zuzu choose to do with their snacks?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Mix all the snacks together on a leaf.",
+              "feedback": "Sharing their treats makes everyone smile with joy.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Eat her piece quickly alone.",
+              "feedback": "Sharing together will make Zuzu and her friends much happier.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "Zuzu the white rabbit wearing a large pink bow between her ears, sitting with friends in Old Oak Hollow with green leaves, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zuzu adjusts her large pink bow in Old Oak Hollow. Her friends bring fresh mint and clover to share. What should Zuzu choose to do with their snacks?"
+        }
+      }
+    },
+    {
+      "id": 106,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 107,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 7",
+        "status": "violation",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "violation",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.716",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The content is kind and safe, but it repeats instruction-like words such as Question, Choice, Feedback, and Image prompt.",
+        "evidence": {
+          "scene": 7,
+          "quote": "Question: How does Zuzu feel about sharing with her friends?",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The content is kind and safe, but it repeats instruction-like words such as Question, Choice, Feedback, and Image prompt.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 108,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 109,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 110,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'happy' found",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "happy"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 111,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 9 words",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 112,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.770",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 113,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.957",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 114,
+      "type": "verdict",
+      "t": 206.24,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.926",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 115,
+      "type": "scene.repair",
+      "t": 206.24,
+      "data": {
+        "index": 7,
+        "attempt": 1,
+        "failed": [
+          "story_safe_text"
+        ],
+        "because": "no blocked terms | The content is kind and safe, but it repeats instruction-like words such as Question, Choice, Feedback, and Image prompt."
+      }
+    },
+    {
+      "id": 116,
+      "type": "scene.started",
+      "t": 208.79,
+      "data": {
+        "index": 7,
+        "attempt": 1
+      }
+    },
+    {
+      "id": 117,
+      "type": "scene.started",
+      "t": 208.79,
+      "data": {
+        "index": 8,
+        "attempt": 0
+      }
+    },
+    {
+      "id": 118,
+      "type": "verdict",
+      "t": 217.37,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 119,
+      "type": "verdict",
+      "t": 217.37,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.960",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 7,
+          "quote": "Sharing sweet treats with friends brings big smiles.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 1,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 120,
+      "type": "verdict",
+      "t": 217.37,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 121,
+      "type": "verdict",
+      "t": 217.37,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 122,
+      "type": "verdict",
+      "t": 217.38,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'large' found",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": "large"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 123,
+      "type": "verdict",
+      "t": 217.38,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 8 words",
+        "evidence": {
+          "scene": 7,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 124,
+      "type": "verdict",
+      "t": 217.38,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 7",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.107",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found | The page shows Zuzu sharing treats and feeling happy, demonstrating the lesson through her actions and feelings.",
+        "evidence": {
+          "scene": 7,
+          "quote": "Sharing together made Zuzu feel warm and full of joy.",
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "The page shows Zuzu sharing treats and feeling happy, demonstrating the lesson through her actions and feelings.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 125,
+      "type": "verdict",
+      "t": 217.38,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.628",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 126,
+      "type": "verdict",
+      "t": 217.38,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 7",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.726",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 1,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 127,
+      "type": "scene.accepted",
+      "t": 217.38,
+      "data": {
+        "index": 7,
+        "attempts_used": 1,
+        "page": {
+          "index": 7,
+          "scenario": "Zuzu wiggles her brown whiskers happily. Sharing sweet treats with friends brings big smiles.",
+          "question": "What does Zuzu celebrate with her friends?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "How sharing made everyone so happy.",
+              "feedback": "Sharing together made Zuzu feel warm and full of joy.",
+              "is_correct": true
+            },
+            {
+              "id": "b",
+              "text": "Wishing she ate the snack alone.",
+              "feedback": "Sharing every bite with friends was much more fun for Zuzu.",
+              "is_correct": false
+            }
+          ],
+          "image_prompt": "A gentle children's book watercolor illustration of Zuzu the white rabbit with her large pink bow, sitting happily with friendly animals in a hilltop flower bed at sunset.",
+          "narration_text": "Zuzu wiggles her brown whiskers happily. Sharing sweet treats with friends brings big smiles. What does Zuzu celebrate with her friends?"
+        }
+      }
+    },
+    {
+      "id": 128,
+      "type": "verdict",
+      "t": 220.41,
+      "data": {
+        "commitment": "no_drawing_text_obedience",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Words written on the drawing are ignored and never repeated in the story.",
+        "actual": "no text in the drawing",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 129,
+      "type": "verdict",
+      "t": 220.41,
+      "data": {
+        "commitment": "story_safe_text",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "both",
+        "det_status": "pass",
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.045",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+        "actual": "no blocked terms | The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "evidence": {
+          "scene": 8,
+          "quote": "Sharing berries will make breakfast so happy for everyone!",
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "The text is gentle, kind, and free of violence, threats, adult themes, or personal data.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 130,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "one_correct_choice",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every question has exactly one right answer.",
+        "actual": "1 correct",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 131,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "character_named_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The hero's name is on every page.",
+        "actual": "'Zuzu' present",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "Zuzu"
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 132,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "visual_trait_referenced",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each page mentions something the hero really looks like in the drawing.",
+        "actual": "trait word 'round' found",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "round"
+        },
+        "cover": "scenario,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 133,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "age_reading_level",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Sentences are short and the words are easy for this age.",
+        "actual": "2 sentences, longest 10 words",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 134,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "lesson_concept_in_scene",
+        "scope": "scene 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.829",
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page is about the lesson, not just some pages.",
+        "actual": "lesson term 'share' found",
+        "evidence": {
+          "scene": 8,
+          "quote": null,
+          "matched": "share"
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 135,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "correct_choice_teaches_lesson",
+        "scope": "scene 8",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.707",
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is the one that shows the lesson.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 136,
+      "type": "verdict",
+      "t": 220.42,
+      "data": {
+        "commitment": "lesson_specific_mutual_happiness_outcome",
+        "scope": "scene 8",
+        "status": "skipped",
+        "verdict_by": "none",
+        "det_status": null,
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": "seed=1 rate=0.50 draw=0.880",
+        "judge_model": null,
+        "score": null,
+        "expected": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+        "actual": "",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 137,
+      "type": "scene.accepted",
+      "t": 220.42,
+      "data": {
+        "index": 8,
+        "attempts_used": 0,
+        "page": {
+          "index": 8,
+          "scenario": "Zuzu wiggles her round tail outside her cozy burrow door. She finds a basket of sweet berries from her friends.",
+          "question": "What should Zuzu do with the sweet berries?",
+          "choices": [
+            {
+              "id": "a",
+              "text": "Eat all the berries alone before bed.",
+              "feedback": "Eating alone is nice, but sharing brings much more joy.",
+              "is_correct": false
+            },
+            {
+              "id": "b",
+              "text": "Save the berries to share with her friends tomorrow.",
+              "feedback": "Sharing berries will make breakfast so happy for everyone!",
+              "is_correct": true
+            }
+          ],
+          "image_prompt": "Zuzu the white rabbit with a round tail stands on her cozy burrow doorstep at twilight next to a little basket of berries, soft children's-book watercolour style, no text in the image",
+          "narration_text": "Zuzu wiggles her round tail outside her cozy burrow door. She finds a basket of sweet berries from her friends. What should Zuzu do with the sweet berries?"
+        }
+      }
+    },
+    {
+      "id": 138,
+      "type": "verdict",
+      "t": 220.43,
+      "data": {
+        "commitment": "trait_in_image_prompt",
+        "scope": "image 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Each picture was asked to show the hero as drawn.",
+        "actual": "hero trait present in the image prompt",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 139,
+      "type": "verdict",
+      "t": 230.82,
+      "data": {
+        "commitment": "illustration_present",
+        "scope": "image 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page has a picture, or the story says plainly that one is missing.",
+        "actual": "2084088 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 140,
+      "type": "verdict",
+      "t": 234.66,
+      "data": {
+        "commitment": "image_matches_card",
+        "scope": "image 8",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.073",
+        "judge_model": "gemini-3.7-flash",
+        "score": 0.8,
+        "expected": "Pictures look like the same hero.",
+        "actual": "The character matches Zuzu's design, colors, and pink bow well, but she is not holding a carrot as described in her traits.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The character matches Zuzu's design, colors, and pink bow well, but she is not holding a carrot as described in her traits.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 141,
+      "type": "verdict",
+      "t": 235.02,
+      "data": {
+        "commitment": "schema_valid",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The story has exactly eight complete pages.",
+        "actual": "8 pages, all fields present",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario,question,choices,image_prompt",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 142,
+      "type": "verdict",
+      "t": 235.02,
+      "data": {
+        "commitment": "correct_choice_position_balanced",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not always the first button.",
+        "actual": "slots [1, 1, 0, 0, 1, 0, 0, 1]",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "choices",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 143,
+      "type": "verdict",
+      "t": 235.02,
+      "data": {
+        "commitment": "lesson_alignment",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.634",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "The whole story teaches the chosen lesson.",
+        "actual": "Every page consistently shows Zuzu choosing to share and feeling happier as a result.",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing the carrot brings happy smiles to both friends.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "Every page consistently shows Zuzu choosing to share and feeling happier as a result.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 144,
+      "type": "verdict",
+      "t": 235.02,
+      "data": {
+        "commitment": "no_repeated_scenario",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "No two pages tell the same moment.",
+        "actual": "no repeated scenarios",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "scenario",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 145,
+      "type": "verdict",
+      "t": 235.02,
+      "data": {
+        "commitment": "lesson_specific_carrot_sharing_action",
+        "scope": "story",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=0.50 draw=0.336",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": null,
+        "expected": "Zuzu must divide or offer a piece of her cherished orange carrot to a friend who needs or wants food.",
+        "actual": "Zuzu explicitly shares a piece of her carrot with Pippin, and later offers carrot slices to Barnaby and nibbles to all her friends.",
+        "evidence": {
+          "scene": null,
+          "quote": "Break off a sweet piece for Pippin.",
+          "matched": null
+        },
+        "cover": "scenario,question,choices",
+        "attempt": 0,
+        "reasoning": "Zuzu explicitly shares a piece of her carrot with Pippin, and later offers carrot slices to Barnaby and nibbles to all her friends.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 146,
+      "type": "verdict",
+      "t": 237.81,
+      "data": {
+        "commitment": "image_no_text",
+        "scope": "image 8",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.238",
+        "judge_model": "gemini-3.7-flash",
+        "score": 1.0,
+        "expected": "Pictures have no stray or garbled words painted into them.",
+        "actual": "The image is completely free of any readable words, letters, numbers, or captions.",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "image",
+        "attempt": 0,
+        "reasoning": "The image is completely free of any readable words, letters, numbers, or captions.",
+        "trace_id": ""
+      }
+    },
+    {
+      "id": 147,
+      "type": "image.ready",
+      "t": 237.85,
+      "data": {
+        "index": 8,
+        "url": "/api/stories/cb7c125c1227/pages/8/image",
+        "verdict": "pass"
+      }
+    },
+    {
+      "id": 148,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 1",
+        "evidence": {
+          "scene": null,
+          "quote": "She finds a sweet carrot she can share with friends.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 149,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 150,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 7 words, longest wrong 8",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 151,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 152,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 153,
+      "type": "verdict",
+      "t": 242.59,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 1",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.794",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports the marked correct answer, and the other choices are not supported by the page text.",
+        "evidence": {
+          "scene": null,
+          "quote": "She finds a sweet carrot she can share with friends.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports the marked correct answer, and the other choices are not supported by the page text.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 154,
+      "type": "verdict",
+      "t": 248.12,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 4",
+        "evidence": {
+          "scene": null,
+          "quote": "Barnaby the hungry bluebird lands on a stone.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 155,
+      "type": "verdict",
+      "t": 248.12,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 156,
+      "type": "verdict",
+      "t": 248.12,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 4 words, longest wrong 6",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 157,
+      "type": "verdict",
+      "t": 248.13,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 158,
+      "type": "verdict",
+      "t": 248.13,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 159,
+      "type": "verdict",
+      "t": 248.13,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 2",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.992",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports answer b, and the other answers name characters not mentioned in the text.",
+        "evidence": {
+          "scene": null,
+          "quote": "Barnaby the hungry bluebird lands on a stone.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports answer b, and the other answers name characters not mentioned in the text.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 160,
+      "type": "verdict",
+      "t": 253.04,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 3",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing the carrot brings happy smiles to both friends.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 161,
+      "type": "verdict",
+      "t": 253.04,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 162,
+      "type": "verdict",
+      "t": 253.04,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 4 words, longest wrong 4",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 163,
+      "type": "verdict",
+      "t": 253.04,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 164,
+      "type": "verdict",
+      "t": 253.05,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 165,
+      "type": "verdict",
+      "t": 253.05,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 3",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.814",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The quoted line directly supports that Zuzu felt happy with big smiles, and the other answers are not supported.",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing the carrot brings happy smiles to both friends.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The quoted line directly supports that Zuzu felt happy with big smiles, and the other answers are not supported.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 166,
+      "type": "verdict",
+      "t": 256.02,
+      "data": {
+        "commitment": "quiz_quote_in_story",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question points to the exact line of the story that answers it.",
+        "actual": "line found on page 7",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing together made Zuzu feel warm and full of joy.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 167,
+      "type": "verdict",
+      "t": 256.02,
+      "data": {
+        "commitment": "quiz_one_correct",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every quiz question has three answers and exactly one is right.",
+        "actual": "3 answers, one right",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 168,
+      "type": "verdict",
+      "t": 256.02,
+      "data": {
+        "commitment": "quiz_no_tell",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "The right answer is not simply the longest one, so a guess has to come from the story.",
+        "actual": "right answer 9 words, longest wrong 10",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 169,
+      "type": "verdict",
+      "t": 256.02,
+      "data": {
+        "commitment": "quiz_reading_level",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers use short, easy words for the child's age.",
+        "actual": "short and simple",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 170,
+      "type": "verdict",
+      "t": 256.03,
+      "data": {
+        "commitment": "quiz_safe_text",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Quiz questions and answers are gentle, with no scary or unkind words.",
+        "actual": "no blocked terms",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 171,
+      "type": "verdict",
+      "t": 256.03,
+      "data": {
+        "commitment": "quiz_answerable",
+        "scope": "quiz 4",
+        "status": "pass",
+        "verdict_by": "judge",
+        "det_status": null,
+        "judge_status": "pass",
+        "sampled": true,
+        "sample_seed": "seed=1 rate=1.00 draw=0.177",
+        "judge_model": "IFM/K2-Horizon-375B-A23B",
+        "score": 1.0,
+        "expected": "A quiz question can be answered from the story alone, and only one answer is right.",
+        "actual": "The page text directly supports that sharing brought joy and happy smiles, while the other choices are not supported by the story.",
+        "evidence": {
+          "scene": null,
+          "quote": "Sharing sweet treats with friends brings big smiles.",
+          "matched": null
+        },
+        "cover": "quiz",
+        "attempt": 0,
+        "reasoning": "The page text directly supports that sharing brought joy and happy smiles, while the other choices are not supported by the story.",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 172,
+      "type": "quiz.ready",
+      "t": 256.03,
+      "data": {
+        "items": [
+          {
+            "index": 1,
+            "kind": "recall",
+            "question": "What sweet treat did Zuzu find on page 1?",
+            "options": [
+              {
+                "id": "a",
+                "text": "A basket of fresh clover from the woods.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "A sweet carrot to share with friends.",
+                "is_correct": true
+              },
+              {
+                "id": "c",
+                "text": "A shiny red apple under the tree.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 1,
+            "evidence_quote": "She finds a sweet carrot she can share with friends.",
+            "explain": "Look: the story says she finds a sweet carrot to share with friends."
+          },
+          {
+            "index": 2,
+            "kind": "detail",
+            "question": "Who landed on a stone near the bubbling brook?",
+            "options": [
+              {
+                "id": "a",
+                "text": "A tiny frog near the water.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "Barnaby the hungry bluebird.",
+                "is_correct": true
+              },
+              {
+                "id": "c",
+                "text": "Pippin the friendly little mouse.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 4,
+            "evidence_quote": "Barnaby the hungry bluebird lands on a stone.",
+            "explain": "Look: the story tells us Barnaby the hungry bluebird landed on a stone."
+          },
+          {
+            "index": 3,
+            "kind": "feeling",
+            "question": "How did Zuzu feel when she shared with Pippin?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Very sleepy and tired.",
+                "is_correct": false
+              },
+              {
+                "id": "b",
+                "text": "A little bit grumpy.",
+                "is_correct": false
+              },
+              {
+                "id": "c",
+                "text": "Happy with big smiles.",
+                "is_correct": true
+              }
+            ],
+            "evidence_page": 3,
+            "evidence_quote": "Sharing the carrot brings happy smiles to both friends.",
+            "explain": "Look: the page says sharing the carrot brings happy smiles to both friends."
+          },
+          {
+            "index": 4,
+            "kind": "lesson",
+            "question": "Why was sharing sweet treats good for Zuzu and her friends?",
+            "options": [
+              {
+                "id": "a",
+                "text": "Sharing brought everyone so much joy and happy smiles.",
+                "is_correct": true
+              },
+              {
+                "id": "b",
+                "text": "Sharing made the friends run quickly across the sunny meadow.",
+                "is_correct": false
+              },
+              {
+                "id": "c",
+                "text": "Sharing helped Zuzu finish all of her food faster.",
+                "is_correct": false
+              }
+            ],
+            "evidence_page": 7,
+            "evidence_quote": "Sharing together made Zuzu feel warm and full of joy.",
+            "explain": "Look: the text shows that sharing made Zuzu feel warm and full of joy."
+          }
+        ],
+        "talk_about": "What is a favorite snack or toy you like to share with your friends?"
+      }
+    },
+    {
+      "id": 173,
+      "type": "verdict",
+      "t": 265.39,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 2",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "58848 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 174,
+      "type": "audio.ready",
+      "t": 265.39,
+      "data": {
+        "index": 2,
+        "url": "/api/stories/cb7c125c1227/pages/2/audio",
+        "seconds": 9.8
+      }
+    },
+    {
+      "id": 175,
+      "type": "verdict",
+      "t": 265.81,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 4",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "75840 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 176,
+      "type": "audio.ready",
+      "t": 265.81,
+      "data": {
+        "index": 4,
+        "url": "/api/stories/cb7c125c1227/pages/4/audio",
+        "seconds": 12.6
+      }
+    },
+    {
+      "id": 177,
+      "type": "verdict",
+      "t": 265.88,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 3",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "60960 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 178,
+      "type": "audio.ready",
+      "t": 265.88,
+      "data": {
+        "index": 3,
+        "url": "/api/stories/cb7c125c1227/pages/3/audio",
+        "seconds": 10.2
+      }
+    },
+    {
+      "id": 179,
+      "type": "verdict",
+      "t": 266.16,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 1",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "72576 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 180,
+      "type": "audio.ready",
+      "t": 266.16,
+      "data": {
+        "index": 1,
+        "url": "/api/stories/cb7c125c1227/pages/1/audio",
+        "seconds": 12.1
+      }
+    },
+    {
+      "id": 181,
+      "type": "verdict",
+      "t": 274.17,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 5",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "55296 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 182,
+      "type": "audio.ready",
+      "t": 274.17,
+      "data": {
+        "index": 5,
+        "url": "/api/stories/cb7c125c1227/pages/5/audio",
+        "seconds": 9.2
+      }
+    },
+    {
+      "id": 183,
+      "type": "verdict",
+      "t": 274.65,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 7",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "63456 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 184,
+      "type": "audio.ready",
+      "t": 274.65,
+      "data": {
+        "index": 7,
+        "url": "/api/stories/cb7c125c1227/pages/7/audio",
+        "seconds": 10.6
+      }
+    },
+    {
+      "id": 185,
+      "type": "verdict",
+      "t": 277.0,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 6",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "91776 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 186,
+      "type": "audio.ready",
+      "t": 277.0,
+      "data": {
+        "index": 6,
+        "url": "/api/stories/cb7c125c1227/pages/6/audio",
+        "seconds": 15.3
+      }
+    },
+    {
+      "id": 187,
+      "type": "verdict",
+      "t": 277.32,
+      "data": {
+        "commitment": "narration_present",
+        "scope": "audio 8",
+        "status": "pass",
+        "verdict_by": "deterministic",
+        "det_status": "pass",
+        "judge_status": null,
+        "sampled": false,
+        "sample_seed": null,
+        "judge_model": null,
+        "score": null,
+        "expected": "Every page can be read aloud, or the story says plainly that it cannot.",
+        "actual": "83328 bytes",
+        "evidence": {
+          "scene": null,
+          "quote": null,
+          "matched": null
+        },
+        "cover": "audio",
+        "attempt": 0,
+        "reasoning": "",
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514"
+      }
+    },
+    {
+      "id": 188,
+      "type": "audio.ready",
+      "t": 277.32,
+      "data": {
+        "index": 8,
+        "url": "/api/stories/cb7c125c1227/pages/8/audio",
+        "seconds": 13.9
+      }
+    },
+    {
+      "id": 189,
+      "type": "receipt",
+      "t": 277.32,
+      "data": {
+        "story_id": "cb7c125c1227",
+        "oath_hash": "2459ef3a4897d72aab9dfbdedc9f755764e3c1ade33ed14bc4f6277bda652dcb",
+        "arm": "B1",
+        "plain": "27 promises checked. 2 pages rewritten. All kept.",
+        "counts": {
+          "commitments": 28,
+          "checked": 27,
+          "checks": 128,
+          "violations_found": 2,
+          "repairs": 2,
+          "kept": 27,
+          "shipped_violations": 0,
+          "judge_enabled": true
+        },
+        "broken": [],
+        "promises": [
+          {
+            "id": "input_safe_visual",
+            "title": "The drawing is safe to turn into a story",
+            "plain": "The drawing was checked first. Anything frightening or unsafe means no story is made.",
+            "scope": "run",
+            "core": true,
+            "status": "not_checked"
+          },
+          {
+            "id": "no_drawing_text_obedience",
+            "title": "Words written on the drawing are never obeyed",
+            "plain": "Words written on the drawing are ignored and never repeated in the story.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "story_safe_text",
+            "title": "Every page is safe and kind",
+            "plain": "Every page was checked for anything scary, unkind or unsafe before you could see it.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "schema_valid",
+            "title": "Eight complete pages",
+            "plain": "The story has exactly eight complete pages.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "one_correct_choice",
+            "title": "Exactly one right answer",
+            "plain": "Every question has exactly one right answer.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "correct_choice_position_balanced",
+            "title": "The right answer moves around",
+            "plain": "The right answer is not always the first button.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "character_named_in_scene",
+            "title": "The hero is named on every page",
+            "plain": "The hero's name is on every page.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "visual_trait_referenced",
+            "title": "The hero looks like the drawing",
+            "plain": "Each page mentions something the hero really looks like in the drawing.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "age_reading_level",
+            "title": "Simple words for the child's age",
+            "plain": "Sentences are short and the words are easy for this age.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_concept_in_scene",
+            "title": "The lesson is on every page",
+            "plain": "Every page is about the lesson, not just some pages.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "correct_choice_teaches_lesson",
+            "title": "The right answer teaches the lesson",
+            "plain": "The right answer is the one that shows the lesson.",
+            "scope": "scene",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_alignment",
+            "title": "The whole story teaches the lesson",
+            "plain": "The whole story teaches the chosen lesson.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "no_repeated_scenario",
+            "title": "No page repeats another",
+            "plain": "No two pages tell the same moment.",
+            "scope": "story",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "card_traits_checkable",
+            "title": "The hero has checkable features",
+            "plain": "The hero was described by at least three things you can see.",
+            "scope": "run",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "original_character_only",
+            "title": "The hero is original",
+            "plain": "The hero is not a famous cartoon or film character.",
+            "scope": "run",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "trait_in_image_prompt",
+            "title": "Pictures are asked to show the hero",
+            "plain": "Each picture was asked to show the hero as drawn.",
+            "scope": "image",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "illustration_present",
+            "title": "Every page has a picture",
+            "plain": "Every page has a picture, or the story says plainly that one is missing.",
+            "scope": "image",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "image_matches_card",
+            "title": "The picture matches the hero",
+            "plain": "Pictures look like the same hero.",
+            "scope": "image",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "image_no_text",
+            "title": "Pictures contain no words",
+            "plain": "Pictures have no stray or garbled words painted into them.",
+            "scope": "image",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "narration_present",
+            "title": "Every page can be read aloud",
+            "plain": "Every page can be read aloud, or the story says plainly that it cannot.",
+            "scope": "audio",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_specific_carrot_sharing_action",
+            "title": "Carrot Shared Joyfully",
+            "plain": "Zuzu must divide or offer a piece of her cherished orange carrot to a friend who needs or wants food.",
+            "scope": "story",
+            "core": false,
+            "status": "kept"
+          },
+          {
+            "id": "lesson_specific_mutual_happiness_outcome",
+            "title": "Mutual Happiness After Sharing",
+            "plain": "The scene immediately following the act of sharing must show both Zuzu and the recipient feeling happier.",
+            "scope": "scene",
+            "core": false,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_quote_in_story",
+            "title": "Quiz answers come from the story",
+            "plain": "Every quiz question points to the exact line of the story that answers it.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_one_correct",
+            "title": "One right answer",
+            "plain": "Every quiz question has three answers and exactly one is right.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_no_tell",
+            "title": "The right answer does not give itself away",
+            "plain": "The right answer is not simply the longest one, so a guess has to come from the story.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_reading_level",
+            "title": "Quiz words are easy",
+            "plain": "Quiz questions and answers use short, easy words for the child's age.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_safe_text",
+            "title": "Quiz is kind and safe",
+            "plain": "Quiz questions and answers are gentle, with no scary or unkind words.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          },
+          {
+            "id": "quiz_answerable",
+            "title": "Quiz can be answered from the story",
+            "plain": "A quiz question can be answered from the story alone, and only one answer is right.",
+            "scope": "quiz",
+            "core": true,
+            "status": "kept"
+          }
+        ],
+        "pages": [
+          {
+            "index": 1,
+            "attempts": 2,
+            "final": "pass"
+          },
+          {
+            "index": 2,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 3,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 4,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 5,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 6,
+            "attempts": 1,
+            "final": "pass"
+          },
+          {
+            "index": 7,
+            "attempts": 2,
+            "final": "pass"
+          },
+          {
+            "index": 8,
+            "attempts": 1,
+            "final": "pass"
+          }
+        ],
+        "coverage": {
+          "pct": 100,
+          "uncovered": []
+        },
+        "degradations": [
+          {
+            "what": "image",
+            "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+            "fallback": "text only",
+            "index": 2
+          },
+          {
+            "what": "image",
+            "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+            "fallback": "text only",
+            "index": 4
+          },
+          {
+            "what": "image",
+            "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+            "fallback": "text only",
+            "index": 6
+          },
+          {
+            "what": "image",
+            "why": "the agent kept its picture budget for the pages that matter most (importance 1)",
+            "fallback": "text only",
+            "index": 7
+          }
+        ],
+        "picture_plan": {
+          "painted": [
+            1,
+            3,
+            5,
+            8
+          ],
+          "importance": {
+            "1": 2,
+            "2": 1,
+            "3": 3,
+            "4": 1,
+            "5": 3,
+            "6": 1,
+            "7": 1,
+            "8": 2
+          },
+          "budget_usd": 0.16
+        },
+        "ignored_drawing_text": [],
+        "budget": {
+          "usd_estimate": 0.2022,
+          "estimate": true,
+          "seconds": 277.3,
+          "tokens_in": 36846,
+          "tokens_out": 18484,
+          "images": 4,
+          "calls": 53,
+          "by_model": {
+            "gemini-3.7-flash": {
+              "in": 20591,
+              "out": 5300,
+              "calls": 25,
+              "seconds": 160.02300000000005
+            },
+            "IFM/K2-Horizon-375B-A23B": {
+              "in": 11621,
+              "out": 8704,
+              "calls": 16,
+              "seconds": 101.71499999999999
+            },
+            "gemini-3.1-flash-image": {
+              "in": 4634,
+              "out": 4480,
+              "calls": 4,
+              "seconds": 44.816
+            },
+            "gemini-2.5-flash-tts": {
+              "in": 0,
+              "out": 0,
+              "calls": 8,
+              "seconds": 78.976
+            }
+          },
+          "first_page_s": 50.93
+        },
+        "prompt_version": "p5",
+        "models": {
+          "writer": "gemini-3.7-flash",
+          "judge": "IFM/K2-Horizon-375B-A23B",
+          "vision": "gemini-3.7-flash"
+        },
+        "trace_id": "fa20da316e4ce642035a12bbffb4f514",
+        "generated_at": "2026-10-11T11:20:25+05:30"
+      }
+    },
+    {
+      "id": 190,
+      "type": "run.finished",
+      "t": 277.33,
+      "data": {
+        "outcome": "shipped",
+        "story_id": "cb7c125c1227"
+      }
+    }
+  ],
+  "shipped": []
+}

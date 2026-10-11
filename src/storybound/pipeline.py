@@ -104,6 +104,9 @@ class Run:
     receipt: dict | None = None
     picture_plan: dict | None = None  # the pages the agent chose to paint, and why (policy "auto")
     image_failures: int = 0  # picture calls that failed in a row; two in a row stop the painting of the rest
+    plan_announced: bool = False  # the picture plan was announced as soon as the story was planned
+    paint_set: set[int] = field(default_factory=set)  # pages that will get a picture, known before the pages are written
+    early: dict[int, tuple[dict, Any]] = field(default_factory=dict)  # page index -> (page as painted, its future): pictures start as pages are accepted
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
     quiz: Quiz | None = None
@@ -252,6 +255,10 @@ def build_graph(run: Run):
             slots = [0, 1] * (n_pages // 2)
             rng(cfg.seed, "slots").shuffle(slots)
             run.emit("plan.ready", {"beats": [planner.beat_text(b) for b in beats]})
+            if early_painting:  # decide the pictures now, so they can be painted while the child is still reading
+                imp = {b["index"]: b.get("importance", 1) for b in beats}
+                order = picture_order(cfg.pictures, list(range(1, n_pages + 1)), imp, st.budget.pictures_usd_per_story, st.prices.image_each)
+                announce_paint_plan(imp, order, list(range(1, n_pages + 1)))
             out.update({"beats": beats, "slots": slots})
         return out
 
@@ -325,6 +332,7 @@ def build_graph(run: Run):
             pages = [*s["pages"], page]
             run.ctx.pages = pages
             run.emit("scene.accepted", {"index": page.index, "attempts_used": attempt, "page": _public_page(page)})
+            start_painting(page, s["card"])
             if not rest and s["i"] > n_pages:
                 nxt = "story_gate"
             elif rest and (len(rest) >= MAX_AHEAD or s["i"] > n_pages):
@@ -475,6 +483,28 @@ def build_graph(run: Run):
         path.write_bytes(data)
         return str(path)
 
+    early_painting = cfg.media and cfg.arm == "B1" and cfg.pictures != "none"
+    early_pool = cf.ThreadPoolExecutor(max_workers=2) if early_painting else None
+
+    def announce_paint_plan(imp: dict[int, int], order: list[int], indices: list[int]) -> None:
+        """Say which pages will be painted (and why the others will not) as soon as the story is planned."""
+        run.paint_set = set(order)
+        run.plan_announced = True
+        if cfg.pictures == "auto":
+            run.picture_plan = {"painted": sorted(order), "importance": imp, "budget_usd": st.budget.pictures_usd_per_story}
+            run.emit("paint.plan", run.picture_plan)
+        for i in indices:
+            if i not in run.paint_set:  # a plan choice, not a failure: the page keeps its words and its narration
+                why = f"the agent kept its picture budget for the pages that matter most (importance {imp.get(i, 1)})"
+                run.degrade("image", why if cfg.pictures == "auto" else "this plan paints some pages only", "text only", i)
+
+    def start_painting(p: Page, card: CharacterCard) -> None:
+        """A page was just accepted: if it is one of the pages to paint, start its picture now (the child is still reading)."""
+        if not early_painting or early_pool is None or p.index not in run.paint_set or run.forgotten:
+            return
+        ctx = contextvars.copy_context()
+        run.early[p.index] = (p.model_dump(), early_pool.submit(ctx.run, one_image, p, card))
+
     def one_image(p: Page, card: CharacterCard) -> None:
         eng = run.engine
         prompt = p.image_prompt
@@ -569,26 +599,24 @@ def build_graph(run: Run):
         pages, card = s["pages"], s["card"]
         imp = {b["index"]: b.get("importance", 1) for b in s.get("beats", [])}
         order = picture_order(cfg.pictures, [p.index for p in pages], imp, st.budget.pictures_usd_per_story, st.prices.image_each)
-        painted = set(order)
         by_index = {p.index: p for p in pages}
-        if cfg.pictures == "auto":
-            run.picture_plan = {"painted": sorted(painted), "importance": imp, "budget_usd": st.budget.pictures_usd_per_story}
-            run.emit("paint.plan", run.picture_plan)
-        for p in pages:
-            if p.index not in painted:  # a plan choice, not a failure: the page keeps its words and its narration
-                why = f"the agent kept its picture budget for the pages that matter most (importance {imp.get(p.index, 1)})"
-                run.degrade("image", why if cfg.pictures == "auto" else "this plan paints some pages only", "text only", p.index)
-        jobs = [(one_image, by_index[i], card) for i in order] + [(one_audio, p) for p in pages]
+        if not run.plan_announced:  # the arms that do not paint early (and tests) announce the plan here
+            announce_paint_plan(imp, order, [p.index for p in pages])
+        # pictures already started while the child read: keep them unless the story gate rewrote that page afterwards
+        todo = [i for i in order if i not in run.early or run.early[i][0] != by_index[i].model_dump()]
+        jobs = [(one_image, by_index[i], card) for i in todo] + [(one_audio, p) for p in pages]
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
                 ctx = contextvars.copy_context()  # keep the trace parent and the usage meter
                 futs.append(pool.submit(ctx.run, fn, *a))
-            for f in futs:
+            for f in futs + [fut for _snap, fut in run.early.values()]:
                 try:
                     f.result()
                 except Exception as e:  # one broken page must not sink the story
                     run.degrade("check", f"media worker failed: {type(e).__name__}", "page shown without media")
+        if early_pool is not None:
+            early_pool.shutdown(wait=True)
         return {}
 
     # ---- receipt ------------------------------------------------------------------------------------------------------
@@ -816,6 +844,6 @@ def ledger_row(run: Run) -> dict:
         "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "prompt_version": prompts.VERSION, "error": run.error or None, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan,
+        "prompt_version": prompts.VERSION, "error": run.error or None, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
         "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

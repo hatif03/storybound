@@ -331,3 +331,36 @@ def test_auto_policy_stops_painting_after_two_failures_in_a_row(drawing):
     assert "failed twice" in run.painting_should_stop()
     run.cfg.pictures = "full"
     assert run.painting_should_stop() == ""  # the fixed policies keep their old behaviour
+
+
+def test_the_agent_paints_the_chosen_pages_while_the_child_is_still_reading(monkeypatch, drawing):
+    import io
+    from types import SimpleNamespace
+
+    from PIL import Image
+
+    wire(monkeypatch)
+    imp = {1: 2, 2: 1, 3: 1, 4: 3, 5: 1, 6: 3, 7: 1, 8: 2}
+    monkeypatch.setattr(
+        planner, "plan", lambda lesson, card, age, n=8: ([{"index": i, "setting": "s", "event": "e", "importance": imp[i]} for i in range(1, 9)], {})
+    )
+    buf = io.BytesIO()
+    Image.effect_noise((640, 640), 60).convert("RGB").save(buf, "JPEG")
+    monkeypatch.setattr(pipeline.images, "illustrate", lambda prompt, reference=None: SimpleNamespace(value=buf.getvalue(), raw_text="image/jpeg"))
+    monkeypatch.setattr(pipeline.tts, "narrate", lambda text: SimpleNamespace(value=b"\x00" * 2000))
+    bus = EventLog()
+    run = pipeline.Run(
+        cfg=pipeline.RunConfig(lesson_id="sharing", media=True, judge_enabled=False, pictures="auto", quiz=False),
+        drawing=drawing, bus=bus, story_id="t2",
+    )  # fmt: skip
+    pipeline.execute(run)
+    evs = bus.all()
+    types = [e["type"] for e in evs]
+    plan = next(e for e in evs if e["type"] == "paint.plan")["data"]
+    assert plan["painted"] == [1, 4, 6, 8] and plan["budget_usd"] == 0.16
+    assert types.index("paint.plan") < types.index("scene.accepted")  # decided before the first page is written
+    left_out = {e["data"]["index"] for e in evs if e["type"] == "degraded" and e["data"]["what"] == "image"}
+    assert left_out == {2, 3, 5, 7}
+    painted = {e["data"]["index"] for e in evs if e["type"] == "image.ready"}
+    assert painted == {1, 4, 6, 8}
+    assert run.receipt["picture_plan"]["painted"] == [1, 4, 6, 8]

@@ -1,0 +1,402 @@
+{
+  "summary": {
+    "lesson": "sharing",
+    "pages": 8,
+    "variants": [
+      "clean",
+      "swap",
+      "scary"
+    ],
+    "page_runs": 24,
+    "verdict_cells": 72,
+    "judge_errors": 0,
+    "order_flips": "6/72 promise verdicts changed with the order",
+    "pad_flips": "3/72 promise verdicts changed with two added sentences",
+    "pages_with_an_order_flip": "6/24",
+    "pages_with_a_padding_flip": "3/24",
+    "flipped_promises": [
+      "lesson_concept_in_scene"
+    ],
+    "mean_words_added": 14.0
+  },
+  "rows": [
+    {
+      "page": 1,
+      "kind": "clean",
+      "promises": 3,
+      "words": 109,
+      "padded_words": 123,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 1,
+      "kind": "swap",
+      "promises": 3,
+      "words": 109,
+      "padded_words": 123,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 1,
+      "kind": "scary",
+      "promises": 3,
+      "words": 119,
+      "padded_words": 133,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 2,
+      "kind": "clean",
+      "promises": 3,
+      "words": 103,
+      "padded_words": 117,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 2,
+      "kind": "swap",
+      "promises": 3,
+      "words": 103,
+      "padded_words": 117,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 2,
+      "kind": "scary",
+      "promises": 3,
+      "words": 113,
+      "padded_words": 127,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 3,
+      "kind": "clean",
+      "promises": 3,
+      "words": 115,
+      "padded_words": 129,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 3,
+      "kind": "swap",
+      "promises": 3,
+      "words": 115,
+      "padded_words": 129,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 3,
+      "kind": "scary",
+      "promises": 3,
+      "words": 123,
+      "padded_words": 137,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 4,
+      "kind": "clean",
+      "promises": 3,
+      "words": 111,
+      "padded_words": 125,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 4,
+      "kind": "swap",
+      "promises": 3,
+      "words": 111,
+      "padded_words": 125,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 4,
+      "kind": "scary",
+      "promises": 3,
+      "words": 123,
+      "padded_words": 137,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "errors": 0
+    },
+    {
+      "page": 5,
+      "kind": "clean",
+      "promises": 3,
+      "words": 117,
+      "padded_words": 131,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 5,
+      "kind": "swap",
+      "promises": 3,
+      "words": 117,
+      "padded_words": 131,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 5,
+      "kind": "scary",
+      "promises": 3,
+      "words": 124,
+      "padded_words": 138,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 6,
+      "kind": "clean",
+      "promises": 3,
+      "words": 106,
+      "padded_words": 120,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 6,
+      "kind": "swap",
+      "promises": 3,
+      "words": 106,
+      "padded_words": 120,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "errors": 0
+    },
+    {
+      "page": 6,
+      "kind": "scary",
+      "promises": 3,
+      "words": 113,
+      "padded_words": 127,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 7,
+      "kind": "clean",
+      "promises": 3,
+      "words": 116,
+      "padded_words": 130,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 7,
+      "kind": "swap",
+      "promises": 3,
+      "words": 116,
+      "padded_words": 130,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "violation",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 7,
+      "kind": "scary",
+      "promises": 3,
+      "words": 127,
+      "padded_words": 141,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 8,
+      "kind": "clean",
+      "promises": 3,
+      "words": 118,
+      "padded_words": 132,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [],
+      "pad_flips": [],
+      "errors": 0
+    },
+    {
+      "page": 8,
+      "kind": "swap",
+      "promises": 3,
+      "words": 118,
+      "padded_words": 132,
+      "base": {
+        "story_safe_text": "pass",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "violation"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "errors": 0
+    },
+    {
+      "page": 8,
+      "kind": "scary",
+      "promises": 3,
+      "words": 125,
+      "padded_words": 139,
+      "base": {
+        "story_safe_text": "critical",
+        "lesson_concept_in_scene": "pass",
+        "correct_choice_teaches_lesson": "pass"
+      },
+      "order_flips": [
+        "lesson_concept_in_scene"
+      ],
+      "pad_flips": [],
+      "errors": 0
+    }
+  ]
+}

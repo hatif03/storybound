@@ -13,7 +13,7 @@ from .jsonutil import extract_json
 from .retry import with_retry
 from .usage import Result, Usage, record
 
-_RETRYABLE = {408, 429, 500, 502, 503, 504}
+_RETRYABLE = {408, 429, 499, 500, 502, 503, 504}  # 499 CANCELLED: Vertex cancelled the call under load (found by the regression set, HR-010)
 
 
 def _credentials():

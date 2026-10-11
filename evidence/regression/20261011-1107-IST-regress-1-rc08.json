@@ -1,0 +1,29 @@
+{
+ "summary": {
+  "cases": 1,
+  "resolved": 1,
+  "unresolved": 0,
+  "refused": 0,
+  "error": 0,
+  "first_pass_again": 1
+ },
+ "results": [
+  {
+   "case_id": "rc-08",
+   "must_flip": "correct_choice_teaches_lesson",
+   "status": "resolved",
+   "first_pass_again": true,
+   "first_pass_failed": [
+    "correct_choice_teaches_lesson",
+    "lesson_concept_in_scene"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 1,
+   "trace_id": "ffc2bbf4102f4f27e9cfdee1999ad7cc",
+   "prompt_version": "p5",
+   "error": null
+  }
+ ],
+ "git_sha": "337fd4c"
+}

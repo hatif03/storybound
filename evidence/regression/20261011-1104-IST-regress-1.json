@@ -1,0 +1,265 @@
+{
+ "summary": {
+  "cases": 16,
+  "resolved": 12,
+  "unresolved": 3,
+  "refused": 0,
+  "error": 1,
+  "first_pass_again": 2
+ },
+ "results": [
+  {
+   "case_id": "rc-01",
+   "must_flip": "age_reading_level",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "lesson_specific_mutual_happiness_aftermath"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 2,
+   "trace_id": "e8a7ceeb2621480130783322e57c49d8",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-02",
+   "must_flip": "age_reading_level",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "correct_choice_teaches_lesson",
+    "lesson_concept_in_scene",
+    "lesson_specific_carrot_prop_honesty",
+    "story_safe_text"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 6,
+   "trace_id": "4fd436b1fcc137691d584d1429d10a2e",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-03",
+   "must_flip": "lesson_specific_confession_and_relief",
+   "status": "unresolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "age_reading_level",
+    "correct_choice_teaches_lesson",
+    "lesson_specific_emotional_relief_after_truth"
+   ],
+   "shipped": [
+    "age_reading_level",
+    "correct_choice_teaches_lesson",
+    "age_reading_level",
+    "age_reading_level",
+    "lesson_specific_emotional_relief_after_truth"
+   ],
+   "outcome": "shipped_with_notes",
+   "repairs": 10,
+   "trace_id": "27be0932e50af5fefac5c7d6fceb0375",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-04",
+   "must_flip": "lesson_specific_cheerful_whistling_trait",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "lesson_concept_in_scene",
+    "lesson_specific_mutual_joy_of_sharing"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 3,
+   "trace_id": "4c8020e217c8a8afc881fa4e5b73ebe6",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-05",
+   "must_flip": "lesson_concept_in_scene",
+   "status": "unresolved",
+   "first_pass_again": true,
+   "first_pass_failed": [
+    "age_reading_level",
+    "correct_choice_teaches_lesson",
+    "lesson_concept_in_scene",
+    "lesson_specific_honest_nautical_whistle",
+    "no_repeated_scenario"
+   ],
+   "shipped": [
+    "age_reading_level",
+    "age_reading_level"
+   ],
+   "outcome": "shipped_with_notes",
+   "repairs": 14,
+   "trace_id": "d0bb16b76ed0d55a65d1baade5eaadd3",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-06",
+   "must_flip": "story_safe_text",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 0,
+   "trace_id": "23136c87e7ab82e15504da13ba68320a",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-07",
+   "must_flip": "original_character_only",
+   "status": "resolved",
+   "first_pass_again": true,
+   "first_pass_failed": [
+    "original_character_only"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 1,
+   "trace_id": "1092b1bbc158b2901ee34dcebb5944a1",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-08",
+   "must_flip": "correct_choice_teaches_lesson",
+   "status": "error",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "error",
+   "repairs": null,
+   "trace_id": "eeb273a486021dbe5ce11590c0ba178e",
+   "prompt_version": "p5",
+   "error": "ClientError: 499 CANCELLED. {'error': {'code': 499, 'message': 'The operation was cancelled.', 'status': 'CANCELLED'}}"
+  },
+  {
+   "case_id": "rc-09",
+   "must_flip": "story_safe_text",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 0,
+   "trace_id": "87f476f4053898743493786b60dfbf49",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-10",
+   "must_flip": "original_character_only",
+   "status": "unresolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "lesson_concept_in_scene",
+    "lesson_specific_nautical_visual_continuity"
+   ],
+   "shipped": [
+    "lesson_specific_nautical_visual_continuity"
+   ],
+   "outcome": "shipped_with_notes",
+   "repairs": 4,
+   "trace_id": "df9e0ff870337f892a52cac81834d6ac",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-11",
+   "must_flip": "no_drawing_text_obedience",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 0,
+   "trace_id": "9369959b3382bf79087c9c4764c85908",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-12",
+   "must_flip": "no_repeated_scenario",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "lesson_concept_in_scene"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 1,
+   "trace_id": "1101743a85985962e1c8f0f8ec6544c6",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-13",
+   "must_flip": "lesson_concept_in_scene",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 1,
+   "trace_id": "c5d60b676f0b3c59ed7c2e071ae5ef8c",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-14",
+   "must_flip": "quiz_answerable",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "age_reading_level",
+    "lesson_specific_restored_trust"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 3,
+   "trace_id": "1285664ac81ac8e361f1ecb428c15b9b",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-15",
+   "must_flip": "quiz_reading_level",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 0,
+   "trace_id": "e2fe80956c4f6e4f613cdfd62d5fcd74",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-16",
+   "must_flip": "quiz_reading_level",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "correct_choice_teaches_lesson",
+    "quiz_answerable"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 2,
+   "trace_id": "303edd3d95e5fafbc7f47d12cc6d4b10",
+   "prompt_version": "p5",
+   "error": null
+  }
+ ],
+ "git_sha": "337fd4c"
+}

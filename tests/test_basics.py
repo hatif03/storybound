@@ -83,3 +83,9 @@ def test_retry_waits_longer_and_tries_once_more_on_a_quota_error(monkeypatch):
     with pytest.raises(ClientError):
         with_retry(flaky, attempts=3, base=1.0)
     assert len(calls) == 3 and sleeps[0] < 2.0  # other errors are unchanged
+
+
+def test_a_cancelled_vertex_call_is_retried():
+    from storybound.clients import gemini
+
+    assert 499 in gemini._RETRYABLE  # "499 CANCELLED" ended a regression job under load (HR-010)

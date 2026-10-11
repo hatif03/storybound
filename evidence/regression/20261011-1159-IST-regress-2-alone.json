@@ -1,0 +1,59 @@
+{
+ "summary": {
+  "cases": 3,
+  "resolved": 3,
+  "unresolved": 0,
+  "refused": 0,
+  "error": 0,
+  "first_pass_again": 0
+ },
+ "results": [
+  {
+   "case_id": "rc-03",
+   "must_flip": "lesson_specific_confession_and_relief",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 0,
+   "trace_id": "c57b8710a8d941aa4cc8c96ea59bc55c",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-05",
+   "must_flip": "lesson_concept_in_scene",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "lesson_specific_shipboard_honesty_repair"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 2,
+   "trace_id": "abd769d6f69b883e68e7179ab63085ae",
+   "prompt_version": "p5",
+   "error": null
+  },
+  {
+   "case_id": "rc-10",
+   "must_flip": "original_character_only",
+   "status": "resolved",
+   "first_pass_again": false,
+   "first_pass_failed": [
+    "age_reading_level",
+    "lesson_concept_in_scene",
+    "lesson_specific_emotional_relief_of_honesty",
+    "quiz_answerable"
+   ],
+   "shipped": [],
+   "outcome": "shipped",
+   "repairs": 7,
+   "trace_id": "8e2a6a444965c57ea8ca13760da3189e",
+   "prompt_version": "p5",
+   "error": null
+  }
+ ],
+ "git_sha": "733f84d"
+}

@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4MR76PP5Y46BG78C4XRY0F1",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "src/storybound/pipeline.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1492,
+    "cache_creation_tokens": 2383747,
+    "cache_read_tokens": 318527169,
+    "output_tokens": 659929,
+    "api_call_count": 725,
+    "subagent_tokens": {
+      "input_tokens": 74,
+      "cache_creation_tokens": 211813,
+      "cache_read_tokens": 2690677,
+      "output_tokens": 10431,
+      "api_call_count": 37
+    }
+  }
+}

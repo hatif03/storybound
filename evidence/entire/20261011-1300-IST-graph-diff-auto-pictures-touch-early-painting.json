@@ -1,0 +1,2969 @@
+{
+  "base": "3eeb950",
+  "head": "733f84d",
+  "files": [
+    {
+      "path": "evidence/hardening/HR-010.md",
+      "status": "A",
+      "language": "Markdown",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "HR-010:-pictures-arrived-after-the-whole-story-so-a-child-read-every-page-without-them",
+          "new_signature": "markdown heading HR-010: pictures arrived after the whole story, so a child read every page without them",
+          "after_start_line": 1,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Trigger",
+          "new_signature": "markdown heading Trigger",
+          "after_start_line": 5,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Diagnosis",
+          "new_signature": "markdown heading Diagnosis",
+          "after_start_line": 9,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Change",
+          "new_signature": "markdown heading Change",
+          "after_start_line": 13,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Before-and-after",
+          "new_signature": "markdown heading Before and after",
+          "after_start_line": 17,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "Regression-fixture",
+          "new_signature": "markdown heading Regression fixture",
+          "after_start_line": 30,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "evidence/runs/20261011-1110-IST-auto-pictures-bunny-sharing.json",
+      "status": "A",
+      "language": "JSON",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "receipt",
+          "new_signature": "json key receipt",
+          "after_start_line": 2,
+          "dependents_count": 47
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "story_id",
+          "new_signature": "json key story_id",
+          "after_start_line": 3,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "oath_hash",
+          "new_signature": "json key oath_hash",
+          "after_start_line": 4,
+          "dependents_count": 22
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "arm",
+          "new_signature": "json key arm",
+          "after_start_line": 5,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "plain",
+          "new_signature": "json key plain",
+          "after_start_line": 6,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "counts",
+          "new_signature": "json key counts",
+          "after_start_line": 7,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "commitments",
+          "new_signature": "json key commitments",
+          "after_start_line": 8,
+          "dependents_count": 55
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "checked",
+          "new_signature": "json key checked",
+          "after_start_line": 9,
+          "dependents_count": 33
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "checks",
+          "new_signature": "json key checks",
+          "after_start_line": 10,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "violations_found",
+          "new_signature": "json key violations_found",
+          "after_start_line": 11,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "repairs",
+          "new_signature": "json key repairs",
+          "after_start_line": 12,
+          "dependents_count": 28
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "kept",
+          "new_signature": "json key kept",
+          "after_start_line": 13,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "shipped_violations",
+          "new_signature": "json key shipped_violations",
+          "after_start_line": 14,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_enabled",
+          "new_signature": "json key judge_enabled",
+          "after_start_line": 15,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "broken",
+          "new_signature": "json key broken",
+          "after_start_line": 17,
+          "dependents_count": 38
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "promises",
+          "new_signature": "json key promises",
+          "after_start_line": 18,
+          "dependents_count": 57
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "id",
+          "new_signature": "json key id",
+          "after_start_line": 20,
+          "dependents_count": 494
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "title",
+          "new_signature": "json key title",
+          "after_start_line": 21,
+          "dependents_count": 76
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scope",
+          "new_signature": "json key scope",
+          "after_start_line": 23,
+          "dependents_count": 343
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "core",
+          "new_signature": "json key core",
+          "after_start_line": 24,
+          "dependents_count": 315
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "status",
+          "new_signature": "json key status",
+          "after_start_line": 25,
+          "dependents_count": 145
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "pages",
+          "new_signature": "json key pages",
+          "after_start_line": 244,
+          "dependents_count": 114
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "index",
+          "new_signature": "json key index",
+          "after_start_line": 246,
+          "dependents_count": 436
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempts",
+          "new_signature": "json key attempts",
+          "after_start_line": 247,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "final",
+          "new_signature": "json key final",
+          "after_start_line": 248,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "coverage",
+          "new_signature": "json key coverage",
+          "after_start_line": 286,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "pct",
+          "new_signature": "json key pct",
+          "after_start_line": 287,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "uncovered",
+          "new_signature": "json key uncovered",
+          "after_start_line": 288,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "degradations",
+          "new_signature": "json key degradations",
+          "after_start_line": 290,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "what",
+          "new_signature": "json key what",
+          "after_start_line": 292,
+          "dependents_count": 54
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "why",
+          "new_signature": "json key why",
+          "after_start_line": 293,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "fallback",
+          "new_signature": "json key fallback",
+          "after_start_line": 294,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "picture_plan",
+          "new_signature": "json key picture_plan",
+          "after_start_line": 316,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "painted",
+          "new_signature": "json key painted",
+          "after_start_line": 317,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "importance",
+          "new_signature": "json key importance",
+          "after_start_line": 323,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "budget_usd",
+          "new_signature": "json key budget_usd",
+          "after_start_line": 333,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "ignored_drawing_text",
+          "new_signature": "json key ignored_drawing_text",
+          "after_start_line": 335,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "budget",
+          "new_signature": "json key budget",
+          "after_start_line": 336,
+          "dependents_count": 31
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "usd_estimate",
+          "new_signature": "json key usd_estimate",
+          "after_start_line": 337,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "estimate",
+          "new_signature": "json key estimate",
+          "after_start_line": 338,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "seconds",
+          "new_signature": "json key seconds",
+          "after_start_line": 339,
+          "dependents_count": 42
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tokens_in",
+          "new_signature": "json key tokens_in",
+          "after_start_line": 340,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tokens_out",
+          "new_signature": "json key tokens_out",
+          "after_start_line": 341,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "images",
+          "new_signature": "json key images",
+          "after_start_line": 342,
+          "dependents_count": 30
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "calls",
+          "new_signature": "json key calls",
+          "after_start_line": 343,
+          "dependents_count": 46
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "by_model",
+          "new_signature": "json key by_model",
+          "after_start_line": 344,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-3.7-flash",
+          "new_signature": "json key gemini-3.7-flash",
+          "after_start_line": 345,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "in",
+          "new_signature": "json key in",
+          "after_start_line": 346,
+          "dependents_count": 606
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "out",
+          "new_signature": "json key out",
+          "after_start_line": 347,
+          "dependents_count": 354
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-3.1-flash-image",
+          "new_signature": "json key gemini-3.1-flash-image",
+          "after_start_line": 357,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-2.5-flash-tts",
+          "new_signature": "json key gemini-2.5-flash-tts",
+          "after_start_line": 363,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "first_page_s",
+          "new_signature": "json key first_page_s",
+          "after_start_line": 370,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "prompt_version",
+          "new_signature": "json key prompt_version",
+          "after_start_line": 372,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "models",
+          "new_signature": "json key models",
+          "after_start_line": 373,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "writer",
+          "new_signature": "json key writer",
+          "after_start_line": 374,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge",
+          "new_signature": "json key judge",
+          "after_start_line": 375,
+          "dependents_count": 64
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "vision",
+          "new_signature": "json key vision",
+          "after_start_line": 376,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "trace_id",
+          "new_signature": "json key trace_id",
+          "after_start_line": 378,
+          "dependents_count": 50
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "generated_at",
+          "new_signature": "json key generated_at",
+          "after_start_line": 379,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "events",
+          "new_signature": "json key events",
+          "after_start_line": 381,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "type",
+          "new_signature": "json key type",
+          "after_start_line": 384,
+          "dependents_count": 146
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "t",
+          "new_signature": "json key t",
+          "after_start_line": 385,
+          "dependents_count": 352
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "data",
+          "new_signature": "json key data",
+          "after_start_line": 386,
+          "dependents_count": 404
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "lesson_id",
+          "new_signature": "json key lesson_id",
+          "after_start_line": 389,
+          "dependents_count": 32
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "age",
+          "new_signature": "json key age",
+          "after_start_line": 390,
+          "dependents_count": 68
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "seed",
+          "new_signature": "json key seed",
+          "after_start_line": 391,
+          "dependents_count": 44
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "input_hash",
+          "new_signature": "json key input_hash",
+          "after_start_line": 392,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tier",
+          "new_signature": "json key tier",
+          "after_start_line": 400,
+          "dependents_count": 25
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "action",
+          "new_signature": "json key action",
+          "after_start_line": 401,
+          "dependents_count": 29
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "ignored_text",
+          "new_signature": "json key ignored_text",
+          "after_start_line": 402,
+          "dependents_count": 25
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "reason_code",
+          "new_signature": "json key reason_code",
+          "after_start_line": 403,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "commitment",
+          "new_signature": "json key commitment",
+          "after_start_line": 411,
+          "dependents_count": 68
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verdict_by",
+          "new_signature": "json key verdict_by",
+          "after_start_line": 414,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "det_status",
+          "new_signature": "json key det_status",
+          "after_start_line": 415,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_status",
+          "new_signature": "json key judge_status",
+          "after_start_line": 416,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sampled",
+          "new_signature": "json key sampled",
+          "after_start_line": 417,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sample_seed",
+          "new_signature": "json key sample_seed",
+          "after_start_line": 418,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_model",
+          "new_signature": "json key judge_model",
+          "after_start_line": 419,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "score",
+          "new_signature": "json key score",
+          "after_start_line": 420,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "expected",
+          "new_signature": "json key expected",
+          "after_start_line": 421,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "actual",
+          "new_signature": "json key actual",
+          "after_start_line": 422,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence",
+          "new_signature": "json key evidence",
+          "after_start_line": 423,
+          "dependents_count": 49
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scene",
+          "new_signature": "json key scene",
+          "after_start_line": 424,
+          "dependents_count": 88
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "quote",
+          "new_signature": "json key quote",
+          "after_start_line": 425,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "matched",
+          "new_signature": "json key matched",
+          "after_start_line": 426,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "cover",
+          "new_signature": "json key cover",
+          "after_start_line": 428,
+          "dependents_count": 33
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempt",
+          "new_signature": "json key attempt",
+          "after_start_line": 429,
+          "dependents_count": 76
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "reasoning",
+          "new_signature": "json key reasoning",
+          "after_start_line": 430,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "card",
+          "new_signature": "json key card",
+          "after_start_line": 467,
+          "dependents_count": 93
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "name",
+          "new_signature": "json key name",
+          "after_start_line": 468,
+          "dependents_count": 428
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "species",
+          "new_signature": "json key species",
+          "after_start_line": 469,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "traits",
+          "new_signature": "json key traits",
+          "after_start_line": 470,
+          "dependents_count": 28
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "palette",
+          "new_signature": "json key palette",
+          "after_start_line": 477,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "one_line",
+          "new_signature": "json key one_line",
+          "after_start_line": 483,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "added",
+          "new_signature": "json key added",
+          "after_start_line": 493,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "rejected",
+          "new_signature": "json key rejected",
+          "after_start_line": 497,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verifier",
+          "new_signature": "json key verifier",
+          "after_start_line": 505,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "beats",
+          "new_signature": "json key beats",
+          "after_start_line": 731,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "setting",
+          "new_signature": "json key setting",
+          "after_start_line": 732,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "failed",
+          "new_signature": "json key failed",
+          "after_start_line": 1029,
+          "dependents_count": 58
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "because",
+          "new_signature": "json key because",
+          "after_start_line": 1032,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempts_used",
+          "new_signature": "json key attempts_used",
+          "after_start_line": 1594,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "page",
+          "new_signature": "json key page",
+          "after_start_line": 1595,
+          "dependents_count": 142
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scenario",
+          "new_signature": "json key scenario",
+          "after_start_line": 1597,
+          "dependents_count": 64
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "question",
+          "new_signature": "json key question",
+          "after_start_line": 1598,
+          "dependents_count": 61
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "choices",
+          "new_signature": "json key choices",
+          "after_start_line": 1599,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "text",
+          "new_signature": "json key text",
+          "after_start_line": 1602,
+          "dependents_count": 186
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "feedback",
+          "new_signature": "json key feedback",
+          "after_start_line": 1603,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "is_correct",
+          "new_signature": "json key is_correct",
+          "after_start_line": 1604,
+          "dependents_count": 45
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "image_prompt",
+          "new_signature": "json key image_prompt",
+          "after_start_line": 1613,
+          "dependents_count": 35
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "narration_text",
+          "new_signature": "json key narration_text",
+          "after_start_line": 1614,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "items",
+          "new_signature": "json key items",
+          "after_start_line": 5030,
+          "dependents_count": 93
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "kind",
+          "new_signature": "json key kind",
+          "after_start_line": 5033,
+          "dependents_count": 89
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "options",
+          "new_signature": "json key options",
+          "after_start_line": 5035,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence_page",
+          "new_signature": "json key evidence_page",
+          "after_start_line": 5052,
+          "dependents_count": 14
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence_quote",
+          "new_signature": "json key evidence_quote",
+          "after_start_line": 5053,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "explain",
+          "new_signature": "json key explain",
+          "after_start_line": 5054,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "talk_about",
+          "new_signature": "json key talk_about",
+          "after_start_line": 5132,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "url",
+          "new_signature": "json key url",
+          "after_start_line": 5405,
+          "dependents_count": 43
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verdict",
+          "new_signature": "json key verdict",
+          "after_start_line": 5406,
+          "dependents_count": 40
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "outcome",
+          "new_signature": "json key outcome",
+          "after_start_line": 6384,
+          "dependents_count": 42
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "shipped",
+          "new_signature": "json key shipped",
+          "after_start_line": 6389,
+          "dependents_count": 49
+        }
+      ]
+    },
+    {
+      "path": "evidence/runs/20261011-1130-IST-auto-pictures-early-bunny-sharing.json",
+      "status": "A",
+      "language": "JSON",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "receipt",
+          "new_signature": "json key receipt",
+          "after_start_line": 2,
+          "dependents_count": 47
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "story_id",
+          "new_signature": "json key story_id",
+          "after_start_line": 3,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "oath_hash",
+          "new_signature": "json key oath_hash",
+          "after_start_line": 4,
+          "dependents_count": 22
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "arm",
+          "new_signature": "json key arm",
+          "after_start_line": 5,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "plain",
+          "new_signature": "json key plain",
+          "after_start_line": 6,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "counts",
+          "new_signature": "json key counts",
+          "after_start_line": 7,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "commitments",
+          "new_signature": "json key commitments",
+          "after_start_line": 8,
+          "dependents_count": 55
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "checked",
+          "new_signature": "json key checked",
+          "after_start_line": 9,
+          "dependents_count": 33
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "checks",
+          "new_signature": "json key checks",
+          "after_start_line": 10,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "violations_found",
+          "new_signature": "json key violations_found",
+          "after_start_line": 11,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "repairs",
+          "new_signature": "json key repairs",
+          "after_start_line": 12,
+          "dependents_count": 28
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "kept",
+          "new_signature": "json key kept",
+          "after_start_line": 13,
+          "dependents_count": 53
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "shipped_violations",
+          "new_signature": "json key shipped_violations",
+          "after_start_line": 14,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_enabled",
+          "new_signature": "json key judge_enabled",
+          "after_start_line": 15,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "broken",
+          "new_signature": "json key broken",
+          "after_start_line": 17,
+          "dependents_count": 38
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "promises",
+          "new_signature": "json key promises",
+          "after_start_line": 18,
+          "dependents_count": 57
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "id",
+          "new_signature": "json key id",
+          "after_start_line": 20,
+          "dependents_count": 494
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "title",
+          "new_signature": "json key title",
+          "after_start_line": 21,
+          "dependents_count": 76
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scope",
+          "new_signature": "json key scope",
+          "after_start_line": 23,
+          "dependents_count": 343
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "core",
+          "new_signature": "json key core",
+          "after_start_line": 24,
+          "dependents_count": 315
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "status",
+          "new_signature": "json key status",
+          "after_start_line": 25,
+          "dependents_count": 145
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "pages",
+          "new_signature": "json key pages",
+          "after_start_line": 244,
+          "dependents_count": 114
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "index",
+          "new_signature": "json key index",
+          "after_start_line": 246,
+          "dependents_count": 436
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempts",
+          "new_signature": "json key attempts",
+          "after_start_line": 247,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "final",
+          "new_signature": "json key final",
+          "after_start_line": 248,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "coverage",
+          "new_signature": "json key coverage",
+          "after_start_line": 286,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "pct",
+          "new_signature": "json key pct",
+          "after_start_line": 287,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "uncovered",
+          "new_signature": "json key uncovered",
+          "after_start_line": 288,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "degradations",
+          "new_signature": "json key degradations",
+          "after_start_line": 290,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "what",
+          "new_signature": "json key what",
+          "after_start_line": 292,
+          "dependents_count": 54
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "why",
+          "new_signature": "json key why",
+          "after_start_line": 293,
+          "dependents_count": 20
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "fallback",
+          "new_signature": "json key fallback",
+          "after_start_line": 294,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "picture_plan",
+          "new_signature": "json key picture_plan",
+          "after_start_line": 316,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "painted",
+          "new_signature": "json key painted",
+          "after_start_line": 317,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "importance",
+          "new_signature": "json key importance",
+          "after_start_line": 323,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "budget_usd",
+          "new_signature": "json key budget_usd",
+          "after_start_line": 333,
+          "dependents_count": 11
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "ignored_drawing_text",
+          "new_signature": "json key ignored_drawing_text",
+          "after_start_line": 335,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "budget",
+          "new_signature": "json key budget",
+          "after_start_line": 336,
+          "dependents_count": 31
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "usd_estimate",
+          "new_signature": "json key usd_estimate",
+          "after_start_line": 337,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "estimate",
+          "new_signature": "json key estimate",
+          "after_start_line": 338,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "seconds",
+          "new_signature": "json key seconds",
+          "after_start_line": 339,
+          "dependents_count": 42
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tokens_in",
+          "new_signature": "json key tokens_in",
+          "after_start_line": 340,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tokens_out",
+          "new_signature": "json key tokens_out",
+          "after_start_line": 341,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "images",
+          "new_signature": "json key images",
+          "after_start_line": 342,
+          "dependents_count": 30
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "calls",
+          "new_signature": "json key calls",
+          "after_start_line": 343,
+          "dependents_count": 46
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "by_model",
+          "new_signature": "json key by_model",
+          "after_start_line": 344,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-3.7-flash",
+          "new_signature": "json key gemini-3.7-flash",
+          "after_start_line": 345,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "in",
+          "new_signature": "json key in",
+          "after_start_line": 346,
+          "dependents_count": 606
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "out",
+          "new_signature": "json key out",
+          "after_start_line": 347,
+          "dependents_count": 354
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-3.1-flash-image",
+          "new_signature": "json key gemini-3.1-flash-image",
+          "after_start_line": 357,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "gemini-2.5-flash-tts",
+          "new_signature": "json key gemini-2.5-flash-tts",
+          "after_start_line": 363,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "first_page_s",
+          "new_signature": "json key first_page_s",
+          "after_start_line": 370,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "prompt_version",
+          "new_signature": "json key prompt_version",
+          "after_start_line": 372,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "models",
+          "new_signature": "json key models",
+          "after_start_line": 373,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "writer",
+          "new_signature": "json key writer",
+          "after_start_line": 374,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge",
+          "new_signature": "json key judge",
+          "after_start_line": 375,
+          "dependents_count": 64
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "vision",
+          "new_signature": "json key vision",
+          "after_start_line": 376,
+          "dependents_count": 17
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "trace_id",
+          "new_signature": "json key trace_id",
+          "after_start_line": 378,
+          "dependents_count": 50
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "generated_at",
+          "new_signature": "json key generated_at",
+          "after_start_line": 379,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "events",
+          "new_signature": "json key events",
+          "after_start_line": 381,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "type",
+          "new_signature": "json key type",
+          "after_start_line": 384,
+          "dependents_count": 146
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "t",
+          "new_signature": "json key t",
+          "after_start_line": 385,
+          "dependents_count": 352
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "data",
+          "new_signature": "json key data",
+          "after_start_line": 386,
+          "dependents_count": 404
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "lesson_id",
+          "new_signature": "json key lesson_id",
+          "after_start_line": 389,
+          "dependents_count": 32
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "age",
+          "new_signature": "json key age",
+          "after_start_line": 390,
+          "dependents_count": 68
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "seed",
+          "new_signature": "json key seed",
+          "after_start_line": 391,
+          "dependents_count": 44
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "input_hash",
+          "new_signature": "json key input_hash",
+          "after_start_line": 392,
+          "dependents_count": 8
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "tier",
+          "new_signature": "json key tier",
+          "after_start_line": 400,
+          "dependents_count": 25
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "action",
+          "new_signature": "json key action",
+          "after_start_line": 401,
+          "dependents_count": 29
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "ignored_text",
+          "new_signature": "json key ignored_text",
+          "after_start_line": 402,
+          "dependents_count": 25
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "reason_code",
+          "new_signature": "json key reason_code",
+          "after_start_line": 403,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "commitment",
+          "new_signature": "json key commitment",
+          "after_start_line": 411,
+          "dependents_count": 68
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verdict_by",
+          "new_signature": "json key verdict_by",
+          "after_start_line": 414,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "det_status",
+          "new_signature": "json key det_status",
+          "after_start_line": 415,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_status",
+          "new_signature": "json key judge_status",
+          "after_start_line": 416,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sampled",
+          "new_signature": "json key sampled",
+          "after_start_line": 417,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "sample_seed",
+          "new_signature": "json key sample_seed",
+          "after_start_line": 418,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "judge_model",
+          "new_signature": "json key judge_model",
+          "after_start_line": 419,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "score",
+          "new_signature": "json key score",
+          "after_start_line": 420,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "expected",
+          "new_signature": "json key expected",
+          "after_start_line": 421,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "actual",
+          "new_signature": "json key actual",
+          "after_start_line": 422,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence",
+          "new_signature": "json key evidence",
+          "after_start_line": 423,
+          "dependents_count": 49
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scene",
+          "new_signature": "json key scene",
+          "after_start_line": 424,
+          "dependents_count": 88
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "quote",
+          "new_signature": "json key quote",
+          "after_start_line": 425,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "matched",
+          "new_signature": "json key matched",
+          "after_start_line": 426,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "cover",
+          "new_signature": "json key cover",
+          "after_start_line": 428,
+          "dependents_count": 33
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempt",
+          "new_signature": "json key attempt",
+          "after_start_line": 429,
+          "dependents_count": 76
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "reasoning",
+          "new_signature": "json key reasoning",
+          "after_start_line": 430,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "card",
+          "new_signature": "json key card",
+          "after_start_line": 467,
+          "dependents_count": 93
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "name",
+          "new_signature": "json key name",
+          "after_start_line": 468,
+          "dependents_count": 428
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "species",
+          "new_signature": "json key species",
+          "after_start_line": 469,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "traits",
+          "new_signature": "json key traits",
+          "after_start_line": 470,
+          "dependents_count": 28
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "palette",
+          "new_signature": "json key palette",
+          "after_start_line": 477,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "one_line",
+          "new_signature": "json key one_line",
+          "after_start_line": 483,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "added",
+          "new_signature": "json key added",
+          "after_start_line": 493,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "rejected",
+          "new_signature": "json key rejected",
+          "after_start_line": 497,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verifier",
+          "new_signature": "json key verifier",
+          "after_start_line": 505,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "beats",
+          "new_signature": "json key beats",
+          "after_start_line": 731,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "setting",
+          "new_signature": "json key setting",
+          "after_start_line": 732,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "failed",
+          "new_signature": "json key failed",
+          "after_start_line": 1079,
+          "dependents_count": 58
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "because",
+          "new_signature": "json key because",
+          "after_start_line": 1082,
+          "dependents_count": 27
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "attempts_used",
+          "new_signature": "json key attempts_used",
+          "after_start_line": 1370,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "page",
+          "new_signature": "json key page",
+          "after_start_line": 1371,
+          "dependents_count": 142
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "scenario",
+          "new_signature": "json key scenario",
+          "after_start_line": 1373,
+          "dependents_count": 64
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "question",
+          "new_signature": "json key question",
+          "after_start_line": 1374,
+          "dependents_count": 61
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "choices",
+          "new_signature": "json key choices",
+          "after_start_line": 1375,
+          "dependents_count": 48
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "text",
+          "new_signature": "json key text",
+          "after_start_line": 1378,
+          "dependents_count": 186
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "feedback",
+          "new_signature": "json key feedback",
+          "after_start_line": 1379,
+          "dependents_count": 34
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "is_correct",
+          "new_signature": "json key is_correct",
+          "after_start_line": 1380,
+          "dependents_count": 45
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "image_prompt",
+          "new_signature": "json key image_prompt",
+          "after_start_line": 1389,
+          "dependents_count": 35
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "narration_text",
+          "new_signature": "json key narration_text",
+          "after_start_line": 1390,
+          "dependents_count": 24
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "url",
+          "new_signature": "json key url",
+          "after_start_line": 2131,
+          "dependents_count": 43
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "verdict",
+          "new_signature": "json key verdict",
+          "after_start_line": 2132,
+          "dependents_count": 40
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "items",
+          "new_signature": "json key items",
+          "after_start_line": 5001,
+          "dependents_count": 93
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "kind",
+          "new_signature": "json key kind",
+          "after_start_line": 5004,
+          "dependents_count": 89
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "options",
+          "new_signature": "json key options",
+          "after_start_line": 5006,
+          "dependents_count": 16
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence_page",
+          "new_signature": "json key evidence_page",
+          "after_start_line": 5023,
+          "dependents_count": 14
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "evidence_quote",
+          "new_signature": "json key evidence_quote",
+          "after_start_line": 5024,
+          "dependents_count": 12
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "explain",
+          "new_signature": "json key explain",
+          "after_start_line": 5025,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "talk_about",
+          "new_signature": "json key talk_about",
+          "after_start_line": 5103,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "outcome",
+          "new_signature": "json key outcome",
+          "after_start_line": 5799,
+          "dependents_count": 42
+        },
+        {
+          "type": "added",
+          "kind": "section",
+          "name": "shipped",
+          "new_signature": "json key shipped",
+          "after_start_line": 5804,
+          "dependents_count": 49
+        }
+      ]
+    },
+    {
+      "path": "scripts/run_story.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "main",
+          "before_start_line": 39,
+          "after_start_line": 39,
+          "dependents_count": 32
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/agents/planner.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "plan",
+          "before_start_line": 14,
+          "after_start_line": 14,
+          "dependents_count": 39
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "importance_of",
+          "new_signature": "def importance_of(raw, index: int, n: int = 8) -\u003e int",
+          "after_start_line": 36,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/api.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "signature_changed",
+          "kind": "function",
+          "name": "create_story",
+          "old_signature": "async def create_story( lesson_id: str = Form(...), age: int = Form(6), hero_name: str | None = Form(None), arm: str = Form(\"B1\"), seed: str | None = Form(None), fixture_id: str | None = Form(None), promise: list[str] = Form(default=[]), pictures: str = Form(\"full\"), drawing: UploadFile | None = File(None), )",
+          "new_signature": "async def create_story( lesson_id: str = Form(...), age: int = Form(6), hero_name: str | None = Form(None), arm: str = Form(\"B1\"), seed: str | None = Form(None), fixture_id: str | None = Form(None), promise: list[str] = Form(default=[]), pictures: str = Form(\"auto\"), drawing: UploadFile | None = File(None), )",
+          "before_start_line": 131,
+          "after_start_line": 131,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/config.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Budget",
+          "before_start_line": 45,
+          "after_start_line": 45,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "RunConfig",
+          "before_start_line": 48,
+          "after_start_line": 48,
+          "dependents_count": 9
+        },
+        {
+          "type": "body_changed",
+          "kind": "class",
+          "name": "Run",
+          "before_start_line": 87,
+          "after_start_line": 87,
+          "dependents_count": 19
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "Run.painting_should_stop",
+          "new_signature": "def painting_should_stop(self) -\u003e str",
+          "after_start_line": 138,
+          "dependents_count": 4
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "build_graph",
+          "before_start_line": 147,
+          "after_start_line": 162,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_oath",
+          "before_start_line": 216,
+          "after_start_line": 231,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_settle",
+          "before_start_line": 302,
+          "after_start_line": 321,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "announce_paint_plan",
+          "new_signature": "def announce_paint_plan(imp: dict[int, int], order: list[int], indices: list[int]) -\u003e None",
+          "after_start_line": 489,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "start_painting",
+          "new_signature": "def start_painting(p: Page, card: CharacterCard) -\u003e None",
+          "after_start_line": 501,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "one_image",
+          "before_start_line": 466,
+          "after_start_line": 508,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "n_media",
+          "before_start_line": 547,
+          "after_start_line": 596,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "make_receipt",
+          "before_start_line": 620,
+          "after_start_line": 674,
+          "dependents_count": 2
+        },
+        {
+          "type": "signature_changed",
+          "kind": "function",
+          "name": "picture_pages",
+          "old_signature": "def picture_pages(policy: str, indices: list[int]) -\u003e set[int]",
+          "new_signature": "def picture_pages(policy: str, indices: list[int], importance: dict[int, int] | None = None, budget_usd: float = 0.0, each_usd: float = 0.04) -\u003e set[int]",
+          "before_start_line": 737,
+          "after_start_line": 792,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "picture_order",
+          "new_signature": "def picture_order(policy: str, indices: list[int], importance: dict[int, int] | None = None, budget_usd: float = 0.0, each_usd: float = 0.04) -\u003e list[int]",
+          "after_start_line": 799,
+          "dependents_count": 5
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "ledger_row",
+          "before_start_line": 762,
+          "after_start_line": 829,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "src/storybound/prompts.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "module",
+          "name": "src/storybound/prompts.py",
+          "before_start_line": 1,
+          "after_start_line": 1,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "status": "M",
+      "language": "Python",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_auto_picture_policy_spends_its_budget_on_the_pages_that_matter",
+          "new_signature": "def test_auto_picture_policy_spends_its_budget_on_the_pages_that_matter()",
+          "after_start_line": 311,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_planner_importance_falls_back_to_first_and_last_pages",
+          "new_signature": "def test_planner_importance_falls_back_to_first_and_last_pages()",
+          "after_start_line": 321,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_auto_policy_stops_painting_after_two_failures_in_a_row",
+          "new_signature": "def test_auto_policy_stops_painting_after_two_failures_in_a_row(drawing)",
+          "after_start_line": 327,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "test_the_agent_paints_the_chosen_pages_while_the_child_is_still_reading",
+          "new_signature": "def test_the_agent_paints_the_chosen_pages_while_the_child_is_still_reading(monkeypatch, drawing)",
+          "after_start_line": 336,
+          "dependents_count": 0
+        }
+      ]
+    },
+    {
+      "path": "web/src/App.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "App",
+          "before_start_line": 25,
+          "after_start_line": 30,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "go",
+          "before_start_line": 53,
+          "after_start_line": 85,
+          "dependents_count": 27
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "begin",
+          "before_start_line": 69,
+          "after_start_line": 101,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "forget",
+          "before_start_line": 110,
+          "after_start_line": 144,
+          "dependents_count": 2
+        }
+      ]
+    },
+    {
+      "path": "web/src/api/client.ts",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "storyExists",
+          "new_signature": "async function storyExists(storyId: string): Promise\u003c'yes' | 'no' | 'unknown'\u003e",
+          "after_start_line": 53,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "web/src/api/types.ts",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "signature_changed",
+          "kind": "type",
+          "name": "StoryEvent",
+          "old_signature": "type StoryEvent = | { id?: number; t: number; type: 'run.started'; data: { story_id: string; arm: string; lesson_id: string; age: number; seed: string; input_hash: string } } | { id?: number; t: number; type: 'safety.result'; data: { tier: 'none' | 'A' | 'B'; action: SafetyAction; ignored_text: string[]; reason_code: string } } | { id?: number; t: number; type: 'character.ready'; data: { card: CharacterCard } } | { id?: number; t: number; type: 'oath.ready'; data: { oath_hash: string; commitments: Commitment[]; added?: string[]; rejected?: string[] } } | { id?: number; t: number; type: 'plan.ready'; data: { beats: string[] } } | { id?: number; t: number; type: 'scene.started'; data: { index: number; attempt: number } } | { id?: number; t: number; type: 'verdict'; data: Verdict } // backend: index 0 means a run-level or whole-story repair, not a page | { id?: number; t: number; type: 'scene.repair'; data: { index: number; attempt: number; failed: string[]; because: string } } | { id?: number; t: number; type: 'scene.accepted'; data: { index: number; attempts_used: number; page: Page } } | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } } | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } } | { id?: number; t: number; type: 'quiz.ready'; data: Quiz } | { id?: number; t: number; type: 'degraded'; data: Degradation } | { id?: number; t: number; type: 'receipt'; data: Receipt } | { id?: number; t: number; type: 'run.finished'; data: { outcome: 'shipped' | 'shipped_with_notes'; story_id: string } } | { id?: number; t: number; type: 'run.refused'; data: { reason_code: string; message: string; trace_id: string } } | { id?: number; t: number; type: 'error'; data: { code: string; message: string } }",
+          "new_signature": "type StoryEvent = | { id?: number; t: number; type: 'run.started'; data: { story_id: string; arm: string; lesson_id: string; age: number; seed: string; input_hash: string } } | { id?: number; t: number; type: 'safety.result'; data: { tier: 'none' | 'A' | 'B'; action: SafetyAction; ignored_text: string[]; reason_code: string } } | { id?: number; t: number; type: 'character.ready'; data: { card: CharacterCard } } | { id?: number; t: number; type: 'oath.ready'; data: { oath_hash: string; commitments: Commitment[]; added?: string[]; rejected?: string[] } } | { id?: number; t: number; type: 'plan.ready'; data: { beats: string[] } } | { id?: number; t: number; type: 'scene.started'; data: { index: number; attempt: number } } | { id?: number; t: number; type: 'verdict'; data: Verdict } // backend: index 0 means a run-level or whole-story repair, not a page | { id?: number; t: number; type: 'scene.repair'; data: { index: number; attempt: number; failed: string[]; because: string } } | { id?: number; t: number; type: 'scene.accepted'; data: { index: number; attempts_used: number; page: Page } } | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } } | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } } | { id?: number; t: number; type: 'quiz.ready'; data: Quiz } | { id?: number; t: number; type: 'paint.plan'; data: { painted: number[]; importance: Record\u003cstring, number\u003e; budget_usd: number } } | { id?: number; t: number; type: 'degraded'; data: Degradation } | { id?: number; t: number; type: 'receipt'; data: Receipt } | { id?: number; t: number; type: 'run.finished'; data: { outcome: 'shipped' | 'shipped_with_notes'; story_id: string } } | { id?: number; t: number; type: 'run.refused'; data: { reason_code: string; message: string; trace_id: string } } | { id?: number; t: number; type: 'error'; data: { code: string; message: string } }",
+          "before_start_line": 55,
+          "after_start_line": 55,
+          "dependents_count": 14
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "StoryEvent.data",
+          "new_signature": "data : { painted: number[]; importance: Record\u003cstring, number\u003e; budget_usd: number }",
+          "after_start_line": 69,
+          "dependents_count": 404
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "StoryEvent.type",
+          "new_signature": "type : 'paint.plan'",
+          "after_start_line": 69,
+          "dependents_count": 146
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "StoryEvent.id",
+          "new_signature": "id : number",
+          "after_start_line": 74,
+          "dependents_count": 494
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "StoryEvent.t",
+          "new_signature": "t : number",
+          "after_start_line": 74,
+          "dependents_count": 352
+        },
+        {
+          "type": "signature_changed",
+          "kind": "variable",
+          "name": "EVENT_TYPES",
+          "old_signature": "EVENT_TYPES: EventType[] = [ 'run.started', 'safety.result', 'character.ready', 'oath.ready', 'plan.ready', 'scene.started', 'verdict', 'scene.repair', 'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error', ]",
+          "new_signature": "EVENT_TYPES: EventType[] = [ 'run.started', 'safety.result', 'character.ready', 'oath.ready', 'plan.ready', 'scene.started', 'verdict', 'scene.repair', 'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'paint.plan', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error', ]",
+          "before_start_line": 76,
+          "after_start_line": 77,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "interface",
+          "name": "StartRequest",
+          "before_start_line": 81,
+          "after_start_line": 82,
+          "dependents_count": 2
+        },
+        {
+          "type": "signature_changed",
+          "kind": "field",
+          "name": "StartRequest.pictures",
+          "old_signature": "pictures : 'full' | 'half' | 'none'",
+          "new_signature": "pictures : 'full' | 'half' | 'none' | 'auto'",
+          "before_start_line": 82,
+          "after_start_line": 83,
+          "dependents_count": 41
+        }
+      ]
+    },
+    {
+      "path": "web/src/components/ConfirmPictures.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "ConfirmPictures",
+          "before_start_line": 8,
+          "after_start_line": 10,
+          "dependents_count": 3
+        }
+      ]
+    },
+    {
+      "path": "web/src/components/DrawCanvas.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "clearDraft",
+          "new_signature": "function clearDraft(): void",
+          "after_start_line": 17,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "saveDraft",
+          "new_signature": "function saveDraft(strokes: Stroke[]): void",
+          "after_start_line": 18,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "loadDraft",
+          "new_signature": "function loadDraft(): Stroke[]",
+          "after_start_line": 25,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "interface",
+          "name": "DrawHandle",
+          "before_start_line": 10,
+          "after_start_line": 34,
+          "dependents_count": 2
+        },
+        {
+          "type": "body_changed",
+          "kind": "interface",
+          "name": "Props",
+          "before_start_line": 17,
+          "after_start_line": 42,
+          "dependents_count": 15
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "DrawCanvas",
+          "before_start_line": 49,
+          "after_start_line": 74,
+          "dependents_count": 1
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "undo",
+          "before_start_line": 69,
+          "after_start_line": 102,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "method",
+          "name": "clear",
+          "before_start_line": 70,
+          "after_start_line": 103,
+          "dependents_count": 296
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "restore",
+          "new_signature": "restore()",
+          "after_start_line": 104,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "down",
+          "before_start_line": 80,
+          "after_start_line": 114,
+          "dependents_count": 14
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "move",
+          "before_start_line": 93,
+          "after_start_line": 128,
+          "dependents_count": 3
+        },
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "up",
+          "before_start_line": 104,
+          "after_start_line": 140,
+          "dependents_count": 30
+        }
+      ]
+    },
+    {
+      "path": "web/src/components/HoldButton.tsx",
+      "status": "A",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "HOLD_MS",
+          "new_signature": "HOLD_MS = 900",
+          "after_start_line": 8,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.'data-testid'",
+          "new_signature": "'data-testid' : string",
+          "after_start_line": 10,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.children",
+          "new_signature": "children : ReactNode",
+          "after_start_line": 10,
+          "dependents_count": 43
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.className",
+          "new_signature": "className : string",
+          "after_start_line": 10,
+          "dependents_count": 44
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.icon",
+          "new_signature": "icon : string",
+          "after_start_line": 10,
+          "dependents_count": 36
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.ms",
+          "new_signature": "ms : number",
+          "after_start_line": 10,
+          "dependents_count": 296
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Props.variant",
+          "new_signature": "variant : 'sun' | 'sky' | 'leaf' | 'paper' | 'grape'",
+          "after_start_line": 10,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "interface",
+          "name": "Props",
+          "new_signature": "interface Props",
+          "after_start_line": 10,
+          "dependents_count": 15
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "HoldButton",
+          "new_signature": "function HoldButton({ onHold, ms = HOLD_MS, icon, variant = 'leaf', children, className = '', ...rest }: Props)",
+          "after_start_line": 12,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "cancel",
+          "new_signature": "cancel = () =\u003e",
+          "after_start_line": 18,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "tick",
+          "new_signature": "tick = () =\u003e",
+          "after_start_line": 21,
+          "dependents_count": 289
+        }
+      ]
+    },
+    {
+      "path": "web/src/lib/resume.ts",
+      "status": "A",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Active.lessonTitle",
+          "new_signature": "lessonTitle : string",
+          "after_start_line": 5,
+          "dependents_count": 9
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Active.storyId",
+          "new_signature": "storyId : string",
+          "after_start_line": 5,
+          "dependents_count": 21
+        },
+        {
+          "type": "added",
+          "kind": "interface",
+          "name": "Active",
+          "new_signature": "interface Active",
+          "after_start_line": 5,
+          "dependents_count": 4
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "saveActive",
+          "new_signature": "function saveActive(a: Active): void",
+          "after_start_line": 7,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "clearActive",
+          "new_signature": "function clearActive(): void",
+          "after_start_line": 8,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "loadActive",
+          "new_signature": "function loadActive(): Active | null",
+          "after_start_line": 9,
+          "dependents_count": 1
+        }
+      ]
+    },
+    {
+      "path": "web/src/lib/touchGuard.test.ts",
+      "status": "A",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "touch",
+          "new_signature": "touch = (w = 10, h = 10) =\u003e",
+          "after_start_line": 5,
+          "dependents_count": 9
+        }
+      ]
+    },
+    {
+      "path": "web/src/lib/touchGuard.ts",
+      "status": "A",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "PALM_PX",
+          "new_signature": "PALM_PX = 60",
+          "after_start_line": 14,
+          "dependents_count": 3
+        },
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "GHOST_MS",
+          "new_signature": "GHOST_MS = 350",
+          "after_start_line": 15,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "PALM_MS",
+          "new_signature": "PALM_MS = 800",
+          "after_start_line": 16,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "MAX_FINGERS",
+          "new_signature": "MAX_FINGERS = 3",
+          "after_start_line": 17,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Contact.height",
+          "new_signature": "height : number",
+          "after_start_line": 19,
+          "dependents_count": 350
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Contact.pointerType",
+          "new_signature": "pointerType : string",
+          "after_start_line": 19,
+          "dependents_count": 10
+        },
+        {
+          "type": "added",
+          "kind": "field",
+          "name": "Contact.width",
+          "new_signature": "width : number",
+          "after_start_line": 19,
+          "dependents_count": 379
+        },
+        {
+          "type": "added",
+          "kind": "interface",
+          "name": "Contact",
+          "new_signature": "interface Contact",
+          "after_start_line": 19,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "isPalm",
+          "new_signature": "function isPalm(c: Contact): boolean",
+          "after_start_line": 21,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "type",
+          "name": "Block",
+          "new_signature": "type Block = '' | 'ghost' | 'palm' | 'hand'",
+          "after_start_line": 25,
+          "dependents_count": 6
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "createGuard",
+          "new_signature": "function createGuard(now: () =\u003e number = () =\u003e Date.now())",
+          "after_start_line": 27,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "lock",
+          "new_signature": "lock(ms = GHOST_MS)",
+          "after_start_line": 34,
+          "dependents_count": 13
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "pointerDown",
+          "new_signature": "pointerDown(id: number, c: Contact)",
+          "after_start_line": 35,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "pointerUp",
+          "new_signature": "pointerUp(id: number)",
+          "after_start_line": 39,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "method",
+          "name": "blockClick",
+          "new_signature": "blockClick(detail: number): Block",
+          "after_start_line": 41,
+          "dependents_count": 2
+        },
+        {
+          "type": "added",
+          "kind": "variable",
+          "name": "guard",
+          "new_signature": "guard = createGuard()",
+          "after_start_line": 52,
+          "dependents_count": 5
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "installTouchGuard",
+          "new_signature": "function installTouchGuard(onHidden?: () =\u003e void): () =\u003e void",
+          "after_start_line": 57,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "on",
+          "new_signature": "on = (t: Document | Window, k: string, fn: (e: never) =\u003e void, opts?: AddEventListenerOptions) =\u003e",
+          "after_start_line": 59,
+          "dependents_count": 103
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "keepInApp",
+          "new_signature": "function keepInApp(): () =\u003e void",
+          "after_start_line": 81,
+          "dependents_count": 1
+        },
+        {
+          "type": "added",
+          "kind": "function",
+          "name": "pop",
+          "new_signature": "pop = () =\u003e",
+          "after_start_line": 84,
+          "dependents_count": 17
+        }
+      ]
+    },
+    {
+      "path": "web/src/screens/Draw.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "Draw",
+          "before_start_line": 31,
+          "after_start_line": 31,
+          "dependents_count": 7
+        }
+      ]
+    },
+    {
+      "path": "web/src/screens/Grownups.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "Settings",
+          "before_start_line": 131,
+          "after_start_line": 131,
+          "dependents_count": 7
+        }
+      ]
+    },
+    {
+      "path": "web/src/screens/Reader.tsx",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "function",
+          "name": "Picture",
+          "before_start_line": 24,
+          "after_start_line": 24,
+          "dependents_count": 4
+        }
+      ]
+    },
+    {
+      "path": "web/src/state/settings.ts",
+      "status": "M",
+      "language": "TypeScript",
+      "changes": [
+        {
+          "type": "body_changed",
+          "kind": "interface",
+          "name": "Settings",
+          "before_start_line": 5,
+          "after_start_line": 5,
+          "dependents_count": 7
+        },
+        {
+          "type": "signature_changed",
+          "kind": "field",
+          "name": "Settings.pictures",
+          "old_signature": "pictures : 'full' | 'half' | 'none'",
+          "new_signature": "pictures : 'auto' | 'full' | 'half' | 'none'",
+          "before_start_line": 11,
+          "after_start_line": 11,
+          "dependents_count": 41
+        }
+      ]
+    },
+    {
+      "path": "web/src/styles/screens.css",
+      "status": "M",
+      "language": "CSS",
+      "changes": [
+        {
+          "type": "added",
+          "kind": "selector",
+          "name": "btn-hold",
+          "new_signature": "css selector .btn-hold",
+          "after_start_line": 406,
+          "dependents_count": 0
+        },
+        {
+          "type": "added",
+          "kind": "selector",
+          "name": "hold-hint",
+          "new_signature": "css selector .hold-hint",
+          "after_start_line": 409,
+          "dependents_count": 0
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "W_UNSUPPORTED_FILE",
+      "severity": "info",
+      "file_path": "web/scripts/e2e-quiz-mock.mjs",
+      "effect_on_semantic_completeness": "file skipped; no parser for this file type, so its changes are not analyzed",
+      "detail": "base and head versions have no supported parser"
+    },
+    {
+      "code": "W_UNSUPPORTED_FILE",
+      "severity": "info",
+      "file_path": "web/scripts/e2e-real.mjs",
+      "effect_on_semantic_completeness": "file skipped; no parser for this file type, so its changes are not analyzed",
+      "detail": "base and head versions have no supported parser"
+    },
+    {
+      "code": "W_UNSUPPORTED_FILE",
+      "severity": "info",
+      "file_path": "web/scripts/e2e-touch.mjs",
+      "effect_on_semantic_completeness": "file skipped; no parser for this file type, so its changes are not analyzed",
+      "detail": "head version has no supported parser"
+    }
+  ]
+}

@@ -1,0 +1,2659 @@
+{
+ "Deadline expired": {
+  "20b89ff4b7cc6a4f7384ce3ec5156d05": {
+   "status": "error",
+   "dur": 540964,
+   "created": "2026-10-10T07:59:07.574625Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "264208295ada9b28a96d2e29b32fb41c": {
+   "status": "error",
+   "dur": 358616,
+   "created": "2026-10-10T07:58:57.789360Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "b5571b93a725ab38404546da8f042797": {
+   "status": "error",
+   "dur": 319582,
+   "created": "2026-10-10T08:03:11.248295Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "e46e796a4a9ee7dde51ee0756eefae80": {
+   "status": "error",
+   "dur": 250574,
+   "created": "2026-10-10T08:02:50.036339Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "c1e644106cb3bc3ed685dc3731f38f77": {
+   "status": "error",
+   "dur": 483322,
+   "created": "2026-10-10T09:41:22.788875Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "050dc8b85289002f084c67e8cfc23a42": {
+   "status": "error",
+   "dur": 240998,
+   "created": "2026-10-10T09:41:16.271415Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "08177d773d0e88d8b26febc22898ba03": {
+   "status": "error",
+   "dur": 223544,
+   "created": "2026-10-10T09:40:07.595819Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "7ae65ad1592c18eef8e0179593c64203": {
+   "status": "error",
+   "dur": 426699,
+   "created": "2026-10-10T09:40:45.844120Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "7b22237107ed6a6cb3b286086b2b54d1": {
+   "status": "error",
+   "dur": 274019,
+   "created": "2026-10-10T09:47:47.789008Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "0178d61c069b8b9f575a98652719f0d8": {
+   "status": "error",
+   "dur": 297748,
+   "created": "2026-10-10T12:28:16.538224Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "27cf10c0fed878adf1cf6f00c88cc40a": {
+   "status": "error",
+   "dur": 397298,
+   "created": "2026-10-10T12:22:28.198168Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "a9b78604d006ccf7e60bd4a5d3963295": {
+   "status": "error",
+   "dur": 163465,
+   "created": "2026-10-10T12:22:21.480200Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "67fa16b7a0f40948cc2ee5053058d54c": {
+   "status": "error",
+   "dur": 150311,
+   "created": "2026-10-10T12:22:24.249688Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "77ccb4d9ff41de576164efb1b034d599": {
+   "status": "error",
+   "dur": 174452,
+   "created": "2026-10-10T12:28:04.922263Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "36c52379cbfcaf5fe6fd2851c0582680": {
+   "status": "error",
+   "dur": 155285,
+   "created": "2026-10-10T12:22:23.352357Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "8ab1756e501b7122db78db90724fdd30": {
+   "status": "error",
+   "dur": 163273,
+   "created": "2026-10-10T12:22:14.644811Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "eef22eafcc69e2855234e3a374c17433": {
+   "status": "error",
+   "dur": 391845,
+   "created": "2026-10-10T12:25:18.542844Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "6c8c28dda3c92555ca689643f2863b80": {
+   "status": "error",
+   "dur": 281346,
+   "created": "2026-10-11T06:55:06.834359Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "55bb3418fe6fd056c778475634cbb709": {
+   "status": "error",
+   "dur": 354062,
+   "created": "2026-10-11T07:04:20.546790Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "27be0932e50af5fefac5c7d6fceb0375": {
+   "status": "error",
+   "dur": 315011,
+   "created": "2026-10-11T07:03:12.400876Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "4dba10f45ce6d379ce18ece76686f801": {
+   "status": "error",
+   "dur": 197940,
+   "created": "2026-10-11T07:06:39.077118Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "1092b1bbc158b2901ee34dcebb5944a1": {
+   "status": "error",
+   "dur": 333196,
+   "created": "2026-10-11T07:01:10.766126Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "4fd436b1fcc137691d584d1429d10a2e": {
+   "status": "error",
+   "dur": 368661,
+   "created": "2026-10-11T07:03:26.440127Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "d0bb16b76ed0d55a65d1baade5eaadd3": {
+   "status": "error",
+   "dur": 395254,
+   "created": "2026-10-11T07:03:50.676198Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "e8a7ceeb2621480130783322e57c49d8": {
+   "status": "error",
+   "dur": 263860,
+   "created": "2026-10-11T07:01:12.261062Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "a7d028baeaaa8298bce0306654900f34": {
+   "status": "error",
+   "dur": 87734,
+   "created": "2026-10-11T07:05:16.711817Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "8e2a6a444965c57ea8ca13760da3189e": {
+   "status": "error",
+   "dur": 304574,
+   "created": "2026-10-11T07:07:22.902498Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "1074adb89795b1164ad6cbf4e6307ca2": {
+   "status": "error",
+   "dur": 192915,
+   "created": "2026-10-11T07:16:34.351901Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  },
+  "85357c732ba5a305cd2cfc4627f8d2e3": {
+   "status": "error",
+   "dur": 230175,
+   "created": "2026-10-11T07:16:11.585186Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…N>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': '<PERSON>'}} Traceback (most recent call last):\n  File \"D:…"
+    ]
+   ]
+  }
+ },
+ "429": {
+  "94db23729dac6323368749acba4be1cb": {
+   "status": "error",
+   "dur": 379427,
+   "created": "2026-10-10T07:51:46.421455Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "20b89ff4b7cc6a4f7384ce3ec5156d05": {
+   "status": "error",
+   "dur": 540964,
+   "created": "2026-10-10T07:59:07.574625Z",
+   "snips": [
+    [
+     "scene_repair.4",
+     "…\":644,\"output_tokens\":180,\"latency_s\":2.429,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\n  \\\"scenario\\\": \\\"<PERSON> wears a pink bow on her head. She ge…"
+    ]
+   ]
+  },
+  "25298c2f3367f18103a5d742bfef022c": {
+   "status": "error",
+   "dur": 236648,
+   "created": "2026-10-10T08:24:21.126731Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "065d9c6ddcf626fdc0eea3f4161e6a01": {
+   "status": "error",
+   "dur": 134063,
+   "created": "2026-10-10T08:52:08.735671Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "76c35d5c75344ae43f5f8883810842e9": {
+   "status": "error",
+   "dur": 293785,
+   "created": "2026-10-10T09:06:26.748848Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "0fd459e70b5165e1455980c72c77f66d": {
+   "status": "error",
+   "dur": 304858,
+   "created": "2026-10-10T12:58:54.077424Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "09e6e4e53c1d23ebe8a8813b0d82cbaa": {
+   "status": "error",
+   "dur": 101709,
+   "created": "2026-10-10T12:16:59.832770Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "27cf10c0fed878adf1cf6f00c88cc40a": {
+   "status": "error",
+   "dur": 397298,
+   "created": "2026-10-10T12:22:28.198168Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "5f7a042b3a5ebfd74d4bd4a58412354d": {
+   "status": "error",
+   "dur": 96764,
+   "created": "2026-10-10T12:16:53.534809Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "ed70e8bdeee997f6d62fda297dc9ad07": {
+   "status": "error",
+   "dur": 149977,
+   "created": "2026-10-10T12:49:23.498440Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "3288c844950af2060c9ba38547e65571": {
+   "status": "error",
+   "dur": 92938,
+   "created": "2026-10-10T12:49:36.101545Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "6b0be8f142fac3c0a8c8b41378f44e3c": {
+   "status": "error",
+   "dur": 54046,
+   "created": "2026-10-10T12:16:50.553561Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "722715f50e8aceb2de17214075dd62e0": {
+   "status": "error",
+   "dur": 74,
+   "created": "2026-10-10T12:18:48.820889Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "9377b4373cb21e7b41f439fc836be01d": {
+   "status": "error",
+   "dur": 300,
+   "created": "2026-10-10T12:18:47.149694Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "a1dc773730c787cb1322fd3c7cbee606": {
+   "status": "error",
+   "dur": 101,
+   "created": "2026-10-10T12:21:01.339889Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "a399ec1dbdd846a67ee7a5aabf4a3f22": {
+   "status": "error",
+   "dur": 112,
+   "created": "2026-10-10T12:56:01.864496Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "cf9d38b77aa52a4297761e17a813ab29": {
+   "status": "error",
+   "dur": 83933,
+   "created": "2026-10-10T12:49:18.901579Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "d4244a031bd9de482c6e8b795e8d8fad": {
+   "status": "error",
+   "dur": 310,
+   "created": "2026-10-10T12:55:35.575556Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "d705e66e2d99eaa3a72d843df6550d05": {
+   "status": "error",
+   "dur": 287,
+   "created": "2026-10-10T12:18:46.849426Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+   "status": "error",
+   "dur": 322360,
+   "created": "2026-10-10T13:27:15.806486Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "c9a78b746d479b1f6671b7acf2254de3": {
+   "status": "error",
+   "dur": 401972,
+   "created": "2026-10-10T14:23:39.859223Z",
+   "snips": [
+    [
+     "illustrate",
+     "…] storybound.clients.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "aeea65c6b2cdfac7815d22620a741597": {
+   "status": "error",
+   "dur": 365323,
+   "created": "2026-10-10T14:36:03.548109Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "c83d5a3fa720247da64e20ef924e59c5": {
+   "status": "error",
+   "dur": 313988,
+   "created": "2026-10-11T03:24:36.261750Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "954c5fc36e7cd071ea3f925bb4e5f303": {
+   "status": "error",
+   "dur": 113488,
+   "created": "2026-10-11T06:58:25.200188Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "114c3ee394b2b46e41419284edc3f322": {
+   "status": "error",
+   "dur": 174863,
+   "created": "2026-10-11T06:57:50.264777Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "8e8b988aaeb90df588d08884d3d650ed": {
+   "status": "error",
+   "dur": 113139,
+   "created": "2026-10-11T06:57:45.520224Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "2de7e25d8acd652b3a3430209a8c40eb": {
+   "status": "error",
+   "dur": 285,
+   "created": "2026-10-11T06:58:47.407478Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "5ee359c6569e5bdfe4681ac7cb8e6a29": {
+   "status": "error",
+   "dur": 81,
+   "created": "2026-10-11T06:57:16.458118Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "… \"...\"} gemini-3.7-flash vertex_ai 1029 429 1458 0 0.4 4548 You write a short quiz for a child aged 6 about a story they just read. Write exactly 4 questions, o…"
+    ],
+    [
+     "quiz_maker",
+     "…e\":{\"input_tokens\":1029,\"output_tokens\":429,\"latency_s\":4.269,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\\"items\\\": [{\\\"kind\\\": \\\"recall\\\", \\\"question\\\"…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': …"
+    ]
+   ]
+  },
+  "40bbb0726111153e6899dbfc9ca94feb": {
+   "status": "error",
+   "dur": 125899,
+   "created": "2026-10-11T07:05:02.281754Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "27be0932e50af5fefac5c7d6fceb0375": {
+   "status": "error",
+   "dur": 315011,
+   "created": "2026-10-11T07:03:12.400876Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "4fd436b1fcc137691d584d1429d10a2e": {
+   "status": "error",
+   "dur": 368661,
+   "created": "2026-10-11T07:03:26.440127Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "1d57b001661236833835deafd3869dda": {
+   "status": "error",
+   "dur": 43970,
+   "created": "2026-10-11T07:01:22.083154Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…to 1. openai.RateLimitError Error code: 429 - {'error': {'message': 'Request rate limit exceeded', 'type': 'rate_limit_error', 'param': None, 'code': 'rate_limi…"
+    ]
+   ]
+  },
+  "05cbd7082ddc5208b181ba55a9d80fd9": {
+   "status": "error",
+   "dur": 251557,
+   "created": "2026-10-11T07:08:12.980799Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "5ab672764360a66b30a86d8fa89f4fc1": {
+   "status": "error",
+   "dur": 219678,
+   "created": "2026-10-11T07:08:15.700246Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  },
+  "21330f9aa6b19e167ef2f563ed7638da": {
+   "status": "error",
+   "dur": 125462,
+   "created": "2026-10-11T07:08:53.818514Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to …"
+    ]
+   ]
+  }
+ },
+ "RESOURCE_EXHAUSTED": {
+  "94db23729dac6323368749acba4be1cb": {
+   "status": "error",
+   "dur": 379427,
+   "created": "2026-10-10T07:51:46.421455Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ]
+   ]
+  },
+  "25298c2f3367f18103a5d742bfef022c": {
+   "status": "error",
+   "dur": 236648,
+   "created": "2026-10-10T08:24:21.126731Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "0fd459e70b5165e1455980c72c77f66d": {
+   "status": "error",
+   "dur": 304858,
+   "created": "2026-10-10T12:58:54.077424Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ]
+   ]
+  },
+  "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+   "status": "error",
+   "dur": 322360,
+   "created": "2026-10-10T13:27:15.806486Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ]
+   ]
+  },
+  "c9a78b746d479b1f6671b7acf2254de3": {
+   "status": "error",
+   "dur": 401972,
+   "created": "2026-10-10T14:23:39.859223Z",
+   "snips": [
+    [
+     "node.oath",
+     "…onally share a physical item, shape, or resource with another character, or if the act of sharing does not directly lead to mutual happiness, return a violation…"
+    ],
+    [
+     "oath_author",
+     "…onally share a physical item, shape, or resource with another character, or if the act of sharing does not directly lead to mutual happiness, return a violation…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…onally share a physical item, shape, or resource with another character, or if the act of sharing does not directly lead to mutual happiness, return a violation…"
+    ]
+   ]
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": [
+    [
+     "node.oath",
+     "… shares a concrete, geometric object or resource with a friend rather than just offering words or ideas.\",\"core\":false,\"klass\":\"quality\",\"verifier\":\"judge\",\"rub…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "… shares a concrete, geometric object or resource with a friend rather than just offering words or ideas.\nRubric: Review the full story to check if Fino actively…"
+    ],
+    [
+     "oath_author",
+     "… shares a concrete, geometric object or resource with a friend rather than just offering words or ideas.\",\"rubric\":\"Review the full story to check if <PERSON> a…"
+    ]
+   ]
+  },
+  "aeea65c6b2cdfac7815d22620a741597": {
+   "status": "error",
+   "dur": 365323,
+   "created": "2026-10-10T14:36:03.548109Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "…ED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).', 'status': 'RESOURCE_EXHAUSTED'}} Traceback (most recent call last):\n  …"
+    ]
+   ]
+  },
+  "c83d5a3fa720247da64e20ef924e59c5": {
+   "status": "error",
+   "dur": 313988,
+   "created": "2026-10-11T03:24:36.261750Z",
+   "snips": [
+    [
+     "node.write",
+     "…ing\",\"scope\":\"story\",\"title\":\"Geometric Resource Sharing\",\"plain\":\"<PERSON> shares a clear, tangible item rather than just playing together or giving abstract a…"
+    ],
+    [
+     "node.verify",
+     "…ing\",\"scope\":\"story\",\"title\":\"Geometric Resource Sharing\",\"plain\":\"<PERSON> shares a clear, tangible item rather than just playing together or giving abstract a…"
+    ],
+    [
+     "node.settle",
+     "…ing\",\"scope\":\"story\",\"title\":\"Geometric Resource Sharing\",\"plain\":\"<PERSON> shares a clear, tangible item rather than just playing together or giving abstract a…"
+    ]
+   ]
+  },
+  "954c5fc36e7cd071ea3f925bb4e5f303": {
+   "status": "error",
+   "dur": 113488,
+   "created": "2026-10-11T06:58:25.200188Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "114c3ee394b2b46e41419284edc3f322": {
+   "status": "error",
+   "dur": 174863,
+   "created": "2026-10-11T06:57:50.264777Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "8e8b988aaeb90df588d08884d3d650ed": {
+   "status": "error",
+   "dur": 113139,
+   "created": "2026-10-11T06:57:45.520224Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "node.oath",
+     "…advice/space without sharing a physical resource, or if <PERSON> remains unhappy, reluctant, or unfulfilled after sharing.\",\"pass_score\":null,\"repair_hint\":\"Hav…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…advice/space without sharing a physical resource, or if <PERSON> remains unhappy, reluctant, or unfulfilled after sharing.\nRepair Hint: Have <PERSON> willingly …"
+    ],
+    [
+     "oath_author",
+     "…advice/space without sharing a physical resource, or if <PERSON> remains unhappy, reluctant, or unfulfilled after sharing.\",\"repair_hint\":\"Have <PERSON> willing…"
+    ]
+   ]
+  },
+  "40bbb0726111153e6899dbfc9ca94feb": {
+   "status": "error",
+   "dur": 125899,
+   "created": "2026-10-11T07:05:02.281754Z",
+   "snips": [
+    [
+     "node.oath",
+     "…> willingly offers or shares a tangible resource, space, or function of their vessel (such as shade from their triangular sails, warmth/smoke rings from their s…"
+    ],
+    [
+     "oath_author",
+     "…> willingly offers or shares a tangible resource, space, or function of their vessel (such as shade from their triangular sails, warmth/smoke rings from their s…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…> willingly offers or shares a tangible resource, space, or function of their vessel (such as shade from their triangular sails, warmth/smoke rings from their s…"
+    ]
+   ]
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "87ab4faf8eb1f53440de256ef835553a": {
+   "status": "error",
+   "dur": 140386,
+   "created": "2026-10-11T07:33:07.887320Z",
+   "snips": [
+    [
+     "node.oath",
+     "…lain\":\"<LOCATION> must actively share a resource or magical spark with another garden creature, and <LOCATION>'s own happiness must visibly increase as a result…"
+    ],
+    [
+     "nova-2-lite",
+     "…il struggling up a steep mound of dirt, exhausted and slow.\nTemptation: Watch from afar and let nature take its course.\nRight Choice: Gently guide the snail to …"
+    ],
+    [
+     "story_planner",
+     "…il struggling up a steep mound of dirt, exhausted and slow.\",\"temptation\":\"Watch from afar and let nature take its course.\",\"right_choice\":\"Gently guide the sna…"
+    ]
+   ]
+  },
+  "05cbd7082ddc5208b181ba55a9d80fd9": {
+   "status": "error",
+   "dur": 251557,
+   "created": "2026-10-11T07:08:12.980799Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "5ab672764360a66b30a86d8fa89f4fc1": {
+   "status": "error",
+   "dur": 219678,
+   "created": "2026-10-11T07:08:15.700246Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  },
+  "21330f9aa6b19e167ef2f563ed7638da": {
+   "status": "error",
+   "dur": 125462,
+   "created": "2026-10-11T07:08:53.818514Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…ED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-…"
+    ]
+   ]
+  }
+ },
+ "ClientError": {
+  "94db23729dac6323368749acba4be1cb": {
+   "status": "error",
+   "dur": 379427,
+   "created": "2026-10-10T07:51:46.421455Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "ac528975dda17c3fb8eed01278eaa04d": {
+   "status": "error",
+   "dur": 64892,
+   "created": "2026-10-10T07:55:39.650096Z",
+   "snips": [
+    [
+     "node.write",
+     "…,\"notes\":[]}} storybound.clients.errors.ClientError page JSON is missing 'image_prompt' <PERSON> (most recent call last):\n  File \"D:\\storybound\\src\\storybound\\a…"
+    ]
+   ]
+  },
+  "84672c2c44e2eee53f0a1c7ffbd24fa7": {
+   "status": "error",
+   "dur": 647,
+   "created": "2026-10-10T07:24:52.454487Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "… to share a carrot. google.genai.errors.ClientError 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Thinking level is unsupported: THINKING_LEVEL_MINI…"
+    ]
+   ]
+  },
+  "25298c2f3367f18103a5d742bfef022c": {
+   "status": "error",
+   "dur": 236648,
+   "created": "2026-10-10T08:24:21.126731Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "0fd459e70b5165e1455980c72c77f66d": {
+   "status": "error",
+   "dur": 304858,
+   "created": "2026-10-10T12:58:54.077424Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+   "status": "error",
+   "dur": 322360,
+   "created": "2026-10-10T13:27:15.806486Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "c9a78b746d479b1f6671b7acf2254de3": {
+   "status": "error",
+   "dur": 401972,
+   "created": "2026-10-10T14:23:39.859223Z",
+   "snips": [
+    [
+     "illustrate",
+     "…_unavailable] storybound.clients.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "aeea65c6b2cdfac7815d22620a741597": {
+   "status": "error",
+   "dur": 365323,
+   "created": "2026-10-10T14:36:03.548109Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "c83d5a3fa720247da64e20ef924e59c5": {
+   "status": "error",
+   "dur": 313988,
+   "created": "2026-10-11T03:24:36.261750Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "954c5fc36e7cd071ea3f925bb4e5f303": {
+   "status": "error",
+   "dur": 113488,
+   "created": "2026-10-11T06:58:25.200188Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "114c3ee394b2b46e41419284edc3f322": {
+   "status": "error",
+   "dur": 174863,
+   "created": "2026-10-11T06:57:50.264777Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "8e8b988aaeb90df588d08884d3d650ed": {
+   "status": "error",
+   "dur": 113139,
+   "created": "2026-10-11T06:57:45.520224Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ],
+    [
+     "gemini-3.1-flash-image",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource has been exhausted (e.g. check quota).'…"
+    ]
+   ]
+  },
+  "40bbb0726111153e6899dbfc9ca94feb": {
+   "status": "error",
+   "dur": 125899,
+   "created": "2026-10-11T07:05:02.281754Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "05cbd7082ddc5208b181ba55a9d80fd9": {
+   "status": "error",
+   "dur": 251557,
+   "created": "2026-10-11T07:08:12.980799Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "5ab672764360a66b30a86d8fa89f4fc1": {
+   "status": "error",
+   "dur": 219678,
+   "created": "2026-10-11T07:08:15.700246Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  },
+  "21330f9aa6b19e167ef2f563ed7638da": {
+   "status": "error",
+   "dur": 125462,
+   "created": "2026-10-11T07:08:53.818514Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ClientError 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Plea…"
+    ]
+   ]
+  }
+ },
+ "ServerError": {
+  "20b89ff4b7cc6a4f7384ce3ec5156d05": {
+   "status": "error",
+   "dur": 540964,
+   "created": "2026-10-10T07:59:07.574625Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "264208295ada9b28a96d2e29b32fb41c": {
+   "status": "error",
+   "dur": 358616,
+   "created": "2026-10-10T07:58:57.789360Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "b5571b93a725ab38404546da8f042797": {
+   "status": "error",
+   "dur": 319582,
+   "created": "2026-10-10T08:03:11.248295Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "e46e796a4a9ee7dde51ee0756eefae80": {
+   "status": "error",
+   "dur": 250574,
+   "created": "2026-10-10T08:02:50.036339Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "c1e644106cb3bc3ed685dc3731f38f77": {
+   "status": "error",
+   "dur": 483322,
+   "created": "2026-10-10T09:41:22.788875Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "050dc8b85289002f084c67e8cfc23a42": {
+   "status": "error",
+   "dur": 240998,
+   "created": "2026-10-10T09:41:16.271415Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "08177d773d0e88d8b26febc22898ba03": {
+   "status": "error",
+   "dur": 223544,
+   "created": "2026-10-10T09:40:07.595819Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "7ae65ad1592c18eef8e0179593c64203": {
+   "status": "error",
+   "dur": 426699,
+   "created": "2026-10-10T09:40:45.844120Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "7b22237107ed6a6cb3b286086b2b54d1": {
+   "status": "error",
+   "dur": 274019,
+   "created": "2026-10-10T09:47:47.789008Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "0178d61c069b8b9f575a98652719f0d8": {
+   "status": "error",
+   "dur": 297748,
+   "created": "2026-10-10T12:28:16.538224Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "27cf10c0fed878adf1cf6f00c88cc40a": {
+   "status": "error",
+   "dur": 397298,
+   "created": "2026-10-10T12:22:28.198168Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "a9b78604d006ccf7e60bd4a5d3963295": {
+   "status": "error",
+   "dur": 163465,
+   "created": "2026-10-10T12:22:21.480200Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "67fa16b7a0f40948cc2ee5053058d54c": {
+   "status": "error",
+   "dur": 150311,
+   "created": "2026-10-10T12:22:24.249688Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "77ccb4d9ff41de576164efb1b034d599": {
+   "status": "error",
+   "dur": 174452,
+   "created": "2026-10-10T12:28:04.922263Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "36c52379cbfcaf5fe6fd2851c0582680": {
+   "status": "error",
+   "dur": 155285,
+   "created": "2026-10-10T12:22:23.352357Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "8ab1756e501b7122db78db90724fdd30": {
+   "status": "error",
+   "dur": 163273,
+   "created": "2026-10-10T12:22:14.644811Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "eef22eafcc69e2855234e3a374c17433": {
+   "status": "error",
+   "dur": 391845,
+   "created": "2026-10-10T12:25:18.542844Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "6c8c28dda3c92555ca689643f2863b80": {
+   "status": "error",
+   "dur": 281346,
+   "created": "2026-10-11T06:55:06.834359Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "55bb3418fe6fd056c778475634cbb709": {
+   "status": "error",
+   "dur": 354062,
+   "created": "2026-10-11T07:04:20.546790Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ],
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "27be0932e50af5fefac5c7d6fceb0375": {
+   "status": "error",
+   "dur": 315011,
+   "created": "2026-10-11T07:03:12.400876Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "4dba10f45ce6d379ce18ece76686f801": {
+   "status": "error",
+   "dur": 197940,
+   "created": "2026-10-11T07:06:39.077118Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "1092b1bbc158b2901ee34dcebb5944a1": {
+   "status": "error",
+   "dur": 333196,
+   "created": "2026-10-11T07:01:10.766126Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "4fd436b1fcc137691d584d1429d10a2e": {
+   "status": "error",
+   "dur": 368661,
+   "created": "2026-10-11T07:03:26.440127Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "d0bb16b76ed0d55a65d1baade5eaadd3": {
+   "status": "error",
+   "dur": 395254,
+   "created": "2026-10-11T07:03:50.676198Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "e8a7ceeb2621480130783322e57c49d8": {
+   "status": "error",
+   "dur": 263860,
+   "created": "2026-10-11T07:01:12.261062Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "a7d028baeaaa8298bce0306654900f34": {
+   "status": "error",
+   "dur": 87734,
+   "created": "2026-10-11T07:05:16.711817Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "8e2a6a444965c57ea8ca13760da3189e": {
+   "status": "error",
+   "dur": 304574,
+   "created": "2026-10-11T07:07:22.902498Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "1074adb89795b1164ad6cbf4e6307ca2": {
+   "status": "error",
+   "dur": 192915,
+   "created": "2026-10-11T07:16:34.351901Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  },
+  "85357c732ba5a305cd2cfc4627f8d2e3": {
+   "status": "error",
+   "dur": 230175,
+   "created": "2026-10-11T07:16:11.585186Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "google.genai.errors.ServerError 504 <PERSON>. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'statu…"
+    ]
+   ]
+  }
+ },
+ "503": {
+  "94db23729dac6323368749acba4be1cb": {
+   "status": "error",
+   "dur": 379427,
+   "created": "2026-10-10T07:51:46.421455Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "… openai.InternalServerError Error code: 503 - {'error': {'message': 'The gateway could not complete the request. Please retry.', 'type': 'api_error', 'param': N…"
+    ]
+   ]
+  },
+  "e46e796a4a9ee7dde51ee0756eefae80": {
+   "status": "error",
+   "dur": 250574,
+   "created": "2026-10-10T08:02:50.036339Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…on. IFM/K2-Horizon-375B-A23B openai 661 503 1164 0 You are an independent reviewer of children's story content. You do not write stories. You review ONLY the te…"
+    ]
+   ]
+  },
+  "6b0be8f142fac3c0a8c8b41378f44e3c": {
+   "status": "error",
+   "dur": 54046,
+   "created": "2026-10-10T12:16:50.553561Z",
+   "snips": [
+    [
+     "character_card",
+     "…e\":{\"input_tokens\":1355,\"output_tokens\":503,\"latency_s\":4.978,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\n \\\"name\\\": \\\"Zeno\\\",\\n \\\"species\\\": \\\"rhinoce…"
+    ]
+   ]
+  },
+  "77ccb4d9ff41de576164efb1b034d599": {
+   "status": "error",
+   "dur": 174452,
+   "created": "2026-10-10T12:28:04.922263Z",
+   "snips": [
+    [
+     "scene_writer.7",
+     "…\":560,\"output_tokens\":173,\"latency_s\":2.503,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\n  \\\"scenario\\\": \\\"<PERSON> wiggles his triangular tail when a r…"
+    ]
+   ]
+  },
+  "83ec4cf94685fdb8f1cb204f88832b9a": {
+   "status": "error",
+   "dur": 149796,
+   "created": "2026-10-10T12:17:06.576232Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…1. IFM/K2-Horizon-375B-A23B openai 1618 503 2121 0 You are an independent reviewer of children's story content. You do not write stories. You review ONLY the te…"
+    ]
+   ]
+  },
+  "c9a78b746d479b1f6671b7acf2254de3": {
+   "status": "error",
+   "dur": 401972,
+   "created": "2026-10-10T14:23:39.859223Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…emini-3.7-flash vertex_ai 1339 115 1454 503 0.5 2848 You turn a child's drawing into a story hero. Describe only what is visible. Words written in the drawing a…"
+    ]
+   ]
+  },
+  "27be0932e50af5fefac5c7d6fceb0375": {
+   "status": "error",
+   "dur": 315011,
+   "created": "2026-10-11T07:03:12.400876Z",
+   "snips": [
+    [
+     "verify:lesson_specific_emotional_relief_after_truth",
+     "…se\nSample Seed: seed=1 rate=0.50 draw=0.503\nExpected: The scene immediately following the confession must show <PERSON> feeling lighter and experiencing positiv…"
+    ]
+   ]
+  }
+ },
+ "UNAVAILABLE": {
+  "94db23729dac6323368749acba4be1cb": {
+   "status": "error",
+   "dur": 379427,
+   "created": "2026-10-10T07:51:46.421455Z",
+   "snips": []
+  },
+  "e83d817ca16f25bc3ad7540280f3cad8": {
+   "status": "error",
+   "dur": 142888,
+   "created": "2026-10-10T07:55:41.532398Z",
+   "snips": []
+  },
+  "d30e44ebaa326f237903e1bff51f6fe7": {
+   "status": "error",
+   "dur": 149299,
+   "created": "2026-10-10T07:55:40.621382Z",
+   "snips": []
+  },
+  "5907210ecff09c81d5034a8face3babb": {
+   "status": "error",
+   "dur": 9855,
+   "created": "2026-10-10T07:48:37.652066Z",
+   "snips": []
+  },
+  "aa20e5d1cd79e8c5acdeb2118a03b6ae": {
+   "status": "error",
+   "dur": 8976,
+   "created": "2026-10-10T07:49:25.087652Z",
+   "snips": []
+  },
+  "75cf200277a9ed98f383a8389d63f6d4": {
+   "status": "error",
+   "dur": 8590,
+   "created": "2026-10-10T07:49:23.211477Z",
+   "snips": []
+  },
+  "5b72e9ed5cedacd598885c07b154e101": {
+   "status": "error",
+   "dur": 9482,
+   "created": "2026-10-10T07:48:35.890353Z",
+   "snips": []
+  },
+  "62666f1283314a3877f0cb67147b7005": {
+   "status": "error",
+   "dur": 9267,
+   "created": "2026-10-10T07:48:36.666401Z",
+   "snips": []
+  },
+  "847b43977e30b23a97d2365d4ad5af95": {
+   "status": "error",
+   "dur": 8450,
+   "created": "2026-10-10T07:49:17.020543Z",
+   "snips": []
+  },
+  "20b89ff4b7cc6a4f7384ce3ec5156d05": {
+   "status": "error",
+   "dur": 540964,
+   "created": "2026-10-10T07:59:07.574625Z",
+   "snips": []
+  },
+  "39370b0c3794e0a68562854e651efb53": {
+   "status": "error",
+   "dur": 8862,
+   "created": "2026-10-10T07:49:17.809447Z",
+   "snips": []
+  },
+  "264208295ada9b28a96d2e29b32fb41c": {
+   "status": "error",
+   "dur": 358616,
+   "created": "2026-10-10T07:58:57.789360Z",
+   "snips": []
+  },
+  "182e4ea264bea12151a21d77dcbce847": {
+   "status": "error",
+   "dur": 256413,
+   "created": "2026-10-10T07:58:39.678636Z",
+   "snips": []
+  },
+  "5a36e4d6224eb1902bbf07cf66d8a2fd": {
+   "status": "error",
+   "dur": 9534,
+   "created": "2026-10-10T07:48:35.584157Z",
+   "snips": []
+  },
+  "ac528975dda17c3fb8eed01278eaa04d": {
+   "status": "error",
+   "dur": 64892,
+   "created": "2026-10-10T07:55:39.650096Z",
+   "snips": []
+  },
+  "8f2742970c0d2fa5902e371e26068882": {
+   "status": "error",
+   "dur": 9417,
+   "created": "2026-10-10T07:49:24.436996Z",
+   "snips": []
+  },
+  "049da90958810333e05266d0bff8989e": {
+   "status": "error",
+   "dur": 10000,
+   "created": "2026-10-10T07:48:37.904738Z",
+   "snips": []
+  },
+  "065d9c6ddcf626fdc0eea3f4161e6a01": {
+   "status": "error",
+   "dur": 134063,
+   "created": "2026-10-10T08:52:08.735671Z",
+   "snips": []
+  },
+  "e46e796a4a9ee7dde51ee0756eefae80": {
+   "status": "error",
+   "dur": 250574,
+   "created": "2026-10-10T08:02:50.036339Z",
+   "snips": []
+  },
+  "b5571b93a725ab38404546da8f042797": {
+   "status": "error",
+   "dur": 319582,
+   "created": "2026-10-10T08:03:11.248295Z",
+   "snips": []
+  },
+  "82324ced0211cd591c2360b2e5395b9d": {
+   "status": "error",
+   "dur": 94993,
+   "created": "2026-10-10T08:58:03.725292Z",
+   "snips": []
+  },
+  "4dca08217df7f161d6e401cdf553aad7": {
+   "status": "error",
+   "dur": 181990,
+   "created": "2026-10-10T08:11:34.251360Z",
+   "snips": []
+  },
+  "06dac7f3455fd12d0f348875e46d2722": {
+   "status": "error",
+   "dur": 103280,
+   "created": "2026-10-10T08:34:32.434344Z",
+   "snips": []
+  },
+  "57233238e74cb87ebb83b08d5565b810": {
+   "status": "error",
+   "dur": 269450,
+   "created": "2026-10-10T08:48:53.184334Z",
+   "snips": []
+  },
+  "a32498d665231ab02f7218b8b54e9a3f": {
+   "status": "error",
+   "dur": 121895,
+   "created": "2026-10-10T08:48:55.667100Z",
+   "snips": []
+  },
+  "25298c2f3367f18103a5d742bfef022c": {
+   "status": "error",
+   "dur": 236648,
+   "created": "2026-10-10T08:24:21.126731Z",
+   "snips": []
+  },
+  "9ac60464c282af61f4861605956d98b8": {
+   "status": "error",
+   "dur": 159414,
+   "created": "2026-10-10T08:48:52.294585Z",
+   "snips": []
+  },
+  "33a9c06a4b7699a76438bc6559c54122": {
+   "status": "error",
+   "dur": 200538,
+   "created": "2026-10-10T08:48:53.383675Z",
+   "snips": []
+  },
+  "598d07098a3a928164ad492061984dc3": {
+   "status": "error",
+   "dur": 147603,
+   "created": "2026-10-10T09:37:49.151805Z",
+   "snips": []
+  },
+  "7b22237107ed6a6cb3b286086b2b54d1": {
+   "status": "error",
+   "dur": 274019,
+   "created": "2026-10-10T09:47:47.789008Z",
+   "snips": []
+  },
+  "08177d773d0e88d8b26febc22898ba03": {
+   "status": "error",
+   "dur": 223544,
+   "created": "2026-10-10T09:40:07.595819Z",
+   "snips": []
+  },
+  "a44e5cc42ae06542dc1eb9471d958e9d": {
+   "status": "error",
+   "dur": 183232,
+   "created": "2026-10-10T09:37:52.323695Z",
+   "snips": []
+  },
+  "e0d0e072d74ef1db7186b0cb445d744f": {
+   "status": "error",
+   "dur": 193559,
+   "created": "2026-10-10T09:37:52.956888Z",
+   "snips": []
+  },
+  "b4b550c3cb1b041da83f87652cb634c1": {
+   "status": "error",
+   "dur": 122039,
+   "created": "2026-10-10T09:37:50.571552Z",
+   "snips": []
+  },
+  "7ae65ad1592c18eef8e0179593c64203": {
+   "status": "error",
+   "dur": 426699,
+   "created": "2026-10-10T09:40:45.844120Z",
+   "snips": []
+  },
+  "c68e670fedeb3ab88314f0bd16bb2323": {
+   "status": "error",
+   "dur": 106140,
+   "created": "2026-10-10T09:05:22.061668Z",
+   "snips": []
+  },
+  "76c35d5c75344ae43f5f8883810842e9": {
+   "status": "error",
+   "dur": 293785,
+   "created": "2026-10-10T09:06:26.748848Z",
+   "snips": []
+  },
+  "050dc8b85289002f084c67e8cfc23a42": {
+   "status": "error",
+   "dur": 240998,
+   "created": "2026-10-10T09:41:16.271415Z",
+   "snips": []
+  },
+  "c1e644106cb3bc3ed685dc3731f38f77": {
+   "status": "error",
+   "dur": 483322,
+   "created": "2026-10-10T09:41:22.788875Z",
+   "snips": []
+  },
+  "83ec4cf94685fdb8f1cb204f88832b9a": {
+   "status": "error",
+   "dur": 149796,
+   "created": "2026-10-10T12:17:06.576232Z",
+   "snips": [
+    [
+     "node.settle",
+     "…d terms | judge could not verify: judge unavailable: no JSON found in model output: 'We need answer JSON only. Need evaluate commitments. Need inspect text. Nee…"
+    ],
+    [
+     "node.regen",
+     "…d terms | judge could not verify: judge unavailable: no JSON found in model output: 'We need answer JSON only. Need evaluate commitments. Need inspect text. Nee…"
+    ],
+    [
+     "node.verify",
+     "…d terms | judge could not verify: judge unavailable: no JSON found in model output: 'We need answer JSON only. Need evaluate commitments. Need inspect text. Nee…"
+    ]
+   ]
+  },
+  "0fd459e70b5165e1455980c72c77f66d": {
+   "status": "error",
+   "dur": 304858,
+   "created": "2026-10-10T12:58:54.077424Z",
+   "snips": []
+  },
+  "6b0be8f142fac3c0a8c8b41378f44e3c": {
+   "status": "error",
+   "dur": 54046,
+   "created": "2026-10-10T12:16:50.553561Z",
+   "snips": []
+  },
+  "a9b78604d006ccf7e60bd4a5d3963295": {
+   "status": "error",
+   "dur": 163465,
+   "created": "2026-10-10T12:22:21.480200Z",
+   "snips": []
+  },
+  "cf9d38b77aa52a4297761e17a813ab29": {
+   "status": "error",
+   "dur": 83933,
+   "created": "2026-10-10T12:49:18.901579Z",
+   "snips": []
+  },
+  "21f5547097cbe68778d95e0c5e54d7c0": {
+   "status": "error",
+   "dur": 61711,
+   "created": "2026-10-10T12:49:18.978387Z",
+   "snips": []
+  },
+  "36c52379cbfcaf5fe6fd2851c0582680": {
+   "status": "error",
+   "dur": 155285,
+   "created": "2026-10-10T12:22:23.352357Z",
+   "snips": []
+  },
+  "eef22eafcc69e2855234e3a374c17433": {
+   "status": "error",
+   "dur": 391845,
+   "created": "2026-10-10T12:25:18.542844Z",
+   "snips": []
+  },
+  "8ab1756e501b7122db78db90724fdd30": {
+   "status": "error",
+   "dur": 163273,
+   "created": "2026-10-10T12:22:14.644811Z",
+   "snips": []
+  },
+  "09e6e4e53c1d23ebe8a8813b0d82cbaa": {
+   "status": "error",
+   "dur": 101709,
+   "created": "2026-10-10T12:16:59.832770Z",
+   "snips": []
+  },
+  "67fa16b7a0f40948cc2ee5053058d54c": {
+   "status": "error",
+   "dur": 150311,
+   "created": "2026-10-10T12:22:24.249688Z",
+   "snips": []
+  },
+  "ed70e8bdeee997f6d62fda297dc9ad07": {
+   "status": "error",
+   "dur": 149977,
+   "created": "2026-10-10T12:49:23.498440Z",
+   "snips": []
+  },
+  "2776b05792e0e7ef1bc47f12bc6df571": {
+   "status": "error",
+   "dur": 55914,
+   "created": "2026-10-10T12:16:59.508407Z",
+   "snips": []
+  },
+  "eae44a8a2a9deed1534e4fdedbae4714": {
+   "status": "error",
+   "dur": 63569,
+   "created": "2026-10-10T12:49:19.732215Z",
+   "snips": []
+  },
+  "5f7a042b3a5ebfd74d4bd4a58412354d": {
+   "status": "error",
+   "dur": 96764,
+   "created": "2026-10-10T12:16:53.534809Z",
+   "snips": []
+  },
+  "27cf10c0fed878adf1cf6f00c88cc40a": {
+   "status": "error",
+   "dur": 397298,
+   "created": "2026-10-10T12:22:28.198168Z",
+   "snips": []
+  },
+  "3288c844950af2060c9ba38547e65571": {
+   "status": "error",
+   "dur": 92938,
+   "created": "2026-10-10T12:49:36.101545Z",
+   "snips": []
+  },
+  "0178d61c069b8b9f575a98652719f0d8": {
+   "status": "error",
+   "dur": 297748,
+   "created": "2026-10-10T12:28:16.538224Z",
+   "snips": []
+  },
+  "77ccb4d9ff41de576164efb1b034d599": {
+   "status": "error",
+   "dur": 174452,
+   "created": "2026-10-10T12:28:04.922263Z",
+   "snips": []
+  },
+  "a7dd9ae1b8322bd4fc7d1529c05751e0": {
+   "status": "error",
+   "dur": 322360,
+   "created": "2026-10-10T13:27:15.806486Z",
+   "snips": []
+  },
+  "c9a78b746d479b1f6671b7acf2254de3": {
+   "status": "error",
+   "dur": 401972,
+   "created": "2026-10-10T14:23:39.859223Z",
+   "snips": []
+  },
+  "aeea65c6b2cdfac7815d22620a741597": {
+   "status": "error",
+   "dur": 365323,
+   "created": "2026-10-10T14:36:03.548109Z",
+   "snips": []
+  },
+  "bcbaab155d9bfc630f3903c4c5cd4cb8": {
+   "status": "error",
+   "dur": 360966,
+   "created": "2026-10-10T14:20:24.450038Z",
+   "snips": []
+  },
+  "c83d5a3fa720247da64e20ef924e59c5": {
+   "status": "error",
+   "dur": 313988,
+   "created": "2026-10-11T03:24:36.261750Z",
+   "snips": []
+  },
+  "954c5fc36e7cd071ea3f925bb4e5f303": {
+   "status": "error",
+   "dur": 113488,
+   "created": "2026-10-11T06:58:25.200188Z",
+   "snips": []
+  },
+  "148a4920b0e0bd6b2aa04023197ee545": {
+   "status": "error",
+   "dur": 140381,
+   "created": "2026-10-11T06:58:28.793051Z",
+   "snips": []
+  },
+  "6c8c28dda3c92555ca689643f2863b80": {
+   "status": "error",
+   "dur": 281346,
+   "created": "2026-10-11T06:55:06.834359Z",
+   "snips": []
+  },
+  "ba18c3938f5f62e2e42d34a82238823c": {
+   "status": "error",
+   "dur": 188466,
+   "created": "2026-10-11T06:59:16.884852Z",
+   "snips": []
+  },
+  "8e8b988aaeb90df588d08884d3d650ed": {
+   "status": "error",
+   "dur": 113139,
+   "created": "2026-10-11T06:57:45.520224Z",
+   "snips": []
+  },
+  "114c3ee394b2b46e41419284edc3f322": {
+   "status": "error",
+   "dur": 174863,
+   "created": "2026-10-11T06:57:50.264777Z",
+   "snips": []
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": []
+  },
+  "55bb3418fe6fd056c778475634cbb709": {
+   "status": "error",
+   "dur": 354062,
+   "created": "2026-10-11T07:04:20.546790Z",
+   "snips": []
+  },
+  "f65dd4d4e6442d0dc61b03aad3933539": {
+   "status": "error",
+   "dur": 278068,
+   "created": "2026-10-11T07:06:16.282380Z",
+   "snips": []
+  },
+  "d0bb16b76ed0d55a65d1baade5eaadd3": {
+   "status": "error",
+   "dur": 395254,
+   "created": "2026-10-11T07:03:50.676198Z",
+   "snips": []
+  },
+  "1092b1bbc158b2901ee34dcebb5944a1": {
+   "status": "error",
+   "dur": 333196,
+   "created": "2026-10-11T07:01:10.766126Z",
+   "snips": []
+  },
+  "4fd436b1fcc137691d584d1429d10a2e": {
+   "status": "error",
+   "dur": 368661,
+   "created": "2026-10-11T07:03:26.440127Z",
+   "snips": []
+  },
+  "27be0932e50af5fefac5c7d6fceb0375": {
+   "status": "error",
+   "dur": 315011,
+   "created": "2026-10-11T07:03:12.400876Z",
+   "snips": []
+  },
+  "e8a7ceeb2621480130783322e57c49d8": {
+   "status": "error",
+   "dur": 263860,
+   "created": "2026-10-11T07:01:12.261062Z",
+   "snips": []
+  },
+  "4dba10f45ce6d379ce18ece76686f801": {
+   "status": "error",
+   "dur": 197940,
+   "created": "2026-10-11T07:06:39.077118Z",
+   "snips": []
+  },
+  "40bbb0726111153e6899dbfc9ca94feb": {
+   "status": "error",
+   "dur": 125899,
+   "created": "2026-10-11T07:05:02.281754Z",
+   "snips": []
+  },
+  "8e2a6a444965c57ea8ca13760da3189e": {
+   "status": "error",
+   "dur": 304574,
+   "created": "2026-10-11T07:07:22.902498Z",
+   "snips": []
+  },
+  "0e76736741ffca71dc47e28a72c19196": {
+   "status": "error",
+   "dur": 206498,
+   "created": "2026-10-11T07:33:07.814176Z",
+   "snips": []
+  },
+  "05cbd7082ddc5208b181ba55a9d80fd9": {
+   "status": "error",
+   "dur": 251557,
+   "created": "2026-10-11T07:08:12.980799Z",
+   "snips": []
+  },
+  "fc944b57685292496be1f2892233371e": {
+   "status": "error",
+   "dur": 197817,
+   "created": "2026-10-11T07:19:46.177050Z",
+   "snips": []
+  },
+  "87ab4faf8eb1f53440de256ef835553a": {
+   "status": "error",
+   "dur": 140386,
+   "created": "2026-10-11T07:33:07.887320Z",
+   "snips": []
+  },
+  "17916ac2a41f0a0fb1f66fd182ad4777": {
+   "status": "error",
+   "dur": 162558,
+   "created": "2026-10-11T07:19:44.724437Z",
+   "snips": []
+  },
+  "21330f9aa6b19e167ef2f563ed7638da": {
+   "status": "error",
+   "dur": 125462,
+   "created": "2026-10-11T07:08:53.818514Z",
+   "snips": []
+  },
+  "5ab672764360a66b30a86d8fa89f4fc1": {
+   "status": "error",
+   "dur": 219678,
+   "created": "2026-10-11T07:08:15.700246Z",
+   "snips": []
+  },
+  "1074adb89795b1164ad6cbf4e6307ca2": {
+   "status": "error",
+   "dur": 192915,
+   "created": "2026-10-11T07:16:34.351901Z",
+   "snips": []
+  },
+  "85357c732ba5a305cd2cfc4627f8d2e3": {
+   "status": "error",
+   "dur": 230175,
+   "created": "2026-10-11T07:16:11.585186Z",
+   "snips": []
+  }
+ },
+ "499": {
+  "06dac7f3455fd12d0f348875e46d2722": {
+   "status": "error",
+   "dur": 103280,
+   "created": "2026-10-10T08:34:32.434344Z",
+   "snips": [
+    [
+     "gemini-3.7-flash",
+     "…h JSON only. gemini-3.7-flash vertex_ai 499 213 712 0 0.7 2948 You write one page of an interactive storybook for a child aged 6. Rules: the scenario is one or …"
+    ],
+    [
+     "scene_writer.1",
+     "… in the image\"},\"usage\":{\"input_tokens\":499,\"output_tokens\":213,\"latency_s\":3.183,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\n  \\\"scenario\\\": \\\"<PERSON…"
+    ]
+   ]
+  },
+  "a32498d665231ab02f7218b8b54e9a3f": {
+   "status": "error",
+   "dur": 121895,
+   "created": "2026-10-10T08:48:55.667100Z",
+   "snips": [
+    [
+     "character_card",
+     "…e\":{\"input_tokens\":1367,\"output_tokens\":499,\"latency_s\":4.944,\"model\":\"gemini-3.7-flash\",\"calls\":1},\"raw_text\":\"{\\n  \\\"name\\\": \\\"Zumi\\\",\\n  \\\"species\\\": \\\"rabbi…"
+    ]
+   ]
+  },
+  "c68e670fedeb3ab88314f0bd16bb2323": {
+   "status": "error",
+   "dur": 106140,
+   "created": "2026-10-10T09:05:22.061668Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "…0 to 1. IFM/K2-Horizon-375B-A23B openai 499 116 615 0 You are an independent reviewer of children's story content. You do not write stories. You review ONLY the…"
+    ]
+   ]
+  },
+  "4fd436b1fcc137691d584d1429d10a2e": {
+   "status": "error",
+   "dur": 368661,
+   "created": "2026-10-11T07:03:26.440127Z",
+   "snips": [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     "… 1. IFM/K2-Horizon-375B-A23B openai 750 499 1249 0 You are an independent reviewer of children's story content. You do not write stories. You review ONLY the te…"
+    ]
+   ]
+  },
+  "17916ac2a41f0a0fb1f66fd182ad4777": {
+   "status": "error",
+   "dur": 162558,
+   "created": "2026-10-11T07:19:44.724437Z",
+   "snips": [
+    [
+     "scene_writer.1",
+     "…\":625,\"output_tokens\":266,\"latency_s\":2.499,\"model\":\"claude-haiku\",\"calls\":1},\"raw_text\":\"```json\\n{\\n  \\\"scenario\\\": \\\"<LOCATION> sits on his brown branch with…"
+    ]
+   ]
+  }
+ },
+ "ParseError": {
+  "06dac7f3455fd12d0f348875e46d2722": {
+   "status": "error",
+   "dur": 103280,
+   "created": "2026-10-10T08:34:32.434344Z",
+   "snips": [
+    [
+     "node.write",
+     "…,\"notes\":[]}} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"On the windy ridge, <PERSON> looks at his layered green branche…"
+    ],
+    [
+     "scene_writer.6",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"On the windy ridge, <PERSON> looks at his layered green branche…"
+    ]
+   ]
+  },
+  "e46e796a4a9ee7dde51ee0756eefae80": {
+   "status": "error",
+   "dur": 250574,
+   "created": "2026-10-10T08:02:50.036339Z",
+   "snips": [
+    [
+     "node.write",
+     "…,\"notes\":[]}} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"<PERSON> wiggles his small rounded black ears under the glowing…"
+    ],
+    [
+     "scene_writer.8",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"<PERSON> wiggles his small rounded black ears under the glowing…"
+    ]
+   ]
+  },
+  "4dca08217df7f161d6e401cdf553aad7": {
+   "status": "error",
+   "dur": 181990,
+   "created": "2026-10-10T08:11:34.251360Z",
+   "snips": [
+    [
+     "node.write",
+     "…,\"notes\":[]}} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"Cold wind blows over Snowdrift Hill, and a little lost rabbit s…"
+    ],
+    [
+     "scene_writer.5",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"Cold wind blows over Snowdrift Hill, and a little lost rabbit s…"
+    ]
+   ]
+  },
+  "82324ced0211cd591c2360b2e5395b9d": {
+   "status": "error",
+   "dur": 94993,
+   "created": "2026-10-10T08:58:03.725292Z",
+   "snips": [
+    [
+     "scene_writer.6",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"Glowing fireflies light up <PERSON>\\'s three tiered triangular …"
+    ]
+   ]
+  },
+  "c68e670fedeb3ab88314f0bd16bb2323": {
+   "status": "error",
+   "dur": 106140,
+   "created": "2026-10-10T09:05:22.061668Z",
+   "snips": [
+    [
+     "scene_writer.2",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"At the Art Pavilion, round yellow <PERSON> accidentally snapped…"
+    ]
+   ]
+  },
+  "6b0be8f142fac3c0a8c8b41378f44e3c": {
+   "status": "error",
+   "dur": 54046,
+   "created": "2026-10-10T12:16:50.553561Z",
+   "snips": [
+    [
+     "scene_writer.6",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"<PERSON> finds a singing seashell on the golden sand. His purpl…"
+    ]
+   ]
+  },
+  "148a4920b0e0bd6b2aa04023197ee545": {
+   "status": "error",
+   "dur": 140381,
+   "created": "2026-10-11T06:58:28.793051Z",
+   "snips": [
+    [
+     "scene_writer.6",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"<PERSON> taps his oversized shoes at the busy sunset market. A …"
+    ]
+   ]
+  },
+  "e8a7ceeb2621480130783322e57c49d8": {
+   "status": "error",
+   "dur": 263860,
+   "created": "2026-10-11T07:01:12.261062Z",
+   "snips": [
+    [
+     "scene_writer.6",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"Zippy adjusts the pink and red bow between her upright ears. A …"
+    ]
+   ]
+  },
+  "3d9e833be22b4b727c60b6a63b96ae52": {
+   "status": "error",
+   "dur": 474555,
+   "created": "2026-10-11T07:03:59.239780Z",
+   "snips": [
+    [
+     "scene_writer.4",
+     "{} storybound.clients.errors.ParseError no JSON found in model output: '{\"scenario\": \"<PERSON> with his sharp triangular tail finds a shiny golden ya…"
+    ]
+   ]
+  }
+ }
+}

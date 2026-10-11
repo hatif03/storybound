@@ -1,0 +1,40 @@
+Review findings from 00f675f7-ea48-42e4-b1c7-c48f4baafc9d · local · Claude Code · Verdict: request changes. I found no secrets or child data in the c...
+
+## Claude Code
+
+Verdict: request changes. I found no secrets or child data in the committed evidence, but the new gateway routing has no fallback when a gateway call fails. The hedging also needs the fixes below. I read the diff against origin/HEAD and the code around it. There were no uncommitted changes. I did not run the tests. Nothing in scope touches a "games" feature; the quiz-related changes are the quiz routes in `config.py` and the quiz-safety wording in `deterministic.py`.
+
+8 findings, most severe first:
+
+1. `src/storybound/agents/common.py:23`: A role routed to the hackathon gateway has no fallback to Gemini when the gateway call fails; a missing key is the only case handled.
+
+   Failure scenario: DEFAULT_ROUTES sends story_planner to nova-2-lite. If the gateway returns 5xx or 429, or the hackathon credits run out or the key expires, with_retry gives up and gateway.generate_json raises ClientError. plan() raises 'planner did not return eight beats' and the whole story run fails, where before it would have used Gemini. The quiz roles fail more gently, because n_quiz degrades to 'no quiz'. Fix: in _call(), catch ClientError from the gateway and re-run the call on the default Gemini model, recording a degradation.
+
+2. `src/storybound/clients/retry.py:339`: hedged() leaves the stalled first call running in a non-daemon pool thread (shutdown(wait=False)) with no cancellation.
+
+   Failure scenario: On an 87 s Vertex stall, the second call wins and the request returns. The abandoned thread keeps running until the provider's timeout. concurrent.futures joins those threads at interpreter exit, so a CLI script or server shutdown can hang for up to about 90 s. The abandoned call's tokens are also recorded on the usage meter after the receipt may already have been built, so cost can drift between the receipt and the ledger. Fix: use a daemon thread, or pass a request timeout and make the abandoned call's usage not count.
+
+3. `src/storybound/config.py:415`: The hedge fires at 30 s for every text and vision call, but a slow legitimate call can take longer than 30 s (long writer output, thinking tokens), so it is not only a stall fix.
+
+   Failure scenario: Any normal Gemini call that takes more than 30 s now sends the same request twice, doubling its tokens, cost and quota use. Under a per-minute 429 quota this adds load exactly when the system is already rate-limited, and each retry in with_retry can start two calls again. Fix: hedge only roles known to stall, raise the threshold above the observed p95 latency, or skip the hedge after a 429.
+
+4. `scripts/judge_agreement.py:77`: verification_error verdicts are kept as cells and counted as non-BAD, which is the same as a pass.
+
+   Failure scenario: The filter only drops falsy statuses, so 'verification_error' (3 occurrences in the committed run JSON) counts as an agreeing 'pass' for a clean page and as a miss for a bad page. That inflates or deflates agree_with_k2 and model_matches_ground_truth, and the 'errors' field is only reported beside them, not subtracted. The headline numbers in the evidence are then not exactly what the note says. Fix: exclude verification_error from cs for both the model and K2 before computing the ratios.
+
+5. `scripts/judge_agreement.py:33`: The script permanently overwrites get_settings().models.judge with each tested model and never restores it.
+
+   Failure scenario: After main() the global judge model is the last model tested. Anything in the same process that runs afterwards, such as an import of this script's helpers or a later run, is judged by the wrong model while the receipt still reports it. Fix: save the original value and restore it in a try/finally, or pass the model to judge_batch explicitly.
+
+6. `src/storybound/oath/deterministic.py:317`: quiz_safe_text still treats the soft steering words ('ignore all', 'override', 'disregard') as critical, but story_safe_text now treats them as a rewrite.
+
+   Failure scenario: Two different severities apply to the same innocent sentence. A quiz question such as 'Who would not disregard the sign?' is critical and ends the item with no rewrite, because instruction_hits still includes the soft terms. HR-011 added the soft/hard split for stories, so the quiz path (which now runs on Claude Haiku, whose text varies more) still drops or hard-fails innocent items. Fix: apply the same hard_instruction_hits and soft_instruction_hits split to quiz_safe_text.
+
+7. `src/storybound/clients/usage.py:72`: Pricing recognises a gateway model only by an exact key in prices.gateway; any other claude or nova model falls through to the Gemini price branch.
+
+   Failure scenario: STORYBOUND_ROUTES=story_planner=claude-sonnet-5 (or nova-premier, not in the table) is routed through the gateway by prefix but priced at Gemini rates. The receipt and the cfo.ai cost-per-story figure, which is a measured input, are then silently wrong. Fix: use gateway.is_gateway(model) to enter the branch and warn or raise on a model missing from the table.
+
+8. `CLAUDE.md:25`: Commit 9487261 bundles several unrelated intents against the rule 'One commit per intent so each checkpoint maps to one change'.
+
+   Failure scenario: That single commit contains the hedged retry, the soft-steering rewrite, run tags and the quiz detection change. All four commits landed within 14 seconds (13:45:41 to 13:45:55) and include code, evidence and docs together, so an Entire checkpoint and a neatlogs before/after comparison cannot be tied to one change. Fix: split by intent in future commits, and note this one in HR-011.
+

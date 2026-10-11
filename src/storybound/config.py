@@ -13,6 +13,24 @@ ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env")
 
 
+# The default split of work between Vertex (Gemini) and the hackathon gateway, chosen on 11 Oct by holdout runs (HR-012): the planner on Nova 2 Lite and the
+# quiz maker on Claude Haiku (text only, independent of the writer), the "no words in the picture" check on Claude Haiku. The writer, the oath author,
+# the character card and the safety screen stay on Gemini: moving them lost quality (writer: 3 of 10 stories shipped a break; character card: Haiku
+# read a drawn carrot as an ice-cream cone; safety screen: 23 of 26 fixtures). STORYBOUND_ROUTES= (empty) turns all routing off; without a gateway key
+# every role falls back to Gemini.
+DEFAULT_ROUTES = "story_planner=nova-2-lite,quiz_maker=claude-haiku,quiz_repair=claude-haiku"
+
+
+def _parse_routes(raw: str) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for part in raw.split(","):
+        if "=" in part:
+            k, v = part.split("=", 1)
+            if k.strip() and v.strip():
+                out[k.strip()] = v.strip()
+    return out
+
+
 class Models(BaseModel):
     writer: str = "gemini-3.7-flash"
     vision: str = "gemini-3.7-flash"
@@ -22,6 +40,15 @@ class Models(BaseModel):
     tts: str = "gemini-2.5-flash-tts"
     tts_voice: str = "Kore"
     judge: str = os.environ.get("STORYBOUND_JUDGE_MODEL", "IFM/K2-Horizon-375B-A23B")
+    # Which model each agent role uses when it is not the default. "role=model,role=model" in STORYBOUND_ROUTES, for example
+    # "safety_screen=claude-haiku,story_planner=nova-2-lite". A role is matched by the part of its span name before the first dot
+    # (scene_writer.3 -> scene_writer). Models starting with claude or nova go through the hackathon gateway (clients/gateway.py).
+    routes: dict[str, str] = Field(default_factory=lambda: _parse_routes(os.environ.get("STORYBOUND_ROUTES", DEFAULT_ROUTES)))
+    vision_judge: str = os.environ.get("STORYBOUND_VISION_JUDGE", "claude-haiku")  # who judges the pictures named in vision_judge_for; empty = the vision model (the painter's family)
+    vision_judge_for: tuple[str, ...] = ("image_no_text",)
+
+    def route(self, role: str) -> str | None:
+        return self.routes.get(role) or self.routes.get(role.split(".")[0])
 
 
 class Thresholds(BaseModel):
@@ -56,6 +83,11 @@ class Prices(BaseModel):
     k2_per_m: float = 0.0  # no price known
     image_each: float = 0.04
     tts_each: float = 0.002
+    # Gateway models, USD per million tokens (input, output), read from the gateway's /model/info on 11 Oct (they include its markup).
+    gateway: dict[str, tuple[float, float]] = Field(default_factory=lambda: {
+        "claude-haiku": (1.1, 5.5), "claude-sonnet-4.6": (3.3, 16.5), "claude-opus-4.6": (5.5, 27.5),
+        "nova-micro": (0.035, 0.14), "nova-lite": (0.06, 0.24), "nova-pro": (0.8, 3.2), "nova-2-lite": (0.33, 2.75),
+    })  # fmt: skip
 
 
 class Settings(BaseModel):
@@ -72,6 +104,7 @@ class Settings(BaseModel):
     text_timeout_s: float = float(os.environ.get("STORYBOUND_TEXT_TIMEOUT_S", "90"))  # HR-005: 40 s was tried and not kept
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
+    hedge_after_s: float = float(os.environ.get("STORYBOUND_HEDGE_S", "45"))  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens
 
 

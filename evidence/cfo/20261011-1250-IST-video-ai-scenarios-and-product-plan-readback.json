@@ -1,0 +1,34 @@
+{
+  "note": "Readbacks from the cfoai MCP, 11 Oct 2026 about 12:40 to 12:55 IST. Everything here is an estimate or an assumption: video prices are Gemini API list prices (Vertex not verified), the launch costs are placeholders and not legal or financial advice.",
+  "change_log_ids": {"video inputs added to the launch-costs table": 279505, "cost per story now includes the video cost": 279506, "four Video AI scenarios created": "279507-279510", "scenario inputs set": "279511-279514", "video add-on price row": 279515, "product plan table (new page 'Launch plan')": 279518, "break-even price row": 279519},
+  "video_cost_per_story_usd": {
+    "Main (no video, deterministic motion)": 0.0,
+    "Video AI: 3 Lite clips of 4 s (0.05 USD per second, 1.4 retry allowance, 0.02 clip check)": 0.9,
+    "Video AI: a clip on every page, Fast (8 clips, 4 s, 0.10 USD per second)": 4.64,
+    "Video AI: 3 standard clips of 8 s (0.40 USD per second)": 13.5,
+    "Video AI: a 3-minute animated story (45 clips of 4 s, Lite)": 13.5
+  },
+  "cost_per_story_and_gross_margin_at_month_6": {
+    "policy": "Verify all, Half (4 pictures)",
+    "Main": {"cost_per_story": 0.1959, "gross_margin": 0.672, "clears_60_percent_bar": true},
+    "3 Lite clips": {"cost_per_story": 1.0959, "gross_margin": -0.700},
+    "a clip on every page, Fast": {"cost_per_story": 4.8359, "gross_margin": -6.399},
+    "3 standard clips of 8 s": {"cost_per_story": 13.6959, "gross_margin": -19.902},
+    "3-minute animated story (Lite)": {"cost_per_story": 13.6959, "gross_margin": -19.902},
+    "reading": "At the 6.99 Household price no video scenario clears the margin bar, even with text only (3 Lite clips with no pictures: gross margin -45.6%). Video would have to be a separately priced add-on."
+  },
+  "video_add_on_price_per_story_that_keeps_a_60_percent_margin_on_the_video_alone_usd": {"3 Lite clips": 2.25, "a clip on every page, Fast": 11.6, "3 standard clips of 8 s": 33.75, "3-minute animated story (Lite)": 33.75},
+  "from_project_to_product_assumed": {
+    "real_launch_operating_cost_per_month_usd": 7300,
+    "one_time_launch_cost_usd": 23500,
+    "contribution_per_household_customer_per_month_usd": 2.93102,
+    "households_needed_to_cover_the_real_operating_cost": 2490.6,
+    "months_of_runway_with_100000_usd_raised_after_one_time_costs_and_no_revenue": 10.48,
+    "household_price_per_month_that_breaks_even_at_500_households_usd": 20.72
+  },
+  "caveats": [
+    "The existing Cash and runway tables still use the hackathon-scale fixed cost of 75 USD a month; the product plan table is a separate calculation, not wired into them.",
+    "The Launch plan page is new in the workspace; whether the public share link of 10 Oct includes it was not checked.",
+    "No child data, no Crustdata data."
+  ]
+}

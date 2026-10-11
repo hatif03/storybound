@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 
-from ..clients import gemini, k2
+from ..clients import gateway, gemini, k2
 from ..clients.errors import ClientError
 from ..config import get_settings
 from ..models import Commitment
@@ -102,13 +102,19 @@ def judge_batch(items: list[Commitment], text: str, context: dict) -> dict[str, 
 def judge_image(c: Commitment, image: bytes, mime: str, card_json: str) -> JudgeOut:
     """Image match needs eyes, which K2 does not have: Gemini vision reviews the real bytes. Honest limitation: the
     reviewer is the same family as the painter; the receipt records the model that judged."""
-    model = get_settings().models.vision
+    m = get_settings().models
+    # The gateway reviewer is used only for the promises it measured well on ("image_no_text": is a word readable? an objective question);
+    # "image_matches_card" stays with the vision model that read the drawing, because a weaker reader misread a drawn carrot as an ice-cream cone (HR-011).
+    model = m.vision_judge if c.id in m.vision_judge_for and gateway.is_gateway(m.vision_judge) and gateway.configured() else m.vision
     prompt = (
         f"{c.rubric}\n\nCHARACTER CARD (data): {card_json}\n"
         'Reply with JSON only: {"score": <0..1>, "reasoning": "<one short sentence>"}'
     )
     try:
-        r = gemini.generate_json(prompt, images=[(image, mime)], model=model, temperature=0, max_tokens=300)
+        if gateway.is_gateway(model):  # a reviewer from a different family than the painter (STORYBOUND_VISION_JUDGE)
+            r = gateway.generate_json(prompt, images=[(image, mime)], model=model, temperature=0, max_tokens=300)
+        else:
+            r = gemini.generate_json(prompt, images=[(image, mime)], model=model, temperature=0, max_tokens=300)
     except ClientError as e:
         return JudgeOut("verification_error", error=f"vision judge unavailable: {e}"[:200], model=model)
     v = r.value if isinstance(r.value, dict) else {}

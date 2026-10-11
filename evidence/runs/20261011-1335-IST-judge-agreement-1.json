@@ -1,0 +1,1562 @@
+{
+ "summary": {
+  "source": "20261010-1318-IST-bunny-sharing-B1-first-full-run.json",
+  "pages": 8,
+  "variants": [
+   "clean",
+   "swap",
+   "scary"
+  ],
+  "models": {
+   "claude-haiku": {
+    "cells": 69,
+    "agree_with_k2": "60/69",
+    "ground_truth_cells": 37,
+    "model_matches_ground_truth": "37/37",
+    "k2_matches_ground_truth": "37/37",
+    "disagreements": [
+     "correct_choice_teaches_lesson",
+     "lesson_concept_in_scene"
+    ],
+    "errors": 3
+   },
+   "claude-sonnet-4.6": {
+    "cells": 72,
+    "agree_with_k2": "65/72",
+    "ground_truth_cells": 40,
+    "model_matches_ground_truth": "40/40",
+    "k2_matches_ground_truth": "40/40",
+    "disagreements": [
+     "lesson_concept_in_scene"
+    ],
+    "errors": 0
+   },
+   "claude-opus-4.6": {
+    "cells": 72,
+    "agree_with_k2": "61/72",
+    "ground_truth_cells": 40,
+    "model_matches_ground_truth": "40/40",
+    "k2_matches_ground_truth": "40/40",
+    "disagreements": [
+     "lesson_concept_in_scene"
+    ],
+    "errors": 0
+   }
+  },
+  "note": "recomputed 11 Oct after review: verification_error cells are excluded from both sides of every ratio"
+ },
+ "cells": [
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "verification_error",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "verification_error",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "verification_error",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "critical",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-haiku",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-sonnet-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "violation",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "clean",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "story_safe_text",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "pass",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "swap",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "critical",
+   "k2_status": "violation"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "story_safe_text",
+   "model_status": "critical",
+   "k2_status": "critical"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "lesson_concept_in_scene",
+   "model_status": "violation",
+   "k2_status": "pass"
+  },
+  {
+   "model": "claude-opus-4.6",
+   "kind": "scary",
+   "promise": "correct_choice_teaches_lesson",
+   "model_status": "pass",
+   "k2_status": "pass"
+  }
+ ]
+}

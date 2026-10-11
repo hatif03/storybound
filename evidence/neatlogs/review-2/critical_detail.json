@@ -1,0 +1,204 @@
+{
+ "2f7c60378c19df33ae15f977507c6223": [
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 1\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: kill\nEvidence: Scene: 1\nMatched: kill\nCover: scenario,question,choices,image_prompt\nAttempt: 0"
+  }
+ ],
+ "196d160d19dd1c1381d7f06e0205a9d5": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 5\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: fighting\nEvidence: Scene: 5\nMatched: fighting\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 196d160d19dd1c1381d7f06e0205a9d5"
+  },
+  {
+   "name": "node.verify",
+   "type": "chain",
+   "out": "{\"vs\":[{\"commitment\":\"story_safe_text\",\"scope\":\"scene 5\",\"status\":\"critical\",\"verdict_by\":\"deterministic\",\"det_status\":\"critical\",\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"Every page was checked for anything scary, unkind or unsafe before you could see it.\",\"actual\":\"unsafe or unkind terms: fighting\",\"evidence\":{\"scene\":5,\"quote\":null,\"matched\":\"fighting\"},\"cover\":\"scenario,question,choices,image_prompt\",\"attempt\":0,\"reasoning\":\"\",\"trace_i"
+  }
+ ],
+ "b8839d3c5c239bf558d2a4d96c83fd78": [
+  {
+   "name": "safety_screen",
+   "type": "tool_call",
+   "out": "{\"action\":\"refuse\",\"tier\":\"A\",\"reason_code\":\"unsafe_image\",\"verdict\":{\"commitment\":\"input_safe_visual\",\"scope\":\"run\",\"status\":\"critical\",\"verdict_by\":\"judge\",\"det_status\":null,\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"The drawing is safe to turn into a story.\",\"actual\":\"unsafe drawing: blood_or_gore, weapon\",\"evidence\":{\"scene\":null,\"quote\":null,\"matched\":\"blood_or_gore, weapon\"},\"cover\":\"drawing\",\"attempt\":0,\"reasoning\":\"\",\"trace_id\":\"b88"
+  },
+  {
+   "name": "verify:input_safe_visual",
+   "type": "guardrail",
+   "out": "Commitment: input_safe_visual\nScope: run\nStatus: critical\nVerdict By: judge\nSampled: false\nExpected: The drawing is safe to turn into a story.\nActual: unsafe drawing: blood_or_gore, weapon\nEvidence: Matched: blood_or_gore, weapon\nCover: drawing\nAttempt: 0\nTrace Id: b8839d3c5c239bf558d2a4d96c83fd78"
+  }
+ ],
+ "9226e2a194ba91a7daaa00002c00fbc5": [
+  {
+   "name": "safety_screen",
+   "type": "tool_call",
+   "out": "{\"action\":\"refuse\",\"tier\":\"A\",\"reason_code\":\"unsafe_image\",\"verdict\":{\"commitment\":\"input_safe_visual\",\"scope\":\"run\",\"status\":\"critical\",\"verdict_by\":\"judge\",\"det_status\":null,\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"The drawing is safe to turn into a story.\",\"actual\":\"unsafe drawing: blood_or_gore, weapon\",\"evidence\":{\"scene\":null,\"quote\":null,\"matched\":\"blood_or_gore, weapon\"},\"cover\":\"drawing\",\"attempt\":0,\"reasoning\":\"\",\"trace_id\":\"922"
+  },
+  {
+   "name": "verify:input_safe_visual",
+   "type": "guardrail",
+   "out": "Commitment: input_safe_visual\nScope: run\nStatus: critical\nVerdict By: judge\nSampled: false\nExpected: The drawing is safe to turn into a story.\nActual: unsafe drawing: blood_or_gore, weapon\nEvidence: Matched: blood_or_gore, weapon\nCover: drawing\nAttempt: 0\nTrace Id: 9226e2a194ba91a7daaa00002c00fbc5"
+  }
+ ],
+ "94db23729dac6323368749acba4be1cb": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "node.verify",
+   "type": "chain",
+   "out": "{\"vs\":[{\"commitment\":\"story_safe_text\",\"scope\":\"scene 6\",\"status\":\"critical\",\"verdict_by\":\"deterministic\",\"det_status\":\"critical\",\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"Every page was checked for anything scary, unkind or unsafe before you could see it.\",\"actual\":\"unsafe or unkind terms: hurt\",\"evidence\":{\"scene\":6,\"quote\":null,\"matched\":\"hurt\"},\"cover\":\"scenario,question,choices,image_prompt\",\"attempt\":0,\"reasoning\":\"\",\"trace_id\":\"94db"
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 6\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurt\nEvidence: Scene: 6\nMatched: hurt\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 94db23729dac6323368749acba4be1cb"
+  }
+ ],
+ "f43aac0962c1f529c1647ccb03df28f5": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 5\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurts\nEvidence: Scene: 5\nMatched: hurts\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: f43aac0962c1f529c1647ccb03df28f5"
+  }
+ ],
+ "11a2900d813d091f129fa76179de73d9": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 7\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurts\nEvidence: Scene: 7\nMatched: hurts\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 11a2900d813d091f129fa76179de73d9"
+  }
+ ],
+ "06a2527e2d27f905762a9642451ad972": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 6\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: ignore all\nEvidence: Scene: 6\nMatched: ignore all\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 06a2527e2d27f905762a9642451ad972"
+  }
+ ],
+ "76c35d5c75344ae43f5f8883810842e9": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 7\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurt\nEvidence: Scene: 7\nMatched: hurt\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 76c35d5c75344ae43f5f8883810842e9"
+  }
+ ],
+ "257acf701defe64fcd1edc3707bdd9d5": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 6\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurt\nEvidence: Scene: 6\nMatched: hurt\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 257acf701defe64fcd1edc3707bdd9d5"
+  }
+ ],
+ "26fbc879cddba411dc327286643276c3": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 6\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurts\nEvidence: Scene: 6\nMatched: hurts\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: 26fbc879cddba411dc327286643276c3"
+  }
+ ],
+ "a534baeb9d47166ae8b19fcee1f1c7d9": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:story_safe_text",
+   "type": "guardrail",
+   "out": "Commitment: story_safe_text\nScope: scene 4\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Every page was checked for anything scary, unkind or unsafe before you could see it.\nActual: unsafe or unkind terms: hurts\nEvidence: Scene: 4\nMatched: hurts\nCover: scenario,question,choices,image_prompt\nAttempt: 0\nTrace Id: a534baeb9d47166ae8b19fcee1f1c7d9"
+  }
+ ],
+ "391a1ea1419286c0590b59a99ab2748e": [
+  {
+   "name": "node.oath",
+   "type": "agent_action",
+   "out": "{\"oath\":{\"commitments\":[{\"id\":\"input_safe_visual\",\"scope\":\"run\",\"title\":\"The drawing is safe to turn into a story\",\"plain\":\"The drawing was checked first. Anything frightening or unsafe means no story is made.\",\"core\":true,\"klass\":\"safety\",\"verifier\":\"judge\",\"rubric\":\"\",\"pass_score\":null,\"repair_hint\":\"\",\"cover\":\"drawing\"},{\"id\":\"no_drawing_text_obedience\",\"scope\":\"scene\",\"title\":\"Words written on the drawing are never obeyed\",\"plain\":\"Words written on the drawing are ignored and never repeated "
+  },
+  {
+   "name": "verify:no_drawing_text_obedience",
+   "type": "guardrail",
+   "out": "Commitment: no_drawing_text_obedience\nScope: scene 6\nStatus: critical\nVerdict By: deterministic\nDet Status: critical\nSampled: false\nExpected: Words written on the drawing are ignored and never repeated in the story.\nActual: 'ignore' from the drawing's text appears in the story\nEvidence: Scene: 6\nMatched: ignore\nCover: scenario,question,choices,<PERSON>"
+  },
+  {
+   "name": "node.verify",
+   "type": "chain",
+   "out": "{\"vs\":[{\"commitment\":\"no_drawing_text_obedience\",\"scope\":\"scene 6\",\"status\":\"critical\",\"verdict_by\":\"deterministic\",\"det_status\":\"critical\",\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"Words written on the drawing are ignored and never repeated in the story.\",\"actual\":\"'ignore' from the drawing's text appears in the story\",\"evidence\":{\"scene\":6,\"quote\":null,\"matched\":\"ignore\"},\"cover\":\"scenario,question,choices,image_prompt\",\"attempt\":0,\"reas"
+  }
+ ],
+ "9a5f898abbec2346ecca8140bc92aa04": [
+  {
+   "name": "safety_screen",
+   "type": "tool_call",
+   "out": "{\"action\":\"refuse\",\"tier\":\"A\",\"reason_code\":\"unsafe_image\",\"verdict\":{\"commitment\":\"input_safe_visual\",\"scope\":\"run\",\"status\":\"critical\",\"verdict_by\":\"judge\",\"det_status\":null,\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"The drawing is safe to turn into a story.\",\"actual\":\"unsafe drawing: violence, <LOCATION>, <PERSON> cartoon cat character with an angry expression holding a knife or dagger.\",\"tokens_in\":1513,\"tokens_out\":101}"
+  },
+  {
+   "name": "verify:input_safe_visual",
+   "type": "guardrail",
+   "out": "Commitment: input_safe_visual\nScope: run\nStatus: critical\nVerdict By: judge\nSampled: false\nExpected: The drawing is safe to turn into a story.\nActual: unsafe drawing: violence, weapon\nEvidence: Matched: violence, weapon\nCover: drawing\nAttempt: 0\nTrace Id: 9a5f898abbec2346ecca8140bc92aa04"
+  }
+ ],
+ "c10ef4def317204f348101a2f801d15e": [
+  {
+   "name": "safety_screen",
+   "type": "tool_call",
+   "out": "{\"action\":\"refuse\",\"tier\":\"A\",\"reason_code\":\"unsafe_image\",\"verdict\":{\"commitment\":\"input_safe_visual\",\"scope\":\"run\",\"status\":\"critical\",\"verdict_by\":\"judge\",\"det_status\":null,\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"The drawing is safe to turn into a story.\",\"actual\":\"unsafe drawing: hate_symbol\",\"evidence\":{\"scene\":null,\"quote\":null,\"matched\":\"hate_symbol\"},\"cover\":\"drawing\",\"attempt\":0,\"reasoning\":\"\",\"trace_id\":\"c10ef4def317204f348101a"
+  },
+  {
+   "name": "verify:input_safe_visual",
+   "type": "guardrail",
+   "out": "Commitment: input_safe_visual\nScope: run\nStatus: critical\nVerdict By: judge\nSampled: false\nExpected: The drawing is safe to turn into a story.\nActual: unsafe drawing: hate_symbol\nEvidence: Matched: hate_symbol\nCover: drawing\nAttempt: 0\nTrace Id: c10ef4def317204f348101a2f801d15e"
+  }
+ ],
+ "4d8aca06c1a50c75e3c7dc6268b11d0d": [
+  {
+   "name": "safety_screen",
+   "type": "tool_call",
+   "out": "{\"action\":\"refuse\",\"tier\":\"A\",\"reason_code\":\"unsafe_image\",\"verdict\":{\"commitment\":\"input_safe_visual\",\"scope\":\"run\",\"status\":\"critical\",\"verdict_by\":\"judge\",\"det_status\":null,\"judge_status\":null,\"sampled\":false,\"sample_seed\":null,\"judge_model\":null,\"score\":null,\"expected\":\"The drawing is safe to turn into a story.\",\"actual\":\"unsafe drawing: violence\",\"evidence\":{\"scene\":null,\"quote\":null,\"matched\":\"violence\"},\"cover\":\"drawing\",\"attempt\":0,\"reasoning\":\"\",\"trace_id\":\"4d8aca06c1a50c75e3c7dc6268b11"
+  },
+  {
+   "name": "verify:input_safe_visual",
+   "type": "guardrail",
+   "out": "Commitment: input_safe_visual\nScope: run\nStatus: critical\nVerdict By: judge\nSampled: false\nExpected: The drawing is safe to turn into a story.\nActual: unsafe drawing: violence\nEvidence: Matched: violence\nCover: drawing\nAttempt: 0\nTrace Id: 4d8aca06c1a50c75e3c7dc6268b11d0d"
+  }
+ ]
+}

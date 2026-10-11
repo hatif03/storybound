@@ -41,6 +41,7 @@ class Meter:
         self.by_model: dict[str, dict[str, float]] = {}
         self.images = 0
         self.tts = 0
+        self.fallbacks: list[dict] = []  # a role routed to another provider that fell back to the default model
 
     def add(self, u: Usage, kind: str = "llm") -> None:
         with self._lock:
@@ -69,6 +70,9 @@ class Meter:
             for model, r in self.by_model.items():
                 if model.startswith("IFM/"):
                     usd += (r["in"] + r["out"]) / 1e6 * prices.k2_per_m
+                elif model.startswith(("claude", "nova")):  # a gateway model; one missing from the table is priced at the dearest entry (never under-reported)
+                    p_in, p_out = prices.gateway.get(model) or max(prices.gateway.values())
+                    usd += r["in"] / 1e6 * p_in + r["out"] / 1e6 * p_out
                 elif "image" in model or "tts" in model:
                     continue
                 else:
@@ -77,6 +81,13 @@ class Meter:
 
 
 _current: ContextVar[Meter | None] = ContextVar("storybound_meter", default=None)
+
+
+def record_fallback(role: str, model: str, error: str) -> None:
+    m = _current.get()
+    if m is not None:
+        with m._lock:
+            m.fallbacks.append({"role": role, "model": model, "error": error[:120]})
 
 
 def record(u: Usage, kind: str = "llm") -> None:

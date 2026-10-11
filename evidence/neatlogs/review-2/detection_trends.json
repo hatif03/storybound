@@ -1,0 +1,749 @@
+{
+ "Oath violation|hour": {
+  "detection_id": "195c2e97-38be-4e54-8ebc-e97cdf57ab3c",
+  "detection_name": "Oath violation",
+  "period": "24h",
+  "granularity": "hour",
+  "start_date": "2026-10-10T07:22:39.716Z",
+  "end_date": "2026-10-11T07:22:39.716Z",
+  "total_occurrences": 609,
+  "data_points": [
+   {
+    "date": "2026-10-10T07:00:00Z",
+    "count": 73
+   },
+   {
+    "date": "2026-10-10T08:00:00Z",
+    "count": 378
+   },
+   {
+    "date": "2026-10-10T09:00:00Z",
+    "count": 75
+   },
+   {
+    "date": "2026-10-10T10:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T11:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T12:00:00Z",
+    "count": 50
+   },
+   {
+    "date": "2026-10-10T13:00:00Z",
+    "count": 1
+   },
+   {
+    "date": "2026-10-10T14:00:00Z",
+    "count": 8
+   },
+   {
+    "date": "2026-10-10T15:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T16:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T17:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T18:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T19:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T20:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T21:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T22:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T23:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T01:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T02:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T03:00:00Z",
+    "count": 2
+   },
+   {
+    "date": "2026-10-11T04:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T05:00:00Z",
+    "count": 22
+   },
+   {
+    "date": "2026-10-11T06:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T07:00:00Z",
+    "count": 0
+   }
+  ]
+ },
+ "Oath violation|day": {
+  "detection_id": "195c2e97-38be-4e54-8ebc-e97cdf57ab3c",
+  "detection_name": "Oath violation",
+  "period": "7d",
+  "granularity": "day",
+  "start_date": "2026-10-04T07:22:41.426Z",
+  "end_date": "2026-10-11T07:22:41.426Z",
+  "total_occurrences": 609,
+  "data_points": [
+   {
+    "date": "2026-10-04T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-05T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-06T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-07T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-08T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-09T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T00:00:00Z",
+    "count": 585
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 24
+   }
+  ]
+ },
+ "Execution Failed|hour": {
+  "detection_id": "a50a8ec3-8047-4c01-8421-d565c0fd68f5",
+  "detection_name": "Execution Failed",
+  "period": "24h",
+  "granularity": "hour",
+  "start_date": "2026-10-10T07:22:42.523Z",
+  "end_date": "2026-10-11T07:22:42.523Z",
+  "total_occurrences": 312,
+  "data_points": [
+   {
+    "date": "2026-10-10T07:00:00Z",
+    "count": 70
+   },
+   {
+    "date": "2026-10-10T08:00:00Z",
+    "count": 19
+   },
+   {
+    "date": "2026-10-10T09:00:00Z",
+    "count": 12
+   },
+   {
+    "date": "2026-10-10T10:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T11:00:00Z",
+    "count": 2
+   },
+   {
+    "date": "2026-10-10T12:00:00Z",
+    "count": 65
+   },
+   {
+    "date": "2026-10-10T13:00:00Z",
+    "count": 19
+   },
+   {
+    "date": "2026-10-10T14:00:00Z",
+    "count": 111
+   },
+   {
+    "date": "2026-10-10T15:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T16:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T17:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T18:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T19:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T20:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T21:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T22:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T23:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T01:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T02:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T03:00:00Z",
+    "count": 4
+   },
+   {
+    "date": "2026-10-11T04:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T05:00:00Z",
+    "count": 8
+   },
+   {
+    "date": "2026-10-11T06:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T07:00:00Z",
+    "count": 2
+   }
+  ]
+ },
+ "Execution Failed|day": {
+  "detection_id": "a50a8ec3-8047-4c01-8421-d565c0fd68f5",
+  "detection_name": "Execution Failed",
+  "period": "7d",
+  "granularity": "day",
+  "start_date": "2026-10-04T07:22:43.559Z",
+  "end_date": "2026-10-11T07:22:43.559Z",
+  "total_occurrences": 312,
+  "data_points": [
+   {
+    "date": "2026-10-04T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-05T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-06T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-07T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-08T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-09T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T00:00:00Z",
+    "count": 298
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 14
+   }
+  ]
+ },
+ "Slow LLM Response|hour": {
+  "detection_id": "eb931dbf-c86a-448d-ad60-17ce6e876f4f",
+  "detection_name": "Slow LLM Response",
+  "period": "24h",
+  "granularity": "hour",
+  "start_date": "2026-10-10T07:22:44.594Z",
+  "end_date": "2026-10-11T07:22:44.594Z",
+  "total_occurrences": 185,
+  "data_points": [
+   {
+    "date": "2026-10-10T07:00:00Z",
+    "count": 11
+   },
+   {
+    "date": "2026-10-10T08:00:00Z",
+    "count": 63
+   },
+   {
+    "date": "2026-10-10T09:00:00Z",
+    "count": 65
+   },
+   {
+    "date": "2026-10-10T10:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T11:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T12:00:00Z",
+    "count": 28
+   },
+   {
+    "date": "2026-10-10T13:00:00Z",
+    "count": 1
+   },
+   {
+    "date": "2026-10-10T14:00:00Z",
+    "count": 3
+   },
+   {
+    "date": "2026-10-10T15:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T16:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T17:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T18:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T19:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T20:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T21:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T22:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T23:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T01:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T02:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T03:00:00Z",
+    "count": 1
+   },
+   {
+    "date": "2026-10-11T04:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T05:00:00Z",
+    "count": 7
+   },
+   {
+    "date": "2026-10-11T06:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T07:00:00Z",
+    "count": 6
+   }
+  ]
+ },
+ "Slow LLM Response|day": {
+  "detection_id": "eb931dbf-c86a-448d-ad60-17ce6e876f4f",
+  "detection_name": "Slow LLM Response",
+  "period": "7d",
+  "granularity": "day",
+  "start_date": "2026-10-04T07:22:45.634Z",
+  "end_date": "2026-10-11T07:22:45.634Z",
+  "total_occurrences": 185,
+  "data_points": [
+   {
+    "date": "2026-10-04T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-05T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-06T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-07T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-08T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-09T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T00:00:00Z",
+    "count": 171
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 14
+   }
+  ]
+ },
+ "Critical safety stop|hour": {
+  "detection_id": "419644ba-6cd5-4a66-8a84-10528e4467c0",
+  "detection_name": "Critical safety stop",
+  "period": "24h",
+  "granularity": "hour",
+  "start_date": "2026-10-10T07:22:46.672Z",
+  "end_date": "2026-10-11T07:22:46.672Z",
+  "total_occurrences": 13,
+  "data_points": [
+   {
+    "date": "2026-10-10T07:00:00Z",
+    "count": 5
+   },
+   {
+    "date": "2026-10-10T08:00:00Z",
+    "count": 3
+   },
+   {
+    "date": "2026-10-10T09:00:00Z",
+    "count": 4
+   },
+   {
+    "date": "2026-10-10T10:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T11:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T12:00:00Z",
+    "count": 1
+   },
+   {
+    "date": "2026-10-10T13:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T14:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T15:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T16:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T17:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T18:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T19:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T20:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T21:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T22:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T23:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T01:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T02:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T03:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T04:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T05:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T06:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T07:00:00Z",
+    "count": 0
+   }
+  ]
+ },
+ "Critical safety stop|day": {
+  "detection_id": "419644ba-6cd5-4a66-8a84-10528e4467c0",
+  "detection_name": "Critical safety stop",
+  "period": "7d",
+  "granularity": "day",
+  "start_date": "2026-10-04T07:22:47.726Z",
+  "end_date": "2026-10-11T07:22:47.726Z",
+  "total_occurrences": 13,
+  "data_points": [
+   {
+    "date": "2026-10-04T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-05T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-06T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-07T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-08T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-09T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T00:00:00Z",
+    "count": 13
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   }
+  ]
+ },
+ "Expensive LLM Call|hour": {
+  "detection_id": "9a0eedfe-9d0c-4f47-9eaa-e1ffc1abac43",
+  "detection_name": "Expensive LLM Call",
+  "period": "24h",
+  "granularity": "hour",
+  "start_date": "2026-10-10T07:22:48.802Z",
+  "end_date": "2026-10-11T07:22:48.802Z",
+  "total_occurrences": 0,
+  "data_points": [
+   {
+    "date": "2026-10-10T07:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T08:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T09:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T10:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T11:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T12:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T13:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T14:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T15:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T16:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T17:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T18:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T19:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T20:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T21:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T22:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-10T23:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T00:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T01:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T02:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T03:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T04:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T05:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T06:00:00Z",
+    "count": 0
+   },
+   {
+    "date": "2026-10-11T07:00:00Z",
+    "count": 0
+   }
+  ]
+ },
+ "Expensive LLM Call|day": {
+  "error": "No detection found matching detection_name \"Expensive LLM Call\" in this project. Use list_detections to see what's enabled.",
+  "errorCode": "not_found"
+ },
+ "Picture has words painted in|hour": {
+  "error": "No detection found matching detection_name \"Picture has words painted in\" in this project. Use list_detections to see what's enabled.",
+  "errorCode": "not_found"
+ },
+ "Picture has words painted in|day": {
+  "error": "No detection found matching detection_name \"Picture has words painted in\" in this project. Use list_detections to see what's enabled.",
+  "errorCode": "not_found"
+ },
+ "Quiz question failed a promise|hour": {
+  "error": "No detection found matching detection_name \"Quiz question failed a promise\" in this project. Use list_detections to see what's enabled.",
+  "errorCode": "not_found"
+ },
+ "Quiz question failed a promise|day": {
+  "error": "No detection found matching detection_name \"Quiz question failed a promise\" in this project. Use list_detections to see what's enabled.",
+  "errorCode": "not_found"
+ }
+}

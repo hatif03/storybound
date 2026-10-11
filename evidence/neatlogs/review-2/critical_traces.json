@@ -1,0 +1,162 @@
+{
+ "94db23729dac6323368749acba4be1cb": {
+  "trace_id": "94db23729dac6323368749acba4be1cb",
+  "status": "error",
+  "duration_ms": 379427,
+  "created_at": "2026-10-10T07:51:46.421455Z",
+  "span_count": 368,
+  "errored_span_count": 45,
+  "cost_usd": 0.03439005,
+  "workflow_name": "create-storybook"
+ },
+ "391a1ea1419286c0590b59a99ab2748e": {
+  "trace_id": "391a1ea1419286c0590b59a99ab2748e",
+  "status": "success",
+  "duration_ms": 143784,
+  "created_at": "2026-10-10T12:28:07.515132Z",
+  "span_count": 153,
+  "errored_span_count": 0,
+  "cost_usd": 0.01673625,
+  "workflow_name": "create-storybook"
+ },
+ "76c35d5c75344ae43f5f8883810842e9": {
+  "trace_id": "76c35d5c75344ae43f5f8883810842e9",
+  "status": "error",
+  "duration_ms": 293785,
+  "created_at": "2026-10-10T09:06:26.748848Z",
+  "span_count": 113,
+  "errored_span_count": 1,
+  "cost_usd": 0.02030325,
+  "workflow_name": "create-storybook"
+ },
+ "196d160d19dd1c1381d7f06e0205a9d5": {
+  "trace_id": "196d160d19dd1c1381d7f06e0205a9d5",
+  "status": "success",
+  "duration_ms": 70413,
+  "created_at": "2026-10-10T07:40:40.569317Z",
+  "span_count": 248,
+  "errored_span_count": 0,
+  "cost_usd": 0.02695575,
+  "workflow_name": "create-storybook"
+ },
+ "f43aac0962c1f529c1647ccb03df28f5": {
+  "trace_id": "f43aac0962c1f529c1647ccb03df28f5",
+  "status": "success",
+  "duration_ms": 151357,
+  "created_at": "2026-10-10T08:04:34.573861Z",
+  "span_count": 104,
+  "errored_span_count": 0,
+  "cost_usd": 0.01434975,
+  "workflow_name": "create-storybook"
+ },
+ "11a2900d813d091f129fa76179de73d9": {
+  "trace_id": "11a2900d813d091f129fa76179de73d9",
+  "status": "success",
+  "duration_ms": 164430,
+  "created_at": "2026-10-10T08:52:36.708489Z",
+  "span_count": 107,
+  "errored_span_count": 0,
+  "cost_usd": 0.0101955,
+  "workflow_name": "create-storybook"
+ },
+ "06a2527e2d27f905762a9642451ad972": {
+  "trace_id": "06a2527e2d27f905762a9642451ad972",
+  "status": "success",
+  "duration_ms": 163442,
+  "created_at": "2026-10-10T08:57:12.032043Z",
+  "span_count": 107,
+  "errored_span_count": 0,
+  "cost_usd": 0.009252,
+  "workflow_name": "create-storybook"
+ },
+ "a534baeb9d47166ae8b19fcee1f1c7d9": {
+  "trace_id": "a534baeb9d47166ae8b19fcee1f1c7d9",
+  "status": "success",
+  "duration_ms": 162641,
+  "created_at": "2026-10-10T09:29:33.112187Z",
+  "span_count": 103,
+  "errored_span_count": 0,
+  "cost_usd": 0.02453775,
+  "workflow_name": "create-storybook"
+ },
+ "26fbc879cddba411dc327286643276c3": {
+  "trace_id": "26fbc879cddba411dc327286643276c3",
+  "status": "success",
+  "duration_ms": 155454,
+  "created_at": "2026-10-10T09:11:52.712355Z",
+  "span_count": 99,
+  "errored_span_count": 0,
+  "cost_usd": 0.01031625,
+  "workflow_name": "create-storybook"
+ },
+ "257acf701defe64fcd1edc3707bdd9d5": {
+  "trace_id": "257acf701defe64fcd1edc3707bdd9d5",
+  "status": "success",
+  "duration_ms": 168110,
+  "created_at": "2026-10-10T09:10:34.483517Z",
+  "span_count": 110,
+  "errored_span_count": 0,
+  "cost_usd": 0.02316675,
+  "workflow_name": "create-storybook"
+ },
+ "2f7c60378c19df33ae15f977507c6223": {
+  "trace_id": "2f7c60378c19df33ae15f977507c6223",
+  "status": "success",
+  "duration_ms": 0,
+  "created_at": "2026-10-10T07:34:12.887464Z",
+  "span_count": 2,
+  "errored_span_count": 0,
+  "cost_usd": 0,
+  "workflow_name": "create-storybook"
+ },
+ "9a5f898abbec2346ecca8140bc92aa04": {
+  "trace_id": "9a5f898abbec2346ecca8140bc92aa04",
+  "status": "success",
+  "duration_ms": 3035,
+  "created_at": "2026-10-11T07:07:46.511560Z",
+  "span_count": 5,
+  "errored_span_count": 0,
+  "cost_usd": 0,
+  "workflow_name": "safety-eval-one"
+ },
+ "4d8aca06c1a50c75e3c7dc6268b11d0d": {
+  "trace_id": "4d8aca06c1a50c75e3c7dc6268b11d0d",
+  "status": "success",
+  "duration_ms": 3178,
+  "created_at": "2026-10-11T07:13:16.838333Z",
+  "span_count": 5,
+  "errored_span_count": 0,
+  "cost_usd": 0,
+  "workflow_name": "safety-eval-one"
+ },
+ "c10ef4def317204f348101a2f801d15e": {
+  "trace_id": "c10ef4def317204f348101a2f801d15e",
+  "status": "success",
+  "duration_ms": 2765,
+  "created_at": "2026-10-11T07:08:14.713319Z",
+  "span_count": 5,
+  "errored_span_count": 0,
+  "cost_usd": 0,
+  "workflow_name": "safety-eval-one"
+ },
+ "b8839d3c5c239bf558d2a4d96c83fd78": {
+  "trace_id": "b8839d3c5c239bf558d2a4d96c83fd78",
+  "status": "success",
+  "duration_ms": 4292,
+  "created_at": "2026-10-10T07:49:08.211837Z",
+  "span_count": 5,
+  "errored_span_count": 0,
+  "cost_usd": 0.001491,
+  "workflow_name": "safety-eval-one"
+ },
+ "9226e2a194ba91a7daaa00002c00fbc5": {
+  "trace_id": "9226e2a194ba91a7daaa00002c00fbc5",
+  "status": "success",
+  "duration_ms": 3164,
+  "created_at": "2026-10-10T07:49:32.877808Z",
+  "span_count": 5,
+  "errored_span_count": 0,
+  "cost_usd": 0.001491,
+  "workflow_name": "safety-eval-one"
+ }
+}

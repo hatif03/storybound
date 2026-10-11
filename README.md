@@ -29,6 +29,8 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | How neatlogs, Entire and cfo.ai were used (architecture, implementation, runtime, reasoning, result) | [docs/TOOLS.md](docs/TOOLS.md) |
 | What is done and what is left | [docs/STATUS.md](docs/STATUS.md) |
 | Why it fits the hackathon's problem statement | [docs/QUALIFICATION.md](docs/QUALIFICATION.md) |
+| If this launched to real children: situations, what is built, what is open | [docs/LAUNCH-READINESS.md](docs/LAUNCH-READINESS.md) |
+| Research: evaluation practice (SWE-bench, OpenAI) and video generation (Veo access, landscape, plan) | [docs/research/evals-and-observability.md](docs/research/evals-and-observability.md), [docs/research/video-generation.md](docs/research/video-generation.md) |
 | Every claim with its evidence | [EVIDENCE.md](EVIDENCE.md) (generated) and `evidence/` |
 | The agent's design | [docs/DESIGN.md](docs/DESIGN.md) |
 | The HTTP contract | [docs/API.md](docs/API.md) |
@@ -37,21 +39,21 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | State of every platform | [docs/PLATFORMS.md](docs/PLATFORMS.md) |
 
 ## The pieces
-- **Story agent** (`src/storybound/`): safety screen, character card, oath, planner, page loop with pipelined review and repair (LangGraph), whole-story gate, quiz, pictures, narration, receipt. Arms: **B0** ungated, **B1** gated (the product), **B2** the same model reviews its own story.
+- **Story agent** (`src/storybound/`): safety screen, character card, oath, planner (scores each beat's importance), page loop with pipelined review and repair (LangGraph), whole-story gate, quiz, pictures (the agent chooses which pages to paint within a budget), narration, receipt. Arms: **B0** ungated, **B1** gated (the product), **B2** the same model reviews its own story.
 - **Oath** (`src/storybound/oath/`): 22 core promises plus lesson-specific ones, grown-up promises and 6 quiz promises, checked by deterministic code and an independent judge (K2, a different model family from the writer) with a verbatim-quote check.
 - **Video agent** (`src/storybound/video/`): plans or reads a spec of typed blocks, resolves every number from an evidence file, narrates, builds and renders with HyperFrames, checks its own **video oath**, repairs the failing scene, and ships a receipt. Used for the read-along video of a story and for the demo video.
-- **Web app** (`web/`): draw, pick a lesson, read, quiz and game, movie, grown-ups area (receipt, settings, forget).
+- **Web app** (`web/`): draw, pick a lesson, read, quiz and game, movie, grown-ups area (receipt, settings, forget). Built for small hands: hold-to-confirm for anything that throws work away, palm and ghost-tap guards, a drawing that survives a reload and a "start over" that can be undone ([docs/WEB.md](docs/WEB.md#small-hands-touch-safety)).
 - **Evidence** (`evidence/`): the run ledger, sweep reports, seven hardening records, exported neatlogs traces, screenshots, Entire and cfo.ai outputs.
 
 ## Numbers you can check
 | What | Value | Where |
 | --- | --- | --- |
 | Stories shipped with a broken promise (B0 / B2 / B1) | 27/28, 27/28, **0/28** | `evidence/reports/*sweep-2-p2.md` |
-| Hardening records, each with before and after | HR-001 to HR-007 | `evidence/hardening/` |
+| Hardening records, each with before and after | HR-001 to HR-010 | `evidence/hardening/` |
 | Judge on 24 injected faults | 24/24 caught, 0/8 clean pages flagged | `evidence/runs/20261010-1334-IST-judge-eval.json` |
 | Text cost per gated story, measured by neatlogs | $0.0199 | `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json` |
 | Month-6 gross margin (cfo.ai, Main / Growth / Downside) | 67.2% / 55.2% / 40.9% (estimates) | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg |
-| Tests | 80 backend, 19 web | `pytest tests`, `npm run test` in `web/` |
+| Tests | 85 backend, 26 web (plus 11 browser checks for touch safety) | `pytest tests`, `npm run test` in `web/` |
 
 ## Run it (development)
 ```powershell

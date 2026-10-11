@@ -93,6 +93,16 @@ still picture. Poses 03 (crying) and 08 (angry) are deliberately not shipped. Po
 supplied still composites. A still WebP shows first and stays if Rive fails or motion is reduced. The Rive runtime (~230 KB JS, 2 MB wasm) is
 lazy-loaded and self-hosted; the runtime's CDN fallback is disabled.
 
+## Small hands (touch safety)
+A child on a tablet rests a palm, taps twice, swipes from the edge and pinches. None of that may change or delete the story. Rules, all in `web/src/lib/touchGuard.ts` unless noted:
+- **Ghost taps:** clicks within 350 ms of a screen change are dropped.
+- **Palms and resting hands:** a touch wider than 60 px is not a tap; three or more fingers down means a hand, and clicks are dropped for that moment; on the drawing a second finger never starts a second stroke; after the Apple Pencil was seen (hovering counts) touches on the drawing are ignored for 6 s. Safari does not report contact size, so there these two rely on the rules below.
+- **Hold to confirm** (`HoldButton.tsx`): leaving a story, stopping the making and making another story ask with Pip, and the "yes" must be held for 0.9 s; "keep going" is a plain tap and has focus. Keyboard and screen-reader activation is immediate.
+- **Nothing is final:** "Start over" clears at once and offers "Bring my drawing back"; undo is unlimited.
+- **Reload-safe:** the drawing in progress (strokes only) is kept in this tab (`sessionStorage`) and the id of the story in progress too (`lib/resume.ts`); a reload picks the story up again from the server. Both are removed when the story starts (drawing) and by Forget.
+- **No gestures of our own** and the browser's back swipe is held in place (`keepInApp`); pinch, double-tap zoom, long-press menus and dragging pictures are switched off outside text fields; the voice stops when the tab is hidden.
+- Checks: `web/src/lib/touchGuard.test.ts` (7 unit tests) and `node web/scripts/e2e-touch.mjs` (11 behaviours through a touch-emulating browser, demo mode). Not tested: a real iPad, Safari, a real pencil.
+
 ## Quizzes and games: what they are and the rules they keep
 
 After the last page a child gets (1) a short quiz about the story and (2) a "which picture came first?" game, then the end screen. Both are skippable and neither can be failed.

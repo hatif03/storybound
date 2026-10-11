@@ -9,10 +9,15 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps; HR-001 to HR-006 written; HR-007 below | `evidence/hardening/`, `evidence/reports/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-010 written (HR-008 to HR-010 on 11 Oct: evaluation gaps, the clip oath, early pictures) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |
+| Agent chooses the pages to paint (policy `auto`, default) | The planner scores each beat's importance; the agent spends a $0.16 picture budget on the best pages, starts each picture when its page is accepted, and stops painting after two failures in a row. First picture at 70 s instead of 278 s in a same-drawing comparison | HR-010, `tests/test_pipeline.py`, `evidence/runs/20261011-1130-IST-auto-pictures-early-bunny-sharing.json` |
+| Small hands (touch safety) | Hold-to-confirm, ghost-tap and palm guards, drawing kept through a reload, undoable start over, story resume, back swipe held; 7 unit tests and 11 browser checks (demo mode); no real iPad yet | `docs/WEB.md`, `web/scripts/e2e-touch.mjs` |
+| Evaluation practice (SWE-bench, OpenAI guides) | Judge bias test, frozen 16-case regression set, tuning/holdout split, holdout sweep | HR-008, `docs/research/evals-and-observability.md` |
+| Generated video (Veo) | Access checked, one clip made, clip oath rejected it | HR-009, `docs/research/video-generation.md` |
+| Launch readiness | Situations, what is built and what is open | `docs/LAUNCH-READINESS.md` |
 | Verified quiz | Four questions per story, six promises, judge on every question, dropped if unverified | `docs/WEB.md`, sweep 7 below |
 | Picture-order game, healthy-play rules | Done; skippable, no timers, streaks, scores or autoplay | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
 | Grown-up promises | Done, end to end (appears on the receipt) | API doc, `tests/test_oath.py`, browser run |

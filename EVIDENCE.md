@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 10:23 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 12:00 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (283 rows, 262 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -13,6 +13,9 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 - [HR-005: one Gemini call stalled for 87 s per trace (neatlogs triage card): tried a 40 s timeout, not kept](evidence/hardening/HR-005.md)
 - [HR-006: the image model painted words into a child's picture](evidence/hardening/HR-006.md)
 - [HR-007: a per-minute quota error ended a run (quota errors back off longer)](evidence/hardening/HR-007.md)
+- [HR-008: we had never checked the judge for order and length bias, never frozen a past failure, and tuned and reported on the same drawings](evidence/hardening/HR-008.md)
+- [HR-009: a generated video clip of a child's drawing needs its own oath (the first clip failed it)](evidence/hardening/HR-009.md)
+- [HR-010: pictures arrived after the whole story, so a child read every page without them](evidence/hardening/HR-010.md)
 
 - Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
 - Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
@@ -209,7 +212,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-240 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+272 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -238,7 +241,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 103 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 128 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -290,9 +293,10 @@ Repair recoveries inside the story loop: 103 gated runs repaired at least one pa
 - [20261010-1745-IST-cfo-readback-main-growth-downside.json](evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json)
 - [20261011-0845-IST-share-link-anonymous-render.png](evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png)
 - [20261011-0850-IST-market-note-crustdata.md](evidence/cfo/20261011-0850-IST-market-note-crustdata.md)
+- [20261011-1215-IST-launch-operating-costs-readback.json](evidence/cfo/20261011-1215-IST-launch-operating-costs-readback.json)
 - [README.md](evidence/cfo/README.md)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T10:06:51+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T11:20:52+05:30. Window check: `python scripts/lint_evidence.py`.

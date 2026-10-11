@@ -37,6 +37,9 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | Models | `gemini-3.7-flash` (writer, vision, quiz maker, video planner), `gemini-3.1-flash-image` with `gemini-2.5-flash-image` fallback (pictures), Cloud TTS `gemini-2.5-flash-tts` voice Kore |
 | Learned | Thinking tokens count against `max_output_tokens`; image quota errors (429) are real and handled by retry and fall-back to text; a 40 s text timeout was tried and reverted (HR-005) |
 
+## Video generation (Veo on Vertex), checked 11 Oct
+Veo models are listed on Vertex in `us-central1` (`veo-2.0-generate-001`, `veo-3.0-generate-001`, `veo-3.0-fast-generate-001`, `veo-3.1-generate-001`, `veo-3.1-fast-generate-001`, `veo-3.1-lite-generate-001`), not in `global` (what `config.py` uses). The hackathon gateway has no video model (7 models, none video); K2 and AWS (no Bedrock) have none. One real test clip (Veo 3.1 Lite, image-to-video from a fixture drawing, 4 s, 720p, no audio, 43.5 s, about $0.20 at the list price, Vertex charge not read) is in `evidence/video-gen/`. The clip oath (`scripts/clip_check.py`) kept 4 of 6 promises and **rejected the clip**: the bunny was redrawn (legs and arms added, face changed) and the 4:3 drawing was pillarboxed. Not in the product: see [research/video-generation.md](research/video-generation.md).
+
 ## K2 Horizon (independent judge)
 `IFM/K2-Horizon-375B-A23B`, OpenAI-compatible. Different model family from the writer. 24/24 injected faults caught, 0/88 judge calls unverifiable; 6 to 14 s per call, so judge calls run in parallel and the quiz judge runs on every question.
 

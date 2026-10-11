@@ -4,6 +4,11 @@ React 18 + TypeScript (strict) + Vite, plain CSS with design tokens, Rive for Pi
 `docs/planning/frontend.md`; the contract is `docs/API.md`. Where they disagree with the backend (`src/storybound/api.py`,
 `pipeline.py`) the backend wins; each such place has a short comment in `web/src/api/types.ts`.
 
+## Screenshots
+The main screens are in the README ([What it looks like](../README.md#what-it-looks-like)). The picture-order game (demo mode) is below. Larger sets are written to `web/shots/` (gitignored) by `web/scripts/e2e-real.mjs` and `web/scripts/e2e-quiz-mock.mjs`; the live ones used in the README are also kept under `evidence/screens/`.
+
+![The picture-order game](img/10-order-game-demo.png)
+
 ## Run it
 
 ```

@@ -4,6 +4,17 @@
 
 > Why it is not just a chat model with a good prompt: in our 84-run experiment the same writer shipped at least one broken promise in **27 of 28 stories** when ungated and in **27 of 28** when it reviewed its own story, and in **0 of 28** when an independent gate checked every page ([report](evidence/reports/20261010-1505-IST-sweep-2-p2.md)). Most broken promises were quality failures (answer position, lesson missing, reading level), not safety failures.
 
+## What it looks like
+The web app, desktop width. Screens marked *live* came from a real story run through the browser (`web/scripts/e2e-real.mjs`, real models); screens marked *demo mode* come from the free scripted mode (`?mock=1`), which shows the same screens without calling any model. The drawings are test fixtures or drawn by the test script, never a real child's.
+
+| | |
+| --- | --- |
+| ![Draw your hero](docs/img/01-draw.png)<br>**1. Draw a hero** (live) | ![Pick a lesson and add a grown-up promise](docs/img/02-lesson-grownup-promise.png)<br>**2. Pick a lesson; a grown-up may add promises** (live) |
+| ![Reading a page while its picture is painted](docs/img/03-reader-live.png)<br>**3. A verified page; the picture arrives after the words** (live) | ![A finished page with picture and feedback](docs/img/04-reader-picture-demo.png)<br>**4. A page with its picture and a kind-choice reply** (demo mode) |
+| ![A quiz question with the story line shown](docs/img/05-quiz-live.png)<br>**5. Quiz: every answer points to a line in the story** (live) | ![The end screen with games and the promises kept](docs/img/06-end-games-demo.png)<br>**6. The end: promises kept, quiz, order game, movie** (demo mode) |
+| ![The grown-ups receipt](docs/img/07-receipt-demo.png)<br>**7. The receipt for grown-ups, promise by promise** (demo mode) | ![The read-along movie, title card](docs/img/08-movie-drawing.png)<br>**8. The movie made from the story: the drawing becomes the hero** (real render) |
+| ![The read-along movie, a story page with its choice](docs/img/09-movie-page.png)<br>**9. A movie page with the kind choice** (real render) | |
+
 ## Read this first
 | If you want | Open |
 | --- | --- |

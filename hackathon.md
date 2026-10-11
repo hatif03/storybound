@@ -87,6 +87,7 @@ eatlogs\launch-video`.
 - cfo.ai: the share link was checked from a clean headless browser with no cfo.ai session: the full model renders, with a dismissible sign-in prompt (`evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png`). The model's recommendation (paint half the pages) is now a product setting (`pictures`).
 - Crustdata used once for a derived field-size note (11.6 credits): `evidence/cfo/20261011-0850-IST-market-note-crustdata.md`.
 - Quiz sweep `sweep-7-quiz` (gated arm, 7 drawings x 2 lessons x 2 seeds): results in `docs/STATUS.md` and the ledger rows' `quiz` field. Two jobs ended on a Vertex 429 at the first call: HR-007 (longer backoff for quota errors).
+- Live browser run with `--pictures half` (trace `c83d5a3fa720247da64e20ef924e59c5`): pictures only on pages 1, 3, 5, 7 and narration on all 8; quiz offered on the end screen and played live; receipt "28 promises checked, 0 pages rewritten, all kept" (grown-up promise and six quiz promises kept). The script then crashed on a long wait (a script bug, fixed): the movie and the picture-order game were not exercised in this run. `evidence/runs/20261011-0910-IST-live-ui-half-pictures-quiz.json`.
 - Tests that ran: `pytest tests` (80 passed), `npm run test` in `web/` (19 passed).
 
 ## Demo

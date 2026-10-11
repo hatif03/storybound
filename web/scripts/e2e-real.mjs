@@ -31,7 +31,13 @@ page.on('request', (r) => {
 const shot = (name) => page.screenshot({ path: path.join(OUT, `${name}.png`) });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const clickText = async (text, sel = 'button, a', timeout = 30000) => {
-  await page.waitForFunction((t, s) => [...document.querySelectorAll(s)].some((e) => e.textContent.trim().includes(t) && !e.disabled), { timeout }, text, sel);
+  // poll in short waits: one long wait exceeds the browser protocol timeout
+  const until = Date.now() + timeout;
+  for (;;) {
+    const found = await page.waitForFunction((t, s) => [...document.querySelectorAll(s)].some((e) => e.textContent.trim().includes(t) && !e.disabled), { timeout: Math.min(20000, Math.max(1000, until - Date.now())) }, text, sel).then(() => true).catch(() => false);
+    if (found) break;
+    if (Date.now() >= until) throw new Error(`timed out waiting for a button with "${text}"`);
+  }
   await page.evaluate((t, s) => [...document.querySelectorAll(s)].find((e) => e.textContent.trim().includes(t) && !e.disabled).click(), text, sel);
 };
 

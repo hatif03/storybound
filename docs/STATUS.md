@@ -18,7 +18,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Grown-up promises | Done, end to end (appears on the receipt) | API doc, `tests/test_oath.py`, browser run |
 | Forget a story (`DELETE /api/stories/{id}`) | Done; the story 404s afterwards | `tests/test_api.py`, browser run |
 | Read-along video from a story | Done: 3:37 and 3:45 renders, all promises pass | `evidence/stories/bunny-sharing-2/video/receipt.json` |
-| Web app through a real browser | Drawing, 8 pages, movie and Forget verified live | `web/scripts/e2e-real.mjs`, `evidence/screens/` |
+| Web app through a real browser | Two live runs. Run 1: drawing, 8 pages, movie, Forget. Run 2 (`--pictures half`, 11 Oct): pictures painted on pages 1, 3, 5, 7 only and narration on all 8; the quiz was offered on the end screen and played (4 questions, a wrong answer showed the story line); the receipt read "28 promises checked, 0 pages rewritten, all kept", with the grown-up promise and all six quiz promises kept | `web/scripts/e2e-real.mjs`, `evidence/runs/20261011-0910-IST-live-ui-half-pictures-quiz.json`, `evidence/screens/` |
 | neatlogs | Traces, 7 detections, triage review, CLI signed in (alert rules, evaluations and trace sharing are empty or disabled), measured cost | [TOOLS.md](TOOLS.md) |
 | Entire | 37+ checkpoints, graph diffs, Brain, runners tailored | [TOOLS.md](TOOLS.md) |
 | cfo.ai | Model built; measured cost in (change 275839); share link checked anonymously | [TOOLS.md](TOOLS.md), `evidence/cfo/` |
@@ -60,7 +60,6 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | Item | Note |
 | --- | --- |
 | Price the quiz and video add-ons in cfo.ai | The quiz estimate (+$0.004) is a note in the B1 cost basis (change 279068); a separate row and the video add-on are not modelled |
-| One live run with `pictures=half` through the browser | The policy is unit-tested; a live run through `e2e-real.mjs --pictures half` would show an unpainted page in the reader |
 | Judge-reviewed quiz questions from more stories and ages | All runs were age 6; the quiz was reviewed by hand on one story and measured by the promises on 28 |
 | Safari, touch devices, screen reader | Not verified (see `docs/WEB.md`); the browser checks use desktop Edge |
 | Ages other than 6; languages other than English | Not tested |
@@ -69,7 +68,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 - Costs of pictures and narration are list-price assumptions; neatlogs prices text only. The true figure is on the Google Cloud bill, which we have not read.
 - The evidence videos are made from fixture drawings only; the sister's real drawings were never put through the pipeline for the repository.
 - Early work (before 15:08 on 10 Oct) has no Entire checkpoint; `entire why` shows older code as human-written.
-- The picture-order game and quiz were checked in demo mode and in sweeps; a live verified quiz played through the browser UI is covered by the last browser run (see HANDOFF.md for the latest result).
+- The quiz was played live through the browser UI (run 2). The picture-order game was checked in demo mode only; in the live half-pictures run the pictures were not ready when the script looked, so the game was not offered then, and the movie step of run 2 was not completed because the script's wait exceeded a browser timeout (fixed in the script; the movie was completed in run 1).
 - neatlogs retention on the free plan is 14 days; traces are exported to the repo.
 - The judge (K2) is a different model family from the writer, but not a human; human agreement was not measured (item 4).
 

@@ -1,0 +1,82 @@
+{
+ "what": "live browser run, pictures=half, grown-up promise, quiz",
+ "story_id": "bd79b807c30b",
+ "outcome": "shipped",
+ "receipt_plain": "28 promises checked. 0 pages rewritten. All kept.",
+ "painted_pages": [
+  1,
+  3,
+  5,
+  7
+ ],
+ "narrated_pages": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
+ "degradations": [
+  {
+   "what": "image",
+   "why": "this plan paints some pages only",
+   "fallback": "text only",
+   "index": 2
+  },
+  {
+   "what": "image",
+   "why": "this plan paints some pages only",
+   "fallback": "text only",
+   "index": 4
+  },
+  {
+   "what": "image",
+   "why": "this plan paints some pages only",
+   "fallback": "text only",
+   "index": 6
+  },
+  {
+   "what": "image",
+   "why": "this plan paints some pages only",
+   "fallback": "text only",
+   "index": 8
+  }
+ ],
+ "grownup_promise": [
+  [
+   "grownup_1",
+   "kept"
+  ]
+ ],
+ "quiz_promises": [
+  [
+   "quiz_quote_in_story",
+   "kept"
+  ],
+  [
+   "quiz_one_correct",
+   "kept"
+  ],
+  [
+   "quiz_no_tell",
+   "kept"
+  ],
+  [
+   "quiz_reading_level",
+   "kept"
+  ],
+  [
+   "quiz_safe_text",
+   "kept"
+  ],
+  [
+   "quiz_answerable",
+   "kept"
+  ]
+ ],
+ "quiz_questions_shown": 4,
+ "trace_id": "c83d5a3fa720247da64e20ef924e59c5"
+}

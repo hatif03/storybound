@@ -9,7 +9,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-012 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-013 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |
@@ -70,7 +70,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | Price the quiz and video add-ons in cfo.ai | The quiz estimate (+$0.004) is a note in the B1 cost basis (change 279068); a separate row and the video add-on are not modelled |
 | Judge-reviewed quiz questions from more stories and ages | All runs were age 6; the quiz was reviewed by hand on one story and measured by the promises on 28 |
 | Safari, touch devices, screen reader | Not verified (see `docs/WEB.md`); the browser checks use desktop Edge |
-| Ages other than 6; languages other than English | Not tested |
+| Ages other than 6; languages other than English | Ages 4 and 8 and four Hindi and Spanish captions were run once each (HR-013); stories are English only |
 
 ## 3. Known limits (said plainly)
 - Fit to the hackathon's problem statement (an agent that completes a substantial task start to finish, each result guiding the next action) is argued in [QUALIFICATION.md](QUALIFICATION.md), including the honest limit that the stage order is a fixed graph with open-ended repair inside it.

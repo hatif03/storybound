@@ -1,0 +1,181 @@
+{
+  "number": 4,
+  "trail_id": "01M4N27S2Z4W9Z99R7G2S2SBTJ",
+  "url": "https://entire.io/gh/hatif03/storybound/trails/4",
+  "branch": "chore/cfo-workbooks-and-open-items",
+  "original_branch": "chore/cfo-workbooks-and-open-items",
+  "base": "main",
+  "title": "cfo.ai workbooks saved; the remaining open issues (ages 4 and 8, picture-words detection, orphan traces)",
+  "body": "Offline copy of the cfo.ai model, then the open items from STATUS. Runners should fire on each push now that Auto build on push is on.",
+  "status": "open",
+  "phase": "building",
+  "author": {
+    "id": "01M4JGAQS48VQN24VJF3BA29M4",
+    "login": "hatif03"
+  },
+  "assignees": [
+    "hatif03"
+  ],
+  "labels": [],
+  "type": "task",
+  "priority": "none",
+  "created_at": "2026-10-11T08:45:57.727Z",
+  "updated_at": "2026-10-11T08:46:00.056Z",
+  "merged_at": null,
+  "mergeability": {
+    "head_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+    "mergeable": false,
+    "conflict_status": "clean",
+    "checks": {
+      "availability": "available",
+      "runs": [
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success",
+          "details_url": "https://dashboard.gitguardian.com",
+          "started_at": "2026-10-11T08:46:02Z",
+          "completed_at": "2026-10-11T08:46:03Z",
+          "app_name": "GitGuardian"
+        }
+      ]
+    },
+    "gates": [
+      {
+        "id": "",
+        "gate_definition_id": "01M4MG9R6461HVHTCQMM4QGZPH",
+        "gate_key": "approvals",
+        "gate_type": "approvals",
+        "blocking": true,
+        "status": "failed",
+        "state": "evaluated",
+        "outcome": "failed",
+        "rationale": "No reviewers have approved this trail",
+        "head_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "evaluated_at_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "stale_reason": null,
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "approved": 0,
+          "changes_requested": false,
+          "config": {
+            "version": 1,
+            "min_reviewers": 1,
+            "allow_self_approval": false,
+            "dismiss_stale_approvals_on_push": false
+          },
+          "required": 1,
+          "self_excluded": false,
+          "stale_dismissed": 0,
+          "total": 0
+        },
+        "created_at": "2026-10-11T08:48:25.216041093Z",
+        "completed_at": "2026-10-11T08:48:25.216041093Z"
+      },
+      {
+        "id": "",
+        "gate_definition_id": "01M4MG9R6EY8BD8TRVAQE788NG",
+        "gate_key": "checks",
+        "gate_type": "checks",
+        "blocking": true,
+        "status": "passed",
+        "state": "evaluated",
+        "outcome": "passed",
+        "rationale": "CI checks have passed",
+        "head_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "evaluated_at_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "stale_reason": null,
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "state": "success",
+          "total_count": 1,
+          "checks": [
+            {
+              "name": "GitGuardian Security Checks",
+              "status": "completed",
+              "conclusion": "success",
+              "details_url": "https://dashboard.gitguardian.com"
+            }
+          ],
+          "config": {
+            "version": 1,
+            "required_checks": [],
+            "require_all_success": true
+          }
+        },
+        "created_at": "2026-10-11T08:48:25.216049948Z",
+        "completed_at": "2026-10-11T08:48:25.216049948Z"
+      },
+      {
+        "id": "01M4N28J7B6PZ7QFSPFC8W82Q9",
+        "gate_definition_id": "01M4MG9R6B471KY1PGQFX50RVT",
+        "gate_key": "findings",
+        "gate_type": "findings",
+        "blocking": true,
+        "status": "passed",
+        "state": "evaluated",
+        "outcome": "passed",
+        "rationale": "Agent review found no blocking issues",
+        "head_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "evaluated_at_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "stale_reason": null,
+        "finding_count": 0,
+        "reviewers": [],
+        "runner_ids": [
+          "trail-review"
+        ],
+        "value": {
+          "config": {
+            "version": 1,
+            "agent_findings_min_severity": "high"
+          },
+          "reviewed_head": true,
+          "agent_findings": {
+            "low": 0,
+            "high": 0,
+            "medium": 0,
+            "unspecified": 0
+          },
+          "review_in_flight": false,
+          "reviewer_configured": true,
+          "review_grace_expired": false,
+          "agent_blocking_findings": 0
+        },
+        "created_at": "2026-10-11T08:46:23.467652Z",
+        "completed_at": "2026-10-11T08:46:23.467652Z"
+      },
+      {
+        "id": "01M4N27T4HGGN9PXH8RHATSWH2",
+        "gate_definition_id": "01M4MG9R6G1ZY8KDEE0YNBPFEJ",
+        "gate_key": "up_to_date",
+        "gate_type": "up_to_date",
+        "blocking": true,
+        "status": "passed",
+        "state": "evaluated",
+        "outcome": "passed",
+        "rationale": "Up to date",
+        "head_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "evaluated_at_sha": "8ba1266066c92656acf54fad3897fe12b96e965d",
+        "stale_reason": null,
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "config": {
+            "version": 1,
+            "allow_behind_if_mergeable": false
+          },
+          "behind_by": 0,
+          "compare_status": "ahead",
+          "comparison_status": "available"
+        },
+        "created_at": "2026-10-11T08:45:58.801453Z",
+        "completed_at": "2026-10-11T08:45:58.801453Z"
+      }
+    ]
+  }
+}

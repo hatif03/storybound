@@ -53,7 +53,7 @@ The web app, desktop width. Screens marked *live* came from a real story run thr
 | What | Value | Where |
 | --- | --- | --- |
 | Stories shipped with a broken promise (B0 / B2 / B1) | 27/28, 27/28, **0/28** | `evidence/reports/*sweep-2-p2.md` |
-| Hardening records, each with before and after | HR-001 to HR-012 | `evidence/hardening/` |
+| Hardening records, each with before and after | HR-001 to HR-013 | `evidence/hardening/` |
 | Judge on 24 injected faults | 24/24 caught, 0/8 clean pages flagged | `evidence/runs/20261010-1334-IST-judge-eval.json` |
 | Text cost per gated story, measured by neatlogs | $0.0199 | `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json` |
 | Month-6 gross margin (cfo.ai, Main / Growth / Downside) | 67.2% / 55.2% / 40.9% (estimates) | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg |

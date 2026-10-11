@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 14:04 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (327 rows, 304 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 14:41 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (343 rows, 320 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -18,6 +18,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 - [HR-010: pictures arrived after the whole story, so a child read every page without them](evidence/hardening/HR-010.md)
 - [HR-011: a second pass through the neatlogs data found a stall that came back, a false stop, a blind detection and no one to tell](evidence/hardening/HR-011.md)
 - [HR-012: almost all model work ran on Gemini; we spread it by measurement, not by hope](evidence/hardening/HR-012.md)
+- [HR-013: ages 4 and 8 and non-English captions were untested; now each has a run](evidence/hardening/HR-013.md)
 
 - Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
 - Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
@@ -214,7 +215,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-314 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+330 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -243,7 +244,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 163 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 175 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -290,6 +291,7 @@ Repair recoveries inside the story loop: 163 gated runs repaired at least one pa
 - Graph output: [20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json](evidence/entire/20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json)
 - Graph output: [20261011-1415-IST-review-general-pr2.txt](evidence/entire/20261011-1415-IST-review-general-pr2.txt)
 - Graph output: [20261011-1415-IST-trail-3-gates.json](evidence/entire/20261011-1415-IST-trail-3-gates.json)
+- Graph output: [20261011-1450-IST-trail-4-gates-runners-working.json](evidence/entire/20261011-1450-IST-trail-4-gates-runners-working.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
@@ -302,8 +304,9 @@ Repair recoveries inside the story loop: 163 gated runs repaired at least one pa
 - [20261011-1215-IST-launch-operating-costs-readback.json](evidence/cfo/20261011-1215-IST-launch-operating-costs-readback.json)
 - [20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json](evidence/cfo/20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json)
 - [README.md](evidence/cfo/README.md)
+- [workbook](evidence/cfo/workbook)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T13:59:07+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T14:15:32+05:30. Window check: `python scripts/lint_evidence.py`.

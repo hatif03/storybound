@@ -1,0 +1,35 @@
+{
+  "model_id": "veo-3.1-lite-generate-001",
+  "location": "us-central1",
+  "seconds": 4,
+  "resolution": "720p",
+  "audio": false,
+  "date_utc": "2026-10-11T05:05:32.647922Z",
+  "fixture": "assets/test-drawings/benign/bunny-bow-carrot.png",
+  "request_params": {
+    "model": "veo-3.1-lite-generate-001",
+    "location": "us-central1",
+    "duration_seconds": 4,
+    "resolution": "720p",
+    "aspect_ratio": "16:9",
+    "generate_audio": false,
+    "number_of_videos": 1,
+    "person_generation": "allow_adult",
+    "image": "assets/test-drawings/benign/bunny-bow-carrot.png",
+    "prompt": "The child's drawn bunny gently wiggles its ears and softly bounces in place, happy and calm. Keep the drawing's flat crayon style exactly. No text, no new characters, no scary motion."
+  },
+  "estimated_cost_usd": "4 s x 0.05 USD/s = 0.20 (Gemini API list price for Veo 3.1 Lite 720p; Vertex SKU not verified; audio-off price not verified)",
+  "latency_s": 43.5,
+  "videos_returned": 1,
+  "rai_filtered_count": 0,
+  "rai_reasons": null,
+  "bytes": 777866,
+  "output": {
+    "file": "bunny-veo31lite-4s.mp4",
+    "container": "mp4 h264 1280x720 4.0 s, no audio stream",
+    "frames_strip": "bunny-veo31lite-4s-frames-0-50-95.png"
+  },
+  "observation_by_eye": "Hero kept colours, bow, carrot, magenta outline, but the face was redrawn (eyes with lashes, pink cheeks, nose), arms and a leg were added, the tail shrank, the 4:3 drawing was pillarboxed with black bars. A per-clip 'hero matches drawing' check would flag drift.",
+  "auth": "gcloud Application Default Credentials; no key in this record",
+  "actual_billing": "not verified (Vertex billing console not read)"
+}

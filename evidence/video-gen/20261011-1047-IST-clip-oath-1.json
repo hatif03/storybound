@@ -1,0 +1,109 @@
+{
+ "summary": {
+  "clip": "bunny-veo31lite-4s.mp4",
+  "promises": 6,
+  "kept": 4,
+  "broken": [
+   "clip_full_frame",
+   "clip_hero_matches_drawing"
+  ],
+  "shown_to_child": false
+ },
+ "verdicts": [
+  {
+   "commitment": "clip_present",
+   "status": "pass",
+   "expected": "decodes, about 4 s, no audio",
+   "actual": "4.0 s, 1280x720, audio=False",
+   "verdict_by": "deterministic",
+   "score": null,
+   "judges": null
+  },
+  {
+   "commitment": "clip_single_shot",
+   "status": "pass",
+   "expected": "no hard cut",
+   "actual": "0 cuts",
+   "verdict_by": "deterministic",
+   "score": null,
+   "judges": null
+  },
+  {
+   "commitment": "clip_full_frame",
+   "status": "violation",
+   "expected": "picture fills the frame",
+   "actual": "content 978x720 inside 1280x720",
+   "verdict_by": "deterministic",
+   "score": null,
+   "judges": null
+  },
+  {
+   "commitment": "clip_safe_visual",
+   "status": "pass",
+   "expected": "see prompt",
+   "actual": "gemini: The animation is a gentle, child-friendly depiction of the original cute bunny drawing with no inapp; claude: The animation shows a cute bunny character with a bow and ice cream cone, which is entirely gentle a",
+   "verdict_by": "judge",
+   "score": 1.0,
+   "judges": {
+    "gemini": {
+     "ok": true,
+     "score": 1.0,
+     "reasoning": "The animation is a gentle, child-friendly depiction of the original cute bunny drawing with no inappropriate elements."
+    },
+    "claude": {
+     "ok": true,
+     "score": 1.0,
+     "reasoning": "The animation shows a cute bunny character with a bow and ice cream cone, which is entirely gentle and appropriate for young children."
+    }
+   }
+  },
+  {
+   "commitment": "clip_no_text",
+   "status": "pass",
+   "expected": "see prompt",
+   "actual": "gemini: None of the animation frames contain readable words or letters.; claude: No readable words or letters appear in any of the animation frames, which show only a cartoon bunny ",
+   "verdict_by": "judge",
+   "score": 1.0,
+   "judges": {
+    "gemini": {
+     "ok": true,
+     "score": 1.0,
+     "reasoning": "None of the animation frames contain readable words or letters."
+    },
+    "claude": {
+     "ok": true,
+     "score": 1.0,
+     "reasoning": "No readable words or letters appear in any of the animation frames, which show only a cartoon bunny with a bow and ice cream cone."
+    }
+   }
+  },
+  {
+   "commitment": "clip_hero_matches_drawing",
+   "status": "violation",
+   "expected": "see prompt",
+   "actual": "gemini: The animation redrew the character with added eyelashes, legs, and altered the tail shape.; claude: The animation adds legs/feet and separate arm limbs that are not present in the original drawing, wh",
+   "verdict_by": "judge",
+   "score": 0.5,
+   "judges": {
+    "gemini": {
+     "ok": false,
+     "score": 0.5,
+     "reasoning": "The animation redrew the character with added eyelashes, legs, and altered the tail shape."
+    },
+    "claude": {
+     "ok": false,
+     "score": 0.5,
+     "reasoning": "The animation adds legs/feet and separate arm limbs that are not present in the original drawing, which had no visible legs and only suggested arms via the magenta outline."
+    }
+   }
+  }
+ ],
+ "probe": {
+  "seconds": 4.0,
+  "width": 1280,
+  "height": 720,
+  "has_audio": false,
+  "video": true
+ },
+ "trace_id": ""
+}

@@ -9,7 +9,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | Used for | One trace per story and per video; one GUARDRAIL span per verdict; 7 detections; trace readback and export; triage review; measured cost |
 | Evidence | `evidence/traces/`, `evidence/neatlogs/` (triage cards and review, trace costs, measured-vs-estimated cost), `evidence/setup/` |
 | CLI | `neatlogs-cli` 0.2.0 signed in by device login with **read-only** scopes (observability, evaluation, configuration, sharing, billing) |
-| Write config | Through the CLI after a write sign-in (11 Oct): alert rule "Critical safety stop" (threshold on the critical detection) and a draft human evaluation "Human review of judge verdicts". Cost alert rejected (`INVALID_ARGUMENTS`); the login has expired. Not done: guest links, managed-prompt labels |
+| Write config | Through the CLI after a write sign-in (11 Oct): six alert rules (critical safety stop, expensive story run, oath violation seen, quiz questions dropped, words painted into pictures, slow story) and a draft human evaluation "Human review of judge verdicts". Cost alert rejected (`INVALID_ARGUMENTS`); the login has expired. Not done: guest links, managed-prompt labels |
 | Watch out | The `.mcp.json` server needs `NEATLOGS_API_KEY` in the process environment (start Claude Code from `scripts/dev-shell.ps1`); the MCP rate-limits fast polling; `search_traces fields` is not enabled yet; free-plan traces expire after 14 days |
 
 ## Entire (coding-agent memory), required

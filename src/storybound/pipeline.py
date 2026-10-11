@@ -736,7 +736,7 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
             "first_page_s": next((e["t"] for e in run.bus.all() if e["type"] == "scene.accepted"), None),
         },
         "prompt_version": prompts.VERSION,
-        "models": {"writer": st.models.writer, "judge": st.models.judge, "vision": st.models.vision},
+        "models": {"writer": st.models.writer, "judge": st.models.judge, "vision": st.models.vision, "routes": dict(st.models.routes), "picture_text_judge": st.models.vision_judge},
         "trace_id": run.trace_id,
         "generated_at": ledger.now_ist().isoformat(timespec="seconds"),
     }  # fmt: skip
@@ -844,6 +844,6 @@ def ledger_row(run: Run) -> dict:
         "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "prompt_version": prompts.VERSION, "error": run.error or None, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
+        "prompt_version": prompts.VERSION, "error": run.error or None, "routes": dict(get_settings().models.routes), "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
         "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

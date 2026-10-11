@@ -69,6 +69,9 @@ class Meter:
             for model, r in self.by_model.items():
                 if model.startswith("IFM/"):
                     usd += (r["in"] + r["out"]) / 1e6 * prices.k2_per_m
+                elif model in prices.gateway:
+                    p_in, p_out = prices.gateway[model]
+                    usd += r["in"] / 1e6 * p_in + r["out"] / 1e6 * p_out
                 elif "image" in model or "tts" in model:
                     continue
                 else:

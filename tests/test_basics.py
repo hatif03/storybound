@@ -89,3 +89,84 @@ def test_a_cancelled_vertex_call_is_retried():
     from storybound.clients import gemini
 
     assert 499 in gemini._RETRYABLE  # "499 CANCELLED" ended a regression job under load (HR-010)
+
+
+def test_roles_are_routed_by_the_part_of_the_name_before_the_dot(monkeypatch):
+    from storybound import config
+
+    monkeypatch.setenv("STORYBOUND_ROUTES", "safety_screen=claude-haiku, scene_writer=nova-2-lite,bad,=x")
+    m = config.Models()
+    assert m.route("safety_screen.vision") == "claude-haiku"
+    assert m.route("scene_writer.3") == "nova-2-lite"
+    assert m.route("oath_author") is None and m.routes == {"safety_screen": "claude-haiku", "scene_writer": "nova-2-lite"}
+
+
+def test_ask_json_uses_the_gateway_for_a_routed_role_and_gemini_otherwise(monkeypatch):
+    from storybound.agents import common
+    from storybound.clients import gateway, gemini
+    from storybound.clients.usage import Result
+
+    seen = []
+    monkeypatch.setattr(gateway, "configured", lambda: True)
+    monkeypatch.setattr(gateway, "generate_json", lambda user, **kw: seen.append(("gateway", kw["model"])) or Result(value={}))
+    monkeypatch.setattr(gemini, "generate_json", lambda user, **kw: seen.append(("gemini", kw.get("model"))) or Result(value={}))
+    monkeypatch.setattr(common.get_settings().models, "routes", {"planner": "claude-haiku"})
+    common.ask_json("planner.x", "s", "u")
+    common.ask_json("writer", "s", "u")
+    assert seen == [("gateway", "claude-haiku"), ("gemini", None)]
+    monkeypatch.setattr(gateway, "configured", lambda: False)  # no key: fall back to the default model, never fail
+    common.ask_json("planner.x", "s", "u")
+    assert seen[-1] == ("gemini", None)
+
+
+def test_gateway_models_are_priced_from_the_gateway_table():
+    from storybound.clients.usage import Meter, Usage
+    from storybound.config import Prices
+
+    m = Meter()
+    m.add(Usage(input_tokens=1_000_000, output_tokens=1_000_000, model="claude-haiku"))
+    assert m.cost_usd(Prices()) == 6.6  # 1.1 in + 5.5 out
+
+
+def test_a_stalled_call_is_sent_a_second_time_and_the_faster_answer_wins():
+    import threading
+    import time
+
+    from storybound.clients.retry import hedged
+
+    calls = []
+    lock = threading.Lock()
+
+    def fn():
+        with lock:
+            calls.append(1)
+            mine = len(calls)
+        if mine == 1:
+            time.sleep(2.0)  # the stalled request
+            return "slow"
+        return "fast"
+
+    t0 = time.time()
+    assert hedged(fn, after=0.1) == "fast" and len(calls) == 2 and time.time() - t0 < 1.0
+    calls.clear()
+    assert hedged(lambda: "quick", after=5.0) == "quick"  # no second call when the first answers in time
+
+
+def test_hedging_waits_for_the_other_call_when_one_fails_and_can_be_switched_off():
+    import time
+
+    from storybound.clients.errors import ClientError
+    from storybound.clients.retry import hedged
+
+    state = {"n": 0}
+
+    def fn():
+        state["n"] += 1
+        if state["n"] == 1:
+            time.sleep(0.3)
+            raise ClientError("504", retryable=True, status=504)
+        return "ok"
+
+    assert hedged(fn, after=0.1) == "ok"
+    state["n"] = 5
+    assert hedged(lambda: "plain", after=0) == "plain"

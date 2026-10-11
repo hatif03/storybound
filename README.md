@@ -22,17 +22,17 @@
 - **Oath** (`src/storybound/oath/`): 22 core promises plus lesson-specific ones, grown-up promises and 6 quiz promises, checked by deterministic code and an independent judge (K2, a different model family from the writer) with a verbatim-quote check.
 - **Video agent** (`src/storybound/video/`): plans or reads a spec of typed blocks, resolves every number from an evidence file, narrates, builds and renders with HyperFrames, checks its own **video oath**, repairs the failing scene, and ships a receipt. Used for the read-along video of a story and for the demo video.
 - **Web app** (`web/`): draw, pick a lesson, read, quiz and game, movie, grown-ups area (receipt, settings, forget).
-- **Evidence** (`evidence/`): the run ledger, sweep reports, six hardening records, exported neatlogs traces, screenshots, Entire and cfo.ai outputs.
+- **Evidence** (`evidence/`): the run ledger, sweep reports, seven hardening records, exported neatlogs traces, screenshots, Entire and cfo.ai outputs.
 
 ## Numbers you can check
 | What | Value | Where |
 | --- | --- | --- |
 | Stories shipped with a broken promise (B0 / B2 / B1) | 27/28, 27/28, **0/28** | `evidence/reports/*sweep-2-p2.md` |
-| Hardening records, each with before and after | HR-001 to HR-006 | `evidence/hardening/` |
+| Hardening records, each with before and after | HR-001 to HR-007 | `evidence/hardening/` |
 | Judge on 24 injected faults | 24/24 caught, 0/8 clean pages flagged | `evidence/runs/20261010-1334-IST-judge-eval.json` |
 | Text cost per gated story, measured by neatlogs | $0.0199 | `evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json` |
 | Month-6 gross margin (cfo.ai, Main / Growth / Downside) | 67.2% / 55.2% / 40.9% (estimates) | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg |
-| Tests | 79 backend, 19 web | `pytest tests`, `npm run test` in `web/` |
+| Tests | 80 backend, 19 web | `pytest tests`, `npm run test` in `web/` |
 
 ## Run it (development)
 ```powershell

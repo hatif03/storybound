@@ -47,19 +47,22 @@ Accounts, access checks (Vertex Gemini, K2, AWS limits, neatlogs, Entire, cfo.ai
 - **20:07** the neatlogs-measured cost replaced the estimate in cfo.ai (change 275839). **20:29** a full run through the real browser UI: drawing, lesson, promise, 8 pages, movie (3:45), Forget (the story 404s afterwards). It found the quiz-timing bug, fixed at **20:32**.
 
 ### Sunday 11 Oct, morning: documentation and the remaining items
-Quiz-quality sweep (sweep 7), Entire Trails (runners scaffolded; blocked by the web step), the illustration policy (`pictures: full | half | none`) that came out of the cfo.ai model, anonymous check of the cfo.ai share link, and this documentation.
+- **08:35 to 08:50** Entire Trails tried (`entire runner setup --defaults-only`, three runners tailored; `entire trail create` and `entire review` fail with "repository not found" until the GitHub App is installed on the repo: a web step). The illustration policy (`pictures: full | half | none`) that came out of the cfo.ai model went into the product. The cfo.ai share link was opened from a clean headless browser: the model renders for an anonymous visitor.
+- **Quiz sweep (sweep 7):** 26 stories, 104 questions, 98 shown (94%), 6 dropped; two jobs ended on a Vertex quota error and led to HR-007 (the re-run of both shipped).
+- Two neatlogs detections added for the new promises; Crustdata used once for a derived field-size note; the neatlogs CLI showed no alert rules, no evaluations and trace sharing disabled (all need write access).
+- This documentation: PROCESS, TOOLS, STATUS, PLATFORMS, README, HANDOFF, API and DESIGN addendum.
 
 ## 4. What the evidence says (so far)
 | Claim | Evidence |
 | --- | --- |
 | Gating removes broken promises that a plain writer and a self-reviewing writer ship | `sweep-2-p2`: 27/28, 27/28, **0/28** ([report](../evidence/reports/20261010-1505-IST-sweep-2-p2.md)) |
-| Each fix improved the agent, with numbers | [HR-001](../evidence/hardening/HR-001.md) to [HR-006](../evidence/hardening/HR-006.md) |
+| Each fix improved the agent, with numbers | [HR-001](../evidence/hardening/HR-001.md) to [HR-007](../evidence/hardening/HR-007.md) |
 | The judge catches injected faults | `evidence/runs/20261010-1334-IST-judge-eval.json` (24/24, 0/88 unverifiable) |
 | The agent recovers from a failed action | trace `94db23729dac6323368749acba4be1cb` |
 | The product works through the real UI | the 20:29 run (`web/scripts/e2e-real.mjs`, screenshots in `evidence/screens/`) |
 | Cost | neatlogs-measured text cost $0.0199 per gated story; pictures and voice are list-price assumptions ([TOOLS.md](TOOLS.md)) |
 
-Tests that ran: 79 backend (`pytest tests`), 19 web (`npm run test` in `web/`), `ruff check` clean, the evidence linter (`python scripts/lint_evidence.py`).
+Tests that ran: 80 backend (`pytest tests`), 19 web (`npm run test` in `web/`), `ruff check` clean, the evidence linter (`python scripts/lint_evidence.py`).
 
 ## 5. What went wrong, in order (kept because it is the useful part)
 1. **Sweep 1's gated arm errored on 3 of 28 runs** (unparseable page JSON, a missing image prompt: fixed) and still shipped 8 of 25 stories with a broken promise, mostly reading level.

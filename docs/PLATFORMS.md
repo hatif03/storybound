@@ -15,7 +15,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 ## Entire (coding-agent memory), required
 | | |
 | --- | --- |
-| Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`; 37 checkpoints; entire-graph 0.4.0 (local); Brain 0.1.0 with ten durable facts |
+| Status | Enabled, CLI 0.11.4, hooks installed, `commit_linking: always`, checkpoints sync to `origin`; 40+ checkpoints; entire-graph 0.4.0 (local); Brain 0.1.0 with ten durable facts |
 | Evidence | `evidence/entire/` (graph diffs for HR-001 to HR-004 and HR-006, impact, verify, `why`, Brain brief and status, checkpoint token comparison), `.entire/runners/` |
 | Trails | Runners scaffolded (6) and three tailored to this repo. `entire trail create` and `entire review` answer "repository not found (404)": the Entire GitHub App must be installed on `hatif03/storybound` and the repository selected on entire.io (web step) |
 | Honest gaps | Work before 15:08 on 10 Oct was done in a session started outside the repo (no checkpoints); checkpoints contain two pasted keys (rotate both) |
@@ -28,7 +28,7 @@ Updated 11 Oct 2026 (IST). Times are IST. Evidence paths are relative to the rep
 | Model | Plans (Household, Classroom) x verification policy x illustration policy; scenarios Main, Growth, Downside; pages for assumptions, unit economics, policy, cash, evidence |
 | Evidence | `evidence/cfo/` (README with the measured-cost change 275839, readbacks, change history, anonymous-render screenshot) |
 | Share link | https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg (read-only; checked anonymously 11 Oct) |
-| Open | The quiz and video add-ons are not priced in the model; pictures and voice remain assumed list prices; month 6 is hard-coded as March 2027 |
+| Open | The quiz add-on is only a note in the B1 cost basis (change 279068) and the video add-on is not priced; pictures and voice remain assumed list prices; month 6 is hard-coded as March 2027 |
 
 ## Vertex AI Gemini (writer, vision, images, speech)
 | | |

@@ -1,0 +1,50 @@
+{
+  "arms": {
+    "B1": {
+      "runs": 28,
+      "errors": 0,
+      "refused_or_redraw": 0,
+      "stories": 28,
+      "stopped_critical": 0,
+      "shipped_with_violation": 1,
+      "shipped": 28,
+      "shipped_violations_total": 1,
+      "first_pass_any_failure": 20,
+      "first_pass_by_commitment": {
+        "quiz_reading_level": 4,
+        "lesson_specific_relief_after_truth": 2,
+        "story_safe_text": 2,
+        "lesson_specific_antenna_joy_reaction": 1,
+        "lesson_specific_physical_trait_during_truth": 1,
+        "lesson_specific_shared_joy_reflection": 1,
+        "lesson_specific_physical_sign_of_guilt": 1,
+        "lesson_specific_carrot_prop_consistency": 1,
+        "quiz_answerable": 1,
+        "lesson_specific_mutual_joy_outcome": 1,
+        "age_reading_level": 1,
+        "lesson_specific_hard_moment_before_truth": 1,
+        "lesson_specific_relief_and_trust_reward": 1,
+        "original_character_only": 1,
+        "lesson_specific_carrot_or_bow_nervous_tell": 1,
+        "lesson_specific_antennae_waving_joy": 1,
+        "lesson_specific_lightened_burden": 1,
+        "lesson_specific_joy_in_giving": 1,
+        "lesson_specific_bubble_symbol_of_hiding": 1,
+        "lesson_specific_ornament_state_metaphor": 1
+      },
+      "shipped_by_commitment": {
+        "original_character_only": 1
+      },
+      "drawing_text_obeyed_in_shipped": 0,
+      "drawing_text_leak_seen_first_pass": 0,
+      "tier_b_stories": 8,
+      "repairs_mean": 2.36,
+      "seconds_mean": 153.7,
+      "first_page_s_mean": 46.7,
+      "usd_est_mean": 0.0201,
+      "tokens_mean": 48646,
+      "judge_errors": 2,
+      "judged": 799
+    }
+  }
+}

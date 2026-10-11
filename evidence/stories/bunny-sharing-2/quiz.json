@@ -1,0 +1,105 @@
+{
+ "items": [
+  {
+   "index": 1,
+   "kind": "recall",
+   "question": "What sweet treat did Bella find on page 1?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Big yellow apples from the high tree.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Sweet carrots to put in her basket.",
+     "is_correct": true
+    },
+    {
+     "id": "c",
+     "text": "Round red berries from the bush.",
+     "is_correct": false
+    }
+   ],
+   "evidence_page": 1,
+   "evidence_quote": "She finds sweet carrots.",
+   "explain": "Look: Bella finds sweet carrots right at the start."
+  },
+  {
+   "index": 2,
+   "kind": "detail",
+   "question": "What did the other animals bring for Bella on page 8?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Crunchy nuts from the oak tree.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "Sweet berries for a nice big feast.",
+     "is_correct": true
+    },
+    {
+     "id": "c",
+     "text": "Fresh green grass from the meadow.",
+     "is_correct": false
+    }
+   ],
+   "evidence_page": 8,
+   "evidence_quote": "Friends bring sweet berries to Bella.",
+   "explain": "Look: Her friends bring sweet berries to Bella."
+  },
+  {
+   "index": 3,
+   "kind": "feeling",
+   "question": "Why did Bella feel happy resting in her log home?",
+   "options": [
+    {
+     "id": "a",
+     "text": "She ate every carrot all alone.",
+     "is_correct": false
+    },
+    {
+     "id": "b",
+     "text": "She took a long nap outside.",
+     "is_correct": false
+    },
+    {
+     "id": "c",
+     "text": "She thought about her smiling friends.",
+     "is_correct": true
+    }
+   ],
+   "evidence_page": 7,
+   "evidence_quote": "Bella feels so warm and happy remembering their joyful smiles.",
+   "explain": "Look: Bella feels happy remembering the joyful smiles of her friends."
+  },
+  {
+   "index": 4,
+   "kind": "lesson",
+   "question": "Why was sharing treats a good choice for Bella?",
+   "options": [
+    {
+     "id": "a",
+     "text": "Sharing brought joy to Bella and friends.",
+     "is_correct": true
+    },
+    {
+     "id": "b",
+     "text": "Sharing helped her run super fast.",
+     "is_correct": false
+    },
+    {
+     "id": "c",
+     "text": "Sharing made her basket very heavy.",
+     "is_correct": false
+    }
+   ],
+   "evidence_page": 1,
+   "evidence_quote": "Sharing will bring Bella and her friends more joy.",
+   "explain": "Look: Sharing will bring Bella and her friends more joy."
+  }
+ ],
+ "talk_about": "Bella felt happy when she shared her food. What is something special you like to share with your friends?"
+}

@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-10 19:14 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (215 rows, 200 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-11 08:54 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (245 rows, 230 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -12,12 +12,14 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 - [HR-004: a lesson saying "hurts trust" was a critical safety hit (neatlogs triage card)](evidence/hardening/HR-004.md)
 - [HR-005: one Gemini call stalled for 87 s per trace (neatlogs triage card): tried a 40 s timeout, not kept](evidence/hardening/HR-005.md)
 - [HR-006: the image model painted words into a child's picture](evidence/hardening/HR-006.md)
+- [HR-007: a per-minute quota error ended a run (quota errors back off longer)](evidence/hardening/HR-007.md)
 
 - Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
 - Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
 - Sweep report: [20261010-1752-IST-sweep-4-p3](evidence/reports/20261010-1752-IST-sweep-4-p3.md)
 - Sweep report: [20261010-1828-IST-sweep-5-hr45](evidence/reports/20261010-1828-IST-sweep-5-hr45.md)
 - Sweep report: [20261010-1828-IST-sweep-6-t90](evidence/reports/20261010-1828-IST-sweep-6-t90.md)
+- Sweep report: [20261011-0853-IST-sweep-7-quiz](evidence/reports/20261011-0853-IST-sweep-7-quiz.md)
 
 ### 20261010-1505-IST-sweep-2-p2
 
@@ -174,9 +176,40 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 | `lesson_specific_antenna_truth_signals` | 1 |
 | `lesson_specific_cherished_carrot_truth` | 1 |
 
+### 20261011-0853-IST-sweep-7-quiz
+
+28 runs. Same drawings, lessons and seeds in both arms; pictures and narration off.
+
+| Metric | B1 |
+| --- | --- |
+| Runs (errors) | 28 (0) |
+| Refused or asked to redraw | 0 |
+| Stories made | 28 |
+| **Shipped with a broken promise** | **1/28 (4%)** |
+| Broken promises shipped (total) | 1 |
+| Stopped on a critical safety failure | 0 |
+| A promise broken on the first pass | 20/28 (71%) |
+| Drawing text reached the shipped story | 0/8 (0%) |
+| Drawing text leaked on first pass | 0/8 (0%) |
+| Repairs per story (mean) | 2.36 |
+| Seconds per story (mean) | 153.7 |
+| Seconds to first page (mean) | 46.7 |
+| Estimated USD per story (mean) | 0.0201 |
+| Tokens per story (mean) | 48,646 |
+| Judge calls that could not verify | 2/799 (0%) |
+
+## Broken on the first pass, by promise
+
+| Promise | B1 |
+| --- | --- |
+| `age_reading_level` | 1 |
+| `lesson_specific_antenna_joy_reaction` | 1 |
+| `lesson_specific_antennae_waving_joy` | 1 |
+| `lesson_specific_bubble_symbol_of_hiding` | 1 |
+
 ## 2. neatlogs traces
 
-210 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+240 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -205,7 +238,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 82 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 103 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -238,15 +271,24 @@ Repair recoveries inside the story loop: 82 gated runs repaired at least one pag
 - Graph output: [20261010-1716-IST-graph-diff-HR-002-daec9ea.json](evidence/entire/20261010-1716-IST-graph-diff-HR-002-daec9ea.json)
 - Graph output: [20261010-1745-IST-brain-brief-video-scene-type.json](evidence/entire/20261010-1745-IST-brain-brief-video-scene-type.json)
 - Graph output: [20261010-1745-IST-brain-status.txt](evidence/entire/20261010-1745-IST-brain-status.txt)
+- Graph output: [20261010-1953-IST-graph-diff-HR-003-05ca665.json](evidence/entire/20261010-1953-IST-graph-diff-HR-003-05ca665.json)
+- Graph output: [20261010-1953-IST-graph-diff-HR-004-deb8f0d.json](evidence/entire/20261010-1953-IST-graph-diff-HR-004-deb8f0d.json)
+- Graph output: [20261010-1953-IST-graph-diff-HR-006-468f029.json](evidence/entire/20261010-1953-IST-graph-diff-HR-006-468f029.json)
+- Graph output: [20261010-1953-IST-why-catalog.txt](evidence/entire/20261010-1953-IST-why-catalog.txt)
+- Graph output: [20261010-1953-IST-why-prompts.txt](evidence/entire/20261010-1953-IST-why-prompts.txt)
+- Graph output: [20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt](evidence/entire/20261010-1955-IST-checkpoint-tokens-HR-006-vs-HR-001-test.txt)
+- Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
 ## 7. cfo.ai business plan
 
 - [20261010-1745-IST-cfo-inspect-history.json](evidence/cfo/20261010-1745-IST-cfo-inspect-history.json)
 - [20261010-1745-IST-cfo-readback-main-growth-downside.json](evidence/cfo/20261010-1745-IST-cfo-readback-main-growth-downside.json)
+- [20261011-0845-IST-share-link-anonymous-render.png](evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png)
+- [20261011-0850-IST-market-note-crustdata.md](evidence/cfo/20261011-0850-IST-market-note-crustdata.md)
 - [README.md](evidence/cfo/README.md)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T19:02:56+05:30; latest 2026-10-10T19:02:56+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-11T08:45:46+05:30; latest 2026-10-11T08:45:46+05:30. Window check: `python scripts/lint_evidence.py`.

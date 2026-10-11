@@ -24,7 +24,7 @@ The loop between them is the point: neatlogs found failures, each fix became one
 
 ### Implementation
 - Each verdict sets `neatlogs.guardrail.passed`, a status word, the score and the evidence quote on its span (`tracing.record`).
-- **Five detections** on the project: `Critical safety stop` and `Oath violation` (regex on GUARDRAIL output, created by us) plus three defaults (`Expensive LLM Call`, `Slow LLM Response`, `Execution Failed`). `Oath violation` fired on a real overclaim in the video agent as well as on story pages.
+- **Seven detections** on the project: `Critical safety stop`, `Oath violation`, `Picture has words painted in` and `Quiz question failed a promise` (regex on GUARDRAIL output, created by us; the last two on 11 Oct, no hits yet) plus three defaults (`Expensive LLM Call`, `Slow LLM Response`, `Execution Failed`). `Oath violation` fired on a real overclaim in the video agent as well as on story pages.
 - **Readback** through the neatlogs MCP server with `scripts/neatlogs_mcp.py` (tools used: `search_traces`, `get_trace_context`, `list_detections`, `triage_list`, `triage_get`). Free-plan traces expire after 14 days, so every named run's trace is exported to `evidence/traces/` (16 files) and its id is on its ledger row.
 - **CLI** (`neatlogs-cli` 0.2.0, OAuth device login, read-only scopes) for `usage`, `evals`, `prompts` and `analytics`.
 
@@ -68,7 +68,7 @@ Human evaluations of the judge, alerts on cost or latency, guest links for judge
 Entire records the *coding agent*. CLI 0.11.4 with hooks installed for Claude Code, `commit_linking: always`, checkpoints synced to `origin`. Each commit made in a repo-rooted session gets an `Entire-Checkpoint` trailer; the checkpoint holds the session transcript, files and token use. `entire-graph` 0.4.0 (local, no network) and Entire Brain 0.1.0 (installed from the release, refreshed on a clean tree) add structural and memory views.
 
 ### Implementation
-- One commit per intent so each checkpoint maps to one change. 37 checkpoints at the time of writing (`entire checkpoint list`). Every hardening record names the commit and its checkpoint id.
+- One commit per intent so each checkpoint maps to one change. 40 or more checkpoints at the time of writing (`entire checkpoint list`). Every hardening record names the commit and its checkpoint id.
 - **Graph evidence** (`evidence/entire/`): `graph diff` for the HR-001, HR-002, HR-003, HR-004 and HR-006 changes (the entities each fix touched), `graph impact` for `verify_scene_async` and `story_safe_text`, `graph verify` before and after.
 - **`entire why`** on `src/storybound/oath/catalog.py` ties 18 lines to the checkpoint of the `image_no_text` change; on `pipeline.py` it ties lines to the HR-002 ablation switch.
 - **Brain:** ten durable facts, among them "video specs never hold typed numbers", "a failure not tied to a scene stops the repair loop", and "a key pasted into a chat is recorded in checkpoint transcripts"; `brain brief` returns the likely files for a task.
@@ -115,7 +115,7 @@ On Main, month 6: Household 76.9% and Classroom 56.5%. Cash at the end of the wi
 ### Result and limits
 - Anonymous check: the share link renders for a visitor with no cfo.ai session (headless browser, no cookies; screenshot `evidence/cfo/20261011-0845-IST-share-link-anonymous-render.png`). A dismissible "Keep your access" sign-in prompt appears; the workspace name "Invisible Technologies" is visible in the page title.
 - Competitor price anchors in the model are approximate and come from app listings and secondary sources (see `docs/planning/plan-to-submission.md`, section 3).
-- Month 6 is hard-coded as March 2027, and the text blocks quote figures as of the build; the quiz and video add-ons are **not** yet priced in the model.
+- Month 6 is hard-coded as March 2027, and the text blocks quote figures as of the build; the quiz add-on (about +$0.004 per story, a token estimate from 26 stories) is noted in the basis text of the B1 cost row (change 279068) but is not a separate row, and the video add-on is not priced.
 - Crustdata was used once, for a field-size note with **derived counts only** ([evidence/cfo/20261011-0850-IST-market-note-crustdata.md](../evidence/cfo/20261011-0850-IST-market-note-crustdata.md): of the 60 closest AI story products, 43 have 1 to 10 employees and 42 were founded in 2023 or later). It does not feed a number in the model. Raw Crustdata data must not enter the public repository.
 - The workspace is on a trial that ends 24 Oct 2026; the builder has confirmed hackathon credits cover it.
 - cfo.ai tool limits met: `dry_run` exists only on `create`, so updates had no dry run; a nested dimension layout produced a "one member's result" warning and was rebuilt with variable rows; no Version-history screenshot or workbook download could be made through the MCP (UI steps).

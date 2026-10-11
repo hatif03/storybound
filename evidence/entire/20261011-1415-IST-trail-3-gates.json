@@ -1,0 +1,171 @@
+{
+  "number": 3,
+  "trail_id": "01M4N0JMPVA2TP9JDGQBQQJ54K",
+  "url": "https://entire.io/gh/hatif03/storybound/trails/3",
+  "branch": "feature/credits-routing-and-stall-hedge",
+  "original_branch": "feature/credits-routing-and-stall-hedge",
+  "base": "main",
+  "title": "Spread work across providers by measurement; fixes from the neatlogs review; cfo.ai video and product plans; the story doc",
+  "body": "HR-011 (hedged retry, soft steering phrases, quiz detection) and HR-012 (role routing and a default split with measurements), cfo.ai scenarios and plan, docs. Touches oath/judge.py, so the eval-gate rule asks for HR records and regression evidence.",
+  "status": "open",
+  "phase": "building",
+  "author": {
+    "id": "01M4JGAQS48VQN24VJF3BA29M4",
+    "login": "hatif03"
+  },
+  "assignees": [
+    "hatif03"
+  ],
+  "labels": [],
+  "type": "feature",
+  "priority": "none",
+  "created_at": "2026-10-11T08:16:56.539Z",
+  "updated_at": "2026-10-11T08:20:57.842Z",
+  "merged_at": null,
+  "mergeability": {
+    "head_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+    "mergeable": false,
+    "conflict_status": "unknown",
+    "checks": {
+      "availability": "not_applicable",
+      "runs": []
+    },
+    "gates": [
+      {
+        "id": "",
+        "gate_definition_id": "01M4MG9R6461HVHTCQMM4QGZPH",
+        "gate_key": "approvals",
+        "gate_type": "approvals",
+        "blocking": true,
+        "status": "failed",
+        "state": "evaluated",
+        "outcome": "failed",
+        "rationale": "No reviewers have approved this trail",
+        "head_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "evaluated_at_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "stale_reason": null,
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "approved": 0,
+          "changes_requested": false,
+          "config": {
+            "version": 1,
+            "min_reviewers": 1,
+            "allow_self_approval": false,
+            "dismiss_stale_approvals_on_push": false
+          },
+          "required": 1,
+          "self_excluded": false,
+          "stale_dismissed": 0,
+          "total": 0
+        },
+        "created_at": "2026-10-11T08:21:02.18587995Z",
+        "completed_at": "2026-10-11T08:21:02.18587995Z"
+      },
+      {
+        "id": "01M4N0JWHPC8P2BJADD7PRT9WQ",
+        "gate_definition_id": "01M4MG9R6EY8BD8TRVAQE788NG",
+        "gate_key": "checks",
+        "gate_type": "checks",
+        "blocking": true,
+        "status": "pending",
+        "state": "stale",
+        "outcome": "failed",
+        "rationale": "CI checks have not passed",
+        "head_sha": "bd0343ec45669a306bedd581180c1b2ff521d994",
+        "evaluated_at_sha": "bd0343ec45669a306bedd581180c1b2ff521d994",
+        "stale_reason": "head_moved",
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "state": "failure",
+          "checks": [
+            {
+              "name": "GitGuardian Security Checks",
+              "status": "completed",
+              "conclusion": "failure",
+              "details_url": "https://dashboard.gitguardian.com"
+            }
+          ],
+          "config": {
+            "version": 1,
+            "required_checks": [],
+            "require_all_success": true
+          },
+          "total_count": 1
+        },
+        "created_at": "2026-10-11T08:17:04.566981Z",
+        "completed_at": "2026-10-11T08:17:04.566981Z"
+      },
+      {
+        "id": "01M4N0T0E83C027MC07ZFM061A",
+        "gate_definition_id": "01M4MG9R6B471KY1PGQFX50RVT",
+        "gate_key": "findings",
+        "gate_type": "findings",
+        "blocking": true,
+        "status": "pending",
+        "state": "running",
+        "outcome": null,
+        "rationale": "Waiting for the agent review of the current head",
+        "head_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "evaluated_at_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "stale_reason": null,
+        "finding_count": 0,
+        "reviewers": [],
+        "runner_ids": [
+          "trail-review"
+        ],
+        "value": {
+          "config": {
+            "version": 1,
+            "agent_findings_min_severity": "high"
+          },
+          "reviewed_head": false,
+          "agent_findings": {
+            "low": 0,
+            "high": 0,
+            "medium": 0,
+            "unspecified": 0
+          },
+          "review_in_flight": false,
+          "reviewer_configured": true,
+          "review_grace_expired": false,
+          "agent_blocking_findings": 0
+        },
+        "created_at": "2026-10-11T08:20:57.928702Z",
+        "completed_at": "2026-10-11T08:20:57.928702Z"
+      },
+      {
+        "id": "01M4N0T0F2740W12M21FX312JD",
+        "gate_definition_id": "01M4MG9R6G1ZY8KDEE0YNBPFEJ",
+        "gate_key": "up_to_date",
+        "gate_type": "up_to_date",
+        "blocking": true,
+        "status": "passed",
+        "state": "evaluated",
+        "outcome": "passed",
+        "rationale": "Up to date",
+        "head_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "evaluated_at_sha": "674a7dd832e5fb0ce0246a7a41ad160ea2152031",
+        "stale_reason": null,
+        "finding_count": null,
+        "reviewers": [],
+        "runner_ids": [],
+        "value": {
+          "config": {
+            "version": 1,
+            "allow_behind_if_mergeable": false
+          },
+          "behind_by": 0,
+          "compare_status": "ahead",
+          "comparison_status": "available"
+        },
+        "created_at": "2026-10-11T08:20:57.954889Z",
+        "completed_at": "2026-10-11T08:20:57.954889Z"
+      }
+    ]
+  }
+}

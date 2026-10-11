@@ -1,0 +1,73 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4MP1W7JSRKN6N7TKTRXPZ42",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-11T05:13:05.9988458Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "44ad064af74f",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 1320,
+    "cache_creation_tokens": 2190438,
+    "cache_read_tokens": 284913412,
+    "output_tokens": 597388,
+    "api_call_count": 641
+  },
+  "session_metrics": {
+    "turn_count": 40
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 862,
+      "user_lines_removed": 45,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "docs/research/evals-and-observability.md": 124,
+        "docs/research/video-generation.md": 140,
+        "evidence/video-gen/bunny-veo31lite-4s.json": 35,
+        "src/storybound/agents/planner.py": 8,
+        "src/storybound/api.py": 3,
+        "src/storybound/config.py": 1,
+        "src/storybound/pipeline.py": 49,
+        "src/storybound/prompts.py": 3,
+        "tests/test_pipeline.py": 25,
+        "web/scripts/e2e-touch.mjs": 117,
+        "web/src/App.tsx": 45,
+        "web/src/api/client.ts": 8,
+        "web/src/api/types.ts": 3,
+        "web/src/components/ConfirmPictures.tsx": 3,
+        "web/src/components/DrawCanvas.tsx": 46,
+        "web/src/components/HoldButton.tsx": 49,
+        "web/src/lib/resume.ts": 14,
+        "web/src/lib/touchGuard.test.ts": 76,
+        "web/src/lib/touchGuard.ts": 87,
+        "web/src/screens/Draw.tsx": 8,
+        "web/src/screens/Grownups.tsx": 3,
+        "web/src/screens/Reader.tsx": 3,
+        "web/src/state/settings.ts": 2,
+        "web/src/styles/screens.css": 10
+      },
+      "user_removed_per_file": {
+        "src/storybound/api.py": 3,
+        "src/storybound/pipeline.py": 10,
+        "src/storybound/prompts.py": 2,
+        "web/src/App.tsx": 4,
+        "web/src/api/types.ts": 2,
+        "web/src/components/ConfirmPictures.tsx": 1,
+        "web/src/components/DrawCanvas.tsx": 10,
+        "web/src/screens/Draw.tsx": 8,
+        "web/src/screens/Grownups.tsx": 2,
+        "web/src/screens/Reader.tsx": 1,
+        "web/src/state/settings.ts": 2
+      }
+    }
+  ]
+}

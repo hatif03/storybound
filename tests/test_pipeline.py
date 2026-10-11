@@ -306,3 +306,28 @@ def test_picture_policy_chooses_which_pages_are_painted():
     assert pipeline.picture_pages("full", pages) == set(pages)
     assert pipeline.picture_pages("half", pages) == {1, 3, 5, 7}
     assert pipeline.picture_pages("none", pages) == set()
+
+
+def test_auto_picture_policy_spends_its_budget_on_the_pages_that_matter():
+    pages = list(range(1, 9))
+    imp = {1: 2, 2: 1, 3: 1, 4: 3, 5: 1, 6: 3, 7: 1, 8: 2}
+    assert pipeline.picture_order("auto", pages, imp, budget_usd=0.16, each_usd=0.04) == [4, 6, 1, 8]
+    assert pipeline.picture_pages("auto", pages, imp, 0.16, 0.04) == {1, 4, 6, 8}
+    assert pipeline.picture_order("auto", pages, imp, budget_usd=0.08, each_usd=0.04) == [4, 6]
+    assert pipeline.picture_order("auto", pages, None, budget_usd=0.0, each_usd=0.04) == [1]  # always at least one picture
+    assert len(pipeline.picture_order("auto", pages, imp, budget_usd=9.0, each_usd=0.04)) == 8  # a big budget paints everything
+
+
+def test_planner_importance_falls_back_to_first_and_last_pages():
+    from storybound.agents import planner
+    assert [planner.importance_of(None, i) for i in range(1, 9)] == [2, 1, 1, 1, 1, 1, 1, 3]
+    assert planner.importance_of(3, 4) == 3 and planner.importance_of(9, 4) == 1 and planner.importance_of("x", 1) == 2
+
+
+def test_auto_policy_stops_painting_after_two_failures_in_a_row(drawing):
+    run = pipeline.Run(cfg=pipeline.RunConfig(lesson_id="sharing", pictures="auto"), drawing=drawing, bus=pipeline.EventLog())
+    assert run.painting_should_stop() == ""
+    run.image_failures = 2
+    assert "failed twice" in run.painting_should_stop()
+    run.cfg.pictures = "full"
+    assert run.painting_should_stop() == ""  # the fixed policies keep their old behaviour

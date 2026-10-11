@@ -136,7 +136,7 @@ async def create_story(
     seed: str | None = Form(None),
     fixture_id: str | None = Form(None),
     promise: list[str] = Form(default=[]),
-    pictures: str = Form("full"),
+    pictures: str = Form("auto"),
     drawing: UploadFile | None = File(None),
 ):
     if lesson_id not in lessons.LESSONS:
@@ -158,8 +158,8 @@ async def create_story(
         d = media.prepare(raw)
     except media.BadDrawing as e:
         return err(413 if e.code == "too_large" else 422, e.code, str(e))
-    if pictures not in ("full", "half", "none"):
-        return err(422, "bad_input", "Pictures should be every page, half the pages, or none.")
+    if pictures not in ("full", "half", "none", "auto"):
+        return err(422, "bad_input", "Pictures should be every page, half the pages, none, or auto.")
     kept, left_out = clean_promises(promise)
     if not _slots.acquire(blocking=False):
         return err(429, "busy", "I am busy making other stories. Please try again in a minute.")

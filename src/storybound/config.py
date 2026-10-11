@@ -44,6 +44,7 @@ class Sampling(BaseModel):
 
 class Budget(BaseModel):
     usd_per_story: float = 1.5
+    pictures_usd_per_story: float = 0.16  # what the agent may spend on pictures when it chooses the pages itself (four at the list price)
     seconds_per_story: float = 240.0
 
 

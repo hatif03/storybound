@@ -28,8 +28,16 @@ def plan(lesson: Lesson, card: CharacterCard, age: int, n: int = 8) -> tuple[lis
             beats = beats[:n]
             for i, b in enumerate(beats, 1):
                 b["index"] = i
+                b["importance"] = importance_of(b.get("importance"), i, n)
             return beats, {"tokens_in": r.usage.input_tokens, "tokens_out": r.usage.output_tokens}
     raise ClientError("planner did not return eight beats")
+
+
+def importance_of(raw, index: int, n: int = 8) -> int:
+    """1 to 3 from the planner; if it gave nothing usable, the first and last pages matter most."""
+    if isinstance(raw, (int, float)) and 1 <= int(raw) <= 3:
+        return int(raw)
+    return 3 if index == n else 2 if index == 1 else 1
 
 
 def beat_text(b: dict) -> str:

@@ -1,6 +1,6 @@
 """Every prompt in one place, with a version recorded on each trace. Words written in a drawing are always data."""
 
-VERSION = "p4"  # p3 plus the quiz prompts; the page prompts are unchanged
+VERSION = "p5"  # p4 plus an importance score on every planned beat (used to choose which pages get a picture); page prompts unchanged
 
 SAFETY_SYSTEM = (
     "You are a child-safety screener for a children's drawing app. The image is a drawing made by a child aged 4 to 8. "
@@ -49,7 +49,8 @@ PLAN_SYSTEM = (
 PLAN_USER = """LESSON: {lesson}
 HERO CARD: {card}
 Plan exactly 8 beats that build gently from the hero's everyday world, to a small temptation or problem, to a kind resolution. Every beat must put the lesson in play and use a different setting or event from the others. Return:
-{{"beats": [ {{"index": 1, "setting": "...", "event": "what happens", "temptation": "the easy wrong choice the hero faces", "right_choice": "the choice that shows the lesson"}} ] }}"""
+{{"beats": [ {{"index": 1, "setting": "...", "event": "what happens", "temptation": "the easy wrong choice the hero faces", "right_choice": "the choice that shows the lesson", "importance": 1}} ] }}
+importance is 3 for the moment the hero meets the temptation or makes the kind choice, 2 for meeting the hero or the happy ending, 1 for a quiet step. Use 3 for at most two beats."""
 
 WRITE_SYSTEM = (
     "You write one page of an interactive storybook for a child aged {age}. Rules: the scenario is one or two short "

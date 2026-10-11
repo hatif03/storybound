@@ -57,7 +57,7 @@ class RunConfig:
     ledger_name: str | None = None
     judge_enabled: bool = True
     judge_fn: Any = None  # tests inject a fake judge; None means the K2 judge
-    pictures: str = "full"  # illustration policy from the cfo.ai model: full (every page), half (pages 1, 3, 5, 7) or none
+    pictures: str = "full"  # illustration policy from the cfo.ai model: full (every page), half (pages 1, 3, 5, 7), none, or auto (the agent picks the pages that matter most within a picture budget)
     quiz: bool = True  # gated arm only: a verified quiz after the story
     grownup_promises: tuple[str, ...] = ()  # a parent's or teacher's own promises, already cleaned
 
@@ -102,6 +102,8 @@ class Run:
     outcome: str = ""
     error: str = ""
     receipt: dict | None = None
+    picture_plan: dict | None = None  # the pages the agent chose to paint, and why (policy "auto")
+    image_failures: int = 0  # picture calls that failed in a row; two in a row stop the painting of the rest
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
     quiz: Quiz | None = None
@@ -129,6 +131,16 @@ class Run:
             **({"judge": self.cfg.judge_fn} if self.cfg.judge_fn else {}),
         )
         return self.engine
+
+    def painting_should_stop(self) -> str:
+        """Why the agent stops painting the rest (only when it chose the pages itself): the picture service keeps failing, or the budget is gone."""
+        if self.cfg.pictures != "auto":
+            return ""
+        if self.image_failures >= 2:
+            return "the picture service failed twice in a row"
+        if self.over_budget():
+            return "the story's budget is used up"
+        return ""
 
     def over_budget(self) -> bool:
         s = get_settings()
@@ -475,11 +487,18 @@ def build_graph(run: Run):
         for attempt in range(2):
             try:
                 with IMAGE_SLOTS:  # the image quota is per minute: at most two paintings at once
+                    stop = run.painting_should_stop()
+                    if stop:  # the last results say painting more would waste the budget or the quota: keep words and voice
+                        run.degrade("image", stop, "text only", p.index)
+                        return
                     r = images.illustrate(prompt, reference=(run.drawing.data, run.drawing.mime))
                 data, mime = r.value, r.raw_text or "image/png"
+                run.image_failures = 0
             except ClientError as e:
                 data = None
                 err = str(e)[:120]
+                with run.lock:
+                    run.image_failures += 1
             vs = eng.verify_image(p, data, mime, attempt)
             if all(v.ok for v in vs):
                 break
@@ -548,11 +567,18 @@ def build_graph(run: Run):
         if not cfg.media:
             return {}
         pages, card = s["pages"], s["card"]
-        painted = picture_pages(cfg.pictures, [p.index for p in pages])
+        imp = {b["index"]: b.get("importance", 1) for b in s.get("beats", [])}
+        order = picture_order(cfg.pictures, [p.index for p in pages], imp, st.budget.pictures_usd_per_story, st.prices.image_each)
+        painted = set(order)
+        by_index = {p.index: p for p in pages}
+        if cfg.pictures == "auto":
+            run.picture_plan = {"painted": sorted(painted), "importance": imp, "budget_usd": st.budget.pictures_usd_per_story}
+            run.emit("paint.plan", run.picture_plan)
         for p in pages:
             if p.index not in painted:  # a plan choice, not a failure: the page keeps its words and its narration
-                run.degrade("image", "this plan paints some pages only", "text only", p.index)
-        jobs = [(one_image, p, card) for p in pages if p.index in painted] + [(one_audio, p) for p in pages]
+                why = f"the agent kept its picture budget for the pages that matter most (importance {imp.get(p.index, 1)})"
+                run.degrade("image", why if cfg.pictures == "auto" else "this plan paints some pages only", "text only", p.index)
+        jobs = [(one_image, by_index[i], card) for i in order] + [(one_audio, p) for p in pages]
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
@@ -673,6 +699,7 @@ def make_receipt(run: Run, s: S) -> dict[str, Any]:
         "pages": pages,
         "coverage": cov,
         "degradations": run.degradations,
+        "picture_plan": run.picture_plan,
         "ignored_drawing_text": ignored,
         "budget": {
             "usd_estimate": run.meter.cost_usd(st.prices), "estimate": True, "seconds": round(_now() - run.t0, 1),
@@ -734,13 +761,25 @@ def execute(run: Run) -> Run:
     return run
 
 
-def picture_pages(policy: str, indices: list[int]) -> set[int]:
-    """Which pages get a picture. Pictures dominate the cost of a story (cfo.ai model), so the plan can paint half of them."""
+def picture_pages(policy: str, indices: list[int], importance: dict[int, int] | None = None, budget_usd: float = 0.0,
+                  each_usd: float = 0.04) -> set[int]:
+    """Which pages get a picture. Pictures dominate the cost of a story (cfo.ai model), so the plan can paint fewer of them.
+    "auto": the agent spends its picture budget on the pages that matter most (the planner's importance, earlier page first)."""
+    return set(picture_order(policy, indices, importance, budget_usd, each_usd))
+
+
+def picture_order(policy: str, indices: list[int], importance: dict[int, int] | None = None, budget_usd: float = 0.0,
+                  each_usd: float = 0.04) -> list[int]:
+    """The pages to paint, most important first (the order the agent paints them in)."""
     if policy == "none":
-        return set()
+        return []
     if policy == "half":
-        return {i for i in indices if i % 2 == 1}
-    return set(indices)
+        return [i for i in indices if i % 2 == 1]
+    if policy == "auto":
+        n = min(len(indices), max(1, int(budget_usd / each_usd + 1e-9))) if indices else 0
+        imp = importance or {}
+        return sorted(sorted(indices, key=lambda i: (-imp.get(i, 1), i))[:n], key=lambda i: (-imp.get(i, 1), i))
+    return list(indices)
 
 
 def export_story(run: Run, s: S) -> None:
@@ -777,6 +816,6 @@ def ledger_row(run: Run) -> dict:
         "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "prompt_version": prompts.VERSION, "error": run.error or None,
+        "prompt_version": prompts.VERSION, "error": run.error or None, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan,
         "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

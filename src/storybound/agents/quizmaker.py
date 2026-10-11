@@ -54,12 +54,14 @@ def repair_item(q: QuizItem, failures: str, pages: list[Page], age: int, seed: s
 
 
 def verified_quiz(engine, pages: list[Page], card: CharacterCard, lesson: Lesson, age: int, seed: str, max_rep: int,
-                  repairs: list | None = None) -> Quiz | None:
+                  repairs: list | None = None, stats: dict | None = None) -> Quiz | None:
     """Make the quiz and keep only the questions that keep every quiz promise (repaired at most `max_rep` times).
     Returns None when fewer than two questions survive: no quiz is better than a broken one."""
     engine.ctx.pages = pages
     made = make_quiz(pages, card, lesson, age, seed)
     kept = []
+    if stats is not None:
+        stats.update(made=len(made.items), kept=0)
     for q in made.items:
         for attempt in range(max_rep + 1):
             bad = [v for v in engine.verify_quiz(q, attempt) if not v.ok]
@@ -73,4 +75,6 @@ def verified_quiz(engine, pages: list[Page], card: CharacterCard, lesson: Lesson
                     q = repair_item(q, "; ".join(f"{v.commitment}: {v.actual}" for v in bad)[:400], pages, age, seed)
                 except Exception:
                     break
+    if stats is not None:
+        stats["kept"] = len(kept)
     return Quiz(items=kept, talk_about=made.talk_about) if len(kept) >= 2 else None

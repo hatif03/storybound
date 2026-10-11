@@ -104,6 +104,7 @@ class Run:
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
     quiz: Quiz | None = None
+    quiz_stats: dict = field(default_factory=dict)  # questions made and kept, for the ledger
     forgotten: bool = False  # the parent asked to forget this story: nothing more is written to disk
     lock: threading.Lock = field(default_factory=threading.Lock)
 
@@ -530,7 +531,7 @@ def build_graph(run: Run):
         pages = s["pages"]
         run.ctx.pages = pages
         try:
-            quiz = quizmaker.verified_quiz(run.engine, pages, s["card"], lesson, cfg.age, cfg.seed, max_rep, run.repairs)
+            quiz = quizmaker.verified_quiz(run.engine, pages, s["card"], lesson, cfg.age, cfg.seed, max_rep, run.repairs, run.quiz_stats)
         except Exception as e:  # no quiz is better than a broken one: the story itself is already complete
             run.degrade("check", f"quiz maker failed: {type(e).__name__}", "no quiz")
             return {}
@@ -763,4 +764,5 @@ def ledger_row(run: Run) -> dict:
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
         "prompt_version": prompts.VERSION, "error": run.error or None,
+        "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

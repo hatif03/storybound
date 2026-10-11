@@ -23,7 +23,7 @@ Gemini carried almost everything: 3,478 calls and all of the $4.59 neatlogs meas
 | Story planner | **Nova 2 Lite** (gateway) | JSON of ten fields, cheap, no loss seen |
 | Quiz maker and repairer | **Claude Haiku** (gateway) | text only, checked by six promises and a judge anyway; no loss seen at ten stories |
 | "No words in the picture" check | **Claude Haiku** (gateway) | an objective question; the checker is now a different family from the painter; 5 of 5 pictures passed in the live run |
-| Text judge | K2 (unchanged) | 40 of 40 ground-truth cells; agrees with Claude Sonnet on 65 of 72 verdicts |
+| Text judge | K2 (unchanged) | 40 of 40 ground-truth cells; agrees with Claude Sonnet on 65 of 72 verdicts (Opus 61 of 72, Haiku 60 of 69) |
 | Pictures, narration | Gemini image and speech | no gateway equivalent |
 
 Set `STORYBOUND_ROUTES=` (empty) to turn the split off; a role falls back to Gemini when no gateway key is present. The receipt and the ledger row record the routes used.

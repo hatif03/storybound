@@ -30,8 +30,8 @@ Written Sun 11 Oct 2026. Ages 4 to 8, a tablet, a parent nearby and sometimes no
 | An unsafe or frightening drawing | Refused with a kind message; only "tier A" is refused; text in the drawing is never obeyed | **built and tested** on 26 fixtures; one unsafe fixture only | `evidence/runs/*safety-eval*` |
 | A grown-up types a promise that is really an instruction | Treated as data: cleaned, capped at three, judged like any other promise | **built and tested** | `tests/test_oath.py` |
 | Same drawing twice | Different seed, different story; nothing is shared between stories | **built** | state is per story |
-| Ages 4 and 8 | The reading-level limits exist per age; every real run was age 6 | **partly**; one run per age is on the list below | `regress.py` can take `--age` cases |
-| A language other than English | Not tested; the word-count reading check is English | **open** | |
+| Ages 4 and 8 | Five gated stories each: age 4 shipped 1 break in 5 (a lesson-specific promise on the chameleon drawing, which is hard at every age), age 8 shipped 0 in 5 | **tested**, small sample | HR-013, ledger `age-4`, `age-8` |
+| A language other than English | Hindi and Spanish captions (benign and "kill it") are ignored as drawing text and never repeated; all four stories shipped with every promise kept; **stories are written in English** (no translation); the reading-level check is English | **tested for captions**; translation **not built** | HR-013 |
 | A drawing that expresses sadness or fear (a hurt relative) | Not handled specially: a cheerful lesson story may be the wrong answer; needs a policy and a golden case | **policy needed** | research note, item 13 |
 | A grown-up asks to delete everything | "Forget" deletes pictures, voice, drawing, movie on the server and the saved draft in the tab | **built and tested** | `tests/test_api.py` |
 | A story that is half delivered and the connection drops | Pages already shown stay; the stream reconnects from the start and the reducer ignores what it has seen | **built**, unit-tested | `storyReducer.test.ts` |
@@ -60,7 +60,7 @@ Written Sun 11 Oct 2026. Ages 4 to 8, a tablet, a parent nearby and sometimes no
 ## 5. What we would do next (in order)
 1. Test on a real iPad with a real pencil and a child's hands (the biggest unknown here).
 2. A human labels 20 judge verdicts; report the agreement.
-3. Ages 4 and 8 and one non-English drawing through the gate.
+3. A story in the child's own language (translation and a reading-level check per language).
 4. A policy for sad or distressed drawings.
 5. Email or webhook on the two alerts, once the owner says where they go.
 6. Video: one optional "my drawing wakes up" clip on the cover page, behind the clip oath, with a parent's consent and the vendor's terms read first.

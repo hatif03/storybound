@@ -9,7 +9,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-012 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-013 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |
@@ -59,7 +59,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | 2 | **Entire Trails: branch, PR, runners, review** | Done: trail 2 https://entire.io/gh/hatif03/storybound/trails/2, PR #1, `entire review general` ran (5 findings, fixed); see `TOOLS.md` (Trails). **Left: merge PR #1** (docs fixes are only on the branch until then); the approvals gate needs a second reviewer | Check the trail and PR on entire.io and read the runner results |
 | 3 | **Entire checkpoint link: confirm from your own private window** | The repo is public now. A clean headless browser (no cookies) rendered the commit page: [screenshot](../evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png). A "Log in" button is shown but the page content is visible | Submission link: `https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2`, checkpoint id `01M4MJM5TRM7NE2F8FHFJ49NE6` (the commit and its trailer are on `main`) |
 | 4 | **neatlogs: guest link, human review, triage cards** (seven alert rules with email delivery now exist, thresholds retuned; the three triage cards are handled)  | (Update: the cost alert "Expensive story run", metric `cost`, max above 0.8, was created after the operator was sent as `>`; `evidence/neatlogs/20261011-cost-alert-results.json`.) Earlier state: | The write sign-in worked (11 Oct): a **critical safety stop** alert rule and a draft **human evaluation of judge verdicts** were created through the CLI (`evidence/neatlogs/20261011-write-config-results.json`). The **cost-per-story alert** was rejected (`INVALID_ARGUMENTS`) and the login has since expired (`OAUTH_LOGIN_EXPIRED`) | Sign in again (`neatlogs auth login`), then retry the cost alert; create a guest link for one trace; run the human review on 20 verdicts |
-| 5 | **cfo.ai UI steps** | Not available through the MCP | Screenshot Version history (change 275839), download the workbook, keep both in `evidence/cfo/` |
+| 5 | **cfo.ai UI steps** | The workbooks are saved (`evidence/cfo/workbook/`, five files); the Version-history screenshot is not | Screenshot Version history (change 275839) into `evidence/cfo/` |
 | 6 | **`#neatHack` posts and the submission post** | Posting is the builder's act | Log each in `evidence/posts.md` (URL, time, what it shows); content ideas in `docs/planning/content.md` |
 | 7 | **Demo video (last)** | Requested last | `scripts/make_video.py` with `requires_coverage` (see HANDOFF.md); at most 3:00 |
 | 8 | **Publish** | Repo visibility is the builder's call | After rotation: `build_evidence.py`, `lint_evidence.py`, quote-post Mon 12 Oct 19:00 to 23:55 IST |
@@ -70,7 +70,7 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | Price the quiz and video add-ons in cfo.ai | The quiz estimate (+$0.004) is a note in the B1 cost basis (change 279068); a separate row and the video add-on are not modelled |
 | Judge-reviewed quiz questions from more stories and ages | All runs were age 6; the quiz was reviewed by hand on one story and measured by the promises on 28 |
 | Safari, touch devices, screen reader | Not verified (see `docs/WEB.md`); the browser checks use desktop Edge |
-| Ages other than 6; languages other than English | Not tested |
+| Ages other than 6; languages other than English | Ages 4 and 8 and four Hindi and Spanish captions were run once each (HR-013); stories are English only |
 
 ## 3. Known limits (said plainly)
 - Fit to the hackathon's problem statement (an agent that completes a substantial task start to finish, each result guiding the next action) is argued in [QUALIFICATION.md](QUALIFICATION.md), including the honest limit that the stage order is a fixed graph with open-ended repair inside it.

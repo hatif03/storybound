@@ -40,9 +40,9 @@ def fixture_path(fid: str) -> Path:
     sys.exit(f"unknown fixture {fid}")
 
 
-def one(name: str, arm: str, fid: str, lesson: str, seed: str) -> str:
+def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6) -> str:
     d = media.prepare(fixture_path(fid).read_bytes())
-    cfg = RunConfig(lesson_id=lesson, arm=arm, seed=seed, media=False, fixture=fid, ledger_name=name)
+    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=False, fixture=fid, ledger_name=name)
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=uuid.uuid4().hex[:12])
     t = time.time()
     execute(run)
@@ -61,6 +61,7 @@ def main() -> None:
     ap.add_argument("--lessons", default="sharing")
     ap.add_argument("--k", type=int, default=2)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--age", type=int, default=6, help="the reader's age, 4 to 8")
     a = ap.parse_args()
     done = {
         (r.get("arm"), r.get("fixture"), r.get("lesson"), str(r.get("seed")))
@@ -77,7 +78,7 @@ def main() -> None:
     ]
     print(f"{len(jobs)} runs to do ({len(done)} already in the ledger)", flush=True)
     with cf.ThreadPoolExecutor(max_workers=a.workers) as pool:
-        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j) for j in jobs]
+        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j, a.age) for j in jobs]
         for f in futs:
             try:
                 f.result()

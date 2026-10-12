@@ -787,16 +787,18 @@ def execute(run: Run) -> Run:
     run.t0 = _now()
 
     @tracing.span(kind="WORKFLOW", name="create-storybook")
-    def _go() -> None:
+    def _go(request: dict) -> dict:  # the request and the result are the span's input and output in neatlogs (a reviewer opens the trace here first)
         run.trace_id = tracing.current_trace_id()
         graph = build_graph(run)
         with metered() as meter:
             run.meter = meter
             run.root_ctx = contextvars.copy_context()  # work that outlives the node that started it (judge calls, pictures) is attached to the workflow, not to that node
             graph.invoke({}, {"recursion_limit": 200})
+        r = run.receipt or {}
+        return {"outcome": run.outcome, "plain": r.get("plain"), "counts": r.get("counts"), "broken": r.get("broken"), "oath_hash": r.get("oath_hash")}
 
     try:
-        _go()
+        _go({"lesson": run.cfg.lesson_id, "age": run.cfg.age, "arm": run.cfg.arm, "pictures": run.cfg.pictures, "attempts_allowed": get_settings().thresholds.max_repair_attempts})
     except Exception as e:
         run.outcome = run.outcome or "error"
         run.emit("error", {"code": "internal", "message": "Something went wrong while making the story."})

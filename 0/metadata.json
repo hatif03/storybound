@@ -1,0 +1,180 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4R4F6RMN4FNMYZ4PWV76175",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T13:23:14.0796849Z",
+  "branch": "final/pitch-videos-deploy",
+  "checkpoints_count": 3,
+  "save_step_count": 4,
+  "files_touched": [
+    ".gitignore",
+    "README.md",
+    "docs/DEMO-SCRIPT.md",
+    "docs/DEPLOY.md",
+    "docs/SUBMISSION.md",
+    "docs/WHY.md",
+    "evidence/features-capture/voiceover/about.mp3",
+    "evidence/features-capture/voiceover/draw.mp3",
+    "evidence/features-capture/voiceover/drawer.mp3",
+    "evidence/features-capture/voiceover/end.mp3",
+    "evidence/features-capture/voiceover/forget.mp3",
+    "evidence/features-capture/voiceover/gate.mp3",
+    "evidence/features-capture/voiceover/ignored.mp3",
+    "evidence/features-capture/voiceover/manifest.json",
+    "evidence/features-capture/voiceover/movie_play.mp3",
+    "evidence/features-capture/voiceover/movie_wait.mp3",
+    "evidence/features-capture/voiceover/receipt.mp3",
+    "evidence/features-capture/voiceover/receipt2.mp3",
+    "evidence/features-capture/voiceover/settings.mp3",
+    "evidence/features-capture/voiceover/skim.mp3",
+    "evidence/features-capture/voiceover/unsafe.mp3",
+    "evidence/pitch-video/tour-voiceover/manifest.json",
+    "evidence/pitch-video/tour-voiceover/tour_intro.mp3",
+    "evidence/pitch-video/tour-voiceover/tour_outro.mp3",
+    "evidence/pitch-video/tour-voiceover/tour_part2.mp3",
+    "evidence/pitch-video/voiceover/c1.mp3",
+    "evidence/pitch-video/voiceover/c2.mp3",
+    "evidence/pitch-video/voiceover/c3.mp3",
+    "scripts/build_pitch_video.py",
+    "scripts/compose_demo.py",
+    "scripts/make_demo_voiceover.py",
+    "web/public/judges/img/c1.webp",
+    "web/public/judges/img/c2.webp",
+    "web/public/judges/img/c3.webp",
+    "web/public/judges/img/c4.webp",
+    "web/public/judges/img/c5.webp",
+    "web/public/judges/img/cv1.webp",
+    "web/public/judges/img/cv2.webp",
+    "web/public/judges/img/e1.webp",
+    "web/public/judges/img/e2.webp",
+    "web/public/judges/img/e3.webp",
+    "web/public/judges/img/e4.webp",
+    "web/public/judges/img/e5.webp",
+    "web/public/judges/img/e6.webp",
+    "web/public/judges/img/e7.webp",
+    "web/public/judges/img/n1.webp",
+    "web/public/judges/img/n2.webp",
+    "web/public/judges/img/n3.webp",
+    "web/public/judges/img/n4.webp",
+    "web/public/judges/img/n5.webp",
+    "web/public/judges/img/n6.webp",
+    "web/public/judges/img/n7.webp",
+    "web/public/judges/index.html",
+    "web/scripts/features-voiceover.json",
+    "web/scripts/pitch-voiceover.json",
+    "web/scripts/record-demo.mjs",
+    "web/scripts/record-features.mjs",
+    "web/src/screens/Draw.tsx",
+    "web/src/screens/Grownups.tsx",
+    "web/src/styles/screens.css"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "dcbaf93d5987",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 3082,
+    "cache_creation_tokens": 4302876,
+    "cache_read_tokens": 701569387,
+    "output_tokens": 1273245,
+    "api_call_count": 1509,
+    "subagent_tokens": {
+      "input_tokens": 132,
+      "cache_creation_tokens": 347881,
+      "cache_read_tokens": 5687080,
+      "output_tokens": 12302,
+      "api_call_count": 66
+    }
+  },
+  "session_metrics": {
+    "turn_count": 69
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T13:23:06.5484877Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 785,
+    "human_modified": 1413,
+    "human_removed": 0,
+    "total_committed": 1578,
+    "total_lines_changed": 2816,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 320,
+      "user_lines_removed": 258,
+      "agent_lines_added": 922,
+      "agent_lines_removed": 76,
+      "user_added_per_file": {
+        ".gitignore": 69,
+        "docs/DEMO-SCRIPT.md": 26,
+        "evidence/dashboards/README.md": 3,
+        "evidence/pitch-video/voiceover/manifest.json": 45,
+        "scripts/build_pitch_video.py": 168,
+        "web/scripts/record-features.mjs": 1,
+        "web/scripts/tour-voiceover.json": 5,
+        "web/src/screens/Draw.tsx": 1,
+        "web/src/screens/Grownups.tsx": 1,
+        "web/src/styles/screens.css": 1
+      },
+      "user_removed_per_file": {
+        ".gitignore": 65,
+        "docs/DEMO-SCRIPT.md": 24,
+        "scripts/build_pitch_video.py": 167,
+        "web/scripts/record-features.mjs": 1,
+        "web/src/screens/Grownups.tsx": 1
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 254,
+      "user_lines_removed": 195,
+      "agent_lines_added": 1425,
+      "agent_lines_removed": 280,
+      "user_added_per_file": {
+        "docs/DEPLOY.md": 32,
+        "evidence/dashboards/README.md": 3,
+        "evidence/pitch-video/voiceover/manifest.json": 45,
+        "scripts/build_pitch_video.py": 168,
+        "web/scripts/record-features.mjs": 1,
+        "web/scripts/tour-voiceover.json": 5
+      },
+      "user_removed_per_file": {
+        "docs/DEPLOY.md": 27,
+        "scripts/build_pitch_video.py": 167,
+        "web/scripts/record-features.mjs": 1
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 250,
+      "user_lines_removed": 195,
+      "agent_lines_added": 1430,
+      "agent_lines_removed": 280,
+      "user_added_per_file": {
+        "evidence/app-capture/app-walkthrough-cues.txt": 28,
+        "evidence/dashboards/README.md": 3,
+        "evidence/pitch-video/voiceover/manifest.json": 45,
+        "scripts/build_pitch_video.py": 168,
+        "web/scripts/record-features.mjs": 1,
+        "web/scripts/tour-voiceover.json": 5
+      },
+      "user_removed_per_file": {
+        "evidence/app-capture/app-walkthrough-cues.txt": 27,
+        "scripts/build_pitch_video.py": 167,
+        "web/scripts/record-features.mjs": 1
+      }
+    }
+  ]
+}

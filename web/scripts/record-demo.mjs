@@ -111,12 +111,13 @@ const narrationDone = (since) => page.evaluate((s) => {
 }, since);
 
 async function waitNarration(since, maxMs = 90000) {
-  const until = Date.now() + maxMs;
+  const began = Date.now();
+  const until = began + maxMs;
   let state = 'none';
   while (Date.now() < until) {
     state = await narrationDone(since);
     if (state === 'done') return state;
-    if (state === 'none' && Date.now() - since > 6000) return state; // the page had no voice
+    if (state === 'none' && Date.now() - began > 6000) return state; // the page had no voice (it starts reading about 1.8 s after it opens)
     await sleep(500);
   }
   return state;
@@ -204,7 +205,7 @@ for (let n = 1; n <= TOTAL; n++) {
   const shownAt = Date.now() - w0 > 3000 ? Date.now() : Math.min(Date.now(), navAt + 1500); // a held-back page is shown when it is released
   const picture = await page.evaluate(() => document.querySelector('.picture')?.getAttribute('data-status'));
   cues.push({ type: 'page', page: n, t: shownAt, picture });
-  const narr = await waitNarration(navAt - 300);
+  const narr = await waitNarration((Date.now() - w0 > 3000 ? shownAt : navAt) - 300); // a held-back page starts reading when it is released
   log(`page ${n}: picture ${picture}, narration ${narr}`);
   await sleep(2500); // ample time to look at the page
   await scrollTo('.question', 'start'); // the page is taller than the screen: bring the question and the choices into view, like a child scrolling

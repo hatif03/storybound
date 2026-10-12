@@ -14,11 +14,11 @@ Written for: the builder, who records the one demo video (at most 3:00, script i
 
 ## 1. Our app (made for you, with sound and a voice-over)
 Files in `evidence/app-capture/` (large video files are not committed; they stay on your disk):
-- `app-walkthrough.mp4`: the whole recording at normal speed (about 14 minutes, 1440 x 810), with every sound the app made (Pip's voice, the narration of each page, the chimes, the quiet music) and a voice-over that explains what is happening.
-- `app-walkthrough-cut.mp4`: the same with the waiting stretches (while the agent writes and checks the story, and while a page waits for its picture and voice) sped up 12 times and silent; about 9 minutes. Use this as the starting point, then cut it to about 45 seconds for the 3:00 video.
+- `app-walkthrough.mp4`: the whole recording at normal speed (about 15 minutes, 1440 x 810), with every sound the app made (Pip's voice, the narration of each page, the chimes, the quiet music) and a voice-over that explains what is happening.
+- `app-walkthrough-cut.mp4`: the same with the waiting stretches (while the agent writes and checks the story, and while a page waits for its picture and voice) sped up 12 times and silent; about 10 minutes. Use this as the starting point, then cut it to about 45 seconds for the 3:00 video.
 - `app-walkthrough-cues.txt`: what happens when, in the full-length file, for cutting by hand. `voiceover/` holds each voice-over line as its own mp3 and the text of each line (`manifest.json`), so you can re-record any line in your own voice and drop it in.
 
-It is a real story, made while the recording runs (real models, about $0.45), not a mock. Every screen is shown only when everything for it exists (words, picture, voice), so the recording holds on Pip's making screen while pages are made; the cut speeds those holds up.
+It is a real story, made while the recording runs (real models, about $0.45), not a mock. Its receipt (`recording-receipt.txt`) says 26 promises checked, 0 pages rewritten and 4 not fully kept (two picture checks and two quiz checks), shipped with notes: say so in the voice-over for the receipt if you show it, or re-run the recording for a cleaner receipt; do not call it "all kept". Every screen is shown only when everything for it exists (words, picture, voice), so the recording holds on Pip's making screen while pages are made; the cut speeds those holds up.
 
 What the recording shows, in order:
 | Moment | What is on screen | What the voice-over says |
@@ -27,13 +27,14 @@ What the recording shows, in order:
 | Drawing | A bunny drawn with the mouse | The child draws on the screen |
 | Name, lesson | Pip picks a name; the lesson "Sharing"; a grown-up promise typed in | A grown-up chooses the lesson and can add a promise |
 | Making your story | Pip, the hero, and the promises filling in | The oath, writing and checking each page, rewriting a page that breaks a promise, then the wait while pictures and voices are made |
-| Reading | Page 1 with its picture and voice, a choice, a wrong answer or a right answer | A wrong answer is never a scolding |
+| Reading | Page 1 with its picture; after about two seconds its voice starts reading by itself; the Listen button becomes "Listen again"; a choice | Pages read themselves aloud; a wrong answer is never a scolding |
 | Pages 2 to 8 | Each page with its picture, narration, choices | Each page was checked; nothing is shown before it is complete |
 | Quiz, order game, end | Four verified questions, the picture-order game, the talk-about card | Quiz questions that fail a check are dropped |
 | Grown-ups, receipt | The sum gate and the receipt | How many promises were checked, pages rewritten, what could not be kept |
 | Forget | The story deleted | The app forgets the story |
 
-To make it again: start the server (`.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000`), `.venv\Scripts\python.exe scripts\make_demo_voiceover.py` (only when the words in `web/scripts/demo-voiceover.json` change), `cd web; node scriptsecord-demo.mjs`, then `.venv\Scripts\python.exe scripts\compose_demo.py` (options: `--speed 12` for the cut). The browser that records has no sound card, so the script logs every sound the app plays with its exact time and the screen as timestamped frames; `compose_demo.py` puts each sound back at its time and turns the app's sounds down while the voice-over speaks. To use the app by hand: open http://127.0.0.1:8000, press "Let's go", draw with the mouse or a finger (a simple shape is fine), "Done!", pick a name, pick "Sharing", press "Yes!", wait for "Read page 1!", then read and answer; the grown-ups area is the small button in the corner (answer the multiplication to open it).
+To make it again: start the server (`.venv\Scripts\python.exe -m uvicorn storybound.api:app --app-dir src --port 8000`), `.venv\Scripts\python.exe scripts\make_demo_voiceover.py` (only when the words in `web/scripts/demo-voiceover.json` change), `cd web; node scripts
+ecord-demo.mjs`, then `.venv\Scripts\python.exe scripts\compose_demo.py` (options: `--speed 12` for the cut). The browser that records has no sound card, so the script logs every sound the app plays with its exact time and the screen as timestamped frames; `compose_demo.py` puts each sound back at its time and turns the app's sounds down while the voice-over speaks. To use the app by hand: open http://127.0.0.1:8000, press "Let's go", draw with the mouse or a finger (a simple shape is fine), "Done!", pick a name, pick "Sharing", press "Yes!", wait for "Read page 1!", then read and answer; the grown-ups area is the small button in the corner (answer the multiplication to open it).
 
 ---
 

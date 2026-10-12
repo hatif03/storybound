@@ -2,63 +2,63 @@
  "voice": "Charon",
  "clips": {
   "intro": {
-   "seconds": 21.43,
+   "seconds": 23.47,
    "text": "This is Storybound, a storybook for children from four to eight. A child draws a hero, and the app turns the drawing into a story that teaches a gentle lesson. The difference is that before any page reaches the child, an agent checks it against promises it wrote down first."
   },
   "draw": {
-   "seconds": 8.06,
+   "seconds": 8.11,
    "text": "The child draws right on the screen. Here is a bunny with a bow, and a carrot."
   },
   "name": {
-   "seconds": 7.1,
+   "seconds": 6.98,
    "text": "The child can name the hero, or let Pip, the helper, pick a name."
   },
   "lesson": {
-   "seconds": 12.86,
+   "seconds": 13.56,
    "text": "Next, a grown-up chooses the lesson. Here it is sharing. They can also add a promise of their own, for example: nobody in the story is left out."
   },
   "making": {
-   "seconds": 23.83,
+   "seconds": 23.35,
    "text": "Now the agent goes to work, and the screen shows what it is doing. It writes an oath: a list of promises for this drawing and this lesson. Then it writes each page and checks the page against every promise. A page that breaks a promise is rewritten before anyone sees it."
   },
   "waiting": {
-   "seconds": 19.68,
+   "seconds": 20.59,
    "text": "Pictures and a voice are made for every page as well. Nothing is shown to the child until everything for that page exists: the words, the picture and the narration. So this part takes a few minutes, and in the finished video we speed it up."
   },
   "ready": {
-   "seconds": 7.94,
-   "text": "The story is ready. The first page has its picture, and its voice reads it aloud."
+   "seconds": 21.02,
+   "text": "The story is ready. The first page has its picture, and after a moment its voice starts reading it aloud by itself, so a small child never has to find a button. The Listen again button reads it once more, as often as they like."
   },
   "choice_right": {
-   "seconds": 8.54,
+   "seconds": 8.06,
    "text": "Every page ends with a choice. This one was the kind choice, and Pip celebrates it."
   },
   "choice_wrong": {
-   "seconds": 9.19,
+   "seconds": 9.0,
    "text": "A wrong answer is never a scolding. Pip explains gently and invites the child to try the other one."
   },
   "pages": {
-   "seconds": 13.8,
+   "seconds": 14.42,
    "text": "The rest of the story goes the same way. Each page was checked, and each has its words, its picture and its voice, ready before the child sees it."
   },
   "quiz": {
-   "seconds": 13.44,
+   "seconds": 14.64,
    "text": "After the story there is a short quiz. Every question was checked against the same promises, and a question that fails a check is dropped, never shown."
   },
   "order": {
-   "seconds": 5.16,
+   "seconds": 4.75,
    "text": "And a small game: put the pictures in the order they happened."
   },
   "end": {
-   "seconds": 8.76,
+   "seconds": 7.39,
    "text": "The story ends with a talk-about card, so a grown-up can chat about the lesson with the child."
   },
   "receipt": {
-   "seconds": 15.36,
+   "seconds": 15.86,
    "text": "Behind a grown-up gate, the parent gets the receipt. It says how many promises were checked, how many pages were rewritten, and which promises could not be fully kept. Nothing is hidden."
   },
   "forget": {
-   "seconds": 6.72,
+   "seconds": 6.91,
    "text": "And a parent can make the app forget the story, which deletes it from the server."
   }
  }

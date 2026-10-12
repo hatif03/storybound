@@ -1,32 +1,32 @@
 Today's practice
 
-Quiz: 1 of 4 right on the first try. Put three pictures of the story in order. This stays in this browser tab and is never sent anywhere.
+Quiz: 1 of 2 right on the first try. Put three pictures of the story in order. This stays in this browser tab and is never sent anywhere.
 
 Receipt
 
-27 promises checked. 2 pages rewritten. All kept.
+26 promises checked. 0 pages rewritten. 4 could not be fully kept: image_matches_card, image_no_text, quiz_no_tell, quiz_reading_level.
 
-Every promise that was checked was kept.
+Shipped with notes: see below for what was not fully kept.
 
 Promises in the oath
 29
 Checked this time
-27
+26
 Pages rewritten
-2
+0
 Checks run
-150
+137
 Coverage
 100%
 Time
-7 min 08 s
+9 min 49 s
 Cost
-about $0.46 (estimate)
+about $0.47 (estimate)
 Tokens in / out
-56,949 / 28,942
+54,314 / 24,502
 The oath, promise by promise
 
-27 kept · 0 not kept · 2 not checked this time (a check is sometimes skipped to save time).
+22 kept · 4 not kept · 3 not checked this time (a check is sometimes skipped to save time).
 
 SAFETY
 The drawing is safe to turn into a story
@@ -97,15 +97,15 @@ Kept
 
 The whole story teaches the chosen lesson.
 
-Geometric Resource Sharing
+Jem Shares an Object or Toy
 Not checked this time
 
-Orlo must share a tangible geometric object or resource with another character, showing emotional benefit to both.
+Jem willingly divides or shares something enjoyable with a friend instead of keeping it all.
 
-Clear Joy in Minimalist Aesthetic
-Kept after a rewrite
+Mutual Happiness After Sharing
+Not checked this time
 
-In any scene depicting sharing, the positive emotional shift must be clearly conveyed through Orlo's black-and-white geometric expressions and actions.
+The story must clearly show that sharing makes both Jem and the friend happier than before.
 
 READING LEVEL AND VARIETY
 Simple words for the child's age
@@ -119,7 +119,7 @@ Kept
 No two pages tell the same moment.
 
 Pictures contain no words
-Kept after a rewrite
+Not kept
 
 Pictures have no stray or garbled words painted into them.
 
@@ -139,12 +139,12 @@ Kept
 Every quiz question has three answers and exactly one is right.
 
 The right answer does not give itself away
-Kept
+Not kept
 
 The right answer is not simply the longest one, so a guess has to come from the story.
 
 Quiz words are easy
-Kept
+Not kept
 
 Quiz questions and answers use short, easy words for the child's age.
 
@@ -170,7 +170,7 @@ Kept
 Every page has a picture, or the story says plainly that one is missing.
 
 The picture matches the hero
-Kept
+Not kept
 
 Pictures look like the same hero.
 
@@ -181,21 +181,13 @@ Kept
 Every page can be read aloud, or the story says plainly that it cannot.
 
 What Pip rewrote
-Page 2
-
-Try 1: Clear Joy in Minimalist Aesthetic. Why: Orlo's positive reaction to sharing is stated only verbally in the feedback; the image prompt shows him offering the acorn but gives no body-language cues (ear angles, tail posture, gleaming diamond) marking a mood change, and the tail wag occurs before the sharing..
-
-Page 3
+Page 5
 
 Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
 
 Page 6
 
 Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
-
-Page 8
-
-Try 1: Clear Joy in Minimalist Aesthetic. Why: Orlo's positive reaction is stated verbally but the image prompt gives no clear body-language cues such as ear angles, tail posture, or a gleaming diamond..
 
 Safety
 

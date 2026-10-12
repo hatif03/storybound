@@ -116,7 +116,8 @@ export default function App() {
       go('making');
     } catch (e) {
       const busy = e instanceof ApiError && e.code === 'busy';
-      setStartError(busy ? 'Pip is busy with other stories. Please try again in a minute.' : e instanceof ApiError && e.status === 0 ? 'No internet. Let’s try again!' : 'Oops, Pip dropped a page. Let’s try again!');
+      const spent = e instanceof ApiError && e.code === 'daily_limit';
+      setStartError(spent ? 'Pip has made all the stories it can for today. Please come back tomorrow!' : busy ? 'Pip is busy with other stories. Please try again in a minute.' : e instanceof ApiError && e.status === 0 ? 'No internet. Let’s try again!' : 'Oops, Pip dropped a page. Let’s try again!');
     } finally {
       setStarting(false);
     }

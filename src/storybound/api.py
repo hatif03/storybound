@@ -6,6 +6,7 @@ import json
 import secrets
 import shutil
 import threading
+import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -25,6 +26,27 @@ FIXTURES = ROOT / "assets" / "test-drawings"
 RUNS_DIR = ROOT / "runs"
 WEB_DIST = ROOT / "web" / "dist"
 MAX_CONCURRENT = int(env("STORYBOUND_MAX_RUNS", "3"))
+# A public deployment spends real model credits: caps per UTC day, in all and per visitor (0 = no cap). A visitor over a cap is told calmly and pointed to the free demo.
+DAILY_STORIES = int(env("STORYBOUND_DAILY_STORIES", "0"))
+PER_IP_STORIES = int(env("STORYBOUND_PER_IP_STORIES", "0"))
+DAILY_VIDEOS = int(env("STORYBOUND_DAILY_VIDEOS", "0"))
+_used: dict[tuple[str, str], int] = {}  # (utc day, "all" or an address or "video") -> stories started
+_used_lock = threading.Lock()
+
+
+def _take(kind: str, who: str) -> bool:
+    """Count one story (or video) for today unless a cap is reached. Counted when it starts."""
+    day = time.strftime("%Y-%m-%d", time.gmtime())
+    cap_all, cap_one = (DAILY_VIDEOS, 0) if kind == "video" else (DAILY_STORIES, PER_IP_STORIES)
+    with _used_lock:
+        for k in [k for k in _used if k[0] != day]:
+            del _used[k]
+        a, one = (day, kind), (day, f"{kind}:{who}")
+        if (cap_all and _used.get(a, 0) >= cap_all) or (cap_one and _used.get(one, 0) >= cap_one):
+            return False
+        _used[a] = _used.get(a, 0) + 1
+        _used[one] = _used.get(one, 0) + 1
+        return True
 
 RUNS: dict[str, Run] = {}
 VIDEOS: dict[str, dict] = {}
@@ -129,6 +151,7 @@ def fixture_image(fid: str):
 
 @app.post("/api/stories", status_code=202)
 async def create_story(
+    request: Request,
     lesson_id: str = Form(...),
     age: int = Form(6),
     hero_name: str | None = Form(None),
@@ -161,6 +184,9 @@ async def create_story(
     if pictures not in ("full", "half", "none", "auto"):
         return err(422, "bad_input", "Pictures should be every page, half the pages, none, or auto.")
     kept, left_out = clean_promises(promise)
+    who = request.client.host if request.client else "unknown"
+    if not _take("story", who):
+        return err(429, "daily_limit", "Pip has made all the stories it can for today. Please try again tomorrow, or look at the demo.")
     if not _slots.acquire(blocking=False):
         return err(429, "busy", "I am busy making other stories. Please try again in a minute.")
     sid = secrets.token_hex(6)
@@ -277,13 +303,15 @@ def forget_story(sid: str):
 
 
 @app.post("/api/stories/{sid}/video", status_code=202)
-def make_video(sid: str):
+def make_video(sid: str, request: Request):
     """Start the read-along video of a finished story. Poll `/video/status`, then fetch `/video`."""
     run = _get(sid)
     if run.outcome not in ("shipped", "shipped_with_notes") or not run.cfg.run_dir:
         return err(409, "not_ready", "The story needs to be finished first.")
     if VIDEOS.get(sid, {}).get("status") in ("making", "done"):
         return VIDEOS[sid]
+    if not _take("video", request.client.host if request.client else "unknown"):
+        return err(429, "daily_limit", "Pip has made all the movies it can for today. Please try again tomorrow.")
     if not _video_slot.acquire(blocking=False):
         return err(429, "busy", "I am making another video. Please try again in a few minutes.")
     VIDEOS[sid] = {"status": "making"}

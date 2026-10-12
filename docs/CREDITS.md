@@ -31,5 +31,15 @@ Set `STORYBOUND_ROUTES=` (empty) to turn the split off; a role falls back to Gem
 ## Where the credits are better spent: evaluation
 Serving a story costs about two cents, so the $20 gateway budget cannot be used up by the product. Stronger models earn their cost on **checking our checks**: the cross-family judge agreement run (three Claude models against K2 on 72 promise verdicts, about $1), the safety-screen ablation, the routing experiments. Next uses, in order: have Claude Opus label the 20 verdicts of the neatlogs human-review draft first (a model-to-model number, clearly not a human one) so the human only has to settle disagreements; a Sonnet second opinion on every safety-critical verdict in a nightly sweep; a Sonnet re-read of the receipt text for plain language at age 6.
 
+## What 12 Oct added (measured, ten held-out stories each; HR-014)
+| Use of the credits | Cost a story | What we learned |
+| --- | --- | --- |
+| Writer on Gemini 3.1 Pro (Vertex) | $0.113 | Half the repairs of the default writer (1.3 against 2.4) at 4.7 times the cost; no gain in clean stories, so not the default |
+| Writer on Claude Sonnet 4.6 (gateway) | $0.122 | More repairs (5.1), 5 times the cost: worse than Pro on this task |
+| A second judge (Sonnet beside K2) | $0.138 | No extra breaks shipped, 5.7 times the cost; kept as an option and as the failover when K2 is down ($0.129 a story in drill C4b) |
+| The audit pass (re-judging 80 pages in each of three configurations, K2 only) | not billed to the gateway | The measurement that shows repair, not detection, keeps promises |
+
+The gateway estimate prices an unknown model at the dearest rate, so these figures are upper bounds. The credits remain evaluation money, not product spend.
+
 ## Rules we keep
 Keys only in `.env`; no child's drawing goes to any provider except in a fixture test, and a real drawing only with a parent's consent and the provider's terms read (CLAUDE.md rule 3; see [BUSINESS.md](BUSINESS.md) section 4). The gateway has a request limit of 60 a minute, so sweeps use three workers.

@@ -28,8 +28,24 @@ def rolling_summary(pages: list[Page], keep: int = 3) -> str:
     return " ".join(lines) or "(this is the first page)"
 
 
+def normalise(j: dict) -> dict:
+    """Accept the other shapes a different writer model may answer with: the page wrapped in one key ("page", "scene"), or the two choices as a
+    list ("choices" with is_correct, as the whole-story prompt uses). Anything else is left for assemble() to refuse, naming the keys it saw."""
+    if isinstance(j, dict) and len(j) == 1:
+        only = next(iter(j.values()))
+        if isinstance(only, dict):
+            j = only
+    if isinstance(j, dict) and "correct" not in j and isinstance(j.get("choices"), list):
+        good = [c for c in j["choices"] if isinstance(c, dict) and c.get("is_correct") is True]
+        bad = [c for c in j["choices"] if isinstance(c, dict) and c.get("is_correct") is False]
+        if good and bad:
+            j = {**j, "correct": good[0], "wrong": bad[0]}
+    return j
+
+
 def assemble(index: int, j: dict, correct_slot: int) -> Page:
     """Build a Page from the writer's JSON; the code decides where the correct choice goes (seeded, balanced)."""
+    j = normalise(j)
     try:
         correct, wrong = j["correct"], j["wrong"]
         scenario, question = j["scenario"], j["question"]
@@ -39,7 +55,7 @@ def assemble(index: int, j: dict, correct_slot: int) -> Page:
             Choice(id="b", text=str(correct["text"]), feedback=str(correct["feedback"]), is_correct=True),
         ]
     except (KeyError, TypeError) as e:
-        raise ClientError(f"page JSON is missing {e}") from e
+        raise ClientError(f"page JSON is missing {e}; it had the keys {sorted(j) if isinstance(j, dict) else type(j).__name__}") from e
     if correct_slot == 0:
         picks = [picks[1], picks[0]]
     picks[0].id, picks[1].id = "a", "b"

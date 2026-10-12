@@ -47,7 +47,7 @@ def main() -> None:
     ap.add_argument("--workers", default="3")
     a = ap.parse_args()
     if a.list:
-        for k, (e, args) in EXPERIMENTS.items():
+        for k, (e, _args) in EXPERIMENTS.items():
             print(k, e)
         return
     want = [w for w in a.only.split(",") if w] or list(EXPERIMENTS)

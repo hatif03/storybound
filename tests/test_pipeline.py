@@ -364,3 +364,18 @@ def test_the_agent_paints_the_chosen_pages_while_the_child_is_still_reading(monk
     painted = {e["data"]["index"] for e in evs if e["type"] == "image.ready"}
     assert painted == {1, 4, 6, 8}
     assert run.receipt["picture_plan"]["painted"] == [1, 4, 6, 8]
+
+
+def test_a_page_in_another_shape_is_accepted_and_a_bad_one_names_its_keys():
+    import pytest
+
+    from storybound.agents import writer
+    from storybound.clients.errors import ClientError
+
+    base = {"scenario": "Benny finds a berry.", "question": "What will Benny do?", "image_prompt": "Benny"}
+    ok = writer.assemble(1, {"page": {**base, "correct": {"text": "Share", "feedback": "Yay"}, "wrong": {"text": "Keep", "feedback": "Hmm"}}}, 1)
+    assert ok.choices[1].is_correct and ok.choices[1].text == "Share"
+    listed = {**base, "choices": [{"text": "Keep", "feedback": "Hmm", "is_correct": False}, {"text": "Share", "feedback": "Yay", "is_correct": True}]}
+    assert writer.assemble(2, listed, 0).choices[0].text == "Share"
+    with pytest.raises(ClientError, match="keys"):
+        writer.assemble(3, {**base, "answer": "x"}, 0)

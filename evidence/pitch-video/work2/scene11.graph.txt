@@ -1,8 +1,0 @@
-[0:v]setpts=(PTS-STARTPTS)/1.0,scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,setsar=1[p0];
-[1:v]setpts=(PTS-STARTPTS)/1.0,scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,setsar=1[p1];
-[p0][p1]concat=n=2:v=1:a=0[vc];
-[vc]null[vb];
-[vb]drawtext=fontfile='C\:/Windows/Fonts/arialbd.ttf':text='cfo.ai\: the cost of a story became a product decision':fontsize=46:fontcolor=white:box=1:boxcolor=black@0.62:boxborderw=22:x=(w-text_w)/2:y=h-150:enable='between(t,1.00,13.00)'[c0];
-[c0]null[v];
-[2:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.2,volume=1.3,adelay=300|300[va];
-[va]amix=inputs=1:normalize=0:duration=longest,apad,atrim=0:13.000[a]

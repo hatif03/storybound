@@ -1,0 +1,8 @@
+{
+ "note1": "{\"id\":\"03af6a94-7ea3-4b92-b47b-79551c74ba26\",\"status\":\"open\",\"message\":\"Fix updated\",\"updated_fields\":[\"resolution_note\"]}",
+ "status1": "{\"id\":\"03af6a94-7ea3-4b92-b47b-79551c74ba26\",\"status\":\"resolved\",\"message\":\"Status changed to resolved\"}",
+ "note2": "{\"id\":\"a062a576-f517-4564-a1ac-7f406de62c15\",\"status\":\"open\",\"message\":\"Fix updated\",\"updated_fields\":[\"resolution_note\"]}",
+ "status2": "{\"id\":\"a062a576-f517-4564-a1ac-7f406de62c15\",\"status\":\"resolved\",\"message\":\"Status changed to resolved\"}",
+ "note3": "{\"id\":\"87dc9d1a-02f6-49c0-92ae-cdfceb1b4dc3\",\"status\":\"open\",\"message\":\"Fix updated\",\"updated_fields\":[\"resolution_note\"]}",
+ "status3": "{\"id\":\"87dc9d1a-02f6-49c0-92ae-cdfceb1b4dc3\",\"status\":\"resolved\",\"message\":\"Status changed to resolved\"}"
+}

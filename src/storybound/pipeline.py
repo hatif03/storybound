@@ -801,7 +801,10 @@ def execute(run: Run) -> Run:
         _go({"lesson": run.cfg.lesson_id, "age": run.cfg.age, "arm": run.cfg.arm, "pictures": run.cfg.pictures, "attempts_allowed": get_settings().thresholds.max_repair_attempts})
     except Exception as e:
         run.outcome = run.outcome or "error"
-        run.emit("error", {"code": "internal", "message": "Something went wrong while making the story."})
+        if isinstance(e, ClientError):  # a model service failed after its retries (found by drill C3b): the same soft screen as every other outage
+            run.emit("error", {"code": "service_unavailable", "message": "Pip is having trouble right now. Please try again in a minute."})
+        else:
+            run.emit("error", {"code": "internal", "message": "Something went wrong while making the story."})
         run.error = f"{type(e).__name__}: {e}"[:300]
     finally:
         if run.cfg.ledger_name:

@@ -393,6 +393,20 @@ def test_an_unavailable_safety_screen_is_an_error_screen_not_a_refusal(monkeypat
     assert err["code"] == "service_unavailable"
 
 
+def test_a_model_service_that_fails_after_its_retries_shows_the_try_again_screen(monkeypatch, drawing):
+    from storybound.clients.errors import ClientError
+
+    wire(monkeypatch)
+
+    def down(*_a, **_k):
+        raise ClientError("injected 503")
+
+    monkeypatch.setattr(character, "build_card", down)
+    run, evs = go(drawing)
+    err = next(e for e in evs if e["type"] == "error")["data"]
+    assert run.outcome == "error" and err["code"] == "service_unavailable"
+
+
 def test_the_judge_fails_over_to_another_family_and_the_receipt_says_so(monkeypatch):
     from storybound.clients import k2
     from storybound.clients.errors import ClientError

@@ -1,0 +1,98 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QZQGCV2YWMDY86SNNQNG6Q",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T11:59:57.1463267Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 2,
+  "save_step_count": 3,
+  "files_touched": [
+    "docs/SUBMISSION.md",
+    "evidence/app-capture/voiceover/choice_right.mp3",
+    "evidence/app-capture/voiceover/choice_wrong.mp3",
+    "evidence/app-capture/voiceover/draw.mp3",
+    "evidence/app-capture/voiceover/end.mp3",
+    "evidence/app-capture/voiceover/forget.mp3",
+    "evidence/app-capture/voiceover/intro.mp3",
+    "evidence/app-capture/voiceover/lesson.mp3",
+    "evidence/app-capture/voiceover/making.mp3",
+    "evidence/app-capture/voiceover/manifest.json",
+    "evidence/app-capture/voiceover/name.mp3",
+    "evidence/app-capture/voiceover/order.mp3",
+    "evidence/app-capture/voiceover/pages.mp3",
+    "evidence/app-capture/voiceover/quiz.mp3",
+    "evidence/app-capture/voiceover/ready.mp3",
+    "evidence/app-capture/voiceover/receipt.mp3",
+    "evidence/app-capture/voiceover/waiting.mp3",
+    "web/scripts/record-demo.mjs"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "6a6c4ad4d3a0",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2830,
+    "cache_creation_tokens": 4091631,
+    "cache_read_tokens": 630216590,
+    "output_tokens": 1140199,
+    "api_call_count": 1386,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 65
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T11:59:53.4263282Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 585,
+    "human_modified": 155,
+    "human_removed": 0,
+    "total_committed": 628,
+    "total_lines_changed": 1562,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 64,
+      "user_lines_removed": 64,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "evidence/app-capture/voiceover/manifest.json": 64
+      },
+      "user_removed_per_file": {
+        "evidence/app-capture/voiceover/manifest.json": 64
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 103,
+      "agent_lines_removed": 64
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 27,
+      "user_lines_removed": 27,
+      "agent_lines_added": 107,
+      "agent_lines_removed": 67,
+      "user_added_per_file": {
+        "evidence/app-capture/app-walkthrough-cues.txt": 27
+      },
+      "user_removed_per_file": {
+        "evidence/app-capture/app-walkthrough-cues.txt": 27
+      }
+    }
+  ]
+}

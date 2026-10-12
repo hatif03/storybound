@@ -1,0 +1,50 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QZQGCV2YWMDY86SNNQNG6Q",
+  "strategy": "manual-commit",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "docs/SUBMISSION.md",
+    "evidence/app-capture/voiceover/choice_right.mp3",
+    "evidence/app-capture/voiceover/choice_wrong.mp3",
+    "evidence/app-capture/voiceover/draw.mp3",
+    "evidence/app-capture/voiceover/end.mp3",
+    "evidence/app-capture/voiceover/forget.mp3",
+    "evidence/app-capture/voiceover/intro.mp3",
+    "evidence/app-capture/voiceover/lesson.mp3",
+    "evidence/app-capture/voiceover/making.mp3",
+    "evidence/app-capture/voiceover/manifest.json",
+    "evidence/app-capture/voiceover/name.mp3",
+    "evidence/app-capture/voiceover/order.mp3",
+    "evidence/app-capture/voiceover/pages.mp3",
+    "evidence/app-capture/voiceover/quiz.mp3",
+    "evidence/app-capture/voiceover/ready.mp3",
+    "evidence/app-capture/voiceover/receipt.mp3",
+    "evidence/app-capture/voiceover/waiting.mp3",
+    "web/scripts/record-demo.mjs"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2830,
+    "cache_creation_tokens": 4091631,
+    "cache_read_tokens": 630216590,
+    "output_tokens": 1140199,
+    "api_call_count": 1386,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

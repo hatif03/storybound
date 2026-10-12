@@ -1,0 +1,25 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4R11QX6GGK05KSGAAZAQ5PC",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T12:23:04.3992147Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "3b17dab3e15d",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2866,
+    "cache_creation_tokens": 4114333,
+    "cache_read_tokens": 638966758,
+    "output_tokens": 1153330,
+    "api_call_count": 1404
+  },
+  "session_metrics": {
+    "turn_count": 66
+  }
+}

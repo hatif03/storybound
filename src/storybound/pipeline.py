@@ -187,6 +187,8 @@ def build_graph(run: Run):
             "safety.result",
             {"tier": r.tier, "action": r.action, "ignored_text": shown, "reason_code": r.reason_code},
         )
+        if r.reason_code == "screen_unavailable":  # our service failed, not the drawing: never tell a child their picture was refused
+            return unavailable("the safety screen could not run")
         if r.action == "refuse":
             run.outcome = "refused"
             run.emit(
@@ -202,6 +204,13 @@ def build_graph(run: Run):
             )
             return {"halt": "ask_redraw"}
         return {}
+
+    def unavailable(why: str) -> S:
+        """A service we depend on failed. The child sees the soft "try again" screen, never a refusal; the ledger says error."""
+        run.outcome = "error"
+        run.error = f"service unavailable: {why}"
+        run.emit("error", {"code": "service_unavailable", "message": "Pip is having trouble right now. Please try again in a minute."})
+        return {"halt": "error"}
 
     @tracing.span(kind="AGENT", name="node.character")
     def n_character(_: S) -> S:
@@ -386,6 +395,8 @@ def build_graph(run: Run):
         return {"pending": page, "attempt": attempt, "regens": s["regens"] + 1}
 
     def n_stop(s: S) -> S:
+        if s.get("vs") and all(v.status == "verification_error" for v in s["vs"]):  # nothing unsafe was found: the checkers were down
+            return unavailable("the safety judges could not run")
         run.outcome = "stopped"
         run.emit(
             "run.refused", {"reason_code": "unsafe_story", "message": CALM_STOP, "trace_id": tracing.current_trace_id()}

@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 
-from ..clients import gateway, gemini, k2
+from ..clients import gateway, gemini, k2, usage
 from ..clients.errors import ClientError
 from ..config import get_settings
 from ..models import Commitment
@@ -79,6 +79,10 @@ def judge_batch(items: list[Commitment], text: str, context: dict, model: str | 
     try:
         r = k2.judge_json(SYSTEM, user, model=model)
     except ClientError as e:
+        fb = get_settings().models.judge_fallback
+        if model == get_settings().models.judge and fb and fb != model and gateway.configured():
+            usage.record_fallback("judge", model, str(e))  # the judge is down: a judge from another family takes over, and the receipt says so
+            return judge_batch(items, text, context, model=fb)
         return {c.id: JudgeOut("verification_error", error=f"judge unavailable: {e}"[:200], model=model) for c in items}
     payload = r.value
     rows = payload.get("verdicts", []) if isinstance(payload, dict) else payload if isinstance(payload, list) else []

@@ -46,6 +46,7 @@ class Models(BaseModel):
     routes: dict[str, str] = Field(default_factory=lambda: _parse_routes(os.environ.get("STORYBOUND_ROUTES", DEFAULT_ROUTES)))
     vision_judge: str = os.environ.get("STORYBOUND_VISION_JUDGE", "claude-haiku")  # who judges the pictures named in vision_judge_for; empty = the vision model (the painter's family)
     vision_judge_for: tuple[str, ...] = ("image_no_text",)
+    judge_fallback: str = os.environ.get("STORYBOUND_JUDGE_FALLBACK", "claude-sonnet-4.6")  # takes over when the main judge is unavailable (drill C4, HR-015); empty = no failover
     judge_ensemble: str = os.environ.get("STORYBOUND_JUDGE_ENSEMBLE", "")  # a second judge from another family; the stricter verdict wins (experiment X3)
 
     def route(self, role: str) -> str | None:

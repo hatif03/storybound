@@ -31,10 +31,19 @@ EXPERIMENTS = {
     "X4-no-judge": ({}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty", "--no-judge"]),
     "X5-repairs-0": ({"STORYBOUND_MAX_REPAIRS": "0"}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty"]),
     "X6-repairs-4": ({"STORYBOUND_MAX_REPAIRS": "4"}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty"]),
+    # second round (12 Oct): the Sonnet writer again after the parser fix, and the audit pass that measures the breaks a story still carries when it ships
+    "X2b-writer-claude-sonnet-fixed": ({"STORYBOUND_ROUTES": DEFAULT_ROUTES + ",scene_writer=claude-sonnet-4.6,scene_repair=claude-sonnet-4.6"}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty"]),
+    "A0-baseline-audit": ({}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty", "--audit"]),
+    "A4-no-judge-audit": ({}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty", "--no-judge", "--audit"]),
+    "A5-repairs-0-audit": ({"STORYBOUND_MAX_REPAIRS": "0"}, ["--fixtures", HOLDOUT, "--lessons", "sharing,honesty", "--audit"]),
     "C1-stall-hedge-on": ({"STORYBOUND_CHAOS": "gemini:stall:100:0.15"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
     "C2-stall-hedge-off": ({"STORYBOUND_CHAOS": "gemini:stall:100:0.15", "STORYBOUND_HEDGE_S": "0"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
     "C3-gemini-503": ({"STORYBOUND_CHAOS": "gemini:error:503:0.4"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
     "C4-judge-down": ({"STORYBOUND_CHAOS": "k2:error:503:1"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
+    # after the fixes made from drills C3 and C4 (HR-015): the same failures again, and both judges down
+    "C3b-gemini-503-after-fix": ({"STORYBOUND_CHAOS": "gemini:error:503:0.4"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
+    "C4b-judge-down-failover": ({"STORYBOUND_CHAOS": "k2:error:503:1"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
+    "C7-both-judges-down": ({"STORYBOUND_CHAOS": "k2:error:503:1,gateway:error:503:1"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
     "C5-gateway-down": ({"STORYBOUND_CHAOS": "gateway:error:503:1"}, ["--fixtures", DRILL, "--lessons", "sharing"]),
     "C6-image-429": ({"STORYBOUND_CHAOS": "image:error:429:0.8"}, ["--fixtures", "benign/bunny-bow-carrot,benign/chameleon-hummingbird,benign/schoolroom-1909", "--lessons", "sharing", "--media"]),
 }

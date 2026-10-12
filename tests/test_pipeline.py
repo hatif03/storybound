@@ -379,3 +379,39 @@ def test_a_page_in_another_shape_is_accepted_and_a_bad_one_names_its_keys():
     assert writer.assemble(2, listed, 0).choices[0].text == "Share"
     with pytest.raises(ClientError, match="keys"):
         writer.assemble(3, {**base, "answer": "x"}, 0)
+
+
+def test_an_unavailable_safety_screen_is_an_error_screen_not_a_refusal(monkeypatch, drawing):
+    wire(monkeypatch)
+    ok = Verdict(commitment="input_safe_visual", scope="run", status="verification_error")
+    monkeypatch.setattr(safety, "screen", lambda dr: safety.SafetyResult("refuse", "A", "screen_unavailable", ok))
+    run, evs = go(drawing)
+    types = [e["type"] for e in evs]
+    assert run.outcome == "error" and "service unavailable" in run.error
+    assert "run.refused" not in types and "error" in types  # the child sees "try again", not "your picture was refused"
+    err = next(e for e in evs if e["type"] == "error")["data"]
+    assert err["code"] == "service_unavailable"
+
+
+def test_the_judge_fails_over_to_another_family_and_the_receipt_says_so(monkeypatch):
+    from storybound.clients import k2
+    from storybound.clients.errors import ClientError
+    from storybound.clients.usage import Result, metered
+    from storybound.models import Commitment
+    from storybound.oath import judge as j
+
+    c = Commitment(id="p", scope="scene", title="t", plain="p", verifier="judge", rubric="r")
+    seen = []
+
+    def judge_json(system, user, *, max_tokens=None, model=None):
+        seen.append(model)
+        if model in (None, j.get_settings().models.judge):
+            raise ClientError("503 judge down", retryable=False, status=503)
+        return Result(value={"verdicts": [{"id": "p", "status": "pass", "score": 1.0, "quote": None, "reasoning": "fine"}]})
+
+    monkeypatch.setattr(k2, "judge_json", judge_json)
+    monkeypatch.setattr(j.gateway, "configured", lambda: True)
+    with metered() as m:
+        out = j.judge_batch([c], "some text", {})
+    assert out["p"].status == "pass" and seen[-1] == j.get_settings().models.judge_fallback
+    assert m.fallbacks and m.fallbacks[0]["role"] == "judge"

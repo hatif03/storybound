@@ -133,7 +133,7 @@ function Settings({ onForget }: { onForget(): void }) {
   return (
     <section aria-labelledby="set-title">
       <h2 id="set-title">Settings</h2>
-      <Switch on={s.sound} label="Sound" hint="Tap sounds, Pip's voice, and pages read aloud as they open. Off by default." onToggle={() => { unlock(); setSettings({ sound: !s.sound, ...(s.sound ? { music: false } : {}) }); if (s.sound) setMusic(false); }} />
+      <Switch on={s.sound} label="Sound" hint="Tap sounds, Pip's voice, and each page read aloud a moment after it opens. On by default." onToggle={() => { unlock(); setSettings({ sound: !s.sound, ...(s.sound ? { music: false } : {}) }); if (s.sound) setMusic(false); }} />
       <Switch on={s.music} label="Quiet music" hint="A soft background tune. Needs sound on." onToggle={() => { const next = !s.music; unlock(); setSettings({ music: next, ...(next ? { sound: true } : {}) }); setMusic(next); }} />
       <Switch on={s.calm} label="Calm motion" hint="Less movement. Also follows the device's own setting." onToggle={() => setSettings({ calm: !s.calm })} />
       <div className="setting">

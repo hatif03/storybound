@@ -20,7 +20,7 @@ from typing import Any, TypedDict
 
 from langgraph.graph import END, StateGraph
 
-from . import ledger, lessons, prompts, tracing
+from . import chaos, ledger, lessons, prompts, tracing
 from . import media as media_mod
 from .agents import character, oath_author, planner, quizmaker, safety, writer
 from .agents.common import rng
@@ -102,11 +102,13 @@ class Run:
     outcome: str = ""
     error: str = ""
     receipt: dict | None = None
+    root_ctx: Any = None  # the context of the workflow span (see task_context)
     picture_plan: dict | None = None  # the pages the agent chose to paint, and why (policy "auto")
     image_failures: int = 0  # picture calls that failed in a row; two in a row stop the painting of the rest
     plan_announced: bool = False  # the picture plan was announced as soon as the story was planned
     paint_set: set[int] = field(default_factory=set)  # pages that will get a picture, known before the pages are written
     early: dict[int, tuple[dict, Any]] = field(default_factory=dict)  # page index -> (page as painted, its future): pictures start as pages are accepted
+    early_audio: dict[int, tuple[dict, Any]] = field(default_factory=dict)  # the same for narration: a page is shown only when its picture and voice are ready
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
     quiz: Quiz | None = None
@@ -131,9 +133,16 @@ class Run:
             on_verdict=self.on_verdict,
             judge_enabled=self.cfg.judge_enabled,
             defer_judge_on_det_fail=self.cfg.arm == "B1",
+            task_context=self.task_context,
             **({"judge": self.cfg.judge_fn} if self.cfg.judge_fn else {}),
         )
         return self.engine
+
+    def task_context(self) -> contextvars.Context:
+        """The context for a worker thread. A node span ends when the node returns, but a judge call or a picture started in it keeps running; a span
+        whose parent has already ended is exported by neatlogs as a trace of its own (found in HR-014: 2 of 4 pictures and every picture check
+        were missing from the story's trace). Starting such work from the workflow's own context keeps every span in the one trace."""
+        return self.root_ctx.copy() if self.root_ctx is not None else contextvars.copy_context()
 
     def painting_should_stop(self) -> str:
         """Why the agent stops painting the rest (only when it chose the pages itself): the picture service keeps failing, or the budget is gone."""
@@ -187,6 +196,8 @@ def build_graph(run: Run):
             "safety.result",
             {"tier": r.tier, "action": r.action, "ignored_text": shown, "reason_code": r.reason_code},
         )
+        if r.reason_code == "screen_unavailable":  # our service failed, not the drawing: never tell a child their picture was refused
+            return unavailable("the safety screen could not run")
         if r.action == "refuse":
             run.outcome = "refused"
             run.emit(
@@ -202,6 +213,13 @@ def build_graph(run: Run):
             )
             return {"halt": "ask_redraw"}
         return {}
+
+    def unavailable(why: str) -> S:
+        """A service we depend on failed. The child sees the soft "try again" screen, never a refusal; the ledger says error."""
+        run.outcome = "error"
+        run.error = f"service unavailable: {why}"
+        run.emit("error", {"code": "service_unavailable", "message": "Pip is having trouble right now. Please try again in a minute."})
+        return {"halt": "error"}
 
     @tracing.span(kind="AGENT", name="node.character")
     def n_character(_: S) -> S:
@@ -333,6 +351,7 @@ def build_graph(run: Run):
             run.ctx.pages = pages
             run.emit("scene.accepted", {"index": page.index, "attempts_used": attempt, "page": _public_page(page)})
             start_painting(page, s["card"])
+            start_audio(page)
             if not rest and s["i"] > n_pages:
                 nxt = "story_gate"
             elif rest and (len(rest) >= MAX_AHEAD or s["i"] > n_pages):
@@ -386,6 +405,8 @@ def build_graph(run: Run):
         return {"pending": page, "attempt": attempt, "regens": s["regens"] + 1}
 
     def n_stop(s: S) -> S:
+        if s.get("vs") and all(v.status == "verification_error" and "unavailable" in (v.actual or "") for v in s["vs"]):  # nothing unsafe was found: the judges were down
+            return unavailable("the safety judges could not run")
         run.outcome = "stopped"
         run.emit(
             "run.refused", {"reason_code": "unsafe_story", "message": CALM_STOP, "trace_id": tracing.current_trace_id()}
@@ -471,6 +492,7 @@ def build_graph(run: Run):
                     "scene.accepted",
                     {"index": new.index, "attempts_used": 0, "page": _public_page(new), "revised": True},
                 )
+        run.emit("story.verified", {})  # every page is final now: the app may release pages whose picture and voice are ready
         return {"pages": pages}
 
     # ---- media --------------------------------------------------------------------------------------------------------
@@ -485,6 +507,7 @@ def build_graph(run: Run):
 
     early_painting = cfg.media and cfg.arm == "B1" and cfg.pictures != "none"
     early_pool = cf.ThreadPoolExecutor(max_workers=2) if early_painting else None
+    audio_pool = cf.ThreadPoolExecutor(max_workers=2) if early_painting else None  # narration starts with the page too
 
     def announce_paint_plan(imp: dict[int, int], order: list[int], indices: list[int]) -> None:
         """Say which pages will be painted (and why the others will not) as soon as the story is planned."""
@@ -502,8 +525,14 @@ def build_graph(run: Run):
         """A page was just accepted: if it is one of the pages to paint, start its picture now (the child is still reading)."""
         if not early_painting or early_pool is None or p.index not in run.paint_set or run.forgotten:
             return
-        ctx = contextvars.copy_context()
+        ctx = run.task_context()
         run.early[p.index] = (p.model_dump(), early_pool.submit(ctx.run, one_image, p, card))
+
+    def start_audio(p: Page) -> None:
+        """A page was just accepted: record its narration now, so the voice is ready when the story is released to the child."""
+        if audio_pool is None or run.forgotten:
+            return
+        run.early_audio[p.index] = (p.model_dump(), audio_pool.submit(run.task_context().run, one_audio, p))
 
     def one_image(p: Page, card: CharacterCard) -> None:
         eng = run.engine
@@ -604,19 +633,21 @@ def build_graph(run: Run):
             announce_paint_plan(imp, order, [p.index for p in pages])
         # pictures already started while the child read: keep them unless the story gate rewrote that page afterwards
         todo = [i for i in order if i not in run.early or run.early[i][0] != by_index[i].model_dump()]
-        jobs = [(one_image, by_index[i], card) for i in todo] + [(one_audio, p) for p in pages]
+        todo_audio = [p for p in pages if p.index not in run.early_audio or run.early_audio[p.index][0] != p.model_dump()]
+        jobs = [(one_image, by_index[i], card) for i in todo] + [(one_audio, p) for p in todo_audio]
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
-                ctx = contextvars.copy_context()  # keep the trace parent and the usage meter
+                ctx = run.task_context()  # keep the trace parent and the usage meter
                 futs.append(pool.submit(ctx.run, fn, *a))
-            for f in futs + [fut for _snap, fut in run.early.values()]:
+            for f in futs + [fut for _snap, fut in [*run.early.values(), *run.early_audio.values()]]:
                 try:
                     f.result()
                 except Exception as e:  # one broken page must not sink the story
                     run.degrade("check", f"media worker failed: {type(e).__name__}", "page shown without media")
-        if early_pool is not None:
-            early_pool.shutdown(wait=True)
+        for p_ in (early_pool, audio_pool):
+            if p_ is not None:
+                p_.shutdown(wait=True)
         return {}
 
     # ---- receipt ------------------------------------------------------------------------------------------------------
@@ -768,18 +799,24 @@ def execute(run: Run) -> Run:
     run.t0 = _now()
 
     @tracing.span(kind="WORKFLOW", name="create-storybook")
-    def _go() -> None:
+    def _go(request: dict) -> dict:  # the request and the result are the span's input and output in neatlogs (a reviewer opens the trace here first)
         run.trace_id = tracing.current_trace_id()
         graph = build_graph(run)
         with metered() as meter:
             run.meter = meter
+            run.root_ctx = contextvars.copy_context()  # work that outlives the node that started it (judge calls, pictures) is attached to the workflow, not to that node
             graph.invoke({}, {"recursion_limit": 200})
+        r = run.receipt or {}
+        return {"outcome": run.outcome, "plain": r.get("plain"), "counts": r.get("counts"), "broken": r.get("broken"), "oath_hash": r.get("oath_hash")}
 
     try:
-        _go()
+        _go({"lesson": run.cfg.lesson_id, "age": run.cfg.age, "arm": run.cfg.arm, "pictures": run.cfg.pictures, "attempts_allowed": get_settings().thresholds.max_repair_attempts})
     except Exception as e:
         run.outcome = run.outcome or "error"
-        run.emit("error", {"code": "internal", "message": "Something went wrong while making the story."})
+        if isinstance(e, ClientError):  # a model service failed after its retries (found by drill C3b): the same soft screen as every other outage
+            run.emit("error", {"code": "service_unavailable", "message": "Pip is having trouble right now. Please try again in a minute."})
+        else:
+            run.emit("error", {"code": "internal", "message": "Something went wrong while making the story."})
         run.error = f"{type(e).__name__}: {e}"[:300]
     finally:
         if run.cfg.ledger_name:
@@ -844,6 +881,6 @@ def ledger_row(run: Run) -> dict:
         "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "prompt_version": prompts.VERSION, "error": run.error or None, "routes": dict(get_settings().models.routes), "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
+        "prompt_version": prompts.VERSION, "error": run.error or None, "routes": dict(get_settings().models.routes), "experiment": os.environ.get("STORYBOUND_EXPERIMENT") or None, "chaos": chaos.active() or None, "max_repairs": get_settings().thresholds.max_repair_attempts, "judge_ensemble": get_settings().models.judge_ensemble or None, "hedge_s": get_settings().hedge_after_s, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
         "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

@@ -1,5 +1,5 @@
 // Grown-up settings. Kept in sessionStorage only (nothing persists beyond the tab, by design); every access is try/caught
-// because storage can be blocked. Sound is OFF by default and nothing plays before a tap.
+// because storage can be blocked. Sound is ON by default (stories read themselves) but nothing plays before the first tap.
 import { useSyncExternalStore } from 'react';
 
 export interface Settings {
@@ -12,7 +12,7 @@ export interface Settings {
 }
 
 const KEY = 'storybound.settings';
-const defaults: Settings = { sound: false, music: false, textSize: 'm', calm: false, age: 6, pictures: 'auto' };
+const defaults: Settings = { sound: true, music: false, textSize: 'm', calm: false, age: 6, pictures: 'auto' };
 let current: Settings = load();
 const listeners = new Set<() => void>();
 

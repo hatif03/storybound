@@ -1,15 +1,19 @@
 # Status: what is done, what is left, who must act
 
-Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST (confirmed by the builder). Evidence for every line is in `EVIDENCE.md`, `evidence/` and the documents linked.
+Updated Mon 12 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST (confirmed by the builder). Evidence for every line is in `EVIDENCE.md`, `evidence/` and the documents linked.
 
 ## 1. Done
 
 | Area | State | Evidence |
 | --- | --- | --- |
-| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
+| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 106 backend tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-013 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-016 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers; HR-014 to HR-016 on 12 Oct: writer, judge and repair experiments, failure drills, the missing-span fix) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Architecture and configuration experiments (12 Oct) | Eight configurations on ten held-out stories each (writer Gemini Pro and Claude Sonnet, second judge, no judge, no repairs, four repairs) and an audit that re-judges shipped pages: repairing, not detecting, is what keeps promises (6 of 10 stories shipped a known break without repairs; 48 of 80 pages carry an unseen break without the judge, 16 of 80 with the full agent); a stronger writer halves repairs at about 5 times the cost, so the cheap writer stays the default | [HR-014](../evidence/hardening/HR-014.md), `evidence/experiments/20261012-comparison.md` |
+| Failure drills (12 Oct) | Eight injected failures (stall, 503, judge down, gateway down, image 429, both judges down); four fixes: tolerant page parsing, a judge from another family on failover, the try-again screen for outages and for model errors that outlast their retries; the safe failure (both judges down) shows no unchecked story | [HR-015](../evidence/hardening/HR-015.md), `src/storybound/chaos.py` |
+| Traces that hold the whole story (12 Oct) | Judge calls and pictures start from the workflow's context, so 4 of 4 pictures and every picture check are in the story's trace (2 of 4 and none before); the story span carries its request and result | [HR-016](../evidence/hardening/HR-016.md) |
+| Pages are shown only when complete (12 Oct) | The reader opens a page only when its final words, its picture (or the decision to go without) and its voice exist; narration now starts as each page is accepted, and `story.verified` marks the end of the whole-story check. First page opens after the story check instead of after page 1 | [WEB.md](WEB.md), [API.md](API.md), `web/src/state/storyReducer.test.ts` |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |
@@ -22,7 +26,7 @@ Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | neatlogs second pass | Incident review; hedged retry for the 87 s stall, tiered "ignore all", a corrected quiz detection | [research/neatlogs-incident-review.md](research/neatlogs-incident-review.md), HR-011 |
 | Business model beyond the hackathon | Video AI scenarios (margin -70% with three cheapest clips), a real-launch plan (about 2,490 households to break even at $6.99) | [BUSINESS.md](BUSINESS.md), `evidence/cfo/` |
 | Verified quiz | Four questions per story, six promises, judge on every question, dropped if unverified | `docs/WEB.md`, sweep 7 below |
-| Picture-order game, healthy-play rules | Done; skippable, no timers, streaks, scores or autoplay | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
+| Picture-order game, healthy-play rules | Done; skippable, no timers, streaks or scores, no autoplay chains (a page's own narration starts itself after a pause: [WEB.md](WEB.md)) | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
 | Grown-up promises | Done, end to end (appears on the receipt) | API doc, `tests/test_oath.py`, browser run |
 | Forget a story (`DELETE /api/stories/{id}`) | Done; the story 404s afterwards | `tests/test_api.py`, browser run |
 | Read-along video from a story | Done: 3:37 and 3:45 renders, all promises pass | `evidence/stories/bunny-sharing-2/video/receipt.json` |
@@ -59,9 +63,9 @@ The quote promise and the one-right-answer promise never failed on the first pas
 | 2 | **Entire Trails: branch, PR, runners, review** | Done: trail 2 https://entire.io/gh/hatif03/storybound/trails/2, PR #1, `entire review general` ran (5 findings, fixed); see `TOOLS.md` (Trails). **Left: merge PR #1** (docs fixes are only on the branch until then); the approvals gate needs a second reviewer | Check the trail and PR on entire.io and read the runner results |
 | 3 | **Entire checkpoint link: confirm from your own private window** | The repo is public now. A clean headless browser (no cookies) rendered the commit page: [screenshot](../evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png). A "Log in" button is shown but the page content is visible | Submission link: `https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2`, checkpoint id `01M4MJM5TRM7NE2F8FHFJ49NE6` (the commit and its trailer are on `main`) |
 | 4 | **neatlogs: guest link, human review, triage cards** (seven alert rules with email delivery now exist, thresholds retuned; the three triage cards are handled)  | (Update: the cost alert "Expensive story run", metric `cost`, max above 0.8, was created after the operator was sent as `>`; `evidence/neatlogs/20261011-cost-alert-results.json`.) Earlier state: | The write sign-in worked (11 Oct): a **critical safety stop** alert rule and a draft **human evaluation of judge verdicts** were created through the CLI (`evidence/neatlogs/20261011-write-config-results.json`). The **cost-per-story alert** was rejected (`INVALID_ARGUMENTS`) and the login has since expired (`OAUTH_LOGIN_EXPIRED`) | Sign in again (`neatlogs auth login`), then retry the cost alert; create a guest link for one trace; run the human review on 20 verdicts |
-| 5 | **cfo.ai UI steps** | The workbooks are saved (`evidence/cfo/workbook/`, five files); the Version-history screenshot is not | Screenshot Version history (change 275839) into `evidence/cfo/` |
+| 5 | **cfo.ai UI steps** | Done: the workbooks (`evidence/cfo/workbook/`) and two Version-history screenshots (12 Oct, `evidence/cfo/`) are saved | none |
 | 6 | **`#neatHack` posts and the submission post** | Posting is the builder's act | Log each in `evidence/posts.md` (URL, time, what it shows); content ideas in `docs/planning/content.md` |
-| 7 | **Demo video (last)** | Requested last | `scripts/make_video.py` with `requires_coverage` (see HANDOFF.md); at most 3:00 |
+| 7 | **Demo video (last)** | The app capture is made, with sound and a voice-over (`evidence/app-capture/app-walkthrough.mp4` and the cut, 12 Oct); the neatlogs, Entire and cfo.ai dashboards are yours to record | [DEMO-SCRIPT.md](DEMO-SCRIPT.md), [DEMO-RECORDING-GUIDE.md](DEMO-RECORDING-GUIDE.md); at most 3:00 |
 | 8 | **Publish** | Repo visibility is the builder's call | After rotation: `build_evidence.py`, `lint_evidence.py`, quote-post Mon 12 Oct 19:00 to 23:55 IST |
 
 ### Work that can still be done (not blocking)

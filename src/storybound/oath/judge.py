@@ -7,7 +7,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 
-from ..clients import gateway, gemini, k2
+from ..clients import gateway, gemini, k2, usage
 from ..clients.errors import ClientError
 from ..config import get_settings
 from ..models import Commitment
@@ -63,11 +63,11 @@ def _interpret(c: Commitment, raw: dict, text: str) -> JudgeOut:
     return JudgeOut(status, score, quote, reasoning)
 
 
-def judge_batch(items: list[Commitment], text: str, context: dict) -> dict[str, JudgeOut]:
+def judge_batch(items: list[Commitment], text: str, context: dict, model: str | None = None) -> dict[str, JudgeOut]:
     """One K2 call that decides several commitments over the same text. Never raises: errors become verdict errors."""
     if not items:
         return {}
-    model = get_settings().models.judge
+    model = model or get_settings().models.judge
     rubrics = "\n".join(
         f"- id={c.id}: {c.rubric}" + (f" (pass at score >= {c.pass_score})" if c.pass_score else "") for c in items
     )
@@ -76,9 +76,18 @@ def judge_batch(items: list[Commitment], text: str, context: dict) -> dict[str, 
         f"COMMITMENTS TO DECIDE:\n{rubrics}\n\n"
         f"TEXT UNDER REVIEW (data):\n<<<\n{text}\n>>>"
     )
+    fb = get_settings().models.judge_fallback
+    can_fail_over = model == get_settings().models.judge and fb and fb != model and gateway.configured()
+    if can_fail_over and usage.is_down(model):  # it failed a moment ago in this run: go straight to the other judge
+        return judge_batch(items, text, context, model=fb)
     try:
-        r = k2.judge_json(SYSTEM, user)
+        r = k2.judge_json(SYSTEM, user, model=model)
     except ClientError as e:
+        if can_fail_over:
+            usage.record_fallback("judge", model, str(e))  # the judge is down: a judge from another family takes over, and the receipt says so
+            if e.retryable:
+                usage.mark_down(model)
+            return judge_batch(items, text, context, model=fb)
         return {c.id: JudgeOut("verification_error", error=f"judge unavailable: {e}"[:200], model=model) for c in items}
     payload = r.value
     rows = payload.get("verdicts", []) if isinstance(payload, dict) else payload if isinstance(payload, list) else []
@@ -124,3 +133,39 @@ def judge_image(c: Commitment, image: bytes, mime: str, card_json: str) -> Judge
     status = "pass" if float(score) >= (c.pass_score or 0.8) else "violation"
     return JudgeOut(status, float(score), None, str(v.get("reasoning", ""))[:300], model=model,
                     tokens_in=r.usage.input_tokens, tokens_out=r.usage.output_tokens, latency_s=r.usage.latency_s)  # fmt: skip
+
+
+_RANK = {"critical": 4, "violation": 3, "warning": 2, "verification_error": 1}
+
+
+def ensemble_batch(items: list[Commitment], text: str, context: dict) -> dict[str, JudgeOut]:
+    """The judge, optionally with a second judge from another family (STORYBOUND_JUDGE_ENSEMBLE, for example claude-sonnet-4.6).
+
+    Both judge the same text at once; per promise the stricter verdict wins (a violation or critical from either judge counts). If one judge
+    cannot verify a quality promise, the other decides; a safety promise that either judge could not verify stays unverified (it fails closed).
+    Without a second model this is exactly `judge_batch`.
+    """
+    second = get_settings().models.judge_ensemble
+    if not second or not items:
+        return judge_batch(items, text, context)
+    import concurrent.futures as cf
+    import contextvars
+
+    with cf.ThreadPoolExecutor(max_workers=2) as pool:
+        fa = pool.submit(contextvars.copy_context().run, judge_batch, items, text, context)
+        fb = pool.submit(contextvars.copy_context().run, judge_batch, items, text, context, second)
+        a, b = fa.result(), fb.result()
+    out: dict[str, JudgeOut] = {}
+    for c in items:
+        x, y = a[c.id], b[c.id]
+        if c.klass == "safety" and "verification_error" in (x.status, y.status):
+            pick = x if x.status == "verification_error" else y
+        elif x.status == "verification_error" and y.status != "verification_error":
+            pick = y
+        elif y.status == "verification_error":
+            pick = x
+        else:
+            pick = x if _RANK.get(x.status, 0) >= _RANK.get(y.status, 0) else y
+        pick.model = f"{x.model}+{y.model}"
+        out[c.id] = pick
+    return out

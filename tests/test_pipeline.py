@@ -115,6 +115,7 @@ def test_happy_path_and_repair(monkeypatch, drawing):
     types = [e["type"] for e in evs]
     assert run.outcome == "shipped" and run.error == ""
     assert types.count("scene.accepted") == 8 and "receipt" in types and types[-1] == "run.finished"
+    assert types.index("story.verified") > max(i for i, t in enumerate(types) if t == "scene.accepted") - 1 and types.index("story.verified") < types.index("receipt")  # pages are final before the app may release them
     assert calls["repair"] == 1  # page 5 lost the hero's name once, repaired once
     rep = [e for e in evs if e["type"] == "scene.repair"]
     assert rep and rep[0]["data"]["index"] == 5 and "character_named_in_scene" in rep[0]["data"]["failed"]
@@ -364,3 +365,95 @@ def test_the_agent_paints_the_chosen_pages_while_the_child_is_still_reading(monk
     painted = {e["data"]["index"] for e in evs if e["type"] == "image.ready"}
     assert painted == {1, 4, 6, 8}
     assert run.receipt["picture_plan"]["painted"] == [1, 4, 6, 8]
+
+
+def test_a_page_in_another_shape_is_accepted_and_a_bad_one_names_its_keys():
+    import pytest
+
+    from storybound.agents import writer
+    from storybound.clients.errors import ClientError
+
+    base = {"scenario": "Benny finds a berry.", "question": "What will Benny do?", "image_prompt": "Benny"}
+    ok = writer.assemble(1, {"page": {**base, "correct": {"text": "Share", "feedback": "Yay"}, "wrong": {"text": "Keep", "feedback": "Hmm"}}}, 1)
+    assert ok.choices[1].is_correct and ok.choices[1].text == "Share"
+    listed = {**base, "choices": [{"text": "Keep", "feedback": "Hmm", "is_correct": False}, {"text": "Share", "feedback": "Yay", "is_correct": True}]}
+    assert writer.assemble(2, listed, 0).choices[0].text == "Share"
+    with pytest.raises(ClientError, match="keys"):
+        writer.assemble(3, {**base, "answer": "x"}, 0)
+
+
+def test_an_unavailable_safety_screen_is_an_error_screen_not_a_refusal(monkeypatch, drawing):
+    wire(monkeypatch)
+    ok = Verdict(commitment="input_safe_visual", scope="run", status="verification_error")
+    monkeypatch.setattr(safety, "screen", lambda dr: safety.SafetyResult("refuse", "A", "screen_unavailable", ok))
+    run, evs = go(drawing)
+    types = [e["type"] for e in evs]
+    assert run.outcome == "error" and "service unavailable" in run.error
+    assert "run.refused" not in types and "error" in types  # the child sees "try again", not "your picture was refused"
+    err = next(e for e in evs if e["type"] == "error")["data"]
+    assert err["code"] == "service_unavailable"
+
+
+def test_a_model_service_that_fails_after_its_retries_shows_the_try_again_screen(monkeypatch, drawing):
+    from storybound.clients.errors import ClientError
+
+    wire(monkeypatch)
+
+    def down(*_a, **_k):
+        raise ClientError("injected 503")
+
+    monkeypatch.setattr(character, "build_card", down)
+    run, evs = go(drawing)
+    err = next(e for e in evs if e["type"] == "error")["data"]
+    assert run.outcome == "error" and err["code"] == "service_unavailable"
+
+
+def test_the_judge_fails_over_to_another_family_and_the_receipt_says_so(monkeypatch):
+    from storybound.clients import k2
+    from storybound.clients.errors import ClientError
+    from storybound.clients.usage import Result, metered
+    from storybound.models import Commitment
+    from storybound.oath import judge as j
+
+    c = Commitment(id="p", scope="scene", title="t", plain="p", verifier="judge", rubric="r")
+    seen = []
+
+    def judge_json(system, user, *, max_tokens=None, model=None):
+        seen.append(model)
+        if model in (None, j.get_settings().models.judge):
+            raise ClientError("503 judge down", retryable=False, status=503)
+        return Result(value={"verdicts": [{"id": "p", "status": "pass", "score": 1.0, "quote": None, "reasoning": "fine"}]})
+
+    monkeypatch.setattr(k2, "judge_json", judge_json)
+    monkeypatch.setattr(j.gateway, "configured", lambda: True)
+    with metered() as m:
+        out = j.judge_batch([c], "some text", {})
+    assert out["p"].status == "pass" and seen[-1] == j.get_settings().models.judge_fallback
+    assert m.fallbacks and m.fallbacks[0]["role"] == "judge"
+
+
+def test_worker_threads_run_in_the_workflow_context_not_the_node_that_started_them():
+    import contextvars
+
+    var = contextvars.ContextVar("span", default="none")
+    run = pipeline.Run.__new__(pipeline.Run)
+    var.set("workflow")
+    run.root_ctx = contextvars.copy_context()
+    var.set("node")  # the node span is current when the work is started
+    assert run.task_context().run(var.get) == "workflow"
+
+
+def test_only_an_outage_of_the_safety_screen_is_unavailable_a_block_is_a_refusal(monkeypatch, drawing):
+    from storybound.agents import safety
+    from storybound.clients.errors import ClientError
+
+    def blocked(*_a, **_k):
+        raise ClientError("blocked by the provider", retryable=False, status=400)
+
+    def outage(*_a, **_k):
+        raise ClientError("503", retryable=True, status=503)
+
+    monkeypatch.setattr(safety, "ask_json", blocked)
+    assert safety.screen(drawing).reason_code == "screen_inconclusive"
+    monkeypatch.setattr(safety, "ask_json", outage)
+    assert safety.screen(drawing).reason_code == "screen_unavailable"

@@ -1,6 +1,7 @@
 // A real story through the real app: draw, lesson, a grown-up promise, read every page, make the movie, forget the story.
 // Needs the backend on :8000 serving web/dist (npm run build), real model keys; costs about $0.40 plus about $0.04 for the movie.
-//   node scripts/e2e-real.mjs [--url http://127.0.0.1:8000] [--out shots/e2e] [--no-video]
+//   node scripts/e2e-real.mjs [--url http://127.0.0.1:8000] [--out shots/e2e] [--no-video] [--record file.webm]
+// --record saves a screen capture of the whole run (puppeteer's screencast; needs ffmpeg at C:/ffmpeg/ffmpeg.exe).
 // Prints a step log and every console error, failed request or request that leaves the app's own origin.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -33,6 +34,8 @@ page.on('request', (r) => {
   const u = r.url();
   if (!u.startsWith(BASE) && !u.startsWith('data:') && !u.startsWith('blob:')) problems.push(`off-origin: ${u.slice(0, 120)}`);
 });
+const REC = arg('record', '');
+const recorder = REC ? await page.screencast({ path: REC, ffmpegPath: 'C:/ffmpeg/ffmpeg.exe' }) : null;
 const shot = (name) => page.screenshot({ path: path.join(OUT, `${name}.png`) });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const clickText = async (text, sel = 'button, a', timeout = 30000) => {
@@ -182,6 +185,16 @@ if (VIDEO) {
   log(`movie ready in ${((Date.now() - t1) / 1000).toFixed(0)}s: ${info.duration.toFixed(1)}s ${info.w}x${info.h}`);
 }
 
+// the receipt is written when the story's last checks finish; a parent opens it after that (poll in short waits)
+for (let i = 0; i < 90; i++) {
+  const ready = await page.evaluate(async () => {
+    const id = (performance.getEntriesByType('resource').map((r) => r.name).find((n) => /\/api\/stories\/[0-9a-f]+\//.test(n)) || '').split('/')[5];
+    return !!id && (await fetch(`/api/stories/${id}/receipt`)).status === 200;
+  });
+  if (ready) break;
+  await sleep(10000);
+}
+log('receipt ready');
 // the grown-ups area: receipt, then forget
 await clickText('Grown-ups', 'button');
 await page.waitForSelector('.sum, .link', { timeout: 10000 }).catch(() => {});

@@ -10,10 +10,13 @@ import { nowPlaying, play, say, sfx, stop, subscribePlaying } from '../lib/sound
 import { stepLine } from '../lib/steps';
 import { useSettings } from '../state/settings';
 import { useFocusHeading, type Source } from '../state/session';
-import { audioStatus, imageStatus, isDone, type StoryState } from '../state/storyReducer';
+import { audioStatus, imageStatus, isDone, pageReady, type StoryState } from '../state/storyReducer';
 
 // 6.7 The story reader. Works with whatever has arrived: a page can be read before its picture or voice exists, and a page
 // whose picture or voice never comes is a calm text-only page (never an error).
+
+/** How long the picture is looked at before the page starts reading itself. */
+export const AUTOPLAY_DELAY_MS = 1800;
 
 function usePlaying(url: string | undefined): boolean {
   const [now, setNow] = useState<string | null>(nowPlaying());
@@ -52,6 +55,8 @@ function Listen({ story, page }: { story: StoryState; page: Page }) {
   const status = audioStatus(story, page.index);
   const url = story.media[page.index]?.audio;
   const playing = usePlaying(url);
+  const [heard, setHeard] = useState(false); // after the page has been read once, the button offers to read it again
+  useEffect(() => { if (playing) setHeard(true); }, [playing]);
   if (status === 'missing') {
     return <p className="no-sound"><Icon name="speaker-slash" /> No voice on this page</p>;
   }
@@ -59,9 +64,9 @@ function Listen({ story, page }: { story: StoryState; page: Page }) {
     return <p className="no-sound"><Icon name="speaker-high" /> Pip is finding a voice…</p>;
   }
   return (
-    <Btn variant="sky" icon={playing ? 'speaker-slash' : 'speaker-high'} aria-pressed={playing} quiet
+    <Btn variant="sky" icon={playing ? 'speaker-slash' : heard ? 'arrows-clockwise' : 'speaker-high'} aria-pressed={playing} quiet
       onClick={() => (playing ? stop() : play(url!))} className="listen">
-      {playing ? 'Stop' : 'Listen'}
+      {playing ? 'Stop' : heard ? 'Listen again' : 'Listen'}
     </Btn>
   );
 }
@@ -83,7 +88,8 @@ export function Reader({ story, source, startAt, onEnd, onLeave }: { story: Stor
   const [picked, setPicked] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
   const top = useRef<HTMLElement>(null);
-  const page = story.pages.find((p) => p.index === n);
+  const ready = pageReady(story, n);
+  const page = ready ? story.pages.find((p) => p.index === n) : undefined; // a page is shown only when its picture and voice exist too
   const total = story.totalPages;
   const mediaRef = useRef(story.media);
   mediaRef.current = story.media;
@@ -97,18 +103,23 @@ export function Reader({ story, source, startAt, onEnd, onLeave }: { story: Stor
     setPicked(null);
   };
 
-  // New page: scroll to the top, and read it aloud if sound is on and the voice is already here (a tap is never needed again:
-  // the first tap on Welcome unlocked audio). A voice that arrives later is only played when the child taps Listen.
+  // New page: scroll to the top, give the child a moment to see the picture, then read the page aloud by itself (a page is only shown once its
+  // voice exists, and the first tap on Welcome unlocked audio). The Listen button stays to read it again as often as anyone likes.
+  const autoplay = useRef<number>(0);
   useEffect(() => {
     top.current?.scrollIntoView?.({ block: 'start' });
-    const audio = mediaRef.current[n]?.audio;
-    if (sound && audio) play(audio);
-    return () => stop();
+    if (sound && ready) {
+      autoplay.current = window.setTimeout(() => {
+        const audio = mediaRef.current[n]?.audio;
+        if (audio) play(audio);
+      }, AUTOPLAY_DELAY_MS);
+    }
+    return () => { window.clearTimeout(autoplay.current); stop(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [n]);
+  }, [n, ready]);
 
   // If the story ended without this page (it never arrived), go to the end rather than wait forever.
-  useEffect(() => { if (!page && isDone(story)) onEnd(); }, [page, story, onEnd]);
+  useEffect(() => { if (!story.pages.some((p) => p.index === n) && isDone(story)) onEnd(); }, [n, story, onEnd]);
 
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
@@ -122,6 +133,7 @@ export function Reader({ story, source, startAt, onEnd, onLeave }: { story: Stor
 
   const choose = (c: Choice) => {
     setPicked(c.id);
+    window.clearTimeout(autoplay.current); // an answer before the story began reading: it does not start afterwards
     stop();
     if (c.is_correct) { sfx('star-pop'); sfx('happy-chime'); say('reader-kind'); } else { sfx('soft-boop'); say('reader-think'); }
   };

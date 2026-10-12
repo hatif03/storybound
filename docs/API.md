@@ -23,7 +23,7 @@ Base path `/api`. JSON in and out, except the drawing upload (multipart) and the
 
 `POST /api/stories` also takes `promise` (repeat the field, up to three): a parent's or teacher's own promises, for example "Nobody in the story is left out". They are cleaned (8 to 140 characters; text that looks like an instruction to the agent, or like personal details, is left out), added to the oath as judged, non-core promises, and answered in the `202` body as `promises_used` and `promises_left_out`. They are data to check, never instructions.
 
-Errors use `{ "error": { "code": "...", "message": "..." } }` with a calm, child-safe message. Codes: `bad_input`, `too_large`, `unknown_lesson`, `not_found`, `internal`. A refused drawing is **not** an HTTP error: it is a normal run that ends with `run.refused`.
+Errors use `{ "error": { "code": "...", "message": "..." } }` with a calm, child-safe message. Codes: `bad_input`, `too_large`, `unknown_lesson`, `not_found`, `internal`. Inside a run, an outage ends with an `error` event with the code `service_unavailable` (HR-015). A refused drawing is **not** an HTTP error: it is a normal run that ends with `run.refused`.
 
 ## Events
 
@@ -45,9 +45,10 @@ Every event is `{ "id": <n>, "type": "...", "t": <seconds since start>, "data": 
 | `audio.ready` | `index`, `url`, `seconds` |
 | `degraded` | `what` (`image` / `audio` / `judge` / `check`), `index` (optional), `why`, `fallback` |
 | `receipt` | The receipt |
+| `story.verified` | none; every page is final (the whole-story check is done). The app shows a page only after this and after that page's `image.ready` (or a `degraded` for its picture) and `audio.ready` (or a `degraded` for its voice) |
 | `run.finished` | `outcome` (`shipped` / `shipped_with_notes`), `story_id` |
 | `run.refused` | `reason_code`, `message` (the calm text to show the child), `trace_id` |
-| `error` | `code`, `message`; the stream then closes |
+| `error` | `code`, `message`; the stream then closes. `code` is `internal` (an unexpected failure) or `service_unavailable` (a model service or every safety judge failed; the message is the soft "try again in a minute" screen, never a refusal) |
 
 The stream ends after `run.finished`, `run.refused` or `error`. Keep-alive comment lines are sent every 15 s.
 

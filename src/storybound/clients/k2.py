@@ -35,6 +35,10 @@ def _is_gateway(model: str) -> bool:
 def _once(messages, model: str, max_tokens: int):
     import openai
 
+    from .. import chaos
+
+    chaos.maybe("gateway" if _is_gateway(model) else "k2")
+
     t0 = time.time()
     try:
         r = client(_is_gateway(model)).chat.completions.create(model=model, messages=messages, temperature=0, max_tokens=max_tokens)
@@ -54,10 +58,10 @@ def _once(messages, model: str, max_tokens: int):
     return text, usage
 
 
-def judge_json(system: str, user: str, *, max_tokens: int | None = None) -> Result:
+def judge_json(system: str, user: str, *, max_tokens: int | None = None, model: str | None = None) -> Result:
     """Ask the judge for a JSON verdict. One re-ask on unparseable output."""
     s = get_settings()
-    model = s.models.judge
+    model = model or s.models.judge
     msgs = [{"role": "system", "content": system}, {"role": "user", "content": user}]
     total = Usage(model=model, calls=0)
     last: ParseError | None = None

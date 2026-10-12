@@ -86,6 +86,19 @@ def test_busy_when_slots_full(client, monkeypatch):
     assert r.status_code == 429 and r.json()["error"]["code"] == "busy"
 
 
+def test_daily_caps_stop_a_visitor_and_the_whole_day(client, monkeypatch):
+    monkeypatch.setattr(api, "_used", {})
+    monkeypatch.setattr(api, "PER_IP_STORIES", 2)
+    monkeypatch.setattr(api, "DAILY_STORIES", 3)
+    form = {"lesson_id": "sharing", "fixture_id": "benign/bunny-bow-carrot"}
+    assert [client.post("/api/stories", data=form).status_code for _ in range(3)] == [202, 202, 429]  # this visitor's cap is 2
+    r = client.post("/api/stories", data=form)
+    assert r.json()["error"]["code"] == "daily_limit"
+    monkeypatch.setattr(api, "PER_IP_STORIES", 0)
+    assert client.post("/api/stories", data=form).status_code == 202  # the day's total (3) is now reached
+    assert client.post("/api/stories", data=form).status_code == 429
+
+
 def test_pipeline_module_has_run_config():
     assert pipeline.RunConfig(lesson_id="sharing").arm == "B1"
     assert json.dumps({"ok": True})

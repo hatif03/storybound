@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from storybound import ledger, media, tracing  # noqa: E402
+from storybound.clients.usage import metered  # noqa: E402
 
 tracing.init()
 
@@ -40,13 +41,32 @@ def fixture_path(fid: str) -> Path:
     sys.exit(f"unknown fixture {fid}")
 
 
-def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6) -> str:
+def audit_story(run) -> dict:
+    """An independent audit of the finished story: every scene promise judged on every page by the full judge, whatever gate the run used.
+    Tells how many promise breaks a story still carries when it ships (the measure that lets a judge-less run be compared with a judged one)."""
+    from storybound.oath.engine import Engine
+
+    eng = Engine(oath=run.engine.oath, ctx=run.ctx, rates={"quality": 1.0, "image": 0.0}, judge_enabled=True)
+    by: dict[str, int] = {}
+    for page in run.ctx.pages:
+        for v in eng.verify_scene(page, 0):
+            if v.status in ("violation", "critical"):
+                by[v.commitment] = by.get(v.commitment, 0) + 1
+    return {"residual_page_breaks": sum(by.values()), "residual_by_promise": by}
+
+
+def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6, no_judge: bool = False, media_on: bool = False, audit: bool = False) -> str:
     d = media.prepare(fixture_path(fid).read_bytes())
-    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=False, fixture=fid, ledger_name=name)
+    extra = {"pictures": "auto"} if media_on else {}  # older sweeps ran without pictures; keep them comparable
+    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=media_on, fixture=fid, ledger_name=name, judge_enabled=not no_judge, **extra)
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=uuid.uuid4().hex[:12])
     t = time.time()
     execute(run)
     c = (run.receipt or {}).get("counts", {})
+    if audit and run.ctx.pages:
+        with metered() as audit_meter:  # the audit's judge calls are one trace of their own (not hundreds of fragments) and are metered
+            resid = tracing.span(kind="WORKFLOW", name="audit-story")(audit_story)(run)
+        ledger.append({"name": name + "-audit", "kind": "audit", "audited": name, "story_id": run.story_id, "fixture": fid, "lesson": lesson, "pages": len(run.ctx.pages), "audit_tokens": audit_meter.totals().get("by_model"), **resid})
     msg = f"{arm} {fid.split('/')[-1][:28]:28} {lesson:9} seed={seed} -> {run.outcome:19} shipped={len(run.shipped)} repairs={c.get('repairs', '-')} {time.time() - t:5.0f}s"
     with _print:
         print(msg, flush=True)
@@ -62,6 +82,9 @@ def main() -> None:
     ap.add_argument("--k", type=int, default=2)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--age", type=int, default=6, help="the reader's age, 4 to 8")
+    ap.add_argument("--audit", action="store_true", help="after each story, judge every page on every scene promise (residual breaks)")
+    ap.add_argument("--no-judge", action="store_true", help="deterministic checks only (experiment X4)")
+    ap.add_argument("--media", action="store_true", help="paint and narrate too (drills that need the picture and voice services)")
     a = ap.parse_args()
     done = {
         (r.get("arm"), r.get("fixture"), r.get("lesson"), str(r.get("seed")))
@@ -78,7 +101,7 @@ def main() -> None:
     ]
     print(f"{len(jobs)} runs to do ({len(done)} already in the ledger)", flush=True)
     with cf.ThreadPoolExecutor(max_workers=a.workers) as pool:
-        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j, a.age) for j in jobs]
+        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j, a.age, a.no_judge, a.media, a.audit) for j in jobs]
         for f in futs:
             try:
                 f.result()

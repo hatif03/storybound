@@ -9,17 +9,18 @@ import { Stones } from '../components/Stones';
 import { say, sfx } from '../lib/sound';
 import { stepLine, stepPose, stepVoice } from '../lib/steps';
 import { useFocusHeading, type Source } from '../state/session';
-import type { StoryState } from '../state/storyReducer';
+import { pageReady, type StoryState } from '../state/storyReducer';
 
 // 6.5 Making your story. Progress is told through Pip and follows the real events: no percentage, no countdown, no timer.
-// The first page opens as soon as it is accepted; later pages keep arriving while the child reads.
+// A page opens only when everything for it exists: its final words, its picture and its voice. The child never sees a page half made.
 export function Making({ story, source, lessonTitle, onRead, onCancel, onRetry }: {
   story: StoryState; source: Source | null; lessonTitle?: string; onRead(): void; onCancel(): void; onRetry(): void;
 }) {
   const h = useFocusHeading<HTMLHeadingElement>();
   const [confirm, setConfirm] = useState(false);
   const line = stepLine(story);
-  const firstReady = story.pages.length > 0;
+  const firstReady = pageReady(story, 1);
+  const allReady = Array.from({ length: story.totalPages }, (_, i) => pageReady(story, i + 1)).every(Boolean);
   const voice = stepVoice(story);
   const said = useRef('');
 
@@ -54,7 +55,7 @@ export function Making({ story, source, lessonTitle, onRead, onCancel, onRetry }
               Read page 1!
             </Btn>
           )}
-          {firstReady && story.phase === 'running' && <p className="muted center">More pages are coming while you read.</p>}
+          {firstReady && story.phase === 'running' && !allReady && <p className="muted center">Pip is still getting the other pages ready.</p>}
         </section>
 
         <section className="making-stage" aria-label="Your hero">

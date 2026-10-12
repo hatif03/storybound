@@ -1,0 +1,78 @@
+{
+ "postfix-spans": {
+  "window": [
+   "2026-10-12T07:49:34Z",
+   "2026-10-12T07:56:34Z"
+  ],
+  "traces": 3,
+  "whole_stories": 3,
+  "stories_in_ledger": 3,
+  "fragments": 0,
+  "fragment_kinds": []
+ },
+ "X6-repairs-4 (before the fix)": {
+  "whole_stories": 13,
+  "stories_in_ledger": 10,
+  "fragments": 88,
+  "fragment_kinds": [
+   [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     1
+    ],
+    88
+   ]
+  ],
+  "note": "printed by the script on 12 Oct 13:25 IST, tight window"
+ },
+ "X1-writer-gemini-pro (before the fix)": {
+  "whole_stories": 12,
+  "stories_in_ledger": 10,
+  "fragments": 83,
+  "fragment_kinds": [
+   [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     1
+    ],
+    82
+   ],
+   [
+    [
+     "gemini-3.1-pro-preview",
+     1
+    ],
+    1
+   ]
+  ],
+  "note": "printed by the script, tight window"
+ },
+ "C1-stall-hedge-on (before the fix)": {
+  "whole_stories": 8,
+  "stories_in_ledger": 5,
+  "fragments": 59,
+  "fragment_kinds": [
+   [
+    [
+     "IFM/K2-Horizon-375B-A23B",
+     1
+    ],
+    49
+   ],
+   [
+    [
+     "gemini-3.7-flash",
+     1
+    ],
+    10
+   ]
+  ],
+  "note": "printed by the script, tight window"
+ },
+ "C4b-judge-down-failover (after the fix; K2 is down in this drill)": {
+  "whole_stories": 8,
+  "stories_in_ledger": 5,
+  "fragments": 0,
+  "note": "printed by the script, tight window"
+ }
+}

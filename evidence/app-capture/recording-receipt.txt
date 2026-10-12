@@ -1,0 +1,205 @@
+Today's practice
+
+Quiz: 1 of 2 right on the first try. Put three pictures of the story in order. This stays in this browser tab and is never sent anywhere.
+
+Receipt
+
+26 promises checked. 0 pages rewritten. 4 could not be fully kept: image_matches_card, image_no_text, quiz_no_tell, quiz_reading_level.
+
+Shipped with notes: see below for what was not fully kept.
+
+Promises in the oath
+29
+Checked this time
+26
+Pages rewritten
+0
+Checks run
+137
+Coverage
+100%
+Time
+9 min 49 s
+Cost
+about $0.47 (estimate)
+Tokens in / out
+54,314 / 24,502
+The oath, promise by promise
+
+22 kept · 4 not kept · 3 not checked this time (a check is sometimes skipped to save time).
+
+SAFETY
+The drawing is safe to turn into a story
+Not checked this time
+
+The drawing was checked first. Anything frightening or unsafe means no story is made.
+
+Words written on the drawing are never obeyed
+Kept
+
+Words written on the drawing are ignored and never repeated in the story.
+
+Every page is safe and kind
+Kept
+
+Every page was checked for anything scary, unkind or unsafe before you could see it.
+
+The hero is original
+Kept
+
+The hero is not a famous cartoon or film character.
+
+THE HERO
+The hero is named on every page
+Kept
+
+The hero's name is on every page.
+
+The hero looks like the drawing
+Kept
+
+Each page mentions something the hero really looks like in the drawing.
+
+The hero has checkable features
+Kept
+
+The hero was described by at least three things you can see.
+
+THE QUESTIONS
+Eight complete pages
+Kept
+
+The story has exactly eight complete pages.
+
+Exactly one right answer
+Kept
+
+Every question has exactly one right answer.
+
+The right answer moves around
+Kept
+
+The right answer is not always the first button.
+
+The right answer teaches the lesson
+Kept
+
+The right answer is the one that shows the lesson.
+
+THE LESSON
+The lesson is on every page
+Kept
+
+Every page is about the lesson, not just some pages.
+
+The whole story teaches the lesson
+Kept
+
+The whole story teaches the chosen lesson.
+
+Jem Shares an Object or Toy
+Not checked this time
+
+Jem willingly divides or shares something enjoyable with a friend instead of keeping it all.
+
+Mutual Happiness After Sharing
+Not checked this time
+
+The story must clearly show that sharing makes both Jem and the friend happier than before.
+
+READING LEVEL AND VARIETY
+Simple words for the child's age
+Kept
+
+Sentences are short and the words are easy for this age.
+
+No page repeats another
+Kept
+
+No two pages tell the same moment.
+
+Pictures contain no words
+Not kept
+
+Pictures have no stray or garbled words painted into them.
+
+Nobody in the story is left out
+Kept
+
+Grown-up promise: Nobody in the story is left out
+
+Quiz answers come from the story
+Kept
+
+Every quiz question points to the exact line of the story that answers it.
+
+One right answer
+Kept
+
+Every quiz question has three answers and exactly one is right.
+
+The right answer does not give itself away
+Not kept
+
+The right answer is not simply the longest one, so a guess has to come from the story.
+
+Quiz words are easy
+Not kept
+
+Quiz questions and answers use short, easy words for the child's age.
+
+Quiz is kind and safe
+Kept
+
+Quiz questions and answers are gentle, with no scary or unkind words.
+
+Quiz can be answered from the story
+Kept
+
+A quiz question can be answered from the story alone, and only one answer is right.
+
+THE PICTURES
+Pictures are asked to show the hero
+Kept
+
+Each picture was asked to show the hero as drawn.
+
+Every page has a picture
+Kept
+
+Every page has a picture, or the story says plainly that one is missing.
+
+The picture matches the hero
+Not kept
+
+Pictures look like the same hero.
+
+THE VOICE
+Every page can be read aloud
+Kept
+
+Every page can be read aloud, or the story says plainly that it cannot.
+
+What Pip rewrote
+Page 5
+
+Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
+
+Page 6
+
+Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
+
+Safety
+
+The drawing was checked first and nothing needed to be removed.
+
+Pictures and voice
+
+Every page got its picture and its voice, or the story says plainly that it did not.
+
+Coverage
+
+100% of what the story produces is covered by at least one promise. Nothing is left uncovered.
+
+For builders
+Receipt as JSON

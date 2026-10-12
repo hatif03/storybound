@@ -79,9 +79,11 @@ def screen(drawing: Drawing) -> SafetyResult:
         if not isinstance(j, dict) or "visual_risk" not in j:
             raise ClientError("screen answer missing visual_risk")
     except Exception as e:  # fail closed: the screen could not say the drawing is safe
+        # an outage (a service error that outlived its retries) is not the drawing's fault; a block or an unreadable answer is treated as a refusal
+        outage = isinstance(e, ClientError) and e.retryable
         msg = f"safety screen unavailable ({type(e).__name__})"
         v = _emit(_verdict("verification_error", msg))
-        return SafetyResult("refuse", "A", "screen_unavailable", v)
+        return SafetyResult("refuse", "A", "screen_unavailable" if outage else "screen_inconclusive", v)
 
     cats = [str(c) for c in j.get("risk_categories", []) if isinstance(c, str)]
     risk = str(j.get("visual_risk", "")).lower()

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from functools import lru_cache
 from pathlib import Path
@@ -11,6 +12,21 @@ from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env")
+log = logging.getLogger(__name__)
+
+# Settings that exist for experiments and drills. A stray value changes what a child gets, so each one is parsed defensively and announced when it is set.
+EXPERIMENT_SETTINGS = ("STORYBOUND_MAX_REPAIRS", "STORYBOUND_JUDGE_ENSEMBLE", "STORYBOUND_CHAOS", "STORYBOUND_HEDGE_S")
+for _name in EXPERIMENT_SETTINGS:
+    if os.environ.get(_name) is not None and os.environ.get(_name) != "":
+        log.warning("experiment setting %s=%s is active: unset it for the product", _name, os.environ[_name])
+
+
+def _env_number(name: str, default, cast):
+    try:
+        return cast(os.environ.get(name, default))
+    except ValueError:
+        log.warning("%s is not a number; using %s", name, default)
+        return cast(default)
 
 
 # The default split of work between Vertex (Gemini) and the hackathon gateway, chosen on 11 Oct by holdout runs (HR-012): the planner on Nova 2 Lite and the
@@ -46,6 +62,8 @@ class Models(BaseModel):
     routes: dict[str, str] = Field(default_factory=lambda: _parse_routes(os.environ.get("STORYBOUND_ROUTES", DEFAULT_ROUTES)))
     vision_judge: str = os.environ.get("STORYBOUND_VISION_JUDGE", "claude-haiku")  # who judges the pictures named in vision_judge_for; empty = the vision model (the painter's family)
     vision_judge_for: tuple[str, ...] = ("image_no_text",)
+    judge_fallback: str = os.environ.get("STORYBOUND_JUDGE_FALLBACK", "claude-sonnet-4.6")  # takes over when the main judge is unavailable (drill C4, HR-015); empty = no failover
+    judge_ensemble: str = os.environ.get("STORYBOUND_JUDGE_ENSEMBLE", "")  # a second judge from another family; the stricter verdict wins (experiment X3)
 
     def route(self, role: str) -> str | None:
         return self.routes.get(role) or self.routes.get(role.split(".")[0])
@@ -56,7 +74,7 @@ class Thresholds(BaseModel):
     image_match_pass: float = 0.8
     lesson_drift_detect: float = 0.6
     image_drift_detect: float = 0.7
-    max_repair_attempts: int = 2
+    max_repair_attempts: int = _env_number("STORYBOUND_MAX_REPAIRS", "2", int)  # experiments X5 and X6 change it
     pages: int = 8
     max_correct_slot_share: int = 5  # same slot for at most this many of the 8 pages
 
@@ -83,6 +101,7 @@ class Prices(BaseModel):
     k2_per_m: float = 0.0  # no price known
     image_each: float = 0.04
     tts_each: float = 0.002
+    gemini_models: dict[str, tuple[float, float]] = Field(default_factory=lambda: {"gemini-3.1-pro-preview": (1.25, 10.0)})  # ASSUMED list price of the reserve (Pro) model, USD per million tokens (in, out): not read from a bill
     # Gateway models, USD per million tokens (input, output), read from the gateway's /model/info on 11 Oct (they include its markup).
     gateway: dict[str, tuple[float, float]] = Field(default_factory=lambda: {
         "claude-haiku": (1.1, 5.5), "claude-sonnet-4.6": (3.3, 16.5), "claude-opus-4.6": (5.5, 27.5),
@@ -104,7 +123,7 @@ class Settings(BaseModel):
     text_timeout_s: float = float(os.environ.get("STORYBOUND_TEXT_TIMEOUT_S", "90"))  # HR-005: 40 s was tried and not kept
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
-    hedge_after_s: float = float(os.environ.get("STORYBOUND_HEDGE_S", "45"))  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
+    hedge_after_s: float = _env_number("STORYBOUND_HEDGE_S", "45", float)  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens
 
 

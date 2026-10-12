@@ -1,0 +1,108 @@
+{
+ "violation": [
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "e6ba4003a7a84e9a",
+   "promise": "lesson_specific_color_shifting_truth",
+   "status": "violation"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "ae82b2025c827135",
+   "promise": "lesson_specific_color_shifting_truth",
+   "status": "violation"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "bb572aac01c8dbc8",
+   "promise": "correct_choice_teaches_lesson",
+   "status": "violation"
+  }
+ ],
+ "pass": [
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "e4deec7126df3188",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "99e5e1b317ac5fc3",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "101f549fd53886da",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "d9d767abe196d669",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "39c9b97c85dc3650",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "d6f1e9a8e36beb6e",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "4e54bcf8c564940d",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "e3c986d431c66efc",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "d9ea41ea159ef662c16a06966fc2aad9",
+   "span_id": "5d9a8b8fece9a06e",
+   "promise": "lesson_specific_relief_over_punishment",
+   "status": "pass"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "e93577f9c73c33de",
+   "promise": "correct_choice_teaches_lesson",
+   "status": "pass"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "27a84286ba51fa4f",
+   "promise": "correct_choice_teaches_lesson",
+   "status": "pass"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "40d3456bc12c9969",
+   "promise": "correct_choice_teaches_lesson",
+   "status": "pass"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "5499866303f6beda",
+   "promise": "story_safe_text",
+   "status": "pass"
+  },
+  {
+   "trace_id": "f05f680ed44c184c78bdb2caebea03e3",
+   "span_id": "9e28e5370ee0c32b",
+   "promise": "story_safe_text",
+   "status": "pass"
+  }
+ ]
+}

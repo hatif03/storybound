@@ -63,6 +63,8 @@ export type StoryEvent =
   // backend: index 0 means a run-level or whole-story repair, not a page
   | { id?: number; t: number; type: 'scene.repair'; data: { index: number; attempt: number; failed: string[]; because: string } }
   | { id?: number; t: number; type: 'scene.accepted'; data: { index: number; attempts_used: number; page: Page } }
+  // every page is final (the whole-story check is done): from here on the app may release pages whose picture and voice are ready
+  | { id?: number; t: number; type: 'story.verified'; data: Record<string, never> }
   | { id?: number; t: number; type: 'image.ready'; data: { index: number; url: string; verdict: string } }
   | { id?: number; t: number; type: 'audio.ready'; data: { index: number; url: string; seconds: number } }
   | { id?: number; t: number; type: 'quiz.ready'; data: Quiz }
@@ -76,7 +78,7 @@ export type StoryEvent =
 export type EventType = StoryEvent['type'];
 export const EVENT_TYPES: EventType[] = [
   'run.started', 'safety.result', 'character.ready', 'oath.ready', 'plan.ready', 'scene.started', 'verdict', 'scene.repair',
-  'scene.accepted', 'image.ready', 'audio.ready', 'quiz.ready', 'paint.plan', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
+  'scene.accepted', 'story.verified', 'image.ready', 'audio.ready', 'quiz.ready', 'paint.plan', 'degraded', 'receipt', 'run.finished', 'run.refused', 'error',
 ];
 
 export interface StartRequest {

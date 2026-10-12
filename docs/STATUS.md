@@ -26,7 +26,7 @@ Updated Mon 12 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 | neatlogs second pass | Incident review; hedged retry for the 87 s stall, tiered "ignore all", a corrected quiz detection | [research/neatlogs-incident-review.md](research/neatlogs-incident-review.md), HR-011 |
 | Business model beyond the hackathon | Video AI scenarios (margin -70% with three cheapest clips), a real-launch plan (about 2,490 households to break even at $6.99) | [BUSINESS.md](BUSINESS.md), `evidence/cfo/` |
 | Verified quiz | Four questions per story, six promises, judge on every question, dropped if unverified | `docs/WEB.md`, sweep 7 below |
-| Picture-order game, healthy-play rules | Done; skippable, no timers, streaks, scores or autoplay | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
+| Picture-order game, healthy-play rules | Done; skippable, no timers, streaks or scores, no autoplay chains (a page's own narration starts itself after a pause: [WEB.md](WEB.md)) | `docs/WEB.md`, `web/scripts/e2e-quiz-mock.mjs` |
 | Grown-up promises | Done, end to end (appears on the receipt) | API doc, `tests/test_oath.py`, browser run |
 | Forget a story (`DELETE /api/stories/{id}`) | Done; the story 404s afterwards | `tests/test_api.py`, browser run |
 | Read-along video from a story | Done: 3:37 and 3:45 renders, all promises pass | `evidence/stories/bunny-sharing-2/video/receipt.json` |

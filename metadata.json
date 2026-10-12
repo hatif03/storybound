@@ -1,0 +1,24 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QBKNA5CZ6P18D0AV9WFXZT",
+  "strategy": "manual-commit",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 2,
+  "files_touched": null,
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2030,
+    "cache_creation_tokens": 3597953,
+    "cache_read_tokens": 503388304,
+    "output_tokens": 890268,
+    "api_call_count": 995
+  }
+}

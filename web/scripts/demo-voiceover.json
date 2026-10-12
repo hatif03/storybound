@@ -1,0 +1,17 @@
+{
+  "intro": "This is Storybound, a storybook for children from four to eight. A child draws a hero, and the app turns the drawing into a story that teaches a gentle lesson. The difference is that before any page reaches the child, an agent checks it against promises it wrote down first.",
+  "draw": "The child draws right on the screen. Here is a bunny with a bow, and a carrot.",
+  "name": "The child can name the hero, or let Pip, the helper, pick a name.",
+  "lesson": "Next, a grown-up chooses the lesson. Here it is sharing. They can also add a promise of their own, for example: nobody in the story is left out.",
+  "making": "Now the agent goes to work, and the screen shows what it is doing. It writes an oath: a list of promises for this drawing and this lesson. Then it writes each page and checks the page against every promise. A page that breaks a promise is rewritten before anyone sees it.",
+  "waiting": "Pictures and a voice are made for every page as well. Nothing is shown to the child until everything for that page exists: the words, the picture and the narration. So this part takes a few minutes, and in the finished video we speed it up.",
+  "ready": "The story is ready. The first page has its picture, and its voice reads it aloud.",
+  "choice_right": "Every page ends with a choice. This one was the kind choice, and Pip celebrates it.",
+  "choice_wrong": "A wrong answer is never a scolding. Pip explains gently and invites the child to try the other one.",
+  "pages": "The rest of the story goes the same way. Each page was checked, and each has its words, its picture and its voice, ready before the child sees it.",
+  "quiz": "After the story there is a short quiz. Every question was checked against the same promises, and a question that fails a check is dropped, never shown.",
+  "order": "And a small game: put the pictures in the order they happened.",
+  "end": "The story ends with a talk-about card, so a grown-up can chat about the lesson with the child.",
+  "receipt": "Behind a grown-up gate, the parent gets the receipt. It says how many promises were checked, how many pages were rewritten, and which promises could not be fully kept. Nothing is hidden.",
+  "forget": "And a parent can make the app forget the story, which deletes it from the server."
+}

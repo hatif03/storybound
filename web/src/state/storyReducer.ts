@@ -151,7 +151,8 @@ export function storyReducer(state: StoryState, action: StoryAction): StoryState
       return {
         ...base,
         repairs: [...state.repairs, { index: ev.data.index, attempt: ev.data.attempt, failed: ev.data.failed, because: ev.data.because }],
-        step: { kind: 'fixing', index: ev.data.index },
+        // a picture that failed its check is painted again: that is painting, not fixing the page's words
+        step: /picture/.test(ev.data.because ?? '') ? { kind: 'painting' } : { kind: 'fixing', index: ev.data.index },
       };
 
     case 'scene.accepted': {

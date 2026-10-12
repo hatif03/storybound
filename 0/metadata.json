@@ -1,0 +1,85 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QJESHVPRZXQS8AKYCVK4NR",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T08:07:58.758116Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 1,
+  "save_step_count": 2,
+  "files_touched": [],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "95de0fb9ce92",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2458,
+    "cache_creation_tokens": 3874538,
+    "cache_read_tokens": 563864083,
+    "output_tokens": 1018119,
+    "api_call_count": 1208,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 55
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 874,
+      "user_lines_removed": 680,
+      "agent_lines_added": 2,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "EVIDENCE.md": 318,
+        "HANDOFF.md": 1,
+        "README.md": 1,
+        "docs/STATUS.md": 1,
+        "docs/TOOLS.md": 1,
+        "evidence/entire/20261012-IST-review-general-pr4.txt": 51,
+        "evidence/hardening/HR-015.md": 12,
+        "evidence/ledger.jsonl": 345,
+        "hackathon.md": 2,
+        "scripts/count_fragment_traces.py": 3,
+        "scripts/sweep.py": 6,
+        "src/storybound/agents/safety.py": 3,
+        "src/storybound/agents/writer.py": 1,
+        "src/storybound/clients/usage.py": 17,
+        "src/storybound/config.py": 18,
+        "src/storybound/oath/judge.py": 14,
+        "src/storybound/pipeline.py": 1,
+        "tests/test_basics.py": 63,
+        "tests/test_pipeline.py": 16
+      },
+      "user_removed_per_file": {
+        "EVIDENCE.md": 317,
+        "HANDOFF.md": 1,
+        "README.md": 1,
+        "docs/STATUS.md": 1,
+        "docs/TOOLS.md": 1,
+        "evidence/ledger.jsonl": 343,
+        "hackathon.md": 1,
+        "scripts/sweep.py": 3,
+        "src/storybound/agents/safety.py": 1,
+        "src/storybound/agents/writer.py": 1,
+        "src/storybound/clients/usage.py": 1,
+        "src/storybound/config.py": 2,
+        "src/storybound/oath/judge.py": 6,
+        "src/storybound/pipeline.py": 1
+      }
+    }
+  ]
+}

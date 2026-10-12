@@ -1,0 +1,172 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4R7N2KVEBV53YTTF2BH0PNR",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T14:18:29.3552956Z",
+  "branch": "final/videos-and-status",
+  "checkpoints_count": 4,
+  "save_step_count": 4,
+  "files_touched": [
+    "evidence/demo/storybound-demo-3min.mp4",
+    "evidence/full-tour/storybound-full-tour.txt",
+    "evidence/pitch-video/voiceover2/d1.mp3",
+    "evidence/pitch-video/voiceover2/d2.mp3",
+    "evidence/pitch-video/voiceover2/d3.mp3",
+    "evidence/pitch-video/voiceover2/d4.mp3",
+    "evidence/pitch-video/voiceover2/d5.mp3",
+    "evidence/pitch-video/voiceover2/d6.mp3",
+    "evidence/pitch-video/voiceover2/d7.mp3",
+    "evidence/pitch-video/voiceover2/d8.mp3",
+    "evidence/pitch-video/voiceover2/d9.mp3",
+    "evidence/pitch-video/voiceover2/p1.mp3",
+    "evidence/pitch-video/voiceover2/p2.mp3",
+    "evidence/pitch-video/voiceover2/p3.mp3",
+    "evidence/pitch-video/voiceover2/p4.mp3",
+    "evidence/pitch-video/voiceover2/p5.mp3",
+    "evidence/pitch-video/work2/scene00.graph.txt",
+    "evidence/pitch-video/work2/scene00.mp4",
+    "evidence/pitch-video/work2/scene01.graph.txt",
+    "evidence/pitch-video/work2/scene01.mp4",
+    "evidence/pitch-video/work2/scene02.graph.txt",
+    "evidence/pitch-video/work2/scene02.mp4",
+    "evidence/pitch-video/work2/scene03.graph.txt",
+    "evidence/pitch-video/work2/scene03.mp4",
+    "evidence/pitch-video/work2/scene04.graph.txt",
+    "evidence/pitch-video/work2/scene04.mp4",
+    "evidence/pitch-video/work2/scene05.graph.txt",
+    "evidence/pitch-video/work2/scene05.mp4",
+    "evidence/pitch-video/work2/scene06.graph.txt",
+    "evidence/pitch-video/work2/scene06.mp4",
+    "evidence/pitch-video/work2/scene07.graph.txt",
+    "evidence/pitch-video/work2/scene07.mp4",
+    "evidence/pitch-video/work2/scene08.graph.txt",
+    "evidence/pitch-video/work2/scene08.mp4",
+    "evidence/pitch-video/work2/scene09.graph.txt",
+    "evidence/pitch-video/work2/scene09.mp4",
+    "evidence/pitch-video/work2/scene10.graph.txt",
+    "evidence/pitch-video/work2/scene10.mp4",
+    "evidence/pitch-video/work2/scene11.graph.txt",
+    "evidence/pitch-video/work2/scene11.mp4",
+    "evidence/pitch-video/work2/scene12.graph.txt",
+    "evidence/pitch-video/work2/scene12.mp4",
+    "evidence/pitch-video/work2/scene13.graph.txt",
+    "evidence/pitch-video/work2/scene13.mp4",
+    "scripts/build_pitch_video.py",
+    "scripts/lint_evidence.py",
+    "web/scripts/pitch2-voiceover.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "6bb18856feb3",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 3248,
+    "cache_creation_tokens": 4377722,
+    "cache_read_tokens": 758772856,
+    "output_tokens": 1319231,
+    "api_call_count": 1588,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 74
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T14:18:26.2573496Z",
+    "agent_lines": 0,
+    "agent_removed": 0,
+    "human_added": 249,
+    "human_modified": 648,
+    "human_removed": 0,
+    "total_committed": 730,
+    "total_lines_changed": 920,
+    "agent_percentage": 0,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 80,
+      "user_lines_removed": 0,
+      "agent_lines_added": 252,
+      "agent_lines_removed": 192,
+      "user_added_per_file": {
+        "evidence/features-capture/features-tour-cues.txt": 19,
+        "evidence/pitch-video/voiceover2/manifest.json": 61
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 126,
+      "user_lines_removed": 43,
+      "agent_lines_added": 572,
+      "agent_lines_removed": 395,
+      "user_added_per_file": {
+        "evidence/features-capture/features-tour-cues.txt": 19,
+        "evidence/pitch-video/voiceover2/manifest.json": 61,
+        "evidence/pitch-video/work2/scene05.graph.txt": 4,
+        "evidence/pitch-video/work2/scene06.graph.txt": 4,
+        "evidence/pitch-video/work2/scene07.graph.txt": 4,
+        "evidence/pitch-video/work2/scene08.graph.txt": 4,
+        "evidence/pitch-video/work2/scene09.graph.txt": 9,
+        "evidence/pitch-video/work2/scene10.graph.txt": 6,
+        "evidence/pitch-video/work2/scene11.graph.txt": 3,
+        "evidence/pitch-video/work2/scene12.graph.txt": 11,
+        "scripts/build_pitch_video.py": 1
+      },
+      "user_removed_per_file": {
+        "evidence/pitch-video/work2/scene05.graph.txt": 5,
+        "evidence/pitch-video/work2/scene06.graph.txt": 4,
+        "evidence/pitch-video/work2/scene07.graph.txt": 4,
+        "evidence/pitch-video/work2/scene08.graph.txt": 4,
+        "evidence/pitch-video/work2/scene09.graph.txt": 6,
+        "evidence/pitch-video/work2/scene10.graph.txt": 7,
+        "evidence/pitch-video/work2/scene11.graph.txt": 4,
+        "evidence/pitch-video/work2/scene12.graph.txt": 8,
+        "scripts/build_pitch_video.py": 1
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 125,
+      "user_lines_removed": 42,
+      "agent_lines_added": 572,
+      "agent_lines_removed": 395,
+      "user_added_per_file": {
+        "evidence/features-capture/features-tour-cues.txt": 19,
+        "evidence/pitch-video/voiceover2/manifest.json": 61,
+        "evidence/pitch-video/work2/scene05.graph.txt": 4,
+        "evidence/pitch-video/work2/scene06.graph.txt": 4,
+        "evidence/pitch-video/work2/scene07.graph.txt": 4,
+        "evidence/pitch-video/work2/scene08.graph.txt": 4,
+        "evidence/pitch-video/work2/scene09.graph.txt": 9,
+        "evidence/pitch-video/work2/scene10.graph.txt": 6,
+        "evidence/pitch-video/work2/scene11.graph.txt": 3,
+        "evidence/pitch-video/work2/scene12.graph.txt": 11
+      },
+      "user_removed_per_file": {
+        "evidence/pitch-video/work2/scene05.graph.txt": 5,
+        "evidence/pitch-video/work2/scene06.graph.txt": 4,
+        "evidence/pitch-video/work2/scene07.graph.txt": 4,
+        "evidence/pitch-video/work2/scene08.graph.txt": 4,
+        "evidence/pitch-video/work2/scene09.graph.txt": 6,
+        "evidence/pitch-video/work2/scene10.graph.txt": 7,
+        "evidence/pitch-video/work2/scene11.graph.txt": 4,
+        "evidence/pitch-video/work2/scene12.graph.txt": 8
+      }
+    }
+  ]
+}

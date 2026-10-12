@@ -1,7 +1,0 @@
-[0:v]setpts=(PTS-STARTPTS)/1.0,scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,setsar=1[p0];
-[p0]concat=n=1:v=1:a=0[vc];
-[vc]null,tpad=stop_mode=clone:stop_duration=0.560[vb];
-[vb]drawtext=fontfile='C\:/Windows/Fonts/arialbd.ttf':text='An unsuitable drawing is declined gently':fontsize=46:fontcolor=white:box=1:boxcolor=black@0.62:boxborderw=22:x=(w-text_w)/2:y=h-150:enable='between(t,0.50,8.00)'[c0];
-[c0]null[v];
-[1:a]aformat=sample_rates=44100:channel_layouts=stereo,atempo=1.2,volume=1.3,adelay=300|300[va];
-[va]amix=inputs=1:normalize=0:duration=longest,apad,atrim=0:8.560[a]

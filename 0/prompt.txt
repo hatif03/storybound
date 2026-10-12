@@ -947,3 +947,7 @@ I have approved neatlogs sign in. Here is a screenshot of the evals page. I have
 ---
 
 Neatlogs I have signed in
+
+---
+
+this how all the outputs look in evals?

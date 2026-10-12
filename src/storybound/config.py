@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from functools import lru_cache
 from pathlib import Path
@@ -11,6 +12,21 @@ from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(ROOT / ".env")
+log = logging.getLogger(__name__)
+
+# Settings that exist for experiments and drills. A stray value changes what a child gets, so each one is parsed defensively and announced when it is set.
+EXPERIMENT_SETTINGS = ("STORYBOUND_MAX_REPAIRS", "STORYBOUND_JUDGE_ENSEMBLE", "STORYBOUND_CHAOS", "STORYBOUND_HEDGE_S")
+for _name in EXPERIMENT_SETTINGS:
+    if os.environ.get(_name) is not None and os.environ.get(_name) != "":
+        log.warning("experiment setting %s=%s is active: unset it for the product", _name, os.environ[_name])
+
+
+def _env_number(name: str, default, cast):
+    try:
+        return cast(os.environ.get(name, default))
+    except ValueError:
+        log.warning("%s is not a number; using %s", name, default)
+        return cast(default)
 
 
 # The default split of work between Vertex (Gemini) and the hackathon gateway, chosen on 11 Oct by holdout runs (HR-012): the planner on Nova 2 Lite and the
@@ -58,7 +74,7 @@ class Thresholds(BaseModel):
     image_match_pass: float = 0.8
     lesson_drift_detect: float = 0.6
     image_drift_detect: float = 0.7
-    max_repair_attempts: int = int(os.environ.get("STORYBOUND_MAX_REPAIRS", "2"))  # experiments X5 and X6 change it
+    max_repair_attempts: int = _env_number("STORYBOUND_MAX_REPAIRS", "2", int)  # experiments X5 and X6 change it
     pages: int = 8
     max_correct_slot_share: int = 5  # same slot for at most this many of the 8 pages
 
@@ -107,7 +123,7 @@ class Settings(BaseModel):
     text_timeout_s: float = float(os.environ.get("STORYBOUND_TEXT_TIMEOUT_S", "90"))  # HR-005: 40 s was tried and not kept
     judge_timeout_s: float = 180.0
     judge_max_tokens: int = 4096
-    hedge_after_s: float = float(os.environ.get("STORYBOUND_HEDGE_S", "45"))  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
+    hedge_after_s: float = _env_number("STORYBOUND_HEDGE_S", "45", float)  # HR-011: send a stalled text call a second time after this many seconds; 0 = off
     thinking_headroom: int = 2048  # Gemini 3 thinking tokens count against max_output_tokens
 
 

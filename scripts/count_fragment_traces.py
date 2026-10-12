@@ -39,6 +39,9 @@ want = sys.argv[1:] or [
 ]
 out = json.loads(OUTFILE.read_text(encoding="utf-8")) if OUTFILE.exists() else {}
 for n in want:
+    if n not in win:
+        print(n, "is not in the ledger; skipped")
+        continue
     lo, hi = win[n]
     # the ledger row is written at the end of a story: a story can start 7 minutes before its row
     a, b = (

@@ -440,3 +440,19 @@ def test_worker_threads_run_in_the_workflow_context_not_the_node_that_started_th
     run.root_ctx = contextvars.copy_context()
     var.set("node")  # the node span is current when the work is started
     assert run.task_context().run(var.get) == "workflow"
+
+
+def test_only_an_outage_of_the_safety_screen_is_unavailable_a_block_is_a_refusal(monkeypatch, drawing):
+    from storybound.agents import safety
+    from storybound.clients.errors import ClientError
+
+    def blocked(*_a, **_k):
+        raise ClientError("blocked by the provider", retryable=False, status=400)
+
+    def outage(*_a, **_k):
+        raise ClientError("503", retryable=True, status=503)
+
+    monkeypatch.setattr(safety, "ask_json", blocked)
+    assert safety.screen(drawing).reason_code == "screen_inconclusive"
+    monkeypatch.setattr(safety, "ask_json", outage)
+    assert safety.screen(drawing).reason_code == "screen_unavailable"

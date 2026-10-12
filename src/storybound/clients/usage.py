@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import contextlib
 import threading
+import time
 from contextvars import ContextVar
 from dataclasses import dataclass, field
 
@@ -42,6 +43,7 @@ class Meter:
         self.images = 0
         self.tts = 0
         self.fallbacks: list[dict] = []  # a role routed to another provider that fell back to the default model
+        self.down: dict[str, float] = {}  # model -> time until which it is treated as down (see mark_down)
 
     def add(self, u: Usage, kind: str = "llm") -> None:
         with self._lock:
@@ -90,7 +92,21 @@ def record_fallback(role: str, model: str, error: str) -> None:
     m = _current.get()
     if m is not None:
         with m._lock:
-            m.fallbacks.append({"role": role, "model": model, "error": error[:120]})
+            if not any(f["role"] == role and f["model"] == model for f in m.fallbacks):  # one row per role and model, not one per call
+                m.fallbacks.append({"role": role, "model": model, "error": error[:120]})
+
+
+def mark_down(model: str, seconds: float = 60.0) -> None:
+    """A model failed after its retries: for a minute, this run does not wait for it again."""
+    m = _current.get()
+    if m is not None:
+        with m._lock:
+            m.down[model] = time.monotonic() + seconds
+
+
+def is_down(model: str) -> bool:
+    m = _current.get()
+    return m is not None and m.down.get(model, 0.0) > time.monotonic()
 
 
 def record(u: Usage, kind: str = "llm") -> None:

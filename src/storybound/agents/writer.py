@@ -31,7 +31,7 @@ def rolling_summary(pages: list[Page], keep: int = 3) -> str:
 def normalise(j: dict) -> dict:
     """Accept the other shapes a different writer model may answer with: the page wrapped in one key ("page", "scene"), or the two choices as a
     list ("choices" with is_correct, as the whole-story prompt uses). Anything else is left for assemble() to refuse, naming the keys it saw."""
-    if isinstance(j, dict) and len(j) == 1:
+    if isinstance(j, dict) and len(j) == 1 and next(iter(j)) in ("page", "scene"):
         only = next(iter(j.values()))
         if isinstance(only, dict):
             j = only

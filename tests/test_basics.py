@@ -239,3 +239,66 @@ def test_the_judge_ensemble_takes_the_stricter_verdict_and_survives_one_judge_fa
     assert j.ensemble_batch([c], "t", {})["p"].status == "pass"  # the other judge decides
     monkeypatch.setattr(j.get_settings().models, "judge_ensemble", "")
     assert j.ensemble_batch([c], "t", {})["p"].status == "pass"  # no second judge: plain judge_batch
+
+
+def test_the_ensemble_keeps_an_unverified_safety_promise_unverified_and_ranks_a_warning_above_a_pass(monkeypatch):
+    from storybound.models import Commitment
+    from storybound.oath import judge as j
+
+    safe = Commitment(id="s", scope="scene", title="t", plain="p", verifier="judge", rubric="r", klass="safety")
+    quality = Commitment(id="q", scope="scene", title="t", plain="p", verifier="judge", rubric="r")
+
+    def one_down(items, text, ctx, model=None):
+        st = "verification_error" if model == "claude" else "pass"
+        return {i.id: j.JudgeOut(st, model=model or "k2") for i in items}
+
+    monkeypatch.setattr(j, "judge_batch", one_down)
+    monkeypatch.setattr(j.get_settings().models, "judge_ensemble", "claude")
+    out = j.ensemble_batch([safe, quality], "t", {})
+    assert out["s"].status == "verification_error"  # a safety check one judge could not run is not a pass
+    assert out["q"].status == "pass"  # a quality check falls through to the judge that could
+
+    def warn_second(items, text, ctx, model=None):
+        return {i.id: j.JudgeOut("warning" if model == "claude" else "pass", model=model or "k2") for i in items}
+
+    monkeypatch.setattr(j, "judge_batch", warn_second)
+    assert j.ensemble_batch([quality], "t", {})["q"].status == "warning"
+
+
+def test_a_judge_that_failed_is_not_waited_for_again_and_the_fallback_is_listed_once(monkeypatch):
+    from storybound.clients import k2
+    from storybound.clients.errors import ClientError
+    from storybound.clients.usage import Result, metered
+    from storybound.models import Commitment
+    from storybound.oath import judge as j
+
+    c = Commitment(id="p", scope="scene", title="t", plain="p", verifier="judge", rubric="r")
+    primary_calls = []
+
+    def judge_json(system, user, *, max_tokens=None, model=None):
+        if model in (None, j.get_settings().models.judge):
+            primary_calls.append(1)
+            raise ClientError("503", retryable=True, status=503)
+        return Result(value={"verdicts": [{"id": "p", "status": "pass", "score": 1.0, "quote": None, "reasoning": "ok"}]})
+
+    monkeypatch.setattr(k2, "judge_json", judge_json)
+    monkeypatch.setattr(j.gateway, "configured", lambda: True)
+    with metered() as m:
+        for _ in range(3):
+            assert j.judge_batch([c], "t", {})["p"].status == "pass"
+    assert len(primary_calls) == 1 and len(m.fallbacks) == 1
+
+
+def test_the_writer_only_unwraps_a_known_page_wrapper():
+    from storybound.agents import writer
+
+    inner = {"text": "x", "feedback": "y"}
+    assert writer.normalise({"page": {"scenario": "s"}}) == {"scenario": "s"}
+    assert writer.normalise({"correct": inner}) == {"correct": inner}
+
+
+def test_a_bad_experiment_setting_does_not_break_the_app(monkeypatch):
+    from storybound import config
+
+    monkeypatch.setenv("STORYBOUND_MAX_REPAIRS", "two")
+    assert config._env_number("STORYBOUND_MAX_REPAIRS", "2", int) == 2

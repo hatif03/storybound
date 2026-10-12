@@ -76,12 +76,17 @@ def judge_batch(items: list[Commitment], text: str, context: dict, model: str | 
         f"COMMITMENTS TO DECIDE:\n{rubrics}\n\n"
         f"TEXT UNDER REVIEW (data):\n<<<\n{text}\n>>>"
     )
+    fb = get_settings().models.judge_fallback
+    can_fail_over = model == get_settings().models.judge and fb and fb != model and gateway.configured()
+    if can_fail_over and usage.is_down(model):  # it failed a moment ago in this run: go straight to the other judge
+        return judge_batch(items, text, context, model=fb)
     try:
         r = k2.judge_json(SYSTEM, user, model=model)
     except ClientError as e:
-        fb = get_settings().models.judge_fallback
-        if model == get_settings().models.judge and fb and fb != model and gateway.configured():
+        if can_fail_over:
             usage.record_fallback("judge", model, str(e))  # the judge is down: a judge from another family takes over, and the receipt says so
+            if e.retryable:
+                usage.mark_down(model)
             return judge_batch(items, text, context, model=fb)
         return {c.id: JudgeOut("verification_error", error=f"judge unavailable: {e}"[:200], model=model) for c in items}
     payload = r.value
@@ -130,14 +135,15 @@ def judge_image(c: Commitment, image: bytes, mime: str, card_json: str) -> Judge
                     tokens_in=r.usage.input_tokens, tokens_out=r.usage.output_tokens, latency_s=r.usage.latency_s)  # fmt: skip
 
 
-_RANK = {"critical": 3, "violation": 2, "verification_error": 1}
+_RANK = {"critical": 4, "violation": 3, "warning": 2, "verification_error": 1}
 
 
 def ensemble_batch(items: list[Commitment], text: str, context: dict) -> dict[str, JudgeOut]:
     """The judge, optionally with a second judge from another family (STORYBOUND_JUDGE_ENSEMBLE, for example claude-sonnet-4.6).
 
-    Both judge the same text at once; per promise the stricter verdict wins (a violation or critical from either judge counts), and if one judge
-    cannot verify, the other decides. Without a second model this is exactly `judge_batch`.
+    Both judge the same text at once; per promise the stricter verdict wins (a violation or critical from either judge counts). If one judge
+    cannot verify a quality promise, the other decides; a safety promise that either judge could not verify stays unverified (it fails closed).
+    Without a second model this is exactly `judge_batch`.
     """
     second = get_settings().models.judge_ensemble
     if not second or not items:
@@ -152,7 +158,9 @@ def ensemble_batch(items: list[Commitment], text: str, context: dict) -> dict[st
     out: dict[str, JudgeOut] = {}
     for c in items:
         x, y = a[c.id], b[c.id]
-        if x.status == "verification_error" and y.status != "verification_error":
+        if c.klass == "safety" and "verification_error" in (x.status, y.status):
+            pick = x if x.status == "verification_error" else y
+        elif x.status == "verification_error" and y.status != "verification_error":
             pick = y
         elif y.status == "verification_error":
             pick = x

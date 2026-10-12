@@ -403,7 +403,7 @@ def build_graph(run: Run):
         return {"pending": page, "attempt": attempt, "regens": s["regens"] + 1}
 
     def n_stop(s: S) -> S:
-        if s.get("vs") and all(v.status == "verification_error" for v in s["vs"]):  # nothing unsafe was found: the checkers were down
+        if s.get("vs") and all(v.status == "verification_error" and "unavailable" in (v.actual or "") for v in s["vs"]):  # nothing unsafe was found: the judges were down
             return unavailable("the safety judges could not run")
         run.outcome = "stopped"
         run.emit(

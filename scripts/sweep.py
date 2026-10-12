@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from storybound import ledger, media, tracing  # noqa: E402
+from storybound.clients.usage import metered  # noqa: E402
 
 tracing.init()
 
@@ -56,14 +57,16 @@ def audit_story(run) -> dict:
 
 def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6, no_judge: bool = False, media_on: bool = False, audit: bool = False) -> str:
     d = media.prepare(fixture_path(fid).read_bytes())
-    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=media_on, fixture=fid, ledger_name=name, judge_enabled=not no_judge, pictures="auto")
+    extra = {"pictures": "auto"} if media_on else {}  # older sweeps ran without pictures; keep them comparable
+    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=media_on, fixture=fid, ledger_name=name, judge_enabled=not no_judge, **extra)
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=uuid.uuid4().hex[:12])
     t = time.time()
     execute(run)
     c = (run.receipt or {}).get("counts", {})
     if audit and run.ctx.pages:
-        resid = audit_story(run)
-        ledger.append({"name": name + "-audit", "kind": "audit", "audited": name, "story_id": run.story_id, "fixture": fid, "lesson": lesson, "pages": len(run.ctx.pages), **resid})
+        with metered() as audit_meter:  # the audit's judge calls are one trace of their own (not hundreds of fragments) and are metered
+            resid = tracing.span(kind="WORKFLOW", name="audit-story")(audit_story)(run)
+        ledger.append({"name": name + "-audit", "kind": "audit", "audited": name, "story_id": run.story_id, "fixture": fid, "lesson": lesson, "pages": len(run.ctx.pages), "audit_tokens": audit_meter.totals().get("by_model"), **resid})
     msg = f"{arm} {fid.split('/')[-1][:28]:28} {lesson:9} seed={seed} -> {run.outcome:19} shipped={len(run.shipped)} repairs={c.get('repairs', '-')} {time.time() - t:5.0f}s"
     with _print:
         print(msg, flush=True)

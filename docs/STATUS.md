@@ -1,15 +1,18 @@
 # Status: what is done, what is left, who must act
 
-Updated Sun 11 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST (confirmed by the builder). Evidence for every line is in `EVIDENCE.md`, `evidence/` and the documents linked.
+Updated Mon 12 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST (confirmed by the builder). Evidence for every line is in `EVIDENCE.md`, `evidence/` and the documents linked.
 
 ## 1. Done
 
 | Area | State | Evidence |
 | --- | --- | --- |
-| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 80 tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
+| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 101 backend tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
-| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-013 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-016 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers; HR-014 to HR-016 on 12 Oct: writer, judge and repair experiments, failure drills, the missing-span fix) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |
+| Architecture and configuration experiments (12 Oct) | Eight configurations on ten held-out stories each (writer Gemini Pro and Claude Sonnet, second judge, no judge, no repairs, four repairs) and an audit that re-judges shipped pages: repairing, not detecting, is what keeps promises (6 of 10 stories shipped a known break without repairs; 48 of 80 pages carry an unseen break without the judge, 16 of 80 with the full agent); a stronger writer halves repairs at about 5 times the cost, so the cheap writer stays the default | [HR-014](../evidence/hardening/HR-014.md), `evidence/experiments/20261012-comparison.md` |
+| Failure drills (12 Oct) | Eight injected failures (stall, 503, judge down, gateway down, image 429, both judges down); four fixes: tolerant page parsing, a judge from another family on failover, the try-again screen for outages and for model errors that outlast their retries; the safe failure (both judges down) shows no unchecked story | [HR-015](../evidence/hardening/HR-015.md), `src/storybound/chaos.py` |
+| Traces that hold the whole story (12 Oct) | Judge calls and pictures start from the workflow's context, so 4 of 4 pictures and every picture check are in the story's trace (2 of 4 and none before); the story span carries its request and result | [HR-016](../evidence/hardening/HR-016.md) |
 | Recovery run | Image quota errors, story shipped as text on those pages, receipt said so | trace `94db23729dac6323368749acba4be1cb` |
 | Pictures, narration, receipt | Real runs, two illustrated stories | `evidence/stories/` |
 | Illustration policy | `pictures: full / half / none` (from the cfo.ai model) | API doc, `tests/test_pipeline.py` |

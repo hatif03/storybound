@@ -1,17 +1,18 @@
 # HANDOFF: where things stand
 
-Refreshed Sun 11 Oct 2026, morning IST. Read `CLAUDE.md` (rules), then [docs/STATUS.md](docs/STATUS.md) (done and left, with who must act), [docs/PROCESS.md](docs/PROCESS.md) (how we got here) and [docs/TOOLS.md](docs/TOOLS.md) (neatlogs, Entire, cfo.ai).
+Refreshed Mon 12 Oct 2026, afternoon IST. Read `CLAUDE.md` (rules), then [docs/STATUS.md](docs/STATUS.md) (done and left, with who must act), [docs/PROCESS.md](docs/PROCESS.md) (how we got here) and [docs/TOOLS.md](docs/TOOLS.md) (neatlogs, Entire, cfo.ai).
 
 ## State in five lines
 1. The product works end to end through the real browser UI: draw, lesson, optional grown-up promises, 8 verified pages with pictures and narration, a verified quiz and a picture-order game, a read-along movie, a grown-ups receipt, and a Forget that deletes on the server.
-2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, twelve hardening records (HR-001 to HR-012), exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
-3. Tests: 91 backend (`pytest tests`), 26 web (`cd web; npm run test`), 11 touch checks (`node web/scripts/e2e-touch.mjs`, demo mode); all green at the last commit.
-4. All work is committed on `main` and pushed (40+ Entire checkpoints); the work branch for the Trails PR is `docs/after-history-rewrite`.
+2. Evidence: sweeps 1 to 7 in `evidence/ledger.jsonl`, sixteen hardening records (HR-001 to HR-016; HR-014 to HR-016 are the 12 Oct experiments, failure drills and the missing-span fix), exported traces, screenshots, story packages, Entire and cfo.ai outputs. `EVIDENCE.md` is generated: `python scripts/build_evidence.py` then `python scripts/lint_evidence.py`.
+3. Tests: 101 backend (`pytest tests`), 26 web (`cd web; npm run test`), 11 touch checks (`node web/scripts/e2e-touch.mjs`, demo mode); all green at the last commit.
+4. All work is committed on `main` and pushed (40+ Entire checkpoints); the work branch is `experiments/architecture-and-chaos` (PR 4, draft; PRs 1 to 3 are merged).
 5. **The demo video is not made yet** (the builder asked for it last). The video agent can generate it from the final ledger: see "Demo video" below.
 
 ## Do these before anything else (only the builder can)
 - **Rotate the neatlogs key and the hackathon gateway key.** Both were pasted into the session. History was rewritten on 11 Oct to remove them (and six images of the sister's drawings) from every ref, including Entire checkpoint refs: see `evidence/history-rewrite/NOTE.md`. Commit shas changed; `sha-map.txt` maps old to new. GitHub may still hold unreachable objects, so rotate anyway.
-- **neatlogs:** sign in again (`neatlogs auth login`; the login expired) and retry the cost alert (`INVALID_ARGUMENTS` on the first try).
+- **neatlogs human evaluation:** open Evals, Assigned to me, "Do you agree with this verdict?" (17 single verdicts) and answer each (a minute each). The first evaluation (whole traces, empty input and output) was closed and its answers are not used. The CLI sign-in lasts only about 15 minutes, so anything that needs it must be run straight after approval.
+- **Demo video:** the script is [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md) (about 2:45 spoken, three tools, the incidents found and fixed).
 - **Entire link:** test `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` from a private window.
 
 ## What is running / how to start things

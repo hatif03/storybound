@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-11 14:41 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (343 rows, 320 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-12 13:29 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (521 rows, 468 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -19,6 +19,9 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 - [HR-011: a second pass through the neatlogs data found a stall that came back, a false stop, a blind detection and no one to tell](evidence/hardening/HR-011.md)
 - [HR-012: almost all model work ran on Gemini; we spread it by measurement, not by hope](evidence/hardening/HR-012.md)
 - [HR-013: ages 4 and 8 and non-English captions were untested; now each has a run](evidence/hardening/HR-013.md)
+- [HR-014: architecture and configuration experiments: which writer, judge and repair budget is best?](evidence/hardening/HR-014.md)
+- [HR-015: failure drills, and the four things they broke](evidence/hardening/HR-015.md)
+- [HR-016: pictures and judge calls were missing from the story's trace (the orphan traces)](evidence/hardening/HR-016.md)
 
 - Sweep report: [20261010-1505-IST-sweep-2-p2](evidence/reports/20261010-1505-IST-sweep-2-p2.md)
 - Sweep report: [20261010-1506-IST-sweep-1-p1](evidence/reports/20261010-1506-IST-sweep-1-p1.md)
@@ -215,7 +218,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-330 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+478 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -235,6 +238,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 | video-preview-4-make-video | `3ec11cfc58c141c00b7119c53a05b821` | [20261010-1741-IST-video-preview-4-make-video.json](evidence/traces/20261010-1741-IST-video-preview-4-make-video.json) |
 | sweep4-p3-bunny-sharing-B1 | `2776b05792e0e7ef1bc47f12bc6df571` | [20261010-1752-IST-sweep4-p3-bunny-sharing-B1.json](evidence/traces/20261010-1752-IST-sweep4-p3-bunny-sharing-B1.json) |
 | story-video-final-make-video | `5ebd6467432307ac1687fd7adb435fc2` | [20261010-1914-IST-story-video-final-make-video.json](evidence/traces/20261010-1914-IST-story-video-final-make-video.json) |
+| list-640b8a6d6ed6cce8941ddab55139ffba | `` | [20261012-IST-span-list-640b8a6d6ed6cce8941ddab55139ffba.json](evidence/traces/20261012-IST-span-list-640b8a6d6ed6cce8941ddab55139ffba.json) |
 
 ## 3. A recovery run: an action failed, what the agent did next
 
@@ -244,7 +248,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 175 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 262 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -292,6 +296,7 @@ Repair recoveries inside the story loop: 175 gated runs repaired at least one pa
 - Graph output: [20261011-1415-IST-review-general-pr2.txt](evidence/entire/20261011-1415-IST-review-general-pr2.txt)
 - Graph output: [20261011-1415-IST-trail-3-gates.json](evidence/entire/20261011-1415-IST-trail-3-gates.json)
 - Graph output: [20261011-1450-IST-trail-4-gates-runners-working.json](evidence/entire/20261011-1450-IST-trail-4-gates-runners-working.json)
+- Graph output: [20261011-1510-IST-trail-4-gates-second-push.json](evidence/entire/20261011-1510-IST-trail-4-gates-second-push.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
@@ -309,4 +314,4 @@ Repair recoveries inside the story loop: 175 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-11T14:15:32+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T13:15:02+05:30. Window check: `python scripts/lint_evidence.py`.

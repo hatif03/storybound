@@ -1,0 +1,44 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QPJZQ7VHS5VD7YKMEKMQKZ",
+  "strategy": "manual-commit",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 3,
+  "files_touched": [
+    "docs/API.md",
+    "docs/STATUS.md",
+    "docs/WEB.md",
+    "src/storybound/pipeline.py",
+    "tests/test_pipeline.py",
+    "web/scripts/e2e-quiz-mock.mjs",
+    "web/src/api/types.ts",
+    "web/src/mock/scenarios.ts",
+    "web/src/screens/Making.tsx",
+    "web/src/screens/Reader.tsx",
+    "web/src/state/storyReducer.test.ts",
+    "web/src/state/storyReducer.ts"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2670,
+    "cache_creation_tokens": 4019393,
+    "cache_read_tokens": 597721277,
+    "output_tokens": 1096542,
+    "api_call_count": 1312,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  }
+}

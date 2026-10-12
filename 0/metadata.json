@@ -1,0 +1,125 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QPJZQ7VHS5VD7YKMEKMQKZ",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T09:20:39.453375Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 3,
+  "save_step_count": 4,
+  "files_touched": [
+    "docs/API.md",
+    "docs/STATUS.md",
+    "docs/WEB.md",
+    "src/storybound/pipeline.py",
+    "tests/test_pipeline.py",
+    "web/scripts/e2e-quiz-mock.mjs",
+    "web/src/api/types.ts",
+    "web/src/mock/scenarios.ts",
+    "web/src/screens/Making.tsx",
+    "web/src/screens/Reader.tsx",
+    "web/src/state/storyReducer.test.ts",
+    "web/src/state/storyReducer.ts"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "127dba0ea7af",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2670,
+    "cache_creation_tokens": 4019393,
+    "cache_read_tokens": 597721277,
+    "output_tokens": 1096542,
+    "api_call_count": 1312,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 58
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T09:20:31.8715727Z",
+    "agent_lines": 90,
+    "agent_removed": 27,
+    "human_added": 0,
+    "human_modified": 330,
+    "human_removed": 0,
+    "total_committed": 420,
+    "total_lines_changed": 447,
+    "agent_percentage": 26.174496644295303,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 5460,
+      "user_lines_removed": 378,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "docs/DEMO-RECORDING-GUIDE.md": 64,
+        "evidence/hardening/HR-016.md": 33,
+        "evidence/ledger.jsonl": 344,
+        "evidence/traces/20261012-1346-IST-detection-trend-picture-words.json": 12,
+        "evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json": 2524,
+        "evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json": 2334,
+        "scripts/drill_picture_words.py": 92,
+        "scripts/save_trace_spans.py": 53,
+        "web/scripts/e2e-real.mjs": 4
+      },
+      "user_removed_per_file": {
+        "evidence/hardening/HR-016.md": 33,
+        "evidence/ledger.jsonl": 343,
+        "evidence/traces/20261012-IST-span-list-640b8a6d6ed6cce8941ddab55139ffba.json": 1,
+        "web/scripts/e2e-real.mjs": 1
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 5067,
+      "user_lines_removed": 0,
+      "agent_lines_added": 439,
+      "agent_lines_removed": 409,
+      "user_added_per_file": {
+        "docs/DEMO-RECORDING-GUIDE.md": 64,
+        "evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json": 2524,
+        "evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json": 2334,
+        "scripts/drill_picture_words.py": 92,
+        "scripts/save_trace_spans.py": 53
+      }
+    },
+    {
+      "checkpoint_number": 4,
+      "user_lines_added": 5071,
+      "user_lines_removed": 0,
+      "agent_lines_added": 439,
+      "agent_lines_removed": 409,
+      "user_added_per_file": {
+        "docs/DEMO-RECORDING-GUIDE.md": 64,
+        "evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json": 2524,
+        "evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json": 2334,
+        "scripts/drill_picture_words.py": 92,
+        "scripts/save_trace_spans.py": 57
+      }
+    },
+    {
+      "checkpoint_number": 5,
+      "user_lines_added": 5071,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1450,
+      "agent_lines_removed": 756,
+      "user_added_per_file": {
+        "docs/DEMO-RECORDING-GUIDE.md": 64,
+        "evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json": 2524,
+        "evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json": 2334,
+        "scripts/drill_picture_words.py": 92,
+        "scripts/save_trace_spans.py": 57
+      }
+    }
+  ]
+}

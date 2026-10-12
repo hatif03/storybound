@@ -6,7 +6,7 @@ Updated Mon 12 Oct 2026 (IST). Submission window: Mon 12 Oct 19:00 to 23:55 IST 
 
 | Area | State | Evidence |
 | --- | --- | --- |
-| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 101 backend tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
+| Story agent (oath, pipelined review, repair, receipt; arms B0, B1, B2) | Done, 106 backend tests | [DESIGN.md](DESIGN.md), `sweep-2-p2` |
 | Safety screen over 26 fixture drawings | 25/26 matched, the unsafe one refused, no benign refused | `evidence/runs/*safety-eval*` |
 | Judge on injected faults | 24/24 caught, 0/8 clean flagged, 0/88 unverifiable | `evidence/runs/20261010-1334-IST-judge-eval.json` |
 | Experiments and hardening | Seven sweeps, a holdout sweep, a frozen regression set; HR-001 to HR-016 written (HR-008 to HR-012 on 11 Oct: evaluation gaps, the clip oath, early pictures, the neatlogs review fixes, spreading work across providers; HR-014 to HR-016 on 12 Oct: writer, judge and repair experiments, failure drills, the missing-span fix) | `evidence/hardening/`, `evidence/reports/`, `evidence/regression/` |

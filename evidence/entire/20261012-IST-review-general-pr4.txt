@@ -1,0 +1,53 @@
+Reviewing experiments/architecture-and-chaos vs origin/HEAD: 11 commits, 53 files changed, 1 uncommitted
+Running review with claude-code...
+# claude-code review
+
+Request changes. The branch has no quiz or games change; it adds failure drills, experiment tooling, a judge failover and tracing-context fixes. The reasons are below, and the main one is the safety-screen change that stops refusing drawings it could not screen. I did not run the tests.
+
+10 findings, most severe first:
+
+1. `src/storybound/pipeline.py:198`: Every 'screen_unavailable' result becomes a soft 'try again' error, but safety.screen() raises that reason for any exception, not only outages.
+
+   Failure scenario: In safety.py:79-84 a Gemini content-block on a disturbing drawing, a non-JSON or missing visual_risk answer, or a code bug all return reason_code 'screen_unavailable'. A drawing the screen could not clear now gets 'Pip is having trouble, try again in a minute' with outcome 'error' and no run.refused event. The child can resubmit the same image repeatedly, and the ledger and receipt record an outage instead of a refusal. The fix is to split the reason in safety.screen(): ClientError with retryable or 5xx status becomes 'screen_unavailable', while a block or unparseable answer stays a refusal.
+
+2. `src/storybound/oath/judge.py:158`: The ensemble lets one judge's 'pass' override the other judge's 'verification_error' on safety commitments.
+
+   Failure scenario: engine.gate() treats verification_error on a safety-class commitment as critical (fail closed). In ensemble_batch, if the second judge errors or returns an unverifiable verdict, `x.status == 'verification_error' and y.status != 'verification_error'` picks the other judge's pass. A safety check one judge could not run is therefore reported as passed, which contradicts the 'stricter verdict wins' claim in the docstring. The fix is to keep the verification_error for safety-class commitments, or only fall through to the other judge for non-safety ones.
+
+3. `src/storybound/oath/judge.py:132`: _RANK has no entry for 'warning', so a 'warning' ties with 'pass' and the result depends on argument order.
+
+   Failure scenario: Judge A returns pass and judge B returns warning. _RANK.get gives both 0, so `x if rank(x) >= rank(y)` picks A (pass) and drops B's warning, although the stricter verdict was meant to win. Add 'warning': 1 and shift the others up.
+
+4. `src/storybound/oath/judge.py:82`: The failover has no memory that the primary judge is down, so every batch pays the primary's full retry time before falling over, and a fallback row is written per batch.
+
+   Failure scenario: With the K2 judge down, each judge_batch call (one or more per page, per story) retries K2 to exhaustion before using claude-sonnet-4.6, which adds seconds per page. record_fallback also appends one entry per call, so the receipt shows dozens of identical 'judge' fallbacks. Cache a short-lived 'primary down' flag, or dedupe fallbacks per role.
+
+5. `src/storybound/pipeline.py:406`: n_stop decides 'the checkers were down' from `all(v.status == 'verification_error')`, which also matches causes unrelated to an outage.
+
+   Failure scenario: A deterministic verifier crash ('verifier crashed: ...') or a judge returning a violation without a verbatim quote yields verification_error on a safety commitment. If those are the only critical-gated verdicts, a page that may genuinely be unsafe ends as a friendly 'try again' error instead of the calm stop, and the ledger records an error. Distinguish a judge outage from the other verification_error causes, for example by a marker on the verdict, before choosing 'unavailable'.
+
+6. `src/storybound/config.py:61`: max_repair_attempts, the judge ensemble and the chaos hook are read from environment variables in product code, so a stray value silently changes behaviour.
+
+   Failure scenario: STORYBOUND_MAX_REPAIRS=0 left in .env turns off repairs for real children's stories. STORYBOUND_CHAOS in .env injects 503s and stalls into production calls. A non-integer value makes int() raise at import and breaks the whole app. The chaos module says 'never set in the product' but nothing enforces it. Gate these behind STORYBOUND_EXPERIMENT, or parse defensively and log loudly when they are active.
+
+7. `src/storybound/agents/writer.py:33`: normalise() unwraps any single-key dict, so the error message reports the wrong keys.
+
+   Failure scenario: A writer answer like {'correct': {...}} has one dict-valued key, so it is unwrapped to the inner {'text', 'feedback'}. assemble() then reports 'missing scenario; it had the keys [feedback, text]', which hides the real shape from whoever debugs it. Only unwrap when the lone key is a known wrapper ('page', 'scene'), as the docstring says, and print the keys of the original dict.
+
+8. `scripts/sweep.py:43`: audit_story judges after execute() has finished, outside the workflow span, and outside any metered() context.
+
+   Failure scenario: Audit judge calls create stand-alone guardrail spans that neatlogs exports as one-span fragment traces. These pollute the fragment-trace counts that HR-016 and count_fragment_traces.py report, and audit token cost is not metered. Run the audit inside the story's own trace and metered context, or tag the audit spans so they are excluded from the counts.
+
+9. `scripts/sweep.py:59`: one() now always passes pictures='auto' and media=media_on, which changes the configuration of every existing sweep.
+
+   Failure scenario: Earlier sweeps and baselines ran with the default pictures setting and media=False. Re-running them now takes the 'auto' picture-planning path, so a new run is not directly comparable with older ledger rows, and ledger rows use a different `pictures` value. Pass pictures='auto' only when --media is set.
+
+10. `scripts/count_fragment_traces.py:41`: `lo, hi = win[n]` raises KeyError when an experiment name is not in the ledger, aborting the whole run.
+
+    Failure scenario: Passing a misspelled name, or running before an experiment has rows, aborts the script. Experiments already processed are lost because OUTFILE is only written after the loop. Use win.get with a skip, and write results incrementally.
+1 agent(s) done — 1 succeeded, 0 failed, 0 cancelled
+
+Review complete.
+
+Browse findings:
+  entire review --findings '20261012T075958'

@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-12 13:29 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (521 rows, 468 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-12 13:34 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (521 rows, 468 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -298,6 +298,7 @@ Repair recoveries inside the story loop: 262 gated runs repaired at least one pa
 - Graph output: [20261011-1450-IST-trail-4-gates-runners-working.json](evidence/entire/20261011-1450-IST-trail-4-gates-runners-working.json)
 - Graph output: [20261011-1510-IST-trail-4-gates-second-push.json](evidence/entire/20261011-1510-IST-trail-4-gates-second-push.json)
 - Graph output: [20261011-review-quiz-games.log](evidence/entire/20261011-review-quiz-games.log)
+- Graph output: [20261012-IST-review-general-pr4.txt](evidence/entire/20261012-IST-review-general-pr4.txt)
 - Graph output: [baseline.json](evidence/entire/baseline.json)
 
 ## 7. cfo.ai business plan
@@ -314,4 +315,4 @@ Repair recoveries inside the story loop: 262 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T13:15:02+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T13:29:24+05:30. Window check: `python scripts/lint_evidence.py`.

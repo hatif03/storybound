@@ -1,0 +1,45 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QTG0FH17JQ8S1M0K27RJSK",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T10:28:29.2545705Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 4,
+  "save_step_count": 1,
+  "files_touched": [
+    "HANDOFF.md",
+    "docs/DEMO-SCRIPT.md",
+    "docs/TOOLS.md",
+    "evidence/hardening/HR-016.md",
+    "evidence/ledger.jsonl",
+    "evidence/traces/20261012-1401-IST-detection-trend-picture-words-after-drill.json",
+    "hackathon.md"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "1a76e6d64d35",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2772,
+    "cache_creation_tokens": 4062630,
+    "cache_read_tokens": 617713172,
+    "output_tokens": 1122033,
+    "api_call_count": 1359
+  },
+  "session_metrics": {
+    "turn_count": 62
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T10:28:25.9252653Z",
+    "agent_lines": 15,
+    "agent_removed": 8,
+    "human_added": 7422,
+    "human_modified": 387,
+    "human_removed": 0,
+    "total_committed": 7824,
+    "total_lines_changed": 7839,
+    "agent_percentage": 0.2934047710167113,
+    "metric_version": 2
+  }
+}

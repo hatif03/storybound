@@ -76,6 +76,7 @@ class Engine:
     rates: dict[str, float] | None = None  # budget governor: may lower quality/image, never safety
     on_verdict: Callable[[Verdict], None] | None = None
     judge_enabled: bool = True  # False for the offline test mode; the receipt says so
+    task_context: Callable[[], contextvars.Context] | None = None  # where async judge calls run (see Run.task_context); None = the caller's context
     defer_judge_on_det_fail: bool = False  # the gated arm sets this; the observe-only arm judges every page
     _pool: cf.ThreadPoolExecutor = field(default_factory=lambda: cf.ThreadPoolExecutor(max_workers=4), repr=False)
 
@@ -186,7 +187,7 @@ class Engine:
         fut = None
         if to_judge:
             jctx = self._judge_context()
-            fut = self._pool.submit(contextvars.copy_context().run, self.judge, to_judge, text, jctx)
+            fut = self._pool.submit((self.task_context or contextvars.copy_context)().run, self.judge, to_judge, text, jctx)
 
         def finish() -> list[Verdict]:
             outs = fut.result() if fut else {}

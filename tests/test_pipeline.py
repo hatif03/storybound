@@ -415,3 +415,14 @@ def test_the_judge_fails_over_to_another_family_and_the_receipt_says_so(monkeypa
         out = j.judge_batch([c], "some text", {})
     assert out["p"].status == "pass" and seen[-1] == j.get_settings().models.judge_fallback
     assert m.fallbacks and m.fallbacks[0]["role"] == "judge"
+
+
+def test_worker_threads_run_in_the_workflow_context_not_the_node_that_started_them():
+    import contextvars
+
+    var = contextvars.ContextVar("span", default="none")
+    run = pipeline.Run.__new__(pipeline.Run)
+    var.set("workflow")
+    run.root_ctx = contextvars.copy_context()
+    var.set("node")  # the node span is current when the work is started
+    assert run.task_context().run(var.get) == "workflow"

@@ -102,6 +102,7 @@ class Run:
     outcome: str = ""
     error: str = ""
     receipt: dict | None = None
+    root_ctx: Any = None  # the context of the workflow span (see task_context)
     picture_plan: dict | None = None  # the pages the agent chose to paint, and why (policy "auto")
     image_failures: int = 0  # picture calls that failed in a row; two in a row stop the painting of the rest
     plan_announced: bool = False  # the picture plan was announced as soon as the story was planned
@@ -131,9 +132,16 @@ class Run:
             on_verdict=self.on_verdict,
             judge_enabled=self.cfg.judge_enabled,
             defer_judge_on_det_fail=self.cfg.arm == "B1",
+            task_context=self.task_context,
             **({"judge": self.cfg.judge_fn} if self.cfg.judge_fn else {}),
         )
         return self.engine
+
+    def task_context(self) -> contextvars.Context:
+        """The context for a worker thread. A node span ends when the node returns, but a judge call or a picture started in it keeps running; a span
+        whose parent has already ended is exported by neatlogs as a trace of its own (found in HR-014: 2 of 4 pictures and every picture check
+        were missing from the story's trace). Starting such work from the workflow's own context keeps every span in the one trace."""
+        return self.root_ctx.copy() if self.root_ctx is not None else contextvars.copy_context()
 
     def painting_should_stop(self) -> str:
         """Why the agent stops painting the rest (only when it chose the pages itself): the picture service keeps failing, or the budget is gone."""
@@ -513,7 +521,7 @@ def build_graph(run: Run):
         """A page was just accepted: if it is one of the pages to paint, start its picture now (the child is still reading)."""
         if not early_painting or early_pool is None or p.index not in run.paint_set or run.forgotten:
             return
-        ctx = contextvars.copy_context()
+        ctx = run.task_context()
         run.early[p.index] = (p.model_dump(), early_pool.submit(ctx.run, one_image, p, card))
 
     def one_image(p: Page, card: CharacterCard) -> None:
@@ -619,7 +627,7 @@ def build_graph(run: Run):
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
-                ctx = contextvars.copy_context()  # keep the trace parent and the usage meter
+                ctx = run.task_context()  # keep the trace parent and the usage meter
                 futs.append(pool.submit(ctx.run, fn, *a))
             for f in futs + [fut for _snap, fut in run.early.values()]:
                 try:
@@ -784,6 +792,7 @@ def execute(run: Run) -> Run:
         graph = build_graph(run)
         with metered() as meter:
             run.meter = meter
+            run.root_ctx = contextvars.copy_context()  # work that outlives the node that started it (judge calls, pictures) is attached to the workflow, not to that node
             graph.invoke({}, {"recursion_limit": 200})
 
     try:

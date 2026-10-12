@@ -70,6 +70,9 @@ class Meter:
             for model, r in self.by_model.items():
                 if model.startswith("IFM/"):
                     usd += (r["in"] + r["out"]) / 1e6 * prices.k2_per_m
+                elif model in prices.gemini_models:
+                    p_in, p_out = prices.gemini_models[model]
+                    usd += r["in"] / 1e6 * p_in + r["out"] / 1e6 * p_out
                 elif model.startswith(("claude", "nova")):  # a gateway model; one missing from the table is priced at the dearest entry (never under-reported)
                     p_in, p_out = prices.gateway.get(model) or max(prices.gateway.values())
                     usd += r["in"] / 1e6 * p_in + r["out"] / 1e6 * p_out

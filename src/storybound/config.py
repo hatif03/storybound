@@ -84,6 +84,7 @@ class Prices(BaseModel):
     k2_per_m: float = 0.0  # no price known
     image_each: float = 0.04
     tts_each: float = 0.002
+    gemini_models: dict[str, tuple[float, float]] = Field(default_factory=lambda: {"gemini-3.1-pro-preview": (1.25, 10.0)})  # ASSUMED list price of the reserve (Pro) model, USD per million tokens (in, out): not read from a bill
     # Gateway models, USD per million tokens (input, output), read from the gateway's /model/info on 11 Oct (they include its markup).
     gateway: dict[str, tuple[float, float]] = Field(default_factory=lambda: {
         "claude-haiku": (1.1, 5.5), "claude-sonnet-4.6": (3.3, 16.5), "claude-opus-4.6": (5.5, 27.5),

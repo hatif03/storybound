@@ -206,6 +206,10 @@ def test_chaos_injects_the_configured_failures_only(monkeypatch):
     from storybound.clients.errors import ClientError
 
     monkeypatch.setenv("STORYBOUND_CHAOS", "k2:error:503:1,gemini:stall:0:1,bad,gateway:error:x:1")
+    monkeypatch.delenv("STORYBOUND_EXPERIMENT", raising=False)
+    assert chaos.active() == "" and chaos.rules() == []  # a stray setting alone injects nothing
+    chaos.maybe("k2")
+    monkeypatch.setenv("STORYBOUND_EXPERIMENT", "drill")
     chaos.maybe("gemini")  # a zero-second stall: returns
     chaos.maybe("image")  # not configured: nothing
     with pytest.raises(ClientError) as e:

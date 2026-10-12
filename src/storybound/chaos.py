@@ -1,4 +1,4 @@
-"""Failure injection for resilience drills. Off unless STORYBOUND_CHAOS is set; never set in the product.
+"""Failure injection for resilience drills. Off unless STORYBOUND_CHAOS is set **and** STORYBOUND_EXPERIMENT names the drill; never set in the product.
 
 STORYBOUND_CHAOS="target:kind:param:probability,..." for example
     gemini:stall:100:0.2      20% of Gemini calls first wait 100 s (the 87 s Vertex stall, made worse)
@@ -22,8 +22,15 @@ from .clients.errors import ClientError
 _RETRYABLE = {408, 429, 499, 500, 502, 503, 504}
 
 
+def enabled() -> bool:
+    """A stray STORYBOUND_CHAOS in a product environment does nothing: a drill must also name itself (STORYBOUND_EXPERIMENT), as run_experiments.py does."""
+    return bool(os.environ.get("STORYBOUND_CHAOS")) and bool(os.environ.get("STORYBOUND_EXPERIMENT"))
+
+
 def rules() -> list[tuple[str, str, float, float]]:
-    out = []
+    out: list[tuple[str, str, float, float]] = []
+    if not enabled():
+        return out
     for part in os.environ.get("STORYBOUND_CHAOS", "").split(","):
         bits = part.strip().split(":")
         if len(bits) == 4:
@@ -35,7 +42,7 @@ def rules() -> list[tuple[str, str, float, float]]:
 
 
 def active() -> str:
-    return os.environ.get("STORYBOUND_CHAOS", "")
+    return os.environ.get("STORYBOUND_CHAOS", "") if enabled() else ""
 
 
 def maybe(target: str) -> None:

@@ -1,0 +1,77 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QHYWAZMMHMY04MKEYV1NY0",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T07:59:15.7248097Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 1,
+  "save_step_count": 2,
+  "files_touched": [
+    "docs/CREDITS.md",
+    "evidence/experiments/20261012-comparison.md",
+    "evidence/hardening/HR-014.md",
+    "evidence/hardening/HR-015.md",
+    "evidence/ledger.jsonl"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "e06008c8d1f7",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2404,
+    "cache_creation_tokens": 3840687,
+    "cache_read_tokens": 557599087,
+    "output_tokens": 1002817,
+    "api_call_count": 1182,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 54
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T07:59:14.4452426Z",
+    "agent_lines": 89,
+    "agent_removed": 0,
+    "human_added": 3,
+    "human_modified": 1114,
+    "human_removed": 0,
+    "total_committed": 1206,
+    "total_lines_changed": 1206,
+    "agent_percentage": 7.3797678275290215,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 16,
+      "user_lines_removed": 0,
+      "agent_lines_added": 1547,
+      "agent_lines_removed": 568,
+      "user_added_per_file": {
+        "evidence/neatlogs/review-3/alerts.json": 1,
+        "evidence/neatlogs/review-3/assignments.json": 1,
+        "evidence/neatlogs/review-3/draft.json": 1,
+        "evidence/neatlogs/review-3/draft_form.json": 1,
+        "evidence/neatlogs/review-3/draft_items.json": 1,
+        "evidence/neatlogs/review-3/eval_spans_create_results.json": 8,
+        "evidence/neatlogs/review-3/evaluations.json": 1,
+        "evidence/neatlogs/review-3/evaluators.json": 1,
+        "evidence/neatlogs/review-3/stats.json": 1
+      }
+    }
+  ]
+}

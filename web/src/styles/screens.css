@@ -39,6 +39,7 @@
 .stage-col { grid-area: stage; display: flex; flex-direction: column; gap: 14px; align-items: center; min-width: 0; }
 .tools { grid-area: tools; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
 .tools .hint { flex-basis: 100%; text-align: center; min-height: 1.5em; font-family: var(--font-display); font-weight: 500; color: var(--tangerine-text); }
+.tools .fine { flex-basis: 100%; text-align: center; font-size: 0.8rem; margin: 0.25rem 0 0; }
 .samples { grid-area: samples; }
 
 .sheet {

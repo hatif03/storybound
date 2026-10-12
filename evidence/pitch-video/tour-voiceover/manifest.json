@@ -1,0 +1,17 @@
+{
+ "voice": "Charon",
+ "clips": {
+  "tour_intro": {
+   "seconds": 28.34,
+   "text": "This is the full tour of Storybound. AI can write a story about a child's drawing in seconds, but nobody checks it: in our test it broke a promise in twenty-seven of twenty-eight stories. Storybound writes its promises first, checks every page before the child sees it, rewrites what breaks, and gives the parent a receipt. First, the child's journey."
+  },
+  "tour_part2": {
+   "seconds": 17.23,
+   "text": "Now the grown-up side, and the rest of the features: the gate, the settings, a drawing the app refuses, writing hidden in a drawing, the movie, the receipt, and forgetting a story."
+  },
+  "tour_outro": {
+   "seconds": 6.31,
+   "text": "That is Storybound: use AI for children, and check it."
+  }
+ }
+}

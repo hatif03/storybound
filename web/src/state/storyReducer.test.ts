@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Receipt, StoryEvent } from '../api/types';
 import { buildScenario } from '../mock/scenarios';
-import { allPagesIn, audioStatus, imageStatus, initialStory, isRedraw, keptCounts, storyReducer, type StoryState } from './storyReducer';
+import { allPagesIn, audioStatus, imageStatus, initialStory, isRedraw, keptCounts, pageReady, storyReducer, type StoryState } from './storyReducer';
 
 const fold = (events: StoryEvent[], from: StoryState = initialStory) => events.reduce((s, ev) => storyReducer(s, { type: 'event', ev }), from);
 const upTo = (events: StoryEvent[], pred: (e: StoryEvent) => boolean) => events.slice(0, events.findIndex(pred) + 1);
@@ -160,5 +160,38 @@ describe('quiz', () => {
     const s = fold([{ id: 0, t: 1, type: 'quiz.ready', data: quiz } as StoryEvent]);
     expect(s.quiz?.items[0].options.filter((o) => o.is_correct)).toHaveLength(1);
     expect(s.quiz?.talk_about).toMatch(/share/);
+  });
+});
+
+describe('a page is shown only when everything for it exists', () => {
+  const events = buildScenario('bunny');
+  const verifiedAt = events.findIndex((e) => e.type === 'story.verified');
+  const imageAt = (i: number) => events.findIndex((e) => e.type === 'image.ready' && e.data.index === i);
+  const audioAt = (i: number) => events.findIndex((e) => e.type === 'audio.ready' && e.data.index === i);
+
+  it('is not ready while its words may still be rewritten, even with picture and voice', () => {
+    const s = fold(upTo(events, (e) => e.type === 'scene.accepted' && e.data.index === 1));
+    expect(pageReady(s, 1)).toBe(false);
+    const all = fold(events.slice(0, verifiedAt)); // every page accepted, whole-story check not finished
+    expect(all.pages).toHaveLength(8);
+    expect(all.step.kind).toBe('checking');
+    expect(pageReady(all, 1)).toBe(false);
+  });
+
+  it('waits for the picture and then for the voice', () => {
+    const verified = fold(events.slice(0, verifiedAt + 1));
+    expect(verified.final).toBe(true);
+    expect(pageReady(verified, 1)).toBe(false); // no picture, no voice yet
+    const withImage = fold(events.slice(0, imageAt(1) + 1));
+    expect(pageReady(withImage, 1)).toBe(false); // the voice is still missing
+    const withBoth = fold(events.slice(0, Math.max(imageAt(1), audioAt(1)) + 1));
+    expect(pageReady(withBoth, 1)).toBe(true);
+    expect(pageReady(withBoth, 8)).toBe(false); // page 8 has nothing yet
+  });
+
+  it('counts a picture or voice that was given up on as settled, so the page is not held forever', () => {
+    const s = fold(buildScenario('degraded'));
+    expect(s.phase).toBe('finished');
+    for (let i = 1; i <= 8; i++) expect(pageReady(s, i)).toBe(true);
   });
 });

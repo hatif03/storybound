@@ -34,7 +34,7 @@ function bunnyBase(opts: { skipImage?: number[]; skipAudio?: number[]; ignoredTe
   }
   const lastAccepted = Math.max(...list.map((e, i) => (e.type === 'scene.accepted' ? i : -1)));
   let t = list[lastAccepted].t + 3;
-  const media: Raw[] = [];
+  const media: Raw[] = [{ type: 'story.verified', t: t + 0.5, data: {} }];
   for (let i = 1; i <= 8; i++) {
     t += 1.2;
     if (opts.skipImage?.includes(i)) {

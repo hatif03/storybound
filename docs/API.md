@@ -45,6 +45,7 @@ Every event is `{ "id": <n>, "type": "...", "t": <seconds since start>, "data": 
 | `audio.ready` | `index`, `url`, `seconds` |
 | `degraded` | `what` (`image` / `audio` / `judge` / `check`), `index` (optional), `why`, `fallback` |
 | `receipt` | The receipt |
+| `story.verified` | none; every page is final (the whole-story check is done). The app shows a page only after this and after that page's `image.ready` (or a `degraded` for its picture) and `audio.ready` (or a `degraded` for its voice) |
 | `run.finished` | `outcome` (`shipped` / `shipped_with_notes`), `story_id` |
 | `run.refused` | `reason_code`, `message` (the calm text to show the child), `trace_id` |
 | `error` | `code`, `message`; the stream then closes. `code` is `internal` (an unexpected failure) or `service_unavailable` (a model service or every safety judge failed; the message is the soft "try again in a minute" screen, never a refusal) |

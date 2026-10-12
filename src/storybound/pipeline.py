@@ -108,6 +108,7 @@ class Run:
     plan_announced: bool = False  # the picture plan was announced as soon as the story was planned
     paint_set: set[int] = field(default_factory=set)  # pages that will get a picture, known before the pages are written
     early: dict[int, tuple[dict, Any]] = field(default_factory=dict)  # page index -> (page as painted, its future): pictures start as pages are accepted
+    early_audio: dict[int, tuple[dict, Any]] = field(default_factory=dict)  # the same for narration: a page is shown only when its picture and voice are ready
     t0: float = 0.0
     media_paths: dict[str, str] = field(default_factory=dict)
     quiz: Quiz | None = None
@@ -350,6 +351,7 @@ def build_graph(run: Run):
             run.ctx.pages = pages
             run.emit("scene.accepted", {"index": page.index, "attempts_used": attempt, "page": _public_page(page)})
             start_painting(page, s["card"])
+            start_audio(page)
             if not rest and s["i"] > n_pages:
                 nxt = "story_gate"
             elif rest and (len(rest) >= MAX_AHEAD or s["i"] > n_pages):
@@ -490,6 +492,7 @@ def build_graph(run: Run):
                     "scene.accepted",
                     {"index": new.index, "attempts_used": 0, "page": _public_page(new), "revised": True},
                 )
+        run.emit("story.verified", {})  # every page is final now: the app may release pages whose picture and voice are ready
         return {"pages": pages}
 
     # ---- media --------------------------------------------------------------------------------------------------------
@@ -504,6 +507,7 @@ def build_graph(run: Run):
 
     early_painting = cfg.media and cfg.arm == "B1" and cfg.pictures != "none"
     early_pool = cf.ThreadPoolExecutor(max_workers=2) if early_painting else None
+    audio_pool = cf.ThreadPoolExecutor(max_workers=2) if early_painting else None  # narration starts with the page too
 
     def announce_paint_plan(imp: dict[int, int], order: list[int], indices: list[int]) -> None:
         """Say which pages will be painted (and why the others will not) as soon as the story is planned."""
@@ -523,6 +527,12 @@ def build_graph(run: Run):
             return
         ctx = run.task_context()
         run.early[p.index] = (p.model_dump(), early_pool.submit(ctx.run, one_image, p, card))
+
+    def start_audio(p: Page) -> None:
+        """A page was just accepted: record its narration now, so the voice is ready when the story is released to the child."""
+        if audio_pool is None or run.forgotten:
+            return
+        run.early_audio[p.index] = (p.model_dump(), audio_pool.submit(run.task_context().run, one_audio, p))
 
     def one_image(p: Page, card: CharacterCard) -> None:
         eng = run.engine
@@ -623,19 +633,21 @@ def build_graph(run: Run):
             announce_paint_plan(imp, order, [p.index for p in pages])
         # pictures already started while the child read: keep them unless the story gate rewrote that page afterwards
         todo = [i for i in order if i not in run.early or run.early[i][0] != by_index[i].model_dump()]
-        jobs = [(one_image, by_index[i], card) for i in todo] + [(one_audio, p) for p in pages]
+        todo_audio = [p for p in pages if p.index not in run.early_audio or run.early_audio[p.index][0] != p.model_dump()]
+        jobs = [(one_image, by_index[i], card) for i in todo] + [(one_audio, p) for p in todo_audio]
         with cf.ThreadPoolExecutor(max_workers=4) as pool:
             futs = []
             for fn, *a in jobs:
                 ctx = run.task_context()  # keep the trace parent and the usage meter
                 futs.append(pool.submit(ctx.run, fn, *a))
-            for f in futs + [fut for _snap, fut in run.early.values()]:
+            for f in futs + [fut for _snap, fut in [*run.early.values(), *run.early_audio.values()]]:
                 try:
                     f.result()
                 except Exception as e:  # one broken page must not sink the story
                     run.degrade("check", f"media worker failed: {type(e).__name__}", "page shown without media")
-        if early_pool is not None:
-            early_pool.shutdown(wait=True)
+        for p_ in (early_pool, audio_pool):
+            if p_ is not None:
+                p_.shutdown(wait=True)
         return {}
 
     # ---- receipt ------------------------------------------------------------------------------------------------------

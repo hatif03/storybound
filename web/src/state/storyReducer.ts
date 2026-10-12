@@ -32,6 +32,7 @@ export interface StoryState {
   totalPages: number;
   step: { kind: Step; index?: number };
   pages: Page[]; // accepted pages, in order
+  final: boolean; // the whole-story check is done: no page will change any more
   attempts: Record<number, number>; // page index -> attempts used (0 = first try)
   media: Record<number, MediaState>;
   repairs: RepairNote[];
@@ -50,7 +51,7 @@ export const DEFAULT_PAGES = 8;
 
 export const initialStory: StoryState = {
   phase: 'idle', net: 'ok', lastId: -1, promises: [], beats: [], totalPages: DEFAULT_PAGES, step: { kind: 'start' },
-  pages: [], attempts: {}, media: {}, repairs: [], degradations: [], verdicts: {}, everBad: {}, eventCount: 0,
+  pages: [], final: false, attempts: {}, media: {}, repairs: [], degradations: [], verdicts: {}, everBad: {}, eventCount: 0,
 };
 
 export type StoryAction = { type: 'reset' } | { type: 'event'; ev: StoryEvent } | { type: 'net'; net: Net };
@@ -158,7 +159,13 @@ export function storyReducer(state: StoryState, action: StoryAction): StoryState
       const pages = [...state.pages.filter((p) => p.index !== page.index), page].sort((a, b) => a.index - b.index);
       const attempts = { ...state.attempts, [page.index]: ev.data.attempts_used };
       const all = pages.length >= state.totalPages;
-      return { ...base, pages, attempts, step: all ? { kind: 'painting' } : { kind: 'writing', index: page.index + 1 } };
+      // all pages are in but the whole-story check is still to come (a page may still be rewritten): that is checking, not painting
+      return { ...base, pages, attempts, step: all ? { kind: 'checking' } : { kind: 'writing', index: page.index + 1 } };
+    }
+
+    case 'story.verified': {
+      const next = { ...base, final: true };
+      return { ...next, step: state.pages.length >= state.totalPages ? { kind: mediaStep(next) } : state.step };
     }
 
     case 'image.ready': {
@@ -186,7 +193,7 @@ export function storyReducer(state: StoryState, action: StoryAction): StoryState
     }
 
     case 'receipt':
-      return { ...base, receipt: ev.data, promises: finalise(state, ev.data), step: { kind: 'wrapping' } };
+      return { ...base, final: true, receipt: ev.data, promises: finalise(state, ev.data), step: { kind: 'wrapping' } };
 
     case 'run.finished':
       return { ...base, phase: 'finished', outcome: ev.data.outcome, step: { kind: 'done' } };
@@ -218,6 +225,13 @@ export function audioStatus(s: StoryState, index: number): MediaKind {
   if (m?.audio) return 'ready';
   if (m?.audioMissing) return 'missing';
   return s.phase === 'running' ? 'pending' : 'missing';
+}
+
+/** A page is shown only when everything for it exists: its final words, its picture (or the decision to go without) and its voice (or the same). */
+export function pageReady(s: StoryState, index: number): boolean {
+  if (!s.pages.some((p) => p.index === index)) return false;
+  if (!s.final && s.phase === 'running') return false; // a page may still be rewritten by the whole-story check
+  return imageStatus(s, index) !== 'pending' && audioStatus(s, index) !== 'pending';
 }
 
 export function isDone(s: StoryState): boolean {

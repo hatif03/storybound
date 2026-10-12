@@ -115,6 +115,7 @@ def test_happy_path_and_repair(monkeypatch, drawing):
     types = [e["type"] for e in evs]
     assert run.outcome == "shipped" and run.error == ""
     assert types.count("scene.accepted") == 8 and "receipt" in types and types[-1] == "run.finished"
+    assert types.index("story.verified") > max(i for i, t in enumerate(types) if t == "scene.accepted") - 1 and types.index("story.verified") < types.index("receipt")  # pages are final before the app may release them
     assert calls["repair"] == 1  # page 5 lost the hero's name once, repaired once
     rep = [e for e in evs if e["type"] == "scene.repair"]
     assert rep and rep[0]["data"]["index"] == 5 and "character_named_in_scene" in rep[0]["data"]["failed"]

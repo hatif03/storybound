@@ -65,9 +65,12 @@ area (receipt, settings, demo drawer, credits). The child's drawing lives only i
 `storyReducer` folds each event (ignoring any whose `id` it has already seen, so a reconnect that replays from the start is
 harmless). It tracks: the step Pip is on (looking, meeting the hero, writing/checking/fixing page N, painting, voice), accepted
 pages, per-page picture and voice (`pending`, `ready` or `missing`), repairs, degradations, and each promise of the oath as
-`waiting / checking / fixing / kept / kept_after_fix / not_kept / unchecked`. The reader opens page 1 the moment it is accepted;
-pictures and voices that have not arrived show a gentle "Pip is still painting", and ones that never arrive (a `degraded` event, or
-the run ending) show a text-only page. The child's sticker sheet fills only when every checked promise in a family is kept; the
+`waiting / checking / fixing / kept / kept_after_fix / not_kept / unchecked`. A page is shown only when everything for it exists (12 Oct): `pageReady` needs the page accepted, the whole-story check done (the
+`story.verified` event, after which no page can change), its picture ready or given up on (`image.ready` or a `degraded` for it) and its
+voice ready or given up on. Until then the child sees Pip's making screen (or "Page N is on its way!"), never a half-made page. The
+backend starts each page's picture and narration as soon as the page is accepted, so the wait is the story's checking time, not the
+sum of everything. A picture or voice that never comes (a `degraded` event, or the run ending) counts as settled and the page is
+text-only. The child's sticker sheet fills only when every checked promise in a family is kept; the
 receipt shows everything, including promises not kept or not checked this time.
 
 ## Things found in the backend and assets (worth knowing)

@@ -39,11 +39,14 @@ for (let n = 1; n <= 8; n++) {
   if (await p.$('.try-other')) { const again = await p.$$('.choice'); await again[1].click(); await sleep(300); }
   await click(n < 8 ? 'Next' : 'The end', '.next-inline');
 }
-await p.waitForFunction(() => document.body.innerText.includes('The end!'), { timeout: 60000 });
-await p.waitForFunction(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes("Play Pip's quiz")), { timeout: 60000 });
-await p.screenshot({ path: path.join(OUT, '01-end-offers-games.png') });
-console.log('end screen offers the quiz button: true');
-await click("Play Pip's quiz");
+// pages are released only when the story is complete, so the quiz is usually ready by the last page and opens by itself
+await p.waitForFunction(() => document.querySelector('.quiz-body') || document.body.innerText.includes('The end!'), { timeout: 60000 });
+if (!(await p.$('.quiz-body'))) {
+  await p.waitForFunction(() => [...document.querySelectorAll('button')].some((e) => e.textContent.includes("Play Pip's quiz")), { timeout: 60000 });
+  await p.screenshot({ path: path.join(OUT, '01-end-offers-games.png') });
+  console.log('end screen offers the quiz button: true');
+  await click("Play Pip's quiz");
+} else console.log('the quiz opened after the last page (it was ready)');
 let q = 0, wrongShowedLine = false;
 while (await p.$('.quiz-body')) {
   q++;

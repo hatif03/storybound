@@ -10,7 +10,7 @@ import { nowPlaying, play, say, sfx, stop, subscribePlaying } from '../lib/sound
 import { stepLine } from '../lib/steps';
 import { useSettings } from '../state/settings';
 import { useFocusHeading, type Source } from '../state/session';
-import { audioStatus, imageStatus, isDone, type StoryState } from '../state/storyReducer';
+import { audioStatus, imageStatus, isDone, pageReady, type StoryState } from '../state/storyReducer';
 
 // 6.7 The story reader. Works with whatever has arrived: a page can be read before its picture or voice exists, and a page
 // whose picture or voice never comes is a calm text-only page (never an error).
@@ -83,7 +83,8 @@ export function Reader({ story, source, startAt, onEnd, onLeave }: { story: Stor
   const [picked, setPicked] = useState<string | null>(null);
   const [leaving, setLeaving] = useState(false);
   const top = useRef<HTMLElement>(null);
-  const page = story.pages.find((p) => p.index === n);
+  const ready = pageReady(story, n);
+  const page = ready ? story.pages.find((p) => p.index === n) : undefined; // a page is shown only when its picture and voice exist too
   const total = story.totalPages;
   const mediaRef = useRef(story.media);
   mediaRef.current = story.media;
@@ -105,10 +106,10 @@ export function Reader({ story, source, startAt, onEnd, onLeave }: { story: Stor
     if (sound && audio) play(audio);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [n]);
+  }, [n, ready]);
 
   // If the story ended without this page (it never arrived), go to the end rather than wait forever.
-  useEffect(() => { if (!page && isDone(story)) onEnd(); }, [page, story, onEnd]);
+  useEffect(() => { if (!story.pages.some((p) => p.index === n) && isDone(story)) onEnd(); }, [n, story, onEnd]);
 
   useEffect(() => {
     const key = (e: KeyboardEvent) => {

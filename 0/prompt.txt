@@ -1177,3 +1177,17 @@ Good luck! Can't wait to see what you've been working on.
 <status>completed</status>
 <summary>Background command "Compose the final recording" completed (exit code 0)</summary>
 </task-notification>
+
+---
+
+At the root I have added:
+@neatlogs.mp4  0-6 is home, 6- 1:06 is traces, 1:06-1:29 is incidents, 1:29-1:33 is evals, 1:34-1:43 is the notification alerts and 1L44 -1:50 in analytics
+@cfo.ai.mp4  is me me showing the cfo.ai dashboard
+@entire.mp4  0-8s is overview,  8-16s is commits, 16-30s is trails, 30-36s is runners and 36-47 is session
+
+This is the time stamps of the videos i have added. Merge pr 4, I wan ta full demo video. I want you to first polish our pitch from a non technical perspective, you basically why a genral public or a parent would even want this and why should they try us. Think in terms of communtiy impact. Update the docs accordingly. The problem we are solving and how our solution works should be easily apparent from the docs and especially the readme. Add the I want the following things from you:
+1. Deploy everyhting so that judges can use the application. I wan tlinks to be added to readme. 
+2. I want a full feature video showing the entire apps working, including the grown up side of things.
+2. I want a demoable combined video under 3 minute that I can tweet and submit. 
+
+Edit the videos using moviepy or whatever you feel is needed. All demo videos need to clearly explain the problem we are solving and how our solution works.

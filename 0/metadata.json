@@ -1,0 +1,42 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QHZ0K5ZGWG2E48T1CC8VN1",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T07:59:23.9549378Z",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "evidence/neatlogs/review-3/eval_create_results.json",
+    "evidence/neatlogs/review-3/eval_sample_20.json",
+    "evidence/neatlogs/review-3/eval_sample_spans.json",
+    "evidence/neatlogs/review-3/triage_actions.json"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "e06008c8d1f7",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 2404,
+    "cache_creation_tokens": 3840687,
+    "cache_read_tokens": 557599087,
+    "output_tokens": 1002817,
+    "api_call_count": 1182
+  },
+  "session_metrics": {
+    "turn_count": 54
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T07:59:19.0534296Z",
+    "agent_lines": 4,
+    "agent_removed": 0,
+    "human_added": 453,
+    "human_modified": 124,
+    "human_removed": 0,
+    "total_committed": 581,
+    "total_lines_changed": 581,
+    "agent_percentage": 0.6884681583476765,
+    "metric_version": 2
+  }
+}

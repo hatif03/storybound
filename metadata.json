@@ -1,0 +1,29 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4QHZ0K5ZGWG2E48T1CC8VN1",
+  "strategy": "manual-commit",
+  "branch": "experiments/architecture-and-chaos",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "evidence/neatlogs/review-3/eval_create_results.json",
+    "evidence/neatlogs/review-3/eval_sample_20.json",
+    "evidence/neatlogs/review-3/eval_sample_spans.json",
+    "evidence/neatlogs/review-3/triage_actions.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 2404,
+    "cache_creation_tokens": 3840687,
+    "cache_read_tokens": 557599087,
+    "output_tokens": 1002817,
+    "api_call_count": 1182
+  }
+}

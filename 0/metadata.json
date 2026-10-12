@@ -1,0 +1,104 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M4R9G7PZZ9DDKBW10M96PCWW",
+  "session_id": "531bd6f2-4e0c-4a05-a2e1-9f902bd0eeb6",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-12T14:50:47.3628447Z",
+  "branch": "final/videos-and-status",
+  "checkpoints_count": 2,
+  "save_step_count": 2,
+  "files_touched": [
+    "README.md",
+    "docs/DEPLOY.md",
+    "docs/SUBMISSION.md",
+    "evidence/demo/links.json",
+    "evidence/demo/storybound-demo-3min.mp4",
+    "evidence/pitch-video/work2/scene12.graph.txt",
+    "evidence/pitch-video/work2/scene12.mp4",
+    "hackathon.md",
+    "web/public/judges/index.html"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "turn_id": "96155da9a980",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 3302,
+    "cache_creation_tokens": 4405779,
+    "cache_read_tokens": 778929608,
+    "output_tokens": 1340243,
+    "api_call_count": 1614,
+    "subagent_tokens": {
+      "input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "cache_read_tokens": 0,
+      "output_tokens": 0,
+      "api_call_count": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 76
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-10-12T14:50:42.7509403Z",
+    "agent_lines": 8,
+    "agent_removed": 60,
+    "human_added": 43,
+    "human_modified": 718,
+    "human_removed": 0,
+    "total_committed": 769,
+    "total_lines_changed": 829,
+    "agent_percentage": 8.202653799758746,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 15,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        "deploy/vercel/vercel.json": 15
+      }
+    },
+    {
+      "checkpoint_number": 3,
+      "user_lines_added": 113,
+      "user_lines_removed": 85,
+      "agent_lines_added": 726,
+      "agent_lines_removed": 713,
+      "user_added_per_file": {
+        "deploy/vercel/vercel.json": 28,
+        "evidence/full-tour/storybound-full-tour.txt": 4,
+        "evidence/pitch-video/work2/scene00.graph.txt": 6,
+        "evidence/pitch-video/work2/scene01.graph.txt": 6,
+        "evidence/pitch-video/work2/scene02.graph.txt": 6,
+        "evidence/pitch-video/work2/scene03.graph.txt": 8,
+        "evidence/pitch-video/work2/scene04.graph.txt": 7,
+        "evidence/pitch-video/work2/scene05.graph.txt": 6,
+        "evidence/pitch-video/work2/scene06.graph.txt": 6,
+        "evidence/pitch-video/work2/scene07.graph.txt": 6,
+        "evidence/pitch-video/work2/scene08.graph.txt": 6,
+        "evidence/pitch-video/work2/scene09.graph.txt": 9,
+        "evidence/pitch-video/work2/scene10.graph.txt": 8,
+        "evidence/pitch-video/work2/scene11.graph.txt": 7
+      },
+      "user_removed_per_file": {
+        "evidence/full-tour/storybound-full-tour.txt": 4,
+        "evidence/pitch-video/work2/scene00.graph.txt": 6,
+        "evidence/pitch-video/work2/scene01.graph.txt": 6,
+        "evidence/pitch-video/work2/scene02.graph.txt": 6,
+        "evidence/pitch-video/work2/scene03.graph.txt": 8,
+        "evidence/pitch-video/work2/scene04.graph.txt": 7,
+        "evidence/pitch-video/work2/scene05.graph.txt": 6,
+        "evidence/pitch-video/work2/scene06.graph.txt": 6,
+        "evidence/pitch-video/work2/scene07.graph.txt": 6,
+        "evidence/pitch-video/work2/scene08.graph.txt": 6,
+        "evidence/pitch-video/work2/scene09.graph.txt": 9,
+        "evidence/pitch-video/work2/scene10.graph.txt": 8,
+        "evidence/pitch-video/work2/scene11.graph.txt": 7
+      }
+    }
+  ]
+}

@@ -160,8 +160,32 @@ def pitch() -> None:
         sys.exit(f"too long: {dur(final):.1f}s")
 
 
+def normalise(src: Path, out: Path) -> None:
+    """Re-encode a recording to the common 1920x1080, 30 fps, AAC 44.1 kHz stereo format so scenes can be joined without re-encoding again."""
+    subprocess.run([FFMPEG, "-y", "-v", "error", "-i", str(src), "-vf", f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,setsar=1", "-c:v", "libx264", "-crf", "22", "-preset", "veryfast", "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-ac", "2", str(out)], check=True)
+
+
 def tour() -> None:
-    sys.exit("tour: built by scripts/build_pitch_video.py after the feature recording; see build_tour() once the recording exists")
+    work = ROOT / "evidence" / "pitch-video" / "tour-work"
+    work.mkdir(parents=True, exist_ok=True)
+    vdir = ROOT / "evidence" / "pitch-video" / "tour-voiceover"
+    lk = links()
+    parts: list[Path] = []
+    intro = build_scene(0, work / "t0.mp4", vdir / "tour_intro.mp3", [], [], ["Storybound|100", "The full tour|60", "AI writes children's stories nobody checks: 27 of 28 broke a promise.|42", "Promises first. Every page checked. A receipt for the parent.|42"], min_d=6.0)
+    parts.append(work / "t0.mp4")
+    print(f"intro {intro:.1f}s", flush=True)
+    normalise(AC / "app-walkthrough-cut.mp4", work / "t1.mp4")
+    parts.append(work / "t1.mp4")
+    build_scene(2, work / "t2.mp4", vdir / "tour_part2.mp3", [], [], ["Part 2|90", "The grown-up side, and the rest of the features|54"], min_d=5.0)
+    parts.append(work / "t2.mp4")
+    normalise(FC / "features-tour-cut.mp4", work / "t3.mp4")
+    parts.append(work / "t3.mp4")
+    build_scene(4, work / "t4.mp4", vdir / "tour_outro.mp3", [], [], ["Storybound|96", "Use AI for children, and check it.|50", f"Live app: {lk['live']}|40", f"Free demo: {lk['demo']}|40", f"Code: {lk['code']}|40"], min_d=7.0)
+    parts.append(work / "t4.mp4")
+    final = ROOT / "evidence" / "full-tour" / "storybound-full-tour.mp4"
+    final.parent.mkdir(parents=True, exist_ok=True)
+    concat(parts, final)
+    print("wrote", final, f"{dur(final):.0f}s")
 
 
 if __name__ == "__main__":

@@ -6,12 +6,12 @@ A child draws a hero. Storybound turns the drawing into a short storybook that t
 
 | Try it | Link |
 | --- | --- |
-| **Live app** (real stories, limited per day; please use the sample drawings or draw your own, not a real child's photo) | {{LIVE_URL}} |
-| **Free demo mode** (same screens, no models, no limit) | {{LIVE_URL}}?mock=1 |
-| **3-minute video** (the problem, how it works, and how neatlogs, Entire and cfo.ai helped) | {{VIDEO_3MIN}} |
-| **Full tour video** (every screen, including the grown-up side) | {{VIDEO_FULL}} |
+| **Live app** (real stories, limited per day; please use the sample drawings or draw your own, not a real child's photo) | http://ec2-34-237-142-143.compute-1.amazonaws.com/ |
+| **Free demo mode** (same screens, no models, no limit) | http://ec2-34-237-142-143.compute-1.amazonaws.com/?mock=1 |
+| **3-minute video** (the problem, how it works, and how neatlogs, Entire and cfo.ai helped) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-demo-3min.mp4 |
+| **Full tour video** (every screen, including the grown-up side) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-full-tour.mp4 |
 | **Why a family would want it, and who it helps** | [docs/WHY.md](docs/WHY.md) |
-| **For the judges: how we used neatlogs, Entire and cfo.ai** (answers, screenshots, evidence links) | {{LIVE_URL}}judges/ and [below](#how-we-used-the-tools-the-submission-forms-questions-answered) |
+| **For the judges: how we used neatlogs, Entire and cfo.ai** (answers, screenshots, evidence links) | http://ec2-34-237-142-143.compute-1.amazonaws.com/judges/ and [below](#how-we-used-the-tools-the-submission-forms-questions-answered) |
 
 ## The problem
 AI can write a story about your child's own drawing in seconds. It is also a fast writer that does not know what is right for a five-year-old, and nobody is watching it. In our own experiment the same writer, left alone, slipped at least one broken promise into **27 of 28** stories: a lesson that never showed up, the right answer always in the same place, words too hard for the age, sometimes an unkind line. A parent cannot read every story first, and a child on a tablet is often alone with it. So today a parent can only refuse these tools or trust them blindly.
@@ -25,7 +25,7 @@ AI can write a story about your child's own drawing in seconds. It is also a fas
 **The result:** with every page checked, **0 of 28** stories shipped with a broken promise, against **27 of 28** without ([report](evidence/reports/20261010-1505-IST-sweep-2-p2.md)). It costs about two cents of text per story, around twenty cents with pictures and a voice (estimates in [docs/BUSINESS.md](docs/BUSINESS.md)), cheap enough for schools and libraries. Who it helps and why it matters: [docs/WHY.md](docs/WHY.md).
 
 ## How we used the tools (the submission form's questions, answered)
-Full page with screenshots, tables and every link: **{{LIVE_URL}}judges/** (also in the repo at `web/public/judges/index.html`). Dashboard screenshots: [evidence/dashboards/](evidence/dashboards/). The same answers are in [docs/SUBMISSION.md](docs/SUBMISSION.md) for copy and paste.
+Full page with screenshots, tables and every link: **http://ec2-34-237-142-143.compute-1.amazonaws.com/judges/** (also in the repo at `web/public/judges/index.html`). Dashboard screenshots: [evidence/dashboards/](evidence/dashboards/). The same answers are in [docs/SUBMISSION.md](docs/SUBMISSION.md) for copy and paste.
 
 ### neatlogs: what did you trace, debug or improve?
 We traced every story as **one trace**: the oath, each page, each judge call, each picture and voice, with every promise check as its own span holding the quoted words and the verdict. We then used neatlogs to find our own bugs, always trace first, then fix, then compare runs:

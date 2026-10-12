@@ -32,7 +32,7 @@ Video: <link>  Code: github.com/hatif03/storybound
 Rules: quote-tweet the official launch post (not a new post), keep all three tags, no real child's name or face, no key. After posting, add the URL, time and what it shows to `evidence/posts.md`.
 
 ## Answers for the submission form: how we used the tools (copy and paste)
-Full page with screenshots, tables and every link: **{{LIVE_URL}}judges/** (also in the repo at `web/public/judges/index.html`). Dashboard screenshots: [evidence/dashboards/](https://github.com/hatif03/storybound/blob/main/evidence/dashboards/). The same answers are in this file for copy and paste.
+Full page with screenshots, tables and every link: **http://ec2-34-237-142-143.compute-1.amazonaws.com/judges/** (also in the repo at `web/public/judges/index.html`). Dashboard screenshots: [evidence/dashboards/](https://github.com/hatif03/storybound/blob/main/evidence/dashboards/). The same answers are in this file for copy and paste.
 
 ### neatlogs: what did you trace, debug or improve?
 We traced every story as **one trace**: the oath, each page, each judge call, each picture and voice, with every promise check as its own span holding the quoted words and the verdict. We then used neatlogs to find our own bugs, always trace first, then fix, then compare runs:

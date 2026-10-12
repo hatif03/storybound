@@ -1,6 +1,6 @@
 # Deployment (AWS, hackathon account)
 
-Written Mon 12 Oct 2026. This is a plain single-server deployment for judges. It is **http only** (no certificate, no domain), **tracing is off** (no `NEATLOGS_*` variables on the server, so nothing a visitor uploads reaches neatlogs), and the app currently does NOT tell visitors anything about not uploading a real child's photo (its Grown-ups page only says the drawing is sent to the server): add that sentence to the web app or the share message. No secret is in this file.
+Written Mon 12 Oct 2026. This is a plain single-server deployment for judges. It is **http only** (no certificate, no domain), **tracing is off** (no `NEATLOGS_*` variables on the server, so nothing a visitor uploads reaches neatlogs), and the app tells visitors, on the drawing screen and in the Grown-ups About tab, not to upload a photo of a real child. No secret is in this file.
 
 ## URLs
 
@@ -117,6 +117,6 @@ To only pause (stop paying for compute): `aws ec2 stop-instances --instance-ids 
 
 ## Privacy and limits, plainly
 
-- http only: anything a visitor uploads travels unencrypted. Visitors should be told (the app does not say it yet) not to upload a real child's photo and to use a sample or a made-up drawing.
+- http only: anything a visitor uploads travels unencrypted. Visitors are told, on the drawing screen and in About, not to upload a real child's photo and to use a sample or a made-up drawing.
 - Tracing is off on this server. Stories and drawings live only under `/opt/storybound/runs` and are deleted after 24 hours at the latest (or at once on Forget).
 - Drawings and story text are sent to Google (Gemini, Text-to-Speech), the K2 judge and the hackathon gateway to make the story.

@@ -1,12 +1,14 @@
 # Deployment (AWS, hackathon account)
 
-Written Mon 12 Oct 2026. This is a plain single-server deployment for judges. It is **http only** (no certificate, no domain), **tracing is off** (no `NEATLOGS_*` variables on the server, so nothing a visitor uploads reaches neatlogs), and the app tells visitors, on the drawing screen and in the Grown-ups About tab, not to upload a photo of a real child. No secret is in this file.
+Written Mon 12 Oct 2026. This is a plain single-server deployment for judges. The server itself is **http only** (no certificate, no domain; an https front door on Vercel proxies to it), **tracing is off** (no `NEATLOGS_*` variables on the server, so nothing a visitor uploads reaches neatlogs), and the app tells visitors, on the drawing screen and in the Grown-ups About tab, not to upload a photo of a real child. No secret is in this file.
 
 ## URLs
 
-- App: http://ec2-34-237-142-143.compute-1.amazonaws.com/
-- Free demo mode (needs no models, runs in the browser): http://ec2-34-237-142-143.compute-1.amazonaws.com/?mock=1
-- The public DNS name changes if the instance is stopped and started (no Elastic IP, on purpose).
+- **https front door (Vercel):** https://storybound-xi.vercel.app/ (free demo `/?mock=1`, judges page `/judges/`, videos `/videos/...`). It serves the built web app as static files and proxies `/api/*` and `/videos/*` to the AWS server below (rewrites in `deploy/vercel/vercel.json`), so the browser talks https; the hop from Vercel to the server is still http. A full real story streamed through it for 212 s to `run.finished` (checked 12 Oct). To update: `cd web; npm run build`, copy `web/dist` and `deploy/vercel/vercel.json` into an empty folder, and run `vercel deploy --prod` there (the project is `hatif03s-projects/storybound`).
+- **Direct server (http):**
+  - App: http://ec2-34-237-142-143.compute-1.amazonaws.com/
+  - Free demo mode (needs no models, runs in the browser): http://ec2-34-237-142-143.compute-1.amazonaws.com/?mock=1
+  - The public DNS name changes if the instance is stopped and started (no Elastic IP, on purpose).
 
 ## Status (final)
 
@@ -117,6 +119,6 @@ To only pause (stop paying for compute): `aws ec2 stop-instances --instance-ids 
 
 ## Privacy and limits, plainly
 
-- http only: anything a visitor uploads travels unencrypted. Visitors are told, on the drawing screen and in About, not to upload a real child's photo and to use a sample or a made-up drawing.
+- https from the browser to Vercel, then http from Vercel to the server (and http on the direct server link): a drawing travels unencrypted on the second hop, and Vercel's edge sees the requests it proxies. Visitors are told, on the drawing screen and in About, not to upload a real child's photo and to use a sample or a made-up drawing.
 - Tracing is off on this server. Stories and drawings live only under `/opt/storybound/runs` and are deleted after 24 hours at the latest (or at once on Forget).
 - Drawings and story text are sent to Google (Gemini, Text-to-Speech), the K2 judge and the hackathon gateway to make the story.

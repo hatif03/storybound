@@ -44,14 +44,14 @@
 </head>
 <body>
 <main>
-<p><a href="../">&larr; Back to the app</a></p>
+<p><a href="/">&larr; Back to the app</a></p>
 <h1>Storybound, for the neatHack judges</h1>
 <p class="lead">A bedtime-story helper that checks its own work, so a parent doesn't have to. A child draws a hero; before any page reaches the child, the agent has checked it against promises it wrote first, rewritten what broke, and afterwards it hands the parent a receipt.</p>
 <p>
-  <a class="btn primary" href="../">Open the live app</a>
-  <a class="btn" href="../?mock=1">Free demo mode</a>
-  <a class="btn" href="../videos/storybound-demo-3min.mp4">3-minute video</a>
-  <a class="btn" href="../videos/storybound-full-tour.mp4">Full tour video</a>
+  <a class="btn primary" href="/">Open the live app</a>
+  <a class="btn" href="/?mock=1">Free demo mode</a>
+  <a class="btn" href="/videos/storybound-demo-3min.mp4">3-minute video</a>
+  <a class="btn" href="/videos/storybound-full-tour.mp4">Full tour video</a>
   <a class="btn" href="https://github.com/hatif03/storybound">Code</a>
 </p>
 <nav class="jump" aria-label="Sections">
@@ -95,13 +95,13 @@
 </table>
 <h3>Screenshots (neatlogs)</h3>
 <div class="grid shots">
-  <figure><img loading="lazy" src="img/n1.webp" alt="neatlogs incidents"><figcaption><b>N1.</b> Incidents: one under investigation, found by neatlogs on its own (a Gemini 504 timeout).</figcaption></figure>
-  <figure><img loading="lazy" src="img/n2.webp" alt="resolved incidents"><figcaption><b>N2.</b> Four resolved incident cards, among them "Resolve Infinite Repair Loop" and "Latency and Quota Exhaustion in illustrate" that we checked and closed with notes.</figcaption></figure>
-  <figure><img loading="lazy" src="img/n3.webp" alt="incident detail"><figcaption><b>N3.</b> An incident's root-cause analysis, resolved by us: it was our own image-429 drill, and the agent recovered as designed.</figcaption></figure>
-  <figure><img loading="lazy" src="img/n4.webp" alt="investigation"><figcaption><b>N4.</b> The investigation neatlogs ran: evidence, reasoning and a recommended action.</figcaption></figure>
-  <figure><img loading="lazy" src="img/n5.webp" alt="trace with detection"><figcaption><b>N5.</b> A story trace opened from the detection "Execution Failed": the 504 error span of a Gemini call with its prompt and error.</figcaption></figure>
-  <figure><img loading="lazy" src="img/n6.webp" alt="trace with latency detection"><figcaption><b>N6.</b> The suggested detection "High Latency LLM Monitor" (accepted from neatlogs's own recommendations) flagging a slow call.</figcaption></figure>
-  <figure><img loading="lazy" src="img/n7.webp" alt="detections list"><figcaption><b>N7.</b> Our detections: oath violation, critical safety stop, quiz promise broken, picture has words painted in, and the suggested monitors.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n1.webp" alt="neatlogs incidents"><figcaption><b>N1.</b> Incidents: one under investigation, found by neatlogs on its own (a Gemini 504 timeout).</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n2.webp" alt="resolved incidents"><figcaption><b>N2.</b> Four resolved incident cards, among them "Resolve Infinite Repair Loop" and "Latency and Quota Exhaustion in illustrate" that we checked and closed with notes.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n3.webp" alt="incident detail"><figcaption><b>N3.</b> An incident's root-cause analysis, resolved by us: it was our own image-429 drill, and the agent recovered as designed.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n4.webp" alt="investigation"><figcaption><b>N4.</b> The investigation neatlogs ran: evidence, reasoning and a recommended action.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n5.webp" alt="trace with detection"><figcaption><b>N5.</b> A story trace opened from the detection "Execution Failed": the 504 error span of a Gemini call with its prompt and error.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n6.webp" alt="trace with latency detection"><figcaption><b>N6.</b> The suggested detection "High Latency LLM Monitor" (accepted from neatlogs's own recommendations) flagging a slow call.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/n7.webp" alt="detections list"><figcaption><b>N7.</b> Our detections: oath violation, critical safety stop, quiz promise broken, picture has words painted in, and the suggested monitors.</figcaption></figure>
 </div>
 <p class="note">Also in the repository: the screen recording of the dashboards that the videos use, and the neatlogs exports under <a href="https://github.com/hatif03/storybound/tree/main/evidence/neatlogs">evidence/neatlogs</a>.</p>
 
@@ -113,14 +113,16 @@
   <div class="stat"><b>4 trails merged</b><span>each backed by a branch and a pull request, with six runners; reviews found 5, 8 and 7 real issues on three of them</span></div>
   <div class="stat"><b>7 graph diffs</b><span>of the hardening changes, plus impact and verify runs on the safety words</span></div>
 </div>
+<p class="note">Everything below lives on Entire: <a class="btn" href="https://entire.io/gh/hatif03/storybound">Overview</a> <a class="btn" href="https://entire.io/gh/hatif03/storybound/commits">Commits and checkpoints</a> <a class="btn" href="https://entire.io/gh/hatif03/storybound/trails">Trails</a> <a class="btn" href="https://entire.io/gh/hatif03/storybound/runners">Runners</a> <a class="btn" href="https://entire.io/gh/hatif03/storybound/sessions">Sessions</a> <a class="btn" href="https://entire.io/gh/hatif03/storybound/analytics">Analytics</a></p>
 <h3>Checkpoints: progress and key decisions</h3>
 <ul class="tight">
-  <li>The checkpoint link for submission: <a href="https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2">commit 1a96c19</a> (checkpoint <code>01M4MJM5TRM7NE2F8FHFJ49NE6</code>); anonymous render checked in <a href="https://github.com/hatif03/storybound/blob/main/evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png">this screenshot</a>.</li>
-  <li>Every hardening record names its commit and checkpoint, and says where there is none (early work before 15:08 on 10 Oct has no checkpoint): <a href="https://github.com/hatif03/storybound/tree/main/evidence/hardening">evidence/hardening</a>.</li>
+  <li>The checkpoint link for submission: <a href="https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2">commit 1a96c19</a> (checkpoint <code>01M4MJM5TRM7NE2F8FHFJ49NE6</code>); other key commits on Entire: <a href="https://entire.io/gh/hatif03/storybound/commit/31022e74248158cf334e0964d1c810f6267c3bd8">HR-003</a>, <a href="https://entire.io/gh/hatif03/storybound/commit/31ccd187cac0f1c3999f3bb3f255a589012d4290">HR-004</a>, <a href="https://entire.io/gh/hatif03/storybound/commit/733f84d9b66a8e162d584a7e425b20a5d7287c55">the picture agent (HR-010)</a>, <a href="https://entire.io/gh/hatif03/storybound/commit/74349c9adc9496e7444121064fa072886fe2204e">the tracing fix (HR-016)</a>, <a href="https://entire.io/gh/hatif03/storybound/commit/5f9253b5de587701524983d4d91776a2d1798b05">the chaos-setting fix</a>; anonymous render checked in <a href="https://github.com/hatif03/storybound/blob/main/evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png">this screenshot</a>.</li>
+  <li>Every hardening record names its commit and checkpoint, and says where there is none (early work before 15:08 on 10 Oct has no checkpoint): <a href="https://entire.io/gh/hatif03/storybound/commits">commits on Entire</a>, with the records in <a href="https://github.com/hatif03/storybound/tree/main/evidence/hardening">evidence/hardening</a>.</li>
   <li>Key decisions kept as checkpoints and Brain facts: pipelined review (HR-002, with the honest note that time to first page did not improve), the safety-word tiering (HR-004), the history rewrite after two keys were pasted into a session and reached checkpoint refs ([the note](https://github.com/hatif03/storybound/blob/main/evidence/history-rewrite/NOTE.md)), and the narration rule below.</li>
-  <li>The sessions are readable: the hardening session (screenshot E5) shows the sweep, the report change and the checkpoints it produced.</li>
+  <li>The sessions are readable on <a href="https://entire.io/gh/hatif03/storybound/sessions">Entire</a>: the hardening session (screenshot E5) shows the sweep, the report change and the checkpoints it produced.</li>
 </ul>
 <h3>entire-graph: finding code and assessing risky changes</h3>
+<p class="note">entire-graph runs on the command line and saves its output; these are the saved runs (files in the repository). The commits they describe are on Entire (links above).</p>
 <ul class="tight">
   <li><b>Before touching the safety words:</b> <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt">graph impact of story_safe_text</a> and <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-verify_scene_async.txt">of verify_scene_async</a> showed what depended on them.</li>
   <li><b>After each hardening fix:</b> graph diffs for <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1716-IST-graph-diff-HR-001-04ffebb.json">HR-001</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1716-IST-graph-diff-HR-002-daec9ea.json">HR-002</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-003-31022e7.json">HR-003</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-004-748ce42.json">HR-004</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-006-7b2f310.json">HR-006</a> and <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json">the picture agent</a>, which listed the entities each change touched.</li>
@@ -130,24 +132,24 @@
 <h3>Trails and reviews: what Entire found in our own work</h3>
 <table>
 <tr><th>Review</th><th>What it found</th><th>What we did</th></tr>
-<tr><td>PR 1 (<code>entire review general</code>)</td><td>5 findings, one a real bug: the evidence builder printed the latest commit as "First commit"</td><td>All five fixed. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1010-IST-review-general-pr1.txt">review</a></td></tr>
-<tr><td>PR 2</td><td>8 issues, including a missing fallback that would have turned a gateway outage into failed stories</td><td>All fixed. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1415-IST-review-general-pr2.txt">review</a></td></tr>
-<tr><td>PR 4</td><td>10 points, 7 real defects in our own failure fixes: a refusal that could become "try again", a pass hiding an unverified safety check, a failover that re-paid its retries, and more</td><td>Fixed with tests. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261012-IST-review-general-pr4.txt">review</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
-<tr><td>Trail 5 runner</td><td>High: a stray chaos-injection setting could reach production</td><td>It now does nothing unless a drill names itself (commit <code>c692d89</code>)</td></tr>
+<tr><td>PR 1 (<code>entire review general</code>)</td><td>5 findings, one a real bug: the evidence builder printed the latest commit as "First commit"</td><td>All five fixed. On Entire: <a href="https://entire.io/gh/hatif03/storybound/trails/2">trail 2</a> (<a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1010-IST-review-general-pr1.txt">review text</a>)</td></tr>
+<tr><td>PR 2</td><td>8 issues, including a missing fallback that would have turned a gateway outage into failed stories</td><td>All fixed. On Entire: <a href="https://entire.io/gh/hatif03/storybound/trails/3">trail 3</a> (<a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1415-IST-review-general-pr2.txt">review text</a>)</td></tr>
+<tr><td>PR 4</td><td>10 points, 7 real defects in our own failure fixes: a refusal that could become "try again", a pass hiding an unverified safety check, a failover that re-paid its retries, and more</td><td>Fixed with tests. On Entire: <a href="https://entire.io/gh/hatif03/storybound/trails/5">trail 5</a> (<a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261012-IST-review-general-pr4.txt">review text</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a>)</td></tr>
+<tr><td>Trail 5 runner</td><td>High: a stray chaos-injection setting could reach production</td><td>It now does nothing unless a drill names itself (<a href="https://entire.io/gh/hatif03/storybound/commit/5f9253b5de587701524983d4d91776a2d1798b05">commit 5f9253b</a>)</td></tr>
 <tr><td>Trail 5 runner</td><td>High: autoplay against our "no autoplay" rule</td><td>Dismissed by design with a written reason, and the rule now says exactly what may start by itself (a page's own narration, never the next page): <a href="https://github.com/hatif03/storybound/blob/main/docs/WEB.md">WEB.md</a></td></tr>
 </table>
 <p>Trails 2 to 5 and their gates: <a href="https://entire.io/gh/hatif03/storybound/trails/2">2</a>, <a href="https://entire.io/gh/hatif03/storybound/trails/4">4</a>, <a href="https://entire.io/gh/hatif03/storybound/trails/5">5</a>; gate output files in <a href="https://github.com/hatif03/storybound/tree/main/evidence/entire">evidence/entire</a>. The solo "approvals" gate stays unmet on every trail, since the trail rule wants a second reviewer; the runners and findings gates did their work.</p>
 <h3>Open-source builds on Entire's CLI, Graph or External Agents</h3>
-<p>We did not contribute code to Entire's own open-source projects. What we built on top of them: six Trail runners tailored to this project's hard rules (no secrets, no child data, evidence discipline, the oath as the product, no timers or streaks for children) in <a href="https://github.com/hatif03/storybound/tree/main/.entire/runners">.entire/runners</a>; Claude Code run as an Entire-supported agent with commit linking set to <code>always</code>; custom redactions for key shapes in <code>.entire/settings.json</code> after a key reached a checkpoint; and <code>scripts/build_evidence.py</code> and <code>scripts/lint_evidence.py</code>, which build the evidence index from checkpoints, traces and the run ledger. We also documented the tool gaps we hit (docs/TOOLS.md: Brain refuses a dirty tree; a pushed checkpoint cannot be removed).</p>
+<p>We did not contribute code to Entire's own open-source projects. What we built on top of them: six Trail runners tailored to this project's hard rules (no secrets, no child data, evidence discipline, the oath as the product, no timers or streaks for children) (shown on the <a href="https://entire.io/gh/hatif03/storybound/runners">runners page</a>; the files are <a href="https://github.com/hatif03/storybound/tree/main/.entire/runners">.entire/runners</a>); Claude Code run as an Entire-supported agent with commit linking set to <code>always</code>; custom redactions for key shapes in <code>.entire/settings.json</code> after a key reached a checkpoint; and <code>scripts/build_evidence.py</code> and <code>scripts/lint_evidence.py</code>, which build the evidence index from checkpoints, traces and the run ledger. We also documented the tool gaps we hit (docs/TOOLS.md: Brain refuses a dirty tree; a pushed checkpoint cannot be removed).</p>
 <h3>Screenshots (Entire)</h3>
 <div class="grid shots">
-  <figure><img loading="lazy" src="img/e1.webp" alt="trail 5"><figcaption><b>E1.</b> Trail 5, merged: confidence, risk, drift and security scores from the runners, and the gates (approvals, findings, checks, up to date).</figcaption></figure>
-  <figure><img loading="lazy" src="img/e2.webp" alt="trail 4"><figcaption><b>E2.</b> Trail 4 (workbooks, ages and languages), merged, with its gates passing apart from the solo approvals rule.</figcaption></figure>
-  <figure><img loading="lazy" src="img/e3.webp" alt="security runner"><figcaption><b>E3.</b> The Trail Security runner: the prompt we wrote for it, with the project's own rules.</figcaption></figure>
-  <figure><img loading="lazy" src="img/e4.webp" alt="review runner"><figcaption><b>E4.</b> The Trail Review runner, which received our previous findings as data so it does not repeat them.</figcaption></figure>
-  <figure><img loading="lazy" src="img/e5.webp" alt="session"><figcaption><b>E5.</b> A session page: the hardening records session, with its prompts, responses and checkpoints.</figcaption></figure>
-  <figure><img loading="lazy" src="img/e6.webp" alt="analytics"><figcaption><b>E6.</b> Entire analytics: 97 checkpoints, 4 trails merged, token use over time.</figcaption></figure>
-  <figure><img loading="lazy" src="img/e7.webp" alt="token usage"><figcaption><b>E7.</b> Token use by contributor and peak hours (a solo builder with a coding agent).</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e1.webp" alt="trail 5"><figcaption><b>E1.</b> Trail 5, merged: confidence, risk, drift and security scores from the runners, and the gates (approvals, findings, checks, up to date).</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e2.webp" alt="trail 4"><figcaption><b>E2.</b> Trail 4 (workbooks, ages and languages), merged, with its gates passing apart from the solo approvals rule.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e3.webp" alt="security runner"><figcaption><b>E3.</b> The Trail Security runner: the prompt we wrote for it, with the project's own rules.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e4.webp" alt="review runner"><figcaption><b>E4.</b> The Trail Review runner, which received our previous findings as data so it does not repeat them.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e5.webp" alt="session"><figcaption><b>E5.</b> A session page: the hardening records session, with its prompts, responses and checkpoints.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e6.webp" alt="analytics"><figcaption><b>E6.</b> Entire analytics: 97 checkpoints, 4 trails merged, token use over time.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/e7.webp" alt="token usage"><figcaption><b>E7.</b> Token use by contributor and peak hours (a solo builder with a coding agent).</figcaption></figure>
 </div>
 
 <h2 id="cfo">cfo.ai: how did it shape your business plan?</h2>
@@ -162,7 +164,7 @@
   <li>The public model: <a href="https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg">app.cfo.ai/s/vGE_ZEwfQtpoxPrg</a> (it does not show the later Launch plan and Video AI pages; the readback of those is in <a href="https://github.com/hatif03/storybound/blob/main/evidence/cfo/20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json">evidence/cfo</a>).</li>
   <li>The business plan in plain words: <a href="https://github.com/hatif03/storybound/blob/main/docs/BUSINESS.md">BUSINESS.md</a>. How the model changed the product: <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-010.md">HR-010</a> (the agent chooses which pages to paint; first picture at 70 s instead of 278 s).</li>
   <li>Four scenarios for video AI, a launch plan with operating and one-time costs, and the workbooks saved offline: <a href="https://github.com/hatif03/storybound/tree/main/evidence/cfo/workbook">workbook</a>.</li>
-  <li>The cost input in the model is the number neatlogs measured, not a guess: <a href="img/cv1.webp">Version history (unit economics)</a> and <a href="img/cv2.webp">Version history (policy)</a> show the edit "Cost input = Text and verification B1 gated".</li>
+  <li>The cost input in the model is the number neatlogs measured, not a guess: <a href="/judges/img/cv1.webp">Version history (unit economics)</a> and <a href="/judges/img/cv2.webp">Version history (policy)</a> show the edit "Cost input = Text and verification B1 gated".</li>
   <li>Hackathon credits: the gateway budget is evaluation money, not product spend, because a story costs about two cents of text: <a href="https://github.com/hatif03/storybound/blob/main/docs/CREDITS.md">CREDITS.md</a>.</li>
 </ul>
 <h3>Decisions the model made</h3>
@@ -175,13 +177,13 @@
 </table>
 <h3>Screenshots (cfo.ai)</h3>
 <div class="grid shots">
-  <figure><img loading="lazy" src="img/c1.webp" alt="unit economics"><figcaption><b>C1.</b> Unit economics by plan: gross margin by plan at month 6, Main against Growth and Downside.</figcaption></figure>
-  <figure><img loading="lazy" src="img/c2.webp" alt="policy table"><figcaption><b>C2.</b> Verification and illustration policy: cost per story and gross margin for all pictures, half, and none.</figcaption></figure>
-  <figure><img loading="lazy" src="img/c3.webp" alt="margin chart"><figcaption><b>C3.</b> The interactive chart: margin against pictures per story, with the 60% bar; the most pictures that clear it is 5.</figcaption></figure>
-  <figure><img loading="lazy" src="img/c4.webp" alt="evidence and method"><figcaption><b>C4.</b> Evidence and method: what is measured (token counts) and what is assumed.</figcaption></figure>
-  <figure><img loading="lazy" src="img/c5.webp" alt="launch plan"><figcaption><b>C5.</b> Launch plan: the real operating and one-time costs of a product, all labelled as assumptions.</figcaption></figure>
-  <figure><img loading="lazy" src="img/cv1.webp" alt="version history"><figcaption><b>C6.</b> Version history: the cost input edited to the neatlogs measurement.</figcaption></figure>
-  <figure><img loading="lazy" src="img/cv2.webp" alt="version history policy"><figcaption><b>C7.</b> Version history on the policy page: the scenarios and formulas built through the cfo.ai agent.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/c1.webp" alt="unit economics"><figcaption><b>C1.</b> Unit economics by plan: gross margin by plan at month 6, Main against Growth and Downside.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/c2.webp" alt="policy table"><figcaption><b>C2.</b> Verification and illustration policy: cost per story and gross margin for all pictures, half, and none.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/c3.webp" alt="margin chart"><figcaption><b>C3.</b> The interactive chart: margin against pictures per story, with the 60% bar; the most pictures that clear it is 5.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/c4.webp" alt="evidence and method"><figcaption><b>C4.</b> Evidence and method: what is measured (token counts) and what is assumed.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/c5.webp" alt="launch plan"><figcaption><b>C5.</b> Launch plan: the real operating and one-time costs of a product, all labelled as assumptions.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/cv1.webp" alt="version history"><figcaption><b>C6.</b> Version history: the cost input edited to the neatlogs measurement.</figcaption></figure>
+  <figure><img loading="lazy" src="/judges/img/cv2.webp" alt="version history policy"><figcaption><b>C7.</b> Version history on the policy page: the scenarios and formulas built through the cfo.ai agent.</figcaption></figure>
 </div>
 
 <h2 id="improved">Recommendations and input from the tools, and what we changed</h2>
@@ -189,14 +191,14 @@
 <tr><th>Tool</th><th>Its recommendation or input</th><th>What we did</th><th>Link</th></tr>
 <tr><td>neatlogs</td><td>Triage card: a Gemini call stalling 87 s</td><td>Hedged retry (send the call again after 45 s)</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-011.md">HR-011</a></td></tr>
 <tr><td>neatlogs</td><td>Triage card: critical stops on "hurts"</td><td>Mild words ask for a rewrite; the stop is kept for the severe ones</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-004.md">HR-004</a></td></tr>
-<tr><td>neatlogs</td><td>Suggested detections ("Critical Violation Monitor", "High Latency LLM Monitor")</td><td>Accepted both; they now fire on our traces (screenshots N6, N7)</td><td><a href="img/n7.webp">N7</a></td></tr>
+<tr><td>neatlogs</td><td>Suggested detections ("Critical Violation Monitor", "High Latency LLM Monitor")</td><td>Accepted both; they now fire on our traces (screenshots N6, N7)</td><td><a href="/judges/img/n7.webp">N7</a></td></tr>
 <tr><td>neatlogs</td><td>Incident cards of 12 Oct</td><td>Found the fragmented traces; fixed the span context; the other two refuted or explained</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-016.md">HR-016</a></td></tr>
 <tr><td>neatlogs</td><td>Alerts and email delivery</td><td>Thresholds retuned (oath violation 40 an hour, slow story 450 s, expensive story $0.10), seven rules with email</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/20261011-alert-retune-results.json">retune</a></td></tr>
 <tr><td>Entire</td><td>Review of PR 1, 2 and 4, trail runners on 4 and 5</td><td>Fixed 5, 8 and 7 defects, a high-severity chaos setting, and wrote the narration rule precisely</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
 <tr><td>Entire</td><td><code>graph impact</code> on the safety words</td><td>Changed the tiers only where the graph showed the callers were covered</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt">impact</a></td></tr>
 <tr><td>cfo.ai</td><td>Margin against pictures per story</td><td>The agent chooses which pages to paint within a budget</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-010.md">HR-010</a></td></tr>
 <tr><td>cfo.ai</td><td>Video AI scenarios</td><td>Video left out; motion is deterministic and checked</td><td><a href="https://github.com/hatif03/storybound/blob/main/docs/BUSINESS.md">BUSINESS.md</a></td></tr>
-<tr><td>cfo.ai</td><td>Measured cost replaces the estimate</td><td>Version history shows the edit</td><td><a href="img/cv1.webp">C6</a></td></tr>
+<tr><td>cfo.ai</td><td>Measured cost replaces the estimate</td><td>Version history shows the edit</td><td><a href="/judges/img/cv1.webp">C6</a></td></tr>
 </table>
 
 <h2 id="broke">What broke, said plainly</h2>
@@ -217,7 +219,7 @@ uv sync
 python scripts/compare_experiments.py               # the experiment table (HR-014)
 wc -l evidence/ledger.jsonl                         # every named run, with trace id and per-promise verdicts
 cd web &amp;&amp; npm install &amp;&amp; npm run test        # 29 web tests</pre>
-<p>The numbers behind this page: <a href="https://github.com/hatif03/storybound/blob/main/EVIDENCE.md">EVIDENCE.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/STORY.md">STORY.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/TOOLS.md">TOOLS.md</a>. Limits are said in each record: ten stories per configuration and five per drill are small samples; the judge is an AI, not a human; the live demo is http only, tracing is off there, and real stories are capped per day.</p>
+<p>The numbers behind this page: <a href="https://github.com/hatif03/storybound/blob/main/EVIDENCE.md">EVIDENCE.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/STORY.md">STORY.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/TOOLS.md">TOOLS.md</a>. Limits are said in each record: ten stories per configuration and five per drill are small samples; the judge is an AI, not a human; the live demo is https at the front door (Vercel) but http between Vercel and our small AWS server, tracing is off, real stories are capped per day, and nothing a visitor makes stays more than 24 hours.</p>
 <footer>Storybound, neatHack 2026. Built by one person with Claude Code. <a href="https://github.com/hatif03/storybound">Source</a></footer>
 </main>
 </body>

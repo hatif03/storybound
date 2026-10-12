@@ -1,5 +1,5 @@
 {
-  "live": "ec2-34-237-142-143.compute-1.amazonaws.com",
-  "demo": "ec2-34-237-142-143.compute-1.amazonaws.com/?mock=1",
+  "live": "storybound-xi.vercel.app",
+  "demo": "storybound-xi.vercel.app/?mock=1",
   "code": "github.com/hatif03/storybound"
 }

@@ -12,7 +12,7 @@ Refreshed Mon 12 Oct 2026, afternoon IST. Read `CLAUDE.md` (rules), then [docs/S
 ## Do these before anything else (only the builder can)
 - **Rotate the neatlogs key and the hackathon gateway key.** Both were pasted into the session. History was rewritten on 11 Oct to remove them (and six images of the sister's drawings) from every ref, including Entire checkpoint refs: see `evidence/history-rewrite/NOTE.md`. Commit shas changed; `sha-map.txt` maps old to new. GitHub may still hold unreachable objects, so rotate anyway.
 - **neatlogs human evaluation:** open Evals, Assigned to me, "Do you agree with this verdict?" (17 single verdicts) and answer each (a minute each). The first evaluation (whole traces, empty input and output) was closed and its answers are not used. The CLI sign-in lasts only about 15 minutes, so anything that needs it must be run straight after approval.
-- **Demo video:** the script is [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md) (about 2:45 spoken, three tools, the incidents found and fixed).
+- **Demo video:** the script is [docs/DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md) (about 2:45 spoken, three tools, the incidents found and fixed); [docs/DEMO-RECORDING-GUIDE.md](docs/DEMO-RECORDING-GUIDE.md) says what to record in the app and each dashboard.
 - **Entire link:** test `https://entire.io/gh/hatif03/storybound/commit/<FULL_SHA>` from a private window.
 
 ## What is running / how to start things

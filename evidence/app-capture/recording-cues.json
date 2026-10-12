@@ -1,0 +1,2176 @@
+{
+ "recStart": 1791799602698,
+ "end": 1791800330323,
+ "cues": [
+  {
+   "type": "vo",
+   "key": "intro",
+   "t": 1791799606554,
+   "seconds": 21.43
+  },
+  {
+   "type": "vo",
+   "key": "draw",
+   "t": 1791799631441,
+   "seconds": 8.06
+  },
+  {
+   "type": "vo",
+   "key": "name",
+   "t": 1791799654618,
+   "seconds": 7.1
+  },
+  {
+   "type": "vo",
+   "key": "lesson",
+   "t": 1791799663603,
+   "seconds": 12.86
+  },
+  {
+   "type": "vo",
+   "key": "making",
+   "t": 1791799680289,
+   "seconds": 23.83
+  },
+  {
+   "type": "vo",
+   "key": "waiting",
+   "t": 1791799704923,
+   "seconds": 19.68
+  },
+  {
+   "type": "wait",
+   "from": 1791799725411,
+   "to": 1791799802288
+  },
+  {
+   "type": "vo",
+   "key": "ready",
+   "t": 1791799804795,
+   "seconds": 7.94
+  },
+  {
+   "type": "page",
+   "page": 1,
+   "t": 1791799813589,
+   "picture": "ready"
+  },
+  {
+   "type": "vo",
+   "key": "choice_wrong",
+   "t": 1791799842362,
+   "seconds": 9.19
+  },
+  {
+   "type": "page",
+   "page": 2,
+   "t": 1791799857734,
+   "picture": "ready"
+  },
+  {
+   "type": "vo",
+   "key": "pages",
+   "t": 1791799891997,
+   "seconds": 13.8
+  },
+  {
+   "type": "wait",
+   "from": 1791799906923,
+   "to": 1791800012994,
+   "page": 3
+  },
+  {
+   "type": "page",
+   "page": 3,
+   "t": 1791800012994,
+   "picture": "ready"
+  },
+  {
+   "type": "page",
+   "page": 4,
+   "t": 1791800038442,
+   "picture": "ready"
+  },
+  {
+   "type": "page",
+   "page": 5,
+   "t": 1791800074789,
+   "picture": "ready"
+  },
+  {
+   "type": "wait",
+   "from": 1791800102290,
+   "to": 1791800106636,
+   "page": 6
+  },
+  {
+   "type": "page",
+   "page": 6,
+   "t": 1791800106636,
+   "picture": "ready"
+  },
+  {
+   "type": "page",
+   "page": 7,
+   "t": 1791800137783,
+   "picture": "ready"
+  },
+  {
+   "type": "page",
+   "page": 8,
+   "t": 1791800167834,
+   "picture": "ready"
+  },
+  {
+   "type": "vo",
+   "key": "quiz",
+   "t": 1791800198934,
+   "seconds": 13.44
+  },
+  {
+   "type": "vo",
+   "key": "order",
+   "t": 1791800273565,
+   "seconds": 5.16
+  },
+  {
+   "type": "vo",
+   "key": "end",
+   "t": 1791800287631,
+   "seconds": 8.76
+  },
+  {
+   "type": "vo",
+   "key": "receipt",
+   "t": 1791800301401,
+   "seconds": 15.36
+  },
+  {
+   "type": "vo",
+   "key": "forget",
+   "t": 1791800320776,
+   "seconds": 6.72
+  }
+ ],
+ "audio": [
+  {
+   "e": "play",
+   "id": 1,
+   "t": 1791799628811,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799628812,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/silent-100ms.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799628812,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/draw.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "rejected",
+   "id": 2,
+   "t": 1791799628812
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799628840
+  },
+  {
+   "e": "rejected",
+   "id": 2,
+   "t": 1791799628840
+  },
+  {
+   "e": "pause",
+   "id": 1,
+   "t": 1791799630146
+  },
+  {
+   "e": "ended",
+   "id": 1,
+   "t": 1791799630146
+  },
+  {
+   "e": "play",
+   "id": 3,
+   "t": 1791799653769,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 3,
+   "t": 1791799654319
+  },
+  {
+   "e": "ended",
+   "id": 3,
+   "t": 1791799654319
+  },
+  {
+   "e": "play",
+   "id": 4,
+   "t": 1791799662529,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799662530,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/lesson.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799662551
+  },
+  {
+   "e": "rejected",
+   "id": 2,
+   "t": 1791799662551
+  },
+  {
+   "e": "pause",
+   "id": 4,
+   "t": 1791799663273
+  },
+  {
+   "e": "ended",
+   "id": 4,
+   "t": 1791799663273
+  },
+  {
+   "e": "play",
+   "id": 5,
+   "t": 1791799667618,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/select.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799667618,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/lesson-sharing.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 5,
+   "t": 1791799667813
+  },
+  {
+   "e": "ended",
+   "id": 5,
+   "t": 1791799667813
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799668936
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799668936
+  },
+  {
+   "e": "play",
+   "id": 6,
+   "t": 1791799678775,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799678776,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/yes.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799678828
+  },
+  {
+   "e": "rejected",
+   "id": 2,
+   "t": 1791799678828
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799678880,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/making-look.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 6,
+   "t": 1791799679023
+  },
+  {
+   "e": "ended",
+   "id": 6,
+   "t": 1791799679023
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799680804
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799680804
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799696428,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/making-promise.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799698395
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799698395
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799712275,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-1.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799714167
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799714167
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799724630,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-2.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799726459
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799726459
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799740132,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-3.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799742259
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799742259
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799755961,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-4.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799757896
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799757896
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799759374,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-5.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799761376
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799761376
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799765573,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-6.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799767536
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799767536
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799778240,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-7.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799780176
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799780176
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799781202,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/checking-page-8.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 7,
+   "t": 1791799781212,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799783176
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799783176
+  },
+  {
+   "e": "pause",
+   "id": 7,
+   "t": 1791799783195
+  },
+  {
+   "e": "ended",
+   "id": 7,
+   "t": 1791799783195
+  },
+  {
+   "e": "play",
+   "id": 8,
+   "t": 1791799802275,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799802276,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/making-paint.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 9,
+   "t": 1791799802276,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799804459
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799804459
+  },
+  {
+   "e": "pause",
+   "id": 8,
+   "t": 1791799804479
+  },
+  {
+   "e": "ended",
+   "id": 8,
+   "t": 1791799804479
+  },
+  {
+   "e": "pause",
+   "id": 9,
+   "t": 1791799804899
+  },
+  {
+   "e": "ended",
+   "id": 9,
+   "t": 1791799804899
+  },
+  {
+   "e": "play",
+   "id": 10,
+   "t": 1791799807107,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 10,
+   "t": 1791799808979
+  },
+  {
+   "e": "ended",
+   "id": 10,
+   "t": 1791799808979
+  },
+  {
+   "e": "play",
+   "id": 11,
+   "t": 1791799813556,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799813569,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/1/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 11,
+   "t": 1791799813820
+  },
+  {
+   "e": "ended",
+   "id": 11,
+   "t": 1791799813820
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799835959
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799835959
+  },
+  {
+   "e": "play",
+   "id": 12,
+   "t": 1791799841128,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799841128,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-think.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 12,
+   "t": 1791799841689
+  },
+  {
+   "e": "ended",
+   "id": 12,
+   "t": 1791799841689
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799843509
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799843509
+  },
+  {
+   "e": "play",
+   "id": 13,
+   "t": 1791799852862,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 14,
+   "t": 1791799852862,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799852862,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799854749
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799854749
+  },
+  {
+   "e": "pause",
+   "id": 13,
+   "t": 1791799854869
+  },
+  {
+   "e": "ended",
+   "id": 13,
+   "t": 1791799854870
+  },
+  {
+   "e": "pause",
+   "id": 14,
+   "t": 1791799855269
+  },
+  {
+   "e": "ended",
+   "id": 14,
+   "t": 1791799855270
+  },
+  {
+   "e": "play",
+   "id": 15,
+   "t": 1791799857408,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 16,
+   "t": 1791799857409,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799857414,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/2/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 15,
+   "t": 1791799857789
+  },
+  {
+   "e": "ended",
+   "id": 15,
+   "t": 1791799857789
+  },
+  {
+   "e": "pause",
+   "id": 16,
+   "t": 1791799858829
+  },
+  {
+   "e": "ended",
+   "id": 16,
+   "t": 1791799858829
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799878049
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799878049
+  },
+  {
+   "e": "play",
+   "id": 17,
+   "t": 1791799883282,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799883282,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-think.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 17,
+   "t": 1791799883829
+  },
+  {
+   "e": "ended",
+   "id": 17,
+   "t": 1791799883829
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799885649
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799885649
+  },
+  {
+   "e": "play",
+   "id": 18,
+   "t": 1791799887471,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 19,
+   "t": 1791799887471,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799887472,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799889249
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799889249
+  },
+  {
+   "e": "pause",
+   "id": 18,
+   "t": 1791799889369
+  },
+  {
+   "e": "ended",
+   "id": 18,
+   "t": 1791799889369
+  },
+  {
+   "e": "pause",
+   "id": 19,
+   "t": 1791799889769
+  },
+  {
+   "e": "ended",
+   "id": 19,
+   "t": 1791799889769
+  },
+  {
+   "e": "play",
+   "id": 20,
+   "t": 1791799906607,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 21,
+   "t": 1791799906607,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791799906612,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/3/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 20,
+   "t": 1791799907255
+  },
+  {
+   "e": "ended",
+   "id": 20,
+   "t": 1791799907255
+  },
+  {
+   "e": "pause",
+   "id": 21,
+   "t": 1791799908315
+  },
+  {
+   "e": "ended",
+   "id": 21,
+   "t": 1791799908315
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791799922475
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791799922475
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800012990,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/3/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800028726
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800028726
+  },
+  {
+   "e": "play",
+   "id": 22,
+   "t": 1791800033887,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 23,
+   "t": 1791800033887,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800033887,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800035686
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800035686
+  },
+  {
+   "e": "pause",
+   "id": 22,
+   "t": 1791800035806
+  },
+  {
+   "e": "ended",
+   "id": 22,
+   "t": 1791800035806
+  },
+  {
+   "e": "pause",
+   "id": 23,
+   "t": 1791800036206
+  },
+  {
+   "e": "ended",
+   "id": 23,
+   "t": 1791800036206
+  },
+  {
+   "e": "play",
+   "id": 24,
+   "t": 1791800038122,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 25,
+   "t": 1791800038122,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800038126,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/4/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 24,
+   "t": 1791800038386
+  },
+  {
+   "e": "ended",
+   "id": 24,
+   "t": 1791800038386
+  },
+  {
+   "e": "pause",
+   "id": 25,
+   "t": 1791800039426
+  },
+  {
+   "e": "ended",
+   "id": 25,
+   "t": 1791800039426
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800060826
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800060826
+  },
+  {
+   "e": "play",
+   "id": 26,
+   "t": 1791800065985,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800065985,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-think.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 26,
+   "t": 1791800066556
+  },
+  {
+   "e": "ended",
+   "id": 26,
+   "t": 1791800066556
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800068376
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800068376
+  },
+  {
+   "e": "play",
+   "id": 27,
+   "t": 1791800069912,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 28,
+   "t": 1791800069912,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800069912,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800071706
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800071706
+  },
+  {
+   "e": "pause",
+   "id": 27,
+   "t": 1791800071826
+  },
+  {
+   "e": "ended",
+   "id": 27,
+   "t": 1791800071826
+  },
+  {
+   "e": "pause",
+   "id": 28,
+   "t": 1791800072226
+  },
+  {
+   "e": "ended",
+   "id": 28,
+   "t": 1791800072226
+  },
+  {
+   "e": "play",
+   "id": 29,
+   "t": 1791800074461,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 30,
+   "t": 1791800074462,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800074465,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/5/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 29,
+   "t": 1791800074726
+  },
+  {
+   "e": "ended",
+   "id": 29,
+   "t": 1791800074726
+  },
+  {
+   "e": "pause",
+   "id": 30,
+   "t": 1791800075766
+  },
+  {
+   "e": "ended",
+   "id": 30,
+   "t": 1791800075766
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800092286
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800092286
+  },
+  {
+   "e": "play",
+   "id": 31,
+   "t": 1791800097739,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 32,
+   "t": 1791800097740,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800097740,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800099526
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800099526
+  },
+  {
+   "e": "pause",
+   "id": 31,
+   "t": 1791800099646
+  },
+  {
+   "e": "ended",
+   "id": 31,
+   "t": 1791800099646
+  },
+  {
+   "e": "pause",
+   "id": 32,
+   "t": 1791800100046
+  },
+  {
+   "e": "ended",
+   "id": 32,
+   "t": 1791800100046
+  },
+  {
+   "e": "play",
+   "id": 33,
+   "t": 1791800101975,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 34,
+   "t": 1791800101975,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800101978,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/6/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 33,
+   "t": 1791800102237
+  },
+  {
+   "e": "ended",
+   "id": 33,
+   "t": 1791800102237
+  },
+  {
+   "e": "pause",
+   "id": 34,
+   "t": 1791800103276
+  },
+  {
+   "e": "ended",
+   "id": 34,
+   "t": 1791800103276
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800106622,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/6/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800123956
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800123956
+  },
+  {
+   "e": "play",
+   "id": 35,
+   "t": 1791800129036,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800129036,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-think.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 35,
+   "t": 1791800129596
+  },
+  {
+   "e": "ended",
+   "id": 35,
+   "t": 1791800129596
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800131416
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800131416
+  },
+  {
+   "e": "play",
+   "id": 36,
+   "t": 1791800132926,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 37,
+   "t": 1791800132926,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800132926,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800134746
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800134746
+  },
+  {
+   "e": "pause",
+   "id": 36,
+   "t": 1791800134866
+  },
+  {
+   "e": "ended",
+   "id": 36,
+   "t": 1791800134866
+  },
+  {
+   "e": "pause",
+   "id": 37,
+   "t": 1791800135266
+  },
+  {
+   "e": "ended",
+   "id": 37,
+   "t": 1791800135266
+  },
+  {
+   "e": "play",
+   "id": 38,
+   "t": 1791800137472,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 39,
+   "t": 1791800137473,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800137475,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/7/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 38,
+   "t": 1791800137726
+  },
+  {
+   "e": "ended",
+   "id": 38,
+   "t": 1791800137726
+  },
+  {
+   "e": "pause",
+   "id": 39,
+   "t": 1791800138766
+  },
+  {
+   "e": "ended",
+   "id": 39,
+   "t": 1791800138766
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800157886
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800157886
+  },
+  {
+   "e": "play",
+   "id": 40,
+   "t": 1791800163293,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 41,
+   "t": 1791800163293,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800163293,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800165076
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800165076
+  },
+  {
+   "e": "pause",
+   "id": 40,
+   "t": 1791800165196
+  },
+  {
+   "e": "ended",
+   "id": 40,
+   "t": 1791800165196
+  },
+  {
+   "e": "pause",
+   "id": 41,
+   "t": 1791800165596
+  },
+  {
+   "e": "ended",
+   "id": 41,
+   "t": 1791800165596
+  },
+  {
+   "e": "play",
+   "id": 42,
+   "t": 1791800167516,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 43,
+   "t": 1791800167516,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800167518,
+   "src": "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/8/audio",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 42,
+   "t": 1791800167776
+  },
+  {
+   "e": "ended",
+   "id": 42,
+   "t": 1791800167776
+  },
+  {
+   "e": "pause",
+   "id": 43,
+   "t": 1791800168817
+  },
+  {
+   "e": "ended",
+   "id": 43,
+   "t": 1791800168817
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800188877
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800188877
+  },
+  {
+   "e": "play",
+   "id": 44,
+   "t": 1791800194384,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 45,
+   "t": 1791800194384,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800194384,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800196166
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800196166
+  },
+  {
+   "e": "pause",
+   "id": 44,
+   "t": 1791800196286
+  },
+  {
+   "e": "ended",
+   "id": 44,
+   "t": 1791800196286
+  },
+  {
+   "e": "pause",
+   "id": 45,
+   "t": 1791800196686
+  },
+  {
+   "e": "ended",
+   "id": 45,
+   "t": 1791800196686
+  },
+  {
+   "e": "play",
+   "id": 46,
+   "t": 1791800198617,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 46,
+   "t": 1791800198846
+  },
+  {
+   "e": "ended",
+   "id": 46,
+   "t": 1791800198846
+  },
+  {
+   "e": "play",
+   "id": 47,
+   "t": 1791800216190,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 47,
+   "t": 1791800216936
+  },
+  {
+   "e": "ended",
+   "id": 47,
+   "t": 1791800216936
+  },
+  {
+   "e": "play",
+   "id": 48,
+   "t": 1791800221705,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 49,
+   "t": 1791800221705,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 48,
+   "t": 1791800223597
+  },
+  {
+   "e": "ended",
+   "id": 48,
+   "t": 1791800223597
+  },
+  {
+   "e": "pause",
+   "id": 49,
+   "t": 1791800223997
+  },
+  {
+   "e": "ended",
+   "id": 49,
+   "t": 1791800223997
+  },
+  {
+   "e": "play",
+   "id": 50,
+   "t": 1791800224236,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 50,
+   "t": 1791800224477
+  },
+  {
+   "e": "ended",
+   "id": 50,
+   "t": 1791800224477
+  },
+  {
+   "e": "play",
+   "id": 51,
+   "t": 1791800228440,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 51,
+   "t": 1791800228968
+  },
+  {
+   "e": "ended",
+   "id": 51,
+   "t": 1791800228968
+  },
+  {
+   "e": "play",
+   "id": 52,
+   "t": 1791800233947,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 52,
+   "t": 1791800234480
+  },
+  {
+   "e": "ended",
+   "id": 52,
+   "t": 1791800234480
+  },
+  {
+   "e": "play",
+   "id": 53,
+   "t": 1791800239457,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 54,
+   "t": 1791800239457,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 53,
+   "t": 1791800241355
+  },
+  {
+   "e": "ended",
+   "id": 53,
+   "t": 1791800241355
+  },
+  {
+   "e": "pause",
+   "id": 54,
+   "t": 1791800241755
+  },
+  {
+   "e": "ended",
+   "id": 54,
+   "t": 1791800241755
+  },
+  {
+   "e": "play",
+   "id": 55,
+   "t": 1791800241984,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 55,
+   "t": 1791800242215
+  },
+  {
+   "e": "ended",
+   "id": 55,
+   "t": 1791800242215
+  },
+  {
+   "e": "play",
+   "id": 56,
+   "t": 1791800246190,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 57,
+   "t": 1791800246190,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 56,
+   "t": 1791800248170
+  },
+  {
+   "e": "ended",
+   "id": 56,
+   "t": 1791800248170
+  },
+  {
+   "e": "pause",
+   "id": 57,
+   "t": 1791800248570
+  },
+  {
+   "e": "ended",
+   "id": 57,
+   "t": 1791800248570
+  },
+  {
+   "e": "play",
+   "id": 58,
+   "t": 1791800248707,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 58,
+   "t": 1791800248950
+  },
+  {
+   "e": "ended",
+   "id": 58,
+   "t": 1791800248950
+  },
+  {
+   "e": "play",
+   "id": 59,
+   "t": 1791800252923,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 59,
+   "t": 1791800253459
+  },
+  {
+   "e": "ended",
+   "id": 59,
+   "t": 1791800253459
+  },
+  {
+   "e": "play",
+   "id": 60,
+   "t": 1791800258477,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 60,
+   "t": 1791800259103
+  },
+  {
+   "e": "ended",
+   "id": 60,
+   "t": 1791800259103
+  },
+  {
+   "e": "play",
+   "id": 61,
+   "t": 1791800263994,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 62,
+   "t": 1791800263995,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 61,
+   "t": 1791800265976
+  },
+  {
+   "e": "ended",
+   "id": 61,
+   "t": 1791800265976
+  },
+  {
+   "e": "pause",
+   "id": 62,
+   "t": 1791800266376
+  },
+  {
+   "e": "ended",
+   "id": 62,
+   "t": 1791800266376
+  },
+  {
+   "e": "play",
+   "id": 63,
+   "t": 1791800271529,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 63,
+   "t": 1791800271752
+  },
+  {
+   "e": "ended",
+   "id": 63,
+   "t": 1791800271752
+  },
+  {
+   "e": "play",
+   "id": 64,
+   "t": 1791800276557,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 64,
+   "t": 1791800277081
+  },
+  {
+   "e": "ended",
+   "id": 64,
+   "t": 1791800277081
+  },
+  {
+   "e": "play",
+   "id": 65,
+   "t": 1791800278256,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 65,
+   "t": 1791800278801
+  },
+  {
+   "e": "ended",
+   "id": 65,
+   "t": 1791800278801
+  },
+  {
+   "e": "play",
+   "id": 66,
+   "t": 1791800279956,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 67,
+   "t": 1791800281657,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 66,
+   "t": 1791800281841
+  },
+  {
+   "e": "ended",
+   "id": 66,
+   "t": 1791800281841
+  },
+  {
+   "e": "play",
+   "id": 68,
+   "t": 1791800283361,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 69,
+   "t": 1791800283361,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 67,
+   "t": 1791800283561
+  },
+  {
+   "e": "ended",
+   "id": 67,
+   "t": 1791800283561
+  },
+  {
+   "e": "pause",
+   "id": 68,
+   "t": 1791800285281
+  },
+  {
+   "e": "ended",
+   "id": 68,
+   "t": 1791800285281
+  },
+  {
+   "e": "pause",
+   "id": 69,
+   "t": 1791800285661
+  },
+  {
+   "e": "ended",
+   "id": 69,
+   "t": 1791800285661
+  },
+  {
+   "e": "play",
+   "id": 70,
+   "t": 1791800286082,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 71,
+   "t": 1791800286090,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3",
+   "vol": 0.55,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800286090,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/end-done.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "pause",
+   "id": 70,
+   "t": 1791800286391
+  },
+  {
+   "e": "ended",
+   "id": 70,
+   "t": 1791800286391
+  },
+  {
+   "e": "pause",
+   "id": 71,
+   "t": 1791800288431
+  },
+  {
+   "e": "ended",
+   "id": 71,
+   "t": 1791800288431
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800288671
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800288671
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800297221,
+   "src": "http://127.0.0.1:8000/assets/audio/sfx/silent-100ms.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "play",
+   "id": 2,
+   "t": 1791800297221,
+   "src": "http://127.0.0.1:8000/assets/audio/voice/gate.mp3",
+   "vol": 1,
+   "loop": false
+  },
+  {
+   "e": "rejected",
+   "id": 2,
+   "t": 1791800297221
+  },
+  {
+   "e": "pause",
+   "id": 2,
+   "t": 1791800299281
+  },
+  {
+   "e": "ended",
+   "id": 2,
+   "t": 1791800299281
+  }
+ ],
+ "files": {
+  "http://127.0.0.1:8000/assets/audio/sfx/tap.mp3": "0-tap.mp3",
+  "http://127.0.0.1:8000/assets/audio/sfx/silent-100ms.mp3": "1-silent-100ms.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/draw.mp3": "2-draw.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/lesson.mp3": "3-lesson.mp3",
+  "http://127.0.0.1:8000/assets/audio/sfx/select.mp3": "4-select.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/lesson-sharing.mp3": "5-lesson-sharing.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/yes.mp3": "6-yes.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/making-look.mp3": "7-making-look.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/making-promise.mp3": "8-making-promise.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-1.mp3": "9-checking-page-1.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-2.mp3": "10-checking-page-2.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-3.mp3": "11-checking-page-3.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-4.mp3": "12-checking-page-4.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-5.mp3": "13-checking-page-5.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-6.mp3": "14-checking-page-6.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-7.mp3": "15-checking-page-7.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/checking-page-8.mp3": "16-checking-page-8.mp3",
+  "http://127.0.0.1:8000/assets/audio/sfx/star-pop.mp3": "17-star-pop.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/making-paint.mp3": "18-making-paint.mp3",
+  "http://127.0.0.1:8000/assets/audio/sfx/happy-chime.mp3": "19-happy-chime.mp3",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/1/audio": "20-audio",
+  "http://127.0.0.1:8000/assets/audio/sfx/soft-boop.mp3": "21-soft-boop.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/reader-think.mp3": "22-reader-think.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/reader-kind.mp3": "23-reader-kind.mp3",
+  "http://127.0.0.1:8000/assets/audio/sfx/page-turn.mp3": "24-page-turn.mp3",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/2/audio": "25-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/3/audio": "26-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/4/audio": "27-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/5/audio": "28-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/6/audio": "29-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/7/audio": "30-audio",
+  "http://127.0.0.1:8000/api/stories/ada63a4c1b8d/pages/8/audio": "31-audio",
+  "http://127.0.0.1:8000/assets/audio/voice/end-done.mp3": "32-end-done.mp3",
+  "http://127.0.0.1:8000/assets/audio/voice/gate.mp3": "33-gate.mp3"
+ },
+ "storyId": "ada63a4c1b8d",
+ "forgottenStatus": 404,
+ "problems": [
+  "console: Failed to load resource: the server responded with a status of 404 (Not Found)"
+ ]
+}

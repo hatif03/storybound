@@ -15,6 +15,7 @@ Written for: the builder, who records and edits the video last. About 410 spoken
 | 2:52 to 3:00 | The receipt again, the repo name | "Promises written, checked, repaired, and shown to a parent. Storybound." | n/a |
 
 ## Recording notes
+- What to record, click by click, for the app and the three dashboards: [DEMO-RECORDING-GUIDE.md](DEMO-RECORDING-GUIDE.md). The app capture is `evidence/app-capture/app-walkthrough.webm` (made by a script); the dashboards are recorded by the builder.
 - Show, do not tell, for the incidents: three screen captures, each under 15 s: the Sonnet error span (`evidence/neatlogs/review-2/` and the X2 traces in the ledger), the drill C4 stopped runs next to C4b shipped, and the story trace before and after the span fix (span counts 2 of 4 pictures, 0 picture checks, against 4 and 8).
 - Every number is a small-sample result (ten stories per configuration, five per drill). Do not say "always" or "proven"; say what was measured. If time is short, cut the 1:50 to 2:05 block first.
 - No real child's face, name, school or location on screen; use the fixture bunny. The sister's drawings stay in `_private/`.

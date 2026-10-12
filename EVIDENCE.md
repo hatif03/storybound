@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-12 13:34 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (521 rows, 468 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-12 15:58 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (524 rows, 471 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -218,7 +218,7 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 
 ## 2. neatlogs traces
 
-478 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
+481 ledger rows carry a neatlogs trace id. Exported readbacks are in `evidence/traces/` (read through the neatlogs MCP server).
 
 | What | Trace id | File |
 | --- | --- | --- |
@@ -238,7 +238,9 @@ Each result is a triple: the commit that produced it, the Entire checkpoint of t
 | video-preview-4-make-video | `3ec11cfc58c141c00b7119c53a05b821` | [20261010-1741-IST-video-preview-4-make-video.json](evidence/traces/20261010-1741-IST-video-preview-4-make-video.json) |
 | sweep4-p3-bunny-sharing-B1 | `2776b05792e0e7ef1bc47f12bc6df571` | [20261010-1752-IST-sweep4-p3-bunny-sharing-B1.json](evidence/traces/20261010-1752-IST-sweep4-p3-bunny-sharing-B1.json) |
 | story-video-final-make-video | `5ebd6467432307ac1687fd7adb435fc2` | [20261010-1914-IST-story-video-final-make-video.json](evidence/traces/20261010-1914-IST-story-video-final-make-video.json) |
-| list-640b8a6d6ed6cce8941ddab55139ffba | `` | [20261012-IST-span-list-640b8a6d6ed6cce8941ddab55139ffba.json](evidence/traces/20261012-IST-span-list-640b8a6d6ed6cce8941ddab55139ffba.json) |
+| detection-trend-picture-words-after-drill | `` | [20261012-1401-IST-detection-trend-picture-words-after-drill.json](evidence/traces/20261012-1401-IST-detection-trend-picture-words-after-drill.json) |
+| -AFTER-640b8a6d6ed6cce8941ddab55139ffba | `` | [20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json](evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json) |
+| -BEFORE-f238415f0de63afe58fcbf9a32ff4f2a | `` | [20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json](evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json) |
 
 ## 3. A recovery run: an action failed, what the agent did next
 
@@ -248,7 +250,7 @@ Gated arm, media on, kindness lesson, rabbit-tree-rainbow fixture. Image generat
 - Degradations on the receipt: 4 (`image`: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': '...) -> `text only`
 - Receipt line: "19 promises checked. 7 pages rewritten. 2 could not be fully kept: age_reading_level, illustration_present."
 
-Repair recoveries inside the story loop: 262 gated runs repaired at least one page (see the sweep report).
+Repair recoveries inside the story loop: 265 gated runs repaired at least one page (see the sweep report).
 
 ## 4. Safety screen and judge checks
 
@@ -309,10 +311,12 @@ Repair recoveries inside the story loop: 262 gated runs repaired at least one pa
 - [20261011-0850-IST-market-note-crustdata.md](evidence/cfo/20261011-0850-IST-market-note-crustdata.md)
 - [20261011-1215-IST-launch-operating-costs-readback.json](evidence/cfo/20261011-1215-IST-launch-operating-costs-readback.json)
 - [20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json](evidence/cfo/20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json)
+- [20261012-1332-IST-cfo-version-history-unit-economics.png](evidence/cfo/20261012-1332-IST-cfo-version-history-unit-economics.png)
+- [20261012-1333-IST-cfo-version-history-verification-policy.png](evidence/cfo/20261012-1333-IST-cfo-version-history-verification-policy.png)
 - [README.md](evidence/cfo/README.md)
 - [workbook](evidence/cfo/workbook)
 
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T13:29:24+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T14:50:00+05:30. Window check: `python scripts/lint_evidence.py`.

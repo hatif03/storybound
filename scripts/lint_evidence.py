@@ -145,7 +145,8 @@ def check_posts_video_cfo() -> None:
         ).stdout.strip()  # fmt: skip
         try:
             dur = float(out)
-            add("PASS" if dur <= 180 else "FAIL", "demo video <= 3:00", f"{dur:.0f}s")
+            # the brief says three minutes; the builder approved up to 3:10 on 12 Oct, so 3:00 to 3:10 is a warning, more is a failure
+            add("PASS" if dur <= 180 else ("WARN" if dur <= 190 else "FAIL"), "demo video <= 3:00 (3:10 approved by the builder)", f"{dur:.0f}s")
         except ValueError:
             add("WARN", "demo video length", "could not read duration")
     else:

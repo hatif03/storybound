@@ -1,6 +1,6 @@
 # EVIDENCE
 
-Generated 2026-10-12 17:29 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (524 rows, 471 story runs) and the folders under `evidence/`. Do not edit by hand.
+Generated 2026-10-12 19:48 IST by `scripts/build_evidence.py` from `evidence/ledger.jsonl` (524 rows, 471 story runs) and the folders under `evidence/`. Do not edit by hand.
 
 Each result is a triple: the commit that produced it, the Entire checkpoint of the session (when the session was recorded), and the neatlogs trace.
 
@@ -271,7 +271,7 @@ Repair recoveries inside the story loop: 265 gated runs repaired at least one pa
 
 ## 6. Entire
 
-- Commits: 32; with an `Entire-Checkpoint` trailer: 0.
+- Commits: 36; with an `Entire-Checkpoint` trailer: 0.
 - Graph output: [20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json](evidence/entire/20261010-1325-IST-graph-diff-283a4cf-2c65fd7.json)
 - Graph output: [20261010-1325-IST-graph-search-verify-repair.txt](evidence/entire/20261010-1325-IST-graph-search-verify-repair.txt)
 - Graph output: [20261010-1421-IST-graph-impact-story_safe_text.txt](evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt)
@@ -319,4 +319,4 @@ Repair recoveries inside the story loop: 265 gated runs repaired at least one pa
 ## 8. Public posts and repository
 
 - Posts logged with #neatHack: 1 ([evidence/posts.md](evidence/posts.md)).
-- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T16:45:44+05:30. Window check: `python scripts/lint_evidence.py`.
+- First commit 2026-10-10T12:30:17+05:30; latest 2026-10-12T19:09:35+05:30. Window check: `python scripts/lint_evidence.py`.

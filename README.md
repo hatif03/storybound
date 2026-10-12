@@ -8,9 +8,10 @@ A child draws a hero. Storybound turns the drawing into a short storybook that t
 | --- | --- |
 | **Live app** (real stories, limited per day; please use the sample drawings or draw your own, not a real child's photo) | http://ec2-34-237-142-143.compute-1.amazonaws.com/ |
 | **Free demo mode** (same screens, no models, no limit) | http://ec2-34-237-142-143.compute-1.amazonaws.com/?mock=1 |
-| **3-minute video** (the problem, how it works, and how neatlogs, Entire and cfo.ai helped) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-demo-3min.mp4 |
-| **Full tour video** (every screen, including the grown-up side) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-full-tour.mp4 |
+| **3-minute video** (about 3:07: the app from drawing to receipt, then how neatlogs, Entire and cfo.ai helped) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-demo-3min.mp4 |
+| **Full tour video** (about 19 minutes: every screen, including the grown-up side, the movie and the receipt) | http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-full-tour.mp4 |
 | **Why a family would want it, and who it helps** | [docs/WHY.md](docs/WHY.md) |
+| Videos on GitHub (backup copies of both) | https://github.com/hatif03/storybound/releases/tag/demo-videos |
 | **For the judges: how we used neatlogs, Entire and cfo.ai** (answers, screenshots, evidence links) | http://ec2-34-237-142-143.compute-1.amazonaws.com/judges/ and [below](#how-we-used-the-tools-the-submission-forms-questions-answered) |
 
 ## The problem

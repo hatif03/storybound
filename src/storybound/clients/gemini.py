@@ -66,6 +66,9 @@ def _usage(resp, model: str, t0: float) -> Usage:
 def _call_once(
     model: str, contents, *, system: str | None, json_mode: bool, temperature: float, max_tokens: int, thinking: str
 ):
+    from .. import chaos
+
+    chaos.maybe("gemini")
     from google.genai import errors, types
 
     cfg = types.GenerateContentConfig(

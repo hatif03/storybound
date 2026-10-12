@@ -197,3 +197,45 @@ def test_an_unknown_gateway_model_is_priced_at_the_dearest_known_one():
     m = Meter()
     m.add(Usage(input_tokens=1_000_000, output_tokens=0, model="claude-future"))
     assert m.cost_usd(Prices()) == 5.5  # opus input price, never under-reported
+
+
+def test_chaos_injects_the_configured_failures_only(monkeypatch):
+    import pytest
+
+    from storybound import chaos
+    from storybound.clients.errors import ClientError
+
+    monkeypatch.setenv("STORYBOUND_CHAOS", "k2:error:503:1,gemini:stall:0:1,bad,gateway:error:x:1")
+    chaos.maybe("gemini")  # a zero-second stall: returns
+    chaos.maybe("image")  # not configured: nothing
+    with pytest.raises(ClientError) as e:
+        chaos.maybe("k2")
+    assert e.value.retryable and e.value.status == 503
+    assert chaos.active().startswith("k2:error")
+    monkeypatch.delenv("STORYBOUND_CHAOS")
+    chaos.maybe("k2")  # off by default
+
+
+def test_the_judge_ensemble_takes_the_stricter_verdict_and_survives_one_judge_failing(monkeypatch):
+    from storybound.models import Commitment
+    from storybound.oath import judge as j
+
+    c = Commitment(id="p", scope="scene", title="t", plain="p", verifier="judge", rubric="r")
+
+    def fake(items, text, ctx, model=None):
+        st = {"k2": "pass", "claude": "violation"}[model or "k2"]
+        return {i.id: j.JudgeOut(st, model=model or "k2") for i in items}
+
+    monkeypatch.setattr(j, "judge_batch", fake)
+    monkeypatch.setattr(j.get_settings().models, "judge_ensemble", "claude")
+    assert j.ensemble_batch([c], "t", {})["p"].status == "violation"  # either judge's violation counts
+
+    def one_down(items, text, ctx, model=None):
+        if model == "claude":
+            return {i.id: j.JudgeOut("verification_error", model="claude") for i in items}
+        return {i.id: j.JudgeOut("pass", model="k2") for i in items}
+
+    monkeypatch.setattr(j, "judge_batch", one_down)
+    assert j.ensemble_batch([c], "t", {})["p"].status == "pass"  # the other judge decides
+    monkeypatch.setattr(j.get_settings().models, "judge_ensemble", "")
+    assert j.ensemble_batch([c], "t", {})["p"].status == "pass"  # no second judge: plain judge_batch

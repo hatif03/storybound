@@ -20,7 +20,7 @@ from typing import Any, TypedDict
 
 from langgraph.graph import END, StateGraph
 
-from . import ledger, lessons, prompts, tracing
+from . import chaos, ledger, lessons, prompts, tracing
 from . import media as media_mod
 from .agents import character, oath_author, planner, quizmaker, safety, writer
 from .agents.common import rng
@@ -844,6 +844,6 @@ def ledger_row(run: Run) -> dict:
         "first_pass_failed": first_pass, "non_pass_verdicts": fails, "judged": len(judged),
         "judge_errors": sum(1 for v in judged if v.judge_status == "verification_error"),
         "shipped": run.shipped, "degradations": run.degradations, "budget": r.get("budget"),
-        "prompt_version": prompts.VERSION, "error": run.error or None, "routes": dict(get_settings().models.routes), "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
+        "prompt_version": prompts.VERSION, "error": run.error or None, "routes": dict(get_settings().models.routes), "experiment": os.environ.get("STORYBOUND_EXPERIMENT") or None, "chaos": chaos.active() or None, "max_repairs": get_settings().thresholds.max_repair_attempts, "judge_ensemble": get_settings().models.judge_ensemble or None, "hedge_s": get_settings().hedge_after_s, "pictures": run.cfg.pictures, "picture_plan": run.picture_plan, "split": ledger.split_of(run.cfg.fixture),
         "quiz": {**run.quiz_stats, "repairs": sum(1 for r in run.repairs if r.get("stage") == "quiz"), "shown": len(run.quiz.items) if run.quiz else 0},
     }  # fmt: skip

@@ -46,6 +46,7 @@ class Models(BaseModel):
     routes: dict[str, str] = Field(default_factory=lambda: _parse_routes(os.environ.get("STORYBOUND_ROUTES", DEFAULT_ROUTES)))
     vision_judge: str = os.environ.get("STORYBOUND_VISION_JUDGE", "claude-haiku")  # who judges the pictures named in vision_judge_for; empty = the vision model (the painter's family)
     vision_judge_for: tuple[str, ...] = ("image_no_text",)
+    judge_ensemble: str = os.environ.get("STORYBOUND_JUDGE_ENSEMBLE", "")  # a second judge from another family; the stricter verdict wins (experiment X3)
 
     def route(self, role: str) -> str | None:
         return self.routes.get(role) or self.routes.get(role.split(".")[0])
@@ -56,7 +57,7 @@ class Thresholds(BaseModel):
     image_match_pass: float = 0.8
     lesson_drift_detect: float = 0.6
     image_drift_detect: float = 0.7
-    max_repair_attempts: int = 2
+    max_repair_attempts: int = int(os.environ.get("STORYBOUND_MAX_REPAIRS", "2"))  # experiments X5 and X6 change it
     pages: int = 8
     max_correct_slot_share: int = 5  # same slot for at most this many of the 8 pages
 

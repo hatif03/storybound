@@ -22,7 +22,7 @@ from ..config import get_settings
 from ..models import Commitment, Evidence, Oath, Page, Verdict
 from . import catalog
 from . import deterministic as d
-from .judge import JudgeOut, judge_batch, judge_image
+from .judge import JudgeOut, ensemble_batch, judge_image
 
 RANK = {"skipped": 0, "pass": 1, "warning": 2, "verification_error": 3, "violation": 4, "critical": 5}
 Gate = Literal["accept", "repair", "critical"]
@@ -71,7 +71,7 @@ class Pending:
 class Engine:
     oath: Oath
     ctx: d.Ctx
-    judge: Callable[[list[Commitment], str, dict], dict[str, JudgeOut]] = judge_batch
+    judge: Callable[[list[Commitment], str, dict], dict[str, JudgeOut]] = ensemble_batch
     judge_img: Callable[..., JudgeOut] = judge_image
     rates: dict[str, float] | None = None  # budget governor: may lower quality/image, never safety
     on_verdict: Callable[[Verdict], None] | None = None

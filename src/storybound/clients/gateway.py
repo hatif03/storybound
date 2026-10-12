@@ -34,6 +34,10 @@ def _content(prompt: str, images: list[tuple[bytes, str]] | None):
 def _once(messages, model: str, temperature: float, max_tokens: int):
     import openai
 
+    from .. import chaos
+
+    chaos.maybe("gateway")
+
     t0 = time.time()
     try:
         r = client(True).chat.completions.create(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens)

@@ -15,6 +15,9 @@ _RETRYABLE = {408, 429, 500, 502, 503, 504}
 
 
 def _once(model: str, prompt: str, ref: tuple[bytes, str] | None) -> tuple[bytes, str, Usage]:
+    from .. import chaos
+
+    chaos.maybe("image")
     from google.genai import errors, types
 
     parts = ([types.Part.from_bytes(data=ref[0], mime_type=ref[1])] if ref else []) + [prompt]

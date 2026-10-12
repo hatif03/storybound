@@ -28,6 +28,9 @@ def _token() -> str:
 
 
 def _once(text: str, voice: str, model: str, style: str | None) -> tuple[bytes, float]:
+    from .. import chaos
+
+    chaos.maybe("tts")
     s = get_settings()
     body = {
         "input": {"text": text, **({"prompt": style} if style else {})},

@@ -40,9 +40,9 @@ def fixture_path(fid: str) -> Path:
     sys.exit(f"unknown fixture {fid}")
 
 
-def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6) -> str:
+def one(name: str, arm: str, fid: str, lesson: str, seed: str, age: int = 6, no_judge: bool = False, media_on: bool = False) -> str:
     d = media.prepare(fixture_path(fid).read_bytes())
-    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=False, fixture=fid, ledger_name=name)
+    cfg = RunConfig(lesson_id=lesson, age=age, arm=arm, seed=seed, media=media_on, fixture=fid, ledger_name=name, judge_enabled=not no_judge, pictures="auto")
     run = Run(cfg=cfg, drawing=d, bus=EventLog(), story_id=uuid.uuid4().hex[:12])
     t = time.time()
     execute(run)
@@ -62,6 +62,8 @@ def main() -> None:
     ap.add_argument("--k", type=int, default=2)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--age", type=int, default=6, help="the reader's age, 4 to 8")
+    ap.add_argument("--no-judge", action="store_true", help="deterministic checks only (experiment X4)")
+    ap.add_argument("--media", action="store_true", help="paint and narrate too (drills that need the picture and voice services)")
     a = ap.parse_args()
     done = {
         (r.get("arm"), r.get("fixture"), r.get("lesson"), str(r.get("seed")))
@@ -78,7 +80,7 @@ def main() -> None:
     ]
     print(f"{len(jobs)} runs to do ({len(done)} already in the ledger)", flush=True)
     with cf.ThreadPoolExecutor(max_workers=a.workers) as pool:
-        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j, a.age) for j in jobs]
+        futs = [pool.submit(contextvars.copy_context().run, one, a.name, *j, a.age, a.no_judge, a.media) for j in jobs]
         for f in futs:
             try:
                 f.result()

@@ -12,7 +12,7 @@ Written for: the builder, for the day of submission. From the neatlogs team's me
 | Team name | Yours to choose (solo entry) | decide |
 | Project name and description | Drafts below | edit and paste |
 | Public GitHub repo with the code | https://github.com/hatif03/storybound (public). The code is on `main` only after PR 4 is merged: **merge PR 4 first** ([the experiments branch](https://github.com/hatif03/storybound/pull/4)) so the repo a judge opens has the final code | **open: merge PR 4** |
-| Demo video (at most 3:00) | Script: [DEMO-SCRIPT.md](DEMO-SCRIPT.md); what to record: [DEMO-RECORDING-GUIDE.md](DEMO-RECORDING-GUIDE.md); the app capture is made. Upload as unlisted (YouTube or Drive set to "anyone with the link") and test the link in a private window | **open: you record the dashboards and cut it** |
+| Demo video (about 3:07; the builder approved up to 3:10) | Made: `evidence/demo/storybound-demo-3min.mp4`. Watch: http://ec2-34-237-142-143.compute-1.amazonaws.com/videos/storybound-demo-3min.mp4 or https://github.com/hatif03/storybound/releases/tag/demo-videos (download). For X and the form, upload the file to X or YouTube (unlisted) and use that link; the full tour is at /videos/storybound-full-tour.mp4 | upload |
 | Entire checkpoint link | `https://entire.io/gh/hatif03/storybound/commit/<full sha>` (see STATUS item 3), test in a private window | check |
 | cfo.ai share link | https://cfo.ai/s/vGE_ZEwfQtpoxPrg (does not show the Launch plan or Video AI pages added later; the Version-history screenshots are in `evidence/cfo/`) | check |
 | neatlogs project | traces, incidents, detections, alerts and the human evaluation are in the project; screenshots and exports are in `evidence/` | check |

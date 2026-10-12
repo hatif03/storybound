@@ -1,0 +1,16 @@
+{
+  "d1": "AI can write a story about your child's drawing in seconds, but nobody checks it. In our test, it broke a promise in twenty-seven of twenty-eight stories. Storybound checks its own work. A child draws a hero.",
+  "d2": "A grown-up picks a lesson, and can add a promise of their own. Before any story exists, the agent writes its promises: words right for the age, the hero on every page, the lesson really taught, nothing scary.",
+  "d3": "Then it writes each page and checks it against every promise, with a second AI as the judge. A page that breaks one is rewritten. And a page is shown only when its words, picture and voice all exist.",
+  "d4": "Now the child reads. The picture is already there, and the story soon reads itself aloud, with a button to hear it again. Every page ends with a kind choice, and a wrong answer is never a scolding.",
+  "d5": "After the story, a short quiz checked against the story's own lines, and a picture game.",
+  "d6": "The child can even make a read-along movie of their own story.",
+  "d7": "Behind a small grown-up gate are the settings: sound, text size, the reader's age, and how many pictures to paint.",
+  "d8": "If a drawing isn't suitable, the app declines gently. No story is made, and nothing reaches the child.",
+  "d9": "And the grown-up gets a receipt: how many promises were checked, which pages were rewritten, and anything that could not be fully kept. Nothing is hidden.",
+  "p1": "We built it with three tools. neatlogs records every story as one trace, with every promise as a quoted verdict.",
+  "p2": "It also showed us what went wrong. A stronger writer broke the page format: three stories in ten failed, ten of ten after the fix. With the judge down, nothing shipped; with a second judge, all five did. And an incident about our repair loop led us to a tracing fault of our own, now fixed.",
+  "p3": "Entire kept every fix as one checkpoint. Its review caught defects in our own fixes, and its runners gate the next change.",
+  "p4": "cfo.ai turned what a story costs into a decision: paint only the pages that matter, and leave video AI out, because it would sink the margin.",
+  "p5": "Anything AI makes for children should come with promises, checks and a receipt a parent can read. Try it live, or read the code."
+}

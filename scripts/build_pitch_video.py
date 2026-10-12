@@ -21,11 +21,11 @@ FFMPEG = "C:/ffmpeg/ffmpeg.exe"
 FFPROBE = "C:/ffmpeg/ffprobe.exe"
 FONT = "C\\:/Windows/Fonts/arialbd.ttf"
 W, H = 1920, 1080
-VO_TEMPO = 1.12  # the text-to-speech voice is unhurried; a little faster fits three minutes and still sounds natural
+VO_TEMPO = 1.2  # the text-to-speech voice is unhurried; a little faster fits three minutes and still sounds natural
 
 AC = ROOT / "evidence" / "app-capture"
 FC = ROOT / "evidence" / "features-capture"
-SRC = {"aw": AC / "app-walkthrough.mp4", "nl": ROOT / "neatlogs.mp4", "en": ROOT / "entire.mp4", "cf": ROOT / "cfo.ai.mp4"}
+SRC = {"aw": AC / "app-walkthrough.mp4", "ft": FC / "features-tour.mp4", "nl": ROOT / "neatlogs.mp4", "en": ROOT / "entire.mp4", "cf": ROOT / "cfo.ai.mp4"}
 
 
 def dur(p: Path) -> float:
@@ -115,7 +115,8 @@ def cues(path: Path) -> dict:
     vo = {c["key"]: (c["t"] - t0) / 1000 for c in d["cues"] if c["type"] == "vo"}
     page = {c["page"]: (c["t"] - t0) / 1000 for c in d["cues"] if c["type"] == "page"}
     waits = [((c["from"] - t0) / 1000, (c["to"] - t0) / 1000) for c in d["cues"] if c["type"] == "wait"]
-    return {"vo": vo, "page": page, "waits": waits, "t0": t0}
+    movies = [((c["from"] - t0) / 1000, (c["to"] - t0) / 1000) for c in d["cues"] if c["type"] == "movie"]
+    return {"vo": vo, "page": page, "waits": waits, "movies": movies, "t0": t0}
 
 
 def links() -> dict:
@@ -160,6 +161,48 @@ def pitch() -> None:
         sys.exit(f"too long: {dur(final):.1f}s")
 
 
+def pitch2() -> None:
+    """The 3-minute video, second cut: about two minutes of the app itself (drawing to receipt, the movie, the grown-up side, a refused drawing), then the three tools."""
+    work = ROOT / "evidence" / "pitch-video" / "work2"
+    work.mkdir(parents=True, exist_ok=True)
+    vdir = ROOT / "evidence" / "pitch-video" / "voiceover2"
+    a = cues(AC / "work" / "cues.json")
+    ft = cues(FC / "work" / "cues.json")
+    lk = links()
+    long_from, _ = max(a["waits"], key=lambda w: w[1] - w[0])
+    mv_from, mv_to = ft["movies"][0]
+    ftmp4 = SRC["ft"]
+    scenes = [
+        ("d1", [part("aw", a["vo"]["draw"] + 1, 17, 1.0)], [cap("27 of 28 AI-written stories broke a promise", 5, 16)], None),
+        ("d2", [part("aw", a["vo"]["lesson"] - 3, 17, 1.0)], [cap("Promises first: a checkable oath for each drawing and lesson", 2, 16)], None),
+        ("d3", [part("aw", long_from + 45, 16, 1.0)], [cap("A page is shown only when its words, picture and voice all exist", 1.5, 15)], None),
+        ("d4", [part("aw", a["page"][1] - 0.3, 20, 1.0, audio=0.5)], [cap("It reads itself aloud, with a replay button", 1.5, 10), cap("Kind choices; a wrong answer is never a scolding", 10, 19)], None),
+        ("d6", [part("ft", 22, 11, 1.0, audio=0.7, file=FC / "work" / "movie.mp4", audio_file=FC / "work" / "movie.mp4")], [cap("A read-along movie of the child's own story", 0.5, 11)], None),
+        ("d7", [part("ft", ft["vo"]["settings"] + 5, 10, 1.0, file=ftmp4)], [cap("The grown-ups area: settings behind a small gate", 0.5, 10)], None),
+        ("d8", [part("ft", ft["vo"]["unsafe"] + 0.5, 8, 1.0, file=ftmp4)], [cap("An unsuitable drawing is declined gently", 0.5, 8)], None),
+        ("d9", [part("aw", a["vo"]["receipt"] - 0.5, 11, 1.0)], [cap("The receipt: nothing hidden", 1, 11)], None),
+        ("p1", [part("nl", 22, 10, 1.0)], [cap("neatlogs: one trace per story, every promise a quoted verdict", 1, 10)], None),
+        ("p2", [part("nl", 66, 21, 1.0), part("nl", 94, 5, 1.0)], [cap("Writer broke the page format: 3 of 10 failed, then 10 of 10", 1, 9), cap("Judge down: 0 of 5 shipped; with a second judge, 5 of 5", 9, 17), cap("Repair loop never ends? Our tracing lost spans. Fixed.", 17, 26)], None),
+        ("p3", [part("en", 8, 5, 1.0), part("en", 16, 4, 1.0), part("en", 30, 4, 1.0)], [cap("Entire: one checkpoint per fix, a review, runners that gate the next change", 1, 13)], None),
+        ("p4", [part("cf", 5, 8, 1.0), part("cf", 26, 5, 1.0)], [cap("cfo.ai: the cost of a story became a product decision", 1, 13)], None),
+        ("p5", [], [], ["Storybound|96", "Promises first. Checked before the child sees a page.|46", "A receipt for the parent.|46", f"Live app: {lk['live']}|40", f"Free demo: {lk['demo']}|40", f"Code: {lk['code']}|40", "#neatHack  @neatlogs  @EntireHQ  @arithecfo|36"]),
+    ]
+    out_scenes, total, demo = [], 0.0, 0.0
+    for k, (vid, parts, caps, card) in enumerate(scenes):
+        out = work / f"scene{k:02d}.mp4"
+        d = build_scene(k, out, vdir / f"{vid}.mp3", parts, caps, card, min_d=(8.0 if vid == "p5" else 0.0))
+        total += d
+        if vid.startswith("d"):
+            demo += d
+        out_scenes.append(out)
+        print(f"{vid}: {d:.1f}s (total {total:.1f}s, demo part {demo:.1f}s)", flush=True)
+    final = ROOT / "evidence" / "demo" / "storybound-demo-3min.mp4"
+    concat(out_scenes, final)
+    print("wrote", final, f"{dur(final):.1f}s")
+    if dur(final) > 192:
+        sys.exit(f"too long: {dur(final):.1f}s")
+
+
 def normalise(src: Path, out: Path) -> None:
     """Re-encode a recording to the common 1920x1080, 30 fps, AAC 44.1 kHz stereo format so scenes can be joined without re-encoding again."""
     subprocess.run([FFMPEG, "-y", "-v", "error", "-i", str(src), "-vf", f"scale={W}:{H}:force_original_aspect_ratio=decrease,pad={W}:{H}:(ow-iw)/2:(oh-ih)/2,fps=30,format=yuv420p,setsar=1", "-c:v", "libx264", "-crf", "22", "-preset", "veryfast", "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-ac", "2", str(out)], check=True)
@@ -189,4 +232,4 @@ def tour() -> None:
 
 
 if __name__ == "__main__":
-    {"pitch": pitch, "tour": tour}[sys.argv[1] if len(sys.argv) > 1 else "pitch"]()
+    {"pitch": pitch, "pitch2": pitch2, "tour": tour}[sys.argv[1] if len(sys.argv) > 1 else "pitch"]()

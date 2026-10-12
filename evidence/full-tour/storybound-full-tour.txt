@@ -1,0 +1,5 @@
+file 'D:/storybound/evidence/pitch-video/tour-work/t0.mp4'
+file 'D:/storybound/evidence/pitch-video/tour-work/t1.mp4'
+file 'D:/storybound/evidence/pitch-video/tour-work/t2.mp4'
+file 'D:/storybound/evidence/pitch-video/tour-work/t3.mp4'
+file 'D:/storybound/evidence/pitch-video/tour-work/t4.mp4'

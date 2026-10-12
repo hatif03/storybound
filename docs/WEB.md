@@ -70,7 +70,7 @@ pages, per-page picture and voice (`pending`, `ready` or `missing`), repairs, de
 voice ready or given up on. Until then the child sees Pip's making screen (or "Page N is on its way!"), never a half-made page. The
 backend starts each page's picture and narration as soon as the page is accepted, so the wait is the story's checking time, not the
 sum of everything. A picture or voice that never comes (a `degraded` event, or the run ending) counts as settled and the page is
-text-only. The child's sticker sheet fills only when every checked promise in a family is kept; the
+text-only. Each page then reads itself aloud 1.8 seconds after it opens (sound is on by default; nothing plays before the first tap on Welcome), so a child never has to find a button; the Listen button stays and becomes "Listen again" once the page has been read, for as many replays as anyone wants. The child's sticker sheet fills only when every checked promise in a family is kept; the
 receipt shows everything, including promises not kept or not checked this time.
 
 ## Things found in the backend and assets (worth knowing)

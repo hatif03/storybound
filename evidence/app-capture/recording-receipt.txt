@@ -1,32 +1,32 @@
 Today's practice
 
-Quiz: 1 of 2 right on the first try. Put three pictures of the story in order. This stays in this browser tab and is never sent anywhere.
+Quiz: 3 of 4 right on the first try. Put three pictures of the story in order. This stays in this browser tab and is never sent anywhere.
 
 Receipt
 
-26 promises checked. 0 pages rewritten. 4 could not be fully kept: image_matches_card, image_no_text, quiz_no_tell, quiz_reading_level.
+27 promises checked. 1 pages rewritten. 1 could not be fully kept: image_no_text.
 
 Shipped with notes: see below for what was not fully kept.
 
 Promises in the oath
 29
 Checked this time
-26
+27
 Pages rewritten
-0
+1
 Checks run
-137
+144
 Coverage
 100%
 Time
-9 min 49 s
+10 min 58 s
 Cost
-about $0.47 (estimate)
+about $0.51 (estimate)
 Tokens in / out
-54,314 / 24,502
+59,940 / 25,392
 The oath, promise by promise
 
-22 kept · 4 not kept · 3 not checked this time (a check is sometimes skipped to save time).
+26 kept · 1 not kept · 2 not checked this time (a check is sometimes skipped to save time).
 
 SAFETY
 The drawing is safe to turn into a story
@@ -97,19 +97,19 @@ Kept
 
 The whole story teaches the chosen lesson.
 
-Jem Shares an Object or Toy
+Artie Shares a Part of a Geometric Item or Play
 Not checked this time
 
-Jem willingly divides or shares something enjoyable with a friend instead of keeping it all.
+Artie must share something tangible or playful involving shapes with a friend.
 
-Mutual Happiness After Sharing
-Not checked this time
+Depicting Mutual Joy After Sharing
+Kept
 
-The story must clearly show that sharing makes both Jem and the friend happier than before.
+Both Artie and the friend must show visible happiness after sharing occurs.
 
 READING LEVEL AND VARIETY
 Simple words for the child's age
-Kept
+Kept after a rewrite
 
 Sentences are short and the words are easy for this age.
 
@@ -139,12 +139,12 @@ Kept
 Every quiz question has three answers and exactly one is right.
 
 The right answer does not give itself away
-Not kept
+Kept
 
 The right answer is not simply the longest one, so a guess has to come from the story.
 
 Quiz words are easy
-Not kept
+Kept
 
 Quiz questions and answers use short, easy words for the child's age.
 
@@ -170,7 +170,7 @@ Kept
 Every page has a picture, or the story says plainly that one is missing.
 
 The picture matches the hero
-Not kept
+Kept after a rewrite
 
 Pictures look like the same hero.
 
@@ -181,13 +181,21 @@ Kept
 Every page can be read aloud, or the story says plainly that it cannot.
 
 What Pip rewrote
+Page 2
+
+Try 1: Simple words for the child's age. Why: too many long words: strawberries.
+
 Page 5
 
 Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
 
-Page 6
+Page 7
 
-Try 1: Pictures contain no words. Why: picture did not pass; painting it once more.
+Try 1: The picture matches the hero. Why: picture did not pass; painting it once more.
+
+Page 8
+
+Try 1: The picture matches the hero. Why: picture did not pass; painting it once more.
 
 Safety
 

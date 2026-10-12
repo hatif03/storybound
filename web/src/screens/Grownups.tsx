@@ -180,7 +180,7 @@ function About() {
       </p>
       <h3>Privacy</h3>
       <ul className="plain-list">
-        <li>The drawing is kept in this browser tab only, and sent to this server to make the story.</li>
+        <li>The drawing is kept in this browser tab, and sent to this server to make the story. Please use a drawing, never a photo of a real child. The server deletes everything when a parent taps Forget (the public demo also wipes everything after 24 hours).</li>
         <li>No accounts, no ads, no tracking, no cookies. Fonts, pictures and sounds are all served from this app.</li>
         <li>The receipt never contains the drawing.</li>
       </ul>
@@ -190,6 +190,7 @@ function About() {
         <li>Fonts: Andika, Fredoka and Atkinson Hyperlegible (SIL Open Font Licence). Icons: Phosphor (MIT).</li>
         <li>Quiet music: a CC0 track. Sample drawings: public domain or CC0 (see the project&apos;s test-drawings notes).</li>
       </ul>
+      <p className="muted">For the hackathon judges: <a href="/judges/">how Storybound used neatlogs, Entire and cfo.ai, with evidence</a>.</p>
       {MOCK && <p className="muted">Demo mode is on: this is a recording of a real run, replayed.</p>}
     </section>
   );

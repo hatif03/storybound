@@ -135,6 +135,7 @@ export function Draw({ initial, onDone, onBack }: { initial: Source | null; onDo
           )}
           <Btn big icon="star" onClick={finish} disabled={busy} aria-disabled={!preview && !ink} className={!preview && !ink ? 'is-soft' : ''}>Done!</Btn>
           <p className="hint" role="status" aria-live="polite">{hint}</p>
+          <p className="muted fine">Draw your own hero, or use a photo of paper art. Please do not upload a photo of a real child.</p>
         </aside>
 
         {samples.length > 0 && (

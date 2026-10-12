@@ -1,0 +1,45 @@
+{
+ "voice": "Charon",
+ "clips": {
+  "c1": {
+   "seconds": 17.78,
+   "text": "AI can write a story about your child's drawing in seconds. But a fast writer doesn't know what's right for a five-year-old, and nobody checks it. In our test, it broke a promise in twenty-seven of twenty-eight stories."
+  },
+  "c2": {
+   "seconds": 24.26,
+   "text": "Storybound is a bedtime-story helper that checks its own work. A child draws a hero, and a grown-up picks a lesson. Before any story exists, the agent writes down its promises: words right for the age, the hero on every page, the lesson really taught, nothing scary."
+  },
+  "c3": {
+   "seconds": 22.2,
+   "text": "It writes each page and checks it against every promise, with a second AI as judge. A page that breaks one is rewritten. A page is shown only when its words, picture and voice all exist, and then it reads itself aloud."
+  },
+  "c4": {
+   "seconds": 12.43,
+   "text": "Every page ends with a kind choice, and a wrong answer is never a scolding. Then a short quiz, checked against the story itself."
+  },
+  "c5": {
+   "seconds": 15.5,
+   "text": "The grown-up gets a receipt: what was checked, which pages were rewritten, and anything that could not be fully kept. With every page checked, none of twenty-eight stories shipped a broken promise."
+  },
+  "c6": {
+   "seconds": 11.16,
+   "text": "We built it with three tools. neatlogs records every story as one trace, with every promise as a quoted verdict."
+  },
+  "c7": {
+   "seconds": 30.86,
+   "text": "And it showed us what went wrong. A stronger writer broke the page format, and three stories in ten failed. We fixed it: ten of ten. With the judge down, nothing shipped. We added a second judge: five of five. Then an incident said our repair loop never ends. We checked: the cap holds. Our own tracing had lost spans, and we fixed that."
+  },
+  "c9": {
+   "seconds": 11.54,
+   "text": "Entire kept every fix as one checkpoint. Its review caught defects in our own fixes, and its runners gate the next change."
+  },
+  "c10": {
+   "seconds": 20.59,
+   "text": "cfo.ai turned what a story costs into a decision. Painting every page broke our margin, so the agent chooses which pages to paint. And it showed video AI would sink the margin, so we left it out."
+  },
+  "c11": {
+   "seconds": 12.72,
+   "text": "Anything AI makes for children should come with promises, checks, and a receipt a parent can read. Try the live app, or read the code."
+  }
+ }
+}

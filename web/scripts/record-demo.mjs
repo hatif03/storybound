@@ -76,6 +76,21 @@ cdp.on('Page.screencastFrame', ({ data, metadata, sessionId }) => {
   cdp.send('Page.screencastFrameAck', { sessionId }).catch(() => {});
 });
 await cdp.send('Page.startScreencast', { format: 'jpeg', quality: 75, everyNthFrame: 3 });
+// A screencast only sends a frame when the compositor draws one and skips some of them, so a screen that changes once and then stays still can be
+// missed (found when the receipt never appeared in the video). A frame is also taken every second so no picture is ever more than a second stale.
+let beating = false;
+const beat = setInterval(async () => {
+  if (beating) return;
+  beating = true;
+  try {
+    const t = Date.now();
+    const buf = await page.screenshot({ type: 'jpeg', quality: 70 });
+    const name = `${String(frames.length).padStart(6, '0')}.jpg`;
+    frames.push([t, name]);
+    writes.push(fs.promises.writeFile(path.join(framesDir, name), buf));
+  } catch { /* the page is changing: the next beat will do */ }
+  beating = false;
+}, 1000);
 const recStart = Date.now();
 log('recording started');
 
@@ -331,8 +346,10 @@ const after = await page.evaluate(async (id) => (await fetch(`/api/stories/${id}
 log(`after Forget, GET /api/stories/${storyId} -> ${after}`);
 await sleep(2000);
 
+clearInterval(beat);
 await cdp.send('Page.stopScreencast');
 await Promise.all(writes);
+frames.sort((a, b) => a[0] - b[0]);
 const endAt = Date.now();
 await browser.close();
 fs.writeFileSync(path.join(OUT, 'frames.json'), JSON.stringify(frames));

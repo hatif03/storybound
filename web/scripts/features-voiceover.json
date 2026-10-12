@@ -1,0 +1,16 @@
+{
+  "gate": "Everything meant for adults sits behind a small gate. It asks a grown-up question that a young child cannot answer, and nothing about the story is shown until it is passed.",
+  "settings": "In Settings, a grown-up chooses quiet music, calmer motion, bigger text, and the reader's age, which sets how simple the words are in the next story. They also choose how many pictures to paint. Pictures cost the most, so the agent can spend a small budget on the moments that matter most.",
+  "about": "About explains the privacy promise in plain words: no accounts, no ads, no tracking. The drawing is used to make the story, and a parent can make the app forget it at any time.",
+  "drawer": "For testing, a demo drawer holds sample drawings, including some the app should refuse and one with an instruction written on it.",
+  "unsafe": "Here is a drawing that is not suitable for a children's story. The safety check declines it, gently. The child is never scolded, no story is made, and nothing reaches the child.",
+  "draw": "Back at the drawing screen, a small hand can press start over, and the drawing can always be brought back, because nothing a child made should vanish with one tap.",
+  "ignored": "This sample drawing has words written on it: Kill fish. The app treats writing inside a drawing as data. It is never obeyed and never repeated in the story, and the receipt will say it was ignored.",
+  "skim": "The story is made the same way as before, so here we skip ahead to the end.",
+  "end": "At the end of a story, the child can make a read-along movie of it.",
+  "movie_wait": "The movie is built from the finished story: every page with its picture and its voice, checked against its own oath, and repaired if a scene fails. It takes a few minutes.",
+  "movie_play": "And here is the movie.",
+  "receipt": "Back in the grown-ups area, the receipt lists every promise, page by page: the promises kept, the ones kept after a page was rewritten, and anything that could not be kept.",
+  "receipt2": "It also shows the words the app ignored in the drawing, any model that had to be swapped for another, and what the story cost.",
+  "forget": "Finally, Forget. It deletes the drawing, the pictures, the voice and the movie, here and on the server."
+}

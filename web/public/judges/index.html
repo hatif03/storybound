@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storybound for judges</title>
+<meta name="description" content="How Storybound used neatlogs, Entire and cfo.ai, with evidence links and screenshots.">
+<style>
+  :root { --bg:#fffaf0; --ink:#26233a; --muted:#625f78; --card:#ffffff; --line:#e6dfcf; --accent:#d9480f; --accent2:#5b3fc4; --ok:#2b8a3e; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#17161f; --ink:#f1eefb; --muted:#b4b0c9; --card:#21202c; --line:#38364a; --accent:#ff9f6b; --accent2:#b9a7ff; --ok:#69db7c; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 24px 18px 80px; }
+  h1 { font-size: 2.1rem; line-height:1.2; margin: .2em 0 .3em; }
+  h2 { font-size: 1.5rem; margin: 2.4em 0 .5em; padding-top: .5em; border-top: 2px solid var(--line); }
+  h3 { font-size: 1.15rem; margin: 1.6em 0 .3em; }
+  a { color: var(--accent2); }
+  .lead { font-size: 1.15rem; color: var(--muted); }
+  nav.jump { display:flex; flex-wrap:wrap; gap:8px 14px; margin: 14px 0 6px; }
+  nav.jump a, .btn { display:inline-block; padding: 6px 12px; border:1px solid var(--line); border-radius: 999px; background: var(--card); text-decoration:none; font-size:.95rem; }
+  .btn.primary { background: var(--accent); color:#fff; border-color: var(--accent); font-weight:600; }
+  .grid { display:grid; gap:14px; }
+  .stats { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 12px 0; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .stat b { display:block; font-size:1.6rem; color:var(--accent); line-height:1.2; }
+  .stat span { color:var(--muted); font-size:.92rem; }
+  figure { margin:0; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  figure img { display:block; width:100%; height:auto; }
+  figcaption { padding:10px 14px; font-size:.92rem; color:var(--muted); }
+  figcaption b { color:var(--ink); }
+  .shots { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  table { width:100%; border-collapse: collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:9px 12px; border-bottom:1px solid var(--line); }
+  th { background:rgba(127,127,127,.08); }
+  .answer { background:var(--card); border-left:5px solid var(--accent); border-radius:8px; padding:12px 16px; margin:12px 0; }
+  .answer .q { font-weight:700; color:var(--accent); margin:0 0 4px; font-size:.95rem; text-transform:uppercase; letter-spacing:.03em; }
+  code, pre { font-family: ui-monospace, Consolas, monospace; font-size:.88rem; }
+  pre { background:#1e1d2b; color:#eceaf7; padding:12px 14px; border-radius:10px; overflow-x:auto; }
+  .tag { display:inline-block; font-size:.78rem; padding:1px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); margin-right:6px; }
+  .note { color:var(--muted); font-size:.92rem; }
+  ul.tight li { margin: .15em 0; }
+  footer { margin-top: 3em; color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+<p><a href="../">&larr; Back to the app</a></p>
+<h1>Storybound, for the neatHack judges</h1>
+<p class="lead">A bedtime-story helper that checks its own work, so a parent doesn't have to. A child draws a hero; before any page reaches the child, the agent has checked it against promises it wrote first, rewritten what broke, and afterwards it hands the parent a receipt.</p>
+<p>
+  <a class="btn primary" href="../">Open the live app</a>
+  <a class="btn" href="../?mock=1">Free demo mode</a>
+  <a class="btn" href="../videos/storybound-demo-3min.mp4">3-minute video</a>
+  <a class="btn" href="../videos/storybound-full-tour.mp4">Full tour video</a>
+  <a class="btn" href="https://github.com/hatif03/storybound">Code</a>
+</p>
+<nav class="jump" aria-label="Sections">
+  <a href="#problem">The problem</a><a href="#tools">How we used the tools</a><a href="#neatlogs">neatlogs</a><a href="#entire">Entire</a><a href="#cfo">cfo.ai</a><a href="#improved">What the tools changed</a><a href="#broke">What broke</a><a href="#verify">Verify it yourself</a>
+</nav>
+
+<h2 id="problem">The problem and the solution</h2>
+<p><b>Problem.</b> AI can write a story about your child's drawing in seconds, and nobody checks it. In our own experiment the same writer, left alone, slipped at least one broken promise into <b>27 of 28</b> stories (a lesson that never showed up, the right answer always in the same place, words too hard for the age, sometimes an unkind line). A parent cannot read every story first.</p>
+<p><b>Solution.</b> The agent writes an <i>oath</i> (a checkable list of promises) for each drawing and lesson, checks every page against it with simple rules and an independent second AI, rewrites any page that breaks a promise, shows a page only when its words, picture and voice all exist, and gives the parent a receipt. With every page checked, <b>0 of 28</b> stories shipped a broken promise. Why it matters to families and communities: <a href="https://github.com/hatif03/storybound/blob/main/docs/WHY.md">docs/WHY.md</a>.</p>
+<p class="note">What the judges score: the agent 30%, use of neatlogs, Entire and cfo.ai 25%, demo video 20%, building in public 15%, usefulness and originality 10%. The page below is the 25%.</p>
+
+<h2 id="tools">How we used the tools</h2>
+<div class="grid stats">
+  <div class="stat"><b>1 trace</b><span>per story in neatlogs; every promise is one quoted verdict span</span></div>
+  <div class="stat"><b>97 checkpoints</b><span>in Entire, one per change; 4 trails merged, each with runners and a review</span></div>
+  <div class="stat"><b>67.8% vs 43.4%</b><span>margin the cfo.ai model gave for painting half the pages versus all of them</span></div>
+</div>
+<p>Short answers to the three questions of the submission form follow, each with evidence links and screenshots from our own dashboards. Trace and trail pages need a login, so the screenshots stand in for them; the repository holds exported traces and the files behind every number.</p>
+
+<h2 id="neatlogs">neatlogs: what did you trace, debug or improve?</h2>
+<div class="answer"><p class="q">Short answer</p>
+<p>We traced every story run as one trace (the oath, each page, each judge call, each picture, each voice) and made every promise check its own span, with the quoted words and the verdict. We then used neatlogs to find our own bugs: its incidents, detections, alerts, error spans and evaluations led to a series of fixes, each with before and after numbers. Trace first, then fix, was our written rule (<a href="https://github.com/hatif03/storybound/blob/main/CLAUDE.md">CLAUDE.md</a>).</p></div>
+<div class="grid stats">
+  <div class="stat"><b>7,100+</b><span>traces from our runs, sweeps, drills and experiments (dashboard home: 7,123 sessions in 7 days)</span></div>
+  <div class="stat"><b>4 resolved</b><span>incident cards, each checked against the trace and closed with a note</span></div>
+  <div class="stat"><b>10 detections, 7 alerts</b><span>including a picture-words detection that fired on a drill, and email delivery</span></div>
+</div>
+<h3>What we traced and what it led to</h3>
+<table>
+<tr><th>What neatlogs showed</th><th>What we changed</th><th>Evidence</th></tr>
+<tr><td>One trace per story with a GUARDRAIL span per verdict (quoted text, pass or fail)</td><td>The parent's receipt is built from the same verdicts</td><td><a href="https://github.com/hatif03/storybound/blob/main/docs/TOOLS.md">TOOLS.md</a>, <a href="https://github.com/hatif03/storybound/tree/main/evidence/traces">exported traces</a></td></tr>
+<tr><td>Reading level broke on most first-pass pages (trace <code>264208295ada9b28</code>)</td><td>Told the writer the limit: pages over the limit fell from 42.9% to 1.8%</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-001.md">HR-001</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-003.md">HR-003</a></td></tr>
+<tr><td>Its own triage cards: an 87 s Gemini stall, "hurts" flagged critical, a PII card</td><td>One confirmed (hedged retry later), one partly (mild words now ask for a rewrite), one refuted (it read its own redaction)</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/TRIAGE-REVIEW.md">TRIAGE-REVIEW</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-004.md">HR-004</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-011.md">HR-011</a></td></tr>
+<tr><td>A second pass through traces, detections, alerts and analytics: two detections had never fired, no alert could notify anyone, the stall was back</td><td>Hedged retry, tiered a false stop, a quiz detection on the right span type, alerts retuned with email delivery</td><td><a href="https://github.com/hatif03/storybound/blob/main/docs/research/neatlogs-incident-review.md">incident review</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-011.md">HR-011</a></td></tr>
+<tr><td>Error spans of a stronger writer (Claude Sonnet): 3 of 10 stories ended with a page-format error</td><td>A tolerant parser: 10 of 10 afterwards</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-014.md">HR-014</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
+<tr><td>Drills we ran on purpose (judge down, 503s, stalls, image 429s): none of 5 stories shipped with the judge down</td><td>A judge from another family on failover (5 of 5), and a calm "try again" screen instead of a refusal</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
+<tr><td>Three new incident cards on 12 Oct: "repair loop never ends", "latency in illustrate", "K2 returns prose"</td><td>Each checked against the traces: the cap holds; our own drill; refuted by the span. The first exposed a real fault of ours: pictures and judge calls were missing from the story's trace (208 spans before, 225 after, 2 of 4 pictures before, 4 of 4 after). Fixed.</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-016.md">HR-016</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/review-3/triage_actions.json">triage notes</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/traces/20261012-IST-spans-BEFORE-f238415f0de63afe58fcbf9a32ff4f2a.json">before</a> and <a href="https://github.com/hatif03/storybound/blob/main/evidence/traces/20261012-IST-spans-AFTER-640b8a6d6ed6cce8941ddab55139ffba.json">after</a></td></tr>
+<tr><td>The "Picture has words painted in" detection, blind until the fix</td><td>A drill painted words into a real picture: the vision judge caught it, the agent repainted it, the detection fired (1 occurrence, 0 before)</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-016.md">HR-016</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/traces/20261012-1401-IST-detection-trend-picture-words-after-drill.json">trend</a></td></tr>
+<tr><td>Measured cost per story: $0.0199, about 20% above our token estimate</td><td>Replaced the estimate in the cfo.ai model</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/20261010-2010-IST-measured-vs-estimated-cost.json">cost file</a></td></tr>
+<tr><td>Evaluations: a human reviews single judge verdicts (17 verdicts assigned)</td><td>Measures human and judge agreement; no agreement number is claimed until it is answered</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/review-3/eval_spans_create_results.json">evaluation setup</a></td></tr>
+</table>
+<h3>Screenshots (neatlogs)</h3>
+<div class="grid shots">
+  <figure><img loading="lazy" src="img/n1.webp" alt="neatlogs incidents"><figcaption><b>N1.</b> Incidents: one under investigation, found by neatlogs on its own (a Gemini 504 timeout).</figcaption></figure>
+  <figure><img loading="lazy" src="img/n2.webp" alt="resolved incidents"><figcaption><b>N2.</b> Four resolved incident cards, among them "Resolve Infinite Repair Loop" and "Latency and Quota Exhaustion in illustrate" that we checked and closed with notes.</figcaption></figure>
+  <figure><img loading="lazy" src="img/n3.webp" alt="incident detail"><figcaption><b>N3.</b> An incident's root-cause analysis, resolved by us: it was our own image-429 drill, and the agent recovered as designed.</figcaption></figure>
+  <figure><img loading="lazy" src="img/n4.webp" alt="investigation"><figcaption><b>N4.</b> The investigation neatlogs ran: evidence, reasoning and a recommended action.</figcaption></figure>
+  <figure><img loading="lazy" src="img/n5.webp" alt="trace with detection"><figcaption><b>N5.</b> A story trace opened from the detection "Execution Failed": the 504 error span of a Gemini call with its prompt and error.</figcaption></figure>
+  <figure><img loading="lazy" src="img/n6.webp" alt="trace with latency detection"><figcaption><b>N6.</b> The suggested detection "High Latency LLM Monitor" (accepted from neatlogs's own recommendations) flagging a slow call.</figcaption></figure>
+  <figure><img loading="lazy" src="img/n7.webp" alt="detections list"><figcaption><b>N7.</b> Our detections: oath violation, critical safety stop, quiz promise broken, picture has words painted in, and the suggested monitors.</figcaption></figure>
+</div>
+<p class="note">Also in the repository: the screen recording of the dashboards that the videos use, and the neatlogs exports under <a href="https://github.com/hatif03/storybound/tree/main/evidence/neatlogs">evidence/neatlogs</a>.</p>
+
+<h2 id="entire">Entire: how did you use it?</h2>
+<div class="answer"><p class="q">Short answer</p>
+<p>Entire recorded the coding agent that built Storybound. We made one commit per intent so each checkpoint maps to one change, used <code>entire-graph</code> to see what a change touched before and after, used Trails with tailored runners and <code>entire review</code> to gate each pull request, and recorded durable decisions in Brain. Its reviews found real defects in our own work, which we fixed.</p></div>
+<div class="grid stats">
+  <div class="stat"><b>97 checkpoints</b><span>in 132 commits (Entire analytics, 12 Oct), each tied to a commit with an Entire-Checkpoint trailer</span></div>
+  <div class="stat"><b>4 trails merged</b><span>each backed by a branch and a pull request, with six runners; reviews found 5, 8 and 7 real issues on three of them</span></div>
+  <div class="stat"><b>7 graph diffs</b><span>of the hardening changes, plus impact and verify runs on the safety words</span></div>
+</div>
+<h3>Checkpoints: progress and key decisions</h3>
+<ul class="tight">
+  <li>The checkpoint link for submission: <a href="https://entire.io/gh/hatif03/storybound/commit/1a96c19fd6f99c981f7e6b7cbbea715d25eb55d2">commit 1a96c19</a> (checkpoint <code>01M4MJM5TRM7NE2F8FHFJ49NE6</code>); anonymous render checked in <a href="https://github.com/hatif03/storybound/blob/main/evidence/screens/20261011-1015-IST-entire-commit-link-anonymous.png">this screenshot</a>.</li>
+  <li>Every hardening record names its commit and checkpoint, and says where there is none (early work before 15:08 on 10 Oct has no checkpoint): <a href="https://github.com/hatif03/storybound/tree/main/evidence/hardening">evidence/hardening</a>.</li>
+  <li>Key decisions kept as checkpoints and Brain facts: pipelined review (HR-002, with the honest note that time to first page did not improve), the safety-word tiering (HR-004), the history rewrite after two keys were pasted into a session and reached checkpoint refs ([the note](https://github.com/hatif03/storybound/blob/main/evidence/history-rewrite/NOTE.md)), and the narration rule below.</li>
+  <li>The sessions are readable: the hardening session (screenshot E5) shows the sweep, the report change and the checkpoints it produced.</li>
+</ul>
+<h3>entire-graph: finding code and assessing risky changes</h3>
+<ul class="tight">
+  <li><b>Before touching the safety words:</b> <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt">graph impact of story_safe_text</a> and <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-verify_scene_async.txt">of verify_scene_async</a> showed what depended on them.</li>
+  <li><b>After each hardening fix:</b> graph diffs for <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1716-IST-graph-diff-HR-001-04ffebb.json">HR-001</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1716-IST-graph-diff-HR-002-daec9ea.json">HR-002</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-003-31022e7.json">HR-003</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-004-748ce42.json">HR-004</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-graph-diff-HR-006-7b2f310.json">HR-006</a> and <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1300-IST-graph-diff-auto-pictures-touch-early-painting.json">the picture agent</a>, which listed the entities each change touched.</li>
+  <li><b>Why is this line here?</b> <code>entire why</code> on the oath catalog and the prompts: <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-why-catalog.txt">catalog</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1953-IST-why-prompts.txt">prompts</a>.</li>
+  <li><b>Brain:</b> ten durable facts and a <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1745-IST-brain-brief-video-scene-type.json">brain brief</a> that returns the likely files for a task.</li>
+</ul>
+<h3>Trails and reviews: what Entire found in our own work</h3>
+<table>
+<tr><th>Review</th><th>What it found</th><th>What we did</th></tr>
+<tr><td>PR 1 (<code>entire review general</code>)</td><td>5 findings, one a real bug: the evidence builder printed the latest commit as "First commit"</td><td>All five fixed. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1010-IST-review-general-pr1.txt">review</a></td></tr>
+<tr><td>PR 2</td><td>8 issues, including a missing fallback that would have turned a gateway outage into failed stories</td><td>All fixed. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261011-1415-IST-review-general-pr2.txt">review</a></td></tr>
+<tr><td>PR 4</td><td>10 points, 7 real defects in our own failure fixes: a refusal that could become "try again", a pass hiding an unverified safety check, a failover that re-paid its retries, and more</td><td>Fixed with tests. <a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261012-IST-review-general-pr4.txt">review</a>, <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
+<tr><td>Trail 5 runner</td><td>High: a stray chaos-injection setting could reach production</td><td>It now does nothing unless a drill names itself (commit <code>c692d89</code>)</td></tr>
+<tr><td>Trail 5 runner</td><td>High: autoplay against our "no autoplay" rule</td><td>Dismissed by design with a written reason, and the rule now says exactly what may start by itself (a page's own narration, never the next page): <a href="https://github.com/hatif03/storybound/blob/main/docs/WEB.md">WEB.md</a></td></tr>
+</table>
+<p>Trails 2 to 5 and their gates: <a href="https://entire.io/gh/hatif03/storybound/trails/2">2</a>, <a href="https://entire.io/gh/hatif03/storybound/trails/4">4</a>, <a href="https://entire.io/gh/hatif03/storybound/trails/5">5</a>; gate output files in <a href="https://github.com/hatif03/storybound/tree/main/evidence/entire">evidence/entire</a>. The solo "approvals" gate stays unmet on every trail, since the trail rule wants a second reviewer; the runners and findings gates did their work.</p>
+<h3>Open-source builds on Entire's CLI, Graph or External Agents</h3>
+<p>We did not contribute code to Entire's own open-source projects. What we built on top of them: six Trail runners tailored to this project's hard rules (no secrets, no child data, evidence discipline, the oath as the product, no timers or streaks for children) in <a href="https://github.com/hatif03/storybound/tree/main/.entire/runners">.entire/runners</a>; Claude Code run as an Entire-supported agent with commit linking set to <code>always</code>; custom redactions for key shapes in <code>.entire/settings.json</code> after a key reached a checkpoint; and <code>scripts/build_evidence.py</code> and <code>scripts/lint_evidence.py</code>, which build the evidence index from checkpoints, traces and the run ledger. We also documented the tool gaps we hit (docs/TOOLS.md: Brain refuses a dirty tree; a pushed checkpoint cannot be removed).</p>
+<h3>Screenshots (Entire)</h3>
+<div class="grid shots">
+  <figure><img loading="lazy" src="img/e1.webp" alt="trail 5"><figcaption><b>E1.</b> Trail 5, merged: confidence, risk, drift and security scores from the runners, and the gates (approvals, findings, checks, up to date).</figcaption></figure>
+  <figure><img loading="lazy" src="img/e2.webp" alt="trail 4"><figcaption><b>E2.</b> Trail 4 (workbooks, ages and languages), merged, with its gates passing apart from the solo approvals rule.</figcaption></figure>
+  <figure><img loading="lazy" src="img/e3.webp" alt="security runner"><figcaption><b>E3.</b> The Trail Security runner: the prompt we wrote for it, with the project's own rules.</figcaption></figure>
+  <figure><img loading="lazy" src="img/e4.webp" alt="review runner"><figcaption><b>E4.</b> The Trail Review runner, which received our previous findings as data so it does not repeat them.</figcaption></figure>
+  <figure><img loading="lazy" src="img/e5.webp" alt="session"><figcaption><b>E5.</b> A session page: the hardening records session, with its prompts, responses and checkpoints.</figcaption></figure>
+  <figure><img loading="lazy" src="img/e6.webp" alt="analytics"><figcaption><b>E6.</b> Entire analytics: 97 checkpoints, 4 trails merged, token use over time.</figcaption></figure>
+  <figure><img loading="lazy" src="img/e7.webp" alt="token usage"><figcaption><b>E7.</b> Token use by contributor and peak hours (a solo builder with a coding agent).</figcaption></figure>
+</div>
+
+<h2 id="cfo">cfo.ai: how did it shape your business plan?</h2>
+<div class="answer"><p class="q">Short answer</p>
+<p>cfo.ai turned "what does a story cost?" into product decisions. Painting every page leaves a 43% gross margin against our 60% bar, painting half clears it at 67%, so the agent now spends a fixed picture budget on the pages that matter most. We replaced the cost estimate with the cost neatlogs measured, it showed that video AI would take the margin to minus 70%, so video is left out, and it priced what a real launch needs (about 2,490 paying households at $6.99).</p></div>
+<div class="grid stats">
+  <div class="stat"><b>67.8% / 43.4%</b><span>month-6 margin: half the pictures against all of them (Main scenario, estimates)</span></div>
+  <div class="stat"><b>-70%</b><span>margin with three video clips a story; the video scenarios are in the model</span></div>
+  <div class="stat"><b>~2,490</b><span>paying households to break even at $6.99 a month (launch plan, assumptions labelled)</span></div>
+</div>
+<ul class="tight">
+  <li>The public model: <a href="https://app.cfo.ai/s/vGE_ZEwfQtpoxPrg">app.cfo.ai/s/vGE_ZEwfQtpoxPrg</a> (it does not show the later Launch plan and Video AI pages; the readback of those is in <a href="https://github.com/hatif03/storybound/blob/main/evidence/cfo/20261011-1250-IST-video-ai-scenarios-and-product-plan-readback.json">evidence/cfo</a>).</li>
+  <li>The business plan in plain words: <a href="https://github.com/hatif03/storybound/blob/main/docs/BUSINESS.md">BUSINESS.md</a>. How the model changed the product: <a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-010.md">HR-010</a> (the agent chooses which pages to paint; first picture at 70 s instead of 278 s).</li>
+  <li>Four scenarios for video AI, a launch plan with operating and one-time costs, and the workbooks saved offline: <a href="https://github.com/hatif03/storybound/tree/main/evidence/cfo/workbook">workbook</a>.</li>
+  <li>The cost input in the model is the number neatlogs measured, not a guess: <a href="img/cv1.webp">Version history (unit economics)</a> and <a href="img/cv2.webp">Version history (policy)</a> show the edit "Cost input = Text and verification B1 gated".</li>
+  <li>Hackathon credits: the gateway budget is evaluation money, not product spend, because a story costs about two cents of text: <a href="https://github.com/hatif03/storybound/blob/main/docs/CREDITS.md">CREDITS.md</a>.</li>
+</ul>
+<h3>Decisions the model made</h3>
+<table>
+<tr><th>Question</th><th>What the model said</th><th>What changed</th></tr>
+<tr><td>Can we paint every page?</td><td>No: 42.8% margin; half the pages clears the bar (67.2%)</td><td>The picture policy, then <code>auto</code>: a $0.16 budget spent on the most important pages</td></tr>
+<tr><td>Does sampling the checks save money?</td><td>Under half a point</td><td>We kept full verification: safety does not get cheaper</td></tr>
+<tr><td>What if we used video AI?</td><td>The three cheapest clips: 67% to -70%</td><td>Motion stays deterministic; video, if ever, a priced add-on</td></tr>
+<tr><td>What would a real launch cost?</td><td>About $7,300 a month and $23,500 once (assumed)</td><td>A checklist of what a product needs beyond the code</td></tr>
+</table>
+<h3>Screenshots (cfo.ai)</h3>
+<div class="grid shots">
+  <figure><img loading="lazy" src="img/c1.webp" alt="unit economics"><figcaption><b>C1.</b> Unit economics by plan: gross margin by plan at month 6, Main against Growth and Downside.</figcaption></figure>
+  <figure><img loading="lazy" src="img/c2.webp" alt="policy table"><figcaption><b>C2.</b> Verification and illustration policy: cost per story and gross margin for all pictures, half, and none.</figcaption></figure>
+  <figure><img loading="lazy" src="img/c3.webp" alt="margin chart"><figcaption><b>C3.</b> The interactive chart: margin against pictures per story, with the 60% bar; the most pictures that clear it is 5.</figcaption></figure>
+  <figure><img loading="lazy" src="img/c4.webp" alt="evidence and method"><figcaption><b>C4.</b> Evidence and method: what is measured (token counts) and what is assumed.</figcaption></figure>
+  <figure><img loading="lazy" src="img/c5.webp" alt="launch plan"><figcaption><b>C5.</b> Launch plan: the real operating and one-time costs of a product, all labelled as assumptions.</figcaption></figure>
+  <figure><img loading="lazy" src="img/cv1.webp" alt="version history"><figcaption><b>C6.</b> Version history: the cost input edited to the neatlogs measurement.</figcaption></figure>
+  <figure><img loading="lazy" src="img/cv2.webp" alt="version history policy"><figcaption><b>C7.</b> Version history on the policy page: the scenarios and formulas built through the cfo.ai agent.</figcaption></figure>
+</div>
+
+<h2 id="improved">Recommendations and input from the tools, and what we changed</h2>
+<table>
+<tr><th>Tool</th><th>Its recommendation or input</th><th>What we did</th><th>Link</th></tr>
+<tr><td>neatlogs</td><td>Triage card: a Gemini call stalling 87 s</td><td>Hedged retry (send the call again after 45 s)</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-011.md">HR-011</a></td></tr>
+<tr><td>neatlogs</td><td>Triage card: critical stops on "hurts"</td><td>Mild words ask for a rewrite; the stop is kept for the severe ones</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-004.md">HR-004</a></td></tr>
+<tr><td>neatlogs</td><td>Suggested detections ("Critical Violation Monitor", "High Latency LLM Monitor")</td><td>Accepted both; they now fire on our traces (screenshots N6, N7)</td><td><a href="img/n7.webp">N7</a></td></tr>
+<tr><td>neatlogs</td><td>Incident cards of 12 Oct</td><td>Found the fragmented traces; fixed the span context; the other two refuted or explained</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-016.md">HR-016</a></td></tr>
+<tr><td>neatlogs</td><td>Alerts and email delivery</td><td>Thresholds retuned (oath violation 40 an hour, slow story 450 s, expensive story $0.10), seven rules with email</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/neatlogs/20261011-alert-retune-results.json">retune</a></td></tr>
+<tr><td>Entire</td><td>Review of PR 1, 2 and 4, trail runners on 4 and 5</td><td>Fixed 5, 8 and 7 defects, a high-severity chaos setting, and wrote the narration rule precisely</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-015.md">HR-015</a></td></tr>
+<tr><td>Entire</td><td><code>graph impact</code> on the safety words</td><td>Changed the tiers only where the graph showed the callers were covered</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/entire/20261010-1421-IST-graph-impact-story_safe_text.txt">impact</a></td></tr>
+<tr><td>cfo.ai</td><td>Margin against pictures per story</td><td>The agent chooses which pages to paint within a budget</td><td><a href="https://github.com/hatif03/storybound/blob/main/evidence/hardening/HR-010.md">HR-010</a></td></tr>
+<tr><td>cfo.ai</td><td>Video AI scenarios</td><td>Video left out; motion is deterministic and checked</td><td><a href="https://github.com/hatif03/storybound/blob/main/docs/BUSINESS.md">BUSINESS.md</a></td></tr>
+<tr><td>cfo.ai</td><td>Measured cost replaces the estimate</td><td>Version history shows the edit</td><td><a href="img/cv1.webp">C6</a></td></tr>
+</table>
+
+<h2 id="broke">What broke, said plainly</h2>
+<ol class="tight">
+  <li>A 40 s timeout for the stall: tried, did not hold up in an A/B, reverted (HR-005).</li>
+  <li>Cheaper models as writer, character reader and safety screen: 3 of 10 stories shipped a break; a drawn carrot read as an ice-cream cone; 23 of 26 safety fixtures (HR-012).</li>
+  <li>Trace-level regex detections on multi-line verdicts never fired until we moved them to the right span type (HR-011).</li>
+  <li>Pictures and judge calls missing from the story's trace, and incident cards read the fragments as failures: our bug, fixed (HR-016).</li>
+  <li>A safety-screen outage was shown to the child as "your picture was refused", and the second judge could hide an unverified safety check: found by our drills and Entire's review (HR-015).</li>
+  <li>Two keys were pasted into a session and reached checkpoint refs; the history was rewritten with the builder's approval and the keys are due for rotation (<a href="https://github.com/hatif03/storybound/blob/main/evidence/history-rewrite/NOTE.md">note</a>).</li>
+</ol>
+
+<h2 id="verify">Verify it yourself</h2>
+<pre>git clone https://github.com/hatif03/storybound &amp;&amp; cd storybound
+uv sync
+.venv/bin/python -m pytest -q tests                 # 107 backend tests
+.venv/bin/python scripts/lint_evidence.py           # evidence checks
+python scripts/compare_experiments.py               # the experiment table (HR-014)
+wc -l evidence/ledger.jsonl                         # every named run, with trace id and per-promise verdicts
+cd web &amp;&amp; npm install &amp;&amp; npm run test        # 29 web tests</pre>
+<p>The numbers behind this page: <a href="https://github.com/hatif03/storybound/blob/main/EVIDENCE.md">EVIDENCE.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/STORY.md">STORY.md</a>, <a href="https://github.com/hatif03/storybound/blob/main/docs/TOOLS.md">TOOLS.md</a>. Limits are said in each record: ten stories per configuration and five per drill are small samples; the judge is an AI, not a human; the live demo is http only, tracing is off there, and real stories are capped per day.</p>
+<footer>Storybound, neatHack 2026. Built by one person with Claude Code. <a href="https://github.com/hatif03/storybound">Source</a></footer>
+</main>
+</body>
+</html>

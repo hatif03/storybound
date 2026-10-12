@@ -63,3 +63,10 @@ _private/
 evidence/app-capture/work/
 evidence/app-capture/*.mp4
 evidence/app-capture/*.webm
+/*.mp4
+evidence/features-capture/work/
+evidence/features-capture/*.mp4
+evidence/pitch-video/work/
+evidence/demo/*.txt
+evidence/full-tour/*.mp4
+evidence/pitch-video/tour-work/

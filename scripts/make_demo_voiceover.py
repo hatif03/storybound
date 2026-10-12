@@ -2,7 +2,7 @@
 
   python scripts/make_demo_voiceover.py [--voice Charon]
 
-Reads web/scripts/demo-voiceover.json, writes evidence/app-capture/voiceover/<key>.mp3 and manifest.json (seconds per clip). Needs Google credentials as the app does.
+Reads a JSON of key: text (default web/scripts/demo-voiceover.json) and writes <out>/<key>.mp3 and manifest.json (seconds per clip; default out evidence/app-capture/voiceover). Needs Google credentials as the app does.
 """
 
 from __future__ import annotations
@@ -30,9 +30,11 @@ def seconds(path: Path) -> float:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--voice", default="Charon")
+    ap.add_argument("--texts", default="web/scripts/demo-voiceover.json", help="JSON of key: text")
+    ap.add_argument("--out", default="evidence/app-capture/voiceover", help="folder for the mp3 files and manifest.json")
     a = ap.parse_args()
-    texts = json.loads((ROOT / "web" / "scripts" / "demo-voiceover.json").read_text(encoding="utf-8"))
-    out = ROOT / "evidence" / "app-capture" / "voiceover"
+    texts = json.loads((ROOT / a.texts).read_text(encoding="utf-8"))
+    out = ROOT / a.out
     out.mkdir(parents=True, exist_ok=True)
     model = get_settings().models.tts
     manifest = {}
